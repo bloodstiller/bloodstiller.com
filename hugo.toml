@@ -2,3 +2,214 @@ baseURL = 'https://bloodstiller.com/'
 languageCode = 'en-us'
 title = 'Hack Me Daddy'
 theme = 'dark-theme-editor'
+
+
+# Minimum support hugo
+[module]
+    [module.hugoVersion]
+        min = "0.112.0"
+
+# Support Taxonomies
+[taxonomies]
+    autor = "author"
+    tag = "tags"
+    category = "categories"
+
+# Theme parameters
+[params]
+
+    # Parameters applied in HTML <head>
+    [params.site]
+        # Website ICON
+        faviconUrl = ""
+
+        # Do you have any CSS in local? List them in an array.
+        # They should be placed inside "/assets" dir.
+        # Please list your files relative to the /assets directory.
+        # Glob pattern is acceptable
+        # If only a few pages need the extra style files, list them in the page metadata.
+        localCss = []
+
+        # Do you need to add any external CSS? List their URL in an array.
+        # If only a few pages need the extra style files, list them in the page metadata.
+        # These URLs will be inserted into <link> tags directly without any check.
+        externalCss = []
+
+        # Like the one above, but this will download a local copy and combine it with
+        # other CSS files into a single file while in production mode.
+        externalCssDownload = []
+
+        # Do you have any script in local? List them in an array.
+        # They should be placed inside "/assets" dir.
+        # Please list your files relative to the /assets directory.
+        # Glob pattern is acceptable
+        # If only a few pages need the extra script files, list them in the page metadata.
+        localJs = []
+
+        # Do you have any external Script need to add on? List their URL in an array.
+        # If only a few pages need the extra script files, list them in the page metadata.
+        # These URLs will be inserted into <script> tags directly without any check.
+        externalJs = []
+
+        # Like the one above, but this will download a local copy and combine it with
+        # other JS files into a single file while in production mode.
+        externalJsDownload = []
+
+        # The code you could get from Google Search Console.
+        # Please patse the value of content xxx in the following items
+        # <meta name="google-site-verification" content="xxxxxxxxxxxxxxxxxxxxxxxxxx" />
+        googleVerification = ""
+
+        # The code you could get from Microsoft Bing Webmater
+        # Please patse the value of content xxx in the following items
+        # <meta name="msvalidate.01" content="xxxxxxxxxxxxxxxxxxxx" />
+        bingVerifivation = ""
+
+    # Customized info shown in header of the page
+    [params.header]
+        # Website title for header banner.
+        title = "My New Hugo Site"
+
+        # Subtitle for this site, used in homepage only
+        subtitle = "A Site Built by Hugo"
+
+        # Config about your's site logo, remove this item to hide the logo
+        [params.header.logo]
+            # Where is your site's URL
+            imgUrl = ""
+
+            # If the logo is clickable, where should it be linked?
+            # In default, it will linked to the homepage of the site.
+            logoLink = ""
+
+    # Customized info shown in footer of the page
+    [params.footer]
+        # CopyRight string shown in the footer. Keep it an empty string or remove this item will hide it from the page.
+        copyrightStr = "All Rights Reserved ®."
+
+        # Should show the counter in the footer or not
+        # In the home page, it will show the numbers of all pages
+        # In the sections pages, it will show the numbers of pages within the section
+        # In the taxonomy pages, it will show the numbers of pages belong to the taxonomy.
+        # In the regular content pages, it will show the word count.
+        counter = true
+
+        # Should show the language of the page or not
+        language = true
+
+        # Should show the hugo version or not
+        hugoVersion = true
+
+        # Should show the theme info or not
+        theme = true
+
+        # Should show the edited time of the page or not
+        modifiedTime = true
+
+        # The format of the `modifiedTime`.
+        # Refer to page https://gohugo.io/functions/format/ for more detail.
+        # Below is the default format, please do not remove it, unless you set `false` in `modifiedTime` field.
+        dateFormat = "Jan 02 2006 15:04:05"
+
+        # Should show the current git HEAD hash or not
+        # To make this show up correctly, please follow the prerequisites in page
+        # https://gohugo.io/variables/git/
+        gitHash = true
+
+        # Social link in the footer, listed items are supported, delete unwanted items to hide it.
+        [params.footer.socialLink]
+            github = "https://github.com/bloodstiller"
+            facebook = ""
+            twitter = ""
+            email = ""
+            linkedin = ""
+            instagram = ""
+            telegram = ""
+            medium = ""
+            vimeo = ""
+            youtube = ""
+
+    # Metadata of the site, value will be used in HTML <header>
+    # These value would be used when they didn't appear in the frontmatter of a single page.
+    # In other words, these value will be overwritten by the frontmatter in the single page.
+    [params.globalFrontmatter]
+        # The author of this site. This will be shown in
+        # 1. the footer of all page
+        # 2. the author filed in the single page. (this could be overwritten by the frontmatter of the single page.)
+        # Keep it an empty string or remove this item will hide it from the page
+        author = "Bloodstiller"
+
+        # Website description for RSS and SEO. Theme will generate a <meta> tag for this item
+        description = "Saucy Monk"
+
+        # Website keywords. Theme will generate a <meta> tag for this item.
+        keywords = "hacking, AD"
+
+    # Parameters applied in the homepage only
+    [params.homePage]
+        # Long Descripition shown in home page "Start Block". Is is recommended to have the paragraph shorter than 100 words.
+        siteLongDescription = "Hugo is a fast and easy-to-use static website generator written in Go. It renders a complete HTML website from content and templates in a directory, utilizing Markdown files for metadata. It's optimized for speed and suitable for various website types."
+
+        # If you don't like the title of "siteLongDescription" be "Start" (default),
+        # you may change the value of this item to "Description" or something you like.
+        siteLongDescriptionTitle = "Start"
+
+        # Param to decide whether to show the most recent blog posts or not. (Default: true)
+        showRecentPostsBlock = true
+
+        # Param to decide how many recent posts to show in the home page. (Default: 5)
+        numOfRecentPosts = 5
+
+        # Parameter to decide whether to show the URL behind the title.
+        # It will be more like an editor if it is shown. However, in general, it can be messy if it is displayed.
+        # (Default: true)
+        recentPostShowUrl = true
+
+
+    # Paramater applied in the single page
+    # These values could be overwritten by the frontmatter in the single page.
+    [params.page]
+        # Should include Table of Content in front of the page or not.
+        includeToc = true
+
+        # Should show the author of the page or not.
+        # The author name will be shown in the single page if and only if
+        #   1. this items been set as true and
+        #   2. "aurthor" filed been provided in the
+        #       A. single page frontmatter or
+        #       B. "author" filed in above "globalFrontmatter" block
+        showAuthor = true
+
+        # Should show the date of the page or not
+        showDate = true
+
+        # The format of the date.
+        # Refer to page https://gohugo.io/functions/format/ for more detail.
+        # Below is the default format, please do not remove it, unless you set `false` in `showDate` field.
+        dateFormat = "2006.02.01"
+
+        # Should show the estimate reading time in front of the page or not.
+        showTimeToRead = true
+
+        # Should show the breadcrumb in front of the page or not.
+        showBreadcrumb = true
+
+        # Should show the "copy" button in the codeblock or not.
+        codeBlockCopible = true
+
+        # Should include LaTeX support on a single page or not?
+        # This parameter will be overwritten by the page front matter (if it has been set).
+        # Since enabling this configuration loads some external JavaScript,
+        #   it will slow down the page loading speed.
+        # It's recommended to keep it turned off by default and only enable this configuration when required.
+        useMath = false
+
+        # Filed tp describe how should we pass the "trust" params to the `KaTex` module.
+        # Thos params would affect if we could trust the HTML related code in LaTex blocks.
+        # https://katex.org/docs/options.html
+        trustedmath = false
+
+    [params.preference]
+        # Use "true" to show the real fila name in both breadcrumb and the sidebar
+        # Use "false" to show the tile in the file in both breadcrumb and the sidebar
+        showFileName = false
