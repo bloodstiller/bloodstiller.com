@@ -1,0 +1,406 @@
+/*******************************************************************************************
+ * This file contains all the styling for the site.
+ *******************************************************************************************/
+@charset "UTF-8";
+
+/*** Element Styling ***/
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+em {
+    font-style: italic;
+}
+
+/*** HTML Body ***/
+body {
+    background-color: #282c34;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+        Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    overflow: hidden;
+}
+
+/*** Header ***/
+header {
+    font-size: 8pt;
+    color: white;
+    border-bottom: 1pt solid rgb(59, 59, 59);
+}
+
+header > div {
+    vertical-align: middle;
+    text-align: center;
+    line-height: 3vh;
+    height: 100%;
+}
+
+header > div.header_left {
+    float: left;
+    position: relative;
+    left: 5pt;
+    top: 0pt;
+}
+
+header > div.header_left > img.logo {
+    height: 100%;
+}
+
+/*** sidebar ***/
+aside.exapandable {
+    width: 3pt;
+    background-color: rgb(59, 59, 59);
+    cursor: col-resize;
+}
+
+aside.exapandable:hover {
+    background-color: rgb(99, 99, 99);
+}
+
+/*** main content ***/
+article.main {
+    text-align: left;
+    color: #eeffff;
+    padding: 2%;
+    overflow-y: auto;
+}
+
+article.main > button.sidebar-toggle-btn {
+    display: none;
+}
+
+article.main > div.title {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15pt;
+}
+
+article.main > div.title > h1.title-header {
+    flex: 0 0 auto;
+    color: #e0e5e5;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+article.main > div.title > div.author-date-readtime {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.9rem;
+    color: #939bab;
+}
+
+article.main > div.title > div.author-date-readtime > div:not(:first-child) {
+    padding-top: 1em;
+}
+
+article.main > div.title > div.author-date-readtime > div.author:hover {
+    color: white;
+}
+
+article.main > div.article-meta {
+    color: #939bab;
+    font-size: 1rem;
+    margin-top: -2em;
+}
+
+article.main > div.article-meta a {
+    padding: 2pt 10pt;
+    margin: 0pt 5pt;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+article.main > hr {
+    border-color: #5c5e60;
+    border-width: 1pt;
+    margin-bottom: 25pt;
+}
+
+article.main > div.article-meta > div:only-child {
+    padding-top: 20pt;
+}
+
+article.main > div.article-meta > div.categories > a.cat-btn {
+    background: #2f5292;
+}
+
+article.main > div.article-meta > div.categories > a.cat-btn:hover {
+    background: #5779b9;
+}
+
+article.main > div.article-meta > div.tags > a.tag-btn {
+    background: #327e5e;
+}
+
+article.main > div.article-meta > div.tags > a.tag-btn:hover {
+    background: #479775;
+}
+
+article.main > div.article-meta > div:where(.categories, .tags) > a {
+    line-height: 2.8em;
+}
+
+article.main > div.article-meta > div:where(.breadcumb, .translation) > a {
+    color: #99a1ff;
+    padding-left: 5pt;
+    padding-right: 5pt;
+    line-height: 2.5em;
+}
+
+/* first of a will contain the current present language */
+article.main > div.article-meta > div.translation > a:first-of-type {
+    color: #c6c6c7;
+}
+
+article.main > nav#TableOfContents {
+    margin-bottom: 20pt;
+}
+
+article.main > nav#TableOfContents ul {
+    display: block;
+    list-style-type: disc;
+    padding-inline-start: 20px;
+}
+
+article.main > nav#TableOfContents ul ul {
+    list-style-type: circle;
+}
+
+article.main > nav#TableOfContents ul ul ul {
+    list-style-type: square;
+}
+
+article.main > nav#TableOfContents li {
+    margin: 8pt 0pt;
+}
+
+article.main > nav#TableOfContents a {
+    color: #4398e5;
+}
+
+article.main > nav#TableOfContents a:hover {
+    color: #7fb8ee;
+    text-decoration: underline;
+}
+
+article.main > div.list-files ul.section-tree {
+    font-size: 14pt;
+}
+
+article.main > div.list-files ul.section-tree > li {
+    line-height: 140%;
+    padding-left: 5pt;
+}
+
+article.main > div.list-files ul.section-tree > li.file {
+    font-size: 12pt;
+}
+
+article.main > div.list-files > ul.section-tree > li.file:hover {
+    color: white;
+}
+
+article.main > div.list-terms > ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+article.main > div.list-terms > ul > li {
+    border: 1px solid #6c6d6e;
+    border-radius: 30px;
+    padding: 0.5em 1em;
+    margin: 0.5em 1em;
+}
+
+article.main > div.list-terms > ul > li:hover {
+    border-color: #969697;
+    border-width: 2px;
+    color: white;
+    background-color: #727272;
+}
+
+/*** footer ***/
+footer {
+    font-size: 8pt;
+    color: grey;
+    border-top: 1pt solid rgb(59, 59, 59);
+    padding: 0 3pt;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer > div {
+    display: inline;
+    flex: 0 0 auto;
+    /* overflow-x: hidden; */
+}
+
+footer > div > ul {
+    display: flex;
+    height: 100%;
+    align-items: stretch;
+    white-space: nowrap;
+}
+
+footer > div > ul > li {
+    flex: 0 0 auto;
+    padding: 0 5pt;
+    display: inline-flex;
+    align-items: center;
+    cursor: default;
+}
+
+footer > div ul > li:hover {
+    background-color: rgb(65, 65, 65);
+    color: rgb(150, 150, 150);
+}
+
+/* submenu */
+footer > div ul > li ul {
+    background-color: #282c34;
+
+    display: none;
+    align-self: flex-end;
+    position: relative;
+    bottom: 100%;
+}
+
+footer > div ul > li:hover ul,
+footer > div ul > li ul:hover {
+    display: block;
+}
+
+footer > div ul > li:hover > ul > li,
+footer > div ul > li > ul:hover > li {
+    padding: 8pt;
+}
+
+footer > div.footer-left {
+    max-width: 40%;
+}
+
+footer > div.footer-left > ul {
+    justify-content: flex-start;
+}
+
+footer > div.footer-right {
+    min-width: 60%;
+}
+
+footer > div.footer-right > ul {
+    justify-content: flex-end;
+}
+
+/* language navigator */
+footer > div.footer-right > ul > li.language-selector {
+    width: 1em;
+    cursor: pointer;
+}
+
+footer
+    > div.footer-right
+    > ul
+    > li.language-selector
+    > ul.language-selector-menu {
+    font-size: 10pt;
+    left: -2em;
+}
+
+/*** Section Tree Listing ***/
+ul.section-tree > li > a {
+    cursor: pointer;
+    line-height: 120%;
+}
+
+ul.section-tree > li > a:hover {
+    color: white !important;
+}
+
+ul.section-tree > li.dir {
+    padding-left: 10pt;
+    padding-top: 10pt;
+    color: grey;
+}
+
+ul.section-tree > li.dir > span.dir-text {
+    cursor: pointer;
+    margin-left: 5pt;
+}
+
+ul.section-tree > li.dir > span.dir-text:hover {
+    color: white;
+}
+
+ul.section-tree > li.closed-dir::before {
+    content: " ";
+    border-color: white;
+    border-width: 1pt 1pt 0 0;
+    border-style: solid;
+    padding: 3pt;
+    transform: rotate(45deg);
+    display: inline-block;
+    position: relative;
+    bottom: 1pt;
+}
+
+ul.section-tree > li.closed-dir > ul {
+    display: none;
+}
+
+ul.section-tree > li.opened-dir::before {
+    content: " ";
+    border-color: white;
+    border-width: 1pt 1pt 0 0;
+    border-style: solid;
+    padding: 3pt;
+    transform: rotate(135deg);
+    display: inline-block;
+    position: relative;
+    bottom: 3pt;
+}
+
+ul.section-tree > li.file {
+    padding-left: 5pt;
+    padding-top: 7pt;
+    color: grey;
+    font-size: 95%;
+    margin-left: 28pt;
+}
+
+ul.section-tree > li.file::before {
+    content: "\f383";
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    margin-left: -1.6em;
+    vertical-align: -0.3ex;
+    padding-right: 0.4em;
+}
+
+/* dir in nested subdir*/
+ul.section-tree ul.section-tree > li.dir {
+    padding-left: 18pt;
+}
+
+/* file in nested subdir*/
+ul.section-tree ul.section-tree > li.file {
+    padding-left: 4pt;
+}
+
+/* sidebar slide-in animation */
+@keyframes slide-in {
+    100% {
+        transform: translateX(0%);
+    }
+}

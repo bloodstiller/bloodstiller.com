@@ -1,0 +1,4 @@
+#+title: Testing Org
+#+HUGO_SECTION:
++hugo_front_matter_format: yaml
+#+hugo_custom_front_matter: :draft True

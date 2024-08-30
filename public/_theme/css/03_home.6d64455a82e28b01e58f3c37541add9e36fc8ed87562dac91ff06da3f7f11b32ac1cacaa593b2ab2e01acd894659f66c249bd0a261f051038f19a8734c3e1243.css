@@ -1,0 +1,238 @@
+/*******************************************************************************************
+ * This files contain the stlying used in the <artile> > <div.home>
+ * In other words, this file is used to style the content on the homepage only.
+ *******************************************************************************************/
+
+/*******************
+  * Layout 
+  *******************/
+article.main:has(> div.home) {
+    padding: 8vh 20vw;
+
+    /*
+        3%: header
+        3%: footer
+        16vh: <article> padding
+        2pt: border of header and footer
+    */
+    min-height: calc(100vh - 3% - 3% - 16vh - 2pt);
+
+    /*
+        3pt: expand bar
+        40vw: <article> padding
+        1px: dummpy
+    */
+    --artile_main_width: calc(85% - 3pt - 40vw - 1px);
+}
+
+article.main > div.home {
+    height: 100%;
+}
+
+article.main > div.home > div.recommend {
+    display: flex;
+    margin-top: 18pt;
+}
+
+article.main > div.home > div.recommend > div:where(.left, .right) {
+    flex: 1 1 100%;
+    width: 50%;
+}
+
+@media only screen and (max-width: 1400px) {
+    article.main:has(> div.home) {
+        padding: 8vh 10vw;
+
+        /*
+            3pt: expand bar
+            20vw: <article> padding
+            1px: dummpy
+        */
+        --artile_main_width: calc(85% - 3pt - 20vw - 1px);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    article.main:has(> div.home) {
+        padding: 8vh 5vw;
+
+        /*
+            6vh: header
+            6vh: footer
+            12px: padding in footer
+            16vh: <article> padding
+            2pt: border of header and footer
+        */
+        min-height: calc(100vh - 6vh - 6vh - 12px - 16vh - 2pt);
+
+        /*
+            3pt: expand bar
+            10vw: <article> padding
+            1px: dummpy
+        */
+        --artile_main_width: calc(85% - 3pt - 10vw - 1px);
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    article.main:has(> div.home) {
+        padding: 5vh 5vw;
+
+        /*
+            6vh: header
+            6vh: footer
+            12px: padding in footer
+            10vh: <article> padding
+            2pt: border of header and footer
+        */
+        min-height: calc(100vh - 6vh - 6vh - 12px - 10vh - 2pt);
+    }
+}
+
+/*******************
+  * Styling
+  *******************/
+
+/* Title */
+article.main > div.home > div.title > h1.title-caption {
+    font-weight: 400;
+    font-size: 2.2em;
+    white-space: nowrap;
+    margin-bottom: 16pt;
+    color: floralwhite;
+}
+
+article.main > div.home > div.title > h2.subtitle {
+    font-size: 1.6em;
+    line-height: 1.4em;
+    white-space: nowrap;
+}
+
+/* Recommend */
+article.main
+    > div.home
+    > div.recommend
+    > div:where(.left, .right)
+    h3.recommend-title {
+    font-size: 1.4em;
+    line-height: 1.4em;
+    white-space: nowrap;
+    margin-top: 8pt;
+    margin-bottom: 8pt;
+    color: floralwhite;
+}
+
+article.main > div.home > div.recommend > div.left {
+    padding-right: 25pt;
+}
+
+article.main > div.home > div.recommend > div.right {
+    padding-left: 25pt;
+}
+
+/* Start */
+article.main > div.home > div.recommend > div.left > div.start {
+    margin-bottom: 16pt;
+}
+
+article.main
+    > div.home
+    > div.recommend
+    > div.left
+    > div.start
+    > p.long-description {
+    line-height: 1.6em;
+    font-size: 90%;
+    text-align: justify;
+}
+
+/* Recent Posts */
+article.main
+    > div.home
+    > div.recommend
+    > div.left
+    > div.recent
+    > ul.recent-posts-list
+    > li {
+    line-height: 1.6em;
+    font-size: 95%;
+    color: #80cbc4;
+}
+
+article.main
+    > div.home
+    > div.recommend
+    > div.left
+    > div.recent
+    > ul.recent-posts-list
+    > li:hover {
+    line-height: 1.6em;
+    font-size: 95%;
+    color: #eeffff;
+}
+
+article.main
+    > div.home
+    > div.recommend
+    > div.left
+    > div.recent
+    > ul.recent-posts-list
+    > li
+    > span.recent-posts-items-path {
+    font-size: 90%;
+    color: #eeffff;
+    padding-left: 1em;
+}
+
+/* Section Tree in Walkthorughs */
+article.main > div.home > div.recommend > div.right > ul.section-tree > li {
+    padding-left: 0;
+}
+
+article.main
+    > div.home
+    > div.recommend
+    > div.right
+    > ul.section-tree
+    > li:first-child {
+    padding-top: 0;
+}
+article.main > div.home > div.recommend > div.right ul.section-tree > li.file {
+    margin-top: 6pt;
+}
+
+article.main > div.home > div.recommend > div.right ul.section-tree > li > a {
+    padding: 2pt 4pt;
+    border-radius: 5pt;
+}
+
+article.main
+    > div.home
+    > div.recommend
+    > div.right
+    ul.section-tree
+    > li
+    > a:hover {
+    background-color: #3a3939;
+    color: #c9c9c9 !important;
+}
+
+/*******************
+  * Responsive Styling
+  *******************/
+@media only screen and (max-width: 640px) {
+    article.main > div.home > div.recommend {
+        flex-wrap: wrap;
+    }
+
+    article.main > div.home > div.recommend > div.left,
+    article.main > div.home > div.recommend > div.right {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    article.main > div.home > div.recommend > div:where(.left, .right) > div {
+        margin-bottom: 16pt;
+    }
+}
