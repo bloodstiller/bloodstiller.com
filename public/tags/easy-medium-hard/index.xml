@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Easy-Medium-Hard on Hack Me Daddy</title>
+    <link>http://localhost:1313/tags/easy-medium-hard/</link>
+    <description>Recent content in Easy-Medium-Hard on Hack Me Daddy</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tags/easy-medium-hard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/return-box/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/return-box/</guid>
+      <description>+hugo_front_matter_format: yaml&#xA;Name of box: - Return: Discovery/Enumeration: IP/CIDR Range Scans (Lay of the Land): Indepth Scans:&#xA;Depending on size of scope run either: Top 10,000 ports:&#xA;TCP:&#xA;sudo nmap –top-ports=10000 -sV -oA 10kPortsTCP -iL scopeList UDP:&#xA;sudo nmap –top-ports=10000 -sU -sV -oA 10kPortsUDP -iL scopeList Full TCP port scan:&#xA;Full TCP sudo nmap -p- -sV -A -oA FullTCP -iL scopeList KILL-CHAIN: 1. Enumeration: 2. Foothold: 3. Privesc: 4. Ownership: 5.</description>
+    </item>
+  </channel>
+</rss>

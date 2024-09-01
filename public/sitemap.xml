@@ -2,22 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://bloodstiller.com/</loc>
-    <lastmod>2024-08-30T19:50:29+01:00</lastmod>
+    <loc>http://localhost:1313/author/</loc>
   </url><url>
-    <loc>https://bloodstiller.com/posts/</loc>
-    <lastmod>2024-08-30T19:50:29+01:00</lastmod>
+    <loc>http://localhost:1313/author/bloodstiller/</loc>
   </url><url>
-    <loc>https://bloodstiller.com/posts/testing/</loc>
-    <lastmod>2024-08-30T19:50:29+01:00</lastmod>
+    <loc>http://localhost:1313/tags/box/</loc>
   </url><url>
-    <loc>https://bloodstiller.com/posts/my-first-post/</loc>
-    <lastmod>2024-08-30T17:10:55+01:00</lastmod>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://bloodstiller.com/author/</loc>
+    <loc>http://localhost:1313/tags/easy/</loc>
   </url><url>
-    <loc>https://bloodstiller.com/categories/</loc>
+    <loc>http://localhost:1313/</loc>
   </url><url>
-    <loc>https://bloodstiller.com/tags/</loc>
+    <loc>http://localhost:1313/tags/htb/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/ldap/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/return/return-box/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/windows/</loc>
   </url>
 </urlset>

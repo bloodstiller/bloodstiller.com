@@ -1,0 +1,14 @@
+#+title: org-test
+#+HUGO_BASE_DIR: ../
+#+HUGO_SECTION:
++hugo_front_matter_format: yaml
+#+hugo_custom_front_matter: :draft false
+
+* Testing this
+:PROPERTIES:
+:ID:       b530f00b-dcfa-4311-b97e-4ece48db131f
+:END:
+
+Do you even work here ?
+
+Will this wotk

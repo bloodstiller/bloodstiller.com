@@ -21,13 +21,13 @@
 ;;;
 (("content-org/"
   . ((org-mode . ((eval . (org-hugo-auto-export-mode)))))))
-                                        ;(use-package citeproc-org
-                                        ;:ensure t
-                                        ;:after ox-hugo
-                                        ;:config
-                                        ;(citeproc-org-setup))
+(use-package citeproc-org
+  ensure t
+  after ox-hugo
+  config
+  (citeproc-org-setup))
 
 
 
-(provide '.dirs-locals)
+;;(provide '.dirs-locals)
 ;;; .dirs-locals.el ends here
