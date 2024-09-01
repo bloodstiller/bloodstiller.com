@@ -7,12 +7,5 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Return HTB Box</title>
-      <link>http://localhost:1313/posts/return/return-box/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/return/return-box/</guid>
-      <description>Name of box: - Return: Initial NMAP Scan &amp;amp; Start-Up Responder: I tend to run a very basic nmap scan initially so I can look for low hanging fruit that I can enumerate whilst my more in-depth scans are running:&#xA;In this case it&amp;rsquo;s very useful as we can see that ldap is runing which means we can do a significant amount of enumeration if anonymous bind is enabled. kali in ~ 2GiB/7GiB | 0B/1GiB with /usr/bin/zsh 🕙 11:12:51 zsh ❯ nmap $box Starting Nmap 7.</description>
-    </item>
   </channel>
 </rss>

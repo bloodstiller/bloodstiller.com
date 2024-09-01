@@ -18,6 +18,8 @@
   </url><url>
     <loc>http://localhost:1313/tags/ldap/</loc>
   </url><url>
+    <loc>http://localhost:1313/orgtest/</loc>
+  </url><url>
     <loc>http://localhost:1313/posts/</loc>
   </url><url>
     <loc>http://localhost:1313/posts/return/return-box/</loc>

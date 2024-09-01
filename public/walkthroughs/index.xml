@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Box on Hack Me Daddy</title>
-    <link>http://localhost:1313/tags/box/</link>
-    <description>Recent content in Box on Hack Me Daddy</description>
+    <title>Walkthroughs on Hack Me Daddy</title>
+    <link>http://localhost:1313/walkthroughs/</link>
+    <description>Recent content in Walkthroughs on Hack Me Daddy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/tags/box/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/walkthroughs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Return HTB Box</title>
-      <link>http://localhost:1313/posts/return/return-box/</link>
+      <link>http://localhost:1313/walkthroughs/htb/return/return-box/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/return/return-box/</guid>
+      <guid>http://localhost:1313/walkthroughs/htb/return/return-box/</guid>
       <description>Name of box: - Return: Initial NMAP Scan &amp;amp; Start-Up Responder: I tend to run a very basic nmap scan initially so I can look for low hanging fruit that I can enumerate whilst my more in-depth scans are running:&#xA;In this case it&amp;rsquo;s very useful as we can see that ldap is runing which means we can do a significant amount of enumeration if anonymous bind is enabled. kali in ~ 2GiB/7GiB | 0B/1GiB with /usr/bin/zsh 🕙 11:12:51 zsh ❯ nmap $box Starting Nmap 7.</description>
     </item>
   </channel>
