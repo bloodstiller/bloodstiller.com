@@ -76,11 +76,11 @@ theme = 'dark-theme-editor'
         # Config about your's site logo, remove this item to hide the logo
         [params.header.logo]
             # Where is your site's URL
-            imgUrl = ""
+            imgUrl = "/static/img/CyberPunkRasputinHacker.png"
 
             # If the logo is clickable, where should it be linked?
             # In default, it will linked to the homepage of the site.
-            logoLink = ""
+            logoLink = "https://bloodstiller.com"
 
     # Customized info shown in footer of the page
     [params.footer]
