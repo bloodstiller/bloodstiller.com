@@ -18,13 +18,17 @@
   </url><url>
     <loc>http://localhost:1313/tags/ldap/</loc>
   </url><url>
+    <loc>http://localhost:1313/author/martin/</loc>
+  </url><url>
     <loc>http://localhost:1313/orgtest/</loc>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>http://localhost:1313/walkthroughs/return-box/</loc>
   </url><url>
-    <loc>http://localhost:1313/posts/return/return-box/</loc>
+    <loc>http://localhost:1313/walkthroughs/support-box/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/windows/</loc>
   </url>

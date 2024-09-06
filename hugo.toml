@@ -76,6 +76,7 @@ theme = 'dark-theme-editor'
         # Config about your's site logo, remove this item to hide the logo
         [params.header.logo]
             # Where is your site's URL
+            #
             imgUrl = ""
 
             # If the logo is clickable, where should it be linked?
@@ -148,11 +149,11 @@ theme = 'dark-theme-editor'
     # Parameters applied in the homepage only
     [params.homePage]
         # Long Descripition shown in home page "Start Block". Is is recommended to have the paragraph shorter than 100 words.
-        siteLongDescription = "Hugo is a fast and easy-to-use static website generator written in Go. It renders a complete HTML website from content and templates in a directory, utilizing Markdown files for metadata. It's optimized for speed and suitable for various website types."
+        siteLongDescription = "I swear I will get to this soon."
 
         # If you don't like the title of "siteLongDescription" be "Start" (default),
         # you may change the value of this item to "Description" or something you like.
-        siteLongDescriptionTitle = "Start"
+        siteLongDescriptionTitle = "Hello"
 
         # Param to decide whether to show the most recent blog posts or not. (Default: true)
         showRecentPostsBlock = true

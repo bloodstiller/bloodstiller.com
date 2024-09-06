@@ -1,6 +1,6 @@
 +++
 title = "org-test"
-author = "bloodstiller"
+author = "Martin"
 draft = false
 +++
 
@@ -14,3 +14,6 @@ Work?
 Will this wotk
 
 -   Lets try agian?
+-   This should be working right?
+
+    {{< figure src="/ox-hugo/Logo.png" >}}
