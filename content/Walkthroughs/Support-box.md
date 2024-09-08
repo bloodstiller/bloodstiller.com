@@ -1,6 +1,6 @@
 +++
 tags = ["Box", "HTB", "Easy", "Windows", "LDAP"]
-draft = false
+draft = true
 title = "Support HTB Walkthrough"
 author = "bloodstiller"
 +++
@@ -694,7 +694,7 @@ print(decryptedPass)
     -   {{< figure src="/ox-hugo/2024-09-06-093344_.png" >}}
 
 2.  **I verify the computer was made using PowerView**:
-    -   `Get-AdComputer -identify bloodstiller`
+    -   `Get-AdComputer -identity bloodstiller`
     -   {{< figure src="/ox-hugo/2024-09-06-094807_.png" >}}
         -   **Note**: be patient, this can hang for a number of seconds!
     -   I also grab the SID of the computer as we will need this moving forward:
@@ -781,7 +781,7 @@ print(decryptedPass)
 -   For all intents &amp; purposes we now have everything we need to access the domain, however we need to perform some conversions before we can get RCE on the DC from our linux host, luckily we can do this with the impacket-tool `tickerConverter`
     1.  **We take the base64 encoded string from rubeus and put into a file called** `b64.ticket`:
     2.  **We then decode that ticket whilst piping it into another file called** `admin.kirbi`:
-        -   `base64 -d ticket.kirbi.b64 > admin.kirbi`
+        -   `base64 -d b64.ticket > admin.kirbi`
             -   {{< figure src="/ox-hugo/2024-09-06-135405_.png" >}}
             -   `.kirbi` is the extension required for us to convert our ticket.
 
@@ -794,6 +794,24 @@ print(decryptedPass)
         -   `KR5CCNAME` is an Environment variable used by Kerberos 5 (KRB5) used by Linux as pointer to the `.ccache` file
         -   `KRB5CCNAME=admin.ccache impacket-psexec support.htb/administrator@dc.support.htb -k -no-pass`
             -   {{< figure src="/ox-hugo/2024-09-06-135652_.png" >}}
+
+
+## 5. Pillaging/Persistence: {#5-dot-pillaging-persistence}
+
+-   **Initially I try and run Secrets-Dump but it's not playing ball**:
+    -   {{< figure src="/ox-hugo/2024-09-08-074332_.png" >}}
+
+-   **So I upload** `LaZagne.exe`:
+    -   I find nothing other than the machine hash, which will not be crackable as these are handled by the OS itself, extremely long and rotated often.
+        -   {{< figure src="/ox-hugo/2024-09-08-082550_.png" >}}
+
+-   **Dumping NTDS via netexec**:
+    -   So now I have all the hashes from NTDS, including Domain Admin, I have complete domain ownership.
+        -   {{< figure src="/ox-hugo/2024-09-08-082319_.png" >}}
+
+-   **Verify The Admin Hash Works**:
+    -   {{< figure src="/ox-hugo/2024-09-08-082651_.png" >}}
+    -   It works, so now I can conclude this box as I can regain entry anytime via the Admin hash or any of the hashes I have.
 
 
 ## Lessons Learned: {#lessons-learned}
@@ -809,6 +827,7 @@ print(decryptedPass)
 ### What silly mistakes did I make? {#what-silly-mistakes-did-i-make}
 
 1.  I was an idiot and didn't change my hosts file for ages after a box reboot and couldn't figure out why my LDAP binds were not working.
+2.  Should have dumped NTDS prior to running LaZagne.exe &amp; Secrets-Dump.
 
 
 ### Thoughts: {#thoughts}
