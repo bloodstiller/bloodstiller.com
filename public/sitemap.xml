@@ -22,11 +22,17 @@
   </url><url>
     <loc>http://localhost:1313/orgtest/</loc>
   </url><url>
+    <loc>http://localhost:1313/walkthroughs/remote-box/</loc>
+  </url><url>
     <loc>http://localhost:1313/walkthroughs/return-box/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/seimpersonateprivilege/</loc>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/support-box/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/umbraco/</loc>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/</loc>
   </url><url>

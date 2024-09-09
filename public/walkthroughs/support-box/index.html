@@ -177,6 +177,16 @@
         
             
                 <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
                     <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
                         
                             Return HTB Box
@@ -405,6 +415,7 @@
         <li><a href="#performing-the-attack">Performing the Attack:</a></li>
       </ul>
     </li>
+    <li><a href="#5-dot-pillaging-persistence">5. Pillaging/Persistence:</a></li>
     <li><a href="#lessons-learned">Lessons Learned:</a>
       <ul>
         <li><a href="#what-did-i-learn">What did I learn?</a></li>
@@ -1869,7 +1880,7 @@
 <li>
 <p><strong>I verify the computer was made using PowerView</strong>:</p>
 <ul>
-<li><code>Get-AdComputer -identify bloodstiller</code></li>
+<li><code>Get-AdComputer -identity bloodstiller</code></li>
 <li><figure><img src="/ox-hugo/2024-09-06-094807_.png">
 </figure>
 
@@ -2070,7 +2081,7 @@
 <li>
 <p><strong>We then decode that ticket whilst piping it into another file called</strong> <code>admin.kirbi</code>:</p>
 <ul>
-<li><code>base64 -d ticket.kirbi.b64 &gt; admin.kirbi</code>
+<li><code>base64 -d b64.ticket &gt; admin.kirbi</code>
 <ul>
 <li><figure><img src="/ox-hugo/2024-09-06-135405_.png">
 </figure>
@@ -2112,6 +2123,50 @@
 </ol>
 </li>
 </ul>
+<h2 id="5-dot-pillaging-persistence">5. Pillaging/Persistence:</h2>
+<ul>
+<li>
+<p><strong>Initially I try and run Secrets-Dump but it&rsquo;s not playing ball</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-08-074332_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>So I upload</strong> <code>LaZagne.exe</code>:</p>
+<ul>
+<li>I find nothing other than the machine hash, which will not be crackable as these are handled by the OS itself, extremely long and rotated often.
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-08-082550_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Dumping NTDS via netexec</strong>:</p>
+<ul>
+<li>So now I have all the hashes from NTDS, including Domain Admin, I have complete domain ownership.
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-08-082319_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify The Admin Hash Works</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-08-082651_.png">
+</figure>
+</li>
+<li>It works, so now I can conclude this box as I can regain entry anytime via the Admin hash or any of the hashes I have.</li>
+</ul>
+</li>
+</ul>
 <h2 id="lessons-learned">Lessons Learned:</h2>
 <h3 id="what-did-i-learn">What did I learn?</h3>
 <ol>
@@ -2122,6 +2177,7 @@
 <h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
 <ol>
 <li>I was an idiot and didn&rsquo;t change my hosts file for ages after a box reboot and couldn&rsquo;t figure out why my LDAP binds were not working.</li>
+<li>Should have dumped NTDS prior to running LaZagne.exe &amp; Secrets-Dump.</li>
 </ol>
 <h3 id="thoughts">Thoughts:</h3>
 <ul>
@@ -2184,7 +2240,7 @@
                 <li>
                     
                         Word Count:
-                        5391
+                        5496
                     
                 </li>
             
