@@ -36,10 +36,31 @@
       <description></description>
     </item>
     <item>
+      <title>Lnk</title>
+      <link>http://localhost:1313/tags/lnk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/lnk/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pst</title>
+      <link>http://localhost:1313/tags/pst/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/pst/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>SeImpersonatePrivilege</title>
       <link>http://localhost:1313/tags/seimpersonateprivilege/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/seimpersonateprivilege/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Telnet</title>
+      <link>http://localhost:1313/tags/telnet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/telnet/</guid>
       <description></description>
     </item>
     <item>

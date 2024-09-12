@@ -1,5 +1,5 @@
 +++
-title = "Return HTB Box"
+title = "Return HTB Box Walkthrough"
 author = "bloodstiller"
 tags = ["Box", "HTB", "Easy", "Windows", "LDAP"]
 draft = false
