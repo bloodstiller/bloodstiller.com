@@ -1,7 +1,7 @@
 +++
 tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "kerberos", "SMB"]
 draft = false
-title = "HTB Manager Walkthrough"
+title = "Manager HTB Walkthrough"
 author = "bloodstiller"
 +++
 
