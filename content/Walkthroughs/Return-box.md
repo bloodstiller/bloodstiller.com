@@ -302,3 +302,13 @@ draft = false
 
 1.  I did not try and connect with Evil-Winrm sooner, this isn't a terrible mistake as I was acively enumerating SMB but it is low hangin fruit that I could have seen sooner.
 2.  I initially went after a local admin account, however this was not the right path to take.
+
+## Sign off: {#sign-off}
+
+Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!
+
+Until next time, hack the planet!
+
+&#x2013; Bloodstiller
+
+&#x2013; Get in touch bloodstiller at proton dot me

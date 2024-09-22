@@ -29,6 +29,13 @@
       <description></description>
     </item>
     <item>
+      <title>Kerberos</title>
+      <link>http://localhost:1313/tags/kerberos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/kerberos/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>LDAP</title>
       <link>http://localhost:1313/tags/ldap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -54,6 +61,13 @@
       <link>http://localhost:1313/tags/seimpersonateprivilege/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/seimpersonateprivilege/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SMB</title>
+      <link>http://localhost:1313/tags/smb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/smb/</guid>
       <description></description>
     </item>
     <item>

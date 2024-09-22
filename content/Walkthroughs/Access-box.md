@@ -443,3 +443,13 @@ Now that we know our privesc path I transfer my nc binary over to the host:
 ### What silly mistakes did I make? {#what-silly-mistakes-did-i-make}
 
 1.  Repeatedly trying to use a reverse shell &amp; get nc to work when the GPO was in place.
+
+## Sign off: {#sign-off}
+
+Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!
+
+Until next time, hack the planet!
+
+&#x2013; Bloodstiller
+
+&#x2013; Get in touch bloodstiller at proton dot me

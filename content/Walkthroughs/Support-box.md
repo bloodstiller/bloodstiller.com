@@ -833,3 +833,13 @@ print(decryptedPass)
 ### Thoughts: {#thoughts}
 
 -   Easy my ass&#x2026;.reverse engineering a binary, doing an RBCD kerberos attack that should work but doesn't so we have to export tickets to access remotely. For me this was an easy to medium box.
+
+## Sign off: {#sign-off}
+
+Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!
+
+Until next time, hack the planet!
+
+&#x2013; Bloodstiller
+
+&#x2013; Get in touch bloodstiller at proton dot me

