@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "SeImpersonatePrivilege", "Umbraco"]
+tags = ["Box", "HTB", "Easy", "Active Directory", "Windows", "SeImpersonatePrivilege", "Umbraco"]
 draft = false
 author = "bloodstiller"
 title = "Remote HTB Walkthrough"

