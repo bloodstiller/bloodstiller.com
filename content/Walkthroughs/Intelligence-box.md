@@ -5,8 +5,9 @@ title = "Intelligence HTB Walkthrough"
 author = "bloodstiller"
 +++
 
-## Name of box: - Intelligence {#name-of-box-intelligence}
+## Hack The Box Intelligence Walkthrough/Writeup: {#name-of-box-intelligence}
 
+-   <https://app.hackthebox.com/machines/Intelligence>
 
 ## 1. Enumeration: {#1-dot-enumeration}
 

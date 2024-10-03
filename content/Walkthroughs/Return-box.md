@@ -7,8 +7,9 @@ draft = false
 
 
 
-## Name of box: - Return: {#name-of-box-return}
+## Hack The Box Return Walkthrough/Writeup: {#name-of-box-return}
 
+-   <https://app.hackthebox.com/machines/Return>
 
 ### Initial NMAP Scan &amp; Start-Up Responder: {#initial-nmap-scan-and-start-up-responder}
 

@@ -5,8 +5,9 @@ author = "bloodstiller"
 title = "Remote HTB Walkthrough"
 +++
 
-## Name of box: - Remote {#name-of-box-remote}
+## Hack The Box Remote Walkthrough/Writeup: {#name-of-box-remote}
 
+-   <https://app.hackthebox.com/machines/Remote>
 
 ## 1. Enumeration: {#1-dot-enumeration}
 

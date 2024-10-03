@@ -5,8 +5,9 @@ title = "Manager HTB Walkthrough"
 author = "bloodstiller"
 +++
 
-## Name of box: - Manager {#name-of-box-manager}
+## Hack The Box Manager Walkthrough/Writeup: {#name-of-box-manager}
 
+-   <https://app.hackthebox.com/machines/Manager>
 
 ## 1. Enumeration: {#1-dot-enumeration}
 

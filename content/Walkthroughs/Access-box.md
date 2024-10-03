@@ -5,8 +5,9 @@ title = "Access HTB Walkthrough"
 author = "bloodstiller"
 +++
 
-## Name of box: - Access HTB Walkthrough/Writeup: {#name-of-box-access-htb-walkthrough-writeup}
+## Access Hack The Box Walkthrough/Writeup: {#name-of-box-access-htb-walkthrough-writeup}
 
+-   <https://app.hackthebox.com/machines/Access>
 
 ## 1. Enumeration: {#1-dot-enumeration}
 

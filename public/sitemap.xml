@@ -20,7 +20,11 @@
   </url><url>
     <loc>http://localhost:1313/tags/easy/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/ghostscript/</loc>
+  </url><url>
     <loc>http://localhost:1313/</loc>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/hospital-box/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/htb/</loc>
   </url><url>
@@ -36,13 +40,19 @@
   </url><url>
     <loc>http://localhost:1313/walkthroughs/manager-box/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/medium/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/pst/</loc>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/remote-box/</loc>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/return-box/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/roundcube/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/seimpersonateprivilege/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/selenium/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/smb/</loc>
   </url><url>
