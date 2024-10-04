@@ -139,7 +139,7 @@ author = "bloodstiller"
         ```
 
         -   The functionality level determines the minimum version of Windows server that can be used for a DC.
-            -   Note that any host os can used on **workstations**, however the functionality level determines what the minimum version for DC's and the forest.
+            -   +Note+: That any host os can be used on **workstations**, however the functionality level determines what the minimum version for DC's and the forest.
             -   <https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels>
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
@@ -159,7 +159,7 @@ author = "bloodstiller"
                 | 8                       | Windows Server 2019         |
                 | 9                       | Windows Server 2022         |
 
-                -   Note:
+                -   +Note+:
                     -   Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.
                     -   As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.
 
@@ -482,7 +482,7 @@ But wait, you might ask, "Bloodstiller, how do we actually use this certificate 
 5.  If everything looks good (and why wouldn't it?), the system hands us a Kerberos Ticket Granting Ticket (`TGT`) for that account.
 
 6.  Boom! We now have a TGT for a high-privileged account. We can use this ticket to access resources and wreak havoc with admin privileges.
-    -   **Note**: Certipy extracts this the admin hash from TGT and presents us with it as well as saving the TGT as a `.cacche` file so we can then perform PTT attacks from the comfort of our attack box.
+    -   +Note+: Certipy extracts this the admin hash from TGT and presents us with it as well as saving the TGT as a `.cacche` file so we can then perform PTT attacks from the comfort of our attack box.
 
 <!--listend-->
 

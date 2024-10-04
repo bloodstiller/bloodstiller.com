@@ -62,7 +62,7 @@
       <link>http://localhost:1313/aboutme/</link>
       <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/aboutme/</guid>
-      <description>&lt;h2 id=&#34;hack-the-planet&#34;&gt;Hack the Planet&lt;/h2&gt;&#xA;&lt;p&gt;+Testing+&#xA;Can you hear me? Is this thing on?&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;I&amp;rsquo;m Bloodstiller, an ethical hacker intersted in security &amp;amp; privacy. I have a particular interest in Active Directory (AD) security, focusing on protecting enterprise networks and identity management systems.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;I&amp;rsquo;m constantly trying to explore new techniques and stay updated with the latest threats. With this blog my aims to share insights, tips, and experiences from my journey in hacking.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;hack-the-planet&#34;&gt;Hack the Planet&lt;/h2&gt;&#xA;&lt;p&gt;Can you hear me? Is this thing on?&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;I&amp;rsquo;m Bloodstiller, an ethical hacker intersted in security &amp;amp; privacy. I have a particular interest in Active Directory (AD) security, focusing on protecting enterprise networks and identity management systems.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;I&amp;rsquo;m constantly trying to explore new techniques and stay updated with the latest threats. With this blog my aims to share insights, tips, and experiences from my journey in hacking.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Return HTB Box Walkthrough</title>

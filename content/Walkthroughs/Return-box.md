@@ -134,7 +134,7 @@ draft = false
         ```
 
         -   The functionality level determines the minimum version of Windows server that can be used for a DC.
-            -   Note that any host os can used on **workstations**, however the functionality level determines what the minimum version for DC's and the forest.
+            -   +Note+: Any host os can be used on **workstations**, however the functionality level determines what the minimum version for DC's and the forest.
             -   <https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels>
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
@@ -154,7 +154,7 @@ draft = false
                 | 8                       | Windows Server 2019         |
                 | 9                       | Windows Server 2022         |
 
-                -   Note:
+                -   +Note+:
                     -   Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.
                     -   As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.
 
@@ -265,7 +265,7 @@ draft = false
 ### Attacking the Bin Path &amp; Getting System: {#attacking-the-bin-path-and-getting-system}
 
 -   I am going to see if I can modify the binaries path to point to a binary I control, e.g. NC or a reverse shell. I will then stop the service &amp; restart it again. As the service runs as NT Authority\System it should run my binary with elevate privileges.
-    -   **Note**: Sometimes this is what it is, trying until we find the right route.
+    -   +Note+: Sometimes this is what it is, trying until we find the right route.
 
 
 1.  **Upload my binary, nc.exe**

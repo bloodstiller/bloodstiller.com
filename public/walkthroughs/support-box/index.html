@@ -8,7 +8,6 @@
     <meta name="generator" content="Hugo 0.135.0">
 
     <script src="js/custom.js"></script>
-    <link rel="stylesheet" href="css/7_redchars.css">
     
 
     
@@ -105,8 +104,8 @@
             
             <link
                 rel="stylesheet"
-                href="/_theme/css/05_markdown.db702166e97c5d6c851490bdae6fa24e9b6a327beb473e1b73099ed0f0bd159d1957a5593810e41336bee16414dfb29115545a9fd45b93c21094f7ffeaf5934d.css"
-                integrity="sha512-23AhZul8XWyFFJC9rm&#43;iTptqMnvrRz4bcwme0PC9FZ0ZV6VZOBDkEza&#43;4WQU37KRFVRan9Rbk8IQlPf/6vWTTQ==" />
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
         
             
             <link
@@ -634,7 +633,7 @@
 <li>The functionality level determines the minimum version of Windows server that can be used for a DC.
 <ul>
 <li>
-<p>Note that any host os can used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
+<p>+Note+: Any host os can be used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
 </li>
 <li>
 <p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels</a></p>
@@ -698,7 +697,7 @@
   </tbody>
 </table>
 <ul>
-<li><strong>Note</strong>:
+<li>+Note+:
 <ul>
 <li>Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.</li>
 <li>As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.</li>
@@ -829,7 +828,7 @@
 <ul>
 <li>If you haven&rsquo;t installed Wine in Kali before you need to follow the below steps:
 <ul>
-<li><strong>Note</strong>: Remember when we ran <code>strings</code> on the binary and we saw it was using <code>v.4.8</code> of the <code>.NET</code> framework, well we need that information here to ensure we have the correct version running.
+<li>+Note+: Remember when we ran <code>strings</code> on the binary and we saw it was using <code>v.4.8</code> of the <code>.NET</code> framework, well we need that information here to ensure we have the correct version running.
 
 
 
@@ -908,7 +907,7 @@
 </ul>
 </li>
 <li>
-<p><strong>Note</strong>:</p>
+<p>+Note+:</p>
 <ul>
 <li>One thing that is interesting is that this program does not appear to take a password/creds as an argument &amp; it also appears to have some LDAP strings within it. Which means unless the entire domain is running without the need the need for authentication (i doubt it) then there must be some hard-coded LDAP creds within this program.</li>
 </ul>
@@ -1676,7 +1675,7 @@
 <li>IT IS!! We have a valid way into the domain!</li>
 </ul>
 </li>
-<li><del>Note</del>:
+<li>+Note+:
 <ul>
 <li>Due to this discovery I have now added the below search to my notes so that in future I also check the &ldquo;info&rdquo; field for passwords:
 <ul>
@@ -1946,7 +1945,7 @@
 </figure>
 
 <ul>
-<li><strong>Note</strong>: be patient, this can hang for a number of seconds!</li>
+<li>+Note+: be patient, this can hang for a number of seconds!</li>
 </ul>
 </li>
 <li>I also grab the SID of the computer as we will need this moving forward:
@@ -1975,7 +1974,7 @@
 <p><!-- raw HTML omitted -->Add our computer as to the <code>PrincipalAllowedToDelegateToAccount</code> value<!-- raw HTML omitted -->:</p>
 <ul>
 <li><code>Set-ADComputer -Identity DC -PrincipalsAllowedToDelegateToAccount bloodstiller$</code></li>
-<li><strong>Note</strong>: be patient, this can hang for a number of seconds!</li>
+<li>+Note+: be patient, this can hang for a number of seconds!</li>
 </ul>
 </li>
 <li>
@@ -2073,7 +2072,7 @@
 <li><code>/password:hackme</code>: Specifies the password for the user (hackme).</li>
 <li><code>/user:bloodstiller$</code>: Specifies the username of the account we want the password for (bloodstiller$).
 <ul>
-<li>Note we have the <code>$</code> as this is a machine account</li>
+<li>+Note+: we have the <code>$</code> as this is a machine account</li>
 </ul>
 </li>
 <li><code>/domain:support.htb</code>: Specifies the domain (support.htb).</li>
@@ -2392,8 +2391,8 @@
         
         <script
             type="text/javascript"
-            src="/_theme/js/custom.a9891fa94525a74c3e14bc9608a852c64f570d3c41e1b1642862cba56b0c28ba6a439a4269d2f63705f0a5db23afe0a79f2e44379f69f0b14ac0050fc69a5ff9.js"
-            integrity="sha512-qYkfqUUlp0w&#43;FLyWCKhSxk9XDTxB4bFkKGLLpWsMKLpqQ5pCadL2NwXwpdsjr&#43;Cnny5EN59p8LFKwAUPxppf&#43;Q=="></script>
+            src="/_theme/js/custom.baf1622c95b2ed38ea638ca259c323d2a5537d258fb923994e97539b4c4ecf706c7992482768366adddcb83153dce8c33f5fc95a5c8abe6b2a03046892509fae.js"
+            integrity="sha512-uvFiLJWy7TjqY4yiWcMj0qVTfSWPuSOZTpdTm0xOz3BseZJIJ2g2at3cuDFT3OjDP1/JWlyKvmsqAwRoklCfrg=="></script>
     
         
         <script

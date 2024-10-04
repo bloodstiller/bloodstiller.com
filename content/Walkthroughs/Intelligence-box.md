@@ -177,7 +177,7 @@ author = "bloodstiller"
         ```
 
         -   The functionality level determines the minimum version of Windows server that can be used for a DC.
-            -   +Note+ that any host os can used on **workstations**, however the functionality level determines what the minimum version for DC's and the forest.
+            -   +Note+: Any host os can be used on **workstations**, however the functionality level determines what the minimum version for DC's and the forest.
             -   <https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels>
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
@@ -415,8 +415,6 @@ for d in days:
 
 -   We can use the tool [dnstool](https://github.com/dirkjanm/krbrelayx) which is part of [krbrelayx](https://github.com/dirkjanm/krbrelayx).
     -   This tool enables us to "Add/modify/delete Active Directory Integrated DNS records via LDAP."
-
-<span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline"><span class="underline">\_\_</span></span></span></span></span></span></span></span></span></span></span></span></span>-
 
 -   **Clone The Repo**:
     -   `git clone https://github.com/dirkjanm/krbrelayx.git /opt/krbrelayx`

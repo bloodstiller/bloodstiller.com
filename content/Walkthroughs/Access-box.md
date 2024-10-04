@@ -156,7 +156,7 @@ Nmap done: 1 IP address (1 host up) scanned in 382.99 seconds
 
 -   **Alt options**:
     -   I find the website: <https://www.mdbopener.com/> which let you upload the file &amp; have it extract all the tables to `.csv` files.
-    -   **Note**: I WOULD NEVER DO THIS OR SUGGEST THIS ON AN ENGAGEMENT!!!!
+    -   +Note+: I WOULD NEVER DO THIS OR SUGGEST THIS ON AN ENGAGEMENT!!!!
         -   But this is an option for this challenge/box. (I chose not too as I want to make it as close to life as possible for me)
 
 

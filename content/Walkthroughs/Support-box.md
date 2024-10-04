@@ -86,7 +86,7 @@ author = "bloodstiller"
         ```
 
         -   The functionality level determines the minimum version of Windows server that can be used for a DC.
-            -   Note that any host os can used on **workstations**, however the functionality level determines what the minimum version for DC's and the forest.
+            -   +Note+: Any host os can be used on **workstations**, however the functionality level determines what the minimum version for DC's and the forest.
             -   <https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels>
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
@@ -106,7 +106,7 @@ author = "bloodstiller"
                 | 8                       | Windows Server 2019         |
                 | 9                       | Windows Server 2022         |
 
-                -   **Note**:
+                -   +Note+:
                     -   Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.
                     -   As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.
 
@@ -168,7 +168,7 @@ As it's a windows binary we can either run it in windows or use Wine, as I run A
         -   We can see it's 32bit so we need to install 32bit support for wine also.
     -   <span class="underline">Detour, Lets install Wine on Kali Together</span>:
         -   If you haven't installed Wine in Kali before you need to follow the below steps:
-            -   **Note**: Remember when we ran `strings` on the binary and we saw it was using `v.4.8` of the `.NET` framework, well we need that information here to ensure we have the correct version running.
+            -   +Note+: Remember when we ran `strings` on the binary and we saw it was using `v.4.8` of the `.NET` framework, well we need that information here to ensure we have the correct version running.
                 ```shell
                 # This is the what enables 32 bit architecture.
                 sudo dpkg --add-architecture i386
@@ -200,7 +200,7 @@ As it's a windows binary we can either run it in windows or use Wine, as I run A
     -   {{< figure src="/ox-hugo/2024-09-03-091507_.png" >}}
         -   I see that I get a lot of traffic, however what is interesting is I am only getting the latter half of the connection as with LDAP there should be a bind request happening, however I am only getting the unbind&#x2026;which is strange.
             -   Typically with the bind request the password, DN and auth types are passed but this is not present here. It could be `Wine` being unreliable so back to the drawing board.
--   **Note**:
+-   +Note+:
     -   One thing that is interesting is that this program does not appear to take a password/creds as an argument &amp; it also appears to have some LDAP strings within it. Which means unless the entire domain is running without the need the need for authentication (i doubt it) then there must be some hard-coded LDAP creds within this program.
 
 
@@ -535,7 +535,7 @@ print(decryptedPass)
     -   I verify if it is valid using netexec:
         -   {{< figure src="/ox-hugo/2024-09-05-072852_.png" >}}
             -   IT IS!! We have a valid way into the domain!
-        -   ~~Note~~:
+        -   +Note+:
             -   Due to this discovery I have now added the below search to my notes so that in future I also check the "info" field for passwords:
                 -   `ldapsearch -H ldap://$box -D ldap@<domain>.<domain> -w '<Password>' -b "dc=<domain>,dc=<domain>" -s sub "(&(objectClass=user)(info=*))"`
 
@@ -697,7 +697,7 @@ print(decryptedPass)
 2.  **I verify the computer was made using PowerView**:
     -   `Get-AdComputer -identity bloodstiller`
     -   {{< figure src="/ox-hugo/2024-09-06-094807_.png" >}}
-        -   **Note**: be patient, this can hang for a number of seconds!
+        -   +Note+: be patient, this can hang for a number of seconds!
     -   I also grab the SID of the computer as we will need this moving forward:
         -   `S-1-5-21-1677581083-3380853377-188903654-6101`
 
@@ -711,7 +711,7 @@ print(decryptedPass)
 
     2.  <span class="underline">Add our computer as to the `PrincipalAllowedToDelegateToAccount` value</span>:
         -   `Set-ADComputer -Identity DC -PrincipalsAllowedToDelegateToAccount bloodstiller$`
-        -   **Note**: be patient, this can hang for a number of seconds!
+        -   +Note+: be patient, this can hang for a number of seconds!
 
     3.  <span class="underline">Verify the attribute is set</span>:
         -   `Get-ADComputer -Identity DC -Properties PrincipalsAllowedToDelegateToAccount`
@@ -748,7 +748,7 @@ print(decryptedPass)
             -   `hash`: Instructs Rubeus to extract a hash.
             -   `/password:hackme`: Specifies the password for the user (hackme).
             -   `/user:bloodstiller$`: Specifies the username of the account we want the password for (bloodstiller$).
-                -   Note we have the `$` as this is a machine account
+                -   +Note+: we have the `$` as this is a machine account
             -   `/domain:support.htb`: Specifies the domain (support.htb).
     -   {{< figure src="/ox-hugo/2024-09-06-131233_.png" >}}
     -   We need this so we can craft tickets.
