@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <link rel="stylesheet" href="/css/6_image.css">
     <meta name="generator" content="Hugo 0.135.0">
 
+    <script src="js/custom.js"></script>
     
 
     
@@ -104,8 +104,8 @@
             
             <link
                 rel="stylesheet"
-                href="/_theme/css/05_markdown.3dfa67019948021bac47127fc3871ea0ea2653a0ab6c259457c2d876dcbe0a26bccd10c948b74afee0afc53dec91c0084112a7fdaed666956f19a48e8346ffc7.css"
-                integrity="sha512-PfpnAZlIAhusRxJ/w4ceoOomU6CrbCWUV8LYdty&#43;Cia8zRDJSLdK/uCvxT3skcAIQRKn/a7WZpVvGaSOg0b/xw==" />
+                href="/_theme/css/05_markdown.db702166e97c5d6c851490bdae6fa24e9b6a327beb473e1b73099ed0f0bd159d1957a5593810e41336bee16414dfb29115545a9fd45b93c21094f7ffeaf5934d.css"
+                integrity="sha512-23AhZul8XWyFFJC9rm&#43;iTptqMnvrRz4bcwme0PC9FZ0ZV6VZOBDkEza&#43;4WQU37KRFVRan9Rbk8IQlPf/6vWTTQ==" />
         
             
             <link
@@ -127,6 +127,8 @@
     
 
     
+
+
 </head>
 
 
@@ -783,7 +785,7 @@
 <li>The functionality level determines the minimum version of Windows server that can be used for a DC.
 <ul>
 <li>
-<p>Note that any host os can used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
+<p>+Note+ that any host os can used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
 </li>
 <li>
 <p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels</a></p>
@@ -847,7 +849,7 @@
   </tbody>
 </table>
 <ul>
-<li>Note:
+<li>+Note+:
 <ul>
 <li>Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.</li>
 <li>As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.</li>
@@ -952,7 +954,7 @@
 </figure>
 
 <ul>
-<li><strong>Note</strong>: It&rsquo;s really important we put the leading zero&rsquo;s by utilizing format string literals as otherwise number&rsquo;s <code>1-9</code> will miss the leading zeros and as we can see this format is utilizing 2 digits to represent the month &amp; day so we would miss potential entries.</li>
+<li>+Note+: It&rsquo;s really important we put the leading zero&rsquo;s by utilizing format string literals as otherwise number&rsquo;s <code>1-9</code> will miss the leading zeros and as we can see this format is utilizing 2 digits to represent the month &amp; day so we would miss potential entries.</li>
 </ul>
 </li>
 </ul>
@@ -1284,7 +1286,7 @@
 <p><strong>I make <code>dns</code>  entry</strong>:</p>
 <ul>
 <li><code>python3 dnstool.py $box -u intelligence\\$user -p $pass --action add --record web-bloodstiller --data $myip --type A</code></li>
-<li><strong>Note</strong>:
+<li>+Note+:
 <ul>
 <li>It requires the hostname/ip as an argument but there is no flag for it, it just accepts it.</li>
 <li><figure><img src="/ox-hugo/2024-09-29-101431_.png">
@@ -1537,7 +1539,7 @@ There are two primary methods of remotely modifying an ADIDNS zone. The first in
 <li><figure><img src="/ox-hugo/2024-09-29-164539_.png">
 </figure>
 </li>
-<li><strong>Note</strong>: The only reason I do this is because it&rsquo;s neater visually, there is no other reason to do this other than personal preference, that is all.</li>
+<li>+Note+: The only reason I do this is because it&rsquo;s neater visually, there is no other reason to do this other than personal preference, that is all.</li>
 </ul>
 </li>
 <li>
@@ -1806,6 +1808,12 @@ There are two primary methods of remotely modifying an ADIDNS zone. The first in
             type="text/javascript"
             src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
             integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.86f31c301ad859011cdcc15dc49f06d5772ba8d455e6877d4b8ef6f174da44df455344587199273bbe00b485300b4895536400058afbe6e64ff8092de01f497b.js"
+            integrity="sha512-hvMcMBrYWQEc3MFdxJ8G1XcrqNRV5od9S4728XTaRN9FU0RYcZknO74AtIUwC0iVU2QABYr75uZP&#43;Akt4B9Jew=="></script>
     
         
         <script

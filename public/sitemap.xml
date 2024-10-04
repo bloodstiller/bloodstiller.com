@@ -2,72 +2,105 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/aboutme/</loc>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/access-box/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/active-directory/</loc>
-  </url><url>
     <loc>http://localhost:1313/author/</loc>
+    <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/bloodstiller/</loc>
+    <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/box/</loc>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/dns/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/easy/</loc>
+    <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/escape-box/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/ghostscript/</loc>
+    <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/hospital-box/</loc>
+    <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/htb/</loc>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/intelligence-box/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/kcd/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/kerberos/</loc>
+    <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/ldap/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/lnk/</loc>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/manager-box/</loc>
+    <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/medium/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/pst/</loc>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/remote-box/</loc>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/return-box/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/roundcube/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/seimpersonateprivilege/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/selenium/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/smb/</loc>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/support-box/</loc>
+    <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/telnet/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/umbraco/</loc>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/</loc>
+    <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/windows/</loc>
+    <lastmod>2024-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ghostscript/</loc>
+    <lastmod>2024-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/hospital-box/</loc>
+    <lastmod>2024-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/roundcube/</loc>
+    <lastmod>2024-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/selenium/</loc>
+    <lastmod>2024-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/</loc>
+    <lastmod>2024-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/active-directory/</loc>
+    <lastmod>2024-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/dns/</loc>
+    <lastmod>2024-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/intelligence-box/</loc>
+    <lastmod>2024-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/kcd/</loc>
+    <lastmod>2024-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/kerberos/</loc>
+    <lastmod>2024-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/easy/</loc>
+    <lastmod>2024-09-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/manager-box/</loc>
+    <lastmod>2024-09-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/smb/</loc>
+    <lastmod>2024-09-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/access-box/</loc>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/lnk/</loc>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pst/</loc>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/telnet/</loc>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/remote-box/</loc>
+    <lastmod>2024-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/seimpersonateprivilege/</loc>
+    <lastmod>2024-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/umbraco/</loc>
+    <lastmod>2024-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/support-box/</loc>
+    <lastmod>2024-09-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/aboutme/</loc>
+    <lastmod>2024-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/return-box/</loc>
+    <lastmod>2024-09-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>

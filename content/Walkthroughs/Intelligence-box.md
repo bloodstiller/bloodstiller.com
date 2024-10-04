@@ -177,7 +177,7 @@ author = "bloodstiller"
         ```
 
         -   The functionality level determines the minimum version of Windows server that can be used for a DC.
-            -   Note that any host os can used on **workstations**, however the functionality level determines what the minimum version for DC's and the forest.
+            -   +Note+ that any host os can used on **workstations**, however the functionality level determines what the minimum version for DC's and the forest.
             -   <https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels>
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
@@ -197,7 +197,7 @@ author = "bloodstiller"
                 | 8                       | Windows Server 2019         |
                 | 9                       | Windows Server 2022         |
 
-                -   Note:
+                -   +Note+:
                     -   Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.
                     -   As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.
 
@@ -238,7 +238,7 @@ author = "bloodstiller"
 -   **Creating a Simple Wordlist**:
     -   All of seclists are very long so I make a new list from 0-32 using a simple python terminal &amp; save that to my personal wordlists list:
         -   {{< figure src="/ox-hugo/2024-09-27-184117_.png" >}}
-            -   **Note**: It's really important we put the leading zero's by utilizing format string literals as otherwise number's `1-9` will miss the leading zeros and as we can see this format is utilizing 2 digits to represent the month &amp; day so we would miss potential entries.
+            -   +Note+: It's really important we put the leading zero's by utilizing format string literals as otherwise number's `1-9` will miss the leading zeros and as we can see this format is utilizing 2 digits to represent the month &amp; day so we would miss potential entries.
 
 -   **Running FFUF**:
     -   `ffuf -w ~/Wordlists/45.06-CustomWordlists/numbersDays-1-31.txt:FIRST -w ~/Wordlists/45.06-CustomWordlists/numbersDays-1-31.txt:SECOND -u http://10.129.95.154/Documents/2020-FIRST-SECOND-upload.pdf`
@@ -427,7 +427,7 @@ for d in days:
 
 -   **I make `dns`  entry**:
     -   `python3 dnstool.py $box -u intelligence\\$user -p $pass --action add --record web-bloodstiller --data $myip --type A`
-    -   **Note**:
+    -   +Note+:
         -   It requires the hostname/ip as an argument but there is no flag for it, it just accepts it.
         -   {{< figure src="/ox-hugo/2024-09-29-101431_.png" >}}
 
@@ -554,7 +554,7 @@ for d in days:
 
 -   **First I rename the** `.ccache`:
     -   {{< figure src="/ox-hugo/2024-09-29-164539_.png" >}}
-    -   **Note**: The only reason I do this is because it's neater visually, there is no other reason to do this other than personal preference, that is all.
+    -   +Note+: The only reason I do this is because it's neater visually, there is no other reason to do this other than personal preference, that is all.
 
 -   **Load the** `.ccache` **into the** `KRB5CCNAME` **variable**:
     -   The `KRB5CCNAME` environment is variable used by Kerberos 5 (KRB5) as a pointer to the `.cacche` which actually stores the creds.

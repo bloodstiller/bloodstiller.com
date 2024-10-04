@@ -1,10 +1,11 @@
 +++
 title = "about me"
 author = "bloodstiller"
+date = 2024-09-02
 draft = false
 +++
 
-## Testing this {#testing-this}
+## Hack the Planet
 
 Can you hear me? Is this thing on?
 
