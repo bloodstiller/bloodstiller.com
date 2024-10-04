@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    
+    <link rel="stylesheet" href="/css/style.css">
     <meta name="generator" content="Hugo 0.135.0">
 
     
@@ -103,8 +104,14 @@
             
             <link
                 rel="stylesheet"
-                href="/_theme/css/05_markdown.c36845ad92ed66ad12c3fe7d5317167c3eab3361616252a52d1758063294d08a7ac6d218fdcd516973c7a9a66faf3ee9c3dec654a17dddda4444675e53e62785.css"
-                integrity="sha512-w2hFrZLtZq0Sw/59UxcWfD6rM2FhYlKlLRdYBjKU0Ip6xtIY/c1RaXPHqaZvrz7pw97GVKF93dpERGdeU&#43;YnhQ==" />
+                href="/_theme/css/05_markdown.3dfa67019948021bac47127fc3871ea0ea2653a0ab6c259457c2d876dcbe0a26bccd10c948b74afee0afc53dec91c0084112a7fdaed666956f19a48e8346ffc7.css"
+                integrity="sha512-PfpnAZlIAhusRxJ/w4ceoOomU6CrbCWUV8LYdty&#43;Cia8zRDJSLdK/uCvxT3skcAIQRKn/a7WZpVvGaSOg0b/xw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
         
 
     
@@ -316,7 +323,7 @@
                         class="readtime"
                         title="Time to Read">
                         <i class="bi bi-clock"></i>
-                        22 mins to read
+                        23 mins to read
                     </div>
                 
             </div>
@@ -451,7 +458,6 @@
         <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
         <li><a href="#smb-445">SMB <code>445</code>:</a></li>
         <li><a href="#dns-53">DNS <code>53</code>:</a></li>
-        <li><a href="#ssh-22">SSH <code>22</code>:</a></li>
         <li><a href="#https-443">HTTPS <code>443</code>:</a></li>
         <li><a href="#http-proxy-8080">HTTP-PROXY <code>8080</code>:</a></li>
       </ul>
@@ -459,7 +465,7 @@
     <li><a href="#2-dot-foothold">2. Foothold:</a>
       <ul>
         <li><a href="#using-weevley-to-get-a-web-shell">Using Weevley To Get A Web Shell:</a></li>
-        <li><a href="#getting-around-the-timeout-using-weevely-s-build-in-reverse-shell">Getting around the timeout Using Weevely&rsquo;s build in reverse shell:</a></li>
+        <li><a href="#getting-around-the-timeout-using-weevely-s-build-in-reverse-shell">Getting around the timeout Using Weevely&rsquo;s built in reverse shell:</a></li>
         <li><a href="#finding-mysql-creds-in-config-dot-php">Finding Mysql Creds in <code>config.php</code>:</a></li>
         <li><a href="#understanding-the-upload-mechansim">Understanding the Upload Mechansim:</a></li>
         <li><a href="#trying-to-connect-to-the-mysql-instance">Trying to connect to the mysql instance:</a></li>
@@ -967,7 +973,6 @@
 </ul>
 </li>
 </ul>
-<h3 id="ssh-22">SSH <code>22</code>:</h3>
 <h3 id="https-443">HTTPS <code>443</code>:</h3>
 <h4 id="web-mail-service-discovery">Web Mail Service Discovery:</h4>
 <ul>
@@ -1264,6 +1269,7 @@
 
 <ul>
 <li>This leads me to believe the uploaded file is being processed/renamed on upload.</li>
+<li>Future bloodstiller here, no this is wrong. THis is because I put <code>.jpg</code> in my request instead of <code>.jpeg</code>. Always copy and paste guys</li>
 </ul>
 </li>
 </ul>
@@ -1495,7 +1501,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="getting-around-the-timeout-using-weevely-s-build-in-reverse-shell">Getting around the timeout Using Weevely&rsquo;s build in reverse shell:</h3>
+<h3 id="getting-around-the-timeout-using-weevely-s-build-in-reverse-shell">Getting around the timeout Using Weevely&rsquo;s built in reverse shell:</h3>
 <ul>
 <li>I believe the easiest way to get around the time out will be to on connection immediately trigger a manual reverse shell back to ourselves from the weevley shell and background the task to ensure the connection remains.
 <ol>
@@ -2305,7 +2311,7 @@
                 <li>
                     
                         Word Count:
-                        4672
+                        4694
                     
                 </li>
             

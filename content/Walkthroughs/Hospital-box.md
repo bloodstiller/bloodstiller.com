@@ -273,9 +273,6 @@ author = "bloodstiller"
         -   Nothing of note
 
 
-### SSH `22`: {#ssh-22}
-
-
 ### HTTPS `443`: {#https-443}
 
 
@@ -416,6 +413,7 @@ http://10.129.229.189:8080/vendor/animate/
     -   Looking at the request and response in `burp` we can see that it was a valid upload:
         -   {{< figure src="/ox-hugo/2024-09-30-090529_.png" >}}
             -   This leads me to believe the uploaded file is being processed/renamed on upload.
+            -   Future bloodstiller here, no this is wrong. THis is because I put `.jpg` in my request instead of `.jpeg`. Always copy and paste guys
 
 -   **Uploading a webshell**:
     -   I create a php webshell:
@@ -515,7 +513,7 @@ http://10.129.229.189:8080/vendor/animate/
     -   I did notice that when trying to access my `phpinfo` enumeration file that it also times out, which leads me to believe there is some sort of timeout in place for uploaded files.
 
 
-### Getting around the timeout Using Weevely's build in reverse shell: {#getting-around-the-timeout-using-weevely-s-build-in-reverse-shell}
+### Getting around the timeout Using Weevely's built in reverse shell: {#getting-around-the-timeout-using-weevely-s-build-in-reverse-shell}
 
 -   I believe the easiest way to get around the time out will be to on connection immediately trigger a manual reverse shell back to ourselves from the weevley shell and background the task to ensure the connection remains.
     1.  **Prepare my listener**:

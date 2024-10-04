@@ -221,7 +221,7 @@ draft = false
         -   Shut down the computer.
 
 
-#### "why `SeBackupPrivilege` is dangerous: {#why-sebackupprivilege-is-dangerous}
+#### "why `SeBackupPrivilege`" is dangerous: {#why-sebackupprivilege-is-dangerous}
 
 -   Here is why `SeBackupPrivilege` is so dangerous if we control a user who has the privilege:
 -   The privilege will let us copy ANY file from a folder, even if there is no access control entry (ACE) for us in the folder's access control list (ACL)

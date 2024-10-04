@@ -5,7 +5,7 @@ title = "Support HTB Walkthrough"
 author = "bloodstiller"
 +++
 
-## Hack The Box Support Walkthrough/Writeup: {#name-of-box-htb-support}
+## Intelligence Hack The Box Support Walkthrough/Writeup: {#name-of-box-htb-support}
 
 -   <https://app.hackthebox.com/machines/Support>
 
