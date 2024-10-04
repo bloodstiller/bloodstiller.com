@@ -2,6 +2,7 @@
 tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "GhostScript", "Selenium", "RoundCube"]
 draft = false
 title = "Hospital HTB Walkthrough"
+date = 2024-10-03
 author = "bloodstiller"
 +++
 

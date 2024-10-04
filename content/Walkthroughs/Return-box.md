@@ -2,6 +2,7 @@
 title = "Return HTB Box Walkthrough"
 author = "bloodstiller"
 tags = ["Box", "HTB", "Easy", "Windows", "LDAP"]
+date = 2024-09-01
 draft = false
 +++
 

@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link rel="stylesheet" href="/css/6_image.css">
+    <meta name="generator" content="Hugo 0.135.0">
+
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Saucy Monk" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Escape HTB Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.e6eadce601966e1bc2d798a6a4b94edc31360559ec0c7efd94e31d855914e918a88c9bddfabc11200357a22ce33ebdfd27c70fdd76cc8d155e9633bab42e0f76.css"
+                integrity="sha512-5urc5gGWbhvC15impLlO3DE2BVnsDH79lOMdhVkU6RiojJvd&#43;rwRIANXoizjPr39J8cP3XbMjRVeljO6tC4Pdg==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.3dfa67019948021bac47127fc3871ea0ea2653a0ab6c259457c2d876dcbe0a26bccd10c948b74afee0afc53dec91c0084112a7fdaed666956f19a48e8346ffc7.css"
+                integrity="sha512-PfpnAZlIAhusRxJ/w4ceoOomU6CrbCWUV8LYdty&#43;Cia8zRDJSLdK/uCvxT3skcAIQRKn/a7WZpVvGaSOg0b/xw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Escape HTB Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Box Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/escape-box/" title="./escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Escape HTB Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.04.10"
+                            >2024.04.10
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        8 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/medium/"
+                            class="tag-btn">
+                            Medium
+                        </a>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/ldap/"
+                            class="tag-btn">
+                            LDAP
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/escape-box/" class="bread-btn">
+    
+
+    
+        
+            Escape HTB Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#escape-hack-the-box-walkthrough-writeup">Escape Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#rpc-135-and-593-rpc-over-http">RPC <code>135</code> &amp; <code>593</code> RPC Over HTTP:</a></li>
+        <li><a href="#mssql-1433">MSSQL <code>1433</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a></li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a></li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a></li>
+    <li><a href="#5-dot-persistence">5. Persistence:</a></li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+    <li><a href="#9c69d6"><del>CREDS</del>:</a>
+      <ul>
+        <li><a href="#ssh-keys">SSH Keys:</a></li>
+        <li><a href="#compiled-usernames-passwords-and-hashes">Compiled Usernames, Passwords &amp; Hashes:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="escape-hack-the-box-walkthrough-writeup">Escape Hack The Box Walkthrough/Writeup:</h2>
+<ul>
+<li><a href="https://app.hackthebox.com/machines/%3CBoxName%3E">https://app.hackthebox.com/machines/%3CBoxName%3E</a></li>
+</ul>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="nmap">NMAP:</h3>
+<ul>
+<li>
+<p><strong>Basic Scan</strong>:</p>
+<ul>
+<li><code>nmap $box -Pn -oA basicScan</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20kali%20in%2046.02-HTB/BlogEntriesMade/Escape/scans/nmap%20%202GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%20%20%ef%95%99%2008:21:02%20zsh%20%e2%9d%af%20nmap%20$box%20-Pn%20-oA%20basicScan%0a%20%20Starting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-10-04%2008:21%20BST%0a%20%20Nmap%20scan%20report%20for%2010.129.228.253%0a%20%20Host%20is%20up%20%280.042s%20latency%29.%0a%20%20Not%20shown:%20988%20filtered%20tcp%20ports%20%28no-response%29%0a%20%20PORT%20%20%20%20%20STATE%20SERVICE%0a%20%2053/tcp%20%20%20open%20%20domain%0a%20%2088/tcp%20%20%20open%20%20kerberos-sec%0a%20%20135/tcp%20%20open%20%20msrpc%0a%20%20139/tcp%20%20open%20%20netbios-ssn%0a%20%20389/tcp%20%20open%20%20ldap%0a%20%20445/tcp%20%20open%20%20microsoft-ds%0a%20%20464/tcp%20%20open%20%20kpasswd5%0a%20%20593/tcp%20%20open%20%20http-rpc-epmap%0a%20%20636/tcp%20%20open%20%20ldapssl%0a%20%201433/tcp%20open%20%20ms-sql-s%0a%20%203268/tcp%20open%20%20globalcatLDAP%0a%20%203269/tcp%20open%20%20globalcatLDAPssl%0a%0a%20%20Nmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%2012.52%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  kali in 46.02-HTB/BlogEntriesMade/Escape/scans/nmap  2GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>   08:21:02 zsh ❯ nmap $box -Pn -oA basicScan
+</span></span><span style="display:flex;"><span>  Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-10-04 08:21 BST
+</span></span><span style="display:flex;"><span>  Nmap scan report <span style="color:#66d9ef">for</span> 10.129.228.253
+</span></span><span style="display:flex;"><span>  Host is up <span style="color:#f92672">(</span>0.042s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Not shown: <span style="color:#ae81ff">988</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  PORT     STATE SERVICE
+</span></span><span style="display:flex;"><span>  53/tcp   open  domain
+</span></span><span style="display:flex;"><span>  88/tcp   open  kerberos-sec
+</span></span><span style="display:flex;"><span>  135/tcp  open  msrpc
+</span></span><span style="display:flex;"><span>  139/tcp  open  netbios-ssn
+</span></span><span style="display:flex;"><span>  389/tcp  open  ldap
+</span></span><span style="display:flex;"><span>  445/tcp  open  microsoft-ds
+</span></span><span style="display:flex;"><span>  464/tcp  open  kpasswd5
+</span></span><span style="display:flex;"><span>  593/tcp  open  http-rpc-epmap
+</span></span><span style="display:flex;"><span>  636/tcp  open  ldapssl
+</span></span><span style="display:flex;"><span>  1433/tcp open  ms-sql-s
+</span></span><span style="display:flex;"><span>  3268/tcp open  globalcatLDAP
+</span></span><span style="display:flex;"><span>  3269/tcp open  globalcatLDAPssl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 12.52 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Some interesting enumeration paths already</strong>:
+<ul>
+<li><code>53</code> - DNS:
+<ul>
+<li>We can check for interesting records:</li>
+</ul>
+</li>
+<li><code>88</code> - Kerberos:
+<ul>
+<li>We can use kerbrute to bruteforce users using pre-auth.</li>
+</ul>
+</li>
+<li><code>445</code> - Good ol&rsquo; smb:
+<ul>
+<li>We can check for null sessions.</li>
+</ul>
+</li>
+<li><code>389</code> - LDAP:
+<ul>
+<li>We can check for anonymous binds and enumerate the domain.</li>
+</ul>
+</li>
+<li><code>1443</code> - MSSQL:
+<ul>
+<li>A good target in general to go after.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>In depth scan</strong>:</p>
+<ul>
+<li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code></li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%2046.02-HTB/BlogEntriesMade/Escape/scans/nmap%20%202GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%20%20took%2012s%0a%ef%95%99%2008:21:23%20zsh%20%e2%9d%af%20sudo%20nmap%20-p-%20-sV%20-sC%20-O%20-Pn%20--disable-arp-ping%20$box%20-oA%20FullTCP%0a[sudo]%20password%20for%20kali:%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-10-04%2008:21%20BST%0aNmap%20scan%20report%20for%2010.129.228.253%0aHost%20is%20up%20%280.038s%20latency%29.%0aNot%20shown:%2065515%20filtered%20tcp%20ports%20%28no-response%29%0aPORT%20%20%20%20%20%20STATE%20SERVICE%20%20%20%20%20%20%20VERSION%0a53/tcp%20%20%20%20open%20%20domain%20%20%20%20%20%20%20%20Simple%20DNS%20Plus%0a88/tcp%20%20%20%20open%20%20kerberos-sec%20%20Microsoft%20Windows%20Kerberos%20%28server%20time:%202024-10-04%2015:24:15Z%29%0a135/tcp%20%20%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a139/tcp%20%20%20open%20%20netbios-ssn%20%20%20Microsoft%20Windows%20netbios-ssn%0a389/tcp%20%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20sequel.htb0.,%20Site:%20Default-First-Site-Name%29%0a%7c%20ssl-cert:%20Subject:%0a%7c%20Subject%20Alternative%20Name:%20DNS:dc.sequel.htb,%20DNS:sequel.htb,%20DNS:sequel%0a%7c%20Not%20valid%20before:%202024-01-18T23:03:57%0a%7c_Not%20valid%20after:%20%202074-01-05T23:03:57%0a%7c_ssl-date:%202024-10-04T15:25:48&#43;00:00;%20&#43;8h00m00s%20from%20scanner%20time.%0a445/tcp%20%20%20open%20%20microsoft-ds?%0a464/tcp%20%20%20open%20%20kpasswd5?%0a593/tcp%20%20%20open%20%20ncacn_http%20%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a636/tcp%20%20%20open%20%20ssl/ldap%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20sequel.htb0.,%20Site:%20Default-First-Site-Name%29%0a%7c%20ssl-cert:%20Subject:%0a%7c%20Subject%20Alternative%20Name:%20DNS:dc.sequel.htb,%20DNS:sequel.htb,%20DNS:sequel%0a%7c%20Not%20valid%20before:%202024-01-18T23:03:57%0a%7c_Not%20valid%20after:%20%202074-01-05T23:03:57%0a%7c_ssl-date:%202024-10-04T15:25:48&#43;00:00;%20&#43;8h00m00s%20from%20scanner%20time.%0a1433/tcp%20%20open%20%20ms-sql-s%20%20%20%20%20%20Microsoft%20SQL%20Server%202019%2015.00.2000.00;%20RTM%0a%7c%20ms-sql-ntlm-info:%0a%7c%20%20%2010.129.228.253:1433:%0a%7c%20%20%20%20%20Target_Name:%20sequel%0a%7c%20%20%20%20%20NetBIOS_Domain_Name:%20sequel%0a%7c%20%20%20%20%20NetBIOS_Computer_Name:%20DC%0a%7c%20%20%20%20%20DNS_Domain_Name:%20sequel.htb%0a%7c%20%20%20%20%20DNS_Computer_Name:%20dc.sequel.htb%0a%7c%20%20%20%20%20DNS_Tree_Name:%20sequel.htb%0a%7c_%20%20%20%20Product_Version:%2010.0.17763%0a%7c%20ms-sql-info:%0a%7c%20%20%2010.129.228.253:1433:%0a%7c%20%20%20%20%20Version:%0a%7c%20%20%20%20%20%20%20name:%20Microsoft%20SQL%20Server%202019%20RTM%0a%7c%20%20%20%20%20%20%20number:%2015.00.2000.00%0a%7c%20%20%20%20%20%20%20Product:%20Microsoft%20SQL%20Server%202019%0a%7c%20%20%20%20%20%20%20Service%20pack%20level:%20RTM%0a%7c%20%20%20%20%20%20%20Post-SP%20patches%20applied:%20false%0a%7c_%20%20%20%20TCP%20port:%201433%0a%7c_ssl-date:%202024-10-04T15:25:48&#43;00:00;%20&#43;8h00m00s%20from%20scanner%20time.%0a%7c%20ssl-cert:%20Subject:%20commonName=SSL_Self_Signed_Fallback%0a%7c%20Not%20valid%20before:%202024-10-04T15:17:39%0a%7c_Not%20valid%20after:%20%202054-10-04T15:17:39%0a3268/tcp%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20sequel.htb0.,%20Site:%20Default-First-Site-Name%29%0a%7c%20ssl-cert:%20Subject:%0a%7c%20Subject%20Alternative%20Name:%20DNS:dc.sequel.htb,%20DNS:sequel.htb,%20DNS:sequel%0a%7c%20Not%20valid%20before:%202024-01-18T23:03:57%0a%7c_Not%20valid%20after:%20%202074-01-05T23:03:57%0a%7c_ssl-date:%202024-10-04T15:25:48&#43;00:00;%20&#43;8h00m00s%20from%20scanner%20time.%0a3269/tcp%20%20open%20%20ssl/ldap%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20sequel.htb0.,%20Site:%20Default-First-Site-Name%29%0a%7c%20ssl-cert:%20Subject:%0a%7c%20Subject%20Alternative%20Name:%20DNS:dc.sequel.htb,%20DNS:sequel.htb,%20DNS:sequel%0a%7c%20Not%20valid%20before:%202024-01-18T23:03:57%0a%7c_Not%20valid%20after:%20%202074-01-05T23:03:57%0a%7c_ssl-date:%202024-10-04T15:25:48&#43;00:00;%20&#43;8h00m00s%20from%20scanner%20time.%0a5985/tcp%20%20open%20%20http%20%20%20%20%20%20%20%20%20%20Microsoft%20HTTPAPI%20httpd%202.0%20%28SSDP/UPnP%29%0a%7c_http-server-header:%20Microsoft-HTTPAPI/2.0%0a%7c_http-title:%20Not%20Found%0a9389/tcp%20%20open%20%20mc-nmf%20%20%20%20%20%20%20%20.NET%20Message%20Framing%0a49669/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49691/tcp%20open%20%20ncacn_http%20%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a49694/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49712/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49722/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49743/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0aWarning:%20OSScan%20results%20may%20be%20unreliable%20because%20we%20could%20not%20find%20at%20least%201%20open%20and%201%20closed%20port%0aDevice%20type:%20general%20purpose%0aRunning%20%28JUST%20GUESSING%29:%20Microsoft%20Windows%202019%20%2889%25%29%0aAggressive%20OS%20guesses:%20Microsoft%20Windows%20Server%202019%20%2889%25%29%0aNo%20exact%20OS%20matches%20for%20host%20%28test%20conditions%20non-ideal%29.%0aService%20Info:%20Host:%20DC;%20OS:%20Windows;%20CPE:%20cpe:/o:microsoft:windows%0a%0aHost%20script%20results:%0a%7c_clock-skew:%20mean:%207h59m59s,%20deviation:%200s,%20median:%207h59m59s%0a%7c%20smb2-security-mode:%0a%7c%20%20%203:1:1:%0a%7c_%20%20%20%20Message%20signing%20enabled%20and%20required%0a%7c%20smb2-time:%0a%7c%20%20%20date:%202024-10-04T15:25:11%0a%7c_%20%20start_date:%20N/A%0a%0aOS%20and%20Service%20detection%20performed.%20Please%20report%20any%20incorrect%20results%20at%20https://nmap.org/submit/%20.%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%20242.11%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in 46.02-HTB/BlogEntriesMade/Escape/scans/nmap  2GiB/7GiB | 0B/1GiB with /usr/bin/zsh  took 12s
+</span></span><span style="display:flex;"><span> 08:21:23 zsh ❯ sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> kali:
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-10-04 08:21 BST
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.228.253
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.038s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">65515</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT      STATE SERVICE       VERSION
+</span></span><span style="display:flex;"><span>53/tcp    open  domain        Simple DNS Plus
+</span></span><span style="display:flex;"><span>88/tcp    open  kerberos-sec  Microsoft Windows Kerberos <span style="color:#f92672">(</span>server time: 2024-10-04 15:24:15Z<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>135/tcp   open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+</span></span><span style="display:flex;"><span>389/tcp   open  ldap          Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: sequel.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject:
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: DNS:dc.sequel.htb, DNS:sequel.htb, DNS:sequel
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-01-18T23:03:57
+</span></span><span style="display:flex;"><span>|_Not valid after:  2074-01-05T23:03:57
+</span></span><span style="display:flex;"><span>|_ssl-date: 2024-10-04T15:25:48+00:00; +8h00m00s from scanner time.
+</span></span><span style="display:flex;"><span>445/tcp   open  microsoft-ds?
+</span></span><span style="display:flex;"><span>464/tcp   open  kpasswd5?
+</span></span><span style="display:flex;"><span>593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: sequel.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject:
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: DNS:dc.sequel.htb, DNS:sequel.htb, DNS:sequel
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-01-18T23:03:57
+</span></span><span style="display:flex;"><span>|_Not valid after:  2074-01-05T23:03:57
+</span></span><span style="display:flex;"><span>|_ssl-date: 2024-10-04T15:25:48+00:00; +8h00m00s from scanner time.
+</span></span><span style="display:flex;"><span>1433/tcp  open  ms-sql-s      Microsoft SQL Server <span style="color:#ae81ff">2019</span> 15.00.2000.00; RTM
+</span></span><span style="display:flex;"><span>| ms-sql-ntlm-info:
+</span></span><span style="display:flex;"><span>|   10.129.228.253:1433:
+</span></span><span style="display:flex;"><span>|     Target_Name: sequel
+</span></span><span style="display:flex;"><span>|     NetBIOS_Domain_Name: sequel
+</span></span><span style="display:flex;"><span>|     NetBIOS_Computer_Name: DC
+</span></span><span style="display:flex;"><span>|     DNS_Domain_Name: sequel.htb
+</span></span><span style="display:flex;"><span>|     DNS_Computer_Name: dc.sequel.htb
+</span></span><span style="display:flex;"><span>|     DNS_Tree_Name: sequel.htb
+</span></span><span style="display:flex;"><span>|_    Product_Version: 10.0.17763
+</span></span><span style="display:flex;"><span>| ms-sql-info:
+</span></span><span style="display:flex;"><span>|   10.129.228.253:1433:
+</span></span><span style="display:flex;"><span>|     Version:
+</span></span><span style="display:flex;"><span>|       name: Microsoft SQL Server <span style="color:#ae81ff">2019</span> RTM
+</span></span><span style="display:flex;"><span>|       number: 15.00.2000.00
+</span></span><span style="display:flex;"><span>|       Product: Microsoft SQL Server <span style="color:#ae81ff">2019</span>
+</span></span><span style="display:flex;"><span>|       Service pack level: RTM
+</span></span><span style="display:flex;"><span>|       Post-SP patches applied: false
+</span></span><span style="display:flex;"><span>|_    TCP port: <span style="color:#ae81ff">1433</span>
+</span></span><span style="display:flex;"><span>|_ssl-date: 2024-10-04T15:25:48+00:00; +8h00m00s from scanner time.
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>SSL_Self_Signed_Fallback
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-10-04T15:17:39
+</span></span><span style="display:flex;"><span>|_Not valid after:  2054-10-04T15:17:39
+</span></span><span style="display:flex;"><span>3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: sequel.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject:
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: DNS:dc.sequel.htb, DNS:sequel.htb, DNS:sequel
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-01-18T23:03:57
+</span></span><span style="display:flex;"><span>|_Not valid after:  2074-01-05T23:03:57
+</span></span><span style="display:flex;"><span>|_ssl-date: 2024-10-04T15:25:48+00:00; +8h00m00s from scanner time.
+</span></span><span style="display:flex;"><span>3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: sequel.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject:
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: DNS:dc.sequel.htb, DNS:sequel.htb, DNS:sequel
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-01-18T23:03:57
+</span></span><span style="display:flex;"><span>|_Not valid after:  2074-01-05T23:03:57
+</span></span><span style="display:flex;"><span>|_ssl-date: 2024-10-04T15:25:48+00:00; +8h00m00s from scanner time.
+</span></span><span style="display:flex;"><span>5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 <span style="color:#f92672">(</span>SSDP/UPnP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_http-server-header: Microsoft-HTTPAPI/2.0
+</span></span><span style="display:flex;"><span>|_http-title: Not Found
+</span></span><span style="display:flex;"><span>9389/tcp  open  mc-nmf        .NET Message Framing
+</span></span><span style="display:flex;"><span>49669/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49691/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>49694/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49712/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49722/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49743/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>Warning: OSScan results may be unreliable because we could not find at least <span style="color:#ae81ff">1</span> open and <span style="color:#ae81ff">1</span> closed port
+</span></span><span style="display:flex;"><span>Device type: general purpose
+</span></span><span style="display:flex;"><span>Running <span style="color:#f92672">(</span>JUST GUESSING<span style="color:#f92672">)</span>: Microsoft Windows <span style="color:#ae81ff">2019</span> <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Aggressive OS guesses: Microsoft Windows Server <span style="color:#ae81ff">2019</span> <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>No exact OS matches <span style="color:#66d9ef">for</span> host <span style="color:#f92672">(</span>test conditions non-ideal<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Host script results:
+</span></span><span style="display:flex;"><span>|_clock-skew: mean: 7h59m59s, deviation: 0s, median: 7h59m59s
+</span></span><span style="display:flex;"><span>| smb2-security-mode:
+</span></span><span style="display:flex;"><span>|   3:1:1:
+</span></span><span style="display:flex;"><span>|_    Message signing enabled and required
+</span></span><span style="display:flex;"><span>| smb2-time:
+</span></span><span style="display:flex;"><span>|   date: 2024-10-04T15:25:11
+</span></span><span style="display:flex;"><span>|_  start_date: N/A
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 242.11 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<h3 id="ldap-389">LDAP <code>389</code>:</h3>
+<ul>
+<li>
+<p><strong>Using LDAP anonymous bind to enumerate further</strong>:</p>
+<ul>
+<li>If you are unsure of what anonymous bind does. It enables us to query for domain information anonymously, e.g. without passing credentials.
+<ul>
+<li>We can actually retrieve a significant amount of information via anonymous bind such as:
+<ul>
+<li>A list of all users</li>
+<li>A list of all groups</li>
+<li>A list of all computers.</li>
+<li>User account attributes.</li>
+<li>The domain password policy.</li>
+<li>Enumerate users who are susceptible to AS-REPRoasting.</li>
+<li>Passwords stored in the description fields</li>
+</ul>
+</li>
+<li>The added benefit of using ldap to perform these queries is that these are most likely not going to trigger any sort of AV etc as ldap is how AD communicates.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I actually have a handy script to check if anonymous bind is enabled &amp; if it is to dump a large amount of information. You can find it here</p>
+<ul>
+<li><a href="https://github.com/bloodstiller/ldapchecker">https://github.com/bloodstiller/ldapchecker</a></li>
+</ul>
+</li>
+<li>
+<p>It turns out the anonymous bind is enabled and we get the below information. I have removed the majority of the information as it is not relevant, however there are some keys bits of information we can use moving forward.</p>
+<ol>
+<li>
+<p><!-- raw HTML omitted -->We have the naming context of the domain<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20~/Desktop/WindowsTools%20%ef%90%8d%20v3.12.6%20%202GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%ef%95%99%2008:22:05%20zsh%20%e2%9d%af%20python3%20ldapchecker.py%20$box%0aAttempting%20to%20connect%20to%2010.129.228.253%20with%20SSL...%0aConnected%20successfully.%20Retrieving%20server%20information...%0aDSA%20info%20%28from%20DSE%29:%0a%20%20Supported%20LDAP%20versions:%203,%202%0a%20%20Naming%20contexts:%0a%20%20%20%20DC=sequel,DC=htb%0a%20%20%20%20CN=Configuration,DC=sequel,DC=htb%0a%20%20%20%20CN=Schema,CN=Configuration,DC=sequel,DC=htb%0a%20%20%20%20DC=DomainDnsZones,DC=sequel,DC=htb%0a%20%20%20%20DC=ForestDnsZones,DC=sequel,DC=htb">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in ~/Desktop/WindowsTools  v3.12.6  2GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span> 08:22:05 zsh ❯ python3 ldapchecker.py $box
+</span></span><span style="display:flex;"><span>Attempting to connect to 10.129.228.253 with SSL...
+</span></span><span style="display:flex;"><span>Connected successfully. Retrieving server information...
+</span></span><span style="display:flex;"><span>DSA info <span style="color:#f92672">(</span>from DSE<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>  Supported LDAP versions: 3, <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  Naming contexts:
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>sequel,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>sequel,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Schema,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>sequel,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>DomainDnsZones,DC<span style="color:#f92672">=</span>sequel,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>ForestDnsZones,DC<span style="color:#f92672">=</span>sequel,DC<span style="color:#f92672">=</span>htb</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the domain functionaility level<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Other:
+</span></span><span style="display:flex;"><span>  domainFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  forestFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  domainControllerFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  rootDomainNamingContext:
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>sequel,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>  ldapServiceName:
+</span></span><span style="display:flex;"><span>    sequel.htb:dc$@SEQUEL.HTB</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>The functionality level determines the minimum version of Windows server that can be used for a DC.
+<ul>
+<li>
+<p>Note that any host os can used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels</a></p>
+</li>
+<li>
+<p>Knowing the function level is useful as if want to target the DC&rsquo;s and servers, we can know by looking at the function level what the minimum level of OS would be.</p>
+</li>
+<li>
+<p>In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.</p>
+</li>
+<li>
+<p>Here’s a list of functional level numbers and their corresponding Windows Server operating systems:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Functional Level Number</th>
+          <th style="text-align: left">Corresponding OS</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">Windows 2000</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Windows Server 2003 Interim</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">Windows Server 2003</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">Windows Server 2008</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">Windows Server 2008 R2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">5</td>
+          <td style="text-align: left">Windows Server 2012</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">6</td>
+          <td style="text-align: left">Windows Server 2012 R2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">7</td>
+          <td style="text-align: left">Windows Server 2016</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">8</td>
+          <td style="text-align: left">Windows Server 2019</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">9</td>
+          <td style="text-align: left">Windows Server 2022</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>Note:
+<ul>
+<li>Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.</li>
+<li>As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the full server name<!-- raw HTML omitted -->:</p>
+<ul>
+<li>Again we can see this has the CN as the base (mentioned previously.) So it appears it&rsquo;s a printer server site of some sort. What is also interesting is the CN name &ldquo;Configuration&rdquo;, this could imply that it is still to be configured. Which is interesting as things that are still being configured may not have had thorough security standards actioned.
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> serverName:
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>DC,CN<span style="color:#f92672">=</span>Servers,CN<span style="color:#f92672">=</span>Default-First-Site-Name,CN<span style="color:#f92672">=</span>Sites,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>sequel,DC<span style="color:#f92672">=</span>htb</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>It&rsquo;s pretty amazing already what we have learned just by running some fairly simple ldap queries.</p>
+<ul>
+<li>We have the naming context.</li>
+<li>Domain name.</li>
+</ul>
+</li>
+<li>
+<p><strong>I update my <code>/etc/hosts</code> file now that we have the server name</strong>.</p>
+<ul>
+<li>This is so we can use tools like <a href="https://github.com/ropnop/kerbrute">kerbrute</a> for user enumeration as well as other tools later on.</li>
+</ul>
+</li>
+</ul>
+<h3 id="dns-53">DNS <code>53</code>:</h3>
+<h4 id="using-dnsenum-to-enumerate-dns-records">Using <a href="https://www.kali.org/tools/dnsenum/">dnsenum</a> to enumerate DNS records:</h4>
+<ul>
+<li>Run <a href="https://www.kali.org/tools/dnsenum/">dnsenum</a> to enumerate if there are any interesting records present:
+<ul>
+<li><code>dnsenum -r --dnsserver $box --enum -p 0 -s 0 -f ~/Seclists/Discovery/DNS/subdomains-top1million-110000.txt sequel.htb</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-084509_.png">
+</figure>
+
+<ul>
+<li>Nothing of note other than the standard DNS records for a DC.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="kerberos-88">Kerberos <code>88</code>:</h3>
+<h4 id="using-kerbrute-to-bruteforce-usernames">Using <a href="https://github.com/ropnop/kerbrute">Kerbrute</a> to bruteforce Usernames:</h4>
+<ul>
+<li>
+<p>As kerberos is present we can enumerate users using <a href="https://github.com/ropnop/kerbrute">kerbrute</a>:</p>
+<ul>
+<li><code>kerbrute userenum -d sequel.htb --dc $box ~/Wordlists/statistically-likely-usernames/jsmith.txt</code></li>
+</ul>
+<p><img src="/ox-hugo/2024-10-04-084056_.png" alt="">
+Unfortunately we get no hits:</p>
+</li>
+</ul>
+<h3 id="smb-445">SMB <code>445</code>:</h3>
+<h4 id="using-netexec-to-check-for-null-and-guest-session-on-smb">Using <a href="https://www.kali.org/tools/netexec/">netexec</a> to check for null &amp; guest session on SMB:</h4>
+<ul>
+<li>
+<p><strong>I check for a null sesion using netexec but they have been disabled</strong>:</p>
+<ul>
+<li>
+<p><code>netexec smb $box -u '' -p '' --shares</code></p>
+<figure><img src="/ox-hugo/2024-10-04-084303_.png">
+        </figure>
+
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I check if the guest account has been disabled</strong>:</p>
+<ul>
+<li>
+<p><code>netexec smb $box -u 'guest' -p '' --shares</code>
+<img src="/ox-hugo/2024-10-04-084640_.png" alt=""></p>
+<p>It looks like we can access the <code>Public</code> &amp; <code>IPC$</code> We will focus on the <code>Public</code> share.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="over-view-of-ipc-share">Over view of <code>IPC$</code> Share:</h5>
+<ul>
+<li><strong>Quick overview if you are unfamiliar with the <code>IPC$</code> share</strong>:
+<ul>
+<li>The <code>IPC$</code> share (<code>Inter-Process Communication</code>) is a special administrative share in Windows which allows communication with programs via Named Pipes:
+<ul>
+<li>It&rsquo;s mainly used for inter-process communication between hosts over a network.</li>
+<li>It also enables remote administration of a system, allowing file and print sharing.</li>
+<li>It&rsquo;s a default share on windows systems.</li>
+<li>Requires credentials for access, typically used in conjunction with administrative or user rights.
+<ul>
+<li>But as you can see <code>Guest</code> creds can also work in some instances.</li>
+</ul>
+</li>
+<li>It is possible to use <code>IPC$</code> for enumeration (e.g., enumerating users, shares, groups or services).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="rpc-135-and-593-rpc-over-http">RPC <code>135</code> &amp; <code>593</code> RPC Over HTTP:</h3>
+<h3 id="mssql-1433">MSSQL <code>1433</code>:</h3>
+<h2 id="2-dot-foothold">2. Foothold:</h2>
+<ol>
+<li></li>
+</ol>
+<h2 id="3-dot-privilege-escalation">3. Privilege Escalation:</h2>
+<ol>
+<li></li>
+</ol>
+<h2 id="4-dot-ownership">4. Ownership:</h2>
+<h2 id="5-dot-persistence">5. Persistence:</h2>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li></li>
+<li></li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at proton dot me</p>
+<h2 id="9c69d6"><del>CREDS</del>:</h2>
+<h3 id="ssh-keys">SSH Keys:</h3>
+<h3 id="compiled-usernames-passwords-and-hashes">Compiled Usernames, Passwords &amp; Hashes:</h3>
+<h4 id="usernames">Usernames:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"></code></pre></div>
+    
+</div>
+<h4 id="passwords">Passwords:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"></code></pre></div>
+    
+</div>
+<h4 id="username-and-pass">Username &amp; Pass:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"></code></pre></div>
+    
+</div>
+<h4 id="hashes">Hashes:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"></code></pre></div>
+    
+</div>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        1601
+                    
+                </li>
+            
+
+            
+            
+
+            
+                <li>en</li>
+            
+
+            
+                <li>
+                    <a href="https://gohugo.io" class="btn" target="_blank"
+                        >Hugo: 0.135.0</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    <a
+                        href="https://github.com/JingWangTW/dark-theme-editor"
+                        class="btn"
+                        target="_blank"
+                        >Theme: dark-theme-editor</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Oct 04 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+                <li title="">
+                    
+                </li>
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

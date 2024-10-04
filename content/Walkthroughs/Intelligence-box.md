@@ -2,6 +2,7 @@
 tags = ["Box", "HTB", "Active Directory", "Windows", "Kerberos", "KCD", "DNS"]
 draft = false
 title = "Intelligence HTB Walkthrough"
+date = 2024-09-29
 author = "bloodstiller"
 +++
 

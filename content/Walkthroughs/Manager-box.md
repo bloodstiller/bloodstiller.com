@@ -2,6 +2,7 @@
 tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "kerberos", "SMB"]
 draft = false
 title = "Manager HTB Walkthrough"
+date = 2024-09-22
 author = "bloodstiller"
 +++
 
