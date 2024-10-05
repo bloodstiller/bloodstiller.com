@@ -204,7 +204,7 @@ date = 2024-10-05
         ```
 
         -   The functionality level determines the minimum version of Windows server that can be used for a DC.
-            -   Note that any host os can used on **workstations**, however the functionality level determines what the minimum version for DC's and the forest.
+            -   +Note+: That any host os can used on **workstations**, however the functionality level determines what the minimum version for DC's and the forest.
             -   <https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels>
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
@@ -224,7 +224,7 @@ date = 2024-10-05
                 | 8                       | Windows Server 2019         |
                 | 9                       | Windows Server 2022         |
 
-                -   Note:
+                -   +Note+:
                     -   Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.
                     -   As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.
 
@@ -464,7 +464,7 @@ If you are not aware, it is sometimes possible to extract valid domain usersname
                 -   <span class="underline">The result set will contain</span>:
                     -   All files located directly in `C:\`.
                     -   All first-level subdirectories (e.g., `C:\Program Files`, `C:\Windows`, etc.).
-            -   **Note**:
+            -   +Note+:
                 -   The command does **not** recursively list files in subdirectories beyond the first level due to the specified depth of 1~.
                 -   If you want to see files in deeper levels, you can increase the depth parameter e.g. `2`, `3` etc
 
@@ -519,7 +519,7 @@ If you are not aware, it is sometimes possible to extract valid domain usersname
 
 ### Finding a linked SQL Instance: {#finding-a-linked-sql-instance}
 
--   ~~Correction~~: This is wrong, I later found it was just showing me my existing database, I have left it in as I believe it's important and show these mistakes.
+-   +Correction+: This is wrong, I later found it was just showing me my existing database, I have left it in as I believe it's important and show these mistakes.
 
 -   **I check if there are any linked remote SQL instances running**:
     -   `SELECT srvname, isremote FROM sysservers;`
@@ -562,7 +562,7 @@ If you are not aware, it is sometimes possible to extract valid domain usersname
     -   I try and connect with `evil-winrm` which I was convinced I did earlier &amp; couldn't but tried again anyway &amp; could connect!!!
         -   Slap me with the idiot gun stick!!!
         -   {{< figure src="/ox-hugo/2024-10-04-203935_.png" >}}
-        -   ~~Note~~: This is something I want to stress, it's really important to re-check tools in situations like this sometimes you get false positives &amp; false negatives.
+        -   +Note+: This is something I want to stress, it's really important to re-check tools in situations like this sometimes you get false positives &amp; false negatives.
 
 
 ### Reading `ERRORLOG.BAK` &amp; finding credentials for `Ryan.Cooper`: {#reading-errorlog-dot-bak-and-finding-credentials-for-ryan-dot-cooper}
@@ -594,7 +594,7 @@ If you are not aware, it is sometimes possible to extract valid domain usersname
 
 -   **I try and run** `secretsdump.py`:
     -   {{< figure src="/ox-hugo/2024-10-04-205950_.png" >}}
-    -   ~~Note~~: This may seem weird to do now, however I have had success retriveing creds this way and moving laterally.
+    -   +Note+: This may seem weird to do now, however I have had success retriveing creds this way and moving laterally.
 
 -   **Running** `LaZagne.exe`:
     -   We get nothing, will have to try harder&#x2026;offsec is that you?
@@ -620,7 +620,7 @@ If you are not aware, it is sometimes possible to extract valid domain usersname
 -   **I enumerate users**:
     -   `net user`
     -   {{< figure src="/ox-hugo/2024-10-04-214453_.png" >}}
-    -   ~~Note~~: The reason my user enumeration is not more extensive is due to the fact that Groups, Users &amp; Hosts are enumerated via bloodhound. My main goal at the moment is to find out what is happening on this specific DC.
+    -   +Note+: The reason my user enumeration is not more extensive is due to the fact that Groups, Users &amp; Hosts are enumerated via bloodhound. My main goal at the moment is to find out what is happening on this specific DC.
 
 
 #### Basic System Enumeration: {#basic-system-enumeration}
@@ -788,14 +788,14 @@ If you are not aware, it is sometimes possible to extract valid domain usersname
 2.  **I sync my clock**:
     -   `sudo ntpdate -s sequel.htb`
     -   {{< figure src="/ox-hugo/2024-10-05-152616_.png" >}}
-        -   ~~Note~~:
+        -   +Note+:
             -   If you see the below error this is most likely down to your attack host clock being too out of sync with the target. (Picture taken from a previous box where I learned the hard way)
             -   {{< figure src="/ox-hugo/2024-09-21-201233_.png" >}}
 
 3.  **I request a cert**:
     -   `certipy-ad req -username $user@$domain -password $pass -ca sequel-DC-CA -target ca.$domain -template UserAuthentication -upn administrator@$domain -dns dc.$domain`
         -   {{< figure src="/ox-hugo/2024-10-05-150245_.png" >}}
-        -   ~~Note~~: How we have used the name of the certificate we found in step 1 `UserAuthentication`
+        -   +Note+: How we have used the name of the certificate we found in step 1 `UserAuthentication`
         -   ~~!!!SUCESS!!!~~
 
 4.  **I request to authenticate as the Administrator and retrieve the Administrator NT hash &amp; creds stored in** `.ccache`:
@@ -842,7 +842,7 @@ If you are not aware, it is sometimes possible to extract valid domain usersname
 
         -   **Here's where the magic happens**:
             -   We can now authenticate to services that accept certificate auth
-            -   ~~Note~~: Certipy extracts this the admin hash from TGT and presents us with it as well as saving the TGT as a `.cacche` file so we can then perform PTT attacks from the comfort of our attack box.
+            -   +Note+: Certipy extracts this the admin hash from TGT and presents us with it as well as saving the TGT as a `.cacche` file so we can then perform PTT attacks from the comfort of our attack box.
 
         -   **Privilege escalation opportunities**:
             -   Authenticate as a the privielged user with their hash.
