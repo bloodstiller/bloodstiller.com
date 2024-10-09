@@ -10,6 +10,25 @@ author = "bloodstiller"
 
 -   <https://app.hackthebox.com/machines/Hospital>
 
+## How I use variables &amp; wordlists: {#how-i-use-variables-and-wordlists}
+
+-   **Variables**:
+    -   In my commands you are going to see me use `$box`, `$user`, `$hash`, `$domain`, `$pass` often.
+        -   I find the easiest way to eliminate type-os &amp; to streamline my process it is easier to store important information in variables &amp; aliases.
+            -   `$box` = The IP of the box
+            -   `$pass` = Passwords I have access to.
+            -   `$user` = current user I am enumerating with.
+                -   Depending on where I am in the process this can change if I move laterally.
+            -   `$domain` = the domain name e.g. `sugarape.local` or `contoso.local`
+            -   `$pass` = Passwords I have access to.
+        -   Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.
+-   **Wordlists**:
+    -   I have symlinks all setup so I can get to my passwords from `~/Wordlists` so if you see me using that path that's why. If you are on Kali and following on, you will need to go to `/usr/share/wordlists`
+        -   I also use these additional wordlists:
+            -   [Statistically-likely-usernames](https://github.com/insidetrust/statistically-likely-usernames)
+            -   [SecLists](https://github.com/danielmiessler/SecLists)
+            -   [Auto_Wordlists](https://github.com/carlospolop/Auto_Wordlists)
+
 ## 1. Enumeration: {#1-dot-enumeration}
 
 

