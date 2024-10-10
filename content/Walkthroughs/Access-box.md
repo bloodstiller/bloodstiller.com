@@ -20,7 +20,6 @@ author = "bloodstiller"
             -   `$user` = current user I am enumerating with.
                 -   Depending on where I am in the process this can change if I move laterally.
             -   `$domain` = the domain name e.g. `sugarape.local` or `contoso.local`
-            -   `$pass` = Passwords I have access to.
         -   Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.
 -   **Wordlists**:
     -   I have symlinks all setup so I can get to my passwords from `~/Wordlists` so if you see me using that path that's why. If you are on Kali and following on, you will need to go to `/usr/share/wordlists`

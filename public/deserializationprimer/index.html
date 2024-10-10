@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.135.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Saucy Monk" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Understanding .NET Deserialization Exploits: A Deep Dive |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.e6eadce601966e1bc2d798a6a4b94edc31360559ec0c7efd94e31d855914e918a88c9bddfabc11200357a22ce33ebdfd27c70fdd76cc8d155e9633bab42e0f76.css"
+                integrity="sha512-5urc5gGWbhvC15impLlO3DE2BVnsDH79lOMdhVkU6RiojJvd&#43;rwRIANXoizjPr39J8cP3XbMjRVeljO6tC4Pdg==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Understanding .NET Deserialization Exploits: A Deep Dive -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Box Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/deserializationprimer/" title="./deserializationprimer/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Understanding .NET Deserialization Exploits: A Deep Dive
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.10.10"
+                            >2024.10.10
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        6 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/deserializationprimer/" class="bread-btn">
+    
+
+    
+        
+            Understanding .NET Deserialization Exploits: A Deep Dive
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#understanding-dot-net-deserialization-exploits-a-deep-dive">Understanding <code>.NET</code> Deserialization Exploits: A Deep Dive:</a>
+      <ul>
+        <li><a href="#what-is-serialization-and-deserialization">What is Serialization &amp; Deserialization?</a></li>
+        <li><a href="#exploiting-deserialization-vulnerabilities">Exploiting Deserialization Vulnerabilities:</a></li>
+        <li><a href="#binaryformatter-deserialization-attack-a-detailed-example">BinaryFormatter Deserialization Attack: A Detailed Example:</a></li>
+        <li><a href="#how-does-the-deserialization-attack-work">How Does The Deserialization Attack Work?</a></li>
+        <li><a href="#why-does-this-happen">Why Does This Happen?</a></li>
+        <li><a href="#understanding-ysoserial-dot-net-payloads">Understanding <a href="https://github.com/pwntester/ysoserial.net">Ysoserial.Net</a> Payloads:</a></li>
+        <li><a href="#preventing-deserialization-exploits">Preventing Deserialization Exploits:</a></li>
+        <li><a href="#conclusion">Conclusion:</a></li>
+        <li><a href="#Corrections:">Corrections:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="understanding-dot-net-deserialization-exploits-a-deep-dive">Understanding <code>.NET</code> Deserialization Exploits: A Deep Dive:</h2>
+<ul>
+<li><code>.NET</code> deserialization exploits have become a common technique; providing a pathway to remote code execution (RCE) on vulnerable systems. Tools like <a href="https://github.com/pwntester/ysoserial.net">ysoserial.net</a> can generate malicious payloads, allowing attackers to exploit deserialization flaws in .NET applications. But how does this attack vector actually work, and why does it succeed?</li>
+</ul>
+<p>In this post, we&rsquo;ll walk through the underlying mechanics, focusing on an example using <code>BinaryFormatter</code> with a simple <code>Student</code> class. We&rsquo;ll see how a seemingly innocuous application can be vulnerable to severe attacks.</p>
+<h3 id="what-is-serialization-and-deserialization">What is Serialization &amp; Deserialization?</h3>
+<h4 id="serialization">Serialization:</h4>
+<ul>
+<li><strong>Serialization is the process of turning objects from a program into a format that’s easy to send (over the network) or save</strong>. Formats such as <code>XML</code> and <code>JSON</code> are commonly used for this purpose because they are human-readable compared to binary formats. Once serialized, these objects can be sent over the network or saved for later use.</li>
+</ul>
+<h4 id="deserialization">Deserialization:</h4>
+<ul>
+<li>Is the reverse process: converting the transmitted data (e.g., <code>JSON</code>) back into a usable object in memory.</li>
+<li>For instance, consider a <code>.NET</code> application with a <code>Student</code> class. The code might look like this:</li>
+</ul>
+<p>[Serializable]</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="public%20class%20Student%0a%7b%0a%20%20%20%20public%20int%20StudentIDNumber%20%7b%20get;%20set;%20%7d%0a%20%20%20%20public%20DateTime%20Birthday%20%7b%20get;%20set;%20%7d%0a%20%20%20%20public%20string%20FirstName%20%7b%20get;%20set;%20%7d%0a%20%20%20%20public%20string%20LastName%20%7b%20get;%20set;%20%7d%0a%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> StudentIDNumber { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> DateTime Birthday { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> FirstName { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> LastName { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>When serialized to <code>JSON</code> format, it would look like this:</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">&#34;StudentIDNumber&#34;</span>:<span style="color:#ae81ff">1337</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">&#34;Birthday&#34;</span>:<span style="color:#ae81ff">29062002</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">&#34;FirstName&#34;</span>:<span style="color:#e6db74">&#34;Nathan&#34;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">&#34;LastName&#34;</span>:<span style="color:#e6db74">&#34;Barley&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>When serialized using <code>BinaryFormatter</code>, it would create a binary representation of this object.</li>
+</ul>
+<h3 id="exploiting-deserialization-vulnerabilities">Exploiting Deserialization Vulnerabilities:</h3>
+<p>Imagine an application that allows users to send serialized Student data, which the server converts back into usable objects using BinaryFormatter. If the deserialization process isn&rsquo;t secure, an attacker can modify the data to control what kind of object gets created. Let&rsquo;s explore how this can lead to a serious security vulnerability.</p>
+<h3 id="binaryformatter-deserialization-attack-a-detailed-example">BinaryFormatter Deserialization Attack: A Detailed Example:</h3>
+<p>Let&rsquo;s walk through how an attacker could exploit a vulnerable application that expects to deserialize Student objects but uses <code>BinaryFormatter</code> unsafely.</p>
+<h4 id="step-1-understanding-the-vulnerable-application">Step 1: Understanding the Vulnerable Application:</h4>
+<p>The application might have a method to process student data:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="public%20class%20StudentProcessor%0a%7b%0a%20%20%20%20public%20void%20ProcessStudentData%28string%20base64Data%29%0a%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20byte[]%20binaryData%20=%20Convert.FromBase64String%28base64Data%29;%0a%0a%20%20%20%20%20%20%20%20using%20%28MemoryStream%20ms%20=%20new%20MemoryStream%28binaryData%29%29%0a%20%20%20%20%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20%20%20%20%20BinaryFormatter%20formatter%20=%20new%20BinaryFormatter%28%29;%0a%20%20%20%20%20%20%20%20%20%20%20%20object%20deserializedObject%20=%20formatter.Deserialize%28ms%29;%0a%0a%20%20%20%20%20%20%20%20%20%20%20%20if%20%28deserializedObject%20is%20Student%20student%29%0a%20%20%20%20%20%20%20%20%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Process%20the%20student%20data%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Console.WriteLine%28$%22Processed%20student:%20%7bstudent.FirstName%7d%20%7bstudent.LastName%7d%22%29;%0a%20%20%20%20%20%20%20%20%20%20%20%20%7d%0a%20%20%20%20%20%20%20%20%7d%0a%20%20%20%20%7d%0a%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StudentProcessor</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ProcessStudentData(<span style="color:#66d9ef">string</span> base64Data)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">byte</span>[] binaryData = Convert.FromBase64String(base64Data);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">using</span> (MemoryStream ms = <span style="color:#66d9ef">new</span> MemoryStream(binaryData))
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            BinaryFormatter formatter = <span style="color:#66d9ef">new</span> BinaryFormatter();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">object</span> deserializedObject = formatter.Deserialize(ms);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (deserializedObject <span style="color:#66d9ef">is</span> Student student)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Process the student data</span>
+</span></span><span style="display:flex;"><span>                Console.WriteLine(<span style="color:#e6db74">$&#34;Processed student: {student.FirstName} {student.LastName}&#34;</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>+Note+: This code assumes it&rsquo;s always receiving a serialized <code>Student</code> object, which is a dangerous assumption.</li>
+</ul>
+<h4 id="step-2-crafting-the-malicious-payload">Step 2: Crafting the Malicious Payload:</h4>
+<p>Instead of sending a legitimate Student object, an attacker uses <a href="https://github.com/pwntester/ysoserial.net">ysoserial.net</a> to create a malicious payload:</p>
+<ul>
+<li><code>ysoserial.exe -f BinaryFormatter -g WindowsIdentity -o base64 -c &quot;cmd /c calc.exe&quot;</code></li>
+</ul>
+<p>This generates a base64-encoded payload that, when deserialized, will launch the Windows calculator instead of creating a Student object.</p>
+<h4 id="step-3-sending-the-payload">Step 3: Sending the Payload:</h4>
+<p>The attacker sends this payload to the application, perhaps through an API endpoint or a file upload feature that expects serialized student data.</p>
+<h4 id="step-4-unintended-deserialization">Step 4: Unintended Deserialization:</h4>
+<p>When the <code>ProcessStudentData</code> method runs, it blindly deserializes the input:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="object%20deserializedObject%20=%20formatter.Deserialize%28ms%29;">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">object</span> deserializedObject = formatter.Deserialize(ms);</span></span></code></pre></div>
+    
+</div>
+<p>Instead of creating a Student object, this line now creates and executes the attacker&rsquo;s payload, launching <code>calc.exe</code> on the server.</p>
+<h4 id="step-5-execution-and-impact">Step 5: Execution and Impact:</h4>
+<p>The calculator launches on the server, demonstrating arbitrary code execution. In a real attack, this could be a reverse shell or any other malicious command.</p>
+<h3 id="how-does-the-deserialization-attack-work">How Does The Deserialization Attack Work?</h3>
+<p>When deserializing data, the application should ideally be constrained to deserialize into a predefined set of safe classes. However, in vulnerable systems, this restriction doesn’t exist. Deserialization libraries like <code>JSON.NET</code> will attempt to deserialize any class that the attacker specifies.</p>
+<p>This is where tools like <a href="https://github.com/pwntester/ysoserial.net">ysoserial.net</a> come in. They allow attackers to craft payloads that exploit known vulnerable classes and object types within <code>.NET</code>. The tool generates serialized objects designed to trigger behaviors (like executing commands) when they are deserialized.</p>
+<p>For example, a crafted payload could exploit a method that runs upon deserialization, leveraging classes that allow arbitrary code execution. If a system blindly deserializes this payload without validation, it unwittingly runs the attacker&rsquo;s code.</p>
+<h3 id="why-does-this-happen">Why Does This Happen?</h3>
+<p>The root cause of these exploits is a failure to properly validate or restrict what classes the deserialization process can instantiate. By allowing any arbitrary object to be deserialized, attackers can manipulate the data in a way that turns simple data handling into a serious security vulnerability.</p>
+<h3 id="understanding-ysoserial-dot-net-payloads">Understanding <a href="https://github.com/pwntester/ysoserial.net">Ysoserial.Net</a> Payloads:</h3>
+<p>Let&rsquo;s break down how <a href="https://github.com/pwntester/ysoserial.net">ysoserial.net</a> generates a payload for a <code>BinaryFormatter</code> deserialization exploit, contrasting it with our <code>Student</code> class example:</p>
+<h4 id="legitimate-student-object-serialization">Legitimate Student Object Serialization:</h4>
+<p>A legitimate serialized Student object using <code>BinaryFormatter</code> might look like this in binary format:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="//%20Binary%20representation%20%28simplified%20for%20illustration%29%0a[SerializationHeaderRecord][ObjectTypeEnum:SystemObject][AssemblyId][ClassName:Student][MemberCount:4]%0a[MemberName:StudentIDNumber][PrimitiveTypeEnum:Int32][Value:1337]%0a[MemberName:Birthday][PrimitiveTypeEnum:DateTime][Value:29062002]%0a[MemberName:FirstName][PrimitiveTypeEnum:String][Value:Nathan]%0a[MemberName:LastName][PrimitiveTypeEnum:String][Value:Barley]">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#75715e">// Binary representation (simplified for illustration)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">[SerializationHeaderRecord]</span>[ObjectTypeEnum:SystemObject][AssemblyId][ClassName:Student][MemberCount:<span style="color:#ae81ff">4</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">[MemberName:StudentIDNumber]</span>[PrimitiveTypeEnum:Int32][Value:<span style="color:#ae81ff">1337</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">[MemberName:Birthday]</span>[PrimitiveTypeEnum:DateTime][Value:<span style="color:#ae81ff">29062002</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">[MemberName:FirstName]</span>[PrimitiveTypeEnum:String][Value:Nathan]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">[MemberName:LastName]</span>[PrimitiveTypeEnum:String][Value:Barley]</span></span></code></pre></div>
+    
+</div>
+<p>This representation includes type information and metadata that <code>BinaryFormatter</code> uses to reconstruct the object during deserialization.</p>
+<h4 id="malicious-payload-generation">Malicious Payload Generation:</h4>
+<p>Now, let&rsquo;s examine how <a href="https://github.com/pwntester/ysoserial.net">ysoserial.net</a> crafts a malicious payload:</p>
+<p><code>ysoserial.exe -f BinaryFormatter -g WindowsIdentity -o base64 -c &quot;cmd /c calc.exe&quot;</code></p>
+<p>This command generates a base64-encoded payload. When decoded, it might look something like this (simplified):</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="//%20Binary%20representation%20%28simplified%20for%20illustration%29%0a[SerializedObjectWithTypeWindowsIdentity][4-byte-length][TypeInfo:WindowsIdentity][MethodToInvoke:Start][Arguments:%22cmd.exe%22,%20%22/c%20calc.exe%22]">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#75715e">// Binary representation (simplified for illustration)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">[SerializedObjectWithTypeWindowsIdentity]</span>[<span style="color:#ae81ff">4</span>-<span style="color:#66d9ef">byte</span>-length][TypeInfo:WindowsIdentity][MethodToInvoke:Start][Arguments:<span style="color:#e6db74">&#34;cmd.exe&#34;</span>, <span style="color:#e6db74">&#34;/c calc.exe&#34;</span>]</span></span></code></pre></div>
+    
+</div>
+<h4 id="breaking-down-the-payload">Breaking Down the Payload:</h4>
+<ol>
+<li><strong>Object Type</strong>: Instead of <code>SerializedStudent</code>, the payload specifies a <code>WindowsIdentity</code> object.</li>
+<li><strong>Malicious Method</strong>: It includes instructions to invoke the <code>Start</code> method, which can execute commands.</li>
+<li><strong>Command Arguments</strong>: The payload includes the command to be executed (<code>calc.exe</code> in this case).</li>
+</ol>
+<h4 id="exploitation-process">Exploitation Process:</h4>
+<ol>
+<li>The vulnerable <code>ProcessStudentData</code> method receives this payload instead of a legitimate Student object.</li>
+<li>When deserialized, instead of creating a Student instance, it creates a <code>WindowsIdentity</code> object.</li>
+<li>The deserialization process triggers the execution of the <code>Start</code> method with the provided arguments.</li>
+<li>As a result, <code>calc.exe</code> is launched on the server, demonstrating arbitrary code execution.</li>
+</ol>
+<p>This example illustrates how an attacker can exploit the flexibility of <code>BinaryFormatter</code> to execute arbitrary code, even when the application expects a completely different type of object (in our case, a Student).</p>
+<h3 id="preventing-deserialization-exploits">Preventing Deserialization Exploits:</h3>
+<p>To protect against these types of attacks, even when working with seemingly harmless classes like our Student example:</p>
+<ul>
+<li><strong>Whitelist Classes</strong>: Limit deserialization to specific, safe classes and types. For instance, only allow the Student class to be deserialized.</li>
+<li><strong>Disable Automatic Deserialization</strong>: Avoid deserialization of user-controlled data unless absolutely necessary. If you must deserialize, consider safer alternatives to BinaryFormatter.</li>
+<li><strong>Use Secure Libraries</strong>: Keep libraries updated, as security patches are often released to address deserialization flaws.</li>
+<li><strong>Sanitize Inputs</strong>: Always validate and sanitize any data being deserialized to ensure it conforms to expected formats.</li>
+<li><strong>Implement Custom Serialization</strong>: For classes like Student, consider implementing custom serialization methods that don&rsquo;t rely on potentially dangerous automatic deserialization.</li>
+</ul>
+<p>By implementing these measures, you can significantly reduce the risk of deserialization attacks, even when working with simple data structures.</p>
+<h3 id="conclusion">Conclusion:</h3>
+<p>Deserialization vulnerabilities, particularly those involving <code>BinaryFormatter</code>, pose a significant risk to <code>.NET</code> applications. As we&rsquo;ve seen with our <code>Student</code> class example, even seemingly innocuous code can be exploited to execute arbitrary commands. By understanding these risks and implementing proper security measures, developers can create more robust and secure applications.</p>
+<h3 id="Corrections:">Corrections:</h3>
+<ul>
+<li>Please let me know if I have anything wrong, more than happy to make corrections.</li>
+</ul>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        1175
+                    
+                </li>
+            
+
+            
+            
+
+            
+                <li>en</li>
+            
+
+            
+                <li>
+                    <a href="https://gohugo.io" class="btn" target="_blank"
+                        >Hugo: 0.135.0</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    <a
+                        href="https://github.com/JingWangTW/dark-theme-editor"
+                        class="btn"
+                        target="_blank"
+                        >Theme: dark-theme-editor</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Oct 10 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+                <li title="">
+                    
+                </li>
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.baf1622c95b2ed38ea638ca259c323d2a5537d258fb923994e97539b4c4ecf706c7992482768366adddcb83153dce8c33f5fc95a5c8abe6b2a03046892509fae.js"
+            integrity="sha512-uvFiLJWy7TjqY4yiWcMj0qVTfSWPuSOZTpdTm0xOz3BseZJIJ2g2at3cuDFT3OjDP1/JWlyKvmsqAwRoklCfrg=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

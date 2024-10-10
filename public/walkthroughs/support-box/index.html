@@ -167,6 +167,42 @@
             
                 <li
                     
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
                         class="dir opened-dir"
                     >
                     <span class="dir-text"> Walkthroughs </span>
@@ -183,6 +219,16 @@
 
 
     <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
         
             
                 <li class="file">
@@ -272,16 +318,6 @@
         
             
                 <li class="file">
-                    <a href="http://localhost:1313/scrambled-box/" title="./scrambled-box/">
-                        
-                            Scrambled HTB Walkthrough
-                        
-                    </a>
-                </li>
-            
-        
-            
-                <li class="file">
                     <a href="http://localhost:1313/aboutme/" title="./aboutme/">
                         
                             about me
@@ -345,7 +381,7 @@
                         class="readtime"
                         title="Time to Read">
                         <i class="bi bi-clock"></i>
-                        26 mins to read
+                        27 mins to read
                     </div>
                 
             </div>
@@ -456,6 +492,7 @@
             <nav id="TableOfContents">
   <ul>
     <li><a href="#name-of-box-htb-support">Intelligence Hack The Box Support Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; wordlists:</a></li>
     <li><a href="#1-dot-enumeration">1. Enumeration:</a>
       <ul>
         <li><a href="#standard-nmap-scan-to-get-a-lay-of-the-land">Standard Nmap Scan to get a lay of the land:</a></li>
@@ -503,6 +540,45 @@
                 <h2 id="name-of-box-htb-support">Intelligence Hack The Box Support Walkthrough/Writeup:</h2>
 <ul>
 <li><a href="https://app.hackthebox.com/machines/Support">https://app.hackthebox.com/machines/Support</a></li>
+</ul>
+<h2 id="how-i-use-variables-and-wordlists">How I use variables &amp; wordlists:</h2>
+<ul>
+<li><strong>Variables</strong>:
+<ul>
+<li>In my commands you are going to see me use <code>$box</code>, <code>$user</code>, <code>$hash</code>, <code>$domain</code>, <code>$pass</code> often.
+<ul>
+<li>I find the easiest way to eliminate type-os &amp; to streamline my process it is easier to store important information in variables &amp; aliases.
+<ul>
+<li><code>$box</code> = The IP of the box</li>
+<li><code>$pass</code> = Passwords I have access to.</li>
+<li><code>$user</code> = current user I am enumerating with.
+<ul>
+<li>Depending on where I am in the process this can change if I move laterally.</li>
+</ul>
+</li>
+<li><code>$domain</code> = the domain name e.g. <code>sugarape.local</code> or <code>contoso.local</code></li>
+</ul>
+</li>
+<li>Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Wordlists</strong>:
+<ul>
+<li>I have symlinks all setup so I can get to my passwords from <code>~/Wordlists</code> so if you see me using that path that&rsquo;s why. If you are on Kali and following on, you will need to go to <code>/usr/share/wordlists</code>
+<ul>
+<li>I also use these additional wordlists:
+<ul>
+<li><a href="https://github.com/insidetrust/statistically-likely-usernames">Statistically-likely-usernames</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists">SecLists</a></li>
+<li><a href="https://github.com/carlospolop/Auto_Wordlists">Auto_Wordlists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h2 id="1-dot-enumeration">1. Enumeration:</h2>
 <h3 id="standard-nmap-scan-to-get-a-lay-of-the-land">Standard Nmap Scan to get a lay of the land:</h3>
@@ -2315,7 +2391,7 @@
                 <li>
                     
                         Word Count:
-                        5538
+                        5714
                     
                 </li>
             
