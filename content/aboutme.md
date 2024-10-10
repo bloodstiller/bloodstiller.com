@@ -15,7 +15,7 @@ Can you hear me? Is this thing on?
 
 - My main focus at the moment is providing Hack The Box Walkthroughs, as a means to help others but also further my understanding of the concepts & attacks themselves. These detailed guides showcase my approach to solving various challenges.
 
-The aim of this blog is to:
+### The aim of this blog is to:
 
 - Provide practical examples of ethical hacking techniques.
 - Help fellow security enthusiasts improve their skills.
@@ -27,3 +27,7 @@ The aim of this blog is to:
 
 
     {{< figure src="/ox-hugo/Logo.png" >}}
+
+## Get in contact: {#sign-off}
+
+&#x2013; Get in touch bloodstiller at proton dot me
