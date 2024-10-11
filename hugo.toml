@@ -71,7 +71,7 @@ theme = 'dark-theme-editor'
         title = "Hack the planet"
 
         # Subtitle for this site, used in homepage only
-        subtitle = "Web is fun but AD is funnererer"
+        subtitle = "Cyber Security - Bones & All"
 
         # Config about your's site logo, remove this item to hide the logo
         [params.header.logo]
@@ -141,15 +141,15 @@ theme = 'dark-theme-editor'
         author = "Bloodstiller"
 
         # Website description for RSS and SEO. Theme will generate a <meta> tag for this item
-        description = "Saucy Monk"
+        description = "Bones & All Cyber Security"
 
         # Website keywords. Theme will generate a <meta> tag for this item.
-        keywords = "hacking, AD"
+        keywords = "hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory"
 
     # Parameters applied in the homepage only
     [params.homePage]
         # Long Descripition shown in home page "Start Block". Is is recommended to have the paragraph shorter than 100 words.
-        siteLongDescription = "I swear I will get to this soon."
+        siteLongDescription = "Hack The Box Walkthroughs: Ethical Hacking, Active Directory Security, and Troubleshooting Bones and All"
 
         # If you don't like the title of "siteLongDescription" be "Start" (default),
         # you may change the value of this item to "Description" or something you like.

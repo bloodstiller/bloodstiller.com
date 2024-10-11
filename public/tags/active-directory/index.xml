@@ -6,8 +6,15 @@
     <description>Recent content in Active Directory on Hack Me Daddy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/active-directory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding the Shadow Credentials Attack Vector</title>
+      <link>http://localhost:1313/articles/shadowcredentialsattack/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/articles/shadowcredentialsattack/</guid>
+      <description>&lt;h2 id=&#34;understanding-the-shadow-credentials-attack-vector&#34;&gt;Understanding the Shadow Credentials Attack Vector:&lt;/h2&gt;&#xA;&lt;p&gt;The Shadow Credentials attack is an advanced technique that exploits Active Directory&amp;rsquo;s certificate-based authentication mechanism to compromise user accounts without changing their passwords. This attack leverages the &lt;code&gt;msDS-KeyCredentialLink&lt;/code&gt; attribute to add a malicious certificate, allowing an attacker to impersonate the target user stealthily.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-are-shadow-credentials&#34;&gt;What are Shadow Credentials?&lt;/h3&gt;&#xA;&lt;p&gt;The Shadow Credentials attack exploits a feature in Active Directory called Key Trust Account Mapping. This technique allows an attacker to compromise a user account without changing its password, making it particularly stealthy and difficult to detect.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Intelligence HTB Walkthrough</title>
       <link>http://localhost:1313/walkthroughs/intelligence-box/</link>

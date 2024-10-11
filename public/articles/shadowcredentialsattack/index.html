@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.135.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Understanding the Shadow Credentials Attack Vector |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.e6eadce601966e1bc2d798a6a4b94edc31360559ec0c7efd94e31d855914e918a88c9bddfabc11200357a22ce33ebdfd27c70fdd76cc8d155e9633bab42e0f76.css"
+                integrity="sha512-5urc5gGWbhvC15impLlO3DE2BVnsDH79lOMdhVkU6RiojJvd&#43;rwRIANXoizjPr39J8cP3XbMjRVeljO6tC4Pdg==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Understanding the Shadow Credentials Attack Vector -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Box Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/outdated-box/" title="./outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Understanding the Shadow Credentials Attack Vector
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.11.10"
+                            >2024.11.10
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        4 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/ldap/"
+                            class="tag-btn">
+                            LDAP
+                        </a>
+                    
+                        <a
+                            href="/tags/msds-keycredentiallink/"
+                            class="tag-btn">
+                            msDS-KeyCredentialLink
+                        </a>
+                    
+                        <a
+                            href="/tags/shadow-credentials/"
+                            class="tag-btn">
+                            Shadow Credentials
+                        </a>
+                    
+                        <a
+                            href="/tags/ad/"
+                            class="tag-btn">
+                            AD
+                        </a>
+                    
+                        <a
+                            href="/tags/active-directory/"
+                            class="tag-btn">
+                            Active Directory
+                        </a>
+                    
+                        <a
+                            href="/tags/rubeus/"
+                            class="tag-btn">
+                            Rubeus
+                        </a>
+                    
+                        <a
+                            href="/tags/whisker/"
+                            class="tag-btn">
+                            Whisker
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/articles/" class="bread-btn">
+    
+
+    
+        Articles
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/articles/shadowcredentialsattack/" class="bread-btn">
+    
+
+    
+        
+            Understanding the Shadow Credentials Attack Vector
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#understanding-the-shadow-credentials-attack-vector">Understanding the Shadow Credentials Attack Vector:</a>
+      <ul>
+        <li><a href="#what-are-shadow-credentials">What are Shadow Credentials?</a></li>
+        <li><a href="#key-components-of-the-shadow-credentials-attack">Key Components of the Shadow Credentials Attack:</a></li>
+        <li><a href="#shadow-credentials-attack-process-step-by-step">Shadow Credentials Attack Process: Step by Step:</a></li>
+        <li><a href="#impact-of-the-shadow-credentials-attack">Impact of the Shadow Credentials Attack</a></li>
+        <li><a href="#shadow-credentials-attack-mitigation-strategies">Shadow Credentials Attack Mitigation Strategies</a></li>
+        <li><a href="#shadow-credentials-attack-detection-methods">Shadow Credentials Attack Detection Methods</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#references">References:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="understanding-the-shadow-credentials-attack-vector">Understanding the Shadow Credentials Attack Vector:</h2>
+<p>The Shadow Credentials attack is an advanced technique that exploits Active Directory&rsquo;s certificate-based authentication mechanism to compromise user accounts without changing their passwords. This attack leverages the <code>msDS-KeyCredentialLink</code> attribute to add a malicious certificate, allowing an attacker to impersonate the target user stealthily.</p>
+<h3 id="what-are-shadow-credentials">What are Shadow Credentials?</h3>
+<p>The Shadow Credentials attack exploits a feature in Active Directory called Key Trust Account Mapping. This technique allows an attacker to compromise a user account without changing its password, making it particularly stealthy and difficult to detect.</p>
+<h3 id="key-components-of-the-shadow-credentials-attack">Key Components of the Shadow Credentials Attack:</h3>
+<ol>
+<li><strong>Whisker</strong>: A tool used to manipulate the <code>msDS-KeyCredentialLink</code> attribute of a user account.
+<ul>
+<li><a href="https://github.com/eladshamir/Whisker">https://github.com/eladshamir/Whisker</a></li>
+</ul>
+</li>
+<li><strong>Rubeus</strong>: A tool for interacting with Kerberos authentication.
+<ul>
+<li><a href="https://github.com/GhostPack/Rubeus">https://github.com/GhostPack/Rubeus</a></li>
+</ul>
+</li>
+</ol>
+<h3 id="shadow-credentials-attack-process-step-by-step">Shadow Credentials Attack Process: Step by Step:</h3>
+<h4 id="1-dot-initial-access">1. Initial Access</h4>
+<p>The attacker starts with some level of access to the domain, typically with privileges to modify user attributes.</p>
+<h4 id="2-dot-whisker-execution">2. Whisker Execution</h4>
+<p>The attacker uses Whisker to add a new &ldquo;shadow credential&rdquo; to the target account:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="whisker.exe%20add%20/target:nbarley%20/domain:sugarape.local">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>whisker.exe add /target:nbarley /domain:sugarape.local</span></span></code></pre></div>
+    
+</div>
+<p><strong>This command</strong>:</p>
+<ul>
+<li>Generates a certificate for the target user (in this case, <code>nbarley</code>)</li>
+<li>Updates the <code>msDS-KeyCredentialLink</code> attribute of the target account</li>
+<li>Outputs a Base64-encoded certificate and a password</li>
+<li><figure><img src="/ox-hugo/2024-10-11-155959_.png">
+</figure>
+</li>
+</ul>
+<h4 id="3-dot-certificate-generation-and-usage">3. Certificate Generation and Usage</h4>
+<p><strong>Whisker creates</strong>:</p>
+<ul>
+<li>An <code>X.509</code> certificate</li>
+<li>An associated private key</li>
+</ul>
+<p><strong>The certificate&rsquo;s role in this attack</strong>:</p>
+<ul>
+<li>It&rsquo;s added to the user&rsquo;s <code>msDS-KeyCredentialLink</code> attribute in Active Directory</li>
+<li>This attribute allows for certificate-based authentication as an alternative to password-based auth</li>
+<li>The certificate is not directly used like a Kerberos ticket (<code>.kirbi</code> file)</li>
+</ul>
+<p><strong>Instead, the process works like this</strong>:</p>
+<ol>
+<li>The attacker presents the certificate during the Kerberos authentication process</li>
+<li>Active Directory validates the certificate against the one stored in <code>msDS-KeyCredentialLink</code></li>
+<li>If valid, AD issues a Kerberos Ticket Granting Ticket (TGT) for the user</li>
+</ol>
+<h4 id="4-dot-rubeus-exploitation">4. Rubeus Exploitation</h4>
+<p>The attacker then uses Rubeus to leverage the generated certificate:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="Rubeus.exe%20asktgt%20/user:nbarley%20/certificate:[Base64%20Certificate]%20/password:%22%3cPassword%20From%20Whisker%3e%22%20/domain:sugarape.local%20/dc:DC.sugarape.local%20/getcredentials%20/show">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Rubeus.exe asktgt /user:nbarley /certificate:<span style="color:#f92672">[</span>Base64 Certificate<span style="color:#f92672">]</span> /password:<span style="color:#e6db74">&#34;&lt;Password From Whisker&gt;&#34;</span> /domain:sugarape.local /dc:DC.sugarape.local /getcredentials /show</span></span></code></pre></div>
+    
+</div>
+<p><strong>This command</strong>:</p>
+<ul>
+<li>Uses the certificate to request a Kerberos TGT for Nathan Barley (nbarley)</li>
+<li>The <code>/certificate</code> parameter contains the Base64-encoded certificate</li>
+<li>The <code>/password</code> is for the private key, not Nathan&rsquo;s actual AD password</li>
+<li>If successful, Rubeus receives a TGT and can extract the NTLM hash</li>
+</ul>
+<h4 id="5-dot-credential-extraction">5. Credential Extraction</h4>
+<p><strong>As a result of this process</strong>:</p>
+<ul>
+<li>Rubeus obtains a TGT for Nathan Barley (nbarley) &amp; generates a <code>.kirbi</code> file which can be used for pass-the-ticket attacks.</li>
+<li>It also extracts the user&rsquo;s NTLM hash</li>
+<li><figure><img src="/ox-hugo/2024-10-11-160210_.png">
+</figure>
+</li>
+</ul>
+<h3 id="impact-of-the-shadow-credentials-attack">Impact of the Shadow Credentials Attack</h3>
+<ul>
+<li>The attacker gains the ability to authenticate as Nathan Barley (nbarley)</li>
+<li>This can lead to further lateral movement or privilege escalation within the domain</li>
+<li>The attack is stealthy, not triggering typical account modification alerts</li>
+</ul>
+<h3 id="shadow-credentials-attack-mitigation-strategies">Shadow Credentials Attack Mitigation Strategies</h3>
+<p>To protect against Shadow Credentials attacks:</p>
+<ol>
+<li>Monitor for changes to the <code>msDS-KeyCredentialLink</code> attribute</li>
+<li>Implement strong access controls on who can modify user attributes in Active Directory</li>
+<li>Use advanced threat detection systems that can identify unusual certificate-based authentication patterns</li>
+<li>Regularly audit and review certificate issuance and usage in your environment</li>
+<li>Implement the principle of least privilege for Active Directory administrators</li>
+<li>Use Protected Users security group for sensitive accounts</li>
+<li>Enable and configure Windows Defender Credential Guard</li>
+<li>Regularly patch and update domain controllers and Active Directory services</li>
+<li>Implement multi-factor authentication (MFA) for all user accounts, especially privileged ones</li>
+<li>Consider using Privileged Access Workstations (PAWs) for administrative tasks</li>
+</ol>
+<h3 id="shadow-credentials-attack-detection-methods">Shadow Credentials Attack Detection Methods</h3>
+<ol>
+<li><strong>Monitor Active Directory Logs</strong>: Look for Event ID 4662 with the <code>msDS-KeyCredentialLink</code> attribute being modified.</li>
+<li><strong>Use PowerShell Scripts</strong>: Develop scripts to regularly check for unexpected changes to the <code>msDS-KeyCredentialLink</code> attribute.</li>
+<li><strong>Implement SIEM Rules</strong>: Create alerts for unusual certificate-based authentication attempts, especially from unexpected sources.</li>
+<li><strong>Network Traffic Analysis</strong>: Monitor for unusual Kerberos traffic patterns that might indicate certificate-based authentication abuse.</li>
+</ol>
+<h3 id="conclusion">Conclusion</h3>
+<p>The Shadow Credentials attack vector demonstrates the evolving complexity of securing modern Active Directory environments. It highlights the importance of looking beyond traditional password-based security and considering certificate-based authentication mechanisms and critical user attributes.</p>
+<p>As defenders, staying informed about these advanced techniques is crucial. By understanding attacks like Shadow Credentials, we can better prepare our defenses and protect our organizations from sophisticated threats.</p>
+<h3 id="references">References:</h3>
+<ul>
+<li>
+<p>I would recommend reading this for a DEEP dive onto it by the person who discovered the vulnerability: <a href="https://posts.specterops.io/shadow-credentials-abusing-key-trust-account-mapping-for-takeover-8ee1a53566ab">https://posts.specterops.io/shadow-credentials-abusing-key-trust-account-mapping-for-takeover-8ee1a53566ab</a></p>
+</li>
+<li>
+<p>Here is a great video alos showcasing how simple this attack can be:</p>
+</li>
+<li>
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/IK7qPMqSKMY?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+</li>
+</ul>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        707
+                    
+                </li>
+            
+
+            
+            
+
+            
+                <li>en</li>
+            
+
+            
+                <li>
+                    <a href="https://gohugo.io" class="btn" target="_blank"
+                        >Hugo: 0.135.0</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    <a
+                        href="https://github.com/JingWangTW/dark-theme-editor"
+                        class="btn"
+                        target="_blank"
+                        >Theme: dark-theme-editor</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Oct 11 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+                <li title="">
+                    
+                </li>
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.baf1622c95b2ed38ea638ca259c323d2a5537d258fb923994e97539b4c4ecf706c7992482768366adddcb83153dce8c33f5fc95a5c8abe6b2a03046892509fae.js"
+            integrity="sha512-uvFiLJWy7TjqY4yiWcMj0qVTfSWPuSOZTpdTm0xOz3BseZJIJ2g2at3cuDFT3OjDP1/JWlyKvmsqAwRoklCfrg=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>
