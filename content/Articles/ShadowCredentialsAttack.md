@@ -10,6 +10,8 @@ date = 2024-10-11
 
 The Shadow Credentials attack is an advanced technique that exploits Active Directory's certificate-based authentication mechanism to compromise user accounts without changing their passwords. This attack leverages the `msDS-KeyCredentialLink` attribute to add a malicious certificate, allowing an attacker to impersonate the target user stealthily.
 
+**To put it simply**: If we have the `WriteProperty` privilege (specifically for the `msDS-KeyCredentialLink` attribute) over a user or computer object, we can set Shadow Credentials for that object and authenticate as them. You read that right, we can add a certificate-based credential to a user or computer and then authenticate as them. We can also request a Kerberos ticket and use it for pass-the-ticket attacks if needed.
+
 
 ### What are Shadow Credentials? {#what-are-shadow-credentials}
 
@@ -19,20 +21,59 @@ The Shadow Credentials attack exploits a feature in Active Directory called Key 
 ### Key Components of the Shadow Credentials Attack: {#key-components-of-the-shadow-credentials-attack}
 
 1.  **Whisker**: A tool used to manipulate the `msDS-KeyCredentialLink` attribute of a user account.
-    -  https://github.com/eladshamir/Whisker
 2.  **Rubeus**: A tool for interacting with Kerberos authentication.
-    -  https://github.com/GhostPack/Rubeus
 
 
-### Shadow Credentials Attack Process: Step by Step: {#shadow-credentials-attack-process-step-by-step}
+### +Enumerating Users Susceptible to the Shadow Credentials Attack+: {#enumerating-users-susceptible-to-the-shadow-credentials-attack}
+
+-   **In blood-hound look for the** `AddKeyCredentialLink`:
+    -   {{< figure src="/ox-hugo/2024-10-11-120229_.png" >}}
+
+-   **Being part of the groups below will often provide us with enough privielges to perform the attack**:
+    -   Key Admins
+    -   Enterprise Key Admins
+    -   Admins Group
 
 
-#### 1. Initial Access {#1-dot-initial-access}
+#### Enumerating for the `WriteProperty`  `msDS-KeyCredentialLink` attribute on users: {#enumerating-for-the-writeproperty-msds-keycredentiallink-attribute-on-users}
+
+1.  **Using** `PowerView`:
+    ```powershell
+       Get-DomainObjectAcl -Identity "CN=<User Name>,CN=Users,DC=domain,DC=com" -ResolveGUIDs | Where-Object {$_.ActiveDirectoryRights -match "WriteProperty" -and $_.SecurityIdentifier -match "S-1-5-21-.*-500" -and $_.ObjectAceType -eq "00000002-0000-0000-c000-000000000000"}
+    ```
+
+<!--listend-->
+
+1.  **Using Active Directory PowerShell Module**:
+    ```powershell
+       (Get-Acl "AD:CN=<User Name>,CN=Users,DC=domain,DC=com").Access |
+       Where-Object {$_.ActiveDirectoryRights -match "WriteProperty" -and $_.IdentityReference -match "Domain Admins" -and $_.ObjectType -eq "00000002-0000-0000-c000-000000000000"}
+    ```
+
+2.  **Using ADSI Edit**:
+    -   A GUI tool for viewing and editing AD objects and their attributes.
+    -   Connect to the domain
+    -   Navigate to the user object
+    -   Right-click and select "Properties"
+    -   Go to the "Security" tab
+    -   Click "Advanced"
+    -   Look for entries with "Write msDS-KeyCredentialLink" permission
+
+3.  **Using dsacls Command-Line Tool**:
+    ```cmd
+       dsacls "CN=Target User,CN=Users,DC=domain,DC=com" | findstr /i "write.*msDS-KeyCredentialLink"
+    ```
+
+
+### +Shadow Credentials Attack Process: Step by Step+: {#4c7bfe}
+
+
+#### 1. Initial Access: {#1-dot-initial-access}
 
 The attacker starts with some level of access to the domain, typically with privileges to modify user attributes.
 
 
-#### 2. Whisker Execution {#2-dot-whisker-execution}
+#### 2. Whisker Execution: {#2-dot-whisker-execution}
 
 The attacker uses Whisker to add a new "shadow credential" to the target account:
 
@@ -48,7 +89,7 @@ whisker.exe add /target:nbarley /domain:sugarape.local
 -   {{< figure src="/ox-hugo/2024-10-11-155959_.png" >}}
 
 
-#### 3. Certificate Generation and Usage {#3-dot-certificate-generation-and-usage}
+#### 3. Certificate Generation and Usage: {#3-dot-certificate-generation-and-usage}
 
 **Whisker creates**:
 
@@ -68,7 +109,7 @@ whisker.exe add /target:nbarley /domain:sugarape.local
 3.  If valid, AD issues a Kerberos Ticket Granting Ticket (TGT) for the user
 
 
-#### 4. Rubeus Exploitation {#4-dot-rubeus-exploitation}
+#### 4. Rubeus Exploitation: {#4-dot-rubeus-exploitation}
 
 The attacker then uses Rubeus to leverage the generated certificate:
 
@@ -80,11 +121,12 @@ Rubeus.exe asktgt /user:nbarley /certificate:[Base64 Certificate] /password:"<Pa
 
 -   Uses the certificate to request a Kerberos TGT for Nathan Barley (nbarley)
 -   The `/certificate` parameter contains the Base64-encoded certificate
--   The `/password` is for the private key, not Nathan's actual AD password
+-   The `/getcredentials` flag attempts to decrypt the encrypted NTLM hash from the TGT
+-   The `/show` flag displays the ticket details and other information
 -   If successful, Rubeus receives a TGT and can extract the NTLM hash
 
 
-#### 5. Credential Extraction {#5-dot-credential-extraction}
+#### 5. Credential Extraction: {#5-dot-credential-extraction}
 
 **As a result of this process**:
 
@@ -93,14 +135,14 @@ Rubeus.exe asktgt /user:nbarley /certificate:[Base64 Certificate] /password:"<Pa
 -   {{< figure src="/ox-hugo/2024-10-11-160210_.png" >}}
 
 
-### Impact of the Shadow Credentials Attack {#impact-of-the-shadow-credentials-attack}
+### Impact of the Shadow Credentials Attack: {#impact-of-the-shadow-credentials-attack}
 
 -   The attacker gains the ability to authenticate as Nathan Barley (nbarley)
 -   This can lead to further lateral movement or privilege escalation within the domain
 -   The attack is stealthy, not triggering typical account modification alerts
 
 
-### Shadow Credentials Attack Mitigation Strategies {#shadow-credentials-attack-mitigation-strategies}
+### Shadow Credentials Attack Mitigation Strategies: {#shadow-credentials-attack-mitigation-strategies}
 
 To protect against Shadow Credentials attacks:
 
@@ -116,7 +158,7 @@ To protect against Shadow Credentials attacks:
 10. Consider using Privileged Access Workstations (PAWs) for administrative tasks
 
 
-### Shadow Credentials Attack Detection Methods {#shadow-credentials-attack-detection-methods}
+### Shadow Credentials Attack Detection Methods: {#shadow-credentials-attack-detection-methods}
 
 1.  **Monitor Active Directory Logs**: Look for Event ID 4662 with the `msDS-KeyCredentialLink` attribute being modified.
 2.  **Use PowerShell Scripts**: Develop scripts to regularly check for unexpected changes to the `msDS-KeyCredentialLink` attribute.
@@ -124,15 +166,16 @@ To protect against Shadow Credentials attacks:
 4.  **Network Traffic Analysis**: Monitor for unusual Kerberos traffic patterns that might indicate certificate-based authentication abuse.
 
 
-### Conclusion {#conclusion}
-
+### Conclusion: {#conclusion}
 
 The Shadow Credentials attack vector demonstrates the evolving complexity of securing modern Active Directory environments. It highlights the importance of looking beyond traditional password-based security and considering certificate-based authentication mechanisms and critical user attributes.
 
 As defenders, staying informed about these advanced techniques is crucial. By understanding attacks like Shadow Credentials, we can better prepare our defenses and protect our organizations from sophisticated threats.
 
-### References: 
-- I would recommend reading this for a DEEP dive onto it by the person who discovered the vulnerability: https://posts.specterops.io/shadow-credentials-abusing-key-trust-account-mapping-for-takeover-8ee1a53566ab
 
-- Here is a great video alos showcasing how simple this attack can be: 
-- {{< youtube IK7qPMqSKMY >}} 
+### Sources: {#sources}
+
+-   I would recommend reading this for a DEEP dive onto it by the person who discovered the vulnerability: <https://posts.specterops.io/shadow-credentials-abusing-key-trust-account-mapping-for-takeover-8ee1a53566ab>
+
+-   Here is a great video alos showcasing how simple this attack can be:
+    -   {{< youtube IK7qPMqSKMY >}}

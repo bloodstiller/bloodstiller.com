@@ -328,6 +328,16 @@
         
             
                 <li class="file">
+                    <a href="http://localhost:1313/shadowcredentialsattack/" title="./shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
                     <a href="http://localhost:1313/outdated-box/" title="./outdated-box/">
                         
                             Outdated HTB Walkthrough
@@ -550,6 +560,7 @@
             
                 <h2 id="understanding-the-shadow-credentials-attack-vector">Understanding the Shadow Credentials Attack Vector:</h2>
 <p>The Shadow Credentials attack is an advanced technique that exploits Active Directory&rsquo;s certificate-based authentication mechanism to compromise user accounts without changing their passwords. This attack leverages the <code>msDS-KeyCredentialLink</code> attribute to add a malicious certificate, allowing an attacker to impersonate the target user stealthily.</p>
+<p><strong>To put it simply</strong>: If we have the <code>WriteProperty</code> privilege (specifically for the <code>msDS-KeyCredentialLink</code> attribute) over a user or computer object, we can set Shadow Credentials for that object and authenticate as them. You read that right, we can add a certificate-based credential to a user or computer and then authenticate as them. We can also request a Kerberos ticket and use it for pass-the-ticket attacks if needed.</p>
 <h3 id="what-are-shadow-credentials">What are Shadow Credentials?</h3>
 <p>The Shadow Credentials attack exploits a feature in Active Directory called Key Trust Account Mapping. This technique allows an attacker to compromise a user account without changing its password, making it particularly stealthy and difficult to detect.</p>
 <h3 id="key-components-of-the-shadow-credentials-attack">Key Components of the Shadow Credentials Attack:</h3>
@@ -644,13 +655,17 @@
 <li>Uses the certificate to request a Kerberos TGT for Nathan Barley (nbarley)</li>
 <li>The <code>/certificate</code> parameter contains the Base64-encoded certificate</li>
 <li>The <code>/password</code> is for the private key, not Nathan&rsquo;s actual AD password</li>
+<li>The <code>/getcredentials</code> flag attempts to decrypt the encrypted NTLM hash from the TGT</li>
+<li>The <code>/show</code> flag displays the ticket details and other information</li>
 <li>If successful, Rubeus receives a TGT and can extract the NTLM hash</li>
 </ul>
 <h4 id="5-dot-credential-extraction">5. Credential Extraction</h4>
 <p><strong>As a result of this process</strong>:</p>
+<p>As a result of this process:</p>
 <ul>
-<li>Rubeus obtains a TGT for Nathan Barley (nbarley) &amp; generates a <code>.kirbi</code> file which can be used for pass-the-ticket attacks.</li>
-<li>It also extracts the user&rsquo;s NTLM hash</li>
+<li>Rubeus obtains a TGT for Nathan Barley (nbarley) &amp; generates a .kirbi file which can be used for pass-the-ticket attacks.</li>
+<li>It also extracts and displays the user&rsquo;s NTLM hash (due to the <code>/getcredentials</code> flag)</li>
+<li>The ticket details and other information are shown in the output (due to the <code>/show</code> flag)</li>
 <li><figure><img src="/ox-hugo/2024-10-11-160210_.png">
 </figure>
 </li>
@@ -761,7 +776,7 @@
                 <li>
                     
                         Word Count:
-                        707
+                        827
                     
                 </li>
             
@@ -847,8 +862,8 @@
         
         <script
             type="text/javascript"
-            src="/_theme/js/custom.baf1622c95b2ed38ea638ca259c323d2a5537d258fb923994e97539b4c4ecf706c7992482768366adddcb83153dce8c33f5fc95a5c8abe6b2a03046892509fae.js"
-            integrity="sha512-uvFiLJWy7TjqY4yiWcMj0qVTfSWPuSOZTpdTm0xOz3BseZJIJ2g2at3cuDFT3OjDP1/JWlyKvmsqAwRoklCfrg=="></script>
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
     
         
         <script
