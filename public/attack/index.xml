@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Attacks on Hack Me Daddy</title>
+    <link>http://localhost:1313/attack/</link>
+    <description>Recent content in Attacks on Hack Me Daddy</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/attack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Insecure Direct Object References (IDOR)</title>
+      <link>http://localhost:1313/attack/20240206062546-insecure_direct_object_references_idor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/attack/20240206062546-insecure_direct_object_references_idor/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;How to find IDORs:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://vickieli.medium.com/how-to-find-more-idors-ae2db67c9489&#34;&gt;https://vickieli.medium.com/how-to-find-more-idors-ae2db67c9489&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;What is an IDOR:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References&#34;&gt;https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Examples of IDOR Vulns in the wild:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://infosecwriteups.com/disclose-private-attachments-in-facebook-messenger-infrastructure-15-000-ae13602aa486&#34;&gt;https://infosecwriteups.com/disclose-private-attachments-in-facebook-messenger-infrastructure-15-000-ae13602aa486&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://infosecwriteups.com/add-description-to-instagram-posts-on-behalf-of-other-users-6500-7d55b4a24c5a&#34;&gt;https://infosecwriteups.com/add-description-to-instagram-posts-on-behalf-of-other-users-6500-7d55b4a24c5a&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://medium.com/@kedrisec/publish-tweets-by-any-other-user-6c9d892708e3&#34;&gt;https://medium.com/@kedrisec/publish-tweets-by-any-other-user-6c9d892708e3&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://vickieli.medium.com/intro-to-idor-9048453a3e5d&#34;&gt;https://vickieli.medium.com/intro-to-idor-9048453a3e5d&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;seperate-enumeration-and-attacks-properly-dot&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; seperate enumeration and attacks properly.&lt;/h2&gt;&#xA;&lt;h2 id=&#34;used-for&#34;&gt;Used-For: &lt;del&gt;Accessing Other Users Data/Account Takeover&lt;/del&gt;&lt;/h2&gt;&#xA;&lt;p&gt;IDOR vulnerabilities can have a significant impact on web applications. The most basic example of an IDOR vulnerability is accessing private files and resources of other users that should not be accessible to us, like personal files or credit card data, which is known as IDOR Information Disclosure Vulnerabilities. Depending on the nature of the exposed direct reference, the vulnerability may even allow the modification or deletion of other users&amp;rsquo; data, which may lead to a complete account takeover.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

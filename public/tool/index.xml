@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on Hack Me Daddy</title>
+    <link>http://localhost:1313/tool/</link>
+    <description>Recent content in Tools on Hack Me Daddy</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gobuster</title>
+      <link>http://localhost:1313/tool/20230504114449-gobuster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tool/20230504114449-gobuster/</guid>
+      <description>&lt;h2 id=&#34;used-for-directory-busting&#34;&gt;Used For: Directory Busting&lt;/h2&gt;&#xA;&lt;p&gt;GoBuster is a versatile tool that allows for performing DNS, vhost, and directory brute-forcing. The tool has additional functionality, such as enumeration of public AWS S3 buckets. For this module&amp;rsquo;s purposes, we are interested in the directory (and file) brute-forcing modes specified with the switch dir. Let us run a simple scan using the dirb common.txt wordlist.&lt;/p&gt;&#xA;&lt;h2 id=&#34;command-cheat-sheet&#34;&gt;Command Cheat Sheet:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Dirbusting&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;Command&lt;/code&gt;: gobuster dir -u &amp;lt;http://&lt;!-- raw HTML omitted --&gt;&amp;gt; -w &amp;lt;wordlist&amp;gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;del&gt;Example&lt;/del&gt;: gobuster dir -u &amp;lt;http://&lt;!-- raw HTML omitted --&gt;&amp;gt; -w /usr/share/wordlist/dirb/common.txt&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;DNS Busting&lt;/strong&gt;:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SCP </title>
+      <link>http://localhost:1313/tool/20230505160102-scp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tool/20230505160102-scp/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview:&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;scp plaintext@192.168.49.128:/root/myroot.txt .&lt;/code&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;scp&lt;/code&gt;: scp stands for &amp;ldquo;secure copy&amp;rdquo; and is a command-line tool used to securely transfer files between local and remote systems.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;plaintext@192.168.49.128&lt;/code&gt;: This specifies the username and IP address of the remote system you want to connect to. In this case, the username is plaintext, and the IP address is &lt;code&gt;192.168.49.128&lt;/code&gt;. You may need to replace plaintext with the appropriate username.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;:/root/myroot.txt&lt;/code&gt;: This is the path of the file on the remote system that you want to copy. In this case, it&amp;rsquo;s &lt;code&gt;/root/myroot.txt&lt;/code&gt;. This assumes that the file myroot.txt is located in the /root directory on the remote system. Adjust the path according to your specific file location.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

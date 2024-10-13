@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.135.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            PrivEsc Linux |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.e6eadce601966e1bc2d798a6a4b94edc31360559ec0c7efd94e31d855914e918a88c9bddfabc11200357a22ce33ebdfd27c70fdd76cc8d155e9633bab42e0f76.css"
+                integrity="sha512-5urc5gGWbhvC15impLlO3DE2BVnsDH79lOMdhVkU6RiojJvd&#43;rwRIANXoizjPr39J8cP3XbMjRVeljO6tC4Pdg==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            PrivEsc Linux -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Box Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Attacks </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/attack/20240206062546-insecure_direct_object_references_idor/" title="./attack/20240206062546-insecure_direct_object_references_idor/">
+                        
+                            Insecure Direct Object References (IDOR)
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheet/20230505162602-active_directory/" title="./cheatsheet/20230505162602-active_directory/">
+                        
+                            Active Directory
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheet/20230505140235-privesc_linux/" title="./cheatsheet/20230505140235-privesc_linux/">
+                        
+                            PrivEsc Linux
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheet/20230505155252-transferring_files/" title="./cheatsheet/20230505155252-transferring_files/">
+                        
+                            Transferring Files
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Tools </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tool/20230504114449-gobuster/" title="./tool/20230504114449-gobuster/">
+                        
+                            Gobuster
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tool/20230505160102-scp/" title="./tool/20230505160102-scp/">
+                        
+                            SCP 
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                PrivEsc Linux
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="0001.01.01"
+                            >0001.01.01
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        6 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/linux/"
+                            class="tag-btn">
+                            linux
+                        </a>
+                    
+                        <a
+                            href="/tags/privesc/"
+                            class="tag-btn">
+                            privesc
+                        </a>
+                    
+                        <a
+                            href="/tags/privilege/"
+                            class="tag-btn">
+                            privilege
+                        </a>
+                    
+                        <a
+                            href="/tags/escalation/"
+                            class="tag-btn">
+                            escalation
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/cheatsheet/" class="bread-btn">
+    
+
+    
+        Cheatsheets
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/cheatsheet/20230505140235-privesc_linux/" class="bread-btn">
+    
+
+    
+        
+            PrivEsc Linux
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#automatated-tools-and-scripts">Automatated Tools &amp; Scripts <del>THESE ARE NOISY</del>:</a></li>
+    <li><a href="#enviromental-based-privilege-escalation">Enviromental-based privilege escalation:</a></li>
+    <li><a href="#permissions-based-privilege-escalation">Permissions-based privilege escalation:</a></li>
+    <li><a href="#service-based-privilege-escalation">Service-based Privilege Escalation:</a></li>
+    <li><a href="#linux-internals-based-privilege-escalation">Linux Internals-based Privilege Escalation:</a></li>
+    <li><a href="#container-abuse-privesc">Container Abuse/Privesc:</a></li>
+    <li><a href="#28d013"><del>Privesc Checklist</del> <!-- raw HTML omitted -->[0/21]<!-- raw HTML omitted -->:</a></li>
+    <li><a href="#linux-targets"><em>Linux Targets</em>:</a></li>
+    <li><a href="#look-for-rsnapshot-tar-or-other-backup-files">Look for rsnapshot, tar, or other backup files</a></li>
+    <li><a href="#remember-to-setup">Remember to setup </a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <ul>
+<li>
+<p><input disabled="" type="checkbox"> GTFOBins: <a href="https://gtfobins.github.io/">https://gtfobins.github.io/</a></p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> g0tmi1k Linux Privilege Escalation: <a href="https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/">https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/</a></p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Hacktricks: <a href="https://book.hacktricks.xyz/linux-hardening/privilege-escalation">https://book.hacktricks.xyz/linux-hardening/privilege-escalation</a></p>
+</li>
+<li>
+<p><a href="https://rootrecipe.medium.com/unique-priv-esc-methods-3a11d9dc94f">https://rootrecipe.medium.com/unique-priv-esc-methods-3a11d9dc94f</a></p>
+</li>
+<li>
+<p>: <del>DO THESE</del>:</p>
+</li>
+</ul>
+<h2 id="automatated-tools-and-scripts">Automatated Tools &amp; Scripts <del>THESE ARE NOISY</del>:</h2>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Linpeas</strong>:</p>
+<ul>
+<li><a href="https://github.com/carlospolop/PEASS-ng">https://github.com/carlospolop/PEASS-ng</a></li>
+<li><!-- raw HTML omitted -->Output to file<!-- raw HTML omitted -->:
+<ul>
+<li>./linpeas.sh -a &gt; linpeas.txt #Victim</li>
+<li>less -r linpeas.txt #Read with colors</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Linux Exploit Suggester 2</strong>:</p>
+<ul>
+<li><a href="https://github.com/jondonas/linux-exploit-suggester-2">https://github.com/jondonas/linux-exploit-suggester-2</a></li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>LinEnum</strong>: (-t options)</p>
+<ul>
+<li><a href="https://github.com/rebootuser/LinEnum">https://github.com/rebootuser/LinEnum</a></li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>UnixPriv Checker</strong>:</p>
+<ul>
+<li><a href="https://github.com/pentestmonkey/unix-privesc-check">https://github.com/pentestmonkey/unix-privesc-check</a></li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Enumy</strong>:</p>
+<ul>
+<li><a href="https://github.com/luke-goddard/enumy">https://github.com/luke-goddard/enumy</a></li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Linux Priv Checker</strong>:</p>
+<ul>
+<li><a href="http://www.securitysift.com/download/linuxprivchecker.py">http://www.securitysift.com/download/linuxprivchecker.py</a></li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>BeeRoot</strong>:</p>
+<ul>
+<li><a href="https://github.com/AlessandroZ/BeRoot/tree/master/Linux">https://github.com/AlessandroZ/BeRoot/tree/master/Linux</a></li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Kernelpop</strong>:</p>
+<ul>
+<li>Enumerate kernel vulns ins linux and MAC <a href="https://github.com/spencerdodd/kernelpop">https://github.com/spencerdodd/kernelpop</a></li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Mestaploit</strong>:</p>
+<ul>
+<li>use (multi/recon/local_exploit_suggester)</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>EvilAbigail (physical access)</strong>:</p>
+<ul>
+<li><a href="https://github.com/GDSSecurity/EvilAbigail">https://github.com/GDSSecurity/EvilAbigail</a></li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Recompilation of more scripts</strong>:</p>
+<ul>
+<li><a href="https://github.com/1N3/PrivEsc">https://github.com/1N3/PrivEsc</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="enviromental-based-privilege-escalation">Enviromental-based privilege escalation:</h2>
+<ul>
+<li><a href="https://gtfoargs.github.io/">https://gtfoargs.github.io/</a></li>
+<li>:</li>
+<li>:</li>
+<li>:</li>
+</ul>
+<h2 id="permissions-based-privilege-escalation">Permissions-based privilege escalation:</h2>
+<ul>
+<li>
+<p><strong>Special Permissions</strong>:</p>
+<ul>
+<li>See</li>
+<li>Then <a href="https://gtfobins.github.io/">https://gtfobins.github.io/</a></li>
+</ul>
+</li>
+<li>
+<p>:</p>
+</li>
+<li>
+<p>:</p>
+</li>
+<li></li>
+</ul>
+<h2 id="service-based-privilege-escalation">Service-based Privilege Escalation:</h2>
+<ul>
+<li>This is just about enumerating the services running on the system &amp; finding known exploits.</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->_<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li></li>
+<li></li>
+<li>
+<ul>
+<li>See</li>
+<li>See</li>
+</ul>
+</li>
+<li>
+<p><strong>Passive Traffic Capture Privesc</strong>:</p>
+<ul>
+<li>If is installed we may be able to caputre network traffic.</li>
+<li>See</li>
+<li>See</li>
+</ul>
+</li>
+<li>
+<p><strong>privilege escalation method</strong>:</p>
+<ul>
+<li><a href="https://book.hacktricks.xyz/linux-hardening/privilege-escalation/nfs-no_root_squash-misconfiguration-pe">https://book.hacktricks.xyz/linux-hardening/privilege-escalation/nfs-no_root_squash-misconfiguration-pe</a></li>
+<li>See</li>
+</ul>
+</li>
+<li>
+<p><strong>privilege escalation method</strong>:</p>
+<ul>
+<li>See</li>
+</ul>
+</li>
+</ul>
+<h2 id="linux-internals-based-privilege-escalation">Linux Internals-based Privilege Escalation:</h2>
+<ul>
+<li>:</li>
+<li>:</li>
+<li>:</li>
+<li>Privesc ():
+<ul>
+<li><strong>See</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="container-abuse-privesc">Container Abuse/Privesc:</h2>
+<ul>
+<li>:</li>
+<li>:</li>
+<li>:</li>
+</ul>
+<h2 id="28d013"><del>Privesc Checklist</del> <!-- raw HTML omitted -->[0/21]<!-- raw HTML omitted -->:</h2>
+<ul>
+<li><strong>Good cheat sheets</strong>:
+<ul>
+<li><a href="https://swisskyrepo.github.io/InternalAllTheThings/redteam/escalation/linux-privilege-escalation/">https://swisskyrepo.github.io/InternalAllTheThings/redteam/escalation/linux-privilege-escalation/</a></li>
+<li><a href="https://book.hacktricks.xyz/linux-hardening/linux-privilege-escalation-checklist">https://book.hacktricks.xyz/linux-hardening/linux-privilege-escalation-checklist</a></li>
+</ul>
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->_<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> <strong>System Information</strong>: <!-- raw HTML omitted -->[0/11]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Get OS information</li>
+<li><input disabled="" type="checkbox"> Check the PATH, any writable folder?</li>
+<li><input disabled="" type="checkbox"> Check env variables, any sensitive detail?</li>
+<li><input disabled="" type="checkbox"> Check kernel version</li>
+<li><input disabled="" type="checkbox"> Search for using scripts (DirtyCow?)
+<ul>
+<li><input disabled="" type="checkbox"> Is GCC installed</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Check if the sudo version is vulnerable</li>
+<li><input disabled="" type="checkbox"> Dmesg signature verification failed</li>
+<li><input disabled="" type="checkbox"> More system enum (date, system stats, cpu info, printers)</li>
+<li><input disabled="" type="checkbox"> Enumerate more defenses</li>
+<li><input disabled="" type="checkbox"> Is host connected to AD?
+<ul>
+<li><input disabled="" type="checkbox"> If so check</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Read logs:</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> : <!-- raw HTML omitted -->[0/3]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> List mounted drives</li>
+<li><input disabled="" type="checkbox"> Any unmounted drive that we can mount?</li>
+<li><input disabled="" type="checkbox"> Any creds in fstab?</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Installed Software</strong>: <!-- raw HTML omitted -->[0/3]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> <!-- raw HTML omitted -->Binaries<!-- raw HTML omitted --> <!-- raw HTML omitted -->[0/1]<!-- raw HTML omitted -->:
+<ul>
+<li><input disabled="" type="checkbox"> Check for</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <!-- raw HTML omitted -->Packages<!-- raw HTML omitted -->: <!-- raw HTML omitted -->[0/1]<!-- raw HTML omitted -->
+<ul>
+<li><input disabled="" type="checkbox"> Check for</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <!-- raw HTML omitted -->Programming Languages<!-- raw HTML omitted -->: <!-- raw HTML omitted -->[0/1]<!-- raw HTML omitted -->
+<ul>
+<li><input disabled="" type="checkbox"> Check for</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Processes</strong>: <!-- raw HTML omitted -->[0/7]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Is any unknown software running?</li>
+<li><input disabled="" type="checkbox"> Is any software running with more privileges than it should have?</li>
+<li><input disabled="" type="checkbox"> Search for exploits of running processes (especially the version running).</li>
+<li><input disabled="" type="checkbox"> Can you modify the binary of any running process?</li>
+<li><input disabled="" type="checkbox"> Monitor processes and check if any interesting process is running frequently.</li>
+<li><input disabled="" type="checkbox"> Can you read some interesting process memory (where passwords could be saved)?</li>
+<li><input disabled="" type="checkbox"> Run</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Scheduled/Cron jobs?</strong>: <!-- raw HTML omitted -->[0/4]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Is the PATH being modified by some cron and you can write in it?</li>
+<li><input disabled="" type="checkbox"> Any in a cron job?</li>
+<li><input disabled="" type="checkbox"> Some modifiable script is being executed or is inside modifiable folder?</li>
+<li><input disabled="" type="checkbox"> Have you detected that some script could be or are being executed very frequently? (every 1, 2 or 5 minutes)</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Services</strong>: <!-- raw HTML omitted -->[0/3]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Any writable .service file?</li>
+<li><input disabled="" type="checkbox"> Any writable binary executed by a service?</li>
+<li><input disabled="" type="checkbox"> Any writable folder in systemd PATH?</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Timers</strong>: <!-- raw HTML omitted -->[0/1]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Any writable timer?</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Sockets</strong>: <!-- raw HTML omitted -->[0/3]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Any writable .socket file?</li>
+<li><input disabled="" type="checkbox"> Can you communicate with any socket?</li>
+<li><input disabled="" type="checkbox"> HTTP sockets with interesting info?</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>D-Bus</strong>: <!-- raw HTML omitted -->[0/1]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Can you communicate with any D-Bus?</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Network</strong>: <!-- raw HTML omitted -->[0/5]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Enumerate the network to know where you are</li>
+<li><input disabled="" type="checkbox"> Open ports you couldn&rsquo;t access before getting a shell inside the machine?</li>
+<li><input disabled="" type="checkbox"> Can you sniff traffic using tcpdump?</li>
+<li><input disabled="" type="checkbox"> Anything interesting in the /etc/hosts file?</li>
+<li><input disabled="" type="checkbox"> Are there any interesting network connections to other systems in the internal network or even outside the network?</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Users</strong>: <!-- raw HTML omitted -->[0/6]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> </li>
+<li><input disabled="" type="checkbox"> </li>
+<li><input disabled="" type="checkbox"> Do you have a very big UID? Is the machine vulnerable?</li>
+<li><input disabled="" type="checkbox"> Can you escalate privileges thanks to a group you belong to?</li>
+<li><input disabled="" type="checkbox"> Clipboard data?</li>
+<li><input disabled="" type="checkbox"> Enumerate logged in users (lastlog)</li>
+</ul>
+</li>
+<li>
+<p><strong>Password Policy</strong> <!-- raw HTML omitted -->[0/1]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Try to use every known password that you have discovered previously to login with each possible user. Try to login also without a password.</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Writable PATH</strong> <!-- raw HTML omitted -->[0/1]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> If you have write privileges over some folder in you may be able to escalate privileges</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>SUDO and SUID commands</strong>: <!-- raw HTML omitted -->[0/11]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Can you execute any command with sudo? Can you use it to READ, WRITE or EXECUTE anything as root? (GTFOBins)</li>
+<li><input disabled="" type="checkbox"> Is any exploitable ? (GTFOBins)</li>
+<li><input disabled="" type="checkbox"> Are sudo commands limited by path? can you bypass the restrictions?</li>
+<li><input disabled="" type="checkbox"> Sudo/SUID binary without path indicated?</li>
+<li><input disabled="" type="checkbox"> SUID binary specifying path? Bypass</li>
+<li><input disabled="" type="checkbox"> vuln</li>
+<li><input disabled="" type="checkbox"> Lack of .so library in SUID binary from a writable folder?</li>
+<li><input disabled="" type="checkbox"> SUDO tokens available? Can you create a SUDO token?</li>
+<li><input disabled="" type="checkbox"> Can you read or modify sudoers files?</li>
+<li><input disabled="" type="checkbox"> Can you modify <em>etc/ld.so.conf.d</em>?</li>
+<li><input disabled="" type="checkbox"> OpenBSD DOAS command</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Capabilities</strong>: <!-- raw HTML omitted -->[0/1]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Has any binary any unexpected .</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>ACLs</strong>: <!-- raw HTML omitted -->[0/1]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Has any file any unexpected ACL?</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Open Shell sessions</strong>: <!-- raw HTML omitted -->[0/2]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> </li>
+<li><input disabled="" type="checkbox"> </li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>SSH</strong>: <!-- raw HTML omitted -->[0/2]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Debian OpenSSL Predictable PRNG - CVE-2008-0166</li>
+<li><input disabled="" type="checkbox"> SSH Interesting configuration values</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Interesting Files</strong>: <!-- raw HTML omitted -->[0/17]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Bash history</li>
+<li><input disabled="" type="checkbox"> </li>
+<li><input disabled="" type="checkbox"> </li>
+<li><input disabled="" type="checkbox"> </li>
+<li><input disabled="" type="checkbox"> Profile files - Read sensitive data? Write to privesc?</li>
+<li><input disabled="" type="checkbox"> passwd/shadow files - Read sensitive data? Write to privesc?</li>
+<li><input disabled="" type="checkbox"> Check commonly interesting folders for sensitive data</li>
+<li><input disabled="" type="checkbox"> Weird Location/Owned files, you may have access to or alter executable files</li>
+<li><input disabled="" type="checkbox"> Modified in last mins</li>
+<li><input disabled="" type="checkbox"> Sqlite DB files</li>
+<li><input disabled="" type="checkbox"> </li>
+<li><input disabled="" type="checkbox"> Script/Binaries in PATH</li>
+<li><input disabled="" type="checkbox"> Web files (passwords?)</li>
+<li><input disabled="" type="checkbox"> files</li>
+<li><input disabled="" type="checkbox"> Backups?</li>
+<li><input disabled="" type="checkbox"> Known files that contains passwords: Use and LaZagne</li>
+<li><input disabled="" type="checkbox"> Generic search</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Writable Files</strong>: <!-- raw HTML omitted -->[0/4]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Modify to execute arbitrary commands?</li>
+<li><input disabled="" type="checkbox"> Can you modify log files? exploit</li>
+<li><input disabled="" type="checkbox"> Can you modify <em>etc/sysconfig/network-scripts</em>? Centos/Redhat exploit</li>
+<li><input disabled="" type="checkbox"> Can you write in ini, int.d, systemd or rc.d files?</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Other tricks</strong>: <!-- raw HTML omitted -->[0/2]<!-- raw HTML omitted --></p>
+<ul>
+<li><input disabled="" type="checkbox"> Can you abuse to escalate privileges?</li>
+<li><input disabled="" type="checkbox"> Do you need to escape from a ?</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <a href="#container-abuse-privesc">Container Abuse/Privesc:</a></p>
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->_<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="linux-targets"><em>Linux Targets</em>:</h2>
+<p>## If Access via Domain Account</p>
+<p>### Active Directory Integration</p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Kerberos Tickets</strong></strong></p>
+<ul>
+<li>Dump tickets: mimikatz, klist</li>
+<li>Golden ticket creation</li>
+<li>Pass-the-Ticket attacks</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Samba/Winbind Configuration</strong></strong></p>
+<ul>
+<li>Location: /etc/samba/smb.conf</li>
+<li>Check for sensitive configurations, stored credentials</li>
+</ul>
+</li>
+</ul>
+<p>### Network Shares</p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>NFS Shares</strong></strong></p>
+<ul>
+<li>Location: /etc/exports</li>
+<li>Look for misconfigured or sensitive NFS exports</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Samba Shares</strong></strong></p>
+<ul>
+<li>Location: /etc/samba/smb.conf</li>
+<li>Check for shared directories, accessible files</li>
+</ul>
+</li>
+</ul>
+<p>### Local and Domain Policies</p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Password Policies</strong></strong></p>
+<ul>
+<li>Location: /etc/login.defs, /etc/security/pwquality.conf</li>
+<li>Minimum password length, complexity requirements</li>
+<li>Password expiration settings</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>User Rights Assignment</strong></strong></p>
+<ul>
+<li>Location: /etc/sudoers, /etc/sudoers.d/*</li>
+<li>Check for sudo privileges, special permissions</li>
+</ul>
+</li>
+</ul>
+<p>### Sensitive Files and Directories</p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>User Profiles</strong></strong></p>
+<ul>
+<li>Location: /home/%username%</li>
+<li>Target Documents, Desktop, Downloads, .ssh directory</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Backup Files</strong></strong></p>
+<ul>
+<li>Common locations: /var/backups, /mnt/backups</li>
+<li>
+<h2 id="look-for-rsnapshot-tar-or-other-backup-files">Look for rsnapshot, tar, or other backup files</h2>
+</li>
+</ul>
+</li>
+</ul>
+<p>### Installed Software and Services</p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Credential Stores</strong></strong></p>
+<ul>
+<li>Password Managers (e.g., KeePass databases)</li>
+<li>SSH keys: <em>home/$USERNAME</em>.ssh</li>
+<li>UNSHADOW! Shadow/ etc</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Database Servers</strong></strong></p>
+<ul>
+<li>MySQL: /etc/mysql/my.cnf</li>
+<li>PostgreSQL: /etc/postgresql/*/main/pg_hba.conf</li>
+<li>Check for configuration files with stored credentials</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Email Servers</strong></strong></p>
+<ul>
+<li>Postfix, Dovecot: /etc/postfix/main.cf, /etc/dovecot/dovecot.conf</li>
+<li>Check for configuration files with stored credentials</li>
+</ul>
+</li>
+</ul>
+<p>### Miscellaneous Targets</p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Scheduled Tasks and Cron Jobs</strong></strong></p>
+<ul>
+<li>Location: /etc/crontab, /etc/cron.*, /var/spool/cron/crontabs</li>
+<li>Look for sensitive scripts, backup jobs</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Startup Items</strong></strong></p>
+<ul>
+<li>Location: /etc/init.d, /etc/systemd/system</li>
+<li>Check for sensitive services, startup scripts</li>
+</ul>
+</li>
+</ul>
+<p>## If Access via Local Account</p>
+<p>### Registry and Configuration Files</p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Shadow File</strong></strong></p>
+<ul>
+<li>Location: /etc/shadow</li>
+<li>Contains hashed user passwords</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Passwd File</strong></strong></p>
+<ul>
+<li>Location: /etc/passwd</li>
+<li>Contains user account information</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Group File</strong></strong></p>
+<ul>
+<li>Location: /etc/group</li>
+<li>Contains group information</li>
+</ul>
+</li>
+</ul>
+<p>### Sensitive Files and Directories</p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>User Profiles</strong></strong></p>
+<ul>
+<li>Location: /home/%username%</li>
+<li>Target Documents, Desktop, Downloads, .ssh directory</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Backup Files</strong></strong></p>
+<ul>
+<li>Common locations: /var/backups, /mnt/backups</li>
+<li>Look for rsnapshot, tar, or other backup files</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Credential Files</strong></strong></p>
+<ul>
+<li>SSH keys: <em>home/%username%</em>.ssh</li>
+<li>GPG keys: <em>home/%username%</em>.gnupg</li>
+</ul>
+</li>
+</ul>
+<p>### Installed Software and Services</p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Credential Stores</strong></strong></p>
+<ul>
+<li>Password Managers (e.g., KeePass databases)</li>
+<li>SSH keys: <em>home/%username%</em>.ssh</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Database Servers</strong></strong></p>
+<ul>
+<li>MySQL: /etc/mysql/my.cnf</li>
+<li>PostgreSQL: /etc/postgresql/*/main/pg_hba.conf</li>
+<li>Check for configuration files with stored credentials</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Email Servers</strong></strong></p>
+<ul>
+<li>Postfix, Dovecot: /etc/postfix/main.cf, /etc/dovecot/dovecot.conf</li>
+<li>Check for configuration files with stored credentials</li>
+</ul>
+</li>
+</ul>
+<p>### Local Policies</p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>Password Policies</strong></strong></p>
+<ul>
+<li>Location: /etc/login.defs, /etc/security/pwquality.conf</li>
+<li>Minimum password length, complexity requirements</li>
+<li>Password expiration settings</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong><strong>User Rights Assignment</strong></strong></p>
+<ul>
+<li>Location: /etc/sudoers, /etc/sudoers.d/*</li>
+<li>Check for sudo privileges, special permissions</li>
+</ul>
+</li>
+</ul>
+<h2 id="remember-to-setup">Remember to setup </h2>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        1118
+                    
+                </li>
+            
+
+            
+            
+
+            
+                <li>en</li>
+            
+
+            
+                <li>
+                    <a href="https://gohugo.io" class="btn" target="_blank"
+                        >Hugo: 0.135.0</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    <a
+                        href="https://github.com/JingWangTW/dark-theme-editor"
+                        class="btn"
+                        target="_blank"
+                        >Theme: dark-theme-editor</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Jan 01 0001 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+                <li title="">
+                    
+                </li>
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

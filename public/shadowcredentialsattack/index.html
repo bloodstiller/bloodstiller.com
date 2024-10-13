@@ -338,16 +338,6 @@
         
             
                 <li class="file">
-                    <a href="http://localhost:1313/outdated-box/" title="./outdated-box/">
-                        
-                            Outdated HTB Walkthrough
-                        
-                    </a>
-                </li>
-            
-        
-            
-                <li class="file">
                     <a href="http://localhost:1313/aboutme/" title="./aboutme/">
                         
                             about me
@@ -527,12 +517,14 @@
       <ul>
         <li><a href="#what-are-shadow-credentials">What are Shadow Credentials?</a></li>
         <li><a href="#key-components-of-the-shadow-credentials-attack">Key Components of the Shadow Credentials Attack:</a></li>
-        <li><a href="#enumerating-users-susceptible-to-the-shadow-credentials-attack">+Enumerating Users Susceptible to the Shadow Credentials Attack+:</a></li>
-        <li><a href="#4c7bfe">+Shadow Credentials Attack Process: Step by Step+:</a></li>
+        <li><a href="#enumerating-users-susceptible-to-the-shadow-credentials-attack">Enumerating Users Susceptible to the Shadow Credentials Attack:</a></li>
+        <li><a href="#enumerating-for-the-writeproperty-msds-keycredentiallink-attribute-on-users">Enumerating for the <code>WriteProperty</code>  <code>msDS-KeyCredentialLink</code> attribute on users:</a></li>
+        <li><a href="#4c7bfe">+Shadow Credentials Attack Process: Step by Step+</a></li>
         <li><a href="#impact-of-the-shadow-credentials-attack">Impact of the Shadow Credentials Attack:</a></li>
         <li><a href="#shadow-credentials-attack-mitigation-strategies">Shadow Credentials Attack Mitigation Strategies:</a></li>
-        <li><a href="#shadow-credentials-attack-detection-methods">Shadow Credentials Attack Detection Methods:</a></li>
-        <li><a href="#conclusion">Conclusion:</a></li>
+        <li><a href="#shadow-credentials-attack-detection-methods">Shadow Credentials Attack Detection Methods</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#example-of-a-shadow-credentials-attack-in-action">Example of a Shadow Credentials Attack in Action:</a></li>
         <li><a href="#sources">Sources:</a></li>
       </ul>
     </li>
@@ -545,15 +537,23 @@
             
                 <h2 id="understanding-the-shadow-credentials-attack-vector">Understanding the Shadow Credentials Attack Vector:</h2>
 <p>The Shadow Credentials attack is an advanced technique that exploits Active Directory&rsquo;s certificate-based authentication mechanism to compromise user accounts without changing their passwords. This attack leverages the <code>msDS-KeyCredentialLink</code> attribute to add a malicious certificate, allowing an attacker to impersonate the target user stealthily.</p>
-<p><strong>To put it simply</strong>: If we have the <code>WriteProperty</code> privilege (specifically for the <code>msDS-KeyCredentialLink</code> attribute) over a user or computer object, we can set Shadow Credentials for that object and authenticate as them. You read that right, we can add a certificate-based credential to a user or computer and then authenticate as them. We can also request a Kerberos ticket and use it for pass-the-ticket attacks if needed.</p>
+<p><strong>To put it simply</strong>: If we have the <code>WriteProperty</code> privilege (specifically for the <code>msDS-KeyCredentialLink</code> attribute) over a user or computer object, we can set Shadow Credentials for that object and authenticate as them. You read that right, we can add a certificate-based credential to a user or computer and then authenticate as them. We can also request a <code>Kerberos</code> ticket and use it for pass-the-ticket attacks if needed.</p>
 <h3 id="what-are-shadow-credentials">What are Shadow Credentials?</h3>
 <p>The Shadow Credentials attack exploits a feature in Active Directory called Key Trust Account Mapping. This technique allows an attacker to compromise a user account without changing its password, making it particularly stealthy and difficult to detect.</p>
 <h3 id="key-components-of-the-shadow-credentials-attack">Key Components of the Shadow Credentials Attack:</h3>
 <ol>
-<li><strong>Whisker</strong>: A tool used to manipulate the <code>msDS-KeyCredentialLink</code> attribute of a user account.</li>
-<li><strong>Rubeus</strong>: A tool for interacting with Kerberos authentication.</li>
+<li><strong>Whisker</strong>: A tool used to manipulate the <code>msDS-KeyCredentialLink</code> attribute of a user account.
+<ul>
+<li><a href="https://github.com/eladshamir/Whisker">https://github.com/eladshamir/Whisker</a></li>
+</ul>
+</li>
+<li><strong>Rubeus</strong>: A tool for interacting with <code>Kerberos</code> authentication.
+<ul>
+<li><a href="https://github.com/GhostPack/Rubeus">https://github.com/GhostPack/Rubeus</a></li>
+</ul>
+</li>
 </ol>
-<h3 id="enumerating-users-susceptible-to-the-shadow-credentials-attack">+Enumerating Users Susceptible to the Shadow Credentials Attack+:</h3>
+<h3 id="enumerating-users-susceptible-to-the-shadow-credentials-attack">Enumerating Users Susceptible to the Shadow Credentials Attack:</h3>
 <ul>
 <li>
 <p><strong>In blood-hound look for the</strong> <code>AddKeyCredentialLink</code>:</p>
@@ -572,7 +572,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="enumerating-for-the-writeproperty-msds-keycredentiallink-attribute-on-users">Enumerating for the <code>WriteProperty</code>  <code>msDS-KeyCredentialLink</code> attribute on users:</h4>
+<h3 id="enumerating-for-the-writeproperty-msds-keycredentiallink-attribute-on-users">Enumerating for the <code>WriteProperty</code>  <code>msDS-KeyCredentialLink</code> attribute on users:</h3>
 <ol>
 <li><strong>Using</strong> <code>PowerView</code>:
 
@@ -618,7 +618,8 @@
     
 
     
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>   (Get-Acl <span style="color:#e6db74">&#34;AD:CN=&lt;User Name&gt;,CN=Users,DC=domain,DC=com&#34;</span>).Access |
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>   Import-Module ActiveDirectory
+</span></span><span style="display:flex;"><span>   (Get-Acl <span style="color:#e6db74">&#34;AD:CN=&lt;User Name&gt;,CN=Users,DC=domain,DC=com&#34;</span>).Access |
 </span></span><span style="display:flex;"><span>   Where-Object {$_.ActiveDirectoryRights <span style="color:#f92672">-match</span> <span style="color:#e6db74">&#34;WriteProperty&#34;</span> <span style="color:#f92672">-and</span> $_.IdentityReference <span style="color:#f92672">-match</span> <span style="color:#e6db74">&#34;Domain Admins&#34;</span> <span style="color:#f92672">-and</span> $_.ObjectType <span style="color:#f92672">-eq</span> <span style="color:#e6db74">&#34;00000002-0000-0000-c000-000000000000&#34;</span>}</span></span></code></pre></div>
     
 </div>
@@ -659,10 +660,10 @@
 </div>
 </li>
 </ol>
-<h3 id="4c7bfe">+Shadow Credentials Attack Process: Step by Step+:</h3>
-<h4 id="1-dot-initial-access">1. Initial Access:</h4>
+<h3 id="4c7bfe">+Shadow Credentials Attack Process: Step by Step+</h3>
+<h4 id="1-dot-initial-access">1. Initial Access</h4>
 <p>The attacker starts with some level of access to the domain, typically with privileges to modify user attributes.</p>
-<h4 id="2-dot-whisker-execution">2. Whisker Execution:</h4>
+<h4 id="2-dot-whisker-execution">2. Whisker Execution</h4>
 <p>The attacker uses Whisker to add a new &ldquo;shadow credential&rdquo; to the target account:</p>
 
 
@@ -693,7 +694,7 @@
 </figure>
 </li>
 </ul>
-<h4 id="3-dot-certificate-generation-and-usage">3. Certificate Generation and Usage:</h4>
+<h4 id="3-dot-certificate-generation-and-usage">3. Certificate Generation and Usage</h4>
 <p><strong>Whisker creates</strong>:</p>
 <ul>
 <li>An <code>X.509</code> certificate</li>
@@ -703,13 +704,13 @@
 <ul>
 <li>It&rsquo;s added to the user&rsquo;s <code>msDS-KeyCredentialLink</code> attribute in Active Directory</li>
 <li>This attribute allows for certificate-based authentication as an alternative to password-based auth</li>
-<li>The certificate is not directly used like a Kerberos ticket (<code>.kirbi</code> file)</li>
+<li>The certificate is not directly used like a <code>Kerberos</code> ticket (<code>.kirbi</code> file)</li>
 </ul>
 <p><strong>Instead, the process works like this</strong>:</p>
 <ol>
-<li>The attacker presents the certificate during the Kerberos authentication process</li>
+<li>The attacker presents the certificate during the <code>Kerberos</code> authentication process</li>
 <li>Active Directory validates the certificate against the one stored in <code>msDS-KeyCredentialLink</code></li>
-<li>If valid, AD issues a Kerberos Ticket Granting Ticket (TGT) for the user</li>
+<li>If valid, AD issues a <code>Kerberos</code> Ticket Granting Ticket (TGT) for the user</li>
 </ol>
 <h4 id="4-dot-rubeus-exploitation">4. Rubeus Exploitation:</h4>
 <p>The attacker then uses Rubeus to leverage the generated certificate:</p>
@@ -723,19 +724,19 @@
 <div class="codeblock">
     
         <div class="copy-button-box">
-            <button class="copy-button" state="copy" data="Rubeus.exe%20asktgt%20/user:nbarley%20/certificate:[Base64%20Certificate]%20/password:%22%3cPassword%20From%20Whisker%3e%22%20/domain:sugarape.local%20/dc:DC.sugarape.local%20/getcredentials%20/show">
+            <button class="copy-button" state="copy" data="Rubeus.exe%20asktgt%20/user:nbarley%20/certificate:[Base64%20Certificate]%20/password:%22[Password%20From%20Whisker]%22%20/domain:sugarape.local%20/dc:DC.sugarape.local%20/getcredentials%20/show">
                 <i class="bi bi-copy"></i>
             </button>
         </div>
     
 
     
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Rubeus.exe asktgt /user:nbarley /certificate:<span style="color:#f92672">[</span>Base64 Certificate<span style="color:#f92672">]</span> /password:<span style="color:#e6db74">&#34;&lt;Password From Whisker&gt;&#34;</span> /domain:sugarape.local /dc:DC.sugarape.local /getcredentials /show</span></span></code></pre></div>
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Rubeus.exe asktgt /user:nbarley /certificate:<span style="color:#f92672">[</span>Base64 Certificate<span style="color:#f92672">]</span> /password:<span style="color:#e6db74">&#34;[Password From Whisker]&#34;</span> /domain:sugarape.local /dc:DC.sugarape.local /getcredentials /show</span></span></code></pre></div>
     
 </div>
 <p><strong>This command</strong>:</p>
 <ul>
-<li>Uses the certificate to request a Kerberos TGT for Nathan Barley (nbarley)</li>
+<li>Uses the certificate to request a <code>Kerberos</code> TGT for Nathan Barley (nbarley)</li>
 <li>The <code>/certificate</code> parameter contains the Base64-encoded certificate</li>
 <li>The <code>/getcredentials</code> flag attempts to decrypt the encrypted NTLM hash from the TGT</li>
 <li>The <code>/show</code> flag displays the ticket details and other information</li>
@@ -752,7 +753,7 @@
 </ul>
 <h3 id="impact-of-the-shadow-credentials-attack">Impact of the Shadow Credentials Attack:</h3>
 <ul>
-<li>The attacker gains the ability to authenticate as Nathan Barley (nbarley)</li>
+<li>The attacker gains the ability to authenticate as Nathan Barley <code>nbarley</code></li>
 <li>This can lead to further lateral movement or privilege escalation within the domain</li>
 <li>The attack is stealthy, not triggering typical account modification alerts</li>
 </ul>
@@ -770,23 +771,35 @@
 <li>Implement multi-factor authentication (MFA) for all user accounts, especially privileged ones</li>
 <li>Consider using Privileged Access Workstations (PAWs) for administrative tasks</li>
 </ol>
-<h3 id="shadow-credentials-attack-detection-methods">Shadow Credentials Attack Detection Methods:</h3>
+<h3 id="shadow-credentials-attack-detection-methods">Shadow Credentials Attack Detection Methods</h3>
 <ol>
-<li><strong>Monitor Active Directory Logs</strong>: Look for Event ID 4662 with the <code>msDS-KeyCredentialLink</code> attribute being modified.</li>
+<li><strong>Monitor Active Directory Logs</strong>: Look for <code>Event ID 4662</code> with the <code>msDS-KeyCredentialLink</code> attribute being modified.</li>
 <li><strong>Use PowerShell Scripts</strong>: Develop scripts to regularly check for unexpected changes to the <code>msDS-KeyCredentialLink</code> attribute.</li>
 <li><strong>Implement SIEM Rules</strong>: Create alerts for unusual certificate-based authentication attempts, especially from unexpected sources.</li>
-<li><strong>Network Traffic Analysis</strong>: Monitor for unusual Kerberos traffic patterns that might indicate certificate-based authentication abuse.</li>
+<li><strong>Network Traffic Analysis</strong>: Monitor for unusual <code>Kerberos</code> traffic patterns that might indicate certificate-based authentication abuse.</li>
 </ol>
-<h3 id="conclusion">Conclusion:</h3>
+<h3 id="conclusion">Conclusion</h3>
 <p>The Shadow Credentials attack vector demonstrates the evolving complexity of securing modern Active Directory environments. It highlights the importance of looking beyond traditional password-based security and considering certificate-based authentication mechanisms and critical user attributes.</p>
 <p>As defenders, staying informed about these advanced techniques is crucial. By understanding attacks like Shadow Credentials, we can better prepare our defenses and protect our organizations from sophisticated threats.</p>
+<h3 id="example-of-a-shadow-credentials-attack-in-action">Example of a Shadow Credentials Attack in Action:</h3>
+<ul>
+<li>Please see my walkthrough/writeup for the Hack The Box machine &ldquo;Outdated&rdquo;:
+<ul>
+<li><a href="https://app.hackthebox.com/machines/Outdated">https://app.hackthebox.com/machines/Outdated</a></li>
+<li><a href="https://bloodstiller.com/walkthroughs/outdated-box">https://bloodstiller.com/walkthroughs/outdated-box</a></li>
+</ul>
+</li>
+</ul>
 <h3 id="sources">Sources:</h3>
 <ul>
 <li>
-<p>I would recommend reading this for a DEEP dive onto it by the person who discovered the vulnerability: <a href="https://posts.specterops.io/shadow-credentials-abusing-key-trust-account-mapping-for-takeover-8ee1a53566ab">https://posts.specterops.io/shadow-credentials-abusing-key-trust-account-mapping-for-takeover-8ee1a53566ab</a></p>
+<p>I would recommend reading this for a DEEP dive onto it by the person who created Whisker, Elad Shamir:</p>
+<ul>
+<li><a href="https://posts.specterops.io/shadow-credentials-abusing-key-trust-account-mapping-for-takeover-8ee1a53566ab">https://posts.specterops.io/shadow-credentials-abusing-key-trust-account-mapping-for-takeover-8ee1a53566ab</a></li>
+</ul>
 </li>
 <li>
-<p>Here is a great video alos showcasing how simple this attack can be:</p>
+<p>Here is a great video also showcasing how simple this attack can be:</p>
 <ul>
 <li>
 
@@ -856,7 +869,7 @@
                 <li>
                     
                         Word Count:
-                        925
+                        951
                     
                 </li>
             

