@@ -30,13 +30,6 @@
       <description></description>
     </item>
     <item>
-      <title>Credentials</title>
-      <link>http://localhost:1313/tags/credentials/</link>
-      <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/credentials/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Follina</title>
       <link>http://localhost:1313/tags/follina/</link>
       <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
@@ -79,10 +72,10 @@
       <description></description>
     </item>
     <item>
-      <title>Shadow</title>
-      <link>http://localhost:1313/tags/shadow/</link>
+      <title>Shadow Credentials</title>
+      <link>http://localhost:1313/tags/shadow-credentials/</link>
       <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/shadow/</guid>
+      <guid>http://localhost:1313/tags/shadow-credentials/</guid>
       <description></description>
     </item>
     <item>
@@ -111,13 +104,6 @@
       <link>http://localhost:1313/tags/ldap/</link>
       <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/ldap/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Shadow Credentials</title>
-      <link>http://localhost:1313/tags/shadow-credentials/</link>
-      <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/shadow-credentials/</guid>
       <description></description>
     </item>
     <item>
