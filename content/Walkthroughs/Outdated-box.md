@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "Active Directory", "WSUS", "Kerberos", "Follina", "AD", "Rubeus", "Whisker", "Shadow", "Credentials", "msDS-KeyCredentialLink"]
+tags = ["Box", "HTB", "Medium", "Windows", "Active Directory", "WSUS", "Kerberos", "Follina", "AD", "Rubeus", "Whisker", "Shadow Credentials", "msDS-KeyCredentialLink"]
 draft = false
 title = "Outdated HTB Walkthrough"
 author = "bloodstiller"
