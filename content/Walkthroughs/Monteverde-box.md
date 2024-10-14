@@ -1,6 +1,6 @@
 +++
 tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "Active Directory", "Azure AD Connect", "Azure", "SQL", "MSSQL"]
-draft = true
+draft = false
 title = "Monteverde HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-10-14
