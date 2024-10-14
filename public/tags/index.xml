@@ -6,13 +6,76 @@
     <description>Recent content in Tags on Hack Me Daddy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Active Directory</title>
       <link>http://localhost:1313/tags/active-directory/</link>
-      <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/active-directory/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Azure</title>
+      <link>http://localhost:1313/tags/azure/</link>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/azure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Azure AD Connect</title>
+      <link>http://localhost:1313/tags/azure-ad-connect/</link>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/azure-ad-connect/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Box</title>
+      <link>http://localhost:1313/tags/box/</link>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/box/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HTB</title>
+      <link>http://localhost:1313/tags/htb/</link>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/htb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LDAP</title>
+      <link>http://localhost:1313/tags/ldap/</link>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ldap/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Medium</title>
+      <link>http://localhost:1313/tags/medium/</link>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/medium/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MSSQL</title>
+      <link>http://localhost:1313/tags/mssql/</link>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mssql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQL</title>
+      <link>http://localhost:1313/tags/sql/</link>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>http://localhost:1313/tags/windows/</link>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
     <item>
@@ -23,13 +86,6 @@
       <description></description>
     </item>
     <item>
-      <title>Box</title>
-      <link>http://localhost:1313/tags/box/</link>
-      <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/box/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Follina</title>
       <link>http://localhost:1313/tags/follina/</link>
       <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
@@ -37,24 +93,10 @@
       <description></description>
     </item>
     <item>
-      <title>HTB</title>
-      <link>http://localhost:1313/tags/htb/</link>
-      <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/htb/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Kerberos</title>
       <link>http://localhost:1313/tags/kerberos/</link>
       <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/kerberos/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Medium</title>
-      <link>http://localhost:1313/tags/medium/</link>
-      <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/medium/</guid>
       <description></description>
     </item>
     <item>
@@ -86,24 +128,10 @@
       <description></description>
     </item>
     <item>
-      <title>Windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
-      <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/windows/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>WSUS</title>
       <link>http://localhost:1313/tags/wsus/</link>
       <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/wsus/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>LDAP</title>
-      <link>http://localhost:1313/tags/ldap/</link>
-      <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ldap/</guid>
       <description></description>
     </item>
     <item>
@@ -125,13 +153,6 @@
       <link>http://localhost:1313/tags/serialization/</link>
       <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/serialization/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MSSQL</title>
-      <link>http://localhost:1313/tags/mssql/</link>
-      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mssql/</guid>
       <description></description>
     </item>
     <item>
