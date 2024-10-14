@@ -1,7 +1,7 @@
 +++
 tags = ["Windows", "Active Directory", "Azure AD Connect", "Azure", "SQL", "MSSQL"]
 draft = false
-title = "Azure AD Connect Exploitation & Privilege Escalation"
+title = "Understanding Azure AD Connect Exploitation & Privilege Escalation"
 author = "bloodstiller"
 date = 2024-10-14
 +++
