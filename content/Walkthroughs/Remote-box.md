@@ -406,6 +406,7 @@ So as we have a connection we want to create a payload that we can trigger back 
     -   {{< figure src="/ox-hugo/2024-09-09-090638_.png" >}}
 
 
+
 ### SeImpersonatePrivilege Explained: {#seimpersonateprivilege-explained}
 
 -   [Potato Exploits](https://jlajara.gitlab.io/Potatoes_Windows_Privesc) take advantage of these privileges.

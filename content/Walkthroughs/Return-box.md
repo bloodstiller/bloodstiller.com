@@ -184,6 +184,7 @@ draft = false
                     schemaNamingContext:
             ```
 
+
 -   It's pretty amazing already what we have learned just by running some fairly simple ldap queries.
     -   We have the naming context.
     -   Domain name.

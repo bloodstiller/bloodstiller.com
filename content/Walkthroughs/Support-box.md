@@ -516,6 +516,7 @@ print(decryptedPass)
         -   Prints the final decrypted string (`decryptedPass`) which is the original password before encoding and encryption.
 
 
+
 ##### Running the script and get the password: {#running-the-script-and-get-the-password}
 
 -   I run my script and it appears to have reversed the encryption &amp; spat out a clear text ldap password!

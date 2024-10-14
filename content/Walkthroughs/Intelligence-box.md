@@ -220,7 +220,7 @@ author = "bloodstiller"
                     -   As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.
 
     3.  <span class="underline">We have the full server name</span>:
-        -   Again we can see this has the CN as the base (mentioned previously.) So it appears it's a printer server site of some sort. What is also interesting is the CN name "Configuration", this could imply that it is still to be configured. Which is interesting as things that are still being configured may not have had thorough security standards actioned.
+        -   Again we can see this has the CN as the base (mentioned previously.) 
             ```shell
             serverName:
                 CN=DC,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=intelligence,DC=htb
