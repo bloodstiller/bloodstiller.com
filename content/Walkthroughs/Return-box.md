@@ -1,5 +1,5 @@
 +++
-title = "Return HTB Box Walkthrough"
+title = "Return HTB Walkthrough"
 author = "bloodstiller"
 tags = ["Box", "HTB", "Easy", "Windows", "LDAP"]
 date = 2024-09-01
