@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "C#"]
+tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "CSharp"]
 draft = false
 title = "Support HTB Walkthrough"
 date = 2024-09-06

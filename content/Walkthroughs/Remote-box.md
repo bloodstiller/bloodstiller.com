@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Easy", "Active Directory", "Windows", "SeImpersonatePrivilege", "Umbraco", "C#"]
+tags = ["Box", "HTB", "Easy", "Active Directory", "Windows", "SeImpersonatePrivilege", "Umbraco", "CSharp"]
 draft = false
 author = "bloodstiller"
 date = 2024-09-09

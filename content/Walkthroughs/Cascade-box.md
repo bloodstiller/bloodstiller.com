@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Active Directory", "Windows", "LDAP", "RPC", "SQL", "C#"]
+tags = ["Box", "HTB", "Active Directory", "Windows", "LDAP", "RPC", "SQL", "CSharp"]
 draft = false
 title = "Cascade HTB Walkthrough"
 author = "bloodstiller"

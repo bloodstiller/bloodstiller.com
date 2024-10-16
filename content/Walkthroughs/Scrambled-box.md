@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "Kerberos", "MSSQL", ".NET", "Deserialization", "C#"]
+tags = ["Box", "HTB", "Medium", "Windows", "Kerberos", "MSSQL", ".NET", "Deserialization", "CSharp"]
 draft = false
 title = "Scrambled HTB Walkthrough"
 author = "bloodstiller"
