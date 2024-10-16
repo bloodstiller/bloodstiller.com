@@ -1,0 +1,2223 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.135.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Cascade HTB Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Cascade HTB Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            RPC Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cascade-box/" title="./cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Cascade HTB Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.16.10"
+                            >2024.16.10
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        17 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/active-directory/"
+                            class="tag-btn">
+                            Active Directory
+                        </a>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/ldap/"
+                            class="tag-btn">
+                            LDAP
+                        </a>
+                    
+                        <a
+                            href="/tags/rpc/"
+                            class="tag-btn">
+                            RPC
+                        </a>
+                    
+                        <a
+                            href="/tags/sql/"
+                            class="tag-btn">
+                            SQL
+                        </a>
+                    
+                        <a
+                            href="/tags/c/"
+                            class="tag-btn">
+                            C#
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/cascade-box/" class="bread-btn">
+    
+
+    
+        
+            Cascade HTB Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#cascade-hack-the-box-walkthrough-writeup">Cascade Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#rpc-111">RPC <code>111</code>:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#finding-a-password-in-the-cascadelegacypwd-field">Finding a password in the <code>cascadeLegacyPwd</code> field:</a></li>
+        <li><a href="#enumerating-the-domain-as-r-dot-thompson">Enumerating the domain as <code>r.thompson</code>:</a></li>
+        <li><a href="#finding-that-there-is-a-tempadmin-account-with-the-same-password-as-normal-admin">Finding that there is a <code>TempAdmin</code> account with the same password as normal <code>admin</code>:</a></li>
+        <li><a href="#finding-a-tightvnc-password-in-vnc-install-dot-reg">Finding a <code>TightVNC</code> password in <code>VNC Install.reg</code></a></li>
+        <li><a href="#running-a-bloodhound-collection">Running a bloodhound collection:</a></li>
+        <li><a href="#enumerating-as-s-dot-smith">Enumerating as <code>s.smith</code>:</a></li>
+        <li><a href="#enumerating-and-pillaging-the-audit-share">Enumerating &amp; pillaging the <code>audit$</code> share:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#examining-db-audit-dot-db">Examining <code>DB\Audit.db</code>:</a></li>
+        <li><a href="#finding-a-hardcoded-decryption-key-in-the-cascaudit-dot-exe-binary-using-dnspy">Finding a hardcoded decryption key in the <code>CascAudit.exe</code> binary using <code>DNSpy</code>:</a></li>
+        <li><a href="#extracting-the-arksvc-password-from-cascaudit-dot-exe">Extracting the <code>ArkSvc</code> password from <code>CascAudit.exe</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-ownership">5. Ownership:</a>
+      <ul>
+        <li><a href="#enumerating-as-arksvc">Enumerating as <code>arksvc</code>:</a></li>
+        <li><a href="#finding-the-administrator-password-in-the-cascadelegacypwd-field-of-a-deleted-object">Finding the Administrator Password in the <code>cascadeLegacyPwd</code> field of a deleted object:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-persistence">4. Persistence:</a>
+      <ul>
+        <li><a href="#dumping-ntds-dot-dit">Dumping NTDS.dit:</a></li>
+        <li><a href="#creating-a-golden-ticket">Creating a Golden Ticket:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="cascade-hack-the-box-walkthrough-writeup">Cascade Hack The Box Walkthrough/Writeup:</h2>
+<ul>
+<li><a href="https://app.hackthebox.com/machines/Cascade">https://app.hackthebox.com/machines/Cascade</a></li>
+</ul>
+<h2 id="how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</h2>
+<ul>
+<li><strong>Variables</strong>:
+<ul>
+<li>In my commands you are going to see me use <code>$box</code>, <code>$user</code>, <code>$hash</code>, <code>$domain</code>, <code>$pass</code> often.
+<ul>
+<li>I find the easiest way to eliminate type-os &amp; to streamline my process it is easier to store important information in variables &amp; aliases.
+<ul>
+<li><code>$box</code> = The IP of the box</li>
+<li><code>$pass</code> = Passwords I have access to.</li>
+<li><code>$user</code> = current user I am enumerating with.
+<ul>
+<li>Depending on where I am in the process this can change if I move laterally.</li>
+</ul>
+</li>
+<li><code>$domain</code> = the domain name e.g. <code>sugarape.local</code> or <code>contoso.local</code></li>
+</ul>
+</li>
+<li>Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Wordlists</strong>:
+<ul>
+<li>I have symlinks all setup so I can get to my passwords from <code>~/Wordlists</code> so if you see me using that path that&rsquo;s why. If you are on Kali and following on, you will need to go to <code>/usr/share/wordlists</code>
+<ul>
+<li>I also use these additional wordlists:
+<ul>
+<li><a href="https://github.com/insidetrust/statistically-likely-usernames">Statistically-likely-usernames</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists">SecLists</a></li>
+<li><a href="https://github.com/carlospolop/Auto_Wordlists">Auto_Wordlists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="nmap">NMAP:</h3>
+<ul>
+<li>
+<p><strong>Basic Scan</strong>:</p>
+<ul>
+<li><code>nmap $box -Pn -oA basicScan</code></li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%2046.02-HTB/BlogEntriesMade/Cascade/scans/nmap%20%202GiB/15GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2017:50:51%20zsh%20%e2%9d%af%20nmap%20$box%20-Pn%20-oA%20basicScan%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-10-14%2017:50%20BST%0aNmap%20scan%20report%20for%2010.129.136.213%0aHost%20is%20up%20%280.040s%20latency%29.%0aNot%20shown:%20986%20filtered%20tcp%20ports%20%28no-response%29%0aPORT%20%20%20%20%20%20STATE%20SERVICE%0a53/tcp%20%20%20%20open%20%20domain%0a88/tcp%20%20%20%20open%20%20kerberos-sec%0a135/tcp%20%20%20open%20%20msrpc%0a139/tcp%20%20%20open%20%20netbios-ssn%0a389/tcp%20%20%20open%20%20ldap%0a445/tcp%20%20%20open%20%20microsoft-ds%0a636/tcp%20%20%20open%20%20ldapssl%0a3268/tcp%20%20open%20%20globalcatLDAP%0a3269/tcp%20%20open%20%20globalcatLDAPssl%0a49154/tcp%20open%20%20unknown%0a49155/tcp%20open%20%20unknown%0a49157/tcp%20open%20%20unknown%0a49158/tcp%20open%20%20unknown%0a49165/tcp%20open%20%20unknown">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in 46.02-HTB/BlogEntriesMade/Cascade/scans/nmap  2GiB/15GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 17:50:51 zsh ❯ nmap $box -Pn -oA basicScan
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-10-14 17:50 BST
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.136.213
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.040s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">986</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT      STATE SERVICE
+</span></span><span style="display:flex;"><span>53/tcp    open  domain
+</span></span><span style="display:flex;"><span>88/tcp    open  kerberos-sec
+</span></span><span style="display:flex;"><span>135/tcp   open  msrpc
+</span></span><span style="display:flex;"><span>139/tcp   open  netbios-ssn
+</span></span><span style="display:flex;"><span>389/tcp   open  ldap
+</span></span><span style="display:flex;"><span>445/tcp   open  microsoft-ds
+</span></span><span style="display:flex;"><span>636/tcp   open  ldapssl
+</span></span><span style="display:flex;"><span>3268/tcp  open  globalcatLDAP
+</span></span><span style="display:flex;"><span>3269/tcp  open  globalcatLDAPssl
+</span></span><span style="display:flex;"><span>49154/tcp open  unknown
+</span></span><span style="display:flex;"><span>49155/tcp open  unknown
+</span></span><span style="display:flex;"><span>49157/tcp open  unknown
+</span></span><span style="display:flex;"><span>49158/tcp open  unknown
+</span></span><span style="display:flex;"><span>49165/tcp open  unknown</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><strong>Initial thoughts</strong>:
+<ul>
+<li>DNS, Kerberos, SMB &amp; LDAP all great for enumerating.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>In depth scan</strong>:</p>
+<ul>
+<li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code></li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%2046.02-HTB/BlogEntriesMade/Cascade/scans/nmap%20%202GiB/15GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%20%20took%2010s%0a%f0%9f%95%99%2017:51:04%20zsh%20%e2%9d%af%20sudo%20nmap%20-p-%20-sV%20-sC%20-O%20-Pn%20--disable-arp-ping%20$box%20-oA%20FullTCP%0a[sudo]%20password%20for%20kali:%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-10-14%2017:51%20BST%0aNmap%20scan%20report%20for%2010.129.136.213%0aHost%20is%20up%20%280.039s%20latency%29.%0aNot%20shown:%2065520%20filtered%20tcp%20ports%20%28no-response%29%0aPORT%20%20%20%20%20%20STATE%20SERVICE%20%20%20%20%20%20%20VERSION%0a53/tcp%20%20%20%20open%20%20domain%20%20%20%20%20%20%20%20Microsoft%20DNS%206.1.7601%20%281DB15D39%29%20%28Windows%20Server%202008%20R2%20SP1%29%0a%7c%20dns-nsid:%0a%7c_%20%20bind.version:%20Microsoft%20DNS%206.1.7601%20%281DB15D39%29%0a88/tcp%20%20%20%20open%20%20kerberos-sec%20%20Microsoft%20Windows%20Kerberos%20%28server%20time:%202024-10-14%2016:55:35Z%29%0a135/tcp%20%20%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a139/tcp%20%20%20open%20%20netbios-ssn%20%20%20Microsoft%20Windows%20netbios-ssn%0a389/tcp%20%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20cascade.local,%20Site:%20Default-First-Site-Name%29%0a445/tcp%20%20%20open%20%20microsoft-ds?%0a636/tcp%20%20%20open%20%20tcpwrapped%0a3268/tcp%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20cascade.local,%20Site:%20Default-First-Site-Name%29%0a3269/tcp%20%20open%20%20tcpwrapped%0a5985/tcp%20%20open%20%20http%20%20%20%20%20%20%20%20%20%20Microsoft%20HTTPAPI%20httpd%202.0%20%28SSDP/UPnP%29%0a%7c_http-title:%20Not%20Found%0a%7c_http-server-header:%20Microsoft-HTTPAPI/2.0%0a49154/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49155/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49157/tcp%20open%20%20ncacn_http%20%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a49158/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49165/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0aWarning:%20OSScan%20results%20may%20be%20unreliable%20because%20we%20could%20not%20find%20at%20least%201%20open%20and%201%20closed%20port%0aDevice%20type:%20general%20purpose%7cphone%7cspecialized%0aRunning%20%28JUST%20GUESSING%29:%20Microsoft%20Windows%202008%7c7%7cPhone%7cVista%7c8.1%20%2889%25%29%0aOS%20CPE:%20cpe:/o:microsoft:windows_server_2008:r2%20cpe:/o:microsoft:windows_8%20cpe:/o:microsoft:windows_7::-:professional%20cpe:/o:microsoft:windows%20cpe:/o:microsoft:windows_vista::-%20cpe:/o:microsoft:windows_vista::sp1%20cpe:/o:microsoft:windows_7%20cpe:/o:microsoft:windows_8.1%0aAggressive%20OS%20guesses:%20Microsoft%20Windows%20Server%202008%20R2%20%2889%25%29,%20Microsoft%20Windows%20Server%202008%20R2%20SP1%20or%20Windows%208%20%2889%25%29,%20Microsoft%20Windows%207%20Professional%20or%20Windows%208%20%2889%25%29,%20Microsoft%20Windows%207%20SP1%20or%20Windows%20Server%202008%20SP2%20or%202008%20R2%20SP1%20%2889%25%29,%20Microsoft%20Windows%208.1%20Update%201%20%2889%25%29,%20Microsoft%20Windows%20Phone%207.5%20or%208.0%20%2889%25%29,%20Microsoft%20Windows%20Vista%20SP0%20or%20SP1,%20Windows%20Server%202008%20SP1,%20or%20Windows%207%20%2889%25%29,%20Microsoft%20Windows%20Vista%20SP2%20%2889%25%29,%20Microsoft%20Windows%20Embedded%20Standard%207%20%2888%25%29,%20Microsoft%20Windows%20Vista%20SP2,%20Windows%207%20SP1,%20or%20Windows%20Server%202008%20%2888%25%29%0aNo%20exact%20OS%20matches%20for%20host%20%28test%20conditions%20non-ideal%29.%0aService%20Info:%20Host:%20CASC-DC1;%20OS:%20Windows;%20CPE:%20cpe:/o:microsoft:windows_server_2008:r2:sp1,%20cpe:/o:microsoft:windows%0a%0aHost%20script%20results:%0a%7c%20smb2-security-mode:%0a%7c%20%20%202:1:0:%0a%7c_%20%20%20%20Message%20signing%20enabled%20and%20required%0a%7c%20smb2-time:%0a%7c%20%20%20date:%202024-10-14T16:56:32%0a%7c_%20%20start_date:%202024-10-14T16:47:45%0a%0aOS%20and%20Service%20detection%20performed.%20Please%20report%20any%20incorrect%20results%20at%20https://nmap.org/submit/%20.%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%20324.37%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in 46.02-HTB/BlogEntriesMade/Cascade/scans/nmap  2GiB/15GiB | 0B/1GiB with /usr/bin/zsh  took 10s
+</span></span><span style="display:flex;"><span>🕙 17:51:04 zsh ❯ sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> kali:
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-10-14 17:51 BST
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.136.213
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.039s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">65520</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT      STATE SERVICE       VERSION
+</span></span><span style="display:flex;"><span>53/tcp    open  domain        Microsoft DNS 6.1.7601 <span style="color:#f92672">(</span>1DB15D39<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>Windows Server <span style="color:#ae81ff">2008</span> R2 SP1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>| dns-nsid:
+</span></span><span style="display:flex;"><span>|_  bind.version: Microsoft DNS 6.1.7601 <span style="color:#f92672">(</span>1DB15D39<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>88/tcp    open  kerberos-sec  Microsoft Windows Kerberos <span style="color:#f92672">(</span>server time: 2024-10-14 16:55:35Z<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>135/tcp   open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+</span></span><span style="display:flex;"><span>389/tcp   open  ldap          Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: cascade.local, Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>445/tcp   open  microsoft-ds?
+</span></span><span style="display:flex;"><span>636/tcp   open  tcpwrapped
+</span></span><span style="display:flex;"><span>3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: cascade.local, Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>3269/tcp  open  tcpwrapped
+</span></span><span style="display:flex;"><span>5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 <span style="color:#f92672">(</span>SSDP/UPnP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_http-title: Not Found
+</span></span><span style="display:flex;"><span>|_http-server-header: Microsoft-HTTPAPI/2.0
+</span></span><span style="display:flex;"><span>49154/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49155/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49157/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>49158/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49165/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>Warning: OSScan results may be unreliable because we could not find at least <span style="color:#ae81ff">1</span> open and <span style="color:#ae81ff">1</span> closed port
+</span></span><span style="display:flex;"><span>Device type: general purpose|phone|specialized
+</span></span><span style="display:flex;"><span>Running <span style="color:#f92672">(</span>JUST GUESSING<span style="color:#f92672">)</span>: Microsoft Windows 2008|7|Phone|Vista|8.1 <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>OS CPE: cpe:/o:microsoft:windows_server_2008:r2 cpe:/o:microsoft:windows_8 cpe:/o:microsoft:windows_7::-:professional cpe:/o:microsoft:windows cpe:/o:microsoft:windows_vista::- cpe:/o:microsoft:windows_vista::sp1 cpe:/o:microsoft:windows_7 cpe:/o:microsoft:windows_8.1
+</span></span><span style="display:flex;"><span>Aggressive OS guesses: Microsoft Windows Server <span style="color:#ae81ff">2008</span> R2 <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>, Microsoft Windows Server <span style="color:#ae81ff">2008</span> R2 SP1 or Windows <span style="color:#ae81ff">8</span> <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>, Microsoft Windows <span style="color:#ae81ff">7</span> Professional or Windows <span style="color:#ae81ff">8</span> <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>, Microsoft Windows <span style="color:#ae81ff">7</span> SP1 or Windows Server <span style="color:#ae81ff">2008</span> SP2 or <span style="color:#ae81ff">2008</span> R2 SP1 <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>, Microsoft Windows 8.1 Update <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>, Microsoft Windows Phone 7.5 or 8.0 <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>, Microsoft Windows Vista SP0 or SP1, Windows Server <span style="color:#ae81ff">2008</span> SP1, or Windows <span style="color:#ae81ff">7</span> <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>, Microsoft Windows Vista SP2 <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>, Microsoft Windows Embedded Standard <span style="color:#ae81ff">7</span> <span style="color:#f92672">(</span>88%<span style="color:#f92672">)</span>, Microsoft Windows Vista SP2, Windows <span style="color:#ae81ff">7</span> SP1, or Windows Server <span style="color:#ae81ff">2008</span> <span style="color:#f92672">(</span>88%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>No exact OS matches <span style="color:#66d9ef">for</span> host <span style="color:#f92672">(</span>test conditions non-ideal<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Service Info: Host: CASC-DC1; OS: Windows; CPE: cpe:/o:microsoft:windows_server_2008:r2:sp1, cpe:/o:microsoft:windows
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Host script results:
+</span></span><span style="display:flex;"><span>| smb2-security-mode:
+</span></span><span style="display:flex;"><span>|   2:1:0:
+</span></span><span style="display:flex;"><span>|_    Message signing enabled and required
+</span></span><span style="display:flex;"><span>| smb2-time:
+</span></span><span style="display:flex;"><span>|   date: 2024-10-14T16:56:32
+</span></span><span style="display:flex;"><span>|_  start_date: 2024-10-14T16:47:45
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 324.37 seconds</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><strong>Findings</strong>:</li>
+</ul>
+</li>
+</ul>
+<h3 id="dns-53">DNS <code>53</code>:</h3>
+<ul>
+<li><strong>Using dnsenum to enumerate DNS entries</strong>:
+<ul>
+<li><code>dnsenum -r --dnsserver $box --enum -p 0 -s 0 -f ~/Seclists/Discovery/DNS/subdomains-top1million-110000.txt $domain</code></li>
+<li><figure><img src="/ox-hugo/2024-10-14-181730_.png">
+</figure>
+</li>
+<li>Nothing of note, just standard DNS entries.</li>
+</ul>
+</li>
+</ul>
+<h3 id="kerberos-88">Kerberos <code>88</code>:</h3>
+<h4 id="using-kerbrute-to-bruteforce-usernames">Using <a href="https://github.com/ropnop/kerbrute">Kerbrute</a> to bruteforce Usernames:</h4>
+<ul>
+<li>As kerberos is present we can enumerate users using <a href="https://github.com/ropnop/kerbrute">kerbrute</a>:
+<ul>
+<li><code>kerbrute userenum -d $domain --dc casc-dc1.cascade.local  ~/Wordlists/statistically-likely-usernames/jsmith.txt</code></li>
+<li>I get no hits.</li>
+</ul>
+</li>
+</ul>
+<h3 id="smb-445">SMB <code>445</code>:</h3>
+<h4 id="attempting-to-connect-with-null-and-guest-sessions">Attempting to connect with NULL &amp; Guest sessions:</h4>
+<ul>
+<li><strong>This is a standard check I always try as alot of the time the guest account or null sessions can lead to a foothold</strong>:
+<ul>
+<li><code>netexec smb $box -u 'guest' -p '' --shares</code></li>
+<li><code>netexec smb $box -u '' -p '' --shares</code></li>
+<li><figure><img src="/ox-hugo/2024-10-14-180255_.png">
+</figure>
+</li>
+<li>Neither work.</li>
+</ul>
+</li>
+</ul>
+<h3 id="rpc-111">RPC <code>111</code>:</h3>
+<p>As RPC is running on the host we can attempt to enumerate using it.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="49154/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49155/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49157/tcp%20open%20%20ncacn_http%20%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a49158/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49165/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>49154/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49155/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49157/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>49158/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49165/tcp open  msrpc         Microsoft Windows RPC</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>
+<p><strong>Connecting to</strong> <code>RPC</code> <strong>using a null session with</strong> <code>rpcclient</code>:</p>
+<ul>
+<li><code>rpcclient -U &quot;%&quot; $box</code></li>
+<li><figure><img src="/ox-hugo/2024-10-14-191319_.png">
+</figure>
+</li>
+<li>Awesome we can get a null session.</li>
+</ul>
+</li>
+<li>
+<p>+Note+: I actually wrote a cheat-sheet blog off of the back of this enumeration which goes into a deep dive regarding <code>RPC</code>:</p>
+<ul>
+<li><a href="https://bloodstiller.com/cheatsheets/rpc-cheatsheet/">https://bloodstiller.com/cheatsheets/rpc-cheatsheet/</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerating-users-with-rpcclient">Enumerating users with <code>rpcclient</code>:</h4>
+<ul>
+<li>
+<p><strong>Enumerating users</strong>:</p>
+<ul>
+<li><code>enumdomusers</code></li>
+<li><figure><img src="/ox-hugo/2024-10-14-191335_.png">
+</figure>
+</li>
+<li>There are some interesting things straight away here. The <code>CascGuest</code> &amp; <code>BackupSvc</code> accounts.</li>
+<li>It looks like they have replaced their standard <code>Guest</code> account with <code>CascGuest</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I attempt to connect as</strong> <code>CascGuest</code> <strong>using netexec</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-072611_.png">
+</figure>
+</li>
+<li>It fails.</li>
+</ul>
+</li>
+<li>
+<p><strong>I attempt to add myself as a user to the domain but am denied</strong>:</p>
+<ul>
+<li><code>createdomuser bloodstiller</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-075804_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Now that we have the user &amp; group <code>RIDs</code> we can enumerate further.</p>
+</li>
+</ul>
+<h4 id="discovering-user-login-scripts-with-rpcclient">Discovering User Login Scripts with <code>rpcclient</code>:</h4>
+<ul>
+<li>
+<p><strong>Using rpcclient we can enumerate specific by passing their</strong> <code>RID</code> <strong>to the command</strong> <code>queryuser</code></p>
+<ul>
+<li><code>queryuser 0x453</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Steve Smith has the</strong> <code>MapAuditDrive.vbs</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-070637_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Multiple Users have the</strong> <code>MapDataDrive.vbs</code> <strong>logon script</strong>:</p>
+<ul>
+<li>James Wakefield</li>
+<li>Stephanie Hickson</li>
+<li>John Goodhand</li>
+<li>Edward Crowe</li>
+<li>David Burman</li>
+<li>Joseph Allen</li>
+<li>Ian Croft</li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerating-groups-with-rpcclient">Enumerating Groups with <code>rpcclient</code>:</h4>
+<ul>
+<li>
+<p><strong>Enumerating groups with</strong> <code>rpcclient</code>:</p>
+<ul>
+<li><code>enumdomgroups</code></li>
+<li><figure><img src="/ox-hugo/2024-10-14-191420_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I enumerate all of these groups however there is no additional information in their description fields</strong>:</p>
+<ul>
+<li><code>querygroup RID</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-081312_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I enumerate builtin groups too however it says they do not exist when trying to delve further</strong>:</p>
+<ul>
+<li><code>enumalsgroups builtin</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-082208_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I do the same again with the domain groups but have the same issue</strong>:</p>
+<ul>
+<li><code>enumalsgroups domain</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-082111_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="why-so-many-different-rpcclient-group-enumeration-commands">Why so many different <code>rpcclient</code> group enumeration commands?</h5>
+<ul>
+<li>Just in-case you are wondering, why has he listed all of these different ways to list groups &amp; gotten different results each time?
+<ul>
+<li><code>enumdomgroups</code>: Lists domain-wide groups that are used across the Active Directory domain.</li>
+<li><code>enumalsgroups domain</code>: Lists local alias groups that are specific to the domain controller or server itself.</li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerating-the-password-policy-with-rpcclient">Enumerating the password policy with <code>rpcclient</code>:</h4>
+<ul>
+<li><strong>I get the domains password policy</strong>:
+<ul>
+<li><code>getdompwinfo</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-085104_.png">
+</figure>
+</li>
+<li>But what does this mean?</li>
+</ul>
+</li>
+</ul>
+<h5 id="understanding-password-properties">Understanding <code>password_properties</code>:</h5>
+<ul>
+<li>
+<p><code>password_properties</code> is a bitmask, where different bits control specific password policies.</p>
+</li>
+<li>
+<p><strong>Here are the common flags and what each bit represents</strong>:</p>
+<ul>
+<li>
+<p><strong>Hex Value</strong>: <code>0x00000001</code></p>
+</li>
+<li>
+<p><strong>Flag</strong>: <code>DOMAIN_PASSWORD_COMPLEX</code></p>
+</li>
+<li>
+<p><strong>Meaning</strong>: Enforces password complexity (requires uppercase, lowercase, digits, symbols)</p>
+</li>
+<li>
+<p><strong>Hex Value</strong>: <code>0x00000002</code></p>
+</li>
+<li>
+<p><strong>Flag</strong>: <code>DOMAIN_PASSWORD_NO_ANON_CHANGE</code></p>
+</li>
+<li>
+<p><strong>Meaning</strong>: Prevents anonymous users from changing passwords</p>
+</li>
+<li>
+<p><strong>Hex Value</strong>: <code>0x00000004</code></p>
+</li>
+<li>
+<p><strong>Flag</strong>: <code>DOMAIN_PASSWORD_NO_CLEAR_CHANGE</code></p>
+</li>
+<li>
+<p><strong>Meaning</strong>: Prevents passwords from being sent in cleartext</p>
+</li>
+<li>
+<p><strong>Hex Value</strong>: <code>0x00000008</code></p>
+</li>
+<li>
+<p><strong>Flag</strong>: <code>DOMAIN_LOCKOUT_ADMINS</code></p>
+</li>
+<li>
+<p><strong>Meaning</strong>: Locks out administrators as well when lockout occurs</p>
+</li>
+<li>
+<p><strong>Hex Value</strong>: <code>0x00000010</code></p>
+</li>
+<li>
+<p><strong>Flag</strong>: <code>DOMAIN_PASSWORD_STORE_CLEARTEXT</code></p>
+</li>
+<li>
+<p><strong>Meaning</strong>: Allows storing passwords using reversible encryption (cleartext)</p>
+</li>
+<li>
+<p><strong>Hex Value</strong>: <code>0x00000020</code></p>
+</li>
+<li>
+<p><strong>Flag</strong>: <code>DOMAIN_REFUSE_PASSWORD_CHANGE</code></p>
+</li>
+<li>
+<p><strong>Meaning</strong>: Prevents users from changing their password</p>
+</li>
+<li>
+<p><strong>Hex Value</strong>: <code>0x00000000</code></p>
+</li>
+<li>
+<p><strong>Meaning</strong>: Means that none of these password restrictions are enabled.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>In this case, no complexity rules, no restrictions on anonymous password changes, and no other special password policies are applied.</p>
+</li>
+</ul>
+<h3 id="ldap-389">LDAP <code>389</code>:</h3>
+<h4 id="using-ldap-anonymous-bind-to-enumerate-further">Using LDAP anonymous bind to enumerate further:</h4>
+<ul>
+<li>If you are unsure of what anonymous bind does. It enables us to query for domain information anonymously, e.g. without passing credentials.
+<ul>
+<li>We can actually retrieve a significant amount of information via anonymous bind such as:
+<ul>
+<li>A list of all users</li>
+<li>A list of all groups</li>
+<li>A list of all computers.</li>
+<li>User account attributes.</li>
+<li>The domain password policy.</li>
+<li>Enumerate users who are susceptible to AS-REPRoasting.</li>
+<li>Passwords stored in the description fields</li>
+</ul>
+</li>
+<li>The added benefit of using ldap to perform these queries is that these are most likely not going to trigger any sort of AV etc as ldap is how AD communicates.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>I actually have a handy script to check if anonymous bind is enabled &amp; if it is to dump a large amount of information. You can find it here</p>
+<ul>
+<li><a href="https://github.com/bloodstiller/ldapchecker">https://github.com/bloodstiller/ldapchecker</a>
+<ul>
+<li><code>python3 ldapchecker.py $box</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>It turns out the anonymous bind is enabled however we can still get the below information. I have removed the majority of the information as it is not relevant, however there are some keys bits of information we can use moving forward.</p>
+<ol>
+<li>
+<p><!-- raw HTML omitted -->We have the naming context of the domain<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20~/Desktop/WindowsTools%20%f0%9f%90%8d%20v3.12.6%20%202GiB/15GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2009:05:48%20zsh%20%e2%9d%af%20python3%20ldapchecker.py%20$box%0aAttempting%20to%20connect%20to%2010.129.136.213%20with%20SSL...%0aFailed%20to%20connect%20with%20SSL.%20Retrying%20without%20SSL...%0aConnected%20successfully.%20Retrieving%20server%20information...%0aDSA%20info%20%28from%20DSE%29:%0a%20%20Supported%20LDAP%20versions:%203,%202%0a%20%20Naming%20contexts:%0a%20%20%20%20DC=cascade,DC=local%0a%20%20%20%20CN=Configuration,DC=cascade,DC=local%0a%20%20%20%20CN=Schema,CN=Configuration,DC=cascade,DC=local%0a%20%20%20%20DC=DomainDnsZones,DC=cascade,DC=local%0a%20%20%20%20DC=ForestDnsZones,DC=cascade,DC=local">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in ~/Desktop/WindowsTools 🐍 v3.12.6  2GiB/15GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 09:05:48 zsh ❯ python3 ldapchecker.py $box
+</span></span><span style="display:flex;"><span>Attempting to connect to 10.129.136.213 with SSL...
+</span></span><span style="display:flex;"><span>Failed to connect with SSL. Retrying without SSL...
+</span></span><span style="display:flex;"><span>Connected successfully. Retrieving server information...
+</span></span><span style="display:flex;"><span>DSA info <span style="color:#f92672">(</span>from DSE<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>  Supported LDAP versions: 3, <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  Naming contexts:
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>cascade,DC<span style="color:#f92672">=</span>local
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>cascade,DC<span style="color:#f92672">=</span>local
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Schema,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>cascade,DC<span style="color:#f92672">=</span>local
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>DomainDnsZones,DC<span style="color:#f92672">=</span>cascade,DC<span style="color:#f92672">=</span>local
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>ForestDnsZones,DC<span style="color:#f92672">=</span>cascade,DC<span style="color:#f92672">=</span>local</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the domain functionaility level<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  domainFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>  forestFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>  domainControllerFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">4</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>The functionality level determines the minimum version of Windows server that can be used for a DC.
+<ul>
+<li>
+<p>+Note+: that any host os can be used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels</a></p>
+</li>
+<li>
+<p>Knowing the function level is useful as if want to target the DC&rsquo;s and servers, we can know by looking at the function level what the minimum level of OS would be.</p>
+</li>
+<li>
+<p>In this case we can see it is level 4 which means that this server has to be running Windows Server 2008 R2 or newer.</p>
+</li>
+<li>
+<p>Here’s a list of functional level numbers and their corresponding Windows Server operating systems:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Functional Level Number</th>
+          <th style="text-align: left">Corresponding OS</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">Windows 2000</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Windows Server 2003 Interim</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">Windows Server 2003</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">Windows Server 2008</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">Windows Server 2008 R2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">5</td>
+          <td style="text-align: left">Windows Server 2012</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">6</td>
+          <td style="text-align: left">Windows Server 2012 R2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">7</td>
+          <td style="text-align: left">Windows Server 2016</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">8</td>
+          <td style="text-align: left">Windows Server 2019</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">9</td>
+          <td style="text-align: left">Windows Server 2022</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>+Note+:
+<ul>
+<li>Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.</li>
+<li>As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the full server name<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> serverName:
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>CASC-DC1,CN<span style="color:#f92672">=</span>Servers,CN<span style="color:#f92672">=</span>Default-First-Site-Name,CN<span style="color:#f92672">=</span>Sites,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>cascade,DC<span style="color:#f92672">=</span>local</span></span></code></pre></div>
+    
+</div>
+</li>
+</ol>
+</li>
+<li>
+<p>It&rsquo;s pretty amazing already what we have learned just by running some fairly simple ldap queries.</p>
+<ul>
+<li>We have the naming context.</li>
+<li>Domain name.</li>
+</ul>
+</li>
+<li>
+<p><strong>I update my <code>/etc/hosts</code> file now that we have the server name</strong>.</p>
+<ul>
+<li>This is so we can use tools like <a href="https://github.com/ropnop/kerbrute">kerbrute</a> for user enumeration as well as other tools later on.</li>
+</ul>
+</li>
+</ul>
+<h4 id="ldap-user-and-group-enumeration-using-anonymous-bind">LDAP User &amp; Group Enumeration Using Anonymous Bind:</h4>
+<ul>
+<li>
+<p><strong>As anonymous bind is enabled we can enumerate all the users on the domain also</strong>:</p>
+<ul>
+<li><code>ldapsearch -H ldap://casc-dc1.$domain:389 -x -b &quot;DC=cascade,DC=local&quot; -s sub &quot;(&amp;(objectclass=user))&quot; | grep sAMAccountName: | cut -f2 -d&quot; &quot; &gt;&gt; ldapUsers.txt</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-091335_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>My first command just extacted SAM names, which we already have from RPC, so lets extract all the users information</strong>:</p>
+<ul>
+<li><code>ldapsearch -H ldap://casc-dc1.$domain:389 -x -b &quot;DC=cascade,DC=local&quot; -s sub &quot;(&amp;(objectclass=user))&quot; &gt;&gt; ldapUsersAll.txt</code></li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>As anonymous bind is enabled we can enumerate all the groups on the domain also</strong>:
+<ul>
+<li><code>ldapsearch -H ldap://casc-dc1.$domain:389 -x -b &quot;DC=cascade,DC=local&quot; -s sub &quot;(&amp;(objectclass=Group))&quot; | grep sAMAccountName: | cut -f2 -d&quot; &quot; &gt;&gt; ldapGroups.txt</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-091420_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-dot-foothold">2. Foothold:</h2>
+<h3 id="finding-a-password-in-the-cascadelegacypwd-field">Finding a password in the <code>cascadeLegacyPwd</code> field:</h3>
+<ul>
+<li>
+<p>Looking through the extracted user data from <code>ldap</code> I see there is a field called <code>cascadeLegacyPwd</code> in the users r.thompson&rsquo;s entry.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-093536_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I test the password with</strong> <code>netexec</code> <strong>but it doesn&rsquo;t work</strong>:</p>
+<ul>
+<li><code>netexec smb $box -u $user -p $pass --shares</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-094029_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>+It dawns on me, it&rsquo;s <code>base64</code> encoded!!!+</p>
+<ul>
+<li><strong>I decode the password</strong>:
+<ul>
+<li><code>echo $pass | base64 -d</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-094344_.png">
+</figure>
+</li>
+<li>+Note+:
+<ul>
+<li>Ironically it would have been a better password in it&rsquo;s <code>bas64</code> encoded form as it has:
+<ul>
+<li>Uppercase</li>
+<li>Lowercase</li>
+<li>Numbers</li>
+<li>Symbols</li>
+<li>Is longer.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-the-domain-as-r-dot-thompson">Enumerating the domain as <code>r.thompson</code>:</h3>
+<ul>
+<li><strong>I check ryan&rsquo;s creds with</strong> <code>netexec</code> <strong>and get access</strong>:
+<ul>
+<li><code>netexec smb $box -u $user -p $pass --shares</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-094721_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="pillaging-the-it-smb-share">Pillaging the <code>IT</code> SMB Share:</h4>
+<ul>
+<li>
+<p><strong>I connect using</strong> <code>smbclient</code>:</p>
+<ul>
+<li><code>smbclient -U $domain\\$user \\\\$box\\Data</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-095053_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I find shares and see if I can access them all however I am only able to access the</strong> <code>IT</code> <strong>share currently</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-095302_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I find a file called</strong> <code>Meeting_Notes_June_2018.html</code> <strong>in the</strong> <code>Email Archives</code> <strong>directory I download it</strong>:</p>
+<ul>
+<li><code>get Meeting_Notes_June_2018.html</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-095512_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I find a file called</strong> <code>ArkAdRecycleBin.log</code> <strong>in the</strong> <code>Logs\Ark AD Recycle Bin\</code> <strong>folder</strong>:</p>
+<ul>
+<li><code>get ArkAdRecycleBin.log</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-104922_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I find a file called</strong> <code>dcdiag.log</code> <strong>in the</strong> <code>Logs\DCs\</code> <strong>folder</strong>:</p>
+<ul>
+<li><code>get dcdiag.log</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-104956_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I find a file called</strong> <code>VNC Install.reg *in the* \IT\Temp\s.smith\</code> <strong>folder</strong>:</p>
+<ul>
+<li><code>get &quot;VNC Install.reg&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-105208_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="pillaging-the-netlogon-share">Pillaging the <code>NETLOGON</code> share:</h4>
+<ul>
+<li><strong>I access the</strong> <code>NETLOGON</code> <strong>share</strong>:
+<ul>
+<li><code>smbclient -U $domain\\$user \\\\$box\\NETLOGON</code></li>
+</ul>
+</li>
+<li><strong>I find two scripts</strong>:
+<ul>
+<li><code>MapAuditDrive.vbs</code> &amp; <code>MapDataDrive.vbs</code></li>
+</ul>
+</li>
+<li><strong>I download them both</strong>:
+-<img src="/ox-hugo/2024-10-15-105446_.png" alt=""></li>
+</ul>
+<h3 id="finding-that-there-is-a-tempadmin-account-with-the-same-password-as-normal-admin">Finding that there is a <code>TempAdmin</code> account with the same password as normal <code>admin</code>:</h3>
+<ul>
+<li>
+<p>In the <code>Meeting_Notes_June_2018.html</code> file it says there is a <code>TempAdmin</code> account that should have the same password as the normal <code>Admin</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-114843_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>However looking at</strong> <code>ArkAdRecycleBin.log</code> <strong>it looks like this account has already been deleted</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-114958_.png">
+</figure>
+</li>
+<li>We will file this away incase it is useful later.</li>
+</ul>
+</li>
+</ul>
+<h3 id="finding-a-tightvnc-password-in-vnc-install-dot-reg">Finding a <code>TightVNC</code> password in <code>VNC Install.reg</code></h3>
+<ul>
+<li>
+<p>Looking at the <code>VNC Install.reg</code> file I can see it&rsquo;s the registyr entry for a <code>TightVNC</code> install:</p>
+</li>
+<li>
+<p>There is a hard-coded hex password in the file:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-111530_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Some quick</strong> <code>DuckDuckGoing</code> <strong>(doesn&rsquo;t sound as cool as &ldquo;Googling&rdquo;) &amp; I find a decryption method</strong>:</p>
+<ul>
+<li>According to <a href="https://github.com/frizb/PasswordDecrypts?tab=readme-ov-file">this entry</a> VNC uses a hard-coded DES key to store credentials. And the same key is used across multiple different products.</li>
+</ul>
+</li>
+<li>
+<p><strong>I use the command at the bottom of the page &amp; get the clear-text password</strong>:</p>
+<ul>
+<li><code>echo -n 6bcf2a4b6e5aca0f | xxd -r -p | openssl enc -des-cbc --nopad --nosalt -K e84ad660c4721ae0 -iv 0000000000000000 -d | hexdump -Cv</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-111420_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I test if it&rsquo;s</strong> <code>s.smiths</code> <strong>&amp; it is</strong>:</p>
+<ul>
+<li><code>netexec smb $box -u $user -p $pass</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-113715_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="running-a-bloodhound-collection">Running a bloodhound collection:</h3>
+<ul>
+<li><strong>It&rsquo;s about time we ran a bloodhound collection after grabbing all the low-hanging fruit</strong>:
+<ul>
+<li><code>python3 bloodhound.py -dc casc-dc1.$domain -c All -u $user -p $pass -d $domain -ns $box</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-113948_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-as-s-dot-smith">Enumerating as <code>s.smith</code>:</h3>
+<ul>
+<li>
+<p><strong>Looking at the bloodhound data we can see that</strong> <code>s.smith</code> <strong>is part of numerous groups</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-115709_.png">
+</figure>
+</li>
+<li>We can see he is part of the &ldquo;Remote Management Users&rdquo; so we should be able to get access to the machine now.</li>
+</ul>
+</li>
+<li>
+<p><strong>I access the host via</strong> <code>evil-winrm</code>:</p>
+<ul>
+<li><code>evil-winrm -i $box -u $user -p $pass</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-115931_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Get our user flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-120050_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-and-pillaging-the-audit-share">Enumerating &amp; pillaging the <code>audit$</code> share:</h3>
+<ul>
+<li>
+<p><strong>We can see that they also have access to the</strong> <code>audit$</code> <strong>share</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-120246_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I connect using</strong> <code>smbclient</code>:</p>
+<ul>
+<li><code>smbclient -U $domain\\$user \\\\$box\\Audit$</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-120555_.png">
+</figure>
+</li>
+<li>There are alot of interesting things here.</li>
+</ul>
+</li>
+<li>
+<p><strong>To make life easier I create a</strong> <code>.tar</code> <strong>file of all the files</strong>:</p>
+<ul>
+<li><code>tar c all.tar</code></li>
+<li><figure><img src="/ox-hugo/2024-10-15-120843_.png">
+</figure>
+</li>
+<li>+Note+: This will make a <code>.tar</code> of all the files <strong>excluding</strong> directories and download it automatically.</li>
+</ul>
+</li>
+<li>
+<p><strong>I download the remaining files in the directories</strong>:</p>
+<ul>
+<li><code>x86\SQLite.Interop.dll</code></li>
+<li><code>x64\SQLite.Interop.dll</code></li>
+<li><code>DB\Audit.db</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-dot-privilege-escalation">3. Privilege Escalation:</h2>
+<h3 id="examining-db-audit-dot-db">Examining <code>DB\Audit.db</code>:</h3>
+<ul>
+<li>
+<p><strong>I open</strong> <code>DB\Audit.db</code> <strong>in</strong> <code>sqlitebrowser</code>:</p>
+<ul>
+<li>The <code>ldap</code> table appears to have the credentials for the <code>ArkSvc</code> service.</li>
+<li><figure><img src="/ox-hugo/2024-10-15-122927_.png">
+</figure>
+</li>
+<li>I try &amp; base64 decode it however it appears to be a malformed string:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-123230_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>It could be encrypted and we don&rsquo;t have the encryption key.</li>
+</ul>
+</li>
+<li>
+<p><strong>The rest of the tables related to deleted accounts</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-123927_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Looking at</strong> <code>RunAudit.bat</code> <strong>we can see it is just used to run</strong> <code>CascAudit.exe</code> <strong>&amp; pass the</strong> <code>Audit.db</code> <strong>to it</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-130527_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I want to decompile the</strong> <code>.exe</code> <strong>and</strong> <code>dll</code> <strong>so will fire up my command windows vm</strong>:</p>
+<ul>
+<li>If you&rsquo;re unfamiliar with the command project, it&rsquo;s great: <a href="https://github.com/mandiant/commando-vm">https://github.com/mandiant/commando-vm</a></li>
+<li>It&rsquo;s an offensive VM with loads of great tools.</li>
+</ul>
+</li>
+</ul>
+<h3 id="finding-a-hardcoded-decryption-key-in-the-cascaudit-dot-exe-binary-using-dnspy">Finding a hardcoded decryption key in the <code>CascAudit.exe</code> binary using <code>DNSpy</code>:</h3>
+<ul>
+<li><strong>Opening the</strong> <code>CascAudit.exe</code> <strong>in</strong> <code>DNSpy</code> <strong>I immediately find a hard-coded decryption key win the</strong> <code>MainModule</code>.
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-170613_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="let-s-break-this-code-down">Let&rsquo;s break this code down:</h4>
+<ul>
+<li><strong>Below is the code that we are most interested in.</strong>
+<ul>
+<li>Lets break it down.
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">using</span> (SQLiteConnection sQLiteConnection <span style="color:#f92672">=</span> new <span style="color:#a6e22e">SQLiteConnection</span>(<span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> MyProject.Application.CommandLineArgs[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;Version=3;&#34;</span>))
+</span></span><span style="display:flex;"><span> {
+</span></span><span style="display:flex;"><span>         string text <span style="color:#f92672">=</span> string.Empty;
+</span></span><span style="display:flex;"><span>         string password <span style="color:#f92672">=</span> string.Empty;
+</span></span><span style="display:flex;"><span>         string text2 <span style="color:#f92672">=</span> string.Empty;
+</span></span><span style="display:flex;"><span>         try
+</span></span><span style="display:flex;"><span>         {
+</span></span><span style="display:flex;"><span>              sQLiteConnection.<span style="color:#a6e22e">Open</span>();
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">using</span> (SQLiteCommand sQLiteCommand <span style="color:#f92672">=</span> new <span style="color:#a6e22e">SQLiteCommand</span>(<span style="color:#e6db74">&#34;SELECT * FROM LDAP&#34;</span>, sQLiteConnection))
+</span></span><span style="display:flex;"><span>              {
+</span></span><span style="display:flex;"><span>	                  <span style="color:#a6e22e">using</span> (SQLiteDataReader sQLiteDataReader <span style="color:#f92672">=</span> sQLiteCommand.<span style="color:#a6e22e">ExecuteReader</span>())
+</span></span><span style="display:flex;"><span>	                  {
+</span></span><span style="display:flex;"><span>		                      sQLiteDataReader.<span style="color:#a6e22e">Read</span>();
+</span></span><span style="display:flex;"><span>		                      text <span style="color:#f92672">=</span> Conversions.<span style="color:#a6e22e">ToString</span>(sQLiteDataReader[<span style="color:#e6db74">&#34;Uname&#34;</span>]);
+</span></span><span style="display:flex;"><span>		                      text2 <span style="color:#f92672">=</span> Conversions.<span style="color:#a6e22e">ToString</span>(sQLiteDataReader[<span style="color:#e6db74">&#34;Domain&#34;</span>]);
+</span></span><span style="display:flex;"><span>		                      string encryptedString <span style="color:#f92672">=</span> Conversions.<span style="color:#a6e22e">ToString</span>(sQLiteDataReader[<span style="color:#e6db74">&#34;Pwd&#34;</span>]);
+</span></span><span style="display:flex;"><span>		                      try
+</span></span><span style="display:flex;"><span>		                      {
+</span></span><span style="display:flex;"><span>			                          password <span style="color:#f92672">=</span> Crypto.<span style="color:#a6e22e">DecryptString</span>(encryptedString, <span style="color:#e6db74">&#34;c4scadek3y654321&#34;</span>);
+</span></span><span style="display:flex;"><span>		                      }
+</span></span><span style="display:flex;"><span>		                      <span style="color:#a6e22e">catch</span> (Exception ex2)
+</span></span><span style="display:flex;"><span>		                      {
+</span></span><span style="display:flex;"><span>			                          Console.<span style="color:#a6e22e">WriteLine</span>(<span style="color:#e6db74">&#34;Error decrypting password: &#34;</span> <span style="color:#f92672">+</span> ex2.Message);
+</span></span><span style="display:flex;"><span>			                          <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>		                      }
+</span></span><span style="display:flex;"><span>	                  }
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>              sQLiteConnection.<span style="color:#a6e22e">Close</span>();
+</span></span><span style="display:flex;"><span>         }</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+<li><strong>Database Connection and Initialization</strong>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="using%20%28SQLiteConnection%20sQLiteConnection%20=%20new%20SQLiteConnection%28%22Data%20Source=%22%20[PlusSymbol]%20MyProject.Application.CommandLineArgs[0]%20[PlusSymbol]%20%22;Version=3;%22%29%29">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <pre><code>using (SQLiteConnection sQLiteConnection = new SQLiteConnection(&#34;Data Source=&#34; [PlusSymbol] MyProject.Application.CommandLineArgs[0] [PlusSymbol] &#34;;Version=3;&#34;))</code></pre>
+    
+</div>
+<ul>
+<li>Creates a new SQLite connection using the database file path from the first command-line argument.</li>
+<li><code>string text = string.Empty;</code></li>
+<li><code>string password = string.Empty;</code></li>
+<li><code>string text2 = string.Empty;</code>
+<ul>
+<li>Initializes empty strings to store the username (<code>text</code>), password, and domain (<code>text2</code>).</li>
+</ul>
+</li>
+<li><code>sQLiteConnection.Open();</code>
+<ul>
+<li>Opens the SQLite database connection.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p><strong>Querying the Database</strong></p>
+<ul>
+<li><code>using (SQLiteCommand sQLiteCommand = new SQLiteCommand(&quot;SELECT * FROM LDAP&quot;, sQLiteConnection))</code>
+<ul>
+<li>Creates an SQL command to select all data from the LDAP table.</li>
+</ul>
+</li>
+<li><code>using (SQLiteDataReader sQLiteDataReader = sQLiteCommand.ExecuteReader())</code>
+<ul>
+<li>Executes the SQL command and creates a reader for the results.</li>
+</ul>
+</li>
+<li><code>sQLiteDataReader.Read();</code>
+<ul>
+<li>Reads the first row of the query results.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Retrieving LDAP Credentials</strong>:</p>
+<ul>
+<li><code>text = Conversions.ToString(sQLiteDataReader[&quot;Uname&quot;]);</code></li>
+<li><code>text2 = Conversions.ToString(sQLiteDataReader[&quot;Domain&quot;]);</code></li>
+<li><code>string encryptedString = Conversions.ToString(sQLiteDataReader[&quot;Pwd&quot;]);</code></li>
+<li>Retrieves the username, domain, and encrypted password from the query results.
+<ul>
+<li>Stores these values in the respective variables.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Password Decryption</strong>:</p>
+<ul>
+<li><code>password = Crypto.DecryptString(encryptedString, &quot;c4scadek3y654321&quot;);</code></li>
+<li>Attempts to decrypt the password using a custom <code>Crypto.DecryptString</code> method.
+<ul>
+<li>This is actually calling the <code>CascCrypto.dll</code> that was also available in the audit share.</li>
+</ul>
+</li>
+<li>+Security Note+: The decryption key <code>&quot;c4scadek3y654321&quot;</code> is hardcoded, which is a significant security risk, as anyone who decompiles the binary can find this key.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cleanup</strong>:</p>
+<ul>
+<li><code>sQLiteConnection.Close();</code></li>
+<li>Closes the SQLite database connection.</li>
+</ul>
+</li>
+<li>
+<p><strong>So what does it do</strong>?</p>
+<ul>
+<li>This code retrieves <code>LDAP</code> credentials from an <code>SQLite</code> database and decrypts the password.
+<ul>
+<li>Remember we found <code>Audit.db</code> earlier which is an <code>SQLite</code> db which had an entry for the <code>ArkSvc</code> account&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="extracting-the-arksvc-password-from-cascaudit-dot-exe">Extracting the <code>ArkSvc</code> password from <code>CascAudit.exe</code>:</h3>
+<ul>
+<li>
+<p>+Requirements+: For this to work, we will need the <code>Audit.db</code> &amp; <code>CascCrypto.dll</code>, the <code>.dll</code> has to be in the same folder as the <code>.exe</code></p>
+</li>
+<li>
+<p><strong>Set a breakpoint in</strong> <code>DNSpy</code>.</p>
+<ul>
+<li>Select the line with the encryption key &amp; right-click &amp; select &ldquo;Add Breakpoint&rdquo;</li>
+<li><figure><img src="/ox-hugo/2024-10-15-175147_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Click</strong> &ldquo;<code>Start</code>&rdquo;:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-175256_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>From the</strong> &ldquo;<code>Arguments</code>&rdquo; <strong>section ensure you select the location of the</strong> <code>Audit.db</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-175405_.png">
+</figure>
+</li>
+<li>Click &ldquo;OK&rdquo;</li>
+<li>+Note+:
+<ul>
+<li>If you remember in <code>RunAudit.Bat</code> we can see that the argument the <code>.exe</code> takes is the location of the <code>.db</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-175605_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>The debugger will break on the line we selected, however to get the result we need to step over it</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-175729_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Once we have stepped over the clear text password will be visible</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-175846_.png">
+</figure>
+</li>
+<li>+Note+: It has trailing <code>\0\0\0</code>, these can be deleted.</li>
+</ul>
+</li>
+<li>
+<p><strong>I verify the credentials work using</strong> <code>netexec</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-15-180211_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-dot-ownership">5. Ownership:</h2>
+<h3 id="enumerating-as-arksvc">Enumerating as <code>arksvc</code>:</h3>
+<ul>
+<li>
+<p><strong>Checking bloodhound I can see that</strong> <code>arksvc</code> <strong>has access to the</strong> <code>AD Recyle Bin</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-16-063920_.png">
+</figure>
+</li>
+<li>If you remember we saw that temp-admin was in the recycle bin when we were looking at the recovered <code>Audit.db</code> file:</li>
+<li><figure><img src="/ox-hugo/2024-10-16-065034_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>After some quick searching I find <a href="https://www.poweradmin.com/blog/restoring-deleted-objects-from-active-directory-using-ad-recycle-bin/">this article</a> which details how to recover deleted objects in the AD Recycle Bin. It says:</p>
+<blockquote>
+<p>By default, if an object has been deleted, it can be recovered within a 180 days interval. This value is specified in the msDS-DeletedObjectLifetime attribute</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="finding-the-administrator-password-in-the-cascadelegacypwd-field-of-a-deleted-object">Finding the Administrator Password in the <code>cascadeLegacyPwd</code> field of a deleted object:</h3>
+<ul>
+<li>
+<p><strong>I list the objects in the recycling bin</strong>:</p>
+<ul>
+<li><code>Get-ADObject -filter ‘isdeleted -eq $true -and name -ne “Deleted Objects”‘ -includeDeletedObjects -property *</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I immediately find the deleted</strong> <code>temp-admin</code> <strong>account</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-16-065635_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p><strong>Looking at the entry we can see that is has the same</strong> <code>cascadeLegacyPwd</code> <strong>field that we found before that contained a base64 encoded password</strong></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-16-065447_.png">
+</figure>
+</li>
+<li>If you remember when we looked at <code>Meeting_Notes_June_2018.html</code> it said that the temp-admin and normal admin have the same password:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-16-065824_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I decode the password</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-16-070206_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Boom we have root</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-16-070304_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Lets get our root flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-16-070357_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-dot-persistence">4. Persistence:</h2>
+<h3 id="dumping-ntds-dot-dit">Dumping NTDS.dit:</h3>
+<ul>
+<li><strong>Lets dump the</strong> <code>NTDS.dit</code> <strong>database using netexec</strong>:
+<ul>
+<li><code>netexec smb $box -u $user -p $pass -M ntdsutil</code></li>
+<li><figure><img src="/ox-hugo/2024-10-16-071246_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="creating-a-golden-ticket">Creating a Golden Ticket:</h3>
+<ol>
+<li>
+<p><strong>Using</strong> <code>impacket-lookupsid</code> <strong>to extract the domain</strong> <code>SID</code>:</p>
+<ul>
+<li><code>impacket-lookupsid $domain/administrator@$box -domain-sids</code></li>
+<li><figure><img src="/ox-hugo/2024-10-16-071632_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I use</strong> <code>impacket-ticketer</code> <strong>to create the ticket</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-16-071717_.png">
+</figure>
+</li>
+<li>It kicks out a bunch of errors but creates the <code>administrator.ccache</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I sync my clock with the target</strong>:</p>
+<ul>
+<li><code>sudo ntpdate -s casc-dc1.$domain</code></li>
+<li><figure><img src="/ox-hugo/2024-10-16-071759_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I load the ticket into the</strong> <code>KRB5CCNAME</code> <strong>Variable</strong>:</p>
+<ul>
+<li><code>export KRB5CCNAME=./administrator.ccache</code></li>
+<li><figure><img src="/ox-hugo/2024-10-16-071746_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I connect using</strong> <code>impacket-psexec</code>:</p>
+<ul>
+<li><code>impacket-psexec casc-dc1.$domain -k</code></li>
+<li><figure><img src="/ox-hugo/2024-10-16-071830_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li>I actually had a lot fun using RPC to enumerate, purely as a test, to see how much I could get from the box before I had to switch to other means. It was fun.</li>
+<li>It was also nice to have a box where the approach wasn&rsquo;t web based or something in an open share etc, it was fun to use LDAP (which I enjoy) extensively.</li>
+<li>I never knew about recovering items from the AD Recycling Bin.</li>
+<li>I learned more about C# decompiling etc, however I am going to do more work on this so I have a better understanding. This is one of my weaker points.</li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li>Oh, one day I couldn&rsquo;t sleep so woke up at 4:30am and wondered why it wouldn&rsquo;t connect for ages until I realized I hadn&rsquo;t updated <code>/etc/hosts</code> that was fun.</li>
+<li>Again, I spent alot of time on the C# decompiling etc as it&rsquo;s one of my weaker areas.</li>
+<li>Oh not realizing the first found password was base64 encoded for a few mins was fun….</li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at proton dot me</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        3571
+                    
+                </li>
+            
+
+            
+            
+
+            
+                <li>en</li>
+            
+
+            
+                <li>
+                    <a href="https://gohugo.io" class="btn" target="_blank"
+                        >Hugo: 0.135.0</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    <a
+                        href="https://github.com/JingWangTW/dark-theme-editor"
+                        class="btn"
+                        target="_blank"
+                        >Theme: dark-theme-editor</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Oct 16 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+                <li title="">
+                    
+                </li>
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.135.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            RPC Cheat Sheet |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            RPC Cheat Sheet -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            RPC Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cascade-box/" title="./cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                RPC Cheat Sheet
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.16.10"
+                            >2024.16.10
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        10 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/pentesting/"
+                            class="tag-btn">
+                            Pentesting
+                        </a>
+                    
+                        <a
+                            href="/tags/rpc/"
+                            class="tag-btn">
+                            RPC
+                        </a>
+                    
+                        <a
+                            href="/tags/cheatsheet/"
+                            class="tag-btn">
+                            CheatSheet
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/cheatsheets/" class="bread-btn">
+    
+
+    
+        Cheatsheets
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" class="bread-btn">
+    
+
+    
+        
+            RPC Cheat Sheet
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#port-number--s">Port Number(s):</a>
+      <ul>
+        <li><a href="#rpc-over-http">RPC over HTTP:</a></li>
+      </ul>
+    </li>
+    <li><a href="#rpc-information">RPC Information:</a>
+      <ul>
+        <li><a href="#definition">Definition:</a></li>
+        <li><a href="#components">Components:</a></li>
+        <li><a href="#types">Types:</a></li>
+        <li><a href="#protocols">Protocols:</a></li>
+        <li><a href="#common-uses">Common Uses:</a></li>
+        <li><a href="#advantages">Advantages:</a></li>
+        <li><a href="#disadvantages">Disadvantages:</a></li>
+        <li><a href="#implementation-considerations">Implementation Considerations:</a></li>
+        <li><a href="#security-concerns">Security Concerns:</a></li>
+        <li><a href="#relevance-to-penetration-testing">Relevance to Penetration Testing:</a></li>
+        <li><a href="#common-rpc-frameworks">Common RPC Frameworks:</a></li>
+      </ul>
+    </li>
+    <li><a href="#rpc-process--deep-dive">RPC Process (Deep Dive):</a>
+      <ul>
+        <li><a href="#connection">Connection:</a></li>
+        <li><a href="#execution">Execution:</a></li>
+        <li><a href="#response">Response</a></li>
+        <li><a href="#error-handling">Error Handling:</a></li>
+        <li><a href="#security-considerations">Security Considerations:</a></li>
+        <li><a href="#performance-optimizations">Performance Optimizations:</a></li>
+        <li><a href="#idempotency">Idempotency:</a></li>
+        <li><a href="#versioning">Versioning:</a></li>
+      </ul>
+    </li>
+    <li><a href="#rpc-filtering">RPC Filtering:</a></li>
+    <li><a href="#befb8b">+Enumerating RPC+</a>
+      <ul>
+        <li><a href="#enumerating-rpc-using-rpcclient">Enumerating RPC using <code>RPCclient</code>:</a></li>
+        <li><a href="#enumerating-rpc-using-rpcinfo">Enumerating RPC using <code>rpcinfo</code>:</a></li>
+        <li><a href="#enumerating-rpc-using-nmap">Enumerating RPC using Nmap:</a></li>
+        <li><a href="#enumerating-rpc-using-impacket-rpcdump">Enumerating RPC using impacket-rpcdump:</a></li>
+      </ul>
+    </li>
+    <li><a href="#16c913">+Attacking RPC+</a>
+      <ul>
+        <li><a href="#attacking-rpc-using-rpcclient">Attacking RPC using <code>rpcclient</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#6dca67">+Defending RPC+</a></li>
+    <li><a href="#common-rpc-vulnerabilities">Common RPC Vulnerabilities:</a></li>
+    <li><a href="#rpc-vs-dot-rest">RPC vs. REST</a>
+      <ul>
+        <li><a href="#rpc">RPC:</a></li>
+        <li><a href="#rest">REST:</a></li>
+      </ul>
+    </li>
+    <li><a href="#further-reading">Further Reading</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="introduction">Introduction</h2>
+<p>RPC (Remote Procedure Call) is a protocol that allows a program to execute a procedure or function on another computer as if it were a local call. This cheat sheet provides a comprehensive overview of RPC, including its functionality, security implications, and relevance to penetration testing.</p>
+<h2 id="port-number--s">Port Number(s):</h2>
+<ul>
+<li>
+<p><strong>RPC (Remote Procedure Call) does not operate on a specific port itself</strong>.</p>
+<ul>
+<li>Instead, it relies on underlying protocols to establish connections and transfer data.</li>
+<li>RPC uses different ports to facilitate communication between systems and services. Here&rsquo;s a summary of the key ports involved:</li>
+</ul>
+</li>
+<li>
+<p><strong>Port</strong> <code>135</code> (<code>TCP/UDP</code>):</p>
+<ul>
+<li>Purpose: Endpoint Mapper (EPM) for Microsoft RPC.</li>
+<li>Description: Acts as a directory service to map service requests to the appropriate dynamically assigned ports.</li>
+</ul>
+</li>
+<li>
+<p><strong>Dynamic Ports</strong> (<code>TCP/UDP</code>):</p>
+<ul>
+<li><strong>Purpose</strong>: RPC services can use dynamically assigned ports.</li>
+<li><strong>Description</strong>: After an initial connection via port 135, RPC services typically assign dynamic ports in the range of 49152–65535.</li>
+<li>+Note+: The dynamic port range may differ depending on the OS and configuration.</li>
+</ul>
+</li>
+<li>
+<p><strong>Port</strong> <code>593</code> (<code>TCP</code>):</p>
+<ul>
+<li><strong>Purpose</strong>: HTTP RPC (RPC over HTTP).</li>
+<li><strong>Description</strong>: Allows RPC communication over HTTP for remote management tasks.</li>
+<li><strong>Usage</strong>: Can be used to bypass firewalls that block traditional RPC ports.</li>
+<li><strong>Benefits</strong>: Useful for remote management in environments where direct RPC access is restricted.</li>
+<li><strong>Enumeration</strong>: Can be enumerated using tools like Nmap with appropriate scripts.</li>
+</ul>
+</li>
+<li>
+<p><strong>Port</strong> <code>80</code> (<code>TCP</code>) and <strong>Port</strong> <code>443</code> (<code>TCP</code>):</p>
+<ul>
+<li><strong>Purpose</strong>: Standard HTTP and HTTPS ports, which can be used for RPC over HTTP(S).</li>
+<li><strong>Description</strong>: When configured, allows RPC traffic to be tunneled through standard web protocols.</li>
+<li><strong>Usage</strong>: Commonly used in scenarios where traditional RPC ports are blocked by firewalls.</li>
+</ul>
+</li>
+</ul>
+<h3 id="rpc-over-http">RPC over HTTP:</h3>
+<ul>
+<li>RPC over HTTP (Port 593) can be used to bypass firewalls that block traditional RPC ports.</li>
+<li>Useful for remote management in environments where direct RPC access is restricted.</li>
+<li>Can be enumerated using tools like Nmap with appropriate scripts.</li>
+</ul>
+<h2 id="rpc-information">RPC Information:</h2>
+<h3 id="definition">Definition:</h3>
+<ul>
+<li>A protocol for executing code on a remote server.</li>
+</ul>
+<h3 id="components">Components:</h3>
+<ul>
+<li><strong>Client</strong>: Sends the request.</li>
+<li><strong>Server</strong>: Executes the function and returns a result.</li>
+</ul>
+<h3 id="types">Types:</h3>
+<ol>
+<li><strong>Synchronous RPC</strong>: Client waits for the server to respond.</li>
+<li><strong>Asynchronous RPC</strong>: Client continues operation without waiting.</li>
+</ol>
+<h3 id="protocols">Protocols:</h3>
+<ul>
+<li>XML-RPC</li>
+<li>JSON-RPC</li>
+<li>gRPC</li>
+</ul>
+<h3 id="common-uses">Common Uses:</h3>
+<ul>
+<li>Distributed computing</li>
+<li>Web services</li>
+<li>APIs</li>
+</ul>
+<h3 id="advantages">Advantages:</h3>
+<ul>
+<li>Simplifies development of distributed applications</li>
+<li>Allows for heterogeneous environments (different languages/platforms)</li>
+<li>Can improve performance in certain scenarios</li>
+</ul>
+<h3 id="disadvantages">Disadvantages:</h3>
+<ul>
+<li>Can introduce network-related complexities</li>
+<li>Potential security risks if not properly implemented</li>
+<li>May have higher latency compared to local procedure calls</li>
+</ul>
+<h3 id="implementation-considerations">Implementation Considerations:</h3>
+<ul>
+<li>Error handling for network issues</li>
+<li>Version compatibility between client and server</li>
+<li>Security measures (authentication, encryption)</li>
+<li>Performance optimization (caching, connection pooling)</li>
+</ul>
+<h3 id="security-concerns">Security Concerns:</h3>
+<ul>
+<li>Unauthorized access</li>
+<li>Data interception</li>
+<li>Denial-of-service attacks</li>
+</ul>
+<h3 id="relevance-to-penetration-testing">Relevance to Penetration Testing:</h3>
+<ul>
+<li>Can be used to enumerate Active Directory environments.</li>
+<li>Enumeration of exposed functions</li>
+<li>Injection vulnerabilities</li>
+<li>Insecure data transmission</li>
+</ul>
+<h3 id="common-rpc-frameworks">Common RPC Frameworks:</h3>
+<ul>
+<li>gRPC (Google)</li>
+<li>Apache Thrift</li>
+<li>XML-RPC</li>
+<li>JSON-RPC</li>
+<li>Java RMI (Remote Method Invocation)</li>
+</ul>
+<h2 id="rpc-process--deep-dive">RPC Process (Deep Dive):</h2>
+<h3 id="connection">Connection:</h3>
+<ol>
+<li>
+<p><strong>Client initiates a request to the server</strong>:</p>
+<ul>
+<li>Client prepares the procedure name and parameters.</li>
+<li>Client stub is invoked, which acts as a proxy for the remote procedure.</li>
+</ul>
+</li>
+<li>
+<p><strong>Parameters are marshalled (serialized) for transmission</strong>:</p>
+<ul>
+<li>Data is converted into a standardized format (e.g., XDR, Protocol Buffers).</li>
+<li>Complex data structures are flattened into a byte stream.</li>
+</ul>
+</li>
+<li>
+<p><strong>Request is sent over the network</strong>:</p>
+<ul>
+<li>The marshalled data is packaged with metadata (e.g., procedure ID, version).</li>
+<li>Transmission occurs using the underlying network protocol (e.g., TCP/IP).</li>
+</ul>
+</li>
+</ol>
+<h3 id="execution">Execution:</h3>
+<ol>
+<li>
+<p><strong>Server receives and unmarshalls the request</strong>:</p>
+<ul>
+<li>Server stub receives the incoming request.</li>
+<li>Data is deserialized back into a format the server can process.</li>
+</ul>
+</li>
+<li>
+<p><strong>Server executes the requested procedure</strong>:</p>
+<ul>
+<li>The appropriate local procedure is identified and called.</li>
+<li>Server performs the requested operation with the provided parameters.</li>
+</ul>
+</li>
+</ol>
+<h3 id="response">Response</h3>
+<ol>
+<li>
+<p><strong>Results are marshalled and sent back to the client</strong>:</p>
+<ul>
+<li>Output data is serialized for network transmission.</li>
+<li>Response is packaged with any necessary metadata.</li>
+</ul>
+</li>
+<li>
+<p><strong>Client unmarshalls and processes the results</strong>:</p>
+<ul>
+<li>Client stub receives and deserializes the response.</li>
+<li>Data is presented to the client application in the expected format.</li>
+</ul>
+</li>
+</ol>
+<h3 id="error-handling">Error Handling:</h3>
+<ul>
+<li>Network errors are detected and may trigger retries.</li>
+<li>Application-level errors are communicated back to the client.</li>
+</ul>
+<h3 id="security-considerations">Security Considerations:</h3>
+<ul>
+<li>Authentication may occur before or during the RPC process.</li>
+<li>Encryption can be applied to protect data in transit.</li>
+</ul>
+<h3 id="performance-optimizations">Performance Optimizations:</h3>
+<ul>
+<li>Connection pooling to reuse network connections.</li>
+<li>Caching of results for frequently called procedures.</li>
+<li>Batching of multiple RPC calls to reduce network overhead.</li>
+</ul>
+<h3 id="idempotency">Idempotency:</h3>
+<ul>
+<li>Some RPC systems ensure that operations can be safely retried without side effects.</li>
+</ul>
+<h3 id="versioning">Versioning:</h3>
+<ul>
+<li>RPC systems often include version information to handle compatibility between client and server.</li>
+</ul>
+<h2 id="rpc-filtering">RPC Filtering:</h2>
+<ul>
+<li>Windows systems often implement RPC filtering to restrict access.</li>
+<li>Can be configured through Group Policy or Windows Firewall with Advanced Security.</li>
+</ul>
+<h2 id="befb8b">+Enumerating RPC+</h2>
+<ul>
+<li>You can see these enumeration steps performed on my walkthrough for Cascade:
+<ul>
+<li><a href="https://bloodstiller.com/walkthroughs/cascade-box">https://bloodstiller.com/walkthroughs/cascade-box</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-rpc-using-rpcclient">Enumerating RPC using <code>RPCclient</code>:</h3>
+<ul>
+<li>
+<p><strong>Remember we can pass the pash with</strong> <code>rpcclient</code> <strong>too</strong>:</p>
+<ul>
+<li><code>--pw-nt-hash &lt;hash&gt;</code></li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->+Note+: Sometimes not all command are available due to restrictions<!-- raw HTML omitted --></p>
+</li>
+</ul>
+<h4 id="connecting-with-rpcclient-using-a-null-anonymous-session">Connecting with rpcclient using a null/anonymous session:</h4>
+<ul>
+<li><strong>Connect with a null/anonymous session</strong>:
+<ul>
+<li><strong>Command</strong>: rpcclient -U &quot;&quot; &lt;ip&gt;</li>
+<li><strong>Command</strong>: rpcclient -U &lsquo;%&rsquo; &lt;ip&gt;
+<ul>
+<li>Try both of these one may work and the other may not</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="searching-for-custom-rid-s-using-rpcclient">Searching for custom RID&rsquo;s using rpcclient:</h4>
+<ul>
+<li><strong>Bruteforce Custom User</strong> <code>RID's</code> <strong>with forloop</strong>:
+<ul>
+<li><strong>Command</strong>:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="for%20i%20in%20%5c%5c%28%28seq%20500%201100%29;do%20rpcclient%20-N%20-U%20%22%22%20[ip]%20-c%20%22queryuser%200x%5c%5c%29%28printf%20%27%25x%5cn%27%20$i%29%22%20%7c%20grep%20%22User%20Name%5c%5c%7cuser_rid%5c%5c%7cgroup_rid%22%20&amp;amp;&amp;amp;%20echo%20%22%22;done">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <pre><code>for i in \\((seq 500 1100);do rpcclient -N -U &#34;&#34; [ip] -c &#34;queryuser 0x\\)(printf &#39;%x\n&#39; $i)&#34; | grep &#34;User Name\\|user_rid\\|group_rid&#34; &amp;amp;&amp;amp; echo &#34;&#34;;done</code></pre>
+    
+</div>
+<ul>
+<li>+Note+:
+<ul>
+<li>This is used for searching for custom RIDs (see below)</li>
+<li>The values <code>500</code> &amp; <code>1100</code> can be modified.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Why <code>RID</code> Stop Around <code>500</code>:</p>
+<ul>
+<li>
+<p><strong>Default RIDs in Windows</strong>:</p>
+<ul>
+<li>The first <code>500</code> RIDs are typically reserved for well-known or default accounts and groups in Windows systems. For example:
+<ul>
+<li><code>0x1f4</code> (500 in decimal) is often assigned to the Administrator account.</li>
+<li><code>0x1f5</code> (501) is the Guest account.</li>
+<li>Other default users and built-in groups (e.g., Administrators group, Users group) are typically assigned RIDs in this range.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Custom</strong> <code>RIDs</code>:</p>
+<ul>
+<li>RIDs above 500 are typically assigned to custom-created users and groups. When administrators create new users or groups, the system automatically assigns them higher RIDs, which is why your search starts at 500 and extends up to 1100 in this case. This range is where you would expect to find custom user accounts or groups.</li>
+</ul>
+</li>
+<li>
+<p><strong>Purpose of the Command</strong>:</p>
+<ul>
+<li>Search for Custom User RIDs:
+<ul>
+<li>Since the well-known accounts usually stop around 500, we are searching through RIDs in the 500 to 1100 range, which is where custom-created users or groups are likely to have RIDs.</li>
+<li>This method can be useful in penetration testing or during enumeration to discover non-default user accounts that have been created on the system, particularly when we don’t have a complete list of users.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Explanation of the Command:</p>
+<ul>
+<li>
+<p><code>Loop (for i in $(seq 500 1100))</code>:</p>
+<ul>
+<li>The loop iterates over a range of values <code>(500 to 1100)</code>, converting each value to a hexadecimal format (<code>via printf '%x\n' $i</code>) because RIDs are expressed in hexadecimal.</li>
+</ul>
+</li>
+<li>
+<p><code>rpcclient -N -U &quot;&quot; &lt;ip&gt;</code>:</p>
+<ul>
+<li><code>-N</code>: Specifies no password, used for anonymous connections.</li>
+<li><code>-U &quot;&quot;</code>: Attempts the connection without a username.</li>
+<li><code>[ip]</code>: The IP address of the target server.</li>
+</ul>
+</li>
+<li>
+<p><code>queryuser 0x&lt;rid&gt;</code>:</p>
+<ul>
+<li>Queries user information based on the given RID (Relative Identifier) from the current iteration of the loop, formatted as a hexadecimal value (e.g., 0x1f4 for RID 500).</li>
+</ul>
+</li>
+<li>
+<p><code>grep &quot;User Name\|user_rid\|group_rid&quot;</code>:</p>
+<ul>
+<li>Filters the output to display only lines containing user name, user RID, or group RID for easier readability.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerating-users-using-rpcclient">Enumerating users using rpcclient:</h4>
+<ul>
+<li>
+<p><strong>Enumerates domain users on the remote server</strong>:</p>
+<ul>
+<li><strong>Command</strong>: <code>enumdomusers</code></li>
+<li>+Note+:
+<ul>
+<li>We will be given the users RID which can then be used with <code>queryuser</code> to enumerate further.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Query the user we have just found above</strong>:</p>
+<ul>
+<li><strong>Command</strong>: <code>queryuser [RID]</code></li>
+<li>+Example+: <code>queryuser 0x3e8</code></li>
+<li>+Note+:
+<ul>
+<li>Used with the RID discovered with <code>enumdomusers</code> above to enumerate users.</li>
+<li>We can then get the +RID of the group+ to then user the <code>querygroup</code> command.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerating-domain-and-local-groups-with-rpcclient">Enumerating Domain &amp; Local Groups with rpcclient:</h4>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Enumerating Domain alias groups:</p>
+<ul>
+<li>
+<p><strong>Domain alias Groups</strong>:</p>
+<ul>
+<li><strong>Command</strong>: <code>enumalsgroups domain</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Local Groups</strong>:</p>
+<ul>
+<li><strong>Command</strong>: <code>enumalsgroups builtin</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Alias Groups Explanation</strong>:</p>
+<ul>
+<li>
+<p>Alias Groups (Local Groups):</p>
+<ul>
+<li>These groups are local to the machine or server, or specific to the domain controller but aren&rsquo;t part of the global domain groups.</li>
+<li>Alias groups often correspond to built-in groups on Windows (e.g., Administrators, Backup Operators), but they can also be domain-specific local groups.</li>
+<li>Alias groups can only contain members from the local domain.</li>
+</ul>
+</li>
+<li>
+<p><strong>Scope</strong>:</p>
+<ul>
+<li><code>enumalsgroups domain/builtin</code>: Lists local alias groups that are specific to the domain controller or server.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Enumerating Domain Wide Groups:</p>
+<ul>
+<li>
+<p><strong>Domain Wide Groups</strong>:</p>
+<ul>
+<li><strong>Command</strong>: <code>enumdomgroups</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Query the group of the user above</strong>:</p>
+<ul>
+<li><strong>Command</strong>: <code>querygroup [GroupRID]</code></li>
+<li>+Example+: <code>querygroup 0x201</code>
+<ul>
+<li>Used with the RID discovered above.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Scope</strong>:</p>
+<ul>
+<li><code>enumdomgroups</code>: Lists domain-wide groups that are used across the Active Directory domain.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerate-domain-information-using-rpcclient">Enumerate Domain information using rpcclient:</h4>
+<ul>
+<li><strong>Command</strong>: <code>enumdomains</code></li>
+</ul>
+<h4 id="enumerate-system-privileges-using-rpcclient">Enumerate System privileges using rpcclient:</h4>
+<ul>
+<li><strong>Command</strong>: <code>enumprivs</code></li>
+</ul>
+<h4 id="enumerate-password-policy-using-rpcclient">Enumerate Password Policy using rpcclient:</h4>
+<ul>
+<li><strong>Command</strong>: <code>enumdompwinfo</code></li>
+<li>+Example output+:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>rpcclient $&gt; getdompwinfo
+</span></span><span style="display:flex;"><span>min_password_length: <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>password_properties: 0x00000000</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Understanding <code>password_properties</code>:</p>
+<ul>
+<li>
+<p><code>password_properties</code> is a bitmask, where different bits control specific password policies.</p>
+</li>
+<li>
+<p><strong>Here are the common flags and what each bit represents</strong>:</p>
+<ul>
+<li>
+<p><strong>Hex Value</strong>: <code>0x00000001</code></p>
+</li>
+<li>
+<p><strong>Flag</strong>: <code>DOMAIN_PASSWORD_COMPLEX</code></p>
+</li>
+<li>
+<p><strong>Meaning</strong>: Enforces password complexity (requires uppercase, lowercase, digits, symbols)</p>
+</li>
+<li>
+<p><strong>Hex Value</strong>: <code>0x00000002</code></p>
+</li>
+<li>
+<p><strong>Flag</strong>: <code>DOMAIN_PASSWORD_NO_ANON_CHANGE</code></p>
+</li>
+<li>
+<p><strong>Meaning</strong>: Prevents anonymous users from changing passwords</p>
+</li>
+<li>
+<p><strong>Hex Value</strong>: <code>0x00000004</code></p>
+</li>
+<li>
+<p><strong>Flag</strong>: <code>DOMAIN_PASSWORD_NO_CLEAR_CHANGE</code></p>
+</li>
+<li>
+<p><strong>Meaning</strong>: Prevents passwords from being sent in cleartext</p>
+</li>
+<li>
+<p><strong>Hex Value</strong>: <code>0x00000008</code></p>
+</li>
+<li>
+<p><strong>Flag</strong>: <code>DOMAIN_LOCKOUT_ADMINS</code></p>
+</li>
+<li>
+<p><strong>Meaning</strong>: Locks out administrators as well when lockout occurs</p>
+</li>
+<li>
+<p><strong>Hex Value</strong>: <code>0x00000010</code></p>
+</li>
+<li>
+<p><strong>Flag</strong>: <code>DOMAIN_PASSWORD_STORE_CLEARTEXT</code></p>
+</li>
+<li>
+<p><strong>Meaning</strong>: Allows storing passwords using reversible encryption (cleartext)</p>
+</li>
+<li>
+<p><strong>Hex Value</strong>: <code>0x00000020</code></p>
+</li>
+<li>
+<p><strong>Flag</strong>: <code>DOMAIN_REFUSE_PASSWORD_CHANGE</code></p>
+</li>
+<li>
+<p><strong>Meaning</strong>: Prevents users from changing their password</p>
+</li>
+<li>
+<p><strong>Hex Value</strong>: <code>0x00000000</code></p>
+</li>
+<li>
+<p><strong>Meaning</strong>: Means that none of these password restrictions are enabled.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerate-specific-user-password-policy-using-rpcclient">Enumerate Specific User Password Policy using rpcclient:</h4>
+<ul>
+<li><strong>Command</strong>: <code>getusrdompwinfo [UserRID]</code></li>
+<li>+Example+: <code>getusrdompwinfo 0x46f</code></li>
+</ul>
+<h4 id="retrieve-information-about-available-services-using-rpcclient">Retrieve Information about Available Services using rpcclient:</h4>
+<ul>
+<li><strong>Command</strong>: <code>querydispinfo</code></li>
+</ul>
+<h4 id="enumerate-domain-groups-using-rpcclient">Enumerate Domain Groups using rpcclient:</h4>
+<ul>
+<li><strong>Command</strong>: <code>enumdomgroups</code></li>
+</ul>
+<h4 id="resolve-sids-to-names-using-rpcclient">Resolve SIDs to Names using rpcclient:</h4>
+<ul>
+<li><strong>Command</strong>: <code>lookupsids [SID]</code></li>
+</ul>
+<h4 id="enumerate-system-privileges-using-rpcclient">Enumerate System Privileges using rpcclient:</h4>
+<ul>
+<li><strong>Command</strong>: <code>enumprivs</code></li>
+</ul>
+<h4 id="enumerate-shared-resources-using-rpcclient">Enumerate Shared Resources using rpcclient:</h4>
+<ul>
+<li><strong>Command</strong>: <code>netshareenum</code></li>
+</ul>
+<h4 id="list-detailed-information-about-shared-resources-using-rpcclient">List Detailed Information about Shared Resources using rpcclient:</h4>
+<ul>
+<li><strong>Command</strong>: <code>netshareenumall</code></li>
+</ul>
+<h4 id="retrieve-information-about-a-specific-share-using-rpcclient">Retrieve Information about a Specific Share using rpcclient:</h4>
+<ul>
+<li><strong>Command</strong>: <code>netsharegetinfo [sharename]</code></li>
+</ul>
+<h4 id="create-a-new-share-using-rpcclient">Create a New Share using rpcclient:</h4>
+<ul>
+<li><strong>Command</strong>: <code>netshareadd &quot;C:\path&quot; &quot;sharename&quot; [type] &quot;Description&quot;</code></li>
+</ul>
+<h4 id="enumerate-trusted-domains-using-rpcclient">Enumerate Trusted Domains using rpcclient:</h4>
+<ul>
+<li><strong>Command</strong>: <code>enumtrustdoms</code></li>
+</ul>
+<h3 id="enumerating-rpc-using-rpcinfo">Enumerating RPC using <code>rpcinfo</code>:</h3>
+<ul>
+<li><strong>Command</strong>: <code>rpcinfo [ip/url]</code></li>
+<li>+Example+: <code>rpcinfo 10.129.203.101</code></li>
+</ul>
+<h3 id="enumerating-rpc-using-nmap">Enumerating RPC using Nmap:</h3>
+<ul>
+<li><strong>Command</strong>: <code>nmap -p 135 --script=msrpc-enum [target]</code></li>
+<li><strong>Command</strong>: <code>nmap -p 135 --script=rpc-grind [target]</code></li>
+<li>+Note+: These Nmap scripts can provide valuable information about RPC services and endpoints.</li>
+</ul>
+<h3 id="enumerating-rpc-using-impacket-rpcdump">Enumerating RPC using impacket-rpcdump:</h3>
+<ul>
+<li><strong>Command</strong>: <code>impacket-rpcdump [domain/]username[:password]@target</code></li>
+<li>+Example+: <code>impacket-rpcdump ./Administrator:password123@192.168.1.100</code></li>
+<li>+Note+: This tool can enumerate RPC endpoints and provide detailed information about available interfaces.</li>
+</ul>
+<h2 id="16c913">+Attacking RPC+</h2>
+<h3 id="attacking-rpc-using-rpcclient">Attacking RPC using <code>rpcclient</code>:</h3>
+<ul>
+<li><strong>Remember we can pass the pash with</strong> <code>rpcclient</code> <strong>too</strong>:
+<ul>
+<li><code>--pw-nt-hash &lt;hash&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="change-a-users-password-using-rpcclient">Change a users password using rpcclient:</h4>
+<ul>
+<li><strong>Command</strong>: <code>chgpasswd3 [user] [oldPass] [newPass]</code></li>
+<li>+Example+: <code>chgpasswd3 n.barley wellbum wellbum14</code></li>
+</ul>
+<h4 id="create-a-new-user-using-rpcclient">Create a new user using rpcclient:</h4>
+<ul>
+<li><strong>Create a new user on the remote Windows system using</strong> <code>rpcclient</code> <em>with the</em> <code>createdomuser</code> <strong>username command</strong>:
+<ul>
+<li><strong>Command</strong>: <code>createdomuser [username]</code></li>
+<li><strong>Command</strong>: <code>setuserinfo2 username 24 [NewPassword]</code></li>
+<li>+Note+:
+<ul>
+<li>In this example, the 24 value represents necessary Windows information class constant to set a user password.</li>
+<li>The value will always be 24 when setting a password.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="create-a-new-share-using-rpcclient">Create a new share using rpcclient:</h4>
+<ul>
+<li><strong>Command</strong>: <code>netshareadd &quot;C:\\[FolderToShare]&quot; &quot;[NameOfShare]&quot; [ShareType] &quot;[ShareDescription]&quot;</code></li>
+<li>+Example+: <code>netshareadd &quot;C:\Windows&quot; &quot;Windows&quot; 10 &quot;Windows Share&quot;</code></li>
+<li>+Note+:
+<ul>
+<li><code>10</code>: This is the share type. The value 10 indicates that it is a disk drive. Other values can represent different types of shares (e.g., printers).</li>
+</ul>
+</li>
+</ul>
+<h4 id="remove-a-shared-resource-using-rpcclient">Remove a Shared Resource using rpcclient:</h4>
+<p><strong>Command</strong>: <code>netshareremove [sharename]</code></p>
+<h2 id="6dca67">+Defending RPC+</h2>
+<ul>
+<li>Implement strong authentication and authorization</li>
+<li>Use encryption for data in transit (e.g., TLS)</li>
+<li>Regularly update and patch RPC services</li>
+<li>Implement proper input validation and sanitization</li>
+<li>Use firewalls and network segmentation to control RPC traffic</li>
+<li>Monitor and log RPC activities for suspicious behavior</li>
+</ul>
+<h2 id="common-rpc-vulnerabilities">Common RPC Vulnerabilities:</h2>
+<ul>
+<li>Buffer Overflows: Especially in older systems or poorly implemented RPC services.</li>
+<li>Null Session Attacks: When anonymous access is allowed.</li>
+<li>RPC Amplification Attacks: Used in DDoS scenarios.</li>
+<li>Improper Access Controls: Leading to unauthorized access to RPC functions.</li>
+</ul>
+<h2 id="rpc-vs-dot-rest">RPC vs. REST</h2>
+<h3 id="rpc">RPC:</h3>
+<ul>
+<li>Function-centric: Focuses on actions and procedures</li>
+<li>Typically uses POST method for all operations</li>
+<li>Often uses a single endpoint</li>
+<li>Can be more efficient for complex operations</li>
+</ul>
+<h3 id="rest">REST:</h3>
+<ul>
+<li>Resource-centric: Focuses on data entities</li>
+<li>Uses different HTTP methods (GET, POST, PUT, DELETE)</li>
+<li>Uses multiple endpoints based on resources</li>
+<li>Generally simpler and more widely used for web APIs</li>
+</ul>
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/windows/win32/rpc/rpc-start-page">Microsoft RPC Documentation</a></li>
+<li><a href="https://grpc.io/docs/">gRPC Documentation</a></li>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Web_Service_Security_Cheat_Sheet.html">OWASP Web Service Security Cheat Sheet</a></li>
+</ul>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        2003
+                    
+                </li>
+            
+
+            
+            
+
+            
+                <li>en</li>
+            
+
+            
+                <li>
+                    <a href="https://gohugo.io" class="btn" target="_blank"
+                        >Hugo: 0.135.0</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    <a
+                        href="https://github.com/JingWangTW/dark-theme-editor"
+                        class="btn"
+                        target="_blank"
+                        >Theme: dark-theme-editor</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Oct 16 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+                <li title="">
+                    
+                </li>
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

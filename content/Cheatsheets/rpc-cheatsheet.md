@@ -203,8 +203,9 @@ RPC (Remote Procedure Call) is a protocol that allows a program to execute a pro
 
 ## +Enumerating RPC+ {#befb8b}
 
--   +Frequently seen when using+ `NFS`
 
+-   You can see these enumeration steps performed on my walkthrough for Cascade: 
+    -   https://bloodstiller.com/walkthroughs/cascade-box 
 
 ### Enumerating RPC using `RPCclient`: {#enumerating-rpc-using-rpcclient}
 
