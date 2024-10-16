@@ -23,17 +23,17 @@
       <description></description>
     </item>
     <item>
-      <title>C#</title>
-      <link>http://localhost:1313/tags/c%23/</link>
-      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/c%23/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>CheatSheet</title>
       <link>http://localhost:1313/tags/cheatsheet/</link>
       <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/cheatsheet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CSharp</title>
+      <link>http://localhost:1313/tags/csharp/</link>
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/csharp/</guid>
       <description></description>
     </item>
     <item>
