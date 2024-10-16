@@ -186,6 +186,16 @@
         
             
                 <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" title="./cheatsheets/ldap-cheatsheet/">
+                        
+                            Attacking LDAP: Deep Dive &amp; Cheatsheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
                     <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
                         
                             RPC Cheat Sheet
@@ -404,16 +414,6 @@
         
             
                 <li class="file">
-                    <a href="http://localhost:1313/20230830125658-ldap.2/" title="./20230830125658-ldap.2/">
-                        
-                            Attacking LDAP: Deep Dive &amp; Cheatsheet
-                        
-                    </a>
-                </li>
-            
-        
-            
-                <li class="file">
                     <a href="http://localhost:1313/aboutme/" title="./aboutme/">
                         
                             about me
@@ -611,8 +611,8 @@
     <li><a href="#rpc-filtering">RPC Filtering:</a></li>
     <li><a href="#befb8b">+Enumerating RPC+</a>
       <ul>
-        <li><a href="#enumerating-rpc-using-rpcclient">Enumerating RPC using <code>RPCclient</code>:</a></li>
-        <li><a href="#enumerating-rpc-using-rpcinfo">Enumerating RPC using <code>rpcinfo</code>:</a></li>
+        <li><a href="#enumerating-rpc-using-rpcclient">Enumerating RPC using RPCclient:</a></li>
+        <li><a href="#enumerating-rpc-using-rpcinfo">Enumerating RPC using rpcinfo:</a></li>
         <li><a href="#enumerating-rpc-using-nmap">Enumerating RPC using Nmap:</a></li>
         <li><a href="#enumerating-rpc-using-impacket-rpcdump">Enumerating RPC using impacket-rpcdump:</a></li>
       </ul>
@@ -852,7 +852,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="enumerating-rpc-using-rpcclient">Enumerating RPC using <code>RPCclient</code>:</h3>
+<h3 id="enumerating-rpc-using-rpcclient">Enumerating RPC using RPCclient:</h3>
 <ul>
 <li>
 <p><strong>Remember we can pass the pash with</strong> <code>rpcclient</code> <strong>too</strong>:</p>
@@ -868,8 +868,8 @@
 <ul>
 <li><strong>Connect with a null/anonymous session</strong>:
 <ul>
-<li><strong>Command</strong>: rpcclient -U &quot;&quot; &lt;ip&gt;</li>
-<li><strong>Command</strong>: rpcclient -U &lsquo;%&rsquo; &lt;ip&gt;
+<li><strong>Command</strong>: <code>rpcclient -U &quot;&quot; [ip]</code></li>
+<li><strong>Command</strong>: <code>rpcclient -U '%' [ip]</code>
 <ul>
 <li>Try both of these one may work and the other may not</li>
 </ul>
@@ -882,6 +882,8 @@
 <li><strong>Bruteforce Custom User</strong> <code>RID's</code> <strong>with forloop</strong>:
 <ul>
 <li><strong>Command</strong>:</li>
+</ul>
+</li>
 </ul>
 
 
@@ -900,18 +902,13 @@
     
 
     
-        <pre><code>for i in \\((seq 500 1100);do rpcclient -N -U &#34;&#34; [ip] -c &#34;queryuser 0x\\)(printf &#39;%x\n&#39; $i)&#34; | grep &#34;User Name\\|user_rid\\|group_rid&#34; &amp;amp;&amp;amp; echo &#34;&#34;;done</code></pre>
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#ae81ff">\\</span><span style="color:#f92672">((</span>seq <span style="color:#ae81ff">500</span> 1100<span style="color:#f92672">)</span>;<span style="color:#66d9ef">do</span> rpcclient -N -U <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">[</span>ip<span style="color:#f92672">]</span> -c <span style="color:#e6db74">&#34;queryuser 0x\\)(printf &#39;%x\n&#39; </span>$i<span style="color:#e6db74">)&#34;</span> | grep <span style="color:#e6db74">&#34;User Name\\|user_rid\\|group_rid&#34;</span> &amp;amp;&amp;amp; echo <span style="color:#e6db74">&#34;&#34;</span>;<span style="color:#66d9ef">done</span></span></span></code></pre></div>
     
 </div>
 <ul>
 <li>+Note+:
-<ul>
-<li>This is used for searching for custom RIDs (see below)</li>
-<li>The values <code>500</code> &amp; <code>1100</code> can be modified.</li>
-</ul>
-</li>
-</ul>
-</li>
+-   This is used for searching for custom RIDs (see below)
+-   The values <code>500</code> &amp; <code>1100</code> can be modified.</li>
 </ul>
 <!-- raw HTML omitted -->
 <ul>
@@ -1194,62 +1191,125 @@
 </ul>
 </li>
 </ul>
-<h4 id="enumerate-specific-user-password-policy-using-rpcclient">Enumerate Specific User Password Policy using rpcclient:</h4>
-<ul>
-<li><strong>Command</strong>: <code>getusrdompwinfo [UserRID]</code></li>
-<li>+Example+: <code>getusrdompwinfo 0x46f</code></li>
-</ul>
-<h4 id="retrieve-information-about-available-services-using-rpcclient">Retrieve Information about Available Services using rpcclient:</h4>
-<ul>
-<li><strong>Command</strong>: <code>querydispinfo</code></li>
-</ul>
-<h4 id="enumerate-domain-groups-using-rpcclient">Enumerate Domain Groups using rpcclient:</h4>
-<ul>
-<li><strong>Command</strong>: <code>enumdomgroups</code></li>
-</ul>
-<h4 id="resolve-sids-to-names-using-rpcclient">Resolve SIDs to Names using rpcclient:</h4>
-<ul>
-<li><strong>Command</strong>: <code>lookupsids [SID]</code></li>
-</ul>
-<h4 id="enumerate-system-privileges-using-rpcclient">Enumerate System Privileges using rpcclient:</h4>
-<ul>
-<li><strong>Command</strong>: <code>enumprivs</code></li>
-</ul>
-<h4 id="enumerate-shared-resources-using-rpcclient">Enumerate Shared Resources using rpcclient:</h4>
-<ul>
-<li><strong>Command</strong>: <code>netshareenum</code></li>
-</ul>
-<h4 id="list-detailed-information-about-shared-resources-using-rpcclient">List Detailed Information about Shared Resources using rpcclient:</h4>
-<ul>
-<li><strong>Command</strong>: <code>netshareenumall</code></li>
-</ul>
-<h4 id="retrieve-information-about-a-specific-share-using-rpcclient">Retrieve Information about a Specific Share using rpcclient:</h4>
-<ul>
-<li><strong>Command</strong>: <code>netsharegetinfo [sharename]</code></li>
-</ul>
-<h4 id="create-a-new-share-using-rpcclient">Create a New Share using rpcclient:</h4>
-<ul>
-<li><strong>Command</strong>: <code>netshareadd &quot;C:\path&quot; &quot;sharename&quot; [type] &quot;Description&quot;</code></li>
-</ul>
-<h4 id="enumerate-trusted-domains-using-rpcclient">Enumerate Trusted Domains using rpcclient:</h4>
-<ul>
-<li><strong>Command</strong>: <code>enumtrustdoms</code></li>
-</ul>
-<h3 id="enumerating-rpc-using-rpcinfo">Enumerating RPC using <code>rpcinfo</code>:</h3>
-<ul>
-<li><strong>Command</strong>: <code>rpcinfo [ip/url]</code></li>
-<li>+Example+: <code>rpcinfo 10.129.203.101</code></li>
-</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Enumerate Specific User Password Policy using rpcclient: </span>
+</span></span><span style="display:flex;"><span>getusrdompwinfo <span style="color:#f92672">[</span>UserRID<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>getusrdompwinfo 0x46f
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Retrieve Information about Available Services using rpcclient: </span>
+</span></span><span style="display:flex;"><span>querydispinfo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enumerate Domain Groups using rpcclient: </span>
+</span></span><span style="display:flex;"><span>enumdomgroups
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Resolve SIDs to Names using rpcclient: </span>
+</span></span><span style="display:flex;"><span>lookupsids <span style="color:#f92672">[</span>SID<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enumerate System Privileges using rpcclient: </span>
+</span></span><span style="display:flex;"><span>enumprivs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enumerate Shared Resources using rpcclient: </span>
+</span></span><span style="display:flex;"><span>netshareenum
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List Detailed Information about Shared Resources using rpcclient: </span>
+</span></span><span style="display:flex;"><span>netshareenumall
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Retrieve Information about a Specific Share using rpcclient: </span>
+</span></span><span style="display:flex;"><span>netsharegetinfo <span style="color:#f92672">[</span>sharename<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a New Share using rpcclient: </span>
+</span></span><span style="display:flex;"><span>netshareadd <span style="color:#e6db74">&#34;C:\path&#34;</span> <span style="color:#e6db74">&#34;sharename&#34;</span> <span style="color:#f92672">[</span>type<span style="color:#f92672">]</span> <span style="color:#e6db74">&#34;Description&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enumerate Trusted Domains using rpcclient: </span>
+</span></span><span style="display:flex;"><span>enumtrustdoms</span></span></code></pre></div>
+    
+</div>
+<h3 id="enumerating-rpc-using-rpcinfo">Enumerating RPC using rpcinfo:</h3>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="rpcinfo%20[ip/url]%0arpcinfo%2010.129.203.101">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rpcinfo <span style="color:#f92672">[</span>ip/url<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>rpcinfo 10.129.203.101</span></span></code></pre></div>
+    
+</div>
 <h3 id="enumerating-rpc-using-nmap">Enumerating RPC using Nmap:</h3>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="nmap%20-p%20135%20--script=msrpc-enum%20[target]%0anmap%20-p%20135%20--script=rpc-grind%20[target]">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p <span style="color:#ae81ff">135</span> --script<span style="color:#f92672">=</span>msrpc-enum <span style="color:#f92672">[</span>target<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>nmap -p <span style="color:#ae81ff">135</span> --script<span style="color:#f92672">=</span>rpc-grind <span style="color:#f92672">[</span>target<span style="color:#f92672">]</span></span></span></code></pre></div>
+    
+</div>
 <ul>
-<li><strong>Command</strong>: <code>nmap -p 135 --script=msrpc-enum [target]</code></li>
-<li><strong>Command</strong>: <code>nmap -p 135 --script=rpc-grind [target]</code></li>
 <li>+Note+: These Nmap scripts can provide valuable information about RPC services and endpoints.</li>
 </ul>
 <h3 id="enumerating-rpc-using-impacket-rpcdump">Enumerating RPC using impacket-rpcdump:</h3>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="impacket-rpcdump%20[domain/]username[:password]@target%0aimpacket-rpcdump%20./Administrator:password123@192.168.1.100">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-rpcdump <span style="color:#f92672">[</span>domain/<span style="color:#f92672">]</span>username<span style="color:#f92672">[</span>:password<span style="color:#f92672">]</span>@target
+</span></span><span style="display:flex;"><span>impacket-rpcdump ./Administrator:password123@192.168.1.100</span></span></code></pre></div>
+    
+</div>
 <ul>
-<li><strong>Command</strong>: <code>impacket-rpcdump [domain/]username[:password]@target</code></li>
-<li>+Example+: <code>impacket-rpcdump ./Administrator:password123@192.168.1.100</code></li>
 <li>+Note+: This tool can enumerate RPC endpoints and provide detailed information about available interfaces.</li>
 </ul>
 <h2 id="16c913">+Attacking RPC+</h2>
@@ -1262,29 +1322,80 @@
 </li>
 </ul>
 <h4 id="change-a-users-password-using-rpcclient">Change a users password using rpcclient:</h4>
-<ul>
-<li><strong>Command</strong>: <code>chgpasswd3 [user] [oldPass] [newPass]</code></li>
-<li>+Example+: <code>chgpasswd3 n.barley wellbum wellbum14</code></li>
-</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="chgpasswd3%20[user]%20[oldPass]%20[newPass]%0achgpasswd3%20n.barley%20wellbum%20wellbum14">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chgpasswd3 <span style="color:#f92672">[</span>user<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>oldPass<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>newPass<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>chgpasswd3 n.barley wellbum wellbum14</span></span></code></pre></div>
+    
+</div>
 <h4 id="create-a-new-user-using-rpcclient">Create a new user using rpcclient:</h4>
 <ul>
-<li><strong>Create a new user on the remote Windows system using</strong> <code>rpcclient</code> <em>with the</em> <code>createdomuser</code> <strong>username command</strong>:
+<li><strong>Create a new user on the remote Windows system using</strong> <code>rpcclient</code> <em>with the</em> <code>createdomuser</code> <strong>username command</strong>:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="createdomuser%20[username]%0asetuserinfo2%20username%2024%20[NewPassword]">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>createdomuser <span style="color:#f92672">[</span>username<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>setuserinfo2 username <span style="color:#ae81ff">24</span> <span style="color:#f92672">[</span>NewPassword<span style="color:#f92672">]</span></span></span></code></pre></div>
+    
+</div>
 <ul>
-<li><strong>Command</strong>: <code>createdomuser [username]</code></li>
-<li><strong>Command</strong>: <code>setuserinfo2 username 24 [NewPassword]</code></li>
 <li>+Note+:
-<ul>
-<li>In this example, the 24 value represents necessary Windows information class constant to set a user password.</li>
-<li>The value will always be 24 when setting a password.</li>
-</ul>
-</li>
-</ul>
-</li>
+-   In this example, the 24 value represents necessary Windows information class constant to set a user password.
+-   The value will always be 24 when setting a password.</li>
 </ul>
 <h4 id="create-a-new-share-using-rpcclient">Create a new share using rpcclient:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>netshareadd <span style="color:#e6db74">&#34;C:\\[FolderToShare]&#34;</span> <span style="color:#e6db74">&#34;[NameOfShare]&#34;</span> <span style="color:#f92672">[</span>ShareType<span style="color:#f92672">]</span> <span style="color:#e6db74">&#34;[ShareDescription]&#34;</span>
+</span></span><span style="display:flex;"><span>netshareadd <span style="color:#e6db74">&#34;C:\Windows&#34;</span> <span style="color:#e6db74">&#34;Windows&#34;</span> <span style="color:#ae81ff">10</span> <span style="color:#e6db74">&#34;Windows Share&#34;</span></span></span></code></pre></div>
+    
+</div>
 <ul>
-<li><strong>Command</strong>: <code>netshareadd &quot;C:\\[FolderToShare]&quot; &quot;[NameOfShare]&quot; [ShareType] &quot;[ShareDescription]&quot;</code></li>
-<li>+Example+: <code>netshareadd &quot;C:\Windows&quot; &quot;Windows&quot; 10 &quot;Windows Share&quot;</code></li>
 <li>+Note+:
 <ul>
 <li><code>10</code>: This is the share type. The value 10 indicates that it is a disk drive. Other values can represent different types of shares (e.g., printers).</li>
@@ -1292,7 +1403,26 @@
 </li>
 </ul>
 <h4 id="remove-a-shared-resource-using-rpcclient">Remove a Shared Resource using rpcclient:</h4>
-<p><strong>Command</strong>: <code>netshareremove [sharename]</code></p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="netshareremove%20[sharename]">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>netshareremove <span style="color:#f92672">[</span>sharename<span style="color:#f92672">]</span></span></span></code></pre></div>
+    
+</div>
 <h2 id="6dca67">+Defending RPC+</h2>
 <ul>
 <li>Implement strong authentication and authorization</li>
@@ -1387,7 +1517,7 @@
                 <li>
                     
                         Word Count:
-                        2003
+                        1993
                     
                 </li>
             

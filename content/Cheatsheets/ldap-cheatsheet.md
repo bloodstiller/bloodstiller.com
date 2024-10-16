@@ -348,9 +348,11 @@ date = 2024-10-16
 -   **Examples of these being paired with** `ldapsearch`:
     -   We can pair search terms with filters to narrow down information even more.
     -   If I am enumerating a domain and a I know there is a user I want to go after called "Nathan" I can craft the following queries to enumerate them further.
-        -   +Example+: `ldapsearch -H ldap://10.129.204.54 -x -b "DC=sugarape,DC=local" '(&(ObjectClass=user)(cn=nathan*))' logoncount`
-        -   +Example+: `ldapsearch -H ldap://10.129.204.54 -x -b "DC=sugarape,DC=local" '(&(ObjectClass=user)(cn=nathan*))' sAMAccountName`
-        -   +Example+: `ldapsearch -H ldap://10.129.204.54 -x -b "DC=sugarape,DC=local" '(&(ObjectClass=user)(cn=nathan*))'`
+```bash
+ldapsearch -H ldap://10.129.204.54 -x -b "DC=sugarape,DC=local" '(&(ObjectClass=user)(cn=nathan*))' logoncount
+ldapsearch -H ldap://10.129.204.54 -x -b "DC=sugarape,DC=local" '(&(ObjectClass=user)(cn=nathan*))' sAMAccountName
+ldapsearch -H ldap://10.129.204.54 -x -b "DC=sugarape,DC=local" '(&(ObjectClass=user)(cn=nathan*))'
+```
 
 
 ### LDAP Logical Operators: {#ldap-logical-operators}
@@ -450,7 +452,7 @@ date = 2024-10-16
     -   <https://learn.microsoft.com/en-us/archive/technet-wiki/5392.active-directory-ldap-syntax-filters>
 
 
-## LDAP Search Terms:  {#ldap-search-terms}
+## +LDAP Search Terms+:  {#ldap-search-terms}
 
 -   **Great Cheat Sheets**: <https://gist.github.com/jonlabelle/0f8ec20c2474084325a89bc5362008a7>
     -   <https://social.technet.microsoft.com/wiki/contents/articles/5392.active-directory-ldap-syntax-filters.aspx>
@@ -464,97 +466,193 @@ date = 2024-10-16
 
 
 ### List [Domain Functionality Level](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels): {#list-domain-functionality-level}
-
--   **Command**: `ldapsearch -x -H ldap://<DC_IP> -b "" -s base "objectClass=*" domainFunctionality""`
--   +Example+: `ldapsearch -x -H ldap://10.129.42.188 -b "" -s base "objectClass=*" domainFunctionality""`
+```bash
+ldapsearch -x -H ldap://[[DCIP]] -b "" -s base "objectClass=*" domainFunctionality""
+ldapsearch -x -H ldap://10.129.42.188 -b "" -s base "objectClass=*" domainFunctionality""
+```
 
 
 ### List User Information: {#list-user-information}
 
 -   If none of these are what we need we can see other user attributes here:
     -   <https://docs.bmc.com/docs/fpsc121/ldap-attributes-and-associated-fields-495323340.html>
+#### List All User Information:
+-   Linux:
+```bash
+#Ldap Query
+'(objectClass=user)' or '(&(objectCategory=person))'
+# Examples Using ldapsearch
+ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 '(objectClass=user)'
+ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 '(&(objectCategory=person))'
+```
 
+-   Windows:
+```powershell
+#Ldap Query
+Get-ADObject -LDAPFilter '(&(objectCategory=person))' or '(objectClass=user)'
 
--   **List all Users Information**:
-    -   Linux:
-        -   **Command**: `'(objectClass=user)' or '(&(objectCategory=person))'`
-        -   +Example+: `ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 '(objectClass=user)'`
-        -   +Example+: `ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 '(&(objectCategory=person))'`
-    -   Windows:
-        -   **Command**: `Get-ADObject -LDAPFilter '(&(objectCategory=person))' or '(objectClass=user)'`
-        -   +Example+: `Get-ADObject -LDAPFilter '(&(objectCategory=person))'`
-        -   +Example+: `Get-ADObject -LDAPFilter '(&(objectCategory=person))' | select name | Measure-Object`
-            -   The last option selects just the name and the pipes it into measure object which gives us the total number of users on the domain:
+# Examples Using LDAPFilter
+Get-ADObject -LDAPFilter '(&(objectCategory=person))'
+Get-ADObject -LDAPFilter '(&(objectCategory=person))' | select name | Measure-Object
+```
+-   The last option selects just the name and the pipes it into measure object which gives us the total number of users on the domain:
 
--   **List a specific Users Information**:
-    -   Linux:
-        -   **Command**: `'(&(ObjectClass=user)(cn=<name*>))'`
-        -   +Example+: `ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 '(&(ObjectClass=user)(cn=nathan*))'`
-        -   +Notes+:
+#### List a specific Users Information:
+-   Linux:
+```bash
+#Ldap Query
+'(&(ObjectClass=user)(cn=<name*>))'
+
+# Examples Using ldapsearch
+ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 '(&(ObjectClass=user)(cn=nathan*))'
+```
+-   +Notes+:
             -   The wildcard `*` is correct after the name as we want to view all information about that account.
             -   Sometimes we will get output like this (this usually means the account is not found in the directory):
                 -   {{< figure src="/ox-hugo/2024-07-12-092539_.png" >}}
             -   Where as this account is active and in use by the looks of it:
                 -   {{< figure src="/ox-hugo/2024-07-12-092651_.png" >}}
-    -   Windows:
-        -   **Command**: `Get-ADObject -LDAPFilter '(&(ObjectClass=user)(cn=<name*>))'`
-        -   +Example+: `Get-ADObject -LDAPFilter '(&(objectCategory=user)(cn=carol*))'`
-        -   +Note+: This will return all users called Carol, we could further narrow down our search by adding a last name:
+-   Windows:
+```powershell
+#Ldap Query
+Get-ADObject -LDAPFilter '(&(ObjectClass=user)(cn=<name*>))'
+
+# Examples Using LDAPFilter
+Get-ADObject -LDAPFilter '(&(objectCategory=user)(cn=carol*))'
+```
+-   +Note+: This will return all users called Carol, we could further narrow down our search by adding a last name:
             -   `'(&(objectCategory=user)(cn=carol smith))'`
 
--   **List Users Who have Constrained Delegation Privileges**:
-    -   Linux:
-        -   **Command**: `'(userAccountControl:1.2.840.113556.1.4.803:=524288)`
-        -   +Example+: `ldapsearch -D "cn=sugarape-student,dc=sugarape,DC=LOCAL" -w 'Academy_student_AD!' -H ldap://10.129.2.174 '(userAccountControl:1.2.840.113556.1.4.803:=524288)`
-    -   Windows:
-        -   **Command**: `Get-DomainUser -LDAPFilter "(userAccountControl:1.2.840.113556.1.4.803:=524288)"`
+#### List Users Who have Constrained Delegation Privileges:
+-   Linux:
+```bash
+#Ldap Query
+(userAccountControl:1.2.840.113556.1.4.803:=524288)
 
--   **Users with Administrative Privileges**:
-    -   Linux:
-        -   **Command**: `(&(objectClass=user)(adminCount=1))`
-        -   +Example+: `ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 '(&(objectClass=user)(adminCount=1))'`
-    -   Windows:
-        -   **Command**: `Get-ADObject -LDAPFilter '(&(objectCategory=user)(adminCount=1))'`
+# Examples Using LDAPSearch
+ldapsearch -D "cn=sugarape-student,dc=sugarape,DC=LOCAL" -w 'Academy_student_AD!' -H ldap://10.129.2.174 '(userAccountControl:1.2.840.113556.1.4.803:=524288)
+```
+-   Windows:
+```powershell
+#Ldap Query
+(userAccountControl:1.2.840.113556.1.4.803:=524288)
 
--   **List All administratively disabled accounts.**:
-    -   Linux:
-        -   **Command**: `'(&(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))'`
-        -   +Example+: `ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 '(&(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))'`
-    -   Windows:
-        -   **Command**: `Get-ADObject -LDAPFilter '(&(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))'`
-        -   +Note+: Don't pipe into `| select samaccountname|` it didn't work for me, I think it may be due to the account being disabled, then maybe the sam account is disabled?
+# Example Using LDAPFilter
+Get-DomainUser -LDAPFilter "(userAccountControl:1.2.840.113556.1.4.803:=524288)"
+```
+        
+#### Users with Administrative Privileges:
+-   Linux:
+```bash
+#Ldap Query
+(&(objectClass=user)(adminCount=1))
+
+# Example Using LDAPSearch
+ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 '(&(objectClass=user)(adminCount=1))'
+
+```
+-   Windows:
+```powershell
+# Example Using LDAPFilter
+Get-ADObject -LDAPFilter '(&(objectCategory=user)(adminCount=1))'
+```
+
+#### List All administratively disabled accounts.:
+-   Linux:
+```bash
+#LDAP Query
+(&(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))
+
+# Example Using LDAPSearch
+ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 '(&(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))'
+
+```
+-   Windows:
+```powershell
+Get-ADObject -LDAPFilter '(&(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))'
+```
+-   +Note+: Don't pipe into `| select samaccountname|` it didn't work for me, I think it may be due to the account being disabled, then maybe the sam account is disabled?
 
 
 ### List User Emails: {#list-user-emails}
+-   Linux:
+```bash
+#LDAP Query
+(&(objectClass=user)(mail=*@domain.com))
 
--   **List Users Emails**:
-    -   **Command**: `(&(objectClass=user)(mail=*@domain.com))`
-    -   +Example+: `(&(objectClass=user)(mail=*@sugarape.local))`
+# Example Using LDAPSearch
+ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 (&(objectClass=user)(mail=*@sugarape.local))
+```
 
+-   Windows:
+```powershell
+#LDAP Query
+(&(objectClass=user)(mail=*@domain.com))
+
+# Example Using LDAPFilter
+Get-ADObject -LDAPFilter  (&(objectClass=user)(mail=*@sugarape.local))
+```
 
 ### List Group Information: {#list-group-information}
 
--   **List All Groups**:
-    -   Linux:
-        -   **Command**: `(objectClass=group)`
-        -   +Example+: `ldapsearch -H ldap://monteverde.MEGABANK.LOCAL -x -b "DC=MEGABANK,DC=LOCAL" -s sub "(&(objectclass=group))" | grep sAMAccountName: | cut -f2 -d" "`
-    -   Windows:
-        -   **Command**: `Get-ADObject -LDAPFilter '(&(objectCategory=group))'`
-        -   +Example+: `Get-ADObject -LDAPFilter '(&(objectCategory=group))' | select name | Measure-Object`
-            -   +Note+: The example counts the number of groups too by piping into measure object.
+#### List All Groups:
+-   Linux:
+```bash
+#LDAP Query
+(objectClass=group)
 
--   **List Group Membership of a specific user**:
-    -   Linux:
-        -   **Command**: `(&(objectClass=group)(member=CN=John Doe,CN=Users,DC=domain,DC=com))`
-        -   +Example+: `ldapsearch -x -b "dc=domain,dc=com" -H ldap://10.129.95.210 '(&(objectClass=group)(member=CN=John Doe,CN=Users,DC=domain,DC=com))'`
-    -   Windows:
-        -   **Command**: `Get-ADObject -LDAPFilter '(&(objectClass=group)(member=CN=John Doe,CN=Users,DC=domain,DC=com)'`
-            -   +Note+: Can't seem to get to work just yet
+# Example Using LDAPSearch
+ldapsearch -H ldap://monteverde.MEGABANK.LOCAL -x -b "DC=MEGABANK,DC=LOCAL" -s sub "(&(objectclass=group))" | grep sAMAccountName: | cut -f2 -d" "
+```
+-   Windows:
+```powershell
+#LDAP Query
+(&(objectCategory=group))
 
--   **List Members of a Specific Group**:
-    -   **Command**: `"(&(objectCategory=Person)(sAMAccountName=*)(memberOf=CN=<GroupName>,OU=Groups,DC=<DCNAME>,DC=<DCNAME>))"~`
-    -   +Example+: `ldapsearch -H ldap://monteverde.MEGABANK.LOCAL -x -b "DC=MEGABANK,DC=LOCAL" -s sub "(&(objectCategory=Person)(sAMAccountName=*)(memberOf=CN=Helpdesk,OU=Groups,DC=MEGABANK,DC=LOCAL))"`
-    -   +Notes+:
+# Example Using LDAPFilter
+Get-ADObject -LDAPFilter '(&(objectCategory=group))' | select name | Measure-Object
+
+```
+-   +Note+: The example counts the number of groups too by piping into measure object.
+
+#### List Group Membership of a specific user:
+-   Linux:
+```bash
+#LDAP Query
+(&(objectClass=group)(member=CN=John Doe,CN=Users,DC=domain,DC=com))
+
+# Example Using LDAPSearch
+ldapsearch -x -b "dc=domain,dc=com" -H ldap://10.129.95.210 '(&(objectClass=group)(member=CN=John Doe,CN=Users,DC=domain,DC=com))'
+```
+-   Windows:
+```powershell
+#LDAP Query
+(&(objectClass=group)(member=CN=John Doe,CN=Users,DC=domain,DC=com)
+
+# Example Using LDAPFilter
+Get-ADObject -LDAPFilter '(&(objectClass=group)(member=CN=John Doe,CN=Users,DC=domain,DC=com)'
+```
+-   +Note+: Can't seem to get to work just yet
+
+#### List Members of a Specific Group:
+- Linux:
+```bash
+#LDAP Query
+(&(objectCategory=Person)(sAMAccountName=*)(memberOf=CN=<GroupName>,OU=Groups,DC=[DCNAME],DC=[DCNAME]))
+
+# Example Using LDAPSearch
+ldapsearch -H ldap://monteverde.MEGABANK.LOCAL -x -b "DC=MEGABANK,DC=LOCAL" -s sub "(&(objectCategory=Person)(sAMAccountName=*)(memberOf=CN=Helpdesk,OU=Groups,DC=MEGABANK,DC=LOCAL))"
+```
+- Windows:
+```powershell
+#LDAP Query
+(&(objectCategory=Person)(sAMAccountName=*)(memberOf=CN=<GroupName>,OU=Groups,DC=[DCNAME],DC=[DCNAME]))
+
+# Example Using LDAPFilter
+Get-ADObject -LDAPFilter "(&(objectCategory=Person)(sAMAccountName=*)(memberOf=CN=Helpdesk,OU=Groups,DC=MEGABANK,DC=LOCAL))"
+```
+
+ -   +Notes+:
         -   Signifies no-one is in this group:
             -   {{< figure src="/ox-hugo/2024-07-12-094154_.png" >}}
         -   Users are part of this group.
@@ -563,45 +661,149 @@ date = 2024-10-16
 
 ### List Computers: {#list-computers}
 
--   **List All Computers**:
-    -   **Command**: `(objectClass=computer)`
-    -   +Example+: `ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 '(objectClass=computer)'`
+- Linux:
+```bash
+#LDAP Query
+(objectClass=computer)
+
+# Example Using LDAPSearch
+ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 '(objectClass=computer)'
+```
+- Windows:
+```powershell
+#LDAP Query
+(objectClass=computer)
+
+# Example Using LDAPFilter
+Get-ADObject -LDAPFilter "(objectClass=computer)"
+```
 
 
 ### List OU information: {#list-ou-information}
+#### List All OU's:
+- Linux:
+```bash
+#LDAP Query
+(objectClass=OrganizationalUnit)
 
--   **List All OU's**:
-    -   **Command**: `(objectClass=OrganizationalUnit)`
-    -   +Example+: `ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 '(objectClass=OrganizationalUnit)'`
+# Example Using LDAPSearch
+ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 '(objectClass=OrganizationalUnit)'
+```
+- Windows:
+```powershell
+#LDAP Query
+(objectClass=OrganizationalUnit)
 
--   **List Specific OU Information**:
-    -   **Command**: `'(ou=<ou Name>)'`
-    -   +Example+: `'(ou=Accounting)'`
+# Example Using LDAPFilter
+Get-ADObject -LDAPFilter "(objectClass=OrganizationalUnit)"
+```
+#### List Specific OU Information:
+- Linux:
+```bash
+#LDAP Query
+(ou=[OUName])
+
+# Example Using LDAPSearch
+ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 '(ou=Accounting)'
+```
+- Windows:
+```powershell
+#LDAP Query
+(ou=[OUName])
+
+# Example Using LDAPFilter
+Get-ADObject -LDAPFilter "(ou=Accounting)"
+```
 
 
 ### List Account Information: {#list-account-information}
 
--   **List Active Accounts**:
-    -   **Command**: `(&(objectClass=user)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))`
-        -   Can pipe into grep as well once an email is discovered to pipe out valid usernames:
-    -   +Example+: `ldapsearch -h 172.16.5.5 -x -b "DC=SUGARAPE,DC=LOCAL" -s sub "(&(objectClass=user)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))" | grep "sugarape.local"`
+#### List Active Accounts:
+
+- Linux:
+```bash
+#LDAP Query
+(&(objectClass=user)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))
+
+# Example Using LDAPSearch
+ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 "(&(objectClass=user)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))"
+ldapsearch -h 172.16.5.5 -x -b "DC=SUGARAPE,DC=LOCAL" -s sub "(&(objectClass=user)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))" | grep "sugarape.local"
+```
+-  +Note+: Can pipe into grep as well once an email is discovered to pipe out valid usernames:
+
+- Windows:
+```powershell
+#LDAP Query
+(&(objectClass=user)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))
+
+# Example Using LDAPFilter
+Get-ADObject -LDAPFilter  "(&(objectClass=user)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))"
+```
+
 
 <!--listend-->
 
--   **Account Expires in Specific Time Frame**:
-    -   **Command**: `(&(objectClass=user)(accountExpires>=131342487000000000)(accountExpires<=131395327000000000))`
-    -   +Example+: `ldapsearch -x -b "dc=domain,dc=com" -H ldap://10.129.95.210 '(&(objectClass=user)(accountExpires>=131342487000000000)(accountExpires<=131395327000000000))'`
+#### Account Expires in Specific Time Frame:
+- Linux:
+```bash
+#LDAP Query
+(&(objectClass=user)(accountExpires>=131342487000000000)(accountExpires<=131395327000000000))
 
--   **List Disabled Accounts**:
-    -   **Command**: `'(&(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))'`
-    -   +Example+: `ldapsearch -x -b "dc=domain,dc=com" -H ldap://10.129.95.210 '(&(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))'`
+# Example Using LDAPSearch
+ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 "(&(objectClass=user)(accountExpires>=131342487000000000)(accountExpires<=131395327000000000))"
+```
+
+- Windows:
+```powershell
+#LDAP Query
+(&(objectClass=user)(accountExpires>=131342487000000000)(accountExpires<=131395327000000000))
+
+# Example Using LDAPFilter
+Get-ADObject -LDAPFilter "(&(objectClass=user)(accountExpires>=131342487000000000)(accountExpires<=131395327000000000))"
+```
+#### List Disabled Accounts:
+- Linux:
+```bash
+#LDAP Query
+(&(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))
+
+# Example Using LDAPSearch
+ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 "(&(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))"
+```
+
+- Windows:
+```powershell
+#LDAP Query
+
+(&(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))
+
+# Example Using LDAPFilter
+Get-ADObject -LDAPFilter "(&(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))"
+
+```
+
 
 
 ### Linux System Support: {#linux-system-support}
 
--   **Linux Systems (if schema supports)**:
-    -   **Command**: `(&(objectClass=device)(osName=Linux*))`
-    -   +Example+: `ldapsearch -x -b "dc=domain,dc=com" -H ldap://10.129.95.210 '(&(objectClass=device)(osName=Linux*))'`
+- Linux:
+```bash
+#LDAP Query
+(&(objectClass=device)(osName=Linux*))
+
+# Example Using LDAPSearch
+ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 "(&(objectClass=device)(osName=Linux*))"
+```
+
+- Windows:
+```powershell
+#LDAP Query
+(&(objectClass=device)(osName=Linux*))
+
+# Example Using LDAPFilter
+Get-ADObject -LDAPFilter "(&(objectClass=device)(osName=Linux*))"
+
+```
 
 
 ## Object Identifiers OID's: {#object-identifiers-oid-s}
@@ -684,13 +886,13 @@ date = 2024-10-16
     -   +Example Picture and searches+:
         -   {{< figure src="/ox-hugo/2024-10-16-112948_.png" >}}
         -   {{< figure src="/ox-hugo/2024-10-16-113049_.png" >}}
-        -   In the above example with the `SearchBase` set to the AD Operational Unit (OU)  `OU=Employees,DC=SUGARAPE,DC=LOCAL` we can set the scope to the following. We are going to be querying for user, by passing these paramters to `Get-AdUser`:
+        -   In the above example with the `SearchBase` set to the AD Operational Unit (OU)  `OU=Employees,DC=SUGARAPE,DC=LOCAL` we can set the scope to the following. We are going to be querying for user, by passing these parameters to `Get-AdUser`:
             -   `Base/0`
                 -   Would attempt to query the OU object (Employees) itself.
                 -   Result: We would get 0 hits as there are no users directly in the base.
             -   `OneLevel/1`
                 -   Would search within the Employees OU only.
-                -   Result: We would get the user Amelia Matthews returned as she is sitting nested within it and the frst/oneLevel
+                -   Result: We would get the user Amelia Matthews returned as she is sitting nested within it and the first/oneLevel
             -   `SubTree/2`
                 -   Queries the Employees OU and all of the sub-OUs underneath it, such as Accounting, Contractors, etc. OUs under those OUs (child containers).
                 -   Results: We would get all users nested within the sub-ou's, in this instance 970 users
@@ -704,10 +906,12 @@ date = 2024-10-16
 <!--listend-->
 
 -   **Example Queries**:
-    -   +Example+: `Get-ADUser -SearchBase "OU=Employees,DC=CONTOSO,DC=LOCAL" -SearchScope OneLevel -Filter *`
-    -   +Example+: `Get-ADUser -SearchBase "OU=IT,DC=CONTOSO,DC=LOCAL" -SearchScope 1 -Filter *`
-    -   +Example+: `Get-ADUser -SearchBase "OU=Domain Admins,DC=CONTOSO,DC=LOCAL" -SearchScope 2 -Filter *`
-    -   +Example+: `(Get-ADUser -SearchBase "OU=IT,DC=CONTOSO,DC=LOCAL" -SearchScope 2 -Filter *).count`
+```bash
+Get-ADUser -SearchBase "OU=Employees,DC=CONTOSO,DC=LOCAL" -SearchScope OneLevel -Filter *
+Get-ADUser -SearchBase "OU=IT,DC=CONTOSO,DC=LOCAL" -SearchScope 1 -Filter *
+Get-ADUser -SearchBase "OU=Domain Admins,DC=CONTOSO,DC=LOCAL" -SearchScope 2 -Filter *
+(Get-ADUser -SearchBase "OU=IT,DC=CONTOSO,DC=LOCAL" -SearchScope 2 -Filter *).count
+```
 
 
 ## +Enumerating LDAP+ {#84265d}
@@ -719,19 +923,20 @@ date = 2024-10-16
 ### Establishing Naming context with `NMAP`: {#establishing-naming-context-with-nmap}
 
 -   **Run Scan**:
-    -   **Command**: `nmap --script ldap* -sV -A -Pn <IP> -p389,636 -oA IP-LDAP`
+    -   **Command**: `nmap --script ldap* -sV -A -Pn [IP] -p389,636 -oA IP-LDAP`
     -   **Location of scripts**:
         -   ls _usr/share/nmap/scripts_ | grep -i ldap
         -   `locate *nse | grep ldap`
 
 <!--listend-->
 
--   +Example+ **of how I got the necessary information for the box monteverde below and I was able to enumerate using ldap**:
+-   +Example+ **of how I got the necessary information for the box monteverde below and I was able to enumerate using LDAP**:
     -   In the below output we can see from the first lines the domain and the ldap server.
         -   `rootDomainNamingContext: DC=MEGABANK,DC=LOCAL`
             -   DC name is MEGABANK.LOCAL
         -   `ldapServiceName: MEGABANK.LOCAL:monteverde$@MEGABANK.LOCAL`
             -   Ldap server name is monteverde.MEGABANK.LOCAL
+        - Writeup here: https://bloodstiller.com/walkthroughs/monteverde-box/
 
 <!--listend-->
 
@@ -762,54 +967,63 @@ PORT    STATE SERVICE    VERSION
 
 
 -   **Establish Naming Context**:
-    -   **Command**: `ldapsearch -H ldap://<IP> -x -s base namingcontexts`
-    -   +Example+: `ldapsearch -H ldap://10.129.228.111 -x -s base namingcontexts`
+```bash
+ldapsearch -H ldap://[IP] -x -s base namingcontexts
+ldapsearch -H ldap://10.129.228.111 -x -s base namingcontexts
+```
 
 
 #### Check for anonymous bind using `ldapsearch`: {#check-for-anonymous-bind-using-ldapsearch}
-
--   **Command**: `ldapsearch -H ldap://<IP> -x -b "dc=<DOMAIN>,dc=<DOMAIN>"`
--   +Example+: `ldapsearch -H ldap://10.129.1.207 -x -b "dc=sugarape,dc=local"`
+```bash
+ldapsearch -H ldap://[IP] -x -b "dc=[DOMAIN],dc=[DOMAIN]"
+ldapsearch -H ldap://10.129.1.207 -x -b "dc=sugarape,dc=local"
+```
 
 
 #### Enumerate entire domain with `ldapsearch`: {#enumerate-entire-domain-with-ldapsearch}
+```bash
 
--   **Dump all information**:
-    -   **Command**: `ldapsearch -H ldap://<ldapName> -x -b "DC=<DCName>,DC=DCNAME>"  >> ldapDump.txt`
-    -   +Example+: `ldapsearch -H ldap://monteverde.MEGABANK.LOCAL -x -b "DC=MEGABANK,DC=LOCAL"  >> ldapDump.txt`
+ldapsearch -H ldap://[LDAPName] -x -b "DC=[DCName],DC=[DCNAME]"  >> ldapDump.txt
+ldapsearch -H ldap://monteverde.MEGABANK.LOCAL -x -b "DC=MEGABANK,DC=LOCAL"  >> ldapDump.txt
+```
 
 
 ### Enumerating LDAP using `windapsearch`: {#enumerating-ldap-using-windapsearch}
 
 -   There are two different versions of windapsearch, in my testing it's actually better to use the GO version as it seems to work, there are some issues with the current python version with imports being outdated etc.
 -   The syntax is different for the GO version in we have to specify the module with `-m` then the module name e.g. `users`
--   **We can enumerate via ldap with just a password to, alas the Support box**:
+-   **We can enumerate via ldap with just a password too, alas the Support box**:
     -   +Example+:
-        -   `ldapsearch -H ldap://$box -D ldap@<Domain>.<domain> -w '<Password>' -b "dc=<domain>,dc=<Domain>" "*"}`
+        -   `ldapsearch -H ldap://$box -D ldap@[domain].[domain] -w '[Password]' -b "dc=[domain],dc=[domain]" "*"}`
+        - https://bloodstiller.com/walkthroughs/support-box/ 
 
 
 #### Check for anonymous bind using `windapsearch`: {#check-for-anonymous-bind-using-windapsearch}
-
--   **Command**: `python3 windapsearch.py --dc-ip <IP> -u "" --functionality`
--   +Example+: `python3 windapsearch.py --dc-ip 10.129.1.207 -u "" --functionality`
+```bash
+python3 windapsearch.py --dc-ip [IP] -u "" --functionality
+python3 windapsearch.py --dc-ip 10.129.1.207 -u "" --functionality
+```
 
 
 #### Enumerate all users using `windapsearch`: {#enumerate-all-users-using-windapsearch}
-
--   **Command**: `python3 windapsearch.py --dc-ip <DC_IP> -u "" -U`
--   +Example+: `python3 windapsearch.py --dc-ip 10.129.1.207 -u "" -U`
+```bash
+python3 windapsearch.py --dc-ip [DC-IP] -u "" -U
+python3 windapsearch.py --dc-ip 10.129.1.207 -u "" -U
+```
 
 
 #### Enumerate all computers using `windapsearch`: {#enumerate-all-computers-using-windapsearch}
-
--   **Command**: `python3 windapsearch.py --dc-ip <DC_IP> -u "" -C`
--   +Example+: `python3 windapsearch.py --dc-ip 10.129.1.207 -u "" -C`
+```bash
+python3 windapsearch.py --dc-ip [DC-IP] -u "" -C
+python3 windapsearch.py --dc-ip 10.129.1.207 -u "" -C
+```
 
 
 #### Enumerate all groups using `windapsearch`: {#enumerate-all-groups-using-windapsearch}
-
--   **Command**: `python3 windapsearch.py --dc-ip <DC_IP> -u "" -G`
--   +Example+: `python3 windapsearch.py --dc-ip 10.129.1.207 -u "" -G`
+```bash
+python3 windapsearch.py --dc-ip [DC-IP] -u "" -G
+python3 windapsearch.py --dc-ip 10.129.1.207 -u "" -G
+```
 
 
 ### Scripts for Querying `LDAP`: {#scripts-for-querying-ldap}
@@ -820,7 +1034,7 @@ PORT    STATE SERVICE    VERSION
 ```python
 from ldap3 import *
 
-s = Server('<IP>',get_info = ALL)
+s = Server('[IP]',get_info = ALL)
 c =  Connection(s, '', '')
 c.bind()
 ## If it returns true we can run the next command it will return all LDAP information

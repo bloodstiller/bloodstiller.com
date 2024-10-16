@@ -1,0 +1,3699 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.135.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Attacking LDAP: Deep Dive &amp; Cheatsheet |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Attacking LDAP: Deep Dive &amp; Cheatsheet -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" title="./cheatsheets/ldap-cheatsheet/">
+                        
+                            Attacking LDAP: Deep Dive &amp; Cheatsheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            RPC Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cascade-box/" title="./walkthroughs/cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Attacking LDAP: Deep Dive &amp; Cheatsheet
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.16.10"
+                            >2024.16.10
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        26 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/active-directory/"
+                            class="tag-btn">
+                            Active Directory
+                        </a>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/ldap/"
+                            class="tag-btn">
+                            LDAP
+                        </a>
+                    
+                        <a
+                            href="/tags/cheatsheet/"
+                            class="tag-btn">
+                            CheatSheet
+                        </a>
+                    
+                        <a
+                            href="/tags/pentesting/"
+                            class="tag-btn">
+                            Pentesting
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/cheatsheets/" class="bread-btn">
+    
+
+    
+        Cheatsheets
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" class="bread-btn">
+    
+
+    
+        
+            Attacking LDAP: Deep Dive &amp; Cheatsheet
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ldap-overview">LDAP Overview:</a></li>
+    <li><a href="#ldap-requests-and-responses--how-a-session-works">LDAP Requests &amp; Responses (how a session works):</a></li>
+    <li><a href="#ldap-ad-authentication">LDAP AD Authentication:</a></li>
+    <li><a href="#openldap">OpenLDAP:</a></li>
+    <li><a href="#ldap-signing">LDAP signing:</a></li>
+    <li><a href="#ldap-bind-request">LDAP Bind Request:</a></li>
+    <li><a href="#ldap-anonymous-bind">LDAP Anonymous Bind:</a></li>
+    <li><a href="#ldap-filters">LDAP Filters:</a>
+      <ul>
+        <li><a href="#ldap-filter-operands">LDAP Filter Operands:</a></li>
+        <li><a href="#ldap-logical-operators">LDAP Logical Operators:</a></li>
+        <li><a href="#ldap-filter-item-types">LDAP Filter Item Types:</a></li>
+        <li><a href="#ldap-filter-escaped-characters">LDAP Filter Escaped Characters:</a></li>
+        <li><a href="#ldap-filter-using-object-identifiers">LDAP Filter Using <a href="https://en.wikipedia.org/wiki/Object_identifier">Object Identifiers</a>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#ldap-query-queries">LDAP Query/Queries:</a></li>
+    <li><a href="#ldap-search-terms">+LDAP Search Terms+: </a>
+      <ul>
+        <li><a href="#list-domain-functionality-level">List <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">Domain Functionality Level</a>:</a></li>
+        <li><a href="#list-user-information">List User Information:</a></li>
+        <li><a href="#list-user-emails">List User Emails:</a></li>
+        <li><a href="#list-group-information">List Group Information:</a></li>
+        <li><a href="#list-computers">List Computers:</a></li>
+        <li><a href="#list-ou-information">List OU information:</a></li>
+        <li><a href="#list-account-information">List Account Information:</a></li>
+        <li><a href="#linux-system-support">Linux System Support:</a></li>
+      </ul>
+    </li>
+    <li><a href="#object-identifiers-oid-s">Object Identifiers OID&rsquo;s:</a>
+      <ul>
+        <li><a href="#overview">OID Overview:</a></li>
+      </ul>
+    </li>
+    <li><a href="#searchbase-and-searchscope-parameters">SearchBase and SearchScope Parameters:</a>
+      <ul>
+        <li><a href="#the-searchbase-parameter">The SearchBase parameter:</a></li>
+        <li><a href="#the-searchscope-parameter">The SearchScope parameter:</a></li>
+      </ul>
+    </li>
+    <li><a href="#84265d">+Enumerating LDAP+</a>
+      <ul>
+        <li><a href="#establishing-naming-context-with-nmap">Establishing Naming context with <code>NMAP</code>:</a></li>
+        <li><a href="#enumerating-ldap-using-ldapsearch">Enumerating LDAP using <code>ldapsearch</code>:</a></li>
+        <li><a href="#enumerating-ldap-using-windapsearch">Enumerating LDAP using <code>windapsearch</code>:</a></li>
+        <li><a href="#scripts-for-querying-ldap">Scripts for Querying <code>LDAP</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#1d1373">+Attacking LDAP+</a>
+      <ul>
+        <li><a href="#password-spraying-and-bruteforcing-ldap">Password Spraying &amp; Bruteforcing LDAP:</a></li>
+        <li><a href="#ldap-injection">LDAP Injection:</a></li>
+      </ul>
+    </li>
+    <li><a href="#troubleshooting-ldap">Troubleshooting LDAP</a></li>
+    <li><a href="#ldap-security-best-practices">LDAP Security Best Practices</a></li>
+    <li><a href="#ldap-boxes-on-htb">LDAP Boxes on HTB:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <ul>
+<li>+Protocol for accessing and managing directory information, widely used in enterprise environments.+
+<ul>
+<li>LDAP is an open-source and cross-platform protocol used for authentication against various directory services (such as AD).</li>
+<li>AD stores user account information and security information such as passwords and facilitates sharing this information with other devices on the network. <strong>LDAP is the language that applications use to communicate with other servers that also provide directory services</strong>. In other words, LDAP is a way that systems in the network environment can &ldquo;speak&rdquo; to AD.</li>
+</ul>
+</li>
+</ul>
+<h2 id="ldap-overview">LDAP Overview:</h2>
+<ul>
+<li>
+<p>Ports: <code>389</code>, <code>636</code></p>
+</li>
+<li>
+<p>LDAP (Lightweight Directory Access Protocol)</p>
+</li>
+<li>
+<p>The two most popular implementations of LDAP:</p>
+<ul>
+<li>
+<p><a href="https://www.openldap.org/">OpenLDAP</a></p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview">Active Directory</a></p>
+</li>
+<li>
+<p><strong>Overview</strong>:</p>
+<ul>
+<li>Protocol for accessing and managing directory information</li>
+<li>Widely used in enterprise environments</li>
+<li>Operates over TCP/IP</li>
+</ul>
+</li>
+<li>
+<p><strong>Directory Services</strong>:</p>
+<ul>
+<li>Hierarchical organization of resources</li>
+<li>Includes users, groups, devices, and other objects</li>
+<li>A directory is a hierarchical data store that contains information about network resources such as users, groups, computers, printers, and other devices.</li>
+</ul>
+</li>
+<li>
+<p><strong>Operations</strong>:</p>
+<ul>
+<li>Search: Query directory objects</li>
+<li>Add: Insert new records</li>
+<li>Delete: Remove existing records</li>
+<li>Modify: Update attributes of records</li>
+</ul>
+</li>
+<li>
+<p><strong>Authentication</strong>:</p>
+<ul>
+<li>Anonymous</li>
+<li>Simple (clear-text)</li>
+<li>SASL (more secure methods)</li>
+</ul>
+</li>
+<li>
+<p><strong>LDAP Data Model</strong>:</p>
+<ul>
+<li>DIT (Directory Information Tree)</li>
+<li>DN (Distinguished Name)</li>
+<li>Attributes: Descriptive elements like username, email, etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>Common Implementations</strong>:</p>
+<ul>
+<li>Microsoft&rsquo;s Active Directory</li>
+<li>OpenLDAP</li>
+<li>Novell&rsquo;s eDirectory</li>
+</ul>
+</li>
+<li>
+<p><strong>Security Concerns</strong>:</p>
+<ul>
+<li>Clear-text password vulnerabilities</li>
+<li>LDAP injection attacks</li>
+<li>Use LDAPS for secure connections</li>
+</ul>
+</li>
+<li>
+<p><strong>Penetration Testing Relevance</strong>:</p>
+<ul>
+<li>Enumeration of user accounts and groups</li>
+<li>Information gathering for privilege escalation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Note: Always perform activities like penetration testing with proper authorization.</p>
+</li>
+</ul>
+<h2 id="ldap-requests-and-responses--how-a-session-works">LDAP Requests &amp; Responses (how a session works):</h2>
+<ul>
+<li>
+<p><strong>Model Overview</strong>:</p>
+<ul>
+<li>LDAP uses a client-server architecture.</li>
+<li>Clients communicate with servers using LDAP messages, encoded in ASN.1 and transmitted over TCP/IP.</li>
+<li>Supports various requests like bind, unbind, search, compare, add, delete, modify, etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>LDAP requests &amp; responses</strong>:</p>
+<ol>
+<li>
+<p>LDAP requests are messages that clients send to servers to perform operations on data stored in a directory service. An LDAP request is comprised of several components:</p>
+<ul>
+<li><strong>LDAP Requests</strong>:
+<ol>
+<li><strong>Session Connection</strong>:
+<ul>
+<li>Clients connect via an LDAP port (commonly 389 or 636).</li>
+</ul>
+</li>
+<li><strong>Request Type</strong>:
+<ul>
+<li>Specifies the operation (e.g., bind, search).</li>
+</ul>
+</li>
+<li><strong>Request Parameters</strong>:
+<ul>
+<li>The client provides additional information for the request, such as the distinguished name (DN) of the entry to be accessed or modified, the scope and filter of the search query, the attributes and values to be added or changed, etc</li>
+</ul>
+</li>
+<li><strong>Request ID</strong>:
+<ul>
+<li>Unique identifier for matching requests with responses.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>Once the server receives the request, it processes it and sends back a response message that includes several components:</p>
+<ul>
+<li><strong>LDAP Responses</strong>:
+<ol>
+<li><strong>Response Type</strong>:
+<ul>
+<li>Indicates the operation that was performed in response to the requests.</li>
+</ul>
+</li>
+<li><strong>Result Code</strong>:
+<ul>
+<li>Indicates success or failure and the reason.</li>
+</ul>
+</li>
+<li><strong>Matched DN</strong>:
+<ul>
+<li>Returns the DN of the closest matching entry, if applicable.</li>
+</ul>
+</li>
+<li><strong>Referral</strong>:
+<ul>
+<li>Provides a URL to another server with potentially more relevant information (if applicable).</li>
+</ul>
+</li>
+<li><strong>Response Data</strong>:
+<ul>
+<li>Additional data related to the response, such as attributes and values of an entry.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>After receiving and processing the response, the client disconnects from the LDAP port.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>+Example+:</p>
+<ul>
+<li>Consider a simple example where a client wants to search for a user&rsquo;s information in the directory:
+<ol>
+<li>
+<p><strong>Client sends a search request</strong>:</p>
+<ol>
+<li>Connects to the LDAP server on port 389.</li>
+<li>Specifies request type: search.</li>
+<li>Provides search parameters: DN=&ldquo;cn=John Doe,ou=users,dc=example,dc=com&rdquo;, scope=&ldquo;sub&rdquo;, filter=&quot;(objectClass=person)&quot;.</li>
+<li>Provides a request ID.</li>
+</ol>
+</li>
+<li>
+<p><strong>LDAP Server processes the request</strong>:</p>
+<ul>
+<li>Searches the directory for entries matching the criteria.</li>
+<li>Constructs a response message with the result.</li>
+</ul>
+</li>
+<li>
+<p><strong>Server sends back a response</strong>:</p>
+<ol>
+<li>Response type: searchResult.</li>
+<li>Result code: success (if the entry is found) or an error code.</li>
+<li>Referral: (not applicable in this case)</li>
+<li>Response data: Attributes and values of &ldquo;John Doe&rdquo; if the entry is found.</li>
+</ol>
+</li>
+<li>
+<p><strong>Client processes the response</strong>:</p>
+<ul>
+<li>Parses the attributes and values of &ldquo;John Doe&rdquo;.</li>
+<li>Disconnects from the server.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Diagram to understand visually</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20%20[Client]%0a%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c---[Connect%20to%20LDAP%20Server%20on%20Port%20389/636]%0a%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c---[Send%20LDAP%20Request]%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%7c--[Request%20Type:%20e.g.,%20Search]%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%7c--[Request%20Parameters:%20DN,%20Scope,%20Filter]%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%7c--[Request%20ID:%20Unique%20Identifier]%0a%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20[LDAP%20Server]%0a%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c---[Process%20Request]%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%7c--[Perform%20Operation:%20e.g.,%20Search%20Directory]%0a%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c---[Send%20LDAP%20Response]%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c--[Response%20Type:%20e.g.,%20SearchResult]%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c--[Result%20Code:%20Success%20or%20Error]%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c--[Matched%20DN:%20Closest%20Matching%20Entry]%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c--[Referral:%20URL%20to%20Another%20Server%20%28if%20applicable%29]%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c--[Response%20Data:%20Attributes%20and%20Values%20%28if%20found%29]%0a%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20[Client]%0a%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c---[Process%20Response]%0a%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c---[Disconnect]">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    <span style="color:#f92672">[</span>Client<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        |---<span style="color:#f92672">[</span>Connect to LDAP Server on Port 389/636<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        |---<span style="color:#f92672">[</span>Send LDAP Request<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        |       |
+</span></span><span style="display:flex;"><span>        |       |--<span style="color:#f92672">[</span>Request Type: e.g., Search<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        |       |--<span style="color:#f92672">[</span>Request Parameters: DN, Scope, Filter<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        |       |--<span style="color:#f92672">[</span>Request ID: Unique Identifier<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span>LDAP Server<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        |---<span style="color:#f92672">[</span>Process Request<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        |       |
+</span></span><span style="display:flex;"><span>        |       |--<span style="color:#f92672">[</span>Perform Operation: e.g., Search Directory<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        |---<span style="color:#f92672">[</span>Send LDAP Response<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>                |
+</span></span><span style="display:flex;"><span>                |--<span style="color:#f92672">[</span>Response Type: e.g., SearchResult<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>                |--<span style="color:#f92672">[</span>Result Code: Success or Error<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>                |--<span style="color:#f92672">[</span>Matched DN: Closest Matching Entry<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>                |--<span style="color:#f92672">[</span>Referral: URL to Another Server <span style="color:#f92672">(</span><span style="color:#66d9ef">if</span> applicable<span style="color:#f92672">)]</span>
+</span></span><span style="display:flex;"><span>                |--<span style="color:#f92672">[</span>Response Data: Attributes and Values <span style="color:#f92672">(</span><span style="color:#66d9ef">if</span> found<span style="color:#f92672">)]</span>
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span>Client<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        |---<span style="color:#f92672">[</span>Process Response<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        |---<span style="color:#f92672">[</span>Disconnect<span style="color:#f92672">]</span></span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<h2 id="ldap-ad-authentication">LDAP AD Authentication:</h2>
+<ul>
+<li>LDAP is set up to authenticate credentials against AD using a &ldquo;BIND&rdquo; operation to set the authentication state for an LDAP session.</li>
+<li><strong>LDAP authentication messages are sent in cleartext by default</strong> so anyone can sniff out LDAP messages on the internal network. It is recommended to use TLS encryption or similar to safeguard this information in transit.</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->_<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li><strong>There are two types of LDAP authentication</strong>.
+<ol>
+<li>
+<p><strong>Simple Authentication</strong>:</p>
+<ul>
+<li>Simple authentication means that a username and password create a BIND request to authenticate to the LDAP server. Simple authentication methods are as follows:
+<ul>
+<li>Anonymous authentication</li>
+<li>Unauthenticated authentication</li>
+<li>Username/password authentication.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>SASL Authentication</strong>:</p>
+<ul>
+<li>Security Layer (SASL) framework uses other authentication services. It can also provide further security due to the separation of authentication methods from application protocols.
+<ul>
+<li>SASL Authentication example:(please note there are more methods of SASL Authentication):
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Kerberos_(protocol)">Kerberos</a>, to bind to the LDAP server and then uses this authentication service to authenticate to LDAP.</li>
+<li>The LDAP server uses the LDAP protocol to send an LDAP message to the authorization service which initiates a series of challenge/response messages resulting in either successful or unsuccessful authentication.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="openldap">OpenLDAP:</h2>
+<ul>
+<li>
+<p><a href="https://www.openldap.org/">https://www.openldap.org/</a></p>
+</li>
+<li>
+<p><strong>Definition</strong>:</p>
+<ul>
+<li>OpenLDAP is an open-source implementation of the Lightweight Directory Access Protocol (LDAP).</li>
+<li>Used for directory services to store and manage sensitive information like user credentials, network resources, and permissions.</li>
+</ul>
+</li>
+<li>
+<p><strong>How It Works</strong>:</p>
+<ul>
+<li>Uses a hierarchical data structure (Directory Information Tree, DIT).</li>
+<li>Supports a variety of operations like add, delete, modify, and search.</li>
+</ul>
+</li>
+<li>
+<p><strong>Protocols Involved</strong>:</p>
+<ul>
+<li>LDAP</li>
+<li>LDAP over SSL/TLS (LDAPS)</li>
+<li>SASL for advanced authentication</li>
+</ul>
+</li>
+<li>
+<p><strong>Importance in Cybersecurity</strong>:</p>
+<ul>
+<li>Used as a central repository for user credentials.</li>
+<li>Security measures like ACLs (Access Control Lists) can be implemented.</li>
+</ul>
+</li>
+<li>
+<p><strong>Application in Penetration Testing</strong>:</p>
+<ul>
+<li>Test for misconfigurations in ACLs.</li>
+<li>Check for weak encryption or lack of signing in communications.</li>
+</ul>
+</li>
+<li>
+<p><strong>Platform-Specific Implementations</strong>:</p>
+<ul>
+<li>Most often used in Unix and Linux environments.</li>
+<li>Can be integrated with other platforms like Windows for cross-platform directory services.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Main configuration file is usually slapd.conf or under <em>etc/openldap/slapd.d</em> in newer versions.</li>
+<li>ACLs, logging, and other settings are configurable.</li>
+</ul>
+</li>
+<li>
+<p><strong>Limitations</strong>:</p>
+<ul>
+<li>Complexity can lead to misconfiguration.</li>
+<li>Security features must be manually enabled and configured.</li>
+</ul>
+</li>
+</ul>
+<h2 id="ldap-signing">LDAP signing:</h2>
+<ul>
+<li>
+<p><strong>Definition</strong>:</p>
+<ul>
+<li>LDAP Signing is a security feature that helps prevent man-in-the-middle attacks.</li>
+<li>It ensures that LDAP (Lightweight Directory Access Protocol) packets are genuine and unaltered during transmission.</li>
+</ul>
+</li>
+<li>
+<p><strong>How It Works</strong></p>
+<ul>
+<li>The LDAP server signs all traffic sent to clients.</li>
+<li>Clients validate the signature to confirm data integrity.</li>
+</ul>
+</li>
+<li>
+<p><strong>Protocols Involved</strong>:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer">SASL</a>(Simple Authentication and Security Layer) mechanisms can be used.</li>
+<li>LDAP over SSL/TLS also can enforce packet signing.</li>
+</ul>
+</li>
+<li>
+<p><strong>Importance in Cybersecurity</strong>:</p>
+<ul>
+<li>Prevents unauthorized modification of data during transmission.</li>
+<li>Increases trustworthiness of LDAP communications.</li>
+</ul>
+</li>
+<li>
+<p><strong>Application in Penetration Testing</strong>:</p>
+<ul>
+<li>Test to ensure LDAP signing is enabled.</li>
+<li>Check for vulnerabilities that may bypass or exploit unsigned LDAP traffic.</li>
+</ul>
+</li>
+<li>
+<p><strong>Platform-Specific Implementations</strong>:</p>
+<ul>
+<li>Microsoft AD (Active Directory) often implements this.</li>
+<li>OpenLDAP and other directory services can also enforce LDAP signing.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Often set via Group Policy on Windows systems.</li>
+<li>For Linux, configurations are generally in the LDAP configuration files.</li>
+</ul>
+</li>
+<li>
+<p><strong>Limitations</strong>:</p>
+<ul>
+<li>Increases computational overhead.</li>
+<li>May not encrypt data, just signs it for integrity. Use with encryption for enhanced security.</li>
+</ul>
+</li>
+</ul>
+<h2 id="ldap-bind-request">LDAP Bind Request:</h2>
+<p><strong>A bind request consists of 3 elements</strong>:</p>
+<ol>
+<li>The LDAP protocol the clients wants to use:
+<ul>
+<li>This is represented by an integer value.</li>
+</ul>
+</li>
+<li>The DN of the client/user to authentication:
+<ul>
+<li>For an <a href="https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol#Bind_%28authenticate%29">Anonymous Bind</a> it would be empty. It would also typically be empty for SASL Authentication as SASL uses encoded credentials</li>
+</ul>
+</li>
+<li>The credentials the client/user uses to authentication:
+<ul>
+<li>For simple authentication this is the password for the DN specified in part 2. For Anonymous bind the string would be empty, for SASL authentication this is an encoded value.</li>
+</ul>
+</li>
+</ol>
+<h2 id="ldap-anonymous-bind">LDAP Anonymous Bind:</h2>
+<ul>
+<li>
+<p>LDAP anonymous binds allow us to retrieve information from the domain, such as:</p>
+<ul>
+<li>A list of all users</li>
+<li>A list of all groups</li>
+<li>A list of all computers.</li>
+<li>User account attributes.</li>
+<li>The domain password policy.</li>
+<li>Enumerate users who are susceptible to AS-REPRoasting.</li>
+<li>Passwords stored in the description fields</li>
+</ul>
+</li>
+<li>
+<p>Linux hosts running open-source versions of LDAP and Linux vCenter appliances are often configured to allow anonymous binds.</p>
+</li>
+</ul>
+<h2 id="ldap-filters">LDAP Filters:</h2>
+<ul>
+<li>
+<p><strong>We can use LDAP Filters with tools like</strong>:</p>
+<ul>
+<li><a href="https://docs.ldap.com/ldap-sdk/docs/tool-usages/ldapsearch.html">ldapsearch</a></li>
+<li><a href="https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps">Active Directory Powershell Module</a></li>
+<li><a href="https://learn.microsoft.com/en-gb/powershell/">PowerShell</a>  + other powershell cmdlets.</li>
+</ul>
+</li>
+<li>
+<p><strong>LDAP filters must have one or more criteria</strong>.</p>
+<ul>
+<li>If more than one criteria exist, they can be concatenated together using logical <code>AND</code> <code>&amp;</code> or <code>OR</code> <code>|</code> operators.</li>
+<li>Operators are always placed in the front of the operands:
+<ul>
+<li>This is due to it using the <a href="https://en.wikipedia.org/wiki/Polish_notation">Polish Notation</a>  convention.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Definition of the syntax definition for the filter:</p>
+<ul>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc4515">https://datatracker.ietf.org/doc/html/rfc4515</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Guide on building filters</strong>:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/archive/technet-wiki/5392.active-directory-ldap-syntax-filters">https://learn.microsoft.com/en-us/archive/technet-wiki/5392.active-directory-ldap-syntax-filters</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="ldap-filter-operands">LDAP Filter Operands:</h3>
+<ul>
+<li>
+<p><strong>LDAP Filter Operands</strong>:</p>
+<ul>
+<li>
+<p>Filter rules are enclosed in parentheses and can be grouped by surrounding the group in parentheses and using one of the following comparison operators:</p>
+</li>
+<li>
+<p>AND (<code>&amp;</code>)</p>
+<ul>
+<li>Syntax: (&amp;(condition1)(condition2))</li>
+<li>Description: Combines multiple conditions with a logical AND. All conditions must be true for a match.</li>
+</ul>
+</li>
+<li>
+<p>OR (<code>|</code>)</p>
+<ul>
+<li>Syntax: (|(condition1)(condition2))</li>
+<li>Description: Combines multiple conditions with a logical OR. At least one condition must be true for a match.</li>
+</ul>
+</li>
+<li>
+<p>NOT (<code>!</code>)</p>
+<ul>
+<li>Syntax: (!(condition))</li>
+<li>Description: Negates a condition. The condition must be false for a match.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Some examples</strong> <code>AND *and* ~OR</code> <strong>operations are as follows</strong>:</p>
+<ul>
+<li>
+<p><code>AND</code> Operations:</p>
+<ul>
+<li>
+<p>One criteria:</p>
+<ul>
+<li><strong>Command</strong>: <code>(&amp;amp; (..C1..) (..C2..))</code></li>
+<li>+Example+: <code>(&amp;amp;(ObjectClass=user)(cn=nathan\*))</code></li>
+<li>+Note+:
+<ul>
+<li>Searches for users who&rsquo;s name starts nathan</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>More than two criteria:</p>
+<ul>
+<li><strong>Command</strong>: <code>(&amp;amp; (..C1..) (..C2..) (..C3..))</code></li>
+<li>+Example+: <code>(&amp;amp;(ObjectClass=user)(cn=jo\*)(ou=IT))</code></li>
+<li>+Note+:
+<ul>
+<li>Searches for users whos name starts with jo* and they are in the OU IT.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>OR</code> Operations:</p>
+<ul>
+<li>
+<p>One criteria:</p>
+<ul>
+<li><strong>Command</strong>: <code>(| (..C1..) (..C2..))</code></li>
+<li>+Example+: <code>(|(ObjectClass=user)(ObjectClass=group))</code></li>
+<li>+Note+:
+<ul>
+<li>Will return either users or groups.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>More than two criteria:</p>
+<ul>
+<li><strong>Command</strong>: <code>(| (..C1..) (..C2..) (..C3..))</code></li>
+<li>+Example+: <code>(|(ObjectClass=user)(ObjectClass=group)(ou=IT))</code></li>
+<li>+Note+:
+<ul>
+<li>Searches for users or groups that are in the OU IT.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Nested Operations</strong>:</p>
+<ul>
+<li>Nested Operators:
+<ul>
+<li><strong>Command</strong>: <code>(|(&amp;amp; (..C1..) (..C2..))(&amp;amp; (..C3..) (..C4..)))</code></li>
+<li>+Example+: <code>(|(&amp;amp; (ObjectClass=user)(cn=jo\*)) (&amp;amp; (ObjectClass=group)(cn=sql\*)))</code></li>
+<li>+Note+:
+<ul>
+<li>Translates to <code>&quot;(C1 AND C2) OR (C3 AND C4)&quot;</code></li>
+<li>Searches for users who&rsquo;s names start with jo or groups who&rsquo;s name start with &ldquo;sql&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Examples of these being paired with</strong> <code>ldapsearch</code>:</p>
+<ul>
+<li>We can pair search terms with filters to narrow down information even more.</li>
+<li>If I am enumerating a domain and a I know there is a user I want to go after called &ldquo;Nathan&rdquo; I can craft the following queries to enumerate them further.</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ldapsearch -H ldap://10.129.204.54 -x -b <span style="color:#e6db74">&#34;DC=sugarape,DC=local&#34;</span> <span style="color:#e6db74">&#39;(&amp;(ObjectClass=user)(cn=nathan*))&#39;</span> logoncount
+</span></span><span style="display:flex;"><span>ldapsearch -H ldap://10.129.204.54 -x -b <span style="color:#e6db74">&#34;DC=sugarape,DC=local&#34;</span> <span style="color:#e6db74">&#39;(&amp;(ObjectClass=user)(cn=nathan*))&#39;</span> sAMAccountName
+</span></span><span style="display:flex;"><span>ldapsearch -H ldap://10.129.204.54 -x -b <span style="color:#e6db74">&#34;DC=sugarape,DC=local&#34;</span> <span style="color:#e6db74">&#39;(&amp;(ObjectClass=user)(cn=nathan*))&#39;</span></span></span></code></pre></div>
+    
+</div>
+<h3 id="ldap-logical-operators">LDAP Logical Operators:</h3>
+<ul>
+<li>When writing an LDAP search filter, we need to specify a rule requirement for the LDAP attribute in question (i.e. &ldquo;(displayName=william)&rdquo;). The following rules can be used to specify our search criteria:</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Operator</strong></th>
+          <th style="text-align: left"><strong>Meaning</strong></th>
+          <th style="text-align: left"><strong>Description</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">=</td>
+          <td style="text-align: left">Equality Operator</td>
+          <td style="text-align: left">Checks for exact match between attribute and value.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">~=</td>
+          <td style="text-align: left">Approximately equal to</td>
+          <td style="text-align: left">Finds entries where the attribute is approximately equal to the given value.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">&gt;=</td>
+          <td style="text-align: left">Greater than or equal to</td>
+          <td style="text-align: left">Finds entries where the attribute value is greater than or equal to the given value.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">&lt;=</td>
+          <td style="text-align: left">Less than or equal to</td>
+          <td style="text-align: left">Finds entries where the attribute value is less than or equal to the given value.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">=*</td>
+          <td style="text-align: left">Presence Test</td>
+          <td style="text-align: left">Checks if an attribute is present, regardless of its value.</td>
+      </tr>
+  </tbody>
+</table>
+<p>+Examples of Operators in use+:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Operator</strong></th>
+          <th style="text-align: left"><strong>Rule</strong></th>
+          <th style="text-align: left"><strong>Example</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Equal to</td>
+          <td style="text-align: left">(attribute=123)</td>
+          <td style="text-align: left">(&amp;(objectclass=user)(displayName=Smith))</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Not equal to</td>
+          <td style="text-align: left">(!(attribute=123))</td>
+          <td style="text-align: left">(!(objectClass=group))</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Present</td>
+          <td style="text-align: left">(attribute=*)</td>
+          <td style="text-align: left">(department=*)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Not present</td>
+          <td style="text-align: left">(!(attribute=*))</td>
+          <td style="text-align: left">(!homeDirectory=*)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Greater than</td>
+          <td style="text-align: left">(attribute&gt;=123)</td>
+          <td style="text-align: left">(maxStorage&gt;=100000)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Less than</td>
+          <td style="text-align: left">(attribute&lt;=123)</td>
+          <td style="text-align: left">(maxStorage&lt;=100000)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Approximate match</td>
+          <td style="text-align: left">(attribute~=123)</td>
+          <td style="text-align: left">(sAMAccountName~=Jason)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Wildcards</td>
+          <td style="text-align: left">(attribute=*A)</td>
+          <td style="text-align: left">(givenName=*Sam)</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>List of user attributes:
+<ul>
+<li><a href="https://docs.bmc.com/docs/fpsc121/ldap-attributes-and-associated-fields-495323340.html">https://docs.bmc.com/docs/fpsc121/ldap-attributes-and-associated-fields-495323340.html</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="ldap-filter-item-types">LDAP Filter Item Types:</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Type</strong></th>
+          <th style="text-align: left"><strong>Meaning</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">=</td>
+          <td style="text-align: left">Simple</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">=*</td>
+          <td style="text-align: left">Present</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">=something*</td>
+          <td style="text-align: left">Substring</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Extensible</td>
+          <td style="text-align: left">varies depending on type</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="ldap-filter-escaped-characters">LDAP Filter Escaped Characters:</h3>
+<ul>
+<li>These must be escaped when making queries</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Character</strong></th>
+          <th style="text-align: left"><strong>Represented as Hex</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">*</td>
+          <td style="text-align: left">\2a</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">(</td>
+          <td style="text-align: left">\28</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">)</td>
+          <td style="text-align: left">\29</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">\</td>
+          <td style="text-align: left">\5c</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">NUL</td>
+          <td style="text-align: left">\00</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="ldap-filter-using-object-identifiers">LDAP Filter Using <a href="https://en.wikipedia.org/wiki/Object_identifier">Object Identifiers</a>:</h3>
+<ul>
+<li>
+<p>Used with OID&rsquo;s and UAC bitmasks to filter for certain things. Useful when Living off the land in AD:</p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows/win32/adsi/search-filter-syntax">https://learn.microsoft.com/en-us/windows/win32/adsi/search-filter-syntax</a></p>
+</li>
+<li>
+<p><strong>And Operator</strong>:</p>
+<ul>
+<li>Matching rule OID: <code>1.2.840.113556.1.4.803</code></li>
+<li>String identifier: <code>LDAP_MATCHING_RULE_BIT_AND</code></li>
+<li>Description: A match is found only if all bits from the attribute match the value. This rule is equivalent to a bitwise AND operator.</li>
+<li>+Example Query+: <code>(&amp;(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))</code>
+<ul>
+<li>This will return all administratively disabled user accounts</li>
+<li>Combined with <a href="https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps">Active Directory PowerShell Module</a>  we can shorten it to:</li>
+<li>+Example+: <code>Get-ADUser -LDAPFilter '(userAccountControl:1.2.840.113556.1.4.803:=2)' | select name</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p><strong>Or Operator</strong>:</p>
+<ul>
+<li>Matching rule OID: <code>1.2.840.113556.1.4.804</code></li>
+<li>String identifier: <code>LDAP_MATCHING_RULE_BIT_OR</code></li>
+<li>Description: A match is found if any bits from the attribute match the value. This rule is equivalent to a bitwise OR operator.</li>
+<li>+Example Query+: <code>(member:1.2.840.113556.1.4.1941:=CN=Nathan Barley,OU=Network Ops,OU=IT,OU=Employees,DC=SUGARAPE,DC=LOCAL)</code>
+<ul>
+<li>This matching rule will find all groups that the user Nathan Barley (<code>&quot;CN=Nathan Barley,OU=Network Ops,OU=IT,OU=Employees,DC=SUGARAPE,DC=LOCAL&quot;</code>) is a member of.</li>
+<li>+Example+: <code>Get-ADGroup -LDAPFilter '(member:1.2.840.113556.1.4.1941:=CN=Nathan Barley,OU=Network Ops,OU=IT,OU=Employees,DC=SUGARAPE,DC=LOCAL)'</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Special Chain Operator</strong>:</p>
+<ul>
+<li>Matching rule OID: <code>1.2.840.113556.1.4.1941</code></li>
+<li>String identifier: <code>LDAP_MATCHING_RULE_IN_CHAIN</code></li>
+<li>Description: This rule is limited to filters that apply to the DN. This is a special &ldquo;extended&rdquo; match operator that walks the chain of ancestry in objects all the way to the root until it finds a match.</li>
+</ul>
+</li>
+</ul>
+<h2 id="ldap-query-queries">LDAP Query/Queries:</h2>
+<ul>
+<li>
+<p><a href="#ldap-search-terms">LDAP Search Terms</a>:</p>
+</li>
+<li>
+<p><strong>Computer Related LDAP Queries</strong>:</p>
+<ul>
+<li><a href="https://ldapwiki.com/wiki/Wiki.jsp?page=Active%20Directory%20Computer%20Related%20LDAP%20Query">https://ldapwiki.com/wiki/Wiki.jsp?page=Active%20Directory%20Computer%20Related%20LDAP%20Query</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Active Directory User Related Searches</strong>:</p>
+<ul>
+<li><a href="https://ldapwiki.com/wiki/Wiki.jsp?page=Active%20Directory%20User%20Related%20Searches">https://ldapwiki.com/wiki/Wiki.jsp?page=Active%20Directory%20User%20Related%20Searches</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Active Directory Group Related Searches</strong>:</p>
+<ul>
+<li><a href="https://ldapwiki.com/wiki/Wiki.jsp?page=Active%20Directory%20Group%20Related%20Searches">https://ldapwiki.com/wiki/Wiki.jsp?page=Active%20Directory%20Group%20Related%20Searches</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Guide on building filters</strong>:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/archive/technet-wiki/5392.active-directory-ldap-syntax-filters">https://learn.microsoft.com/en-us/archive/technet-wiki/5392.active-directory-ldap-syntax-filters</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="ldap-search-terms">+LDAP Search Terms+: </h2>
+<ul>
+<li>
+<p><strong>Great Cheat Sheets</strong>: <a href="https://gist.github.com/jonlabelle/0f8ec20c2474084325a89bc5362008a7">https://gist.github.com/jonlabelle/0f8ec20c2474084325a89bc5362008a7</a></p>
+<ul>
+<li><a href="https://social.technet.microsoft.com/wiki/contents/articles/5392.active-directory-ldap-syntax-filters.aspx">https://social.technet.microsoft.com/wiki/contents/articles/5392.active-directory-ldap-syntax-filters.aspx</a></li>
+<li><a href="https://gist.github.com/jonlabelle/0f8ec20c2474084325a89bc5362008a7">https://gist.github.com/jonlabelle/0f8ec20c2474084325a89bc5362008a7</a></li>
+</ul>
+</li>
+<li>
+<p>+Use these with+:</p>
+<ul>
+<li><a href="https://docs.ldap.com/ldap-sdk/docs/tool-usages/ldapsearch.html">ldapsearch</a></li>
+<li><a href="#ldap-filters">LDAP Filters:</a></li>
+<li><a href="https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps">Active Directory PowerShell Module</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="list-domain-functionality-level">List <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">Domain Functionality Level</a>:</h3>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ldapsearch -x -H ldap://<span style="color:#f92672">[[</span>DCIP<span style="color:#f92672">]]</span> -b <span style="color:#e6db74">&#34;&#34;</span> -s base <span style="color:#e6db74">&#34;objectClass=*&#34;</span> domainFunctionality<span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>ldapsearch -x -H ldap://10.129.42.188 -b <span style="color:#e6db74">&#34;&#34;</span> -s base <span style="color:#e6db74">&#34;objectClass=*&#34;</span> domainFunctionality<span style="color:#e6db74">&#34;&#34;</span></span></span></code></pre></div>
+    
+</div>
+<h3 id="list-user-information">List User Information:</h3>
+<ul>
+<li>If none of these are what we need we can see other user attributes here:
+<ul>
+<li><a href="https://docs.bmc.com/docs/fpsc121/ldap-attributes-and-associated-fields-495323340.html">https://docs.bmc.com/docs/fpsc121/ldap-attributes-and-associated-fields-495323340.html</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="list-all-user-information">List All User Information:</h4>
+<ul>
+<li>Linux:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#Ldap Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;(objectClass=user)&#39;</span> or <span style="color:#e6db74">&#39;(&amp;(objectCategory=person))&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Examples Using ldapsearch</span>
+</span></span><span style="display:flex;"><span>ldapsearch -x -b <span style="color:#e6db74">&#34;dc=sugarape,dc=local&#34;</span> -H ldap://10.129.95.210 <span style="color:#e6db74">&#39;(objectClass=user)&#39;</span>
+</span></span><span style="display:flex;"><span>ldapsearch -x -b <span style="color:#e6db74">&#34;dc=sugarape,dc=local&#34;</span> -H ldap://10.129.95.210 <span style="color:#e6db74">&#39;(&amp;(objectCategory=person))&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Windows:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#Ldap%20Query%0aGet-ADObject%20-LDAPFilter%20%27%28&amp;%28objectCategory=person%29%29%27%20or%20%27%28objectClass=user%29%27%0a%0a#%20Examples%20Using%20LDAPFilter%0aGet-ADObject%20-LDAPFilter%20%27%28&amp;%28objectCategory=person%29%29%27%0aGet-ADObject%20-LDAPFilter%20%27%28&amp;%28objectCategory=person%29%29%27%20%7c%20select%20name%20%7c%20Measure-Object">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#Ldap Query</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter <span style="color:#e6db74">&#39;(&amp;(objectCategory=person))&#39;</span> or <span style="color:#e6db74">&#39;(objectClass=user)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Examples Using LDAPFilter</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter <span style="color:#e6db74">&#39;(&amp;(objectCategory=person))&#39;</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter <span style="color:#e6db74">&#39;(&amp;(objectCategory=person))&#39;</span> | select name | Measure-Object</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>The last option selects just the name and the pipes it into measure object which gives us the total number of users on the domain:</li>
+</ul>
+<h4 id="list-a-specific-users-information">List a specific Users Information:</h4>
+<ul>
+<li>Linux:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#Ldap Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;(&amp;(ObjectClass=user)(cn=&lt;name*&gt;))&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Examples Using ldapsearch</span>
+</span></span><span style="display:flex;"><span>ldapsearch -x -b <span style="color:#e6db74">&#34;dc=sugarape,dc=local&#34;</span> -H ldap://10.129.95.210 <span style="color:#e6db74">&#39;(&amp;(ObjectClass=user)(cn=nathan*))&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>+Notes+:
+-   The wildcard <code>*</code> is correct after the name as we want to view all information about that account.
+-   Sometimes we will get output like this (this usually means the account is not found in the directory):
+-   <figure><img src="/ox-hugo/2024-07-12-092539_.png">
+</figure>
+
+-   Where as this account is active and in use by the looks of it:
+-   <figure><img src="/ox-hugo/2024-07-12-092651_.png">
+</figure>
+</li>
+<li>Windows:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#Ldap%20Query%0aGet-ADObject%20-LDAPFilter%20%27%28&amp;%28ObjectClass=user%29%28cn=%3cname*%3e%29%29%27%0a%0a#%20Examples%20Using%20LDAPFilter%0aGet-ADObject%20-LDAPFilter%20%27%28&amp;%28objectCategory=user%29%28cn=carol*%29%29%27">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#Ldap Query</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter <span style="color:#e6db74">&#39;(&amp;(ObjectClass=user)(cn=&lt;name*&gt;))&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Examples Using LDAPFilter</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter <span style="color:#e6db74">&#39;(&amp;(objectCategory=user)(cn=carol*))&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>+Note+: This will return all users called Carol, we could further narrow down our search by adding a last name:
+-   <code>'(&amp;(objectCategory=user)(cn=carol smith))'</code></li>
+</ul>
+<h4 id="list-users-who-have-constrained-delegation-privileges">List Users Who have Constrained Delegation Privileges:</h4>
+<ul>
+<li>Linux:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#Ldap Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>userAccountControl:1.2.840.113556.1.4.803:<span style="color:#f92672">=</span>524288<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Examples Using LDAPSearch</span>
+</span></span><span style="display:flex;"><span>ldapsearch -D <span style="color:#e6db74">&#34;cn=sugarape-student,dc=sugarape,DC=LOCAL&#34;</span> -w <span style="color:#e6db74">&#39;Academy_student_AD!&#39;</span> -H ldap://10.129.2.174 <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">(</span>userAccountControl:1.2.840.113556.1.4.803:<span style="color:#f92672">=</span>524288<span style="color:#f92672">)</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Windows:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#Ldap Query</span>
+</span></span><span style="display:flex;"><span>(userAccountControl<span style="color:#960050;background-color:#1e0010">:</span><span style="color:#ae81ff">1.2</span>.840.113556.1.4.<span style="color:#ae81ff">803</span><span style="color:#960050;background-color:#1e0010">:</span>=<span style="color:#ae81ff">524288</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPFilter</span>
+</span></span><span style="display:flex;"><span>Get-DomainUser -LDAPFilter <span style="color:#e6db74">&#34;(userAccountControl:1.2.840.113556.1.4.803:=524288)&#34;</span></span></span></code></pre></div>
+    
+</div>
+<h4 id="users-with-administrative-privileges">Users with Administrative Privileges:</h4>
+<ul>
+<li>Linux:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#Ldap Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>&amp;<span style="color:#f92672">(</span>objectClass<span style="color:#f92672">=</span>user<span style="color:#f92672">)(</span>adminCount<span style="color:#f92672">=</span>1<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPSearch</span>
+</span></span><span style="display:flex;"><span>ldapsearch -x -b <span style="color:#e6db74">&#34;dc=sugarape,dc=local&#34;</span> -H ldap://10.129.95.210 <span style="color:#e6db74">&#39;(&amp;(objectClass=user)(adminCount=1))&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Windows:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#%20Example%20Using%20LDAPFilter%0aGet-ADObject%20-LDAPFilter%20%27%28&amp;%28objectCategory=user%29%28adminCount=1%29%29%27">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPFilter</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter <span style="color:#e6db74">&#39;(&amp;(objectCategory=user)(adminCount=1))&#39;</span></span></span></code></pre></div>
+    
+</div>
+<h4 id="list-all-administratively-disabled-accounts">List All administratively disabled accounts.:</h4>
+<ul>
+<li>Linux:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>&amp;<span style="color:#f92672">(</span>objectCategory<span style="color:#f92672">=</span>person<span style="color:#f92672">)(</span>objectClass<span style="color:#f92672">=</span>user<span style="color:#f92672">)(</span>userAccountControl:1.2.840.113556.1.4.803:<span style="color:#f92672">=</span>2<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPSearch</span>
+</span></span><span style="display:flex;"><span>ldapsearch -x -b <span style="color:#e6db74">&#34;dc=sugarape,dc=local&#34;</span> -H ldap://10.129.95.210 <span style="color:#e6db74">&#39;(&amp;(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Windows:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-ADObject -LDAPFilter <span style="color:#e6db74">&#39;(&amp;(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>+Note+: Don&rsquo;t pipe into <code>| select samaccountname|</code> it didn&rsquo;t work for me, I think it may be due to the account being disabled, then maybe the sam account is disabled?</li>
+</ul>
+<h3 id="list-user-emails">List User Emails:</h3>
+<ul>
+<li>Linux:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>&amp;<span style="color:#f92672">(</span>objectClass<span style="color:#f92672">=</span>user<span style="color:#f92672">)(</span>mail<span style="color:#f92672">=</span>*@domain.com<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPSearch</span>
+</span></span><span style="display:flex;"><span>ldapsearch -x -b <span style="color:#e6db74">&#34;dc=sugarape,dc=local&#34;</span> -H ldap://10.129.95.210 <span style="color:#f92672">(</span>&amp;<span style="color:#f92672">(</span>objectClass<span style="color:#f92672">=</span>user<span style="color:#f92672">)(</span>mail<span style="color:#f92672">=</span>*@sugarape.local<span style="color:#f92672">))</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Windows:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#LDAP%20Query%0a%28&amp;%28objectClass=user%29%28mail=*@domain.com%29%29%0a%0a#%20Example%20Using%20LDAPFilter%0aGet-ADObject%20-LDAPFilter%20%20%28&amp;%28objectClass=user%29%28mail=*@sugarape.local%29%29">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span>(&amp;(objectClass=user)(mail=*@domain.com))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPFilter</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter  (&amp;(objectClass=user)(mail=*@sugarape.local))</span></span></code></pre></div>
+    
+</div>
+<h3 id="list-group-information">List Group Information:</h3>
+<h4 id="list-all-groups">List All Groups:</h4>
+<ul>
+<li>Linux:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>objectClass<span style="color:#f92672">=</span>group<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPSearch</span>
+</span></span><span style="display:flex;"><span>ldapsearch -H ldap://monteverde.MEGABANK.LOCAL -x -b <span style="color:#e6db74">&#34;DC=MEGABANK,DC=LOCAL&#34;</span> -s sub <span style="color:#e6db74">&#34;(&amp;(objectclass=group))&#34;</span> | grep sAMAccountName: | cut -f2 -d<span style="color:#e6db74">&#34; &#34;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Windows:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#LDAP%20Query%0a%28&amp;%28objectCategory=group%29%29%0a%0a#%20Example%20Using%20LDAPFilter%0aGet-ADObject%20-LDAPFilter%20%27%28&amp;%28objectCategory=group%29%29%27%20%7c%20select%20name%20%7c%20Measure-Object">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span>(&amp;(objectCategory=group))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPFilter</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter <span style="color:#e6db74">&#39;(&amp;(objectCategory=group))&#39;</span> | select name | Measure-Object</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>+Note+: The example counts the number of groups too by piping into measure object.</li>
+</ul>
+<h4 id="list-group-membership-of-a-specific-user">List Group Membership of a specific user:</h4>
+<ul>
+<li>Linux:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>&amp;<span style="color:#f92672">(</span>objectClass<span style="color:#f92672">=</span>group<span style="color:#f92672">)(</span>member<span style="color:#f92672">=</span>CN<span style="color:#f92672">=</span>John Doe,CN<span style="color:#f92672">=</span>Users,DC<span style="color:#f92672">=</span>domain,DC<span style="color:#f92672">=</span>com<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPSearch</span>
+</span></span><span style="display:flex;"><span>ldapsearch -x -b <span style="color:#e6db74">&#34;dc=domain,dc=com&#34;</span> -H ldap://10.129.95.210 <span style="color:#e6db74">&#39;(&amp;(objectClass=group)(member=CN=John Doe,CN=Users,DC=domain,DC=com))&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Windows:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#LDAP%20Query%0a%28&amp;%28objectClass=group%29%28member=CN=John%20Doe,CN=Users,DC=domain,DC=com%29%0a%0a#%20Example%20Using%20LDAPFilter%0aGet-ADObject%20-LDAPFilter%20%27%28&amp;%28objectClass=group%29%28member=CN=John%20Doe,CN=Users,DC=domain,DC=com%29%27">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span>(&amp;(objectClass=group)(member=CN=John Doe,CN=Users,DC=domain,DC=com)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPFilter</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter <span style="color:#e6db74">&#39;(&amp;(objectClass=group)(member=CN=John Doe,CN=Users,DC=domain,DC=com)&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>+Note+: Can&rsquo;t seem to get to work just yet</li>
+</ul>
+<h4 id="list-members-of-a-specific-group">List Members of a Specific Group:</h4>
+<ul>
+<li>Linux:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>&amp;<span style="color:#f92672">(</span>objectCategory<span style="color:#f92672">=</span>Person<span style="color:#f92672">)(</span>sAMAccountName<span style="color:#f92672">=</span>*<span style="color:#f92672">)(</span>memberOf<span style="color:#f92672">=</span>CN<span style="color:#f92672">=</span>&lt;GroupName&gt;,OU<span style="color:#f92672">=</span>Groups,DC<span style="color:#f92672">=[</span>DCNAME<span style="color:#f92672">]</span>,DC<span style="color:#f92672">=[</span>DCNAME<span style="color:#f92672">]))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPSearch</span>
+</span></span><span style="display:flex;"><span>ldapsearch -H ldap://monteverde.MEGABANK.LOCAL -x -b <span style="color:#e6db74">&#34;DC=MEGABANK,DC=LOCAL&#34;</span> -s sub <span style="color:#e6db74">&#34;(&amp;(objectCategory=Person)(sAMAccountName=*)(memberOf=CN=Helpdesk,OU=Groups,DC=MEGABANK,DC=LOCAL))&#34;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Windows:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#LDAP%20Query%0a%28&amp;%28objectCategory=Person%29%28sAMAccountName=*%29%28memberOf=CN=%3cGroupName%3e,OU=Groups,DC=[DCNAME],DC=[DCNAME]%29%29%0a%0a#%20Example%20Using%20LDAPFilter%0aGet-ADObject%20-LDAPFilter%20%22%28&amp;%28objectCategory=Person%29%28sAMAccountName=*%29%28memberOf=CN=Helpdesk,OU=Groups,DC=MEGABANK,DC=LOCAL%29%29%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span>(&amp;(objectCategory=Person)(sAMAccountName=*)(memberOf=CN=&lt;GroupName&gt;,OU=Groups,DC=[<span style="color:#66d9ef">DCNAME</span>],DC=[<span style="color:#66d9ef">DCNAME</span>]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPFilter</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter <span style="color:#e6db74">&#34;(&amp;(objectCategory=Person)(sAMAccountName=*)(memberOf=CN=Helpdesk,OU=Groups,DC=MEGABANK,DC=LOCAL))&#34;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>+Notes+:
+<ul>
+<li>Signifies no-one is in this group:
+<ul>
+<li><figure><img src="/ox-hugo/2024-07-12-094154_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>Users are part of this group.
+<ul>
+<li><figure><img src="/ox-hugo/2024-07-12-094227_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="list-computers">List Computers:</h3>
+<ul>
+<li>Linux:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>objectClass<span style="color:#f92672">=</span>computer<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPSearch</span>
+</span></span><span style="display:flex;"><span>ldapsearch -x -b <span style="color:#e6db74">&#34;dc=sugarape,dc=local&#34;</span> -H ldap://10.129.95.210 <span style="color:#e6db74">&#39;(objectClass=computer)&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Windows:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#LDAP%20Query%0a%28objectClass=computer%29%0a%0a#%20Example%20Using%20LDAPFilter%0aGet-ADObject%20-LDAPFilter%20%22%28objectClass=computer%29%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span>(objectClass=computer)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPFilter</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter <span style="color:#e6db74">&#34;(objectClass=computer)&#34;</span></span></span></code></pre></div>
+    
+</div>
+<h3 id="list-ou-information">List OU information:</h3>
+<h4 id="list-all-ous">List All OU&rsquo;s:</h4>
+<ul>
+<li>Linux:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>objectClass<span style="color:#f92672">=</span>OrganizationalUnit<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPSearch</span>
+</span></span><span style="display:flex;"><span>ldapsearch -x -b <span style="color:#e6db74">&#34;dc=sugarape,dc=local&#34;</span> -H ldap://10.129.95.210 <span style="color:#e6db74">&#39;(objectClass=OrganizationalUnit)&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Windows:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#LDAP%20Query%0a%28objectClass=OrganizationalUnit%29%0a%0a#%20Example%20Using%20LDAPFilter%0aGet-ADObject%20-LDAPFilter%20%22%28objectClass=OrganizationalUnit%29%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span>(objectClass=OrganizationalUnit)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPFilter</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter <span style="color:#e6db74">&#34;(objectClass=OrganizationalUnit)&#34;</span></span></span></code></pre></div>
+    
+</div>
+<h4 id="list-specific-ou-information">List Specific OU Information:</h4>
+<ul>
+<li>Linux:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>ou<span style="color:#f92672">=[</span>OUName<span style="color:#f92672">])</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPSearch</span>
+</span></span><span style="display:flex;"><span>ldapsearch -x -b <span style="color:#e6db74">&#34;dc=sugarape,dc=local&#34;</span> -H ldap://10.129.95.210 <span style="color:#e6db74">&#39;(ou=Accounting)&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Windows:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#LDAP%20Query%0a%28ou=[OUName]%29%0a%0a#%20Example%20Using%20LDAPFilter%0aGet-ADObject%20-LDAPFilter%20%22%28ou=Accounting%29%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span>(ou=[<span style="color:#66d9ef">OUName</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPFilter</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter <span style="color:#e6db74">&#34;(ou=Accounting)&#34;</span></span></span></code></pre></div>
+    
+</div>
+<h3 id="list-account-information">List Account Information:</h3>
+<h4 id="list-active-accounts">List Active Accounts:</h4>
+<ul>
+<li>Linux:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>&amp;<span style="color:#f92672">(</span>objectClass<span style="color:#f92672">=</span>user<span style="color:#f92672">)(</span>!<span style="color:#f92672">(</span>userAccountControl:1.2.840.113556.1.4.803:<span style="color:#f92672">=</span>2<span style="color:#f92672">)))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPSearch</span>
+</span></span><span style="display:flex;"><span>ldapsearch -x -b <span style="color:#e6db74">&#34;dc=sugarape,dc=local&#34;</span> -H ldap://10.129.95.210 <span style="color:#e6db74">&#34;(&amp;(objectClass=user)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))&#34;</span>
+</span></span><span style="display:flex;"><span>ldapsearch -h 172.16.5.5 -x -b <span style="color:#e6db74">&#34;DC=SUGARAPE,DC=LOCAL&#34;</span> -s sub <span style="color:#e6db74">&#34;(&amp;(objectClass=user)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))&#34;</span> | grep <span style="color:#e6db74">&#34;sugarape.local&#34;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>
+<p>+Note+: Can pipe into grep as well once an email is discovered to pipe out valid usernames:</p>
+</li>
+<li>
+<p>Windows:</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span>(&amp;(objectClass=user)(!(userAccountControl<span style="color:#960050;background-color:#1e0010">:</span><span style="color:#ae81ff">1.2</span>.840.113556.1.4.<span style="color:#ae81ff">803</span><span style="color:#960050;background-color:#1e0010">:</span>=<span style="color:#ae81ff">2</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPFilter</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter  <span style="color:#e6db74">&#34;(&amp;(objectClass=user)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))&#34;</span></span></span></code></pre></div>
+    
+</div>
+<!-- raw HTML omitted -->
+<h4 id="account-expires-in-specific-time-frame">Account Expires in Specific Time Frame:</h4>
+<ul>
+<li>Linux:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>&amp;<span style="color:#f92672">(</span>objectClass<span style="color:#f92672">=</span>user<span style="color:#f92672">)(</span>accountExpires&gt;<span style="color:#f92672">=</span>131342487000000000<span style="color:#f92672">)(</span>accountExpires&lt;<span style="color:#f92672">=</span>131395327000000000<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPSearch</span>
+</span></span><span style="display:flex;"><span>ldapsearch -x -b <span style="color:#e6db74">&#34;dc=sugarape,dc=local&#34;</span> -H ldap://10.129.95.210 <span style="color:#e6db74">&#34;(&amp;(objectClass=user)(accountExpires&gt;=131342487000000000)(accountExpires&lt;=131395327000000000))&#34;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Windows:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#LDAP%20Query%0a%28&amp;%28objectClass=user%29%28accountExpires%3e=131342487000000000%29%28accountExpires%3c=131395327000000000%29%29%0a%0a#%20Example%20Using%20LDAPFilter%0aGet-ADObject%20-LDAPFilter%20%22%28&amp;%28objectClass=user%29%28accountExpires%3e=131342487000000000%29%28accountExpires%3c=131395327000000000%29%29%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span>(&amp;(objectClass=user)(accountExpires&gt;=<span style="color:#ae81ff">131342487000000000</span>)(accountExpires&lt;=<span style="color:#ae81ff">131395327000000000</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPFilter</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter <span style="color:#e6db74">&#34;(&amp;(objectClass=user)(accountExpires&gt;=131342487000000000)(accountExpires&lt;=131395327000000000))&#34;</span></span></span></code></pre></div>
+    
+</div>
+<h4 id="list-disabled-accounts">List Disabled Accounts:</h4>
+<ul>
+<li>Linux:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>&amp;<span style="color:#f92672">(</span>objectClass<span style="color:#f92672">=</span>user<span style="color:#f92672">)(</span>userAccountControl:1.2.840.113556.1.4.803:<span style="color:#f92672">=</span>2<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPSearch</span>
+</span></span><span style="display:flex;"><span>ldapsearch -x -b <span style="color:#e6db74">&#34;dc=sugarape,dc=local&#34;</span> -H ldap://10.129.95.210 <span style="color:#e6db74">&#34;(&amp;(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))&#34;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Windows:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(&amp;(objectClass=user)(userAccountControl<span style="color:#960050;background-color:#1e0010">:</span><span style="color:#ae81ff">1.2</span>.840.113556.1.4.<span style="color:#ae81ff">803</span><span style="color:#960050;background-color:#1e0010">:</span>=<span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPFilter</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter <span style="color:#e6db74">&#34;(&amp;(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))&#34;</span></span></span></code></pre></div>
+    
+</div>
+<h3 id="linux-system-support">Linux System Support:</h3>
+<ul>
+<li>Linux:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>&amp;<span style="color:#f92672">(</span>objectClass<span style="color:#f92672">=</span>device<span style="color:#f92672">)(</span>osName<span style="color:#f92672">=</span>Linux*<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPSearch</span>
+</span></span><span style="display:flex;"><span>ldapsearch -x -b <span style="color:#e6db74">&#34;dc=sugarape,dc=local&#34;</span> -H ldap://10.129.95.210 <span style="color:#e6db74">&#34;(&amp;(objectClass=device)(osName=Linux*))&#34;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Windows:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#LDAP%20Query%0a%28&amp;%28objectClass=device%29%28osName=Linux*%29%29%0a%0a#%20Example%20Using%20LDAPFilter%0aGet-ADObject%20-LDAPFilter%20%22%28&amp;%28objectClass=device%29%28osName=Linux*%29%29%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#LDAP Query</span>
+</span></span><span style="display:flex;"><span>(&amp;(objectClass=device)(osName=Linux*))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Using LDAPFilter</span>
+</span></span><span style="display:flex;"><span>Get-ADObject -LDAPFilter <span style="color:#e6db74">&#34;(&amp;(objectClass=device)(osName=Linux*))&#34;</span></span></span></code></pre></div>
+    
+</div>
+<h2 id="object-identifiers-oid-s">Object Identifiers OID&rsquo;s:</h2>
+<ul>
+<li>
+<p>+Comprehensive List of OID&rsquo;s+ - <a href="https://ldap.com/ldap-oid-reference-guide/">https://ldap.com/ldap-oid-reference-guide/</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Object_identifier">https://en.wikipedia.org/wiki/Object_identifier</a></p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows/win32/adsi/search-filter-syntax">https://learn.microsoft.com/en-us/windows/win32/adsi/search-filter-syntax</a></p>
+</li>
+<li>
+<p><strong>Simply Explained</strong>:</p>
+<ul>
+<li>Each OID is a series of integers/numbers seperated by dots.
+<ul>
+<li>The full OID represents the final node on the tree (imagine it like a leaf on a branch).</li>
+</ul>
+</li>
+<li>Each integer in the OID represents an ancestor to/path to the final leaf. Imagine these like branches on a tree, but starting from the root/base of the tree.
+<ul>
+<li>We have to follow from the root of the tree up the trunk, along one branch, which may split into another, then another, then another, then another and we finally reach out leaf(node) and that long number, with the full stops is the path that we took and that long number represents how we got from the root directly to our leaf.</li>
+<li>Alot of the time we will take the same path but go to a different leaf, so instead of going left we may go right so our number will change slightly. But we know If I give you the OID <code>1.3.6.1.4.1.343</code> you will end up at the same leaf every single time.</li>
+<li>Example of the tree structure:
+<ul>
+<li><figure><img src="/ox-hugo/2024-08-23-094816_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>See <a href="#ldap-filter-using-object-identifiers">LDAP Filter Using Object Identifiers OID&rsquo;s:</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="overview">OID Overview:</h3>
+<ul>
+<li>
+<p><strong>Definition</strong>:</p>
+<ul>
+<li>Unique string of numbers used to identify directory objects and attributes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Structure</strong>:</p>
+<ul>
+<li>Hierarchical, dot-separated decimal numbers.</li>
+<li>Example: 1.2.840.113556.1.4.803</li>
+</ul>
+</li>
+<li>
+<p><strong>Purpose</strong>:</p>
+<ul>
+<li>Uniquely identify types of objects, attributes, or other data.</li>
+<li>Ensures standardization and avoids naming conflicts.</li>
+</ul>
+</li>
+<li>
+<p><strong>Usage</strong>:</p>
+<ul>
+<li>Common in defining LDAP schemas.</li>
+<li>Used in search filters, such as bitwise filters.</li>
+</ul>
+</li>
+<li>
+<p>+Breaking Down the LDAP Query+: <code>userAccountControl:1.2.840.113556.1.4.803:=8192</code></p>
+<ul>
+<li>
+<p><code>userAccountControl</code></p>
+<ul>
+<li><strong>Description</strong>: Specifies the attribute being queried. In Active Directory, this is used to store various flags related to a user account.</li>
+</ul>
+</li>
+<li>
+<p><code>1.2.840.113556.1.4.803</code></p>
+<ul>
+<li><strong>Description</strong>: Object Identifier (<a href="#object-identifiers-oid-s">OID</a>) for a specific matching rule.</li>
+<li><strong>Matching Rule</strong>: Requires that the attribute and the value provided must have matching bits, i.e., a bitwise AND between them returns the same value (8192 in this case).</li>
+</ul>
+</li>
+<li>
+<p><code>:=</code></p>
+<ul>
+<li><strong>Description</strong>: Equality operator in LDAP. In this context, it signifies that we are setting a condition for the attribute userAccountControl.</li>
+<li><strong>Other Logical Operations</strong>: See <a href="#ldap-query-queries">LDAP Logical Operators:</a></li>
+</ul>
+</li>
+<li>
+<p><code>8192</code></p>
+<ul>
+<li><strong>Description</strong>: Decimal value for the specific flag being queried.</li>
+<li><strong>Corresponding Flag</strong>: SERVER_TRUST_ACCOUNT (often represents a domain controller)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="searchbase-and-searchscope-parameters">SearchBase and SearchScope Parameters:</h2>
+<h3 id="the-searchbase-parameter">The SearchBase parameter:</h3>
+<ul>
+<li>This parameter specifies an Active Directory path to search under and allows us to begin searching for a user account in a specific OU:</li>
+<li>It accepts an OU&rsquo;s AD Distinguished Name (DN)
+<ul>
+<li>&ldquo;<code>OU=Employees,DC=CONTOSO,DC=LOCAL</code>&rdquo;.</li>
+</ul>
+</li>
+</ul>
+<h3 id="the-searchscope-parameter">The SearchScope parameter:</h3>
+<ul>
+<li>
+<p>&ldquo;SearchScope&rdquo; allows us to define how deep into the OU hierarchy we would like to search.</p>
+</li>
+<li>
+<p>There are three levels of depth we can search when using this parameter:</p>
+</li>
+<li>
+<p><strong>SearchScope Depth</strong>:</p>
+<ul>
+<li>
+<p><strong>Depth</strong>: 0</p>
+<ul>
+<li>Name: Base</li>
+<li>Description: The object is specified as the SearchBase. For example, if we ask for all users in an OU defining a base scope, we get no results. If we specify a user or use Get-ADObject we get just that user or object returned.</li>
+</ul>
+</li>
+<li>
+<p><strong>Depth</strong>: 1</p>
+<ul>
+<li>Name: OneLevel</li>
+<li>Description: Searches for objects in the container defined by the SearchBase but not in any sub-containers.</li>
+</ul>
+</li>
+<li>
+<p><strong>Depth</strong>: 2</p>
+<ul>
+<li>Name: SubTree</li>
+<li>Description: Searches for objects contained by the SearchBase and all child containers, including their children, recursively all the way down the AD hierarchy.</li>
+</ul>
+</li>
+<li>
+<p>+Example Picture and searches+:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-16-112948_.png">
+</figure>
+</li>
+<li><figure><img src="/ox-hugo/2024-10-16-113049_.png">
+</figure>
+</li>
+<li>In the above example with the <code>SearchBase</code> set to the AD Operational Unit (OU)  <code>OU=Employees,DC=SUGARAPE,DC=LOCAL</code> we can set the scope to the following. We are going to be querying for user, by passing these parameters to <code>Get-AdUser</code>:
+<ul>
+<li><code>Base/0</code>
+<ul>
+<li>Would attempt to query the OU object (Employees) itself.</li>
+<li>Result: We would get 0 hits as there are no users directly in the base.</li>
+</ul>
+</li>
+<li><code>OneLevel/1</code>
+<ul>
+<li>Would search within the Employees OU only.</li>
+<li>Result: We would get the user Amelia Matthews returned as she is sitting nested within it and the first/oneLevel</li>
+</ul>
+</li>
+<li><code>SubTree/2</code>
+<ul>
+<li>Queries the Employees OU and all of the sub-OUs underneath it, such as Accounting, Contractors, etc. OUs under those OUs (child containers).</li>
+<li>Results: We would get all users nested within the sub-ou&rsquo;s, in this instance 970 users</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Passing SearchScope Depth as an argument</strong>:</p>
+<ul>
+<li>We can use name or number &amp; they are both interpreted the same:
+<ul>
+<li>+Example+: <code>SearchScope OneLevel</code></li>
+<li>+Example+: <code>SearchScope 1</code></li>
+<li>Both of these are valid and will work.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>Example Queries</strong>:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="Get-ADUser%20-SearchBase%20%22OU=Employees,DC=CONTOSO,DC=LOCAL%22%20-SearchScope%20OneLevel%20-Filter%20*%0aGet-ADUser%20-SearchBase%20%22OU=IT,DC=CONTOSO,DC=LOCAL%22%20-SearchScope%201%20-Filter%20*%0aGet-ADUser%20-SearchBase%20%22OU=Domain%20Admins,DC=CONTOSO,DC=LOCAL%22%20-SearchScope%202%20-Filter%20*%0a%28Get-ADUser%20-SearchBase%20%22OU=IT,DC=CONTOSO,DC=LOCAL%22%20-SearchScope%202%20-Filter%20*%29.count">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Get-ADUser -SearchBase <span style="color:#e6db74">&#34;OU=Employees,DC=CONTOSO,DC=LOCAL&#34;</span> -SearchScope OneLevel -Filter *
+</span></span><span style="display:flex;"><span>Get-ADUser -SearchBase <span style="color:#e6db74">&#34;OU=IT,DC=CONTOSO,DC=LOCAL&#34;</span> -SearchScope <span style="color:#ae81ff">1</span> -Filter *
+</span></span><span style="display:flex;"><span>Get-ADUser -SearchBase <span style="color:#e6db74">&#34;OU=Domain Admins,DC=CONTOSO,DC=LOCAL&#34;</span> -SearchScope <span style="color:#ae81ff">2</span> -Filter *
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>Get-ADUser -SearchBase <span style="color:#e6db74">&#34;OU=IT,DC=CONTOSO,DC=LOCAL&#34;</span> -SearchScope <span style="color:#ae81ff">2</span> -Filter *<span style="color:#f92672">)</span>.count</span></span></code></pre></div>
+    
+</div>
+<h2 id="84265d">+Enumerating LDAP+</h2>
+<ul>
+<li>+If we see LDAP on a server running and there is an application it may be being used for AUTH.+
+<ul>
+<li>See <a href="#ldap-injection">LDAP Injection:</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="establishing-naming-context-with-nmap">Establishing Naming context with <code>NMAP</code>:</h3>
+<ul>
+<li><strong>Run Scan</strong>:
+<ul>
+<li><strong>Command</strong>: <code>nmap --script ldap* -sV -A -Pn [IP] -p389,636 -oA IP-LDAP</code></li>
+<li><strong>Location of scripts</strong>:
+<ul>
+<li>ls <em>usr/share/nmap/scripts</em> | grep -i ldap</li>
+<li><code>locate *nse | grep ldap</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>+Example+ <strong>of how I got the necessary information for the box monteverde below and I was able to enumerate using LDAP</strong>:
+<ul>
+<li>In the below output we can see from the first lines the domain and the ldap server.
+<ul>
+<li><code>rootDomainNamingContext: DC=MEGABANK,DC=LOCAL</code>
+<ul>
+<li>DC name is MEGABANK.LOCAL</li>
+</ul>
+</li>
+<li><code>ldapServiceName: MEGABANK.LOCAL:monteverde$@MEGABANK.LOCAL</code>
+<ul>
+<li>Ldap server name is monteverde.MEGABANK.LOCAL</li>
+</ul>
+</li>
+<li>Writeup here: <a href="https://bloodstiller.com/walkthroughs/monteverde-box/">https://bloodstiller.com/walkthroughs/monteverde-box/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%3cSNIP%3e%0aPORT%20%20%20%20STATE%20SERVICE%20%20%20%20VERSION%0a389/tcp%20open%20%20ldap%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20MEGABANK.LOCAL,%20Site:%20Default-First-Site-Name%29%0a%7c%20ldap-rootdse:%0a%7c%20LDAP%20Results%0a%7c%20%20%20%3cROOT%3e%0a%7c%20%20%20%20%20%20%20domainFunctionality:%207%0a%7c%20%20%20%20%20%20%20forestFunctionality:%207%0a%7c%20%20%20%20%20%20%20domainControllerFunctionality:%207%0a%7c%20%20%20%20%20%20%20rootDomainNamingContext:%20DC=MEGABANK,DC=LOCAL%0a%7c%20%20%20%20%20%20%20ldapServiceName:%20MEGABANK.LOCAL:monteverde$@MEGABANK.LOCAL%0a%3cSNIP%3e">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&lt;SNIP&gt;
+</span></span><span style="display:flex;"><span>PORT    STATE SERVICE    VERSION
+</span></span><span style="display:flex;"><span>389/tcp open  ldap       Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: MEGABANK.LOCAL, Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>| ldap-rootdse:
+</span></span><span style="display:flex;"><span>| LDAP Results
+</span></span><span style="display:flex;"><span>|   &lt;ROOT&gt;
+</span></span><span style="display:flex;"><span>|       domainFunctionality: <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>|       forestFunctionality: <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>|       domainControllerFunctionality: <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>|       rootDomainNamingContext: DC<span style="color:#f92672">=</span>MEGABANK,DC<span style="color:#f92672">=</span>LOCAL
+</span></span><span style="display:flex;"><span>|       ldapServiceName: MEGABANK.LOCAL:monteverde$@MEGABANK.LOCAL
+</span></span><span style="display:flex;"><span>&lt;SNIP&gt;</span></span></code></pre></div>
+    
+</div>
+<h3 id="enumerating-ldap-using-ldapsearch">Enumerating LDAP using <code>ldapsearch</code>:</h3>
+<h4 id="enumerate-ldap-naming-context-server-name-and-domain-name-with">Enumerate LDAP naming context server name and domain name with:</h4>
+<ul>
+<li>
+<p>+DO THIS FIRST!+ before anything else.</p>
+<ul>
+<li>We cannot do ldap queries without knowing the FQDN of the ldap server and the domain name e.g <code>&quot;dc=sugarape,dc=local&quot;</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Establish Naming Context</strong>:</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ldapsearch -H ldap://<span style="color:#f92672">[</span>IP<span style="color:#f92672">]</span> -x -s base namingcontexts
+</span></span><span style="display:flex;"><span>ldapsearch -H ldap://10.129.228.111 -x -s base namingcontexts</span></span></code></pre></div>
+    
+</div>
+<h4 id="check-for-anonymous-bind-using-ldapsearch">Check for anonymous bind using <code>ldapsearch</code>:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ldapsearch -H ldap://<span style="color:#f92672">[</span>IP<span style="color:#f92672">]</span> -x -b <span style="color:#e6db74">&#34;dc=[DOMAIN],dc=[DOMAIN]&#34;</span>
+</span></span><span style="display:flex;"><span>ldapsearch -H ldap://10.129.1.207 -x -b <span style="color:#e6db74">&#34;dc=sugarape,dc=local&#34;</span></span></span></code></pre></div>
+    
+</div>
+<h4 id="enumerate-entire-domain-with-ldapsearch">Enumerate entire domain with <code>ldapsearch</code>:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ldapsearch -H ldap://<span style="color:#f92672">[</span>LDAPName<span style="color:#f92672">]</span> -x -b <span style="color:#e6db74">&#34;DC=[DCName],DC=[DCNAME]&#34;</span>  &gt;&gt; ldapDump.txt
+</span></span><span style="display:flex;"><span>ldapsearch -H ldap://monteverde.MEGABANK.LOCAL -x -b <span style="color:#e6db74">&#34;DC=MEGABANK,DC=LOCAL&#34;</span>  &gt;&gt; ldapDump.txt</span></span></code></pre></div>
+    
+</div>
+<h3 id="enumerating-ldap-using-windapsearch">Enumerating LDAP using <code>windapsearch</code>:</h3>
+<ul>
+<li>There are two different versions of windapsearch, in my testing it&rsquo;s actually better to use the GO version as it seems to work, there are some issues with the current python version with imports being outdated etc.</li>
+<li>The syntax is different for the GO version in we have to specify the module with <code>-m</code> then the module name e.g. <code>users</code></li>
+<li><strong>We can enumerate via ldap with just a password too, alas the Support box</strong>:
+<ul>
+<li>+Example+:
+<ul>
+<li><code>ldapsearch -H ldap://$box -D ldap@[domain].[domain] -w '[Password]' -b &quot;dc=[domain],dc=[domain]&quot; &quot;*&quot;}</code></li>
+<li><a href="https://bloodstiller.com/walkthroughs/support-box/">https://bloodstiller.com/walkthroughs/support-box/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="check-for-anonymous-bind-using-windapsearch">Check for anonymous bind using <code>windapsearch</code>:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="python3%20windapsearch.py%20--dc-ip%20[IP]%20-u%20%22%22%20--functionality%0apython3%20windapsearch.py%20--dc-ip%2010.129.1.207%20-u%20%22%22%20--functionality">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 windapsearch.py --dc-ip <span style="color:#f92672">[</span>IP<span style="color:#f92672">]</span> -u <span style="color:#e6db74">&#34;&#34;</span> --functionality
+</span></span><span style="display:flex;"><span>python3 windapsearch.py --dc-ip 10.129.1.207 -u <span style="color:#e6db74">&#34;&#34;</span> --functionality</span></span></code></pre></div>
+    
+</div>
+<h4 id="enumerate-all-users-using-windapsearch">Enumerate all users using <code>windapsearch</code>:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="python3%20windapsearch.py%20--dc-ip%20[DC-IP]%20-u%20%22%22%20-U%0apython3%20windapsearch.py%20--dc-ip%2010.129.1.207%20-u%20%22%22%20-U">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 windapsearch.py --dc-ip <span style="color:#f92672">[</span>DC-IP<span style="color:#f92672">]</span> -u <span style="color:#e6db74">&#34;&#34;</span> -U
+</span></span><span style="display:flex;"><span>python3 windapsearch.py --dc-ip 10.129.1.207 -u <span style="color:#e6db74">&#34;&#34;</span> -U</span></span></code></pre></div>
+    
+</div>
+<h4 id="enumerate-all-computers-using-windapsearch">Enumerate all computers using <code>windapsearch</code>:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="python3%20windapsearch.py%20--dc-ip%20[DC-IP]%20-u%20%22%22%20-C%0apython3%20windapsearch.py%20--dc-ip%2010.129.1.207%20-u%20%22%22%20-C">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 windapsearch.py --dc-ip <span style="color:#f92672">[</span>DC-IP<span style="color:#f92672">]</span> -u <span style="color:#e6db74">&#34;&#34;</span> -C
+</span></span><span style="display:flex;"><span>python3 windapsearch.py --dc-ip 10.129.1.207 -u <span style="color:#e6db74">&#34;&#34;</span> -C</span></span></code></pre></div>
+    
+</div>
+<h4 id="enumerate-all-groups-using-windapsearch">Enumerate all groups using <code>windapsearch</code>:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="python3%20windapsearch.py%20--dc-ip%20[DC-IP]%20-u%20%22%22%20-G%0apython3%20windapsearch.py%20--dc-ip%2010.129.1.207%20-u%20%22%22%20-G">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 windapsearch.py --dc-ip <span style="color:#f92672">[</span>DC-IP<span style="color:#f92672">]</span> -u <span style="color:#e6db74">&#34;&#34;</span> -G
+</span></span><span style="display:flex;"><span>python3 windapsearch.py --dc-ip 10.129.1.207 -u <span style="color:#e6db74">&#34;&#34;</span> -G</span></span></code></pre></div>
+    
+</div>
+<h3 id="scripts-for-querying-ldap">Scripts for Querying <code>LDAP</code>:</h3>
+<h4 id="from-within-a-python-console">From within a python console:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="from%20ldap3%20import%20*%0a%0as%20=%20Server%28%27[IP]%27,get_info%20=%20ALL%29%0ac%20=%20%20Connection%28s,%20%27%27,%20%27%27%29%0ac.bind%28%29%0a##%20If%20it%20returns%20true%20we%20can%20run%20the%20next%20command%20it%20will%20return%20all%20LDAP%20information%0as.info">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> ldap3 <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>s <span style="color:#f92672">=</span> Server(<span style="color:#e6db74">&#39;[IP]&#39;</span>,get_info <span style="color:#f92672">=</span> ALL)
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span>  Connection(s, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>c<span style="color:#f92672">.</span>bind()
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## If it returns true we can run the next command it will return all LDAP information</span>
+</span></span><span style="display:flex;"><span>s<span style="color:#f92672">.</span>info</span></span></code></pre></div>
+    
+</div>
+<h4 id="simple-python-script">Simple Python Script:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> ldap3 <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>srver <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Enter IP of DC &#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>s <span style="color:#f92672">=</span> Server(srver,get_info <span style="color:#f92672">=</span> ALL)
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span>  Connection(s, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>checkserver <span style="color:#f92672">=</span> c<span style="color:#f92672">.</span>bind()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> checkserver <span style="color:#f92672">==</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>   print(s<span style="color:#f92672">.</span>info)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Server does not allow LDAP Anonymous bind&#34;</span></span></span></code></pre></div>
+    
+</div>
+<h4 id="more-advanced-python-script-that-allows-passing-username-and-passwords-also-implements-ssl">More advanced python script that allows passing username and passwords, also implements SSL:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> ldap3 <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> argparse
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> logging
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> getpass
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_valid_ip</span>(ip):
+</span></span><span style="display:flex;"><span>    pattern <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;^(?:[0-9]{1,3}\.)</span><span style="color:#e6db74">{3}</span><span style="color:#e6db74">[0-9]{1,3}$&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> pattern<span style="color:#f92672">.</span><span style="color:#66d9ef">match</span>(ip) <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Setup logging</span>
+</span></span><span style="display:flex;"><span>logging<span style="color:#f92672">.</span>basicConfig(filename<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ldap_test.log&#39;</span>, level<span style="color:#f92672">=</span>logging<span style="color:#f92672">.</span>INFO)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Command-line argument parsing</span>
+</span></span><span style="display:flex;"><span>parser <span style="color:#f92672">=</span> argparse<span style="color:#f92672">.</span>ArgumentParser(description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;LDAP Anonymous Bind Test&#34;</span>)
+</span></span><span style="display:flex;"><span>parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;dc_ip&#39;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;IP address of the Domain Controller&#34;</span>)
+</span></span><span style="display:flex;"><span>parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-u&#39;</span>, <span style="color:#e6db74">&#39;--user&#39;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Username for authentication&#34;</span>, default<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-p&#39;</span>, <span style="color:#e6db74">&#39;--password&#39;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Password for authentication&#34;</span>, default<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>args <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span>parse_args()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Validate IP address</span>
+</span></span><span style="display:flex;"><span>srver <span style="color:#f92672">=</span> args<span style="color:#f92672">.</span>dc_ip
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> is_valid_ip(srver):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Invalid IP address format.&#34;</span>)
+</span></span><span style="display:flex;"><span>    logging<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Invalid IP address format: </span><span style="color:#e6db74">{</span>srver<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    exit(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Handle secure password input</span>
+</span></span><span style="display:flex;"><span>user <span style="color:#f92672">=</span> args<span style="color:#f92672">.</span>user
+</span></span><span style="display:flex;"><span>password <span style="color:#f92672">=</span> args<span style="color:#f92672">.</span>password
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> password <span style="color:#f92672">and</span> user:
+</span></span><span style="display:flex;"><span>    password <span style="color:#f92672">=</span> getpass<span style="color:#f92672">.</span>getpass(<span style="color:#e6db74">&#34;Enter password: &#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Function to attempt LDAP connection</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">attempt_connection</span>(use_ssl):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        s <span style="color:#f92672">=</span> Server(srver, use_ssl<span style="color:#f92672">=</span>use_ssl, get_info<span style="color:#f92672">=</span>ALL)
+</span></span><span style="display:flex;"><span>        c <span style="color:#f92672">=</span> Connection(s, user, password)
+</span></span><span style="display:flex;"><span>        checkserver <span style="color:#f92672">=</span> c<span style="color:#f92672">.</span>bind()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> s, c, checkserver
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        logging<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error connecting to the server with SSL=</span><span style="color:#e6db74">{</span>use_ssl<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>, <span style="color:#66d9ef">None</span>, <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Attempt to connect with SSL first</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Attempting to connect to </span><span style="color:#e6db74">{</span>srver<span style="color:#e6db74">}</span><span style="color:#e6db74"> with SSL...&#34;</span>)
+</span></span><span style="display:flex;"><span>logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Attempting to connect to </span><span style="color:#e6db74">{</span>srver<span style="color:#e6db74">}</span><span style="color:#e6db74"> with SSL&#34;</span>)
+</span></span><span style="display:flex;"><span>s, c, checkserver <span style="color:#f92672">=</span> attempt_connection(use_ssl<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If SSL connection fails, retry without SSL</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> checkserver:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Failed to connect with SSL. Retrying without SSL...&#34;</span>)
+</span></span><span style="display:flex;"><span>    logging<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">&#34;Failed to connect with SSL. Retrying without SSL...&#34;</span>)
+</span></span><span style="display:flex;"><span>    s, c, checkserver <span style="color:#f92672">=</span> attempt_connection(use_ssl<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Final status check</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> checkserver:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Connected successfully. Retrieving server information...&#34;</span>)
+</span></span><span style="display:flex;"><span>    logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;Connected successfully&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(s<span style="color:#f92672">.</span>info)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Failed to connect: Server does not allow LDAP Anonymous bind or invalid credentials.&#34;</span>)
+</span></span><span style="display:flex;"><span>    logging<span style="color:#f92672">.</span>error(<span style="color:#e6db74">&#34;Failed to connect: Server does not allow LDAP Anonymous bind or invalid credentials.&#34;</span>)</span></span></code></pre></div>
+    
+</div>
+<h4 id="powershell-script-to-query-ldap">Powershell Script to query <code>LDAP</code>:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Create a DirectoryEntry object for the LDAP path</span>
+</span></span><span style="display:flex;"><span>$ldapPath = <span style="color:#e6db74">&#34;LDAP://dc=sugarape,dc=local&#34;</span>
+</span></span><span style="display:flex;"><span>$directoryEntry = New-Object System.DirectoryServices.DirectoryEntry($ldapPath)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a DirectorySearcher object</span>
+</span></span><span style="display:flex;"><span>$searcher = New-Object System.DirectoryServices.DirectorySearcher($directoryEntry)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define the LDAP filter</span>
+</span></span><span style="display:flex;"><span>$searcher.<span style="color:#66d9ef">Filter</span> = <span style="color:#e6db74">&#34;(&amp;(objectclass=pkicertificatetemplate)(!(mspki-enrollmentflag:1.2.840.113556.1.4.804:=2))(|(mspki-ra-signature=0)(!(mspki-rasignature=*)))(|(pkiextendedkeyusage=2.5.29.37.0)(!(pkiextendedkeyusage=*))))&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search in the entire subtree</span>
+</span></span><span style="display:flex;"><span>$searcher.SearchScope = <span style="color:#e6db74">&#34;Subtree&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find all matching entries</span>
+</span></span><span style="display:flex;"><span>$results = $searcher.FindAll()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Iterate through the results and display the properties</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span> ($result <span style="color:#66d9ef">in</span> $results) {
+</span></span><span style="display:flex;"><span>    $entry = $result.GetDirectoryEntry()
+</span></span><span style="display:flex;"><span>    $entry.Properties | <span style="color:#66d9ef">foreach</span> {
+</span></span><span style="display:flex;"><span>        Write-Output <span style="color:#e6db74">&#34;</span>$($_.PropertyName)<span style="color:#e6db74"> = </span>$($_.Value)<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<h2 id="1d1373">+Attacking LDAP+</h2>
+<ul>
+<li><strong>Netexec/Crackmapexec</strong>:
+<ul>
+<li>Has alot of amazing modules we can use with LDAP:</li>
+<li><strong>Command</strong>: crackmapexec ldap -L</li>
+</ul>
+</li>
+</ul>
+<h3 id="password-spraying-and-bruteforcing-ldap">Password Spraying &amp; Bruteforcing LDAP:</h3>
+<h4 id="ldap-bruteforcing-with-hydra">LDAP bruteforcing with hydra:</h4>
+<ul>
+<li><strong>Command</strong>: <code>hydra -l {Username} -P {Big_Passwordlist} {IP} ldap2 -V -f</code></li>
+</ul>
+<h3 id="ldap-injection">LDAP Injection:</h3>
+<ul>
+<li>
+<p>LDAP injection attacks are similar to SQL Injection attacks but target the LDAP directory service instead of a database.</p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/LDAP_Injection_Prevention_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/LDAP_Injection_Prevention_Cheat_Sheet.html</a></p>
+</li>
+<li>
+<p><a href="https://book.hacktricks.xyz/pentesting-web/ldap-injection">https://book.hacktricks.xyz/pentesting-web/ldap-injection</a></p>
+</li>
+<li>
+<p>&lt;/ox-hugo/EN-Blackhat-Europe-2008-LDAP-Injection-Blind-LDAP-Injection.pdf&gt;</p>
+</li>
+<li>
+<p><strong>We can fuzz using burp</strong>:</p>
+<ul>
+<li>Capture request and then use these lists to fuzz injection points:
+<ul>
+<li><a href="https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/master/LDAP%20Injection/Intruder/LDAP_FUZZ.txt">https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/master/LDAP%20Injection/Intruder/LDAP_FUZZ.txt</a></li>
+<li><a href="https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/master/LDAP%20Injection/Intruder/LDAP_attributes.txt">https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/master/LDAP%20Injection/Intruder/LDAP_attributes.txt</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="attack-explained-dot">Attack Explained.</h4>
+<ul>
+<li>To test for LDAP injection, we can use input values that contain special characters or operators that can change the query&rsquo;s meaning:
+<ul>
+<li><strong>Injection Characters</strong>:
+<ul>
+<li><code>*</code>
+<ul>
+<li>An asterisk * can match any number of characters.</li>
+</ul>
+</li>
+<li><code>( )</code>
+<ul>
+<li>Parentheses ( ) can group expressions.</li>
+</ul>
+</li>
+<li><code>|</code>
+<ul>
+<li>A vertical bar | can perform logical OR.</li>
+</ul>
+</li>
+<li><code>&amp;</code>
+<ul>
+<li>An ampersand &amp; can perform logical AND.</li>
+</ul>
+</li>
+<li><code>(cn=*)</code>
+<ul>
+<li>Input values that try to bypass authentication or authorisation checks by injecting conditions that always evaluate to true can be used. For example, <code>(cn=*)</code> or <code>(objectClass=*)</code> can be used as input values for a username or password fields.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="example-of-vulnerable-code">Example of Vulnerable Code</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%0a$username%20=%20$_POST[%27username%27];%0a$password%20=%20$_POST[%27password%27];%0a$filter%20=%20%22%28&amp;%28uid=$username%29%28userPassword=$password%29%29%22;%0a$result%20=%20ldap_search%28$ldapconn,%20$basedn,%20$filter%29;">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$username <span style="color:#f92672">=</span> $_POST[<span style="color:#e6db74">&#39;username&#39;</span>];
+</span></span><span style="display:flex;"><span>$password <span style="color:#f92672">=</span> $_POST[<span style="color:#e6db74">&#39;password&#39;</span>];
+</span></span><span style="display:flex;"><span>$filter <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;(&amp;(uid=</span><span style="color:#e6db74">$username</span><span style="color:#e6db74">)(userPassword=</span><span style="color:#e6db74">$password</span><span style="color:#e6db74">))&#34;</span>;
+</span></span><span style="display:flex;"><span>$result <span style="color:#f92672">=</span> <span style="color:#a6e22e">ldap_search</span>($ldapconn, $basedn, $filter);</span></span></code></pre></div>
+    
+</div>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Example of Injection Attack</p>
+<p>:ID:       4826ee7c-d9a3-4bec-afc1-129c87b6f360</p>
+<p>An attacker could input <code>*)(uid=*))(|(uid=*</code> as the username, which would modify the LDAP filter to:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%28&amp;%28uid=*%29%28uid=*%29%29%28%7c%28uid=*%29%28userPassword=password%29%29">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">(</span>&amp;<span style="color:#f92672">(</span>uid<span style="color:#f92672">=</span>*<span style="color:#f92672">)(</span>uid<span style="color:#f92672">=</span>*<span style="color:#f92672">))(</span>|<span style="color:#f92672">(</span>uid<span style="color:#f92672">=</span>*<span style="color:#f92672">)(</span>userPassword<span style="color:#f92672">=</span>password<span style="color:#f92672">))</span></span></span></code></pre></div>
+    
+</div>
+<p>This could potentially bypass authentication.</p>
+</li>
+</ul>
+<h4 id="real-world-example">Real-world Example</h4>
+<ul>
+<li>For example, suppose an application uses the following <code>LDAP</code> query to authenticate users:
+<ul>
+<li><code>(&amp;(objectClass=user)(sAMAccountName=$username)(userPassword=$password))</code>
+<ul>
+<li>This is an actual piece of PHP code that would run.</li>
+</ul>
+</li>
+<li>In this query, <code>$username</code> and <code>$password</code> contain the user&rsquo;s login credentials.
+<ul>
+<li>An attacker could inject the <code>*</code> character into either field to modify the LDAP query and bypass authentication as it&rsquo;s not being sanitized.</li>
+<li>If injected into the <code>$username</code> field the LDAP query will match any user account with any password!!</li>
+<li>If injected into the <code>$password</code> field the LDAP query match any user account with any password that contains the injected string. This would allow the attacker to gain access to the application with any username</li>
+</ul>
+</li>
+<li>+Lab Example+:
+<ul>
+<li><figure><img src="/ox-hugo/2024-03-14-182350_.png">
+</figure>
+</li>
+<li>I injected the <code>*</code> char into the username and password fields and could login as the code was not being sanitized.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="prevention-techniques">Prevention Techniques</h4>
+<ol>
+<li><strong>Input Validation</strong>: Sanitize and validate all user inputs before using them in LDAP queries.</li>
+<li><strong>Use Bind Operations</strong>: Instead of constructing search filters with user input, use LDAP bind operations for authentication.</li>
+<li><strong>Escape Special Characters</strong>: Use LDAP-specific escaping functions to neutralize special characters in user input.</li>
+<li><strong>Implement Least Privilege</strong>: Ensure LDAP accounts have minimal necessary permissions.</li>
+<li><strong>Use Prepared Statements</strong>: If available in your programming language, use LDAP prepared statements to separate queries from data.</li>
+</ol>
+<h4 id="fix">Fix</h4>
+<ul>
+<li>To mitigate the risks associated with LDAP injection attacks, it is crucial to thoroughly validate and sanitize user input before incorporating it into LDAP queries. This process should involve removing LDAP-specific special characters like * and employing parameterised queries to ensure user input is treated solely as data, not executable code.</li>
+</ul>
+<h4 id="additional-resources">Additional Resources</h4>
+<ul>
+<li>OWASP LDAP Injection Prevention Cheat Sheet: <a href="https://cheatsheetseries.owasp.org/cheatsheets/LDAP_Injection_Prevention_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/LDAP_Injection_Prevention_Cheat_Sheet.html</a></li>
+<li>LDAP Injection &amp; Blind LDAP Injection in Web Applications: <a href="https://www.blackhat.com/presentations/bh-europe-08/Alonso-Parada/Whitepaper/bh-eu-08-alonso-parada-WP.pdf">https://www.blackhat.com/presentations/bh-europe-08/Alonso-Parada/Whitepaper/bh-eu-08-alonso-parada-WP.pdf</a></li>
+</ul>
+<h2 id="troubleshooting-ldap">Troubleshooting LDAP</h2>
+<p>Common LDAP issues and their solutions:</p>
+<ol>
+<li>
+<p>Connection Failures</p>
+<ul>
+<li>Check network connectivity</li>
+<li>Verify LDAP server is running</li>
+<li>Ensure correct LDAP URL (ldap:// or ldaps://)</li>
+<li>Check firewall settings</li>
+</ul>
+</li>
+<li>
+<p>Authentication Issues</p>
+<ul>
+<li>Verify correct bind DN and password</li>
+<li>Check user account status (not locked or disabled)</li>
+<li>Ensure user has necessary permissions</li>
+</ul>
+</li>
+<li>
+<p>Search Problems</p>
+<ul>
+<li>Verify correct base DN</li>
+<li>Check search filter syntax</li>
+<li>Ensure attributes being searched exist in schema</li>
+</ul>
+</li>
+<li>
+<p>SSL/TLS Issues</p>
+<ul>
+<li>Verify SSL certificates are valid and trusted</li>
+<li>Check SSL/TLS configuration on both client and server</li>
+</ul>
+</li>
+<li>
+<p>Performance Problems</p>
+<ul>
+<li>Optimize search filters</li>
+<li>Use indexing on frequently searched attributes</li>
+<li>Consider implementing connection pooling</li>
+</ul>
+</li>
+<li>
+<p>Schema Violations</p>
+<ul>
+<li>Ensure all required attributes are provided</li>
+<li>Check attribute syntax and value constraints</li>
+</ul>
+</li>
+<li>
+<p>Replication Issues</p>
+<ul>
+<li>Check network connectivity between replicas</li>
+<li>Verify replication agreements are correctly configured</li>
+<li>Check for conflicting updates</li>
+</ul>
+</li>
+</ol>
+<p>Tools for LDAP Troubleshooting:</p>
+<ul>
+<li>ldapsearch: Command-line tool for performing LDAP searches</li>
+<li>Wireshark: Network protocol analyzer for inspecting LDAP traffic</li>
+<li>Directory Server Log Analysis tools</li>
+</ul>
+<h2 id="ldap-security-best-practices">LDAP Security Best Practices</h2>
+<ol>
+<li>
+<p>Use LDAPS (LDAP over SSL/TLS) to encrypt communications</p>
+</li>
+<li>
+<p>Implement strong authentication methods (e.g., SASL)</p>
+</li>
+<li>
+<p>Apply the principle of least privilege for LDAP accounts</p>
+</li>
+<li>
+<p>Regularly audit and update LDAP configurations</p>
+</li>
+<li>
+<p>Use input validation and parameterized queries to prevent LDAP injection</p>
+</li>
+<li>
+<p>Implement proper password policies</p>
+</li>
+<li>
+<p>Monitor LDAP logs for suspicious activities</p>
+</li>
+<li>
+<p>Keep LDAP software and related components up to date</p>
+</li>
+<li>
+<p>Use firewalls to restrict LDAP access to authorized hosts only</p>
+</li>
+<li>
+<p>Implement account lockout policies to prevent brute-force attacks</p>
+</li>
+<li>
+<p><strong>Fix</strong>:</p>
+<ul>
+<li>To mitigate the risks associated with LDAP injection attacks, it is crucial to thoroughly validate and sanitize user input before incorporating it into LDAP queries. This process should involve removing LDAP-specific special characters like * and employing parameterised queries to ensure user input is treated solely as data, not executable code.</li>
+</ul>
+</li>
+</ol>
+<h2 id="ldap-boxes-on-htb">LDAP Boxes on HTB:</h2>
+<ul>
+<li>
+<p><strong>Easy</strong>:</p>
+<ul>
+<li>Forest E</li>
+<li>Return E</li>
+<li>Support E</li>
+<li>Active E</li>
+</ul>
+</li>
+<li>
+<p><strong>Medium</strong>:</p>
+<ul>
+<li>Monteverde M</li>
+<li>YPuffy M</li>
+<li>Lightweight M</li>
+<li>Cascade M</li>
+<li>StreamIO M</li>
+<li>Intelligence M</li>
+<li>Outdated M</li>
+<li>Scrambled M</li>
+<li>Fuse M</li>
+<li>Resolute M</li>
+</ul>
+</li>
+<li>
+<p><strong>Hard</strong>:</p>
+<ul>
+<li>Blackfield H</li>
+<li>Travel H</li>
+<li>Pikaboo H</li>
+</ul>
+</li>
+<li>
+<p><strong>Insane</strong>:</p>
+<ul>
+<li>PivotAPI I</li>
+<li>Sekhmet I</li>
+<li>Rebound I</li>
+<li>Fulcrum I</li>
+<li>Absolute I</li>
+<li>Coder I</li>
+<li>Response I</li>
+<li>Sizzle I</li>
+<li>CTF I</li>
+<li>Multimaster I</li>
+</ul>
+</li>
+<li>
+<p><strong>Endgames</strong>:</p>
+<ul>
+<li>Odyssey</li>
+</ul>
+</li>
+<li>
+<p><strong>Prolabs</strong>:</p>
+<ul>
+<li>RastaLabs I</li>
+<li>Cybernetics A</li>
+<li>Dante I</li>
+<li>APTLabs A</li>
+<li>Zephyr I</li>
+</ul>
+</li>
+</ul>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        5378
+                    
+                </li>
+            
+
+            
+            
+
+            
+                <li>en</li>
+            
+
+            
+                <li>
+                    <a href="https://gohugo.io" class="btn" target="_blank"
+                        >Hugo: 0.135.0</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    <a
+                        href="https://github.com/JingWangTW/dark-theme-editor"
+                        class="btn"
+                        target="_blank"
+                        >Theme: dark-theme-editor</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Oct 16 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+                <li title="">
+                    
+                </li>
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

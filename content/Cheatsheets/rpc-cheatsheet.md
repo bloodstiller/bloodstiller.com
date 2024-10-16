@@ -207,7 +207,7 @@ RPC (Remote Procedure Call) is a protocol that allows a program to execute a pro
 -   You can see these enumeration steps performed on my walkthrough for Cascade: 
     -   https://bloodstiller.com/walkthroughs/cascade-box 
 
-### Enumerating RPC using `RPCclient`: {#enumerating-rpc-using-rpcclient}
+### Enumerating RPC using RPCclient: {#enumerating-rpc-using-rpcclient}
 
 -   **Remember we can pass the pash with** `rpcclient` **too**:
     -   `--pw-nt-hash <hash>`
@@ -219,8 +219,8 @@ RPC (Remote Procedure Call) is a protocol that allows a program to execute a pro
 #### Connecting with rpcclient using a null/anonymous session: {#connecting-with-rpcclient-using-a-null-anonymous-session}
 
 -   **Connect with a null/anonymous session**:
-    -   **Command**: rpcclient -U "" &lt;ip&gt;
-    -   **Command**: rpcclient -U '%' &lt;ip&gt;
+    -   **Command**: `rpcclient -U "" [ip]`
+    -   **Command**: `rpcclient -U '%' [ip]`
         -   Try both of these one may work and the other may not
 
 
@@ -228,10 +228,10 @@ RPC (Remote Procedure Call) is a protocol that allows a program to execute a pro
 
 -   **Bruteforce Custom User** `RID's` **with forloop**:
     -   **Command**: 
-    ```
-    for i in \\((seq 500 1100);do rpcclient -N -U "" [ip] -c "queryuser 0x\\)(printf '%x\n' $i)" | grep "User Name\\|user_rid\\|group_rid" &amp;&amp; echo "";done
-    ```
-    -   +Note+:
+```bash
+for i in \\((seq 500 1100);do rpcclient -N -U "" [ip] -c "queryuser 0x\\)(printf '%x\n' $i)" | grep "User Name\\|user_rid\\|group_rid" &amp;&amp; echo "";done
+```
+-   +Note+:
         -   This is used for searching for custom RIDs (see below)
         -   The values `500` &amp; `1100` can be modified.
 
@@ -377,75 +377,60 @@ RPC (Remote Procedure Call) is a protocol that allows a program to execute a pro
         -   **Hex Value**: `0x00000000`
         -   **Meaning**: Means that none of these password restrictions are enabled.
 
+```shell
+# Enumerate Specific User Password Policy using rpcclient: 
+getusrdompwinfo [UserRID]
+getusrdompwinfo 0x46f
 
-#### Enumerate Specific User Password Policy using rpcclient: {#enumerate-specific-user-password-policy-using-rpcclient}
+# Retrieve Information about Available Services using rpcclient: 
+querydispinfo
 
--   **Command**: `getusrdompwinfo [UserRID]`
--   +Example+: `getusrdompwinfo 0x46f`
+# Enumerate Domain Groups using rpcclient: 
+enumdomgroups
 
+# Resolve SIDs to Names using rpcclient: 
+lookupsids [SID]
 
-#### Retrieve Information about Available Services using rpcclient: {#retrieve-information-about-available-services-using-rpcclient}
+# Enumerate System Privileges using rpcclient: 
+enumprivs
 
--   **Command**: `querydispinfo`
+# Enumerate Shared Resources using rpcclient: 
+netshareenum
 
+# List Detailed Information about Shared Resources using rpcclient: 
+netshareenumall
 
-#### Enumerate Domain Groups using rpcclient: {#enumerate-domain-groups-using-rpcclient}
+# Retrieve Information about a Specific Share using rpcclient: 
+netsharegetinfo [sharename]
 
--   **Command**: `enumdomgroups`
+# Create a New Share using rpcclient: 
+netshareadd "C:\path" "sharename" [type] "Description"
 
+# Enumerate Trusted Domains using rpcclient: 
+enumtrustdoms
 
-#### Resolve SIDs to Names using rpcclient: {#resolve-sids-to-names-using-rpcclient}
+```
+### Enumerating RPC using rpcinfo: {#enumerating-rpc-using-rpcinfo}
 
--   **Command**: `lookupsids [SID]`
-
-
-#### Enumerate System Privileges using rpcclient: {#enumerate-system-privileges-using-rpcclient}
-
--   **Command**: `enumprivs`
-
-
-#### Enumerate Shared Resources using rpcclient: {#enumerate-shared-resources-using-rpcclient}
-
--   **Command**: `netshareenum`
-
-
-#### List Detailed Information about Shared Resources using rpcclient: {#list-detailed-information-about-shared-resources-using-rpcclient}
-
--   **Command**: `netshareenumall`
-
-
-#### Retrieve Information about a Specific Share using rpcclient: {#retrieve-information-about-a-specific-share-using-rpcclient}
-
--   **Command**: `netsharegetinfo [sharename]`
-
-
-#### Create a New Share using rpcclient: {#create-a-new-share-using-rpcclient}
-
--   **Command**: `netshareadd "C:\path" "sharename" [type] "Description"`
-
-
-#### Enumerate Trusted Domains using rpcclient: {#enumerate-trusted-domains-using-rpcclient}
-
--   **Command**: `enumtrustdoms`
-
-
-### Enumerating RPC using `rpcinfo`: {#enumerating-rpc-using-rpcinfo}
-
--   **Command**: `rpcinfo [ip/url]`
--   +Example+: `rpcinfo 10.129.203.101`
+```bash
+rpcinfo [ip/url]
+rpcinfo 10.129.203.101
+```
 
 
 ### Enumerating RPC using Nmap: {#enumerating-rpc-using-nmap}
-
--   **Command**: `nmap -p 135 --script=msrpc-enum [target]`
--   **Command**: `nmap -p 135 --script=rpc-grind [target]`
+```bash
+nmap -p 135 --script=msrpc-enum [target]
+nmap -p 135 --script=rpc-grind [target]
+```
 -   +Note+: These Nmap scripts can provide valuable information about RPC services and endpoints.
 
 
 ### Enumerating RPC using impacket-rpcdump: {#enumerating-rpc-using-impacket-rpcdump}
-
--   **Command**: `impacket-rpcdump [domain/]username[:password]@target`
--   +Example+: `impacket-rpcdump ./Administrator:password123@192.168.1.100`
+```shell
+impacket-rpcdump [domain/]username[:password]@target
+impacket-rpcdump ./Administrator:password123@192.168.1.100
+```
 -   +Note+: This tool can enumerate RPC endpoints and provide detailed information about available interfaces.
 
 
@@ -459,32 +444,40 @@ RPC (Remote Procedure Call) is a protocol that allows a program to execute a pro
 
 
 #### Change a users password using rpcclient: {#change-a-users-password-using-rpcclient}
-
--   **Command**: `chgpasswd3 [user] [oldPass] [newPass]`
--   +Example+: `chgpasswd3 n.barley wellbum wellbum14`
+```bash
+chgpasswd3 [user] [oldPass] [newPass]
+chgpasswd3 n.barley wellbum wellbum14
+```
 
 
 #### Create a new user using rpcclient: {#create-a-new-user-using-rpcclient}
 
 -   **Create a new user on the remote Windows system using** `rpcclient` *with the* `createdomuser` **username command**:
-    -   **Command**: `createdomuser [username]`
-    -   **Command**: `setuserinfo2 username 24 [NewPassword]`
-    -   +Note+:
+
+```bash
+createdomuser [username]
+setuserinfo2 username 24 [NewPassword]
+```
+-   +Note+:
         -   In this example, the 24 value represents necessary Windows information class constant to set a user password.
         -   The value will always be 24 when setting a password.
 
 
 #### Create a new share using rpcclient: {#create-a-new-share-using-rpcclient}
 
--   **Command**: `netshareadd "C:\\[FolderToShare]" "[NameOfShare]" [ShareType] "[ShareDescription]"`
--   +Example+: `netshareadd "C:\Windows" "Windows" 10 "Windows Share"`
+```bash
+netshareadd "C:\\[FolderToShare]" "[NameOfShare]" [ShareType] "[ShareDescription]"
+netshareadd "C:\Windows" "Windows" 10 "Windows Share"
+```
+
 -   +Note+:
     -   `10`: This is the share type. The value 10 indicates that it is a disk drive. Other values can represent different types of shares (e.g., printers).
 
 
 #### Remove a Shared Resource using rpcclient: {#remove-a-shared-resource-using-rpcclient}
-
-**Command**: `netshareremove [sharename]`
+```bash
+netshareremove [sharename]
+```
 
 
 ## +Defending RPC+ {#6dca67}
