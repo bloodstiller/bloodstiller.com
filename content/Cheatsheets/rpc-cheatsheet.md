@@ -1,7 +1,7 @@
 +++
 tags = ["Pentesting", "RPC", "CheatSheet"]
 draft = false
-title = "RPC Cheat Sheet"
+title = "Attacking RPC: Deep Dive & Cheat Sheet"
 author = "bloodstiller"
 date = 2024-10-16
 +++
