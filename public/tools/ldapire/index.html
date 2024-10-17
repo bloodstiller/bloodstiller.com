@@ -14,11 +14,19 @@
 
     
         
-            <meta name="description" content="Bones &amp; All Cyber Security" />
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
         
 
         
-            <meta name="author" content="Bloodstiller" />
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
         
 
     
@@ -26,7 +34,7 @@
 
     <title>
         
-            Umbraco |
+            LDAPire: LDAP Enumeration Tool |
             Hack the planet
         
     </title>
@@ -133,7 +141,7 @@
 
     <div class="header_middle">
         
-            Umbraco -
+            LDAPire: LDAP Enumeration Tool -
             Hack the planet
         
     </div>
@@ -159,7 +167,7 @@
             
                 <li
                     
-                        class="dir closed-dir"
+                        class="dir opened-dir"
                     >
                     <span class="dir-text"> Tools </span>
 
@@ -471,22 +479,92 @@
 
         <div class="title">
             <h1 class="title-header">
-                
-    <i class="bi bi-tag"></i>
-
-
-
-                All About
-                <em>
-                    Umbraco
-                </em>
+                LDAPire: LDAP Enumeration Tool
             </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.17.10"
+                            >2024.17.10
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        3 mins to read
+                    </div>
+                
+            </div>
         </div>
 
         <div class="article-meta">
-            <div class="breadcumb">
-                <i class="bi bi-folder"></i>
-                
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/active-directory/"
+                            class="tag-btn">
+                            Active Directory
+                        </a>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/ldap/"
+                            class="tag-btn">
+                            LDAP
+                        </a>
+                    
+                        <a
+                            href="/tags/python/"
+                            class="tag-btn">
+                            Python
+                        </a>
+                    
+                        <a
+                            href="/tags/tools/"
+                            class="tag-btn">
+                            Tools
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
     
     
 
@@ -510,16 +588,11 @@
 
 
 
-<a href="http://localhost:1313/tags/" class="bread-btn">
-    
-        
-    <i class="bi bi-tag"></i>
-
-
+<a href="http://localhost:1313/tools/" class="bread-btn">
     
 
     
-        Tags
+        Tools
     
 </a>
 
@@ -530,29 +603,136 @@
 
 
 
-<a href="http://localhost:1313/tags/umbraco/" class="bread-btn">
+<a href="http://localhost:1313/tools/ldapire/" class="bread-btn">
     
 
     
-        Umbraco
+        
+            LDAPire: LDAP Enumeration Tool
+        
+
     
 </a>
 
-            </div>
+                </div>
+            
+
+            
         </div>
 
-        <hr />
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introducing-ldapire-a-tool-for-active-directory-reconnaissance">Introducing LDAPire: A Tool for Active Directory Reconnaissance</a>
+      <ul>
+        <li><a href="#what-is-ldapire">What is LDAPire?</a></li>
+        <li><a href="#key-features">Key Features</a></li>
+        <li><a href="#why-use-this-tool">Why Use This Tool?</a></li>
+        <li><a href="#how-to-use-it">How to Use It</a></li>
+        <li><a href="#output-and-analysis">Output and Analysis</a></li>
+        <li><a href="#ethical-considerations">Ethical Considerations</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        
 
-        <div class="list-files">
-            <ul class="section-tree">
-                
-                    <li class="file">
-                        <a href="http://localhost:1313/walkthroughs/remote-box/">
-                            Remote HTB Walkthrough
-                        </a>
-                    </li>
-                
-            </ul>
+
+        <div class="content">
+            
+                <h2 id="introducing-ldapire-a-tool-for-active-directory-reconnaissance">Introducing LDAPire: A Tool for Active Directory Reconnaissance</h2>
+<p>As penetration testers and security professionals, we often find ourselves needing to quickly assess and enumerate Active Directory environments. Today, I&rsquo;m excited to share a tool I&rsquo;ve developed that streamlines this process: LDAPire - the LDAP Checker and Enumerator.</p>
+<p>You can find the full source code and installation instructions for LDAPire on my GitHub repository: <a href="https://github.com/bloodstiller/ldapire">LDAPire on GitHub</a></p>
+<ul>
+<li>It&rsquo;s very much in it&rsquo;s infancy, however I plan on adding more features.</li>
+</ul>
+<h3 id="what-is-ldapire">What is LDAPire?</h3>
+<p>LDAPire is a Python-based tool designed to connect to LDAP servers (primarily Active Directory Domain Controllers), perform authentication, and enumerate users and groups. It&rsquo;s built with flexibility and ease of use in mind, making it an invaluable addition to any pentester&rsquo;s toolkit.</p>
+<h3 id="key-features">Key Features</h3>
+<ol>
+<li>
+<p><strong>Adaptive Connection Attempts</strong>: The tool first attempts to connect using SSL. If that fails, it automatically retries without SSL, ensuring maximum compatibility across different AD configurations.</p>
+</li>
+<li>
+<p><strong>Flexible Authentication</strong>: Support for both anonymous binds and authenticated connections, allowing for use in various scenarios you might encounter during a pentest.</p>
+</li>
+<li>
+<p><strong>Comprehensive Enumeration</strong>: Retrieves both basic and detailed information about users and groups, providing a wealth of data for further analysis.</p>
+</li>
+<li>
+<p><strong>Output Flexibility</strong>: Generates four separate output files, giving you both quick-reference lists and in-depth details about AD objects.</p>
+</li>
+<li>
+<p><strong>Robust Error Handling and Logging</strong>: Comprehensive logging helps you understand exactly what&rsquo;s happening during the enumeration process, aiding in troubleshooting and report writing.</p>
+</li>
+</ol>
+<h3 id="why-use-this-tool">Why Use This Tool?</h3>
+<ol>
+<li><strong>Time-Saving</strong>: Quickly gather essential AD information without manual queries or multiple tools.</li>
+<li><strong>Comprehensive Data</strong>: Get both high-level and detailed views of users and groups in one go.</li>
+<li><strong>Flexibility</strong>: Works with various AD configurations and authentication scenarios.</li>
+<li><strong>Pentesting-Oriented</strong>: Designed with the needs of security professionals in mind.</li>
+</ol>
+<h3 id="how-to-use-it">How to Use It</h3>
+<p>Using the tool is straightforward. After installation, you can run it with a simple command:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="python3%20pythonldap.py%20%3cDC_IP%3e%20[-u%20USERNAME]%20[-p%20PASSWORD]">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <pre><code>python3 pythonldap.py &lt;DC_IP&gt; [-u USERNAME] [-p PASSWORD]</code></pre>
+    
+</div>
+<p>For example, to perform an authenticated enumeration:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="python3%20pythonldap.py%20192.168.1.100%20-u%20%22DOMAIN%5cusername%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <pre><code>python3 pythonldap.py 192.168.1.100 -u &#34;DOMAIN\username&#34;</code></pre>
+    
+</div>
+<p>The tool will prompt for a password if not provided, ensuring secure credential handling.</p>
+<h3 id="output-and-analysis">Output and Analysis</h3>
+<p>The tool generates four key files:</p>
+<ol>
+<li><code>usersLdap.txt</code>: A quick reference list of user sAMAccountNames.</li>
+<li><code>usersLdap_detailed.txt</code>: Comprehensive details about each user.</li>
+<li><code>groupsLdap.txt</code>: A list of group sAMAccountNames.</li>
+<li><code>groupsLdap_detailed.txt</code>: Detailed information about each group.</li>
+</ol>
+<p>These files provide a goldmine of information for further analysis, helping you identify potential attack vectors, misconfigurations, or areas for deeper investigation.</p>
+<h3 id="ethical-considerations">Ethical Considerations</h3>
+<p>As with any tool, it&rsquo;s crucial to use LDAPire responsibly and ethically. Always ensure you have explicit permission to test and enumerate the target Active Directory environment.</p>
+<p>Happy hunting!</p>
+<p>Bloodstiller</p>
+<p>P.S. Remember, you can find the full source code and contribute to the project on the <a href="https://github.com/bloodstiller/ldapire">GitHub repository</a></p>
+
+            
         </div>
     </article>
 
@@ -607,8 +787,8 @@
             
                 <li>
                     
-                        Pages:
-                        1
+                        Word Count:
+                        444
                     
                 </li>
             
@@ -642,7 +822,10 @@
             
                 <li>
                     
-                        
+                        Last modified: &nbsp;
+                        <time>
+                            Oct 17 2024 00:00:00
+                        </time>
                     
                 </li>
             

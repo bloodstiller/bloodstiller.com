@@ -3,18 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/tags/active-directory/</loc>
-    <lastmod>2024-10-16T00:00:00+00:00</lastmod>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/author/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/author/bloodstiller/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ldap/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/ldapire/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tools/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/windows/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/cheatsheets/ldap-cheatsheet/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/cheatsheets/rpc-cheatsheet/</loc>
-    <lastmod>2024-10-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/author/</loc>
-    <lastmod>2024-10-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/author/bloodstiller/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/box/</loc>
@@ -32,13 +56,7 @@
     <loc>http://localhost:1313/tags/csharp/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2024-10-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/htb/</loc>
-    <lastmod>2024-10-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/ldap/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/pentesting/</loc>
@@ -50,13 +68,7 @@
     <loc>http://localhost:1313/tags/sql/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-10-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/walkthroughs/</loc>
-    <lastmod>2024-10-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/windows/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/articles/</loc>
