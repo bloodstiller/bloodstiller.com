@@ -14,11 +14,19 @@
 
     
         
-            <meta name="description" content="Bones &amp; All Cyber Security" />
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
         
 
         
-            <meta name="author" content="Bloodstiller" />
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
         
 
     
@@ -26,7 +34,7 @@
 
     <title>
         
-            MsDS-KeyCredentialLink |
+            BloodServer: A Secure File Transfer Tool for Penetration Testers |
             Hack the planet
         
     </title>
@@ -133,7 +141,7 @@
 
     <div class="header_middle">
         
-            MsDS-KeyCredentialLink -
+            BloodServer: A Secure File Transfer Tool for Penetration Testers -
             Hack the planet
         
     </div>
@@ -159,7 +167,7 @@
             
                 <li
                     
-                        class="dir closed-dir"
+                        class="dir opened-dir"
                     >
                     <span class="dir-text"> Tools </span>
 
@@ -481,22 +489,92 @@
 
         <div class="title">
             <h1 class="title-header">
-                
-    <i class="bi bi-tag"></i>
-
-
-
-                All About
-                <em>
-                    MsDS-KeyCredentialLink
-                </em>
+                BloodServer: A Secure File Transfer Tool for Penetration Testers
             </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.17.10"
+                            >2024.17.10
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        3 mins to read
+                    </div>
+                
+            </div>
         </div>
 
         <div class="article-meta">
-            <div class="breadcumb">
-                <i class="bi bi-folder"></i>
-                
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/active-directory/"
+                            class="tag-btn">
+                            Active Directory
+                        </a>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/server/"
+                            class="tag-btn">
+                            Server
+                        </a>
+                    
+                        <a
+                            href="/tags/python/"
+                            class="tag-btn">
+                            Python
+                        </a>
+                    
+                        <a
+                            href="/tags/tools/"
+                            class="tag-btn">
+                            Tools
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
     
     
 
@@ -520,16 +598,11 @@
 
 
 
-<a href="http://localhost:1313/tags/" class="bread-btn">
-    
-        
-    <i class="bi bi-tag"></i>
-
-
+<a href="http://localhost:1313/tools/" class="bread-btn">
     
 
     
-        Tags
+        Tools
     
 </a>
 
@@ -540,35 +613,252 @@
 
 
 
-<a href="http://localhost:1313/tags/msds-keycredentiallink/" class="bread-btn">
+<a href="http://localhost:1313/tools/bloodserver/" class="bread-btn">
     
 
     
-        MsDS-KeyCredentialLink
+        
+            BloodServer: A Secure File Transfer Tool for Penetration Testers
+        
+
     
 </a>
 
-            </div>
+                </div>
+            
+
+            
         </div>
 
-        <hr />
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#bloodserver-a-secure-file-transfer-tool-for-penetration-testers">BloodServer: A Secure File Transfer Tool for Penetration Testers</a>
+      <ul>
+        <li><a href="#key-features">Key Features</a></li>
+        <li><a href="#requirements-and-installation">Requirements and Installation</a></li>
+        <li><a href="#usage-example">Usage Example</a></li>
+        <li><a href="#client-side-file-upload">Client-Side File Upload</a></li>
+        <li><a href="#security-considerations">Security Considerations</a></li>
+        <li><a href="#responsible-use">Responsible Use</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        
 
-        <div class="list-files">
-            <ul class="section-tree">
-                
-                    <li class="file">
-                        <a href="http://localhost:1313/walkthroughs/outdated-box/">
-                            Outdated HTB Walkthrough
-                        </a>
-                    </li>
-                
-                    <li class="file">
-                        <a href="http://localhost:1313/articles/shadowcredentialsattack/">
-                            Understanding the Shadow Credentials Attack Vector
-                        </a>
-                    </li>
-                
-            </ul>
+
+        <div class="content">
+            
+                <h2 id="bloodserver-a-secure-file-transfer-tool-for-penetration-testers">BloodServer: A Secure File Transfer Tool for Penetration Testers</h2>
+<p>As a penetration tester, securely transferring files during engagements is crucial. That&rsquo;s why I developed BloodServer, a lightweight Python-based server designed specifically for pentesters who need a quick and secure way to transfer files in controlled environments.</p>
+<p>Feel free to contribute to the project or report issues on my <a href="https://github.com/bloodstiller/bloodserver">GitHub repository</a>.</p>
+<h3 id="key-features">Key Features</h3>
+<ol>
+<li><strong>Easy Setup</strong>: BloodServer can be quickly deployed with minimal configuration.</li>
+<li><strong>Authentication</strong>: Basic authentication is built-in to prevent unauthorized access.</li>
+<li><strong>HTTPS Support</strong>: Optional HTTPS encryption for secure data transfer.</li>
+<li><strong>File Upload Capability</strong>: Allows for easy file uploads via POST requests.</li>
+<li><strong>Configurable Options</strong>: Customize port, username, and password via command-line arguments.</li>
+<li><strong>Graceful Shutdown</strong>: Stop the server cleanly with a simple keyboard command.</li>
+<li><strong>Logging</strong>: Server activities are logged for monitoring and debugging.</li>
+</ol>
+<h3 id="requirements-and-installation">Requirements and Installation</h3>
+<p>BloodServer is lightweight and requires only Python 3.6+ and OpenSSL (for HTTPS support). Installation is as simple as cloning the repository:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/bloodstiller/bloodserver.git
+</span></span><span style="display:flex;"><span>cd bloodserver</span></span></code></pre></div>
+    
+</div>
+<p>No additional dependencies are needed as BloodServer uses Python standard library modules.</p>
+<h3 id="usage-example">Usage Example</h3>
+<p>To start the server with default settings:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="python%20bloodserver.py">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python bloodserver.py</span></span></code></pre></div>
+    
+</div>
+<p>For HTTPS and custom port:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="python%20bloodserver.py%20-p%208443%20--https">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python bloodserver.py -p <span style="color:#ae81ff">8443</span> --https</span></span></code></pre></div>
+    
+</div>
+<p>You can also specify a custom username and password:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="python%20bloodserver.py%20-u%20bloodstiller%20--password%20bl00dst1ll3r%20--https">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python bloodserver.py -u bloodstiller --password bl00dst1ll3r --https</span></span></code></pre></div>
+    
+</div>
+<h3 id="client-side-file-upload">Client-Side File Upload</h3>
+<p>BloodServer supports file uploads via POST requests. Here are examples for both Windows (PowerShell) and Linux systems:</p>
+<h4 id="powershell--windows">PowerShell (Windows)</h4>
+<p>For HTTP:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$wc = New-Object System.Net.WebClient; $wc.Headers.Add(<span style="color:#e6db74">&#34;Authorization&#34;</span>, <span style="color:#e6db74">&#34;Basic &#34;</span> + [<span style="color:#66d9ef">Convert</span>]::ToBase64String([<span style="color:#66d9ef">Text.Encoding</span>]::ASCII.GetBytes(<span style="color:#e6db74">&#34;username:password&#34;</span>))); <span style="color:#66d9ef">try</span> { $response = $wc.UploadData(<span style="color:#e6db74">&#34;http://serverip:port&#34;</span>, [<span style="color:#66d9ef">System.IO.File</span>]::ReadAllBytes(<span style="color:#e6db74">&#34;path\to\file&#34;</span>)); Write-Host <span style="color:#e6db74">&#34;Server response: </span>$([<span style="color:#66d9ef">System.Text.Encoding</span>]::UTF8.GetString($response))<span style="color:#e6db74">&#34;</span>; Write-Host <span style="color:#e6db74">&#34;File sent successfully!&#34;</span> } <span style="color:#66d9ef">catch</span> { Write-Host <span style="color:#e6db74">&#34;An error occurred: </span>$_<span style="color:#e6db74">&#34;</span> }</span></span></code></pre></div>
+    
+</div>
+<p>For HTTPS (ignoring SSL certificate errors):</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>[<span style="color:#66d9ef">System.Net.ServicePointManager</span>]::ServerCertificateValidationCallback = {$true}; $wc = New-Object System.Net.WebClient; $wc.Headers.Add(<span style="color:#e6db74">&#34;Authorization&#34;</span>, <span style="color:#e6db74">&#34;Basic &#34;</span> + [<span style="color:#66d9ef">Convert</span>]::ToBase64String([<span style="color:#66d9ef">Text.Encoding</span>]::ASCII.GetBytes(<span style="color:#e6db74">&#34;username:password&#34;</span>))); <span style="color:#66d9ef">try</span> { $response = $wc.UploadData(<span style="color:#e6db74">&#34;https://serverip:port&#34;</span>, [<span style="color:#66d9ef">System.IO.File</span>]::ReadAllBytes(<span style="color:#e6db74">&#34;path\to\file&#34;</span>)); Write-Host <span style="color:#e6db74">&#34;Server response: </span>$([<span style="color:#66d9ef">System.Text.Encoding</span>]::UTF8.GetString($response))<span style="color:#e6db74">&#34;</span>; Write-Host <span style="color:#e6db74">&#34;File sent successfully!&#34;</span> } <span style="color:#66d9ef">catch</span> { Write-Host <span style="color:#e6db74">&#34;An error occurred: </span>$_<span style="color:#e6db74">&#34;</span> }</span></span></code></pre></div>
+    
+</div>
+<h4 id="linux">Linux</h4>
+<p>For HTTP:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST -u username:password -F <span style="color:#e6db74">&#34;file=@/path/to/your/file&#34;</span> http://serverip:port</span></span></code></pre></div>
+    
+</div>
+<p>For HTTPS (ignoring SSL certificate errors):</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST -u username:password -F <span style="color:#e6db74">&#34;file=@/path/to/your/file&#34;</span> -k https://serverip:port</span></span></code></pre></div>
+    
+</div>
+<p>Replace <code>username</code>, <code>password</code>, <code>/path/to/your/file</code>, <code>serverip</code>, and <code>port</code> with your specific values.</p>
+<h3 id="security-considerations">Security Considerations</h3>
+<p>While BloodServer provides basic security features, it&rsquo;s important to note:</p>
+<ul>
+<li>It&rsquo;s designed for temporary use in controlled environments only.</li>
+<li>Always use HTTPS in production environments.</li>
+<li>The default self-signed certificate is not suitable for production. Use a proper SSL certificate from a trusted CA.</li>
+<li>Regularly update the authentication credentials.</li>
+<li>Be cautious when using commands that ignore SSL certificate errors, as they bypass security checks.</li>
+</ul>
+<h3 id="responsible-use">Responsible Use</h3>
+<p>BloodServer is a tool for professional penetration testers and should only be used in environments where you have explicit permission. Misuse of this tool could lead to security vulnerabilities if deployed in inappropriate settings.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>BloodServer aims to fill a niche need for penetration testers who require a quick, secure file transfer solution during engagements. While it&rsquo;s a powerful tool in the right hands, always remember the importance of responsible use and adherence to security best practices.</p>
+<p>Feel free to contribute to the project or report issues on my <a href="https://github.com/bloodstiller/bloodserver">GitHub repository</a>.</p>
+<p>Happy hacking!</p>
+<p>Bloodstiller</p>
+
+            
         </div>
     </article>
 
@@ -623,8 +913,8 @@
             
                 <li>
                     
-                        Pages:
-                        2
+                        Word Count:
+                        504
                     
                 </li>
             
@@ -658,7 +948,10 @@
             
                 <li>
                     
-                        
+                        Last modified: &nbsp;
+                        <time>
+                            Oct 17 2024 00:00:00
+                        </time>
                     
                 </li>
             

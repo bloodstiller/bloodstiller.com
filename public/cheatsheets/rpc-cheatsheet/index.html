@@ -186,6 +186,16 @@
         
             
                 <li class="file">
+                    <a href="http://localhost:1313/tools/bloodserver/" title="./tools/bloodserver/">
+                        
+                            BloodServer: A Secure File Transfer Tool for Penetration Testers
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
                     <a href="http://localhost:1313/tools/ldapire/" title="./tools/ldapire/">
                         
                             LDAPire: LDAP Enumeration Tool
@@ -450,16 +460,6 @@
         
             
                 <li class="file">
-                    <a href="http://localhost:1313/bloodserver/" title="./bloodserver/">
-                        
-                            BloodServer: A Secure File Transfer Tool for Penetration Testers
-                        
-                    </a>
-                </li>
-            
-        
-            
-                <li class="file">
                     <a href="http://localhost:1313/aboutme/" title="./aboutme/">
                         
                             about me
@@ -523,7 +523,7 @@
                         class="readtime"
                         title="Time to Read">
                         <i class="bi bi-clock"></i>
-                        10 mins to read
+                        9 mins to read
                     </div>
                 
             </div>
@@ -627,34 +627,13 @@
         <li><a href="#rpc-over-http">RPC over HTTP:</a></li>
       </ul>
     </li>
-    <li><a href="#rpc-information">RPC Information:</a>
-      <ul>
-        <li><a href="#definition">Definition:</a></li>
-        <li><a href="#components">Components:</a></li>
-        <li><a href="#types">Types:</a></li>
-        <li><a href="#protocols">Protocols:</a></li>
-        <li><a href="#common-uses">Common Uses:</a></li>
-        <li><a href="#advantages">Advantages:</a></li>
-        <li><a href="#disadvantages">Disadvantages:</a></li>
-        <li><a href="#implementation-considerations">Implementation Considerations:</a></li>
-        <li><a href="#security-concerns">Security Concerns:</a></li>
-        <li><a href="#relevance-to-penetration-testing">Relevance to Penetration Testing:</a></li>
-        <li><a href="#common-rpc-frameworks">Common RPC Frameworks:</a></li>
-      </ul>
-    </li>
-    <li><a href="#rpc-process--deep-dive">RPC Process (Deep Dive):</a>
+    <li><a href="#rpc-process--deep-dive">RPC Connection Process (Deep Dive):</a>
       <ul>
         <li><a href="#connection">Connection:</a></li>
         <li><a href="#execution">Execution:</a></li>
         <li><a href="#response">Response</a></li>
-        <li><a href="#error-handling">Error Handling:</a></li>
-        <li><a href="#security-considerations">Security Considerations:</a></li>
-        <li><a href="#performance-optimizations">Performance Optimizations:</a></li>
-        <li><a href="#idempotency">Idempotency:</a></li>
-        <li><a href="#versioning">Versioning:</a></li>
       </ul>
     </li>
-    <li><a href="#rpc-filtering">RPC Filtering:</a></li>
     <li><a href="#befb8b">+Enumerating RPC+</a>
       <ul>
         <li><a href="#enumerating-rpc-using-rpcclient">Enumerating RPC using RPCclient:</a></li>
@@ -668,8 +647,27 @@
         <li><a href="#attacking-rpc-using-rpcclient">Attacking RPC using <code>rpcclient</code>:</a></li>
       </ul>
     </li>
-    <li><a href="#6dca67">+Defending RPC+</a></li>
-    <li><a href="#common-rpc-vulnerabilities">Common RPC Vulnerabilities:</a></li>
+    <li><a href="#6dca67">Defending RPC</a>
+      <ul>
+        <li><a href="#common-rpc-vulnerabilities">Common RPC Vulnerabilities:</a></li>
+      </ul>
+    </li>
+    <li><a href="#rpc-information">RPC Protocol Information:</a>
+      <ul>
+        <li><a href="#rpc-filtering">RPC Filtering:</a></li>
+        <li><a href="#definition">Definition:</a></li>
+        <li><a href="#components">Components:</a></li>
+        <li><a href="#types">Types:</a></li>
+        <li><a href="#protocols">Protocols:</a></li>
+        <li><a href="#common-uses">Common Uses:</a></li>
+        <li><a href="#advantages">Advantages:</a></li>
+        <li><a href="#disadvantages">Disadvantages:</a></li>
+        <li><a href="#implementation-considerations">Implementation Considerations:</a></li>
+        <li><a href="#security-concerns">Security Concerns:</a></li>
+        <li><a href="#relevance-to-penetration-testing">Relevance to Penetration Testing:</a></li>
+        <li><a href="#common-rpc-frameworks">Common RPC Frameworks:</a></li>
+      </ul>
+    </li>
     <li><a href="#rpc-vs-dot-rest">RPC vs. REST</a>
       <ul>
         <li><a href="#rpc">RPC:</a></li>
@@ -735,74 +733,7 @@
 <li>Useful for remote management in environments where direct RPC access is restricted.</li>
 <li>Can be enumerated using tools like Nmap with appropriate scripts.</li>
 </ul>
-<h2 id="rpc-information">RPC Information:</h2>
-<h3 id="definition">Definition:</h3>
-<ul>
-<li>A protocol for executing code on a remote server.</li>
-</ul>
-<h3 id="components">Components:</h3>
-<ul>
-<li><strong>Client</strong>: Sends the request.</li>
-<li><strong>Server</strong>: Executes the function and returns a result.</li>
-</ul>
-<h3 id="types">Types:</h3>
-<ol>
-<li><strong>Synchronous RPC</strong>: Client waits for the server to respond.</li>
-<li><strong>Asynchronous RPC</strong>: Client continues operation without waiting.</li>
-</ol>
-<h3 id="protocols">Protocols:</h3>
-<ul>
-<li>XML-RPC</li>
-<li>JSON-RPC</li>
-<li>gRPC</li>
-</ul>
-<h3 id="common-uses">Common Uses:</h3>
-<ul>
-<li>Distributed computing</li>
-<li>Web services</li>
-<li>APIs</li>
-</ul>
-<h3 id="advantages">Advantages:</h3>
-<ul>
-<li>Simplifies development of distributed applications</li>
-<li>Allows for heterogeneous environments (different languages/platforms)</li>
-<li>Can improve performance in certain scenarios</li>
-</ul>
-<h3 id="disadvantages">Disadvantages:</h3>
-<ul>
-<li>Can introduce network-related complexities</li>
-<li>Potential security risks if not properly implemented</li>
-<li>May have higher latency compared to local procedure calls</li>
-</ul>
-<h3 id="implementation-considerations">Implementation Considerations:</h3>
-<ul>
-<li>Error handling for network issues</li>
-<li>Version compatibility between client and server</li>
-<li>Security measures (authentication, encryption)</li>
-<li>Performance optimization (caching, connection pooling)</li>
-</ul>
-<h3 id="security-concerns">Security Concerns:</h3>
-<ul>
-<li>Unauthorized access</li>
-<li>Data interception</li>
-<li>Denial-of-service attacks</li>
-</ul>
-<h3 id="relevance-to-penetration-testing">Relevance to Penetration Testing:</h3>
-<ul>
-<li>Can be used to enumerate Active Directory environments.</li>
-<li>Enumeration of exposed functions</li>
-<li>Injection vulnerabilities</li>
-<li>Insecure data transmission</li>
-</ul>
-<h3 id="common-rpc-frameworks">Common RPC Frameworks:</h3>
-<ul>
-<li>gRPC (Google)</li>
-<li>Apache Thrift</li>
-<li>XML-RPC</li>
-<li>JSON-RPC</li>
-<li>Java RMI (Remote Method Invocation)</li>
-</ul>
-<h2 id="rpc-process--deep-dive">RPC Process (Deep Dive):</h2>
+<h2 id="rpc-process--deep-dive">RPC Connection Process (Deep Dive):</h2>
 <h3 id="connection">Connection:</h3>
 <ol>
 <li>
@@ -861,40 +792,12 @@
 </ul>
 </li>
 </ol>
-<h3 id="error-handling">Error Handling:</h3>
-<ul>
-<li>Network errors are detected and may trigger retries.</li>
-<li>Application-level errors are communicated back to the client.</li>
-</ul>
-<h3 id="security-considerations">Security Considerations:</h3>
-<ul>
-<li>Authentication may occur before or during the RPC process.</li>
-<li>Encryption can be applied to protect data in transit.</li>
-</ul>
-<h3 id="performance-optimizations">Performance Optimizations:</h3>
-<ul>
-<li>Connection pooling to reuse network connections.</li>
-<li>Caching of results for frequently called procedures.</li>
-<li>Batching of multiple RPC calls to reduce network overhead.</li>
-</ul>
-<h3 id="idempotency">Idempotency:</h3>
-<ul>
-<li>Some RPC systems ensure that operations can be safely retried without side effects.</li>
-</ul>
-<h3 id="versioning">Versioning:</h3>
-<ul>
-<li>RPC systems often include version information to handle compatibility between client and server.</li>
-</ul>
-<h2 id="rpc-filtering">RPC Filtering:</h2>
-<ul>
-<li>Windows systems often implement RPC filtering to restrict access.</li>
-<li>Can be configured through Group Policy or Windows Firewall with Advanced Security.</li>
-</ul>
 <h2 id="befb8b">+Enumerating RPC+</h2>
 <ul>
-<li>You can see these enumeration steps performed on my walkthrough for Cascade:
+<li>You can see some of these enumeration steps performed on my walkthrough&rsquo;s for Cascade &amp; Fuse:
 <ul>
 <li><a href="https://bloodstiller.com/walkthroughs/cascade-box">https://bloodstiller.com/walkthroughs/cascade-box</a></li>
+<li><a href="https://bloodstiller.com/walkthroughs/fuse-box">https://bloodstiller.com/walkthroughs/fuse-box</a></li>
 </ul>
 </li>
 </ul>
@@ -911,23 +814,57 @@
 </li>
 </ul>
 <h4 id="connecting-with-rpcclient-using-a-null-anonymous-session">Connecting with rpcclient using a null/anonymous session:</h4>
-<ul>
-<li><strong>Connect with a null/anonymous session</strong>:
-<ul>
-<li><strong>Command</strong>: <code>rpcclient -U &quot;&quot; [ip]</code></li>
-<li><strong>Command</strong>: <code>rpcclient -U '%' [ip]</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="rpcclient%20-U%20%22%22%20[ip]%0arpcclient%20-U%20%27%25%27%20[ip]">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rpcclient -U <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">[</span>ip<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>rpcclient -U <span style="color:#e6db74">&#39;%&#39;</span> <span style="color:#f92672">[</span>ip<span style="color:#f92672">]</span></span></span></code></pre></div>
+    
+</div>
 <ul>
 <li>Try both of these one may work and the other may not</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="searching-for-custom-rid-s-using-rpcclient">Searching for custom RID&rsquo;s using rpcclient:</h4>
+<h4 id="enumerating-users-using-rpcclient">Enumerating users using rpcclient:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Enumerates domain users: </span>
+</span></span><span style="display:flex;"><span>enumdomusers</span></span></code></pre></div>
+    
+</div>
 <ul>
-<li><strong>Bruteforce Custom User</strong> <code>RID's</code> <strong>with forloop</strong>:
+<li>+Note+:
 <ul>
-<li><strong>Command</strong>:</li>
+<li>We will be given the users RID which can then be used with <code>queryuser</code> to enumerate further.</li>
+<li>This provides similar information to LDAP including Description etc</li>
 </ul>
 </li>
 </ul>
@@ -941,110 +878,20 @@
 <div class="codeblock">
     
         <div class="copy-button-box">
-            <button class="copy-button" state="copy" data="for%20i%20in%20%5c%5c%28%28seq%20500%201100%29;do%20rpcclient%20-N%20-U%20%22%22%20[ip]%20-c%20%22queryuser%200x%5c%5c%29%28printf%20%27%25x%5cn%27%20$i%29%22%20%7c%20grep%20%22User%20Name%5c%5c%7cuser_rid%5c%5c%7cgroup_rid%22%20&amp;amp;&amp;amp;%20echo%20%22%22;done">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
                 <i class="bi bi-copy"></i>
             </button>
         </div>
     
 
     
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#ae81ff">\\</span><span style="color:#f92672">((</span>seq <span style="color:#ae81ff">500</span> 1100<span style="color:#f92672">)</span>;<span style="color:#66d9ef">do</span> rpcclient -N -U <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">[</span>ip<span style="color:#f92672">]</span> -c <span style="color:#e6db74">&#34;queryuser 0x\\)(printf &#39;%x\n&#39; </span>$i<span style="color:#e6db74">)&#34;</span> | grep <span style="color:#e6db74">&#34;User Name\\|user_rid\\|group_rid&#34;</span> &amp;amp;&amp;amp; echo <span style="color:#e6db74">&#34;&#34;</span>;<span style="color:#66d9ef">done</span></span></span></code></pre></div>
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Query the user RID we have just found above:</span>
+</span></span><span style="display:flex;"><span>queryuser <span style="color:#f92672">[</span>RID<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Example</span>
+</span></span><span style="display:flex;"><span>queryuser 0x3e8</span></span></code></pre></div>
     
 </div>
 <ul>
-<li>+Note+:
--   This is used for searching for custom RIDs (see below)
--   The values <code>500</code> &amp; <code>1100</code> can be modified.</li>
-</ul>
-<!-- raw HTML omitted -->
-<ul>
-<li>
-<p>Why <code>RID</code> Stop Around <code>500</code>:</p>
-<ul>
-<li>
-<p><strong>Default RIDs in Windows</strong>:</p>
-<ul>
-<li>The first <code>500</code> RIDs are typically reserved for well-known or default accounts and groups in Windows systems. For example:
-<ul>
-<li><code>0x1f4</code> (500 in decimal) is often assigned to the Administrator account.</li>
-<li><code>0x1f5</code> (501) is the Guest account.</li>
-<li>Other default users and built-in groups (e.g., Administrators group, Users group) are typically assigned RIDs in this range.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Custom</strong> <code>RIDs</code>:</p>
-<ul>
-<li>RIDs above 500 are typically assigned to custom-created users and groups. When administrators create new users or groups, the system automatically assigns them higher RIDs, which is why your search starts at 500 and extends up to 1100 in this case. This range is where you would expect to find custom user accounts or groups.</li>
-</ul>
-</li>
-<li>
-<p><strong>Purpose of the Command</strong>:</p>
-<ul>
-<li>Search for Custom User RIDs:
-<ul>
-<li>Since the well-known accounts usually stop around 500, we are searching through RIDs in the 500 to 1100 range, which is where custom-created users or groups are likely to have RIDs.</li>
-<li>This method can be useful in penetration testing or during enumeration to discover non-default user accounts that have been created on the system, particularly when we don’t have a complete list of users.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<!-- raw HTML omitted -->
-<ul>
-<li>
-<p>Explanation of the Command:</p>
-<ul>
-<li>
-<p><code>Loop (for i in $(seq 500 1100))</code>:</p>
-<ul>
-<li>The loop iterates over a range of values <code>(500 to 1100)</code>, converting each value to a hexadecimal format (<code>via printf '%x\n' $i</code>) because RIDs are expressed in hexadecimal.</li>
-</ul>
-</li>
-<li>
-<p><code>rpcclient -N -U &quot;&quot; &lt;ip&gt;</code>:</p>
-<ul>
-<li><code>-N</code>: Specifies no password, used for anonymous connections.</li>
-<li><code>-U &quot;&quot;</code>: Attempts the connection without a username.</li>
-<li><code>[ip]</code>: The IP address of the target server.</li>
-</ul>
-</li>
-<li>
-<p><code>queryuser 0x&lt;rid&gt;</code>:</p>
-<ul>
-<li>Queries user information based on the given RID (Relative Identifier) from the current iteration of the loop, formatted as a hexadecimal value (e.g., 0x1f4 for RID 500).</li>
-</ul>
-</li>
-<li>
-<p><code>grep &quot;User Name\|user_rid\|group_rid&quot;</code>:</p>
-<ul>
-<li>Filters the output to display only lines containing user name, user RID, or group RID for easier readability.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="enumerating-users-using-rpcclient">Enumerating users using rpcclient:</h4>
-<ul>
-<li>
-<p><strong>Enumerates domain users on the remote server</strong>:</p>
-<ul>
-<li><strong>Command</strong>: <code>enumdomusers</code></li>
-<li>+Note+:
-<ul>
-<li>We will be given the users RID which can then be used with <code>queryuser</code> to enumerate further.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Query the user we have just found above</strong>:</p>
-<ul>
-<li><strong>Command</strong>: <code>queryuser [RID]</code></li>
-<li>+Example+: <code>queryuser 0x3e8</code></li>
 <li>+Note+:
 <ul>
 <li>Used with the RID discovered with <code>enumdomusers</code> above to enumerate users.</li>
@@ -1052,86 +899,148 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <h4 id="enumerating-domain-and-local-groups-with-rpcclient">Enumerating Domain &amp; Local Groups with rpcclient:</h4>
 <!-- raw HTML omitted -->
+<h5 id="enumerating-domain-alias-groups">Enumerating Domain alias groups:</h5>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#Domain alias Groups:</span>
+</span></span><span style="display:flex;"><span>enumalsgroups domain
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Local Groups:</span>
+</span></span><span style="display:flex;"><span>enumalsgroups builtin</span></span></code></pre></div>
+    
+</div>
 <ul>
-<li>
-<p>Enumerating Domain alias groups:</p>
-<ul>
-<li>
-<p><strong>Domain alias Groups</strong>:</p>
-<ul>
-<li><strong>Command</strong>: <code>enumalsgroups domain</code></li>
-</ul>
-</li>
-<li>
-<p><strong>Local Groups</strong>:</p>
-<ul>
-<li><strong>Command</strong>: <code>enumalsgroups builtin</code></li>
-</ul>
-</li>
 <li>
 <p><strong>Alias Groups Explanation</strong>:</p>
 <ul>
-<li>
-<p>Alias Groups (Local Groups):</p>
+<li>Alias Groups (Local Groups):
 <ul>
 <li>These groups are local to the machine or server, or specific to the domain controller but aren&rsquo;t part of the global domain groups.</li>
 <li>Alias groups often correspond to built-in groups on Windows (e.g., Administrators, Backup Operators), but they can also be domain-specific local groups.</li>
 <li>Alias groups can only contain members from the local domain.</li>
 </ul>
 </li>
+</ul>
+</li>
 <li>
-<p><strong>Scope</strong>:</p>
-<ul>
-<li><code>enumalsgroups domain/builtin</code>: Lists local alias groups that are specific to the domain controller or server.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<p><strong>Scope</strong>:
+-   <code>enumalsgroups domain/builtin</code>: Lists local alias groups that are specific to the domain controller or server.</p>
 </li>
 </ul>
 <!-- raw HTML omitted -->
+<h5 id="enumerating-domain-wide-groups">Enumerating Domain Wide Groups:</h5>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#Domain Wide Groups:</span>
+</span></span><span style="display:flex;"><span>enumdomgroups
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Query the group of the user above:</span>
+</span></span><span style="display:flex;"><span>querygroup <span style="color:#f92672">[</span>GroupRID<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Example</span>
+</span></span><span style="display:flex;"><span>querygroup 0x201</span></span></code></pre></div>
+    
+</div>
 <ul>
-<li>
-<p>Enumerating Domain Wide Groups:</p>
-<ul>
-<li>
-<p><strong>Domain Wide Groups</strong>:</p>
-<ul>
-<li><strong>Command</strong>: <code>enumdomgroups</code></li>
-</ul>
-</li>
-<li>
-<p><strong>Query the group of the user above</strong>:</p>
-<ul>
-<li><strong>Command</strong>: <code>querygroup [GroupRID]</code></li>
-<li>+Example+: <code>querygroup 0x201</code>
-<ul>
-<li>Used with the RID discovered above.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Scope</strong>:</p>
+<li><strong>Scope</strong>:
 <ul>
 <li><code>enumdomgroups</code>: Lists domain-wide groups that are used across the Active Directory domain.</li>
 </ul>
 </li>
 </ul>
+<h4 id="further-enumeration-using-rpcclient">Further Enumeration Using rpcclient:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Enumerating the whole domain: </span>
+</span></span><span style="display:flex;"><span>enumdomains
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enumerate System privileges:</span>
+</span></span><span style="display:flex;"><span>enumprivs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Retrieve Information about Available Services using rpcclient: </span>
+</span></span><span style="display:flex;"><span>querydispinfo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enumerate Domain Groups using rpcclient: </span>
+</span></span><span style="display:flex;"><span>enumdomgroups
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Resolve SIDs to Names using rpcclient: </span>
+</span></span><span style="display:flex;"><span>lookupsids <span style="color:#f92672">[</span>SID<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enumerate System Privileges using rpcclient: </span>
+</span></span><span style="display:flex;"><span>enumprivs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enumerate Shared Resources using rpcclient: </span>
+</span></span><span style="display:flex;"><span>netshareenum
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List Detailed Information about Shared Resources using rpcclient: </span>
+</span></span><span style="display:flex;"><span>netshareenumall
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Retrieve Information about a Specific Share using rpcclient: </span>
+</span></span><span style="display:flex;"><span>netsharegetinfo <span style="color:#f92672">[</span>sharename<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a New Share using rpcclient: </span>
+</span></span><span style="display:flex;"><span>netshareadd <span style="color:#e6db74">&#34;C:\path&#34;</span> <span style="color:#e6db74">&#34;sharename&#34;</span> <span style="color:#f92672">[</span>type<span style="color:#f92672">]</span> <span style="color:#e6db74">&#34;Description&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enumerate Trusted Domains using rpcclient: </span>
+</span></span><span style="display:flex;"><span>enumtrustdoms
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enumerate Printers</span>
+</span></span><span style="display:flex;"><span>enumprinters</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>I used <code>enumprinters</code> in the HTB box Fuse to reveal a cleartext credential:
+<ul>
+<li><a href="https://bloodstiller.com/walkthroughs/fuse-box/">https://bloodstiller.com/walkthroughs/fuse-box/</a></li>
+</ul>
 </li>
-</ul>
-<h4 id="enumerate-domain-information-using-rpcclient">Enumerate Domain information using rpcclient:</h4>
-<ul>
-<li><strong>Command</strong>: <code>enumdomains</code></li>
-</ul>
-<h4 id="enumerate-system-privileges-using-rpcclient">Enumerate System privileges using rpcclient:</h4>
-<ul>
-<li><strong>Command</strong>: <code>enumprivs</code></li>
 </ul>
 <h4 id="enumerate-password-policy-using-rpcclient">Enumerate Password Policy using rpcclient:</h4>
 <ul>
@@ -1256,36 +1165,93 @@
     
         <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Enumerate Specific User Password Policy using rpcclient: </span>
 </span></span><span style="display:flex;"><span>getusrdompwinfo <span style="color:#f92672">[</span>UserRID<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>getusrdompwinfo 0x46f
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Retrieve Information about Available Services using rpcclient: </span>
-</span></span><span style="display:flex;"><span>querydispinfo
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enumerate Domain Groups using rpcclient: </span>
-</span></span><span style="display:flex;"><span>enumdomgroups
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Resolve SIDs to Names using rpcclient: </span>
-</span></span><span style="display:flex;"><span>lookupsids <span style="color:#f92672">[</span>SID<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enumerate System Privileges using rpcclient: </span>
-</span></span><span style="display:flex;"><span>enumprivs
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enumerate Shared Resources using rpcclient: </span>
-</span></span><span style="display:flex;"><span>netshareenum
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># List Detailed Information about Shared Resources using rpcclient: </span>
-</span></span><span style="display:flex;"><span>netshareenumall
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Retrieve Information about a Specific Share using rpcclient: </span>
-</span></span><span style="display:flex;"><span>netsharegetinfo <span style="color:#f92672">[</span>sharename<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a New Share using rpcclient: </span>
-</span></span><span style="display:flex;"><span>netshareadd <span style="color:#e6db74">&#34;C:\path&#34;</span> <span style="color:#e6db74">&#34;sharename&#34;</span> <span style="color:#f92672">[</span>type<span style="color:#f92672">]</span> <span style="color:#e6db74">&#34;Description&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enumerate Trusted Domains using rpcclient: </span>
-</span></span><span style="display:flex;"><span>enumtrustdoms</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>getusrdompwinfo 0x46f</span></span></code></pre></div>
     
 </div>
+<h4 id="searching-for-custom-rid-s-using-rpcclient">Searching for custom RID&rsquo;s using rpcclient:</h4>
+<ul>
+<li>
+<p><strong>Bruteforce Custom User</strong> <code>RID's</code> <strong>with forloop</strong>:</p>
+<ul>
+<li><strong>Command</strong>:
+<ul>
+<li><code>for i in \\((seq 500 1100);do rpcclient -N -U &quot;&quot; [ip] -c &quot;queryuser 0x\\)(printf '%x\n' $i)&quot; | grep &quot;User Name\\|user_rid\\|group_rid&quot; &amp;amp;&amp;amp; echo &quot;&quot;;done</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>+Note+:</p>
+<ul>
+<li>This is used for searching for custom RIDs (see below)</li>
+<li>The values <code>500</code> &amp; <code>1100</code> can be modified.</li>
+</ul>
+</li>
+</ul>
+<h5 id="explanation-of-the-command">Explanation of the Command:</h5>
+<ul>
+<li>
+<p><code>Loop (for i in $(seq 500 1100))</code>:</p>
+<ul>
+<li>The loop iterates over a range of values <code>(500 to 1100)</code>, converting each value to a hexadecimal format (<code>via printf '%x\n' $i</code>) because RIDs are expressed in hexadecimal.</li>
+</ul>
+</li>
+<li>
+<p><code>rpcclient -N -U &quot;&quot; &lt;ip&gt;</code>:</p>
+<ul>
+<li><code>-N</code>: Specifies no password, used for anonymous connections.</li>
+<li><code>-U &quot;&quot;</code>: Attempts the connection without a username.</li>
+<li><code>[ip]</code>: The IP address of the target server.</li>
+</ul>
+</li>
+<li>
+<p><code>queryuser 0x&lt;rid&gt;</code>:</p>
+<ul>
+<li>Queries user information based on the given RID (Relative Identifier) from the current iteration of the loop, formatted as a hexadecimal value (e.g., 0x1f4 for RID 500).</li>
+</ul>
+</li>
+<li>
+<p><code>grep &quot;User Name\|user_rid\|group_rid&quot;</code>:</p>
+<ul>
+<li>Filters the output to display only lines containing user name, user RID, or group RID for easier readability.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h5 id="why-rid-stop-around-500">Why <code>RID</code> Stop Around <code>500</code>:</h5>
+<ul>
+<li>
+<p><strong>Default RIDs in Windows</strong>:</p>
+<ul>
+<li>
+<p>The first <code>500</code> RIDs are typically reserved for well-known or default accounts and groups in Windows systems. For example:</p>
+<ul>
+<li><code>0x1f4</code> (500 in decimal) is often assigned to the Administrator account.</li>
+<li><code>0x1f5</code> (501) is the Guest account.</li>
+<li>Other default users and built-in groups (e.g., Administrators group, Users group) are typically assigned RIDs in this range.</li>
+</ul>
+</li>
+<li>
+<p><strong>Custom</strong> <code>RIDs</code>:</p>
+<ul>
+<li>RIDs above 500 are typically assigned to custom-created users and groups. When administrators create new users or groups, the system automatically assigns them higher RIDs, which is why your search starts at 500 and extends up to 1100 in this case. This range is where you would expect to find custom user accounts or groups.</li>
+</ul>
+</li>
+<li>
+<p><strong>Purpose of the Command</strong>:</p>
+<ul>
+<li>Search for Custom User RIDs:
+<ul>
+<li>Since the well-known accounts usually stop around 500, we are searching through RIDs in the 500 to 1100 range, which is where custom-created users or groups are likely to have RIDs.</li>
+<li>This method can be useful in penetration testing or during enumeration to discover non-default user accounts that have been created on the system, particularly when we don’t have a complete list of users.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
 <h3 id="enumerating-rpc-using-rpcinfo">Enumerating RPC using rpcinfo:</h3>
 
 
@@ -1416,8 +1382,11 @@
 </div>
 <ul>
 <li>+Note+:
--   In this example, the 24 value represents necessary Windows information class constant to set a user password.
--   The value will always be 24 when setting a password.</li>
+<ul>
+<li>In this example, the <code>24</code> value represents necessary Windows information class constant to set a user password.</li>
+<li>The value will always be <code>24</code> when setting a password.</li>
+</ul>
+</li>
 </ul>
 <h4 id="create-a-new-share-using-rpcclient">Create a new share using rpcclient:</h4>
 
@@ -1469,7 +1438,7 @@
         <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>netshareremove <span style="color:#f92672">[</span>sharename<span style="color:#f92672">]</span></span></span></code></pre></div>
     
 </div>
-<h2 id="6dca67">+Defending RPC+</h2>
+<h2 id="6dca67">Defending RPC</h2>
 <ul>
 <li>Implement strong authentication and authorization</li>
 <li>Use encryption for data in transit (e.g., TLS)</li>
@@ -1478,12 +1447,84 @@
 <li>Use firewalls and network segmentation to control RPC traffic</li>
 <li>Monitor and log RPC activities for suspicious behavior</li>
 </ul>
-<h2 id="common-rpc-vulnerabilities">Common RPC Vulnerabilities:</h2>
+<h3 id="common-rpc-vulnerabilities">Common RPC Vulnerabilities:</h3>
 <ul>
 <li>Buffer Overflows: Especially in older systems or poorly implemented RPC services.</li>
 <li>Null Session Attacks: When anonymous access is allowed.</li>
 <li>RPC Amplification Attacks: Used in DDoS scenarios.</li>
 <li>Improper Access Controls: Leading to unauthorized access to RPC functions.</li>
+</ul>
+<h2 id="rpc-information">RPC Protocol Information:</h2>
+<h3 id="rpc-filtering">RPC Filtering:</h3>
+<ul>
+<li>Windows systems often implement RPC filtering to restrict access.</li>
+<li>Can be configured through Group Policy or Windows Firewall with Advanced Security.</li>
+</ul>
+<h3 id="definition">Definition:</h3>
+<ul>
+<li>A protocol for executing code on a remote server.</li>
+</ul>
+<h3 id="components">Components:</h3>
+<ul>
+<li><strong>Client</strong>: Sends the request.</li>
+<li><strong>Server</strong>: Executes the function and returns a result.</li>
+</ul>
+<h3 id="types">Types:</h3>
+<ol>
+<li><strong>Synchronous RPC</strong>: Client waits for the server to respond.</li>
+<li><strong>Asynchronous RPC</strong>: Client continues operation without waiting.</li>
+</ol>
+<h3 id="protocols">Protocols:</h3>
+<ul>
+<li>XML-RPC</li>
+<li>JSON-RPC</li>
+<li>gRPC</li>
+</ul>
+<h3 id="common-uses">Common Uses:</h3>
+<ul>
+<li>Distributed computing</li>
+<li>Web services</li>
+<li>APIs</li>
+</ul>
+<h3 id="advantages">Advantages:</h3>
+<ul>
+<li>Simplifies development of distributed applications</li>
+<li>Allows for heterogeneous environments (different languages/platforms)</li>
+<li>Can improve performance in certain scenarios</li>
+</ul>
+<h3 id="disadvantages">Disadvantages:</h3>
+<ul>
+<li>Can introduce network-related complexities</li>
+<li>Potential security risks if not properly implemented</li>
+<li>May have higher latency compared to local procedure calls</li>
+</ul>
+<h3 id="implementation-considerations">Implementation Considerations:</h3>
+<ul>
+<li>Error handling for network issues</li>
+<li>Version compatibility between client and server</li>
+<li>Security measures (authentication, encryption)</li>
+<li>Performance optimization (caching, connection pooling)</li>
+</ul>
+<h3 id="security-concerns">Security Concerns:</h3>
+<ul>
+<li>Unauthorized access</li>
+<li>Data interception</li>
+<li>Denial-of-service attacks</li>
+</ul>
+<h3 id="relevance-to-penetration-testing">Relevance to Penetration Testing:</h3>
+<ul>
+<li>Can be used to enumerate Active Directory environments.</li>
+<li>Enumeration of exposed functions</li>
+<li>Injection vulnerabilities</li>
+<li>Insecure data transmission</li>
+</ul>
+<h3 id="common-rpc-frameworks">Common RPC Frameworks:</h3>
+<ul>
+<li>gRPC (Google)</li>
+<li>Apache Thrift</li>
+<li>XML-RPC</li>
+<li>JSON-RPC</li>
+<li>Java RMI (Remote Method Invocation)</li>
 </ul>
 <h2 id="rpc-vs-dot-rest">RPC vs. REST</h2>
 <h3 id="rpc">RPC:</h3>
@@ -1563,7 +1604,7 @@
                 <li>
                     
                         Word Count:
-                        1993
+                        1914
                     
                 </li>
             
