@@ -74,7 +74,7 @@ date = 2024-10-16
     1.  LDAP requests are messages that clients send to servers to perform operations on data stored in a directory service. An LDAP request is comprised of several components:
         -   **LDAP Requests**:
             1.  **Session Connection**:
-                -   Clients connect via an LDAP port (commonly 389 or 636).
+                -   Clients connect via an LDAP port (commonly `389` or `636`).
             2.  **Request Type**:
                 -   Specifies the operation (e.g., bind, search).
             3.  **Request Parameters**:
@@ -100,9 +100,9 @@ date = 2024-10-16
 -   +Example+:
     -   Consider a simple example where a client wants to search for a user's information in the directory:
         1.  **Client sends a search request**:
-            1.  Connects to the LDAP server on port 389.
+            1.  Connects to the LDAP server on port `389`.
             2.  Specifies request type: search.
-            3.  Provides search parameters: DN="cn=John Doe,ou=users,dc=example,dc=com", scope="sub", filter="(objectClass=person)".
+            3.  Provides search parameters: `DN="cn=John Doe,ou=users,dc=example,dc=com"`, `scope="sub"`, `filter="(objectClass=person)"`.
             4.  Provides a request ID.
 
         2.  **LDAP Server processes the request**:
@@ -298,15 +298,15 @@ date = 2024-10-16
     -   Filter rules are enclosed in parentheses and can be grouped by surrounding the group in parentheses and using one of the following comparison operators:
 
     -   AND (`&`)
-        -   Syntax: (&amp;(condition1)(condition2))
+        -   Syntax: `(&amp;(condition1)(condition2))`
         -   Description: Combines multiple conditions with a logical AND. All conditions must be true for a match.
 
     -   OR (`|`)
-        -   Syntax: (|(condition1)(condition2))
+        -   Syntax: `(|(condition1)(condition2))`
         -   Description: Combines multiple conditions with a logical OR. At least one condition must be true for a match.
 
     -   NOT (`!`)
-        -   Syntax: (!(condition))
+        -   Syntax: `(!(condition))`
         -   Description: Negates a condition. The condition must be false for a match.
 
 -   **Some examples** `AND *and* ~OR` **operations are as follows**:
@@ -407,13 +407,51 @@ ldapsearch -H ldap://10.129.204.54 -x -b "DC=sugarape,DC=local" '(&(ObjectClass=
 | NUL           | \\00                   |
 
 
+## Object Identifiers OID's: {#object-identifiers-oid-s}
+
+### Overview:
+
+- Unique string of numbers used to identify directory objects and attributes
+- Hierarchical structure with dot-separated decimal numbers (e.g., 1.2.840.113556.1.4.803)
+- Ensures standardization and avoids naming conflicts
+- Commonly used in LDAP schemas and search filters
+
+### Structure:
+
+- Each number in the sequence represents a node in a hierarchical tree
+- The full OID represents the path from the root to a specific leaf node
+- Earlier numbers indicate broader categories, later numbers specify more precise items
+
+Example of the tree structure:
+{{< figure src="/ox-hugo/2024-08-23-094816_.png" >}}
+
+### Usage Example:
+
+Breaking down the LDAP query: `userAccountControl:1.2.840.113556.1.4.803:=8192`
+
+1. `userAccountControl`: The attribute being queried
+2. `1.2.840.113556.1.4.803`: OID for a specific matching rule (bitwise AND)
+3. `:=`: Equality operator in LDAP
+4. `8192`: Decimal value for the specific flag being queried (SERVER_TRUST_ACCOUNT)
+
+This query structure allows for precise and standardized searches within LDAP directories.
+
+See [LDAP Filter Using Object Identifiers OID's:](#ldap-filter-using-object-identifiers)
+
+### Additional Resources:
+
+- +Comprehensive List of OID's+ - <https://ldap.com/ldap-oid-reference-guide/>
+- <https://en.wikipedia.org/wiki/Object_identifier>
+- <https://learn.microsoft.com/en-us/windows/win32/adsi/search-filter-syntax>
+
+
 ### LDAP Filter Using [Object Identifiers](https://en.wikipedia.org/wiki/Object_identifier): {#ldap-filter-using-object-identifiers}
 
 -   Used with OID's and UAC bitmasks to filter for certain things. Useful when Living off the land in AD:
 -   <https://learn.microsoft.com/en-us/windows/win32/adsi/search-filter-syntax>
 
 
--   **And Operator**:
+-   **`And` Operator**:
     -   Matching rule OID: `1.2.840.113556.1.4.803`
     -   String identifier: `LDAP_MATCHING_RULE_BIT_AND`
     -   Description: A match is found only if all bits from the attribute match the value. This rule is equivalent to a bitwise AND operator.
@@ -424,7 +462,7 @@ ldapsearch -H ldap://10.129.204.54 -x -b "DC=sugarape,DC=local" '(&(ObjectClass=
 
 <!--listend-->
 
--   **Or Operator**:
+-   **~Or~ Operator**:
     -   Matching rule OID: `1.2.840.113556.1.4.804`
     -   String identifier: `LDAP_MATCHING_RULE_BIT_OR`
     -   Description: A match is found if any bits from the attribute match the value. This rule is equivalent to a bitwise OR operator.
@@ -452,7 +490,7 @@ ldapsearch -H ldap://10.129.204.54 -x -b "DC=sugarape,DC=local" '(&(ObjectClass=
     -   <https://learn.microsoft.com/en-us/archive/technet-wiki/5392.active-directory-ldap-syntax-filters>
 
 
-## +LDAP Search Terms+:  {#ldap-search-terms}
+## +LDAP Search Terms+  {#ldap-search-terms}
 
 -   **Great Cheat Sheets**: <https://gist.github.com/jonlabelle/0f8ec20c2474084325a89bc5362008a7>
     -   <https://social.technet.microsoft.com/wiki/contents/articles/5392.active-directory-ldap-syntax-filters.aspx>
@@ -806,57 +844,6 @@ Get-ADObject -LDAPFilter "(&(objectClass=device)(osName=Linux*))"
 ```
 
 
-## Object Identifiers OID's: {#object-identifiers-oid-s}
-
--   +Comprehensive List of OID's+ - <https://ldap.com/ldap-oid-reference-guide/>
--   <https://en.wikipedia.org/wiki/Object_identifier>
--   <https://learn.microsoft.com/en-us/windows/win32/adsi/search-filter-syntax>
-
--   **Simply Explained**:
-    -   Each OID is a series of integers/numbers seperated by dots.
-        -   The full OID represents the final node on the tree (imagine it like a leaf on a branch).
-    -   Each integer in the OID represents an ancestor to/path to the final leaf. Imagine these like branches on a tree, but starting from the root/base of the tree.
-        -   We have to follow from the root of the tree up the trunk, along one branch, which may split into another, then another, then another, then another and we finally reach out leaf(node) and that long number, with the full stops is the path that we took and that long number represents how we got from the root directly to our leaf.
-        -   Alot of the time we will take the same path but go to a different leaf, so instead of going left we may go right so our number will change slightly. But we know If I give you the OID `1.3.6.1.4.1.343` you will end up at the same leaf every single time.
-        -   Example of the tree structure:
-            -   {{< figure src="/ox-hugo/2024-08-23-094816_.png" >}}
-    -   See [LDAP Filter Using Object Identifiers OID's:](#ldap-filter-using-object-identifiers)
-
-
-### OID Overview: {#overview}
-
--   **Definition**:
-    -   Unique string of numbers used to identify directory objects and attributes.
-
--   **Structure**:
-    -   Hierarchical, dot-separated decimal numbers.
-    -   Example: 1.2.840.113556.1.4.803
-
--   **Purpose**:
-    -   Uniquely identify types of objects, attributes, or other data.
-    -   Ensures standardization and avoids naming conflicts.
-
--   **Usage**:
-    -   Common in defining LDAP schemas.
-    -   Used in search filters, such as bitwise filters.
-
--   +Breaking Down the LDAP Query+: `userAccountControl:1.2.840.113556.1.4.803:=8192`
-    -   `userAccountControl`
-        -   **Description**: Specifies the attribute being queried. In Active Directory, this is used to store various flags related to a user account.
-
-    -   `1.2.840.113556.1.4.803`
-        -   **Description**: Object Identifier ([OID](#object-identifiers-oid-s)) for a specific matching rule.
-        -   **Matching Rule**: Requires that the attribute and the value provided must have matching bits, i.e., a bitwise AND between them returns the same value (8192 in this case).
-
-    -   `:=`
-        -   **Description**: Equality operator in LDAP. In this context, it signifies that we are setting a condition for the attribute userAccountControl.
-        -   **Other Logical Operations**: See [LDAP Logical Operators:](#ldap-query-queries)
-
-    -   `8192`
-        -   **Description**: Decimal value for the specific flag being queried.
-        -   **Corresponding Flag**: SERVER_TRUST_ACCOUNT (often represents a domain controller)
-
-
 ## SearchBase and SearchScope Parameters: {#searchbase-and-searchscope-parameters}
 
 
@@ -960,7 +947,7 @@ PORT    STATE SERVICE    VERSION
 ### Enumerating LDAP using `ldapsearch`: {#enumerating-ldap-using-ldapsearch}
 
 
-#### Enumerate LDAP naming context server name and domain name with: {#enumerate-ldap-naming-context-server-name-and-domain-name-with}
+#### Enumerate LDAP naming context server name and domain name: {#enumerate-ldap-naming-context-server-name-and-domain-name-with}
 
 -   +DO THIS FIRST!+ before anything else.
     -   We cannot do ldap queries without knowing the FQDN of the ldap server and the domain name e.g `"dc=sugarape,dc=local"`.

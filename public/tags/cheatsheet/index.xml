@@ -16,7 +16,7 @@
       <description>&lt;ul&gt;&#xA;&lt;li&gt;+Protocol for accessing and managing directory information, widely used in enterprise environments.+&#xA;&lt;ul&gt;&#xA;&lt;li&gt;LDAP is an open-source and cross-platform protocol used for authentication against various directory services (such as AD).&lt;/li&gt;&#xA;&lt;li&gt;AD stores user account information and security information such as passwords and facilitates sharing this information with other devices on the network. &lt;strong&gt;LDAP is the language that applications use to communicate with other servers that also provide directory services&lt;/strong&gt;. In other words, LDAP is a way that systems in the network environment can &amp;ldquo;speak&amp;rdquo; to AD.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;ldap-overview&#34;&gt;LDAP Overview:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Ports: &lt;code&gt;389&lt;/code&gt;, &lt;code&gt;636&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>RPC Cheat Sheet</title>
+      <title>Attacking RPC: Deep Dive &amp; Cheat Sheet</title>
       <link>http://localhost:1313/cheatsheets/rpc-cheatsheet/</link>
       <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/cheatsheets/rpc-cheatsheet/</guid>

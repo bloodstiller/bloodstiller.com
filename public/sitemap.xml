@@ -8,6 +8,9 @@
     <loc>http://localhost:1313/cheatsheets/ldap-cheatsheet/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/cheatsheets/rpc-cheatsheet/</loc>
+    <lastmod>2024-10-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/author/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
@@ -42,9 +45,6 @@
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/rpc/</loc>
-    <lastmod>2024-10-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/cheatsheets/rpc-cheatsheet/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/sql/</loc>
