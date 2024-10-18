@@ -768,8 +768,6 @@ BrandNewPassword69!181128!!!!!
     -   {{< figure src="/ox-hugo/2024-10-18-150059_.png" >}}
 
 
-## <span class="org-todo todo TODO">TODO</span> Write article about this specific exploit so I understand it more. {#write-article-about-this-specific-exploit-so-i-understand-it-more-dot}
-
 
 ## Lessons Learned: {#lessons-learned}
 
