@@ -201,7 +201,7 @@ date = 2024-10-18
         ```
 
         -   The functionality level determines the minimum version of Windows server that can be used for a DC.
-            -   ~~Note~~: that any host os can be used on **workstations**, however the functionality level determines what the minimum version for DC's and the forest.
+            -   +Note+: that any host os can be used on **workstations**, however the functionality level determines what the minimum version for DC's and the forest.
             -   <https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels>
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
@@ -221,7 +221,7 @@ date = 2024-10-18
                 | 8                       | Windows Server 2019         |
                 | 9                       | Windows Server 2022         |
 
-                -   ~~Note~~:
+                -   +Note+:
                     -   Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.
                     -   As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.
 
@@ -340,7 +340,7 @@ date = 2024-10-18
     -   `sudo python3 smbpasswd.py $domain\$user:$pass@$box -newpass 'N3wPass1$$09%12828'`
     -   {{< figure src="/ox-hugo/2024-10-16-165848_.png" >}}
     -   It does not work. Lets see if we can find another way to change this password online.
-    -   ~~Note~~: Only reason I used `sudo` was incase there was anything strange happening where I needed to.
+    -   +Note+: Only reason I used `sudo` was incase there was anything strange happening where I needed to.
 
 
 #### Attempt 2: Trying to change the password using powershell: {#attempt-2-trying-to-change-the-password-using-powershell}
@@ -360,7 +360,7 @@ date = 2024-10-18
 
 -   `python3 smbpasswd.py $user:$pass@$box -newpass 'N3wPassWILLTHISWORK1$$09%'`
 -   {{< figure src="/ox-hugo/2024-10-17-081339_.png" >}}
--   ~~Note~~:
+-   +Note+:
     -   I think the main issue's why this did not work before are due to the initial password I tried not being complex enough, `'N3Pass1'` &amp; for some reason it doesn't like when we use the domain name.
 
 -   **I can list shares in** `netexec`:
@@ -400,7 +400,7 @@ date = 2024-10-18
         -   bhult
         -   bnielson
     -   It appears that all users have access to the same shares &amp; the most interesting one is the `print$` share.
-    -   ~~Note~~: This is why I like using `envs` they make time sensitive tasks like this ALOT quicker &amp; smoother.
+    -   +Note+: This is why I like using `envs` they make time sensitive tasks like this ALOT quicker &amp; smoother.
 
 
 ### Downloading the entire `print$` share: {#downloading-the-entire-print-share}
@@ -408,7 +408,7 @@ date = 2024-10-18
 -   **I download everything using** `smbget`:
     -   `smbget -U $domain/$user --recursive "smb://$box/print$"`
     -   {{< figure src="/ox-hugo/2024-10-17-095411_.png" >}}
-    -   ~~Note~~: `bnielson` was the last user I was logged in as that's why I am doing this as them.
+    -   +Note+: `bnielson` was the last user I was logged in as that's why I am doing this as them.
 
 BrandNewPassword69!181128!!!!!
 
@@ -532,7 +532,7 @@ BrandNewPassword69!181128!!!!!
     -   Protected by `AdminSDHolder`?: Yes
     -   Movement Restrictions: Cannot be moved out of the default container.
     -   Delegation: Not safe to delegate management to non-service admins.
-    -   ~~Default~~ User Rights.
+    -   +Default+ User Rights.
         -   Allow log on locally: `SeInteractiveLogonRight`
         -   Load and unload device drivers: `SeLoadDriverPrivilege`
             -   This is what we are mainly interested in as we can load a malicious driver.
@@ -614,7 +614,7 @@ BrandNewPassword69!181128!!!!!
 -   **I give it a name &amp; also select**: `Place solution and project in the same directory`:
     -   {{< figure src="/ox-hugo/2024-10-18-071638_.png" >}}
     -   **Hit** `"Create"`
-    -   ~~Note~~:
+    -   +Note+:
         -   Just incase you are unaware, this just puts source code &amp; project itself in the same directory is all.
 
 -   **This provides a standard** `Hello World` **template, which we can use as the basis of our project**:
