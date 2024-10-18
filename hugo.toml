@@ -99,10 +99,10 @@ theme = 'dark-theme-editor'
         language = true
 
         # Should show the hugo version or not
-        hugoVersion = true
+        hugoVersion = false
 
         # Should show the theme info or not
-        theme = true
+        theme = false
 
         # Should show the edited time of the page or not
         modifiedTime = true
@@ -115,7 +115,7 @@ theme = 'dark-theme-editor'
         # Should show the current git HEAD hash or not
         # To make this show up correctly, please follow the prerequisites in page
         # https://gohugo.io/variables/git/
-        gitHash = true
+        gitHash = false
 
         # Social link in the footer, listed items are supported, delete unwanted items to hide it.
         [params.footer.socialLink]

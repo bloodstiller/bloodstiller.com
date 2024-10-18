@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Hugo 0.136.2">
 
     <script src="js/custom.js"></script>
     
@@ -250,6 +250,16 @@
                 </li>
             
         
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/jobs@martindbarker/" title="./cheatsheets/jobs@martindbarker/">
+                        
+                            
+                        
+                    </a>
+                </li>
+            
+        
     </ul>
 
 
@@ -455,6 +465,16 @@
     </ul>
 
 
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/fuse-box/" title="./fuse-box/">
+                        
+                            Fuse HTB Walkthrough
+                        
+                    </a>
                 </li>
             
         
@@ -1349,36 +1369,36 @@
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"><strong>Operator</strong></th>
-          <th style="text-align: left"><strong>Meaning</strong></th>
-          <th style="text-align: left"><strong>Description</strong></th>
+          <th><strong>Operator</strong></th>
+          <th><strong>Meaning</strong></th>
+          <th><strong>Description</strong></th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">=</td>
-          <td style="text-align: left">Equality Operator</td>
-          <td style="text-align: left">Checks for exact match between attribute and value.</td>
+          <td>=</td>
+          <td>Equality Operator</td>
+          <td>Checks for exact match between attribute and value.</td>
       </tr>
       <tr>
-          <td style="text-align: left">~=</td>
-          <td style="text-align: left">Approximately equal to</td>
-          <td style="text-align: left">Finds entries where the attribute is approximately equal to the given value.</td>
+          <td>~=</td>
+          <td>Approximately equal to</td>
+          <td>Finds entries where the attribute is approximately equal to the given value.</td>
       </tr>
       <tr>
-          <td style="text-align: left">&gt;=</td>
-          <td style="text-align: left">Greater than or equal to</td>
-          <td style="text-align: left">Finds entries where the attribute value is greater than or equal to the given value.</td>
+          <td>&gt;=</td>
+          <td>Greater than or equal to</td>
+          <td>Finds entries where the attribute value is greater than or equal to the given value.</td>
       </tr>
       <tr>
-          <td style="text-align: left">&lt;=</td>
-          <td style="text-align: left">Less than or equal to</td>
-          <td style="text-align: left">Finds entries where the attribute value is less than or equal to the given value.</td>
+          <td>&lt;=</td>
+          <td>Less than or equal to</td>
+          <td>Finds entries where the attribute value is less than or equal to the given value.</td>
       </tr>
       <tr>
-          <td style="text-align: left">=*</td>
-          <td style="text-align: left">Presence Test</td>
-          <td style="text-align: left">Checks if an attribute is present, regardless of its value.</td>
+          <td>=*</td>
+          <td>Presence Test</td>
+          <td>Checks if an attribute is present, regardless of its value.</td>
       </tr>
   </tbody>
 </table>
@@ -1386,51 +1406,51 @@
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"><strong>Operator</strong></th>
-          <th style="text-align: left"><strong>Rule</strong></th>
-          <th style="text-align: left"><strong>Example</strong></th>
+          <th><strong>Operator</strong></th>
+          <th><strong>Rule</strong></th>
+          <th><strong>Example</strong></th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">Equal to</td>
-          <td style="text-align: left">(attribute=123)</td>
-          <td style="text-align: left">(&amp;(objectclass=user)(displayName=Smith))</td>
+          <td>Equal to</td>
+          <td>(attribute=123)</td>
+          <td>(&amp;(objectclass=user)(displayName=Smith))</td>
       </tr>
       <tr>
-          <td style="text-align: left">Not equal to</td>
-          <td style="text-align: left">(!(attribute=123))</td>
-          <td style="text-align: left">(!(objectClass=group))</td>
+          <td>Not equal to</td>
+          <td>(!(attribute=123))</td>
+          <td>(!(objectClass=group))</td>
       </tr>
       <tr>
-          <td style="text-align: left">Present</td>
-          <td style="text-align: left">(attribute=*)</td>
-          <td style="text-align: left">(department=*)</td>
+          <td>Present</td>
+          <td>(attribute=*)</td>
+          <td>(department=*)</td>
       </tr>
       <tr>
-          <td style="text-align: left">Not present</td>
-          <td style="text-align: left">(!(attribute=*))</td>
-          <td style="text-align: left">(!homeDirectory=*)</td>
+          <td>Not present</td>
+          <td>(!(attribute=*))</td>
+          <td>(!homeDirectory=*)</td>
       </tr>
       <tr>
-          <td style="text-align: left">Greater than</td>
-          <td style="text-align: left">(attribute&gt;=123)</td>
-          <td style="text-align: left">(maxStorage&gt;=100000)</td>
+          <td>Greater than</td>
+          <td>(attribute&gt;=123)</td>
+          <td>(maxStorage&gt;=100000)</td>
       </tr>
       <tr>
-          <td style="text-align: left">Less than</td>
-          <td style="text-align: left">(attribute&lt;=123)</td>
-          <td style="text-align: left">(maxStorage&lt;=100000)</td>
+          <td>Less than</td>
+          <td>(attribute&lt;=123)</td>
+          <td>(maxStorage&lt;=100000)</td>
       </tr>
       <tr>
-          <td style="text-align: left">Approximate match</td>
-          <td style="text-align: left">(attribute~=123)</td>
-          <td style="text-align: left">(sAMAccountName~=Jason)</td>
+          <td>Approximate match</td>
+          <td>(attribute~=123)</td>
+          <td>(sAMAccountName~=Jason)</td>
       </tr>
       <tr>
-          <td style="text-align: left">Wildcards</td>
-          <td style="text-align: left">(attribute=*A)</td>
-          <td style="text-align: left">(givenName=*Sam)</td>
+          <td>Wildcards</td>
+          <td>(attribute=*A)</td>
+          <td>(givenName=*Sam)</td>
       </tr>
   </tbody>
 </table>
@@ -1445,26 +1465,26 @@
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"><strong>Type</strong></th>
-          <th style="text-align: left"><strong>Meaning</strong></th>
+          <th><strong>Type</strong></th>
+          <th><strong>Meaning</strong></th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">=</td>
-          <td style="text-align: left">Simple</td>
+          <td>=</td>
+          <td>Simple</td>
       </tr>
       <tr>
-          <td style="text-align: left">=*</td>
-          <td style="text-align: left">Present</td>
+          <td>=*</td>
+          <td>Present</td>
       </tr>
       <tr>
-          <td style="text-align: left">=something*</td>
-          <td style="text-align: left">Substring</td>
+          <td>=something*</td>
+          <td>Substring</td>
       </tr>
       <tr>
-          <td style="text-align: left">Extensible</td>
-          <td style="text-align: left">varies depending on type</td>
+          <td>Extensible</td>
+          <td>varies depending on type</td>
       </tr>
   </tbody>
 </table>
@@ -1475,30 +1495,30 @@
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"><strong>Character</strong></th>
-          <th style="text-align: left"><strong>Represented as Hex</strong></th>
+          <th><strong>Character</strong></th>
+          <th><strong>Represented as Hex</strong></th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">*</td>
-          <td style="text-align: left">\2a</td>
+          <td>*</td>
+          <td>\2a</td>
       </tr>
       <tr>
-          <td style="text-align: left">(</td>
-          <td style="text-align: left">\28</td>
+          <td>(</td>
+          <td>\28</td>
       </tr>
       <tr>
-          <td style="text-align: left">)</td>
-          <td style="text-align: left">\29</td>
+          <td>)</td>
+          <td>\29</td>
       </tr>
       <tr>
-          <td style="text-align: left">\</td>
-          <td style="text-align: left">\5c</td>
+          <td>\</td>
+          <td>\5c</td>
       </tr>
       <tr>
-          <td style="text-align: left">NUL</td>
-          <td style="text-align: left">\00</td>
+          <td>NUL</td>
+          <td>\00</td>
       </tr>
   </tbody>
 </table>
@@ -3563,30 +3583,13 @@
                 </li>
             
 
-            
-            
 
             
                 <li>en</li>
             
 
             
-                <li>
-                    <a href="https://gohugo.io" class="btn" target="_blank"
-                        >Hugo: 0.135.0</a
-                    >
-                </li>
-            
 
-            
-                <li>
-                    <a
-                        href="https://github.com/JingWangTW/dark-theme-editor"
-                        class="btn"
-                        target="_blank"
-                        >Theme: dark-theme-editor</a
-                    >
-                </li>
             
 
             
@@ -3600,10 +3603,6 @@
                 </li>
             
 
-            
-                <li title="">
-                    
-                </li>
             
         </ul>
     </div>
