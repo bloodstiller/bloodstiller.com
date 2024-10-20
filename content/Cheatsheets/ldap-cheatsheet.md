@@ -906,6 +906,35 @@ Get-ADUser -SearchBase "OU=Domain Admins,DC=CONTOSO,DC=LOCAL" -SearchScope 2 -Fi
 -   +If we see LDAP on a server running and there is an application it may be being used for AUTH.+
     -   See [LDAP Injection:](#ldap-injection)
 
+### LDAPire: Custom LDAP Enumeration Tool
+
+LDAPire is my own custom-built Python-based tool for Active Directory reconnaissance and enumeration. It's designed to streamline the process of gathering essential AD information during penetration tests or security assessments.
+
+**Key features**:
+
+- Adaptive connection attempts (SSL and non-SSL)
+- Flexible authentication (anonymous and authenticated)
+- Comprehensive user and group enumeration
+- Multiple output files for quick reference and detailed analysis
+- Robust error handling and logging
+
+**Usage**:
+```bash
+python3 pythonldap.py <DC_IP> [-u USERNAME] [-p PASSWORD]
+#Example
+python3 pythonldap.py 192.168.1.100 -u "DOMAIN\username"
+python3 pythonldap.py 192.168.1.100 "FQDN/IP"
+```
+
+**Output files**:
+- `usersLdap.txt`: List of user sAMAccountNames
+- `usersLdap_detailed.txt`: Detailed user information
+- `groupsLdap.txt`: List of group sAMAccountNames
+- `groupsLdap_detailed.txt`: Detailed group information
+
+For more information and to access the tool, visit the [LDAPire GitHub repository](https://github.com/bloodstiller/ldapire).
+- [https://bloodstiller.com/tools/ldapire/](https://bloodstiller.com/tools/ldapire/)
+
 
 ### Establishing Naming context with `NMAP`: {#establishing-naming-context-with-nmap}
 

@@ -2,332 +2,332 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Hack Me Daddy</title>
-    <link>http://localhost:41861/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Hack Me Daddy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:41861/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Active Directory</title>
-      <link>http://localhost:41861/tags/active-directory/</link>
+      <link>http://localhost:1313/tags/active-directory/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/active-directory/</guid>
+      <guid>http://localhost:1313/tags/active-directory/</guid>
       <description></description>
     </item>
     <item>
       <title>Capcom</title>
-      <link>http://localhost:41861/tags/capcom/</link>
+      <link>http://localhost:1313/tags/capcom/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/capcom/</guid>
+      <guid>http://localhost:1313/tags/capcom/</guid>
       <description></description>
     </item>
     <item>
       <title>SeLoadDriverPrivilege</title>
-      <link>http://localhost:41861/tags/seloaddriverprivilege/</link>
+      <link>http://localhost:1313/tags/seloaddriverprivilege/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/seloaddriverprivilege/</guid>
+      <guid>http://localhost:1313/tags/seloaddriverprivilege/</guid>
       <description></description>
     </item>
     <item>
       <title>Windows</title>
-      <link>http://localhost:41861/tags/windows/</link>
+      <link>http://localhost:1313/tags/windows/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/windows/</guid>
+      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
     <item>
       <title>Box</title>
-      <link>http://localhost:41861/tags/box/</link>
+      <link>http://localhost:1313/tags/box/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/box/</guid>
+      <guid>http://localhost:1313/tags/box/</guid>
       <description></description>
     </item>
     <item>
       <title>HTB</title>
-      <link>http://localhost:41861/tags/htb/</link>
+      <link>http://localhost:1313/tags/htb/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/htb/</guid>
+      <guid>http://localhost:1313/tags/htb/</guid>
       <description></description>
     </item>
     <item>
       <title>LDAP</title>
-      <link>http://localhost:41861/tags/ldap/</link>
+      <link>http://localhost:1313/tags/ldap/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/ldap/</guid>
+      <guid>http://localhost:1313/tags/ldap/</guid>
       <description></description>
     </item>
     <item>
       <title>Medium</title>
-      <link>http://localhost:41861/tags/medium/</link>
+      <link>http://localhost:1313/tags/medium/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/medium/</guid>
+      <guid>http://localhost:1313/tags/medium/</guid>
       <description></description>
     </item>
     <item>
       <title>RPC</title>
-      <link>http://localhost:41861/tags/rpc/</link>
+      <link>http://localhost:1313/tags/rpc/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/rpc/</guid>
+      <guid>http://localhost:1313/tags/rpc/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:41861/tags/python/</link>
+      <link>http://localhost:1313/tags/python/</link>
       <pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/python/</guid>
+      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Server</title>
-      <link>http://localhost:41861/tags/server/</link>
+      <link>http://localhost:1313/tags/server/</link>
       <pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/server/</guid>
+      <guid>http://localhost:1313/tags/server/</guid>
       <description></description>
     </item>
     <item>
       <title>Tools</title>
-      <link>http://localhost:41861/tags/tools/</link>
+      <link>http://localhost:1313/tags/tools/</link>
       <pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/tools/</guid>
+      <guid>http://localhost:1313/tags/tools/</guid>
       <description></description>
     </item>
     <item>
       <title>CheatSheet</title>
-      <link>http://localhost:41861/tags/cheatsheet/</link>
+      <link>http://localhost:1313/tags/cheatsheet/</link>
       <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/cheatsheet/</guid>
+      <guid>http://localhost:1313/tags/cheatsheet/</guid>
       <description></description>
     </item>
     <item>
       <title>CSharp</title>
-      <link>http://localhost:41861/tags/csharp/</link>
+      <link>http://localhost:1313/tags/csharp/</link>
       <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/csharp/</guid>
+      <guid>http://localhost:1313/tags/csharp/</guid>
       <description></description>
     </item>
     <item>
       <title>Pentesting</title>
-      <link>http://localhost:41861/tags/pentesting/</link>
+      <link>http://localhost:1313/tags/pentesting/</link>
       <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/pentesting/</guid>
+      <guid>http://localhost:1313/tags/pentesting/</guid>
       <description></description>
     </item>
     <item>
       <title>SQL</title>
-      <link>http://localhost:41861/tags/sql/</link>
+      <link>http://localhost:1313/tags/sql/</link>
       <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/sql/</guid>
+      <guid>http://localhost:1313/tags/sql/</guid>
       <description></description>
     </item>
     <item>
       <title>Azure</title>
-      <link>http://localhost:41861/tags/azure/</link>
+      <link>http://localhost:1313/tags/azure/</link>
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/azure/</guid>
+      <guid>http://localhost:1313/tags/azure/</guid>
       <description></description>
     </item>
     <item>
       <title>Azure AD Connect</title>
-      <link>http://localhost:41861/tags/azure-ad-connect/</link>
+      <link>http://localhost:1313/tags/azure-ad-connect/</link>
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/azure-ad-connect/</guid>
+      <guid>http://localhost:1313/tags/azure-ad-connect/</guid>
       <description></description>
     </item>
     <item>
       <title>MSSQL</title>
-      <link>http://localhost:41861/tags/mssql/</link>
+      <link>http://localhost:1313/tags/mssql/</link>
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/mssql/</guid>
+      <guid>http://localhost:1313/tags/mssql/</guid>
       <description></description>
     </item>
     <item>
       <title>AD</title>
-      <link>http://localhost:41861/tags/ad/</link>
+      <link>http://localhost:1313/tags/ad/</link>
       <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/ad/</guid>
+      <guid>http://localhost:1313/tags/ad/</guid>
       <description></description>
     </item>
     <item>
       <title>Follina</title>
-      <link>http://localhost:41861/tags/follina/</link>
+      <link>http://localhost:1313/tags/follina/</link>
       <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/follina/</guid>
+      <guid>http://localhost:1313/tags/follina/</guid>
       <description></description>
     </item>
     <item>
       <title>Kerberos</title>
-      <link>http://localhost:41861/tags/kerberos/</link>
+      <link>http://localhost:1313/tags/kerberos/</link>
       <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/kerberos/</guid>
+      <guid>http://localhost:1313/tags/kerberos/</guid>
       <description></description>
     </item>
     <item>
       <title>MsDS-KeyCredentialLink</title>
-      <link>http://localhost:41861/tags/msds-keycredentiallink/</link>
+      <link>http://localhost:1313/tags/msds-keycredentiallink/</link>
       <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/msds-keycredentiallink/</guid>
+      <guid>http://localhost:1313/tags/msds-keycredentiallink/</guid>
       <description></description>
     </item>
     <item>
       <title>Rubeus</title>
-      <link>http://localhost:41861/tags/rubeus/</link>
+      <link>http://localhost:1313/tags/rubeus/</link>
       <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/rubeus/</guid>
+      <guid>http://localhost:1313/tags/rubeus/</guid>
       <description></description>
     </item>
     <item>
       <title>Shadow Credentials</title>
-      <link>http://localhost:41861/tags/shadow-credentials/</link>
+      <link>http://localhost:1313/tags/shadow-credentials/</link>
       <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/shadow-credentials/</guid>
+      <guid>http://localhost:1313/tags/shadow-credentials/</guid>
       <description></description>
     </item>
     <item>
       <title>Whisker</title>
-      <link>http://localhost:41861/tags/whisker/</link>
+      <link>http://localhost:1313/tags/whisker/</link>
       <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/whisker/</guid>
+      <guid>http://localhost:1313/tags/whisker/</guid>
       <description></description>
     </item>
     <item>
       <title>WSUS</title>
-      <link>http://localhost:41861/tags/wsus/</link>
+      <link>http://localhost:1313/tags/wsus/</link>
       <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/wsus/</guid>
+      <guid>http://localhost:1313/tags/wsus/</guid>
       <description></description>
     </item>
     <item>
       <title>.NET</title>
-      <link>http://localhost:41861/tags/.net/</link>
+      <link>http://localhost:1313/tags/.net/</link>
       <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/.net/</guid>
+      <guid>http://localhost:1313/tags/.net/</guid>
       <description></description>
     </item>
     <item>
       <title>Deserialization</title>
-      <link>http://localhost:41861/tags/deserialization/</link>
+      <link>http://localhost:1313/tags/deserialization/</link>
       <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/deserialization/</guid>
+      <guid>http://localhost:1313/tags/deserialization/</guid>
       <description></description>
     </item>
     <item>
       <title>Serialization</title>
-      <link>http://localhost:41861/tags/serialization/</link>
+      <link>http://localhost:1313/tags/serialization/</link>
       <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/serialization/</guid>
+      <guid>http://localhost:1313/tags/serialization/</guid>
       <description></description>
     </item>
     <item>
       <title>CA</title>
-      <link>http://localhost:41861/tags/ca/</link>
+      <link>http://localhost:1313/tags/ca/</link>
       <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/ca/</guid>
+      <guid>http://localhost:1313/tags/ca/</guid>
       <description></description>
     </item>
     <item>
       <title>CERTIFICATE</title>
-      <link>http://localhost:41861/tags/certificate/</link>
+      <link>http://localhost:1313/tags/certificate/</link>
       <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/certificate/</guid>
+      <guid>http://localhost:1313/tags/certificate/</guid>
       <description></description>
     </item>
     <item>
       <title>MYSQL</title>
-      <link>http://localhost:41861/tags/mysql/</link>
+      <link>http://localhost:1313/tags/mysql/</link>
       <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/mysql/</guid>
+      <guid>http://localhost:1313/tags/mysql/</guid>
       <description></description>
     </item>
     <item>
       <title>GhostScript</title>
-      <link>http://localhost:41861/tags/ghostscript/</link>
+      <link>http://localhost:1313/tags/ghostscript/</link>
       <pubDate>Thu, 03 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/ghostscript/</guid>
+      <guid>http://localhost:1313/tags/ghostscript/</guid>
       <description></description>
     </item>
     <item>
       <title>RoundCube</title>
-      <link>http://localhost:41861/tags/roundcube/</link>
+      <link>http://localhost:1313/tags/roundcube/</link>
       <pubDate>Thu, 03 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/roundcube/</guid>
+      <guid>http://localhost:1313/tags/roundcube/</guid>
       <description></description>
     </item>
     <item>
       <title>Selenium</title>
-      <link>http://localhost:41861/tags/selenium/</link>
+      <link>http://localhost:1313/tags/selenium/</link>
       <pubDate>Thu, 03 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/selenium/</guid>
+      <guid>http://localhost:1313/tags/selenium/</guid>
       <description></description>
     </item>
     <item>
       <title>DNS</title>
-      <link>http://localhost:41861/tags/dns/</link>
+      <link>http://localhost:1313/tags/dns/</link>
       <pubDate>Sun, 29 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/dns/</guid>
+      <guid>http://localhost:1313/tags/dns/</guid>
       <description></description>
     </item>
     <item>
       <title>KCD</title>
-      <link>http://localhost:41861/tags/kcd/</link>
+      <link>http://localhost:1313/tags/kcd/</link>
       <pubDate>Sun, 29 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/kcd/</guid>
+      <guid>http://localhost:1313/tags/kcd/</guid>
       <description></description>
     </item>
     <item>
       <title>Manager</title>
-      <link>http://localhost:41861/tags/manager/</link>
+      <link>http://localhost:1313/tags/manager/</link>
       <pubDate>Sun, 22 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/manager/</guid>
+      <guid>http://localhost:1313/tags/manager/</guid>
       <description></description>
     </item>
     <item>
       <title>SMB</title>
-      <link>http://localhost:41861/tags/smb/</link>
+      <link>http://localhost:1313/tags/smb/</link>
       <pubDate>Sun, 22 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/smb/</guid>
+      <guid>http://localhost:1313/tags/smb/</guid>
       <description></description>
     </item>
     <item>
       <title>Easy</title>
-      <link>http://localhost:41861/tags/easy/</link>
+      <link>http://localhost:1313/tags/easy/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/easy/</guid>
+      <guid>http://localhost:1313/tags/easy/</guid>
       <description></description>
     </item>
     <item>
       <title>Lnk</title>
-      <link>http://localhost:41861/tags/lnk/</link>
+      <link>http://localhost:1313/tags/lnk/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/lnk/</guid>
+      <guid>http://localhost:1313/tags/lnk/</guid>
       <description></description>
     </item>
     <item>
       <title>Pst</title>
-      <link>http://localhost:41861/tags/pst/</link>
+      <link>http://localhost:1313/tags/pst/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/pst/</guid>
+      <guid>http://localhost:1313/tags/pst/</guid>
       <description></description>
     </item>
     <item>
       <title>Telnet</title>
-      <link>http://localhost:41861/tags/telnet/</link>
+      <link>http://localhost:1313/tags/telnet/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/telnet/</guid>
+      <guid>http://localhost:1313/tags/telnet/</guid>
       <description></description>
     </item>
     <item>
       <title>SeImpersonatePrivilege</title>
-      <link>http://localhost:41861/tags/seimpersonateprivilege/</link>
+      <link>http://localhost:1313/tags/seimpersonateprivilege/</link>
       <pubDate>Mon, 09 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/seimpersonateprivilege/</guid>
+      <guid>http://localhost:1313/tags/seimpersonateprivilege/</guid>
       <description></description>
     </item>
     <item>
       <title>Umbraco</title>
-      <link>http://localhost:41861/tags/umbraco/</link>
+      <link>http://localhost:1313/tags/umbraco/</link>
       <pubDate>Mon, 09 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/tags/umbraco/</guid>
+      <guid>http://localhost:1313/tags/umbraco/</guid>
       <description></description>
     </item>
   </channel>

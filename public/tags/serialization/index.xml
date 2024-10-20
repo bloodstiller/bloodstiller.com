@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Serialization on Hack Me Daddy</title>
-    <link>http://localhost:41861/tags/serialization/</link>
+    <link>http://localhost:1313/tags/serialization/</link>
     <description>Recent content in Serialization on Hack Me Daddy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:41861/tags/serialization/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/serialization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Understanding .NET Deserialization Exploits: A Deep Dive</title>
-      <link>http://localhost:41861/articles/deserializationattacksexplained/</link>
+      <link>http://localhost:1313/articles/deserializationattacksexplained/</link>
       <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41861/articles/deserializationattacksexplained/</guid>
+      <guid>http://localhost:1313/articles/deserializationattacksexplained/</guid>
       <description>&lt;h2 id=&#34;understanding-dot-net-deserialization-exploits-a-deep-dive&#34;&gt;Understanding &lt;code&gt;.NET&lt;/code&gt; Deserialization Exploits: A Deep Dive:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;.NET&lt;/code&gt; deserialization exploits have become a common technique; providing a pathway to remote code execution (RCE) on vulnerable systems. Tools like &lt;a href=&#34;https://github.com/pwntester/ysoserial.net&#34;&gt;ysoserial.net&lt;/a&gt; can generate malicious payloads, allowing attackers to exploit deserialization flaws in .NET applications. But how does this attack vector actually work, and why does it succeed?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;In this post, we&amp;rsquo;ll walk through the underlying mechanics, focusing on an example using &lt;code&gt;BinaryFormatter&lt;/code&gt; with a simple &lt;code&gt;Student&lt;/code&gt; class. We&amp;rsquo;ll see how a seemingly innocuous application can be vulnerable to severe attacks.&lt;/p&gt;</description>
     </item>
   </channel>
