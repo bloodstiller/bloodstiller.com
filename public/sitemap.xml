@@ -2,237 +2,234 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/active-directory/</loc>
+    <loc>http://localhost:41861/tags/active-directory/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/</loc>
+    <loc>http://localhost:41861/articles/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/author/</loc>
+    <loc>http://localhost:41861/author/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/author/bloodstiller/</loc>
+    <loc>http://localhost:41861/author/bloodstiller/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/capcom/</loc>
+    <loc>http://localhost:41861/tags/capcom/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:41861/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/seloaddriverprivilege/</loc>
+    <loc>http://localhost:41861/tags/seloaddriverprivilege/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://localhost:41861/tags/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/seloaddriverprivilegeescalation/</loc>
+    <loc>http://localhost:41861/articles/seloaddriverprivilegeescalation/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/driverexploit/</loc>
+    <loc>http://localhost:41861/tags/windows/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/windows/</loc>
-    <lastmod>2024-10-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/box/</loc>
+    <loc>http://localhost:41861/tags/box/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/fuse-box/</loc>
+    <loc>http://localhost:41861/walkthroughs/fuse-box/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/htb/</loc>
+    <loc>http://localhost:41861/tags/htb/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ldap/</loc>
+    <loc>http://localhost:41861/tags/ldap/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/medium/</loc>
+    <loc>http://localhost:41861/tags/medium/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/rpc/</loc>
+    <loc>http://localhost:41861/tags/rpc/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/</loc>
+    <loc>http://localhost:41861/walkthroughs/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/bloodserver/</loc>
+    <loc>http://localhost:41861/tools/bloodserver/</loc>
     <lastmod>2024-10-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/ldapire/</loc>
+    <loc>http://localhost:41861/tools/ldapire/</loc>
     <lastmod>2024-10-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
+    <loc>http://localhost:41861/tags/python/</loc>
     <lastmod>2024-10-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/server/</loc>
+    <loc>http://localhost:41861/tags/server/</loc>
     <lastmod>2024-10-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/</loc>
+    <loc>http://localhost:41861/tools/</loc>
     <lastmod>2024-10-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tools/</loc>
+    <loc>http://localhost:41861/tags/tools/</loc>
     <lastmod>2024-10-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheatsheets/ldap-cheatsheet/</loc>
+    <loc>http://localhost:41861/cheatsheets/ldap-cheatsheet/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheatsheets/rpc-cheatsheet/</loc>
+    <loc>http://localhost:41861/cheatsheets/rpc-cheatsheet/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/cascade-box/</loc>
+    <loc>http://localhost:41861/walkthroughs/cascade-box/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cheatsheet/</loc>
+    <loc>http://localhost:41861/tags/cheatsheet/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheatsheets/</loc>
+    <loc>http://localhost:41861/cheatsheets/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/csharp/</loc>
+    <loc>http://localhost:41861/tags/csharp/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pentesting/</loc>
+    <loc>http://localhost:41861/tags/pentesting/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sql/</loc>
+    <loc>http://localhost:41861/tags/sql/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/azure/</loc>
+    <loc>http://localhost:41861/tags/azure/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/azure-ad-connect/</loc>
+    <loc>http://localhost:41861/tags/azure-ad-connect/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/monteverde-box/</loc>
+    <loc>http://localhost:41861/walkthroughs/monteverde-box/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/mssql/</loc>
+    <loc>http://localhost:41861/tags/mssql/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/azureadconnectattack/</loc>
+    <loc>http://localhost:41861/articles/azureadconnectattack/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ad/</loc>
+    <loc>http://localhost:41861/tags/ad/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/follina/</loc>
+    <loc>http://localhost:41861/tags/follina/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/kerberos/</loc>
+    <loc>http://localhost:41861/tags/kerberos/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/msds-keycredentiallink/</loc>
+    <loc>http://localhost:41861/tags/msds-keycredentiallink/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/outdated-box/</loc>
+    <loc>http://localhost:41861/walkthroughs/outdated-box/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/rubeus/</loc>
+    <loc>http://localhost:41861/tags/rubeus/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/shadow-credentials/</loc>
+    <loc>http://localhost:41861/tags/shadow-credentials/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/whisker/</loc>
+    <loc>http://localhost:41861/tags/whisker/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/wsus/</loc>
+    <loc>http://localhost:41861/tags/wsus/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/shadowcredentialsattack/</loc>
+    <loc>http://localhost:41861/articles/shadowcredentialsattack/</loc>
     <lastmod>2024-10-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/.net/</loc>
+    <loc>http://localhost:41861/tags/.net/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/deserialization/</loc>
+    <loc>http://localhost:41861/tags/deserialization/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/serialization/</loc>
+    <loc>http://localhost:41861/tags/serialization/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/deserializationattacksexplained/</loc>
+    <loc>http://localhost:41861/articles/deserializationattacksexplained/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/scrambled-box/</loc>
+    <loc>http://localhost:41861/walkthroughs/scrambled-box/</loc>
     <lastmod>2024-10-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ca/</loc>
+    <loc>http://localhost:41861/tags/ca/</loc>
     <lastmod>2024-10-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/certificate/</loc>
+    <loc>http://localhost:41861/tags/certificate/</loc>
     <lastmod>2024-10-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/escape-box/</loc>
+    <loc>http://localhost:41861/walkthroughs/escape-box/</loc>
     <lastmod>2024-10-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/mysql/</loc>
+    <loc>http://localhost:41861/tags/mysql/</loc>
     <lastmod>2024-10-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ghostscript/</loc>
+    <loc>http://localhost:41861/tags/ghostscript/</loc>
     <lastmod>2024-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/hospital-box/</loc>
+    <loc>http://localhost:41861/walkthroughs/hospital-box/</loc>
     <lastmod>2024-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/roundcube/</loc>
+    <loc>http://localhost:41861/tags/roundcube/</loc>
     <lastmod>2024-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/selenium/</loc>
+    <loc>http://localhost:41861/tags/selenium/</loc>
     <lastmod>2024-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dns/</loc>
+    <loc>http://localhost:41861/tags/dns/</loc>
     <lastmod>2024-09-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/intelligence-box/</loc>
+    <loc>http://localhost:41861/walkthroughs/intelligence-box/</loc>
     <lastmod>2024-09-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/kcd/</loc>
+    <loc>http://localhost:41861/tags/kcd/</loc>
     <lastmod>2024-09-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/manager/</loc>
+    <loc>http://localhost:41861/tags/manager/</loc>
     <lastmod>2024-09-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/manager-box/</loc>
+    <loc>http://localhost:41861/walkthroughs/manager-box/</loc>
     <lastmod>2024-09-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/smb/</loc>
+    <loc>http://localhost:41861/tags/smb/</loc>
     <lastmod>2024-09-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/access-box/</loc>
+    <loc>http://localhost:41861/walkthroughs/access-box/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/easy/</loc>
+    <loc>http://localhost:41861/tags/easy/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/lnk/</loc>
+    <loc>http://localhost:41861/tags/lnk/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pst/</loc>
+    <loc>http://localhost:41861/tags/pst/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/telnet/</loc>
+    <loc>http://localhost:41861/tags/telnet/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/remote-box/</loc>
+    <loc>http://localhost:41861/walkthroughs/remote-box/</loc>
     <lastmod>2024-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/seimpersonateprivilege/</loc>
+    <loc>http://localhost:41861/tags/seimpersonateprivilege/</loc>
     <lastmod>2024-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/umbraco/</loc>
+    <loc>http://localhost:41861/tags/umbraco/</loc>
     <lastmod>2024-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/support-box/</loc>
+    <loc>http://localhost:41861/walkthroughs/support-box/</loc>
     <lastmod>2024-09-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/aboutme/</loc>
+    <loc>http://localhost:41861/aboutme/</loc>
     <lastmod>2024-09-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/return-box/</loc>
+    <loc>http://localhost:41861/walkthroughs/return-box/</loc>
     <lastmod>2024-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:41861/categories/</loc>
   </url>
 </urlset>

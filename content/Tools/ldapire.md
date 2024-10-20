@@ -69,7 +69,6 @@ The tool generates four key files:
 
 These files provide a goldmine of information for further analysis, helping you identify potential attack vectors, misconfigurations, or areas for deeper investigation.
 
-
 ### Ethical Considerations {#ethical-considerations}
 
 As with any tool, it's crucial to use LDAPire responsibly and ethically. Always ensure you have explicit permission to test and enumerate the target Active Directory environment.

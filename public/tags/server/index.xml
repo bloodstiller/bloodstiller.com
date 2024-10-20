@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Server on Hack Me Daddy</title>
-    <link>http://localhost:1313/tags/server/</link>
+    <link>http://localhost:41861/tags/server/</link>
     <description>Recent content in Server on Hack Me Daddy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 17 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:41861/tags/server/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>BloodServer: A Secure File Transfer Tool for Penetration Testers</title>
-      <link>http://localhost:1313/tools/bloodserver/</link>
+      <link>http://localhost:41861/tools/bloodserver/</link>
       <pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tools/bloodserver/</guid>
+      <guid>http://localhost:41861/tools/bloodserver/</guid>
       <description>&lt;h2 id=&#34;bloodserver-a-secure-file-transfer-tool-for-penetration-testers&#34;&gt;BloodServer: A Secure File Transfer Tool for Penetration Testers&lt;/h2&gt;&#xA;&lt;p&gt;As a penetration tester, securely transferring files during engagements is crucial. That&amp;rsquo;s why I developed BloodServer, a lightweight Python-based server designed specifically for pentesters who need a quick and secure way to transfer files in controlled environments.&lt;/p&gt;&#xA;&lt;p&gt;Feel free to contribute to the project or report issues on my &lt;a href=&#34;https://github.com/bloodstiller/bloodserver&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;key-features&#34;&gt;Key Features&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Easy Setup&lt;/strong&gt;: BloodServer can be quickly deployed with minimal configuration.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Authentication&lt;/strong&gt;: Basic authentication is built-in to prevent unauthorized access.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;HTTPS Support&lt;/strong&gt;: Optional HTTPS encryption for secure data transfer.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;File Upload Capability&lt;/strong&gt;: Allows for easy file uploads via POST requests.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Configurable Options&lt;/strong&gt;: Customize port, username, and password via command-line arguments.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Graceful Shutdown&lt;/strong&gt;: Stop the server cleanly with a simple keyboard command.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Logging&lt;/strong&gt;: Server activities are logged for monitoring and debugging.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;requirements-and-installation&#34;&gt;Requirements and Installation&lt;/h3&gt;&#xA;&lt;p&gt;BloodServer is lightweight and requires only Python 3.6+ and OpenSSL (for HTTPS support). Installation is as simple as cloning the repository:&lt;/p&gt;</description>
     </item>
   </channel>

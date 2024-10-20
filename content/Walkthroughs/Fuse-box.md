@@ -485,6 +485,8 @@ BrandNewPassword69!181128!!!!!
 ## 3. Privilege Escalation: {#3-dot-privilege-escalation}
 
 
+- I have written a deep dive that goes into this exploitation method in more detail:
+- <https://bloodstiller.com/articles/seloaddriverprivilegeescalation/>
 ### Finding out we have the `SeLoadDriverPrivilege` privilege: {#finding-out-we-have-the-seloaddriverprivilege-privilege}
 
 -   **I enumerate the privileges of my user**:
@@ -600,6 +602,7 @@ BrandNewPassword69!181128!!!!!
 
 ### Compiling the `EopLoadDriver` tool to enable us to load the `Capcom.sys` driver: {#compiling-the-eoploaddriver-tool-to-enable-us-to-load-the-capcom-dot-sys-driver}
 
+The `EopLoadDriver` tool is a utility designed to leverage the `SeLoadDriverPrivilege` for loading a driver into the Windows kernel. It interacts with the Windows registry to register the driver and then uses the NtLoadDriver system call to load it. This tool is essential in our exploit chain as it allows us to load the vulnerable `Capcom.sys` driver, which we'll subsequently exploit to gain SYSTEM privileges. By using `EopLoadDriver`, we're able to bridge the gap between having the `SeLoadDriverPrivilege` and actually loading a driver of our choice into the kernel.
 
 #### Preparing the `EopLoadDriver ~C++` Project: {#preparing-the-eoploaddriver-c-plus-plus-project}
 
@@ -643,6 +646,7 @@ BrandNewPassword69!181128!!!!!
 
 -   We are going to be using the [ExploitCapcom](https://github.com/tandasat/ExploitCapcom/tree/master) tool. We will need to compile this ourselves.
 
+The `ExploitCapcom` tool is the core component of our privilege escalation attack. It's designed to exploit the vulnerability in the `Capcom.sys` driver that we've loaded using `EopLoadDriver`. This tool takes advantage of the driver's ability to disable Supervisor Mode Execution Prevention (SMEP) and execute arbitrary code in kernel mode. By default, ExploitCapcom opens a new command prompt with `SYSTEM privileges`, but we'll modify it to launch our custom payload instead. This tool effectively completes the privilege escalation chain, leveraging the loaded vulnerable driver to elevate our permissions to the highest level in the Windows operating system.
 
 #### Importing the `ExploitCapcom C++` Project: {#importing-the-exploitcapcom-c-plus-plus-project}
 
