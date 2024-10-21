@@ -40,6 +40,10 @@ LDAPire is a Python-based tool designed to connect to LDAP servers (primarily Ac
 3.  **Flexibility**: Works with various AD configurations and authentication scenarios.
 4.  **Pentesting-Oriented**: Designed with the needs of security professionals in mind.
 
+### Code: 
+I have placed the code here for convenience. 
+
+{{< ghcode "https://raw.githubusercontent.com/bloodstiller/ldapire/refs/heads/main/ldapChecker.py" >}}
 
 ### How to Use It {#how-to-use-it}
 

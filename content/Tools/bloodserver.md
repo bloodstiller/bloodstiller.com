@@ -93,6 +93,10 @@ curl -X POST -u username:password -F "file=@/path/to/your/file" -k https://serve
 
 Replace `username`, `password`, `/path/to/your/file`, `serverip`, and `port` with your specific values.
 
+### Code: 
+I have placed the code here for convenience. 
+
+{{< ghcode "https://raw.githubusercontent.com/bloodstiller/bloodserver/refs/heads/main/bloodserver.py" >}}
 
 ### Security Considerations {#security-considerations}
 
