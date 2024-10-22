@@ -59,37 +59,34 @@ date = 2024-10-22
 
 -   **Basic UDP Scan**:
     -   `sudo nmap $box -sU -Pn -oA UDPbasicScan`
+        ```shell
+          kali in 46.02-HTB/BlogEntriesMade/EvilCups/scans/nmap  2GiB/15GiB | 0B/1GiB with /usr/bin/zsh
+          🕙 07:17:00 zsh ❯ sudo nmap $box -sU -Pn -oA UDPbasicScan
+          [sudo] password for kali:
+          Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-10-22 07:21 BST
+          Stats: 0:05:57 elapsed; 0 hosts completed (1 up), 1 undergoing UDP Scan
+          UDP Scan Timing: About 35.08% done; ETC: 07:38 (0:10:50 remaining)
+          Stats: 0:16:46 elapsed; 0 hosts completed (1 up), 1 undergoing UDP Scan
+          UDP Scan Timing: About 96.55% done; ETC: 07:38 (0:00:36 remaining)
+          Nmap scan report for 10.129.231.157
+          Host is up (0.035s latency).
+          Not shown: 997 closed udp ports (port-unreach)
+          PORT     STATE         SERVICE
+          68/udp   open|filtered dhcpc
+          631/udp  open|filtered ipp
+          5353/udp open|filtered zeroconf
+          
+          Nmap done: 1 IP address (1 host up) scanned in 1050.49 seconds
 
-<!--listend-->
-
-```shell
-kali in 46.02-HTB/BlogEntriesMade/EvilCups/scans/nmap  2GiB/15GiB | 0B/1GiB with /usr/bin/zsh
-🕙 07:17:00 zsh ❯ sudo nmap $box -sU -Pn -oA UDPbasicScan
-[sudo] password for kali:
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-10-22 07:21 BST
-Stats: 0:05:57 elapsed; 0 hosts completed (1 up), 1 undergoing UDP Scan
-UDP Scan Timing: About 35.08% done; ETC: 07:38 (0:10:50 remaining)
-Stats: 0:16:46 elapsed; 0 hosts completed (1 up), 1 undergoing UDP Scan
-UDP Scan Timing: About 96.55% done; ETC: 07:38 (0:00:36 remaining)
-Nmap scan report for 10.129.231.157
-Host is up (0.035s latency).
-Not shown: 997 closed udp ports (port-unreach)
-PORT     STATE         SERVICE
-68/udp   open|filtered dhcpc
-631/udp  open|filtered ipp
-5353/udp open|filtered zeroconf
-
-Nmap done: 1 IP address (1 host up) scanned in 1050.49 seconds
-
-```
+        ```
 
 -   **Initial thoughts**:
-    -   As expeced IPP and CUPS.
+    -   As expected IPP and CUPS.
 
 
 ### CUPS `631`: {#cups-631}
 
--   **As we know** `CUPS *is running we can visit the web server by visiting* ~http://[ip]:631`
+-   **As we know** `CUPS` **is running we can visit the web server by visiting** `http://[ip]:631`
     -   {{< figure src="/ox-hugo/2024-10-22-073523_.png" >}}
 
 -   **I try the** `administration` **button but this is denied**:
