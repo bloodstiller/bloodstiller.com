@@ -6,8 +6,71 @@
     <description>Recent content in Tags on Hack Me Daddy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Box</title>
+      <link>http://localhost:1313/tags/box/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/box/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CUPS</title>
+      <link>http://localhost:1313/tags/cups/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cups/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2024-4076</title>
+      <link>http://localhost:1313/tags/cve-2024-4076/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cve-2024-4076/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2024-4175</title>
+      <link>http://localhost:1313/tags/cve-2024-4175/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cve-2024-4175/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2024-4176</title>
+      <link>http://localhost:1313/tags/cve-2024-4176/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cve-2024-4176/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2024-4177</title>
+      <link>http://localhost:1313/tags/cve-2024-4177/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cve-2024-4177/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HTB</title>
+      <link>http://localhost:1313/tags/htb/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/htb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LINUX</title>
+      <link>http://localhost:1313/tags/linux/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Medium</title>
+      <link>http://localhost:1313/tags/medium/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/medium/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Active</title>
       <link>http://localhost:1313/tags/active/</link>
@@ -20,13 +83,6 @@
       <link>http://localhost:1313/tags/active-directory/</link>
       <pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/active-directory/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Box</title>
-      <link>http://localhost:1313/tags/box/</link>
-      <pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/box/</guid>
       <description></description>
     </item>
     <item>
@@ -51,24 +107,10 @@
       <description></description>
     </item>
     <item>
-      <title>HTB</title>
-      <link>http://localhost:1313/tags/htb/</link>
-      <pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/htb/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>LDAP</title>
       <link>http://localhost:1313/tags/ldap/</link>
       <pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/ldap/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Medium</title>
-      <link>http://localhost:1313/tags/medium/</link>
-      <pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/medium/</guid>
       <description></description>
     </item>
     <item>
