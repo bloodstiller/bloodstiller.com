@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <meta name="generator" content="Hugo 0.136.2">
+    <meta name="generator" content="Hugo 0.136.4">
 
     <script src="js/custom.js"></script>
     
@@ -520,6 +520,16 @@
         
             
                 <li class="file">
+                    <a href="http://localhost:1313/automatingqemukalivm/" title="./automatingqemukalivm/">
+                        
+                            Automating Kali VM Setup with QEMU
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
                     <a href="http://localhost:1313/aboutme/" title="./aboutme/">
                         
                             about me
@@ -847,11 +857,7 @@
 <li>
 <p><strong>Basic UDP Scan</strong>:</p>
 <ul>
-<li><code>sudo nmap $box -sU -Pn -oA UDPbasicScan</code></li>
-</ul>
-</li>
-</ul>
-<!-- raw HTML omitted -->
+<li><code>sudo nmap $box -sU -Pn -oA UDPbasicScan</code>
 
 
 
@@ -862,43 +868,46 @@
 <div class="codeblock">
     
         <div class="copy-button-box">
-            <button class="copy-button" state="copy" data="kali%20in%2046.02-HTB/BlogEntriesMade/EvilCups/scans/nmap%20%202GiB/15GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2007:17:00%20zsh%20%e2%9d%af%20sudo%20nmap%20$box%20-sU%20-Pn%20-oA%20UDPbasicScan%0a[sudo]%20password%20for%20kali:%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-10-22%2007:21%20BST%0aStats:%200:05:57%20elapsed;%200%20hosts%20completed%20%281%20up%29,%201%20undergoing%20UDP%20Scan%0aUDP%20Scan%20Timing:%20About%2035.08%25%20done;%20ETC:%2007:38%20%280:10:50%20remaining%29%0aStats:%200:16:46%20elapsed;%200%20hosts%20completed%20%281%20up%29,%201%20undergoing%20UDP%20Scan%0aUDP%20Scan%20Timing:%20About%2096.55%25%20done;%20ETC:%2007:38%20%280:00:36%20remaining%29%0aNmap%20scan%20report%20for%2010.129.231.157%0aHost%20is%20up%20%280.035s%20latency%29.%0aNot%20shown:%20997%20closed%20udp%20ports%20%28port-unreach%29%0aPORT%20%20%20%20%20STATE%20%20%20%20%20%20%20%20%20SERVICE%0a68/udp%20%20%20open%7cfiltered%20dhcpc%0a631/udp%20%20open%7cfiltered%20ipp%0a5353/udp%20open%7cfiltered%20zeroconf%0a%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%201050.49%20seconds">
+            <button class="copy-button" state="copy" data="%20%20kali%20in%2046.02-HTB/BlogEntriesMade/EvilCups/scans/nmap%20%202GiB/15GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%20%20%f0%9f%95%99%2007:17:00%20zsh%20%e2%9d%af%20sudo%20nmap%20$box%20-sU%20-Pn%20-oA%20UDPbasicScan%0a%20%20[sudo]%20password%20for%20kali:%0a%20%20Starting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-10-22%2007:21%20BST%0a%20%20Stats:%200:05:57%20elapsed;%200%20hosts%20completed%20%281%20up%29,%201%20undergoing%20UDP%20Scan%0a%20%20UDP%20Scan%20Timing:%20About%2035.08%25%20done;%20ETC:%2007:38%20%280:10:50%20remaining%29%0a%20%20Stats:%200:16:46%20elapsed;%200%20hosts%20completed%20%281%20up%29,%201%20undergoing%20UDP%20Scan%0a%20%20UDP%20Scan%20Timing:%20About%2096.55%25%20done;%20ETC:%2007:38%20%280:00:36%20remaining%29%0a%20%20Nmap%20scan%20report%20for%2010.129.231.157%0a%20%20Host%20is%20up%20%280.035s%20latency%29.%0a%20%20Not%20shown:%20997%20closed%20udp%20ports%20%28port-unreach%29%0a%20%20PORT%20%20%20%20%20STATE%20%20%20%20%20%20%20%20%20SERVICE%0a%20%2068/udp%20%20%20open%7cfiltered%20dhcpc%0a%20%20631/udp%20%20open%7cfiltered%20ipp%0a%20%205353/udp%20open%7cfiltered%20zeroconf%0a%0a%20%20Nmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%201050.49%20seconds">
                 <i class="bi bi-copy"></i>
             </button>
         </div>
     
 
     
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in 46.02-HTB/BlogEntriesMade/EvilCups/scans/nmap  2GiB/15GiB | 0B/1GiB with /usr/bin/zsh
-</span></span><span style="display:flex;"><span>🕙 07:17:00 zsh ❯ sudo nmap $box -sU -Pn -oA UDPbasicScan
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> kali:
-</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-10-22 07:21 BST
-</span></span><span style="display:flex;"><span>Stats: 0:05:57 elapsed; <span style="color:#ae81ff">0</span> hosts completed <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> up<span style="color:#f92672">)</span>, <span style="color:#ae81ff">1</span> undergoing UDP Scan
-</span></span><span style="display:flex;"><span>UDP Scan Timing: About 35.08% <span style="color:#66d9ef">done</span>; ETC: 07:38 <span style="color:#f92672">(</span>0:10:50 remaining<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Stats: 0:16:46 elapsed; <span style="color:#ae81ff">0</span> hosts completed <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> up<span style="color:#f92672">)</span>, <span style="color:#ae81ff">1</span> undergoing UDP Scan
-</span></span><span style="display:flex;"><span>UDP Scan Timing: About 96.55% <span style="color:#66d9ef">done</span>; ETC: 07:38 <span style="color:#f92672">(</span>0:00:36 remaining<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.231.157
-</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.035s latency<span style="color:#f92672">)</span>.
-</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">997</span> closed udp ports <span style="color:#f92672">(</span>port-unreach<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>PORT     STATE         SERVICE
-</span></span><span style="display:flex;"><span>68/udp   open|filtered dhcpc
-</span></span><span style="display:flex;"><span>631/udp  open|filtered ipp
-</span></span><span style="display:flex;"><span>5353/udp open|filtered zeroconf
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  kali in 46.02-HTB/BlogEntriesMade/EvilCups/scans/nmap  2GiB/15GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>  🕙 07:17:00 zsh ❯ sudo nmap $box -sU -Pn -oA UDPbasicScan
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> kali:
+</span></span><span style="display:flex;"><span>  Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-10-22 07:21 BST
+</span></span><span style="display:flex;"><span>  Stats: 0:05:57 elapsed; <span style="color:#ae81ff">0</span> hosts completed <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> up<span style="color:#f92672">)</span>, <span style="color:#ae81ff">1</span> undergoing UDP Scan
+</span></span><span style="display:flex;"><span>  UDP Scan Timing: About 35.08% <span style="color:#66d9ef">done</span>; ETC: 07:38 <span style="color:#f92672">(</span>0:10:50 remaining<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  Stats: 0:16:46 elapsed; <span style="color:#ae81ff">0</span> hosts completed <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> up<span style="color:#f92672">)</span>, <span style="color:#ae81ff">1</span> undergoing UDP Scan
+</span></span><span style="display:flex;"><span>  UDP Scan Timing: About 96.55% <span style="color:#66d9ef">done</span>; ETC: 07:38 <span style="color:#f92672">(</span>0:00:36 remaining<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  Nmap scan report <span style="color:#66d9ef">for</span> 10.129.231.157
+</span></span><span style="display:flex;"><span>  Host is up <span style="color:#f92672">(</span>0.035s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Not shown: <span style="color:#ae81ff">997</span> closed udp ports <span style="color:#f92672">(</span>port-unreach<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  PORT     STATE         SERVICE
+</span></span><span style="display:flex;"><span>  68/udp   open|filtered dhcpc
+</span></span><span style="display:flex;"><span>  631/udp  open|filtered ipp
+</span></span><span style="display:flex;"><span>  5353/udp open|filtered zeroconf
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 1050.49 seconds</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>  Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 1050.49 seconds</span></span></code></pre></div>
     
 </div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Initial thoughts</strong>:</p>
 <ul>
-<li><strong>Initial thoughts</strong>:
-<ul>
-<li>As expeced IPP and CUPS.</li>
+<li>As expected IPP and CUPS.</li>
 </ul>
 </li>
 </ul>
 <h3 id="cups-631">CUPS <code>631</code>:</h3>
 <ul>
 <li>
-<p><strong>As we know</strong> <code>CUPS *is running we can visit the web server by visiting* ~http://[ip]:631</code></p>
+<p><strong>As we know</strong> <code>CUPS</code> <strong>is running we can visit the web server by visiting</strong> <code>http://[ip]:631</code></p>
 <ul>
 <li><figure><img src="/ox-hugo/2024-10-22-073523_.png">
 </figure>

