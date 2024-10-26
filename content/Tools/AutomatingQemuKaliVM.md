@@ -1,4 +1,6 @@
 +++
+
+tags = ["QEMU", "Automation", "Kali", "Bash", "Tools" ]
 draft = false
 title = "Automating Kali VM Setup with QEMU"
 author = "bloodstiller"
