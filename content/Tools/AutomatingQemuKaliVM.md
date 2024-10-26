@@ -5,7 +5,8 @@ author = "bloodstiller"
 date = 2024-10-26
 +++
 
-As a cybersecurity enthusiast and productivity junkie, I've always been fascinated by the power of automation. Recently, I decided to streamline my process of setting up Kali Linux virtual machines using QEMU. In this article, I'll walk you through how I've automated the creation and configuration of Kali VMs, complete with my preferred dotfiles and tools.
+As a productivity junkie, I've always been drawn to automation. Recently, I decided to streamline my process of setting up Kali Linux virtual machines using QEMU. In this article, I'll walk you through how I've automated the creation and configuration of Kali VMs, complete with my preferred dotfiles and tools.
+
 
 
 ## The Need for Automation {#the-need-for-automation}
@@ -83,7 +84,8 @@ However, it wasn't without its challenges. Some issues I encountered and solved 
 -   Handling network configuration differences between host systems
 -   Dealing with package installation errors due to repository changes
 
-But bloodstiller why did you not use Ansible? Well I wanted to be in a position where if I did not have access to Ansible, I could still automate the process.
+## But ansible exists? 
+"But bloodstiller why did you not use Ansible?" Well I wanted to be in a position where if I did not have access to Ansible, I could still automate the process. I will port this process to ansible soon. However I like being able to pull a kali qmemu image from online, my script, update a few variables and then I have my setup the way I like it. 
 
 
 ## Customizing the Scripts for Your Own Use {#customizing-the-scripts-for-your-own-use}
