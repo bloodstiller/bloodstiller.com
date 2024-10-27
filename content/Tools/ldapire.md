@@ -43,7 +43,7 @@ LDAPire is a Python-based tool designed to connect to LDAP servers (primarily Ac
 ### Code: 
 I have placed the code here for convenience. 
 
-{{< ghcode "https://raw.githubusercontent.com/bloodstiller/ldapire/refs/heads/main/ldapChecker.py" >}}
+{{< ghcode "https://raw.githubusercontent.com/bloodstiller/ldapire/refs/heads/main/ldapire.py" >}}
 
 ### How to Use It {#how-to-use-it}
 
