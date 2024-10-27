@@ -1,5 +1,6 @@
 .DS_Store
 .idea
+.hugo_build.lock
 *.log
 tmp/
 content-org/
