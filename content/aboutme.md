@@ -28,8 +28,6 @@ My walkthroughs include all the troubleshooting steps I go through when things d
 
 Unfortunately, I’m just & I mean just, smart enough to know I’m dumb.
 
-    {{< figure src="/ox-hugo/Logo.png" >}}
-
 ## Get in contact: {#sign-off}
 
 &#x2013; Get in touch bloodstiller at proton dot me
