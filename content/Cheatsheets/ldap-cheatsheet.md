@@ -1182,9 +1182,34 @@ foreach ($result in $results) {
 
 -   **Netexec/Crackmapexec**:
     -   Has alot of amazing modules we can use with LDAP:
-    -   **Command**: crackmapexec ldap -L
+    -   **Command**: `crackmapexec ldap -L`
 
+### LDAP Credential Stealing: 
+- In the box, Authority it is possible to steal `LDAP` credentials by hosting a malicious `ldap` server and then forcing a client that uses `LDAP` to authenticate back to us our endpoint. 
+- If you can control force authentication to an endpoint of your choosing this is viable way to steal crededentials
+        
 
+- **Have the victim connect back to us**:
+  - With PWM if we can access the config page we can enter our URL:
+  - {{< figure src="/ox-hugo/2024-10-24-083418_.png" >}}
+  - {{< figure src="/ox-hugo/2024-10-24-083633_.png" >}}
+    - Ensure `ldap` not `ldaps` or it will be encrypted and you will just see cipher text.
+
+- *Setup Listening Server*:
+  - `nc -nvlp 636`
+  - +Note+:
+    - No special type of server needs to be used just a server and port to listen on.
+
+- **Initiate Connection**:
+  -  {{< figure src="/ox-hugo/2024-10-24-083706_.png" >}}
+
+- **Capture Creds**:
+  - {{< figure src="/ox-hugo/2024-10-24-083807_.png" >}}
+
+- **Verify with netexec or tool of your choosing**:
+  - `netexec ldap $domain -u $user -p $pass`
+  - {{< figure src="/ox-hugo/2024-10-24-084823_.png" >}}
+        
 ### Password Spraying &amp; Bruteforcing LDAP: {#password-spraying-and-bruteforcing-ldap}
 
 
