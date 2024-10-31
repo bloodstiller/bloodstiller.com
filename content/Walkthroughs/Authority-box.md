@@ -3,7 +3,7 @@ tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "CA", "Certificate", "Ansible
 draft = false
 title = "Authority HTB Walkthrough"
 author = "bloodstiller"
-date = 2024-10-10
+date = 2024-10-31
 +++
 
 ## Authority Hack The Box Walkthrough/Writeup: {#authority-hack-the-box-walkthrough-writeup}
