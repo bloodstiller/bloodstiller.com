@@ -368,7 +368,7 @@ setuserinfo2 username 24 [NewPassword]
 #### Create a new share using rpcclient: {#create-a-new-share-using-rpcclient}
 
 ```bash
-netshareadd "C:\\[FolderToShare]" "[NameOfShare]" [ShareType] "[ShareDescription]"
+netshareadd "C:\[FolderToShare]" "[NameOfShare]" [ShareType] "[ShareDescription]"
 netshareadd "C:\Windows" "Windows" 10 "Windows Share"
 ```
 

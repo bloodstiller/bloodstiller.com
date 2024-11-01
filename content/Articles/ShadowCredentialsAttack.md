@@ -1,5 +1,5 @@
 +++
-tags = ["Windows", "LDAP", "msDS-KeyCredentialLink", "Shadow Credentials", "AD", "Active Directory", "Rubeus", "Whisker"]
+tags = ["Windows", "LDAP", "msDS-KeyCredentialLink", "Shadow Credentials", "Active Directory", "Rubeus", "Whisker"]
 draft = false
 title = "Understanding the Shadow Credentials Attack Vector"
 author = "bloodstiller"
