@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Kerberoasting", "Kerberos", "cpassword"]
+tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Kerberoasting", "Kerberos", "cpassword", "Active Directory"]
 draft = false
 title = "Active HTB Walkthrough"
 author = "bloodstiller"

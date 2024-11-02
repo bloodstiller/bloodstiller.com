@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "pst", "lnk", "telnet"]
+tags = ["Box", "HTB", "Easy", "Windows", "pst", "lnk", "telnet", "Active Directory"]
 draft = false
 title = "Access HTB Walkthrough"
 date = 2024-09-12
