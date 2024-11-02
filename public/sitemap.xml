@@ -2,8 +2,80 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/active-box/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/author/</loc>
-    <lastmod>2024-10-26T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/author/bloodstiller/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/box/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cpassword/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/easy/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/htb/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/kerberoasting/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/kerberos/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ldap/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/windows/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/active-directory/</loc>
+    <lastmod>2024-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/cicada-box/</loc>
+    <lastmod>2024-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/rpc/</loc>
+    <lastmod>2024-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sebackupprivilege/</loc>
+    <lastmod>2024-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/</loc>
+    <lastmod>2024-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ansible/</loc>
+    <lastmod>2024-10-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/authority-box/</loc>
+    <lastmod>2024-10-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ca/</loc>
+    <lastmod>2024-10-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/certificate/</loc>
+    <lastmod>2024-10-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/machineaccountquota/</loc>
+    <lastmod>2024-10-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/medium/</loc>
+    <lastmod>2024-10-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/rbcd/</loc>
+    <lastmod>2024-10-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tools/automatingqemukalivm/</loc>
     <lastmod>2024-10-26T00:00:00+00:00</lastmod>
@@ -14,19 +86,10 @@
     <loc>http://localhost:1313/tags/bash/</loc>
     <lastmod>2024-10-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/author/bloodstiller/</loc>
-    <lastmod>2024-10-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2024-10-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/kali/</loc>
     <lastmod>2024-10-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/qemu/</loc>
-    <lastmod>2024-10-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-10-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tools/</loc>
@@ -36,9 +99,6 @@
     <lastmod>2024-10-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/articles/</loc>
-    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/box/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cups/</loc>
@@ -59,31 +119,16 @@
     <loc>http://localhost:1313/walkthroughs/evilcups-box/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/htb/</loc>
-    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/linux/</loc>
-    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/medium/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/articles/understandingcupsexploitation/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/</loc>
-    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/active-directory/</loc>
-    <lastmod>2024-10-21T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/cve-2021-42278/</loc>
     <lastmod>2024-10-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cve-2021-42287/</loc>
-    <lastmod>2024-10-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/ldap/</loc>
     <lastmod>2024-10-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/nopac/</loc>
@@ -93,9 +138,6 @@
     <lastmod>2024-10-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/articles/understandingnopacexploit/</loc>
-    <lastmod>2024-10-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/windows/</loc>
     <lastmod>2024-10-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/capcom/</loc>
@@ -108,9 +150,6 @@
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/fuse-box/</loc>
-    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/rpc/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tools/bloodserver/</loc>
@@ -164,13 +203,7 @@
     <loc>http://localhost:1313/articles/azureadconnectattack/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ad/</loc>
-    <lastmod>2024-10-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/follina/</loc>
-    <lastmod>2024-10-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/kerberos/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/msds-keycredentiallink/</loc>
@@ -208,12 +241,6 @@
   </url><url>
     <loc>http://localhost:1313/walkthroughs/scrambled-box/</loc>
     <lastmod>2024-10-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/ca/</loc>
-    <lastmod>2024-10-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/certificate/</loc>
-    <lastmod>2024-10-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/escape-box/</loc>
     <lastmod>2024-10-05T00:00:00+00:00</lastmod>
@@ -254,9 +281,6 @@
     <loc>http://localhost:1313/walkthroughs/access-box/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/easy/</loc>
-    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/lnk/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
@@ -274,12 +298,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/umbraco/</loc>
     <lastmod>2024-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/machineaccountquota/</loc>
-    <lastmod>2024-09-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/rbcd/</loc>
-    <lastmod>2024-09-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/support-box/</loc>
     <lastmod>2024-09-06T00:00:00+00:00</lastmod>

