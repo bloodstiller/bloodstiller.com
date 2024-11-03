@@ -2,47 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/active-box/</loc>
-    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/active-directory/</loc>
+    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/asreproasting/</loc>
+    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/</loc>
-    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/bloodstiller/</loc>
-    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/box/</loc>
+    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cve-2021-1675/</loc>
+    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/easy/</loc>
+    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/htb/</loc>
+    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/kerberoastig/</loc>
+    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/kerberos/</loc>
+    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ldap/</loc>
+    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/printnightmare/</loc>
+    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sauna-box/</loc>
+    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/windows/</loc>
+    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/active-box/</loc>
     <lastmod>2024-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cpassword/</loc>
     <lastmod>2024-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/easy/</loc>
-    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/htb/</loc>
-    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/kerberoasting/</loc>
     <lastmod>2024-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/kerberos/</loc>
+    <loc>http://localhost:1313/walkthroughs/</loc>
     <lastmod>2024-11-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/ldap/</loc>
-    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/windows/</loc>
-    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/active-directory/</loc>
-    <lastmod>2024-11-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/cicada-box/</loc>
     <lastmod>2024-11-01T00:00:00+00:00</lastmod>
@@ -51,9 +69,6 @@
     <lastmod>2024-11-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/sebackupprivilege/</loc>
-    <lastmod>2024-11-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/</loc>
     <lastmod>2024-11-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/ansible/</loc>
