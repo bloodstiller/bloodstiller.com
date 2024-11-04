@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Kerberos", "Active Directory", "Kerberoastig", "ASREPRoasting", "printnightmare", "CVE-2021-1675"]
+tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Kerberos", "Active Directory", "Kerberoasting", "ASREPRoasting", "printnightmare", "CVE-2021-1675"]
 draft = false
 title = "Sauna HTB Walkthrough"
 author = "bloodstiller"
@@ -525,20 +525,87 @@ As we have credentials we can perform kerberoasting:
     -   {{< figure src="/ox-hugo/2024-11-03-163609_.png" >}}
 
 
+
 ## 3. Privilege Escalation: {#3-dot-privilege-escalation}
 
 
-### Discovering the host is susceptible to printnightmare vulnerabllity: {#discovering-the-host-is-susceptible-to-printnightmare-vulnerabllity}
+### Privilege escalation Route 1 PrintNightmare: {#privilege-escalation-route-1-printnightmare}
+
+
+#### Discovering the host is susceptible to PrintNightmare vulnerability: {#discovering-the-host-is-susceptible-to-printnightmare-vulnerability}
 
 -   `netexec smb $box -u $user -p $pass -M printnightmare`
 -   {{< figure src="/ox-hugo/2024-11-03-155445_.png" >}}
 -   +Note+: I have a priv-esc checklist that I run through when I am working on machines and checking for `printnightmare` is one of these checks (I didn't just magically stumble upon the idea). However now we have a viable path forward.
 
 
+### Privilege escalation Route 2 svc_loanmgr: {#privilege-escalation-route-2-svc-loanmgr}
+
+-   There is also the option of this other privesc path (and I believe intended approach)
+
+
+#### Approach 1: Using winpeas to find clear-text creds stored in Registry Keys: {#approach-1-using-winpeas-to-find-clear-text-creds-stored-in-registry-keys}
+
+-   **I upload** `winpeas.ps1` **via my evil-winrm session as** `fsmith`:
+
+-   **Running it we find that there are creds available for** `win-logon` **which are stored in clear-text**:
+    -   {{< figure src="/ox-hugo/2024-11-03-200441_.png" >}}
+    -   +Note+: That the default username is `svc_loanmanager` however there is not user with that name on this machine. However there is a `svc_loanmgr`:
+
+-   **Verifying the credentials work for** `svc_loanmgr`:
+    -   {{< figure src="/ox-hugo/2024-11-04-073359_.png" >}}
+
+
+#### Approach 2: Manually Enumerating Registry Keys for Valuable Information: {#approach-2-manually-enumerating-registry-keys-for-valuable-information}
+
+-   **We can also search for these manually using**:
+    -   `reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon"`
+    -   {{< figure src="/ox-hugo/2024-11-03-200725_.png" >}}
+    -   +Note+: Direct registry access may trigger logging events or alerts, especially if policies are in place.
+
+
+#### Discovering svc_loanmgr has DC-Sync privileges: {#discovering-svc-loanmgr-has-dc-sync-privileges}
+
+-   **Looking back in bloodhound we can see our user has** `GetChangesAll` **&amp;** `GetChanges` **over the root domain object**:
+    -   {{< figure src="/ox-hugo/2024-11-04-073716_.png" >}}
+    -   Looking at the attack paths we have with `GetChangesAll` we can see we can:
+
+        > You may perform a dcsync attack to get the password hash of an arbitrary principal using impacket's secretsdump.py example script:
+
+        -   This means we can perform a dcsync attack to get the hashes.
+        -   {{< figure src="/ox-hugo/2024-11-04-074029_.png" >}}
+
+
+#### Overview of these rights: {#overview-of-these-rights}
+
+
+##### Replicating Directory Change (GetChanges): {#replicating-directory-change--getchanges}
+
+-   **Display Name**: [Replicating Directory Changes](https://learn.microsoft.com/en-gb/windows/win32/adschema/r-ds-replication-get-changes)
+-   **Common Name**: `DS-Replication-Get-Changes`, `GetChanges`
+-   **Rights GUID Value**: `1131f6aa-9c07-11d1-f79f-00c04fc2dcd2`
+-   **Interpretation**: Required to replicate changes from a given NC (Naming Context).
+    -   **To perform a DCSync attack, this extended right and** `DS-Replication-Get-Changes-All` **(below)** +are required+.
+-   **In bloodhound displayed as**: `GetChanges`
+
+
+##### Replicating Directory Changes All (GetChangesAll): {#replicating-directory-changes-all--getchangesall}
+
+-   **Display Name**: [Replicating Directory Changes All](https://learn.microsoft.com/en-gb/windows/win32/adschema/r-ds-replication-get-changes-all)
+-   **Common Name**: `DS-Replication-Get-Changes-All`, `GetChangesAll`
+-   **Rights GUID Value**: `1131f6ad-9c07-11d1-f79f-00c04fc2dcd2`
+-   **Interpretation**: Allows the replication of secret domain data.
+    -   **To perform a DCSync attack, this extended right and** `DS-Replication-Get-Changes` **(above)** +are required+.
+-   **In bloodhound displayed as**: `GetChangesAll`
+
+
 ## 4. Ownership: {#4-dot-ownership}
 
 
-### Creating a new administrator user using CVE-2021-1675 (printnightmare exploit): {#creating-a-new-administrator-user-using-cve-2021-1675--printnightmare-exploit}
+### Privilege escalation Route 1 PrintNightmare: {#privilege-escalation-route-1-printnightmare}
+
+
+#### Creating a new administrator user using CVE-2021-1675 (PrintNightmare exploit): {#creating-a-new-administrator-user-using-cve-2021-1675--printnightmare-exploit}
 
 1.  **Download POC**:
     -   `git clone https://github.com/calebstewart/CVE-2021-1675.git`
@@ -565,13 +632,26 @@ As we have credentials we can perform kerberoasting:
     -   We can see we have `local admin` privs.
 
 
-### Connecting as our new local-admin user: {#connecting-as-our-new-local-admin-user}
+#### Connecting as our new local-admin user: {#connecting-as-our-new-local-admin-user}
 
 -   **I connect usin** `evil-winrm`
 -   {{< figure src="/ox-hugo/2024-11-03-160239_.png" >}}
 
 -   **As we have local admin privs we can retrieve the flag from the administrator folder**:
     -   {{< figure src="/ox-hugo/2024-11-03-160321_.png" >}}
+
+
+### Privilege escalation Route 2 svc_loanmgr: {#privilege-escalation-route-2-svc-loanmgr}
+
+
+#### Performing a DC-SYNC attack as svc_loanmgr: {#performing-a-dc-sync-attack-as-svc-loanmgr}
+
+-   **We perform the dc-sync attack using** `svc_loanmgr` **account and** `impacket-secretsdump`:
+    -   `impacket-secretsdump $domain/$user:$pass@$box -dc-ip $box`
+    -   {{< figure src="/ox-hugo/2024-11-04-074618_.png" >}}
+    -   All of the same steps can be peformed to create a golden ticket in the persistence section now etc.
+
+
 
 
 ## 5. Persistence: {#5-dot-persistence}
@@ -632,6 +712,7 @@ As we have credentials we can perform kerberoasting:
 ### What did I learn? {#what-did-i-learn}
 
 1.  I should always check for password re-use even between accounts!
+2.  It was good to attack this from a privilege escalation point of view from 2 different angles, showing the more recent PrintNightmare as well as the intended route of WinLogon clear-text creds. 
 
 
 ### What silly mistakes did I make? {#what-silly-mistakes-did-i-make}
