@@ -16,6 +16,20 @@
       <description></description>
     </item>
     <item>
+      <title>CLFS</title>
+      <link>http://localhost:1313/tags/clfs/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/clfs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2023-28252</title>
+      <link>http://localhost:1313/tags/cve-2023-28252/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cve-2023-28252/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>CVE-2023-38146</title>
       <link>http://localhost:1313/tags/cve-2023-38146/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>

@@ -5,10 +5,19 @@
     <loc>http://localhost:1313/tags/active-directory/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/articles/</loc>
+    <lastmod>2024-11-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/author/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/bloodstiller/</loc>
+    <lastmod>2024-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/clfs/</loc>
+    <lastmod>2024-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cve-2023-28252/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cve-2023-38146/</loc>
@@ -23,7 +32,10 @@
     <loc>http://localhost:1313/tags/themebleed/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/understandingthemebleedcve-2023-38146/</loc>
+    <loc>http://localhost:1313/understanding2023-28252-clfs/</loc>
+    <lastmod>2024-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/articles/understandingthemebleedcve-2023-38146/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/windows/</loc>
@@ -118,9 +130,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/tools/</loc>
     <lastmod>2024-10-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/articles/</loc>
-    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cups/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
