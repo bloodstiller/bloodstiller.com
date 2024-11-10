@@ -71,6 +71,16 @@ The Shadow Credentials attack exploits a feature in Active Directory called Key 
 ### +Shadow Credentials Attack Process: Step by Step+ {#4c7bfe}
 
 
+
+#### 0. Pre-requisites for Performing the Shadow Credentials Attack:
+
+- **Domain Functional Level**: Must be Windows Server 2016 or higher.
+- **Domain Controllers**:
+  - The target domain must have at least one Domain Controller running Windows Server 2016 or higher.
+  - The Domain Controller used in the attack must have its own certificate and private keys.
+    - This requires the organization to have Active Directory Certificate Services (AD CS) or a similar Public Key Infrastructure (PKI), such as a Certification Authority (CA).
+- **Attacker Permissions**:
+  - The attacker needs control over an account with write access to the `msDs-KeyCredentialLink` attribute on the target user or computer account.
 #### 1. Initial Access {#1-dot-initial-access}
 
 The attacker starts with some level of access to the domain, typically with privileges to modify user attributes.

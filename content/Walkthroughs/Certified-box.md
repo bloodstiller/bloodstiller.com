@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "Active Directory", "Shadow Credentials", "Kerberos", "CA", "Whisker", "MsDS-KeyCredentialLink", "CERTIFICATE"]
+tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "Active Directory", "Shadow Credentials", "Kerberos", "CA", "Whisker", "MsDS-KeyCredentialLink", "CERTIFICATE", "DACLS","ACL"]
 draft = true
 title = "Certified HTB Walkthrough"
 author = "bloodstiller"
@@ -34,7 +34,13 @@ date = 2024-11-06
 
 ## 1. Enumeration: {#1-dot-enumeration}
 
--   Unlike other HTB machines we have been given a user's creds to start. This is more representative of a real internal pentest. I will still proceed with my standard process as a means to not miss anything.
+### Assumed Breach Box:
+- This box scenario assumes that the Active Directory (AD) environment has already been breached and that we have access to valid credentials.
+- This approach reflects a more realistic model, given that direct breaches of AD environments from external footholds are increasingly rare today.
+- +Note+:
+  - Even with assumed credentials, I’ll still conduct my standard enumeration process as if I don’t have them.
+    - This ensures I don’t overlook any findings just because access is available.
+    - Comprehensive documentation of all discoveries remains essential.
 
 
 ### NMAP: {#nmap}
@@ -502,7 +508,7 @@ serverName:
     ```
 
 
-#### Requesting a TGT MANAGEMENT_SVC for with PKINITtools getgtgkinit: {#requesting-a-tgt-management-svc-for-with-pkinittools-getgtgkinit}
+#### Requesting a TGT for MANAGEMENT_SVC with PKINITtools getgtgkinit: {#requesting-a-tgt-management-svc-for-with-pkinittools-getgtgkinit}
 
 -   **Request TGT &amp; export as** `.ccache` **by using our** `newCert_cert.pem` **&amp;** `newCert_priv.pem`:
     -   `python3 /home/kali/windowsTools/PKINITtools/gettgtpkinit.py -cert-pem newCert_cert.pem -key-pem newCert_priv.pem $domain/MANAGEMENT_SVC MANAGEMENT_SVC.ccache`
@@ -555,7 +561,7 @@ serverName:
         -   +Note+: I have set the `user=MANAGEMENT_SVC` in my variables and have exported the extracted hash also.
 
 
-### Requesting a TGT CA_OPERATOR for with PKINITtools getgtgkinit: {#requesting-a-tgt-ca-operator-for-with-pkinittools-getgtgkinit}
+### Requesting a TGT for CA_OPERATOR with PKINITtools getgtgkinit: {#requesting-a-tgt-ca-operator-for-with-pkinittools-getgtgkinit}
 
 -   **Now we perform the same process again to be able to extract their hash by using the** `.pem` **files we have retrieved to export a** `.ccache` **we can authenticate with**:
     -   `python3 /home/kali/windowsTools/PKINITtools/gettgtpkinit.py -cert-pem CACert_cert.pem -key-pem CACert_priv.pem $domain/CA_OPERATOR CA_OPERATOR.ccache`
@@ -652,7 +658,7 @@ serverName:
     -   {{< figure src="/ox-hugo/2024-11-06-133454_.png" >}}
 
 
-## 4. Persistence: {#4-dot-persistence}
+## 5. Persistence: {#4-dot-persistence}
 
 
 ### Dumping NTDS.dit/DC-SYNC attack: {#dumping-ntds-dot-dit-dc-sync-attack}

