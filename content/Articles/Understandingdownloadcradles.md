@@ -105,25 +105,21 @@ function Invoke-SecureDownloadCradle {
         [Parameter(Mandatory=$false)][string] $UserAgent = "PowerShell/SecurityAudit",
         [Parameter(Mandatory=$false)][int] $Timeout = 30000
     )
-
+    
     try {
         # Configure WebClient with security in mind
         $webClient = New-Object System.Net.WebClient
         $webClient.Headers.Add("User-Agent", $UserAgent)
-
+        
         # Enforce TLS 1.2
         [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
-
+        
         # Download and execute in memory
         $scriptContent = $webClient.DownloadString($Url)
-
-        # Optional: Verify script signature or content
-        if (Test-ScriptSignature $scriptContent) {
-            $ExecutionContext.InvokeCommand.InvokeScript($false, [scriptblock]::Create($scriptContent), $null, $null)
-        } else {
-            throw "Script signature validation failed"
-        }
-
+        
+        # Execute in memory
+        $ExecutionContext.InvokeCommand.InvokeScript($false, [scriptblock]::Create($scriptContent), $null, $null)
+        
     } catch {
         Write-Error "Download cradle execution failed: $_"
     } finally {
@@ -138,7 +134,6 @@ This implementation includes several important security features:
 -   TLS 1.2 enforcement
 -   Custom User-Agent support for tracking/auditing
 -   Structured error handling with `try/catch` blocks
--   Script signature verification
 -   Proper cleanup with `Dispose()`
 -   Pure in-memory execution without touching disk
 
