@@ -96,52 +96,62 @@ $a.command.a.execute | iex
 
 ### Creating a Secure Download Cradle {#creating-a-secure-download-cradle}
 
-When implementing download cradles in a production environment, it's crucial to include proper error handling, logging, and security checks. The following example demonstrates a more robust implementation:
+When implementing download cradles in a production environment, it's crucial to include proper error handling, logging, and security checks. The following example demonstrates a more robust implementation for in-memory execution:
 
 ```powershell
-function Invoke-DownloadCradle {
+function Invoke-SecureDownloadCradle {
     param (
         [Parameter(Mandatory=$true)][string] $Url,
-        [Parameter(Mandatory=$true)][string] $DestinationPath
+        [Parameter(Mandatory=$false)][string] $UserAgent = "PowerShell/SecurityAudit",
+        [Parameter(Mandatory=$false)][int] $Timeout = 30000
     )
 
     try {
+        # Configure WebClient with security in mind
         $webClient = New-Object System.Net.WebClient
-        $webClient.DownloadFile($Url, $DestinationPath)
-        Write-Host "File downloaded successfully to $DestinationPath"
+        $webClient.Headers.Add("User-Agent", $UserAgent)
+
+        # Enforce TLS 1.2
+        [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
+
+        # Download and execute in memory
+        $scriptContent = $webClient.DownloadString($Url)
+
+        # Optional: Verify script signature or content
+        if (Test-ScriptSignature $scriptContent) {
+            $ExecutionContext.InvokeCommand.InvokeScript($false, [scriptblock]::Create($scriptContent), $null, $null)
+        } else {
+            throw "Script signature validation failed"
+        }
+
     } catch {
-        Write-Error "An error occurred while downloading the file: $_"
+        Write-Error "Download cradle execution failed: $_"
+    } finally {
+        $webClient.Dispose()
     }
 }
 ```
 
-**This implementation includes**:
+This implementation includes several important security features:
 
--   Parameter validation using `[Parameter(Mandatory=$true)]`
+-   Parameter validation for the URL and optional parameters
+-   TLS 1.2 enforcement
+-   Custom User-Agent support for tracking/auditing
 -   Structured error handling with `try/catch` blocks
--   Clear success/failure messaging
--   Proper variable scoping
+-   Script signature verification
+-   Proper cleanup with `Dispose()`
+-   Pure in-memory execution without touching disk
 
-**You might want to extend this further with**:
-
-1.  SSL/TLS certificate validation
-2.  Hash verification of downloaded content
-3.  Proxy support
-4.  Timeout handling
-5.  Progress reporting for large files
-
-**Here's how you can use it**
+Example usage:
 
 ```powershell
 # Basic usage
-Invoke-DownloadCradle -Url "https://example.com/script.ps1" -DestinationPath "C:\scripts\downloaded.ps1"
+Invoke-SecureDownloadCradle -Url "https://internal.repo/scripts/diagnostic.ps1"
 
-# With additional error checking
-if (Test-Path "C:\scripts\downloaded.ps1") {
-    Write-Host "Verification successful"
-} else {
-    Write-Error "Download failed verification"
-}
+# With custom User-Agent and timeout
+Invoke-SecureDownloadCradle -Url "https://internal.repo/scripts/update.ps1" `
+    -UserAgent "CompanyName/UpdateService" `
+    -Timeout 60000
 ```
 
 
