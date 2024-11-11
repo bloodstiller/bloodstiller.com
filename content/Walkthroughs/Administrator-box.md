@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "Active Directory", "Kerberos", "Kerberoasting", "DACLS", "ACL", "pwsafe"]
+tags = ["Box", "HTB", "Medium", "Windows", "Active Directory", "Kerberos", "Kerberoasting", "DACLS", "ACL", "pwsafe", "Download Cradle"]
 draft = true
 title = "Administrator HTB Walkthrough"
 author = "bloodstiller"

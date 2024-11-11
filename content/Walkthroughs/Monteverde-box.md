@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "Active Directory", "Azure AD Connect", "Azure", "SQL", "MSSQL"]
+tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "Active Directory", "Azure AD Connect", "Azure", "SQL", "MSSQL", "Download Cradle"]
 draft = false
 title = "Monteverde HTB Walkthrough"
 author = "bloodstiller"

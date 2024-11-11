@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "Active Directory", "NoPac", "CVE-2021-42278", "CVE-2021-42287"]
+tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "Active Directory", "NoPac", "CVE-2021-42278", "CVE-2021-42287", "Download Cradle"]
 draft = false
 title = "Resolute HTB Walkthrough"
 author = "bloodstiller"

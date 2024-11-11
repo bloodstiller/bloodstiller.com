@@ -186,6 +186,16 @@
         
             
                 <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/timelapse-box/" title="./walkthroughs/timelapse-box/">
+                        
+                            Timelapse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
                     <a href="http://localhost:1313/walkthroughs/certified-box/" title="./walkthroughs/certified-box/">
                         
                             Certified HTB Walkthrough
@@ -620,9 +630,9 @@
         
             
                 <li class="file">
-                    <a href="http://localhost:1313/timelapse-box/" title="./timelapse-box/">
+                    <a href="http://localhost:1313/understandingdownloadcradles/" title="./understandingdownloadcradles/">
                         
-                            Timelapse HTB Walkthrough
+                            Understanding PowerShell Download Cradles: A Deep Dive
                         
                     </a>
                 </li>
@@ -765,7 +775,7 @@
                         <a
                             href="/tags/printnightmare/"
                             class="tag-btn">
-                            printnightmare
+                            PrintNightmare
                         </a>
                     
                         <a
@@ -868,13 +878,13 @@
     </li>
     <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
       <ul>
-        <li><a href="#privilege-escalation-route-1-printnightmare">Privilege escalation Route 1 PrintNightmare:</a></li>
+        <li><a href="#privilege-escalation-route-1-PrintNightmare">Privilege escalation Route 1 PrintNightmare:</a></li>
         <li><a href="#privilege-escalation-route-2-svc-loanmgr">Privilege escalation Route 2 svc_loanmgr:</a></li>
       </ul>
     </li>
     <li><a href="#4-dot-ownership">4. Ownership:</a>
       <ul>
-        <li><a href="#privilege-escalation-route-1-printnightmare">Privilege escalation Route 1 PrintNightmare:</a></li>
+        <li><a href="#privilege-escalation-route-1-PrintNightmare">Privilege escalation Route 1 PrintNightmare:</a></li>
         <li><a href="#privilege-escalation-route-2-svc-loanmgr">Privilege escalation Route 2 svc_loanmgr:</a></li>
       </ul>
     </li>
@@ -1810,14 +1820,14 @@
 </li>
 </ul>
 <h2 id="3-dot-privilege-escalation">3. Privilege Escalation:</h2>
-<h3 id="privilege-escalation-route-1-printnightmare">Privilege escalation Route 1 PrintNightmare:</h3>
-<h4 id="discovering-the-host-is-susceptible-to-printnightmare-vulnerability">Discovering the host is susceptible to PrintNightmare vulnerability:</h4>
+<h3 id="privilege-escalation-route-1-PrintNightmare">Privilege escalation Route 1 PrintNightmare:</h3>
+<h4 id="discovering-the-host-is-susceptible-to-PrintNightmare-vulnerability">Discovering the host is susceptible to PrintNightmare vulnerability:</h4>
 <ul>
 <li><code>netexec smb $box -u $user -p $pass -M printnightmare</code></li>
 <li><figure><img src="/ox-hugo/2024-11-03-155445_.png">
 </figure>
 </li>
-<li>+Note+: I have a priv-esc checklist that I run through when I am working on machines and checking for <code>printnightmare</code> is one of these checks (I didn&rsquo;t just magically stumble upon the idea). However now we have a viable path forward.</li>
+<li>+Note+: I have a priv-esc checklist that I run through when I am working on machines and checking for <code>PrintNightmare</code> is one of these checks (I didn&rsquo;t just magically stumble upon the idea). However now we have a viable path forward.</li>
 </ul>
 <h3 id="privilege-escalation-route-2-svc-loanmgr">Privilege escalation Route 2 svc_loanmgr:</h3>
 <ul>
@@ -1908,8 +1918,8 @@
 <li><strong>In bloodhound displayed as</strong>: <code>GetChangesAll</code></li>
 </ul>
 <h2 id="4-dot-ownership">4. Ownership:</h2>
-<h3 id="privilege-escalation-route-1-printnightmare">Privilege escalation Route 1 PrintNightmare:</h3>
-<h4 id="creating-a-new-administrator-user-using-cve-2021-1675--printnightmare-exploit">Creating a new administrator user using CVE-2021-1675 (PrintNightmare exploit):</h4>
+<h3 id="privilege-escalation-route-1-PrintNightmare">Privilege escalation Route 1 PrintNightmare:</h3>
+<h4 id="creating-a-new-administrator-user-using-cve-2021-1675--PrintNightmare-exploit">Creating a new administrator user using CVE-2021-1675 (PrintNightmare exploit):</h4>
 <ol>
 <li>
 <p><strong>Download POC</strong>:</p>

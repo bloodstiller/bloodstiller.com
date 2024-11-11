@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "Active Directory", "Shadow Credentials", "Kerberos", "CA", "Whisker", "MsDS-KeyCredentialLink", "CERTIFICATE", "DACLS","ACL"]
+tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "Active Directory", "Shadow Credentials", "Kerberos", "CA", "Whisker", "MsDS-KeyCredentialLink", "CERTIFICATE", "DACLS", "ACL", "Download Cradle"]
 draft = true
 title = "Certified HTB Walkthrough"
 author = "bloodstiller"

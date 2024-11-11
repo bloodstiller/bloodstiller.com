@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Kerberos", "Active Directory", "Kerberoasting", "ASREPRoasting", "printnightmare", "CVE-2021-1675"]
+tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Kerberos", "Active Directory", "Kerberoasting", "ASREPRoasting", "PrintNightmare", "CVE-2021-1675"]
 draft = false
 title = "Sauna HTB Walkthrough"
 author = "bloodstiller"
@@ -529,14 +529,14 @@ As we have credentials we can perform kerberoasting:
 ## 3. Privilege Escalation: {#3-dot-privilege-escalation}
 
 
-### Privilege escalation Route 1 PrintNightmare: {#privilege-escalation-route-1-printnightmare}
+### Privilege escalation Route 1 PrintNightmare: {#privilege-escalation-route-1-PrintNightmare}
 
 
-#### Discovering the host is susceptible to PrintNightmare vulnerability: {#discovering-the-host-is-susceptible-to-printnightmare-vulnerability}
+#### Discovering the host is susceptible to PrintNightmare vulnerability: {#discovering-the-host-is-susceptible-to-PrintNightmare-vulnerability}
 
 -   `netexec smb $box -u $user -p $pass -M printnightmare`
 -   {{< figure src="/ox-hugo/2024-11-03-155445_.png" >}}
--   +Note+: I have a priv-esc checklist that I run through when I am working on machines and checking for `printnightmare` is one of these checks (I didn't just magically stumble upon the idea). However now we have a viable path forward.
+-   +Note+: I have a priv-esc checklist that I run through when I am working on machines and checking for `PrintNightmare` is one of these checks (I didn't just magically stumble upon the idea). However now we have a viable path forward.
 
 
 ### Privilege escalation Route 2 svc_loanmgr: {#privilege-escalation-route-2-svc-loanmgr}
@@ -602,10 +602,10 @@ As we have credentials we can perform kerberoasting:
 ## 4. Ownership: {#4-dot-ownership}
 
 
-### Privilege escalation Route 1 PrintNightmare: {#privilege-escalation-route-1-printnightmare}
+### Privilege escalation Route 1 PrintNightmare: {#privilege-escalation-route-1-PrintNightmare}
 
 
-#### Creating a new administrator user using CVE-2021-1675 (PrintNightmare exploit): {#creating-a-new-administrator-user-using-cve-2021-1675--printnightmare-exploit}
+#### Creating a new administrator user using CVE-2021-1675 (PrintNightmare exploit): {#creating-a-new-administrator-user-using-cve-2021-1675--PrintNightmare-exploit}
 
 1.  **Download POC**:
     -   `git clone https://github.com/calebstewart/CVE-2021-1675.git`
