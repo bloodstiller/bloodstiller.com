@@ -5,6 +5,9 @@
     <loc>http://localhost:1313/tags/active-directory/</loc>
     <lastmod>2024-11-11T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/articles/</loc>
+    <lastmod>2024-11-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/author/</loc>
     <lastmod>2024-11-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -47,7 +50,7 @@
     <loc>http://localhost:1313/walkthroughs/timelapse-box/</loc>
     <lastmod>2024-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/understandingdownloadcradles/</loc>
+    <loc>http://localhost:1313/articles/understandingdownloadcradles/</loc>
     <lastmod>2024-11-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/</loc>
@@ -87,9 +90,6 @@
     <lastmod>2024-11-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/aero-box/</loc>
-    <lastmod>2024-11-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/articles/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/clfs/</loc>
@@ -297,6 +297,9 @@
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/administrator-box/</loc>
+    <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/as-reproasting/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/deserialization/</loc>
