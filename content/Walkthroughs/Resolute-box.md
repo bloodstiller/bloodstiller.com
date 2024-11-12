@@ -363,6 +363,10 @@ date = 2024-10-21
     -   {{< figure src="/ox-hugo/2024-10-20-144446_.png" >}}
 
 -   I try various download cradles but these are all blocked:
+-   +Deep Dive+: I have a deep dive into download cradles and how they work: 
+    -   https://bloodstiller.com/articles/understandingdownloadcradles/
+
+
 
 
 ### Using Winpeas to enumerate: {#using-winpeas-to-enumerate}

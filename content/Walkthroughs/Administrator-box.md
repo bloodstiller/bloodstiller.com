@@ -613,6 +613,8 @@ date = 2024-11-04
 
 -   Initially I tried to generate a ticket just using the KRBTGT NT hash however this was revoked (expected) however we can get around this by extracting the AESKEY using mimikatz and extracting a creating a ticket
 -   To avoid AMSI I decide to use [invoke-mimikatz](https://github.com/g4uss47/Invoke-Mimikatz) this means I can use a download cradle to load the script directly into memory without needing to download anything onto the host itself.
+-   +Deep Dive+: I have a deep dive into download cradles and how they work: 
+    -   https://bloodstiller.com/articles/understandingdownloadcradles/
 
 -   **I stand up my python server**:
     -   `python3 -m http.server 9000`
