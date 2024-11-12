@@ -598,7 +598,7 @@ As we have credentials we can perform kerberoasting:
     -   **To perform a DCSync attack, this extended right and** `DS-Replication-Get-Changes` **(above)** +are required+.
 -   **In bloodhound displayed as**: `GetChangesAll`
 
-
+    
 ## 4. Ownership: {#4-dot-ownership}
 
 
