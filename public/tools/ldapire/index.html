@@ -713,7 +713,7 @@
                         class="readtime"
                         title="Time to Read">
                         <i class="bi bi-clock"></i>
-                        5 mins to read
+                        6 mins to read
                     </div>
                 
             </div>
@@ -852,19 +852,66 @@
 <h3 id="key-features">Key Features</h3>
 <ol>
 <li>
-<p><strong>Adaptive Connection Attempts</strong>: The tool first attempts to connect using SSL. If that fails, it automatically retries without SSL, ensuring maximum compatibility across different AD configurations.</p>
+<p><strong>Advanced Connection Handling</strong>:</p>
+<ul>
+<li>SSL/TLS support with automatic fallback to non-SSL</li>
+<li>Support for both anonymous and authenticated binds</li>
+<li>Secure credential handling and validation</li>
+</ul>
 </li>
 <li>
-<p><strong>Flexible Authentication</strong>: Support for both anonymous binds and authenticated connections, allowing for use in various scenarios you might encounter during a pentest.</p>
+<p><strong>Comprehensive Enumeration</strong>:</p>
+<ul>
+<li>Complete enumeration of users, groups, computers, and all domain objects</li>
+<li>Detailed attribute collection with proper formatting</li>
+<li>Advanced binary attribute handling (SIDs, GUIDs, Exchange attributes)</li>
+</ul>
 </li>
 <li>
-<p><strong>Comprehensive Enumeration</strong>: Retrieves both basic and detailed information about users and groups, providing a wealth of data for further analysis.</p>
+<p><strong>Service Account Detection</strong>:</p>
+<ul>
+<li>Automated identification of potential service accounts</li>
+<li>Pattern matching for common service account naming conventions</li>
+<li>Context-aware results with surrounding information</li>
+</ul>
 </li>
 <li>
-<p><strong>Output Flexibility</strong>: Generates four separate output files, giving you both quick-reference lists and in-depth details about AD objects.</p>
+<p><strong>Output Organization</strong>:</p>
+<ul>
+<li>
+<p>Basic Information Files:</p>
+<ul>
+<li>Users.txt: User SAM account names</li>
+<li>Groups.txt: Group SAM account names</li>
+<li>Computers.txt: Computer SAM account names</li>
+<li>Objects.txt: All object SAM account names</li>
+</ul>
 </li>
 <li>
-<p><strong>Robust Error Handling and Logging</strong>: Comprehensive logging helps you understand exactly what&rsquo;s happening during the enumeration process, aiding in troubleshooting and report writing.</p>
+<p>Detailed Information Files:</p>
+<ul>
+<li>UsersDetailed.txt: Comprehensive user attributes</li>
+<li>GroupsDetailed.txt: Comprehensive group attributes</li>
+<li>ComputersDetailed.txt: Comprehensive computer attributes</li>
+<li>ObjectsDetailedLdap.txt: All domain object details</li>
+</ul>
+</li>
+<li>
+<p>Special Reports:</p>
+<ul>
+<li>AllObjectDescriptions.txt: Consolidated descriptions</li>
+<li>ServiceAccounts.txt: Potential service account findings</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Security Features</strong>:</p>
+<ul>
+<li>Anonymous bind detection and warning</li>
+<li>Secure credential handling</li>
+<li>Informative security status reporting</li>
+</ul>
 </li>
 </ol>
 <h3 id="why-use-this-tool">Why Use This Tool?</h3>
@@ -1052,7 +1099,7 @@
 
 
 <h3 id="how-to-use-it">How to Use It</h3>
-<p>Using the tool is straightforward. After installation, you can run it with a simple command:</p>
+<p>Using the tool is straightforward. After installation, you can run it with the following syntax:</p>
 
 
 
@@ -1063,17 +1110,17 @@
 <div class="codeblock">
     
         <div class="copy-button-box">
-            <button class="copy-button" state="copy" data="python3%20pythonldap.py%20%3cDC_IP%3e%20[-u%20USERNAME]%20[-p%20PASSWORD]">
+            <button class="copy-button" state="copy" data="python3%20ldapire.py%20[DC_IP]%20[-u%20USERNAME]%20[-p%20PASSWORD]">
                 <i class="bi bi-copy"></i>
             </button>
         </div>
     
 
     
-        <pre><code>python3 pythonldap.py &lt;DC_IP&gt; [-u USERNAME] [-p PASSWORD]</code></pre>
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 ldapire.py <span style="color:#f92672">[</span>DC_IP<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-u USERNAME<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-p PASSWORD<span style="color:#f92672">]</span></span></span></code></pre></div>
     
 </div>
-<p>For example, to perform an authenticated enumeration:</p>
+<p>For example:</p>
 
 
 
@@ -1084,26 +1131,90 @@
 <div class="codeblock">
     
         <div class="copy-button-box">
-            <button class="copy-button" state="copy" data="python3%20pythonldap.py%20192.168.1.100%20-u%20%22DOMAIN%5cusername%22">
+            <button class="copy-button" state="copy" data="#%20Authenticated%20enumeration%0apython3%20ldapire.py%20192.168.1.1%20-u%20%22DOMAIN%5c%5cusername%22%20-p%20%22password%22%0a%0a#%20Anonymous%20enumeration%0apython3%20ldapire.py%20192.168.1.1">
                 <i class="bi bi-copy"></i>
             </button>
         </div>
     
 
     
-        <pre><code>python3 pythonldap.py 192.168.1.100 -u &#34;DOMAIN\username&#34;</code></pre>
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Authenticated enumeration</span>
+</span></span><span style="display:flex;"><span>python3 ldapire.py 192.168.1.1 -u <span style="color:#e6db74">&#34;DOMAIN\\username&#34;</span> -p <span style="color:#e6db74">&#34;password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Anonymous enumeration</span>
+</span></span><span style="display:flex;"><span>python3 ldapire.py 192.168.1.1</span></span></code></pre></div>
     
 </div>
-<p>The tool will prompt for a password if not provided, ensuring secure credential handling.</p>
+<p>The tool provides clear console output showing progress:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="============================================================%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20LDAP%20Information%20Retrieval%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Domain%20Enumeration%0a============================================================%0a%0aProcessing%20Users...%0aProcessing%20Groups...%0aProcessing%20Computers...%0aProcessing%20All%20Objects...%0aProcessing%20Descriptions...%0aSearching%20for%20Service%20Accounts...">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">============================================================</span>
+</span></span><span style="display:flex;"><span>                LDAP Information Retrieval
+</span></span><span style="display:flex;"><span>                  Domain Enumeration
+</span></span><span style="display:flex;"><span><span style="color:#f92672">============================================================</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Processing Users...
+</span></span><span style="display:flex;"><span>Processing Groups...
+</span></span><span style="display:flex;"><span>Processing Computers...
+</span></span><span style="display:flex;"><span>Processing All Objects...
+</span></span><span style="display:flex;"><span>Processing Descriptions...
+</span></span><span style="display:flex;"><span>Searching <span style="color:#66d9ef">for</span> Service Accounts...</span></span></code></pre></div>
+    
+</div>
 <h3 id="output-and-analysis">Output and Analysis</h3>
-<p>The tool generates four key files:</p>
+<p>The tool generates several output files for different aspects of enumeration:</p>
 <ol>
-<li><code>usersLdap.txt</code>: A quick reference list of user sAMAccountNames.</li>
-<li><code>usersLdap_detailed.txt</code>: Comprehensive details about each user.</li>
-<li><code>groupsLdap.txt</code>: A list of group sAMAccountNames.</li>
-<li><code>groupsLdap_detailed.txt</code>: Detailed information about each group.</li>
+<li>
+<p><strong>Basic Information Files</strong>:</p>
+<ul>
+<li><code>Users.txt</code>: Simple list of user SAM account names</li>
+<li><code>Groups.txt</code>: List of group SAM account names</li>
+<li><code>Computers.txt</code>: List of computer SAM account names</li>
+<li><code>Objects.txt</code>: List of all object SAM account names</li>
+</ul>
+</li>
+<li>
+<p><strong>Detailed Information Files</strong>:</p>
+<ul>
+<li><code>UsersDetailed.txt</code>: Comprehensive user attributes</li>
+<li><code>GroupsDetailed.txt</code>: Comprehensive group attributes</li>
+<li><code>ComputersDetailed.txt</code>: Comprehensive computer attributes</li>
+<li><code>ObjectsDetailedLdap.txt</code>: All domain object details</li>
+</ul>
+</li>
+<li>
+<p><strong>Special Reports</strong>:</p>
+<ul>
+<li><code>AllObjectDescriptions.txt</code>: Consolidated descriptions from all objects</li>
+<li><code>ServiceAccounts.txt</code>: Identified potential service accounts with context</li>
+</ul>
+</li>
 </ol>
-<p>These files provide a goldmine of information for further analysis, helping you identify potential attack vectors, misconfigurations, or areas for deeper investigation.</p>
+<ul>
+<li><strong>The detailed files include proper formatting of binary attributes such as</strong>:
+<ul>
+<li>Security Identifiers (SIDs)</li>
+<li>GUIDs</li>
+</ul>
+</li>
+<li>Exchange-specific attributes</li>
+<li>Other binary data types</li>
+</ul>
 <h3 id="ethical-considerations">Ethical Considerations</h3>
 <p>As with any tool, it&rsquo;s crucial to use LDAPire responsibly and ethically. Always ensure you have explicit permission to test and enumerate the target Active Directory environment.</p>
 <p>Happy hunting!</p>
@@ -1166,7 +1277,7 @@
                 <li>
                     
                         Word Count:
-                        1003
+                        1102
                     
                 </li>
             
