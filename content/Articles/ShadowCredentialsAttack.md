@@ -80,7 +80,7 @@ The Shadow Credentials attack exploits a feature in Active Directory called Key 
   - The Domain Controller used in the attack must have its own certificate and private keys.
     - This requires the organization to have Active Directory Certificate Services (AD CS) or a similar Public Key Infrastructure (PKI), such as a Certification Authority (CA).
 - *Attacker Permissions*:
-  - The attacker needs control over an account with write access to the ~msDs-KeyCredentialLink~ attribute on the target user or computer account.
+  - The attacker needs control over an account with write access to the `msDs-KeyCredentialLink` attribute on the target user or computer account.
 #### 1. Initial Access {#1-dot-initial-access}
 
 The attacker starts with some level of access to the domain, typically with privileges to modify user attributes.

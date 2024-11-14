@@ -1,3 +1,9 @@
 [submodule "themes/dark-theme-editor"]
 	path = themes/dark-theme-editor
 	url = https://github.com/JingWangTW/dark-theme-editor.git
+[submodule "themes/hugo-liftoff"]
+	path = themes/hugo-liftoff
+	url = https://github.com/bloodstiller/hugo-liftoff
+[submodule "themes/hello-friend-ng"]
+	path = themes/hello-friend-ng
+	url = https://github.com/rhazdon/hugo-theme-hello-friend-ng.git
