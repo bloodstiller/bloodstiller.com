@@ -1,5 +1,5 @@
 +++
-tags = ["Windows", "Active Directory", "ASREPRoasting", "Kereros"]
+tags = ["Windows", "Active Directory", "ASREPRoasting", "Kerberos"]
 draft = false
 title = "Understanding AS-REP Roasting Attacks: A Deep Dive"
 author = "bloodstiller"
