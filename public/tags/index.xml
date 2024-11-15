@@ -6,13 +6,34 @@
     <description>Recent content in Tags on Hack Me Daddy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Active Directory</title>
       <link>http://localhost:1313/tags/active-directory/</link>
-      <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/active-directory/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ASREPRoasting</title>
+      <link>http://localhost:1313/tags/asreproasting/</link>
+      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/asreproasting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kereros</title>
+      <link>http://localhost:1313/tags/kereros/</link>
+      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/kereros/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>http://localhost:1313/tags/windows/</link>
+      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
     <item>
@@ -34,13 +55,6 @@
       <link>http://localhost:1313/tags/tools/</link>
       <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/tools/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
-      <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
     <item>
@@ -244,13 +258,6 @@
       <link>http://localhost:1313/tags/pwsafe/</link>
       <pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/pwsafe/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ASREPRoasting</title>
-      <link>http://localhost:1313/tags/asreproasting/</link>
-      <pubDate>Sun, 03 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/asreproasting/</guid>
       <description></description>
     </item>
     <item>

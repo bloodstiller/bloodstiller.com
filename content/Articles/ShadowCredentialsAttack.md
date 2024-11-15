@@ -75,11 +75,11 @@ The Shadow Credentials attack exploits a feature in Active Directory called Key 
 #### 0. Pre-requisites for Performing the Shadow Credentials Attack:
 
 - **Domain Functional Level**: Must be Windows Server 2016 or higher.
-- *Domain Controllers**:
+- ***Domain Controllers**:
   - The target domain must have at least one Domain Controller running Windows Server 2016 or higher.
   - The Domain Controller used in the attack must have its own certificate and private keys.
     - This requires the organization to have Active Directory Certificate Services (AD CS) or a similar Public Key Infrastructure (PKI), such as a Certification Authority (CA).
-- *Attacker Permissions*:
+- **Attacker Permissions**:
   - The attacker needs control over an account with write access to the `msDs-KeyCredentialLink` attribute on the target user or computer account.
 #### 1. Initial Access {#1-dot-initial-access}
 
@@ -147,6 +147,8 @@ Rubeus.exe asktgt /user:nbarley /certificate:[Base64 Certificate] /password:"[Pa
 -   It also extracts the user's NTLM hash
 -   {{< figure src="/ox-hugo/2024-10-11-160210_.png" >}}
 
+#### 6. Overview of the attack using pywhisker:
+- +Used On+: https://bloodstiller.com/walkthroughs/forest-box/
 
 ### Impact of the Shadow Credentials Attack: {#impact-of-the-shadow-credentials-attack}
 
