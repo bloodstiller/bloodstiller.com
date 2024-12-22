@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Easy", "Linux", "SSTI", "Splunk", "Persistence"]
+tags = ["Box", "HTB", "Easy", "Linux", "SSTI", "Splunk", "Persistence", "Web"]
 draft = false
 title = "Doctor HTB Walkthrough"
 author = "bloodstiller"
