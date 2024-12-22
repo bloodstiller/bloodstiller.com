@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Easy", "Linux", "Web", "API", "git", "CVE-2022-24439"]
+tags = ["Box", "HTB", "Easy", "Linux", "Web", "API", "git", "CVE-2022-24439", "SSRF"]
 draft = false
 title = "Editorial HTB Walkthrough"
 author = "bloodstiller"
