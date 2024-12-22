@@ -6,34 +6,62 @@
     <description>Recent content in Tags on Hack Me Daddy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Dec 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API</title>
+      <link>http://localhost:1313/tags/api/</link>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/api/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Box</title>
       <link>http://localhost:1313/tags/box/</link>
-      <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/box/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2022-24439</title>
+      <link>http://localhost:1313/tags/cve-2022-24439/</link>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cve-2022-24439/</guid>
       <description></description>
     </item>
     <item>
       <title>Easy</title>
       <link>http://localhost:1313/tags/easy/</link>
-      <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/easy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>http://localhost:1313/tags/git/</link>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/git/</guid>
       <description></description>
     </item>
     <item>
       <title>HTB</title>
       <link>http://localhost:1313/tags/htb/</link>
-      <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/htb/</guid>
       <description></description>
     </item>
     <item>
       <title>LINUX</title>
       <link>http://localhost:1313/tags/linux/</link>
-      <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web</title>
+      <link>http://localhost:1313/tags/web/</link>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web/</guid>
       <description></description>
     </item>
     <item>
