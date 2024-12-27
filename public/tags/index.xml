@@ -583,6 +583,20 @@
       <description></description>
     </item>
     <item>
+      <title>CVE-2023-26604</title>
+      <link>http://localhost:1313/tags/cve-2023-26604/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cve-2023-26604/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2023–27163</title>
+      <link>http://localhost:1313/tags/cve-202327163/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cve-202327163/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Deserialization</title>
       <link>http://localhost:1313/tags/deserialization/</link>
       <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
@@ -594,6 +608,13 @@
       <link>http://localhost:1313/tags/serialization/</link>
       <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/serialization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Systemctl</title>
+      <link>http://localhost:1313/tags/systemctl/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/systemctl/</guid>
       <description></description>
     </item>
     <item>
