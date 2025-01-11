@@ -1,6 +1,6 @@
 +++
 tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "Active Directory", "Shadow Credentials", "Kerberos", "CA", "Whisker", "MsDS-KeyCredentialLink", "CERTIFICATE", "DACLS", "ACL", "Download Cradle"]
-draft = true
+draft = false 
 title = "Certified HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-11-06
@@ -367,7 +367,7 @@ serverName:
 
 ##### Bloodhound collection via bloodhound-python: {#bloodhound-collection-via-bloodhound-python}
 
--   **I run bloodhound-pythong to get a collection, which works**:
+-   **I run bloodhound-python to get a collection, which works**:
     -   {{< figure src="/ox-hugo/2024-11-06-081555_.png" >}}
     -   It works.
     -   I ingest this into bloodhound.
