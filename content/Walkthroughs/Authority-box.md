@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "CA", "Certificate", "Ansible", "RBCD", "MachineAccountQuota"]
+tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "CA", "Certificate", "Ansible", "RBCD", "MachineAccountQuota", "PKINIT", "RBCD", "ESC1"]
 draft = false
 title = "Authority HTB Walkthrough"
 author = "bloodstiller"

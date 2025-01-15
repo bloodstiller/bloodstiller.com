@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "MSSQL", "MYSQL", "CA", "CERTIFICATE"]
+tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "MSSQL", "MYSQL", "CA", "Certificate", "ESC1"]
 draft = false
 title = "Escape HTB Walkthrough"
 author = "bloodstiller"

@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Manager", "Windows", "LDAP", "kerberos", "SMB", "MSSQL"]
+tags = ["Box", "HTB", "Manager", "Windows", "LDAP", "kerberos", "SMB", "MSSQL", "Certificate", "CA", "ESC7"]
 draft = false
 title = "Manager HTB Walkthrough"
 date = 2024-09-22
