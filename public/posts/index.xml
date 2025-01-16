@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Hack Me Daddy</title>
+    <title>Home on Hack Me Daddy</title>
     <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on Hack Me Daddy</description>
+    <description>Recent content in Home on Hack Me Daddy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>AD ACL Access Control List (ACLs)</title>
-      <link>http://localhost:1313/posts/20240405141322-ad_access_control_list_acls/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/20240405141322-ad_access_control_list_acls/</guid>
-      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;del&gt;ACL is a general term used to describe a list of access control entries (ACEs) that define permissions for users or groups&lt;/del&gt;:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Can contain different types of access lists, like DACL and SACL.&lt;/li&gt;&#xA;&lt;li&gt;ACL is a broad term encompassing both DACL and SACL.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;access-control-list--acls&#34;&gt;Access Control List (ACLs):&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;A list of permissions attached to an object, specifying who or what is allowed to access that object.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Use Case&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Granularity&lt;!-- raw HTML omitted --&gt;: ACLs are more granular, often attached to specific objects.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Windows Privileges</title>
-      <link>http://localhost:1313/posts/20240404085958-windows_privileges/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/20240404085958-windows_privileges/</guid>
-      <description>&lt;h2 id=&#34;windows-privileges&#34;&gt;Windows Privileges:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Definition&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Special rights assigned to user accounts or groups.&lt;/li&gt;&#xA;&lt;li&gt;Allow users to perform specific actions that affect the entire system or other users.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Examples&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Change the system time&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Allows user to modify the system clock.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Shut down the system&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Grants the ability to power off or restart the computer.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Load and unload device drivers&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Permits the installation and removal of system drivers.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Administration&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Managed through Group Policy and user account settings.&lt;/li&gt;&#xA;&lt;li&gt;Can be tailored for specific roles and responsibilities.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Security Implications&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>
