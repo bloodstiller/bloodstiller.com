@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 14 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ActiveDirectory</title>
-      <link>http://localhost:1313/tags/activedirectory/</link>
+      <title>Active Directory</title>
+      <link>http://localhost:1313/tags/active-directory/</link>
       <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/activedirectory/</guid>
+      <guid>http://localhost:1313/tags/active-directory/</guid>
       <description></description>
     </item>
     <item>
@@ -237,13 +237,6 @@
       <link>http://localhost:1313/tags/splunk/</link>
       <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/splunk/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Active Directory</title>
-      <link>http://localhost:1313/tags/active-directory/</link>
-      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/active-directory/</guid>
       <description></description>
     </item>
     <item>

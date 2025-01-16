@@ -1,5 +1,4 @@
 +++
-tags = ["Box", "HTB", "Easy", "Linux", "SSTI", "Java", "Spring", "Web", "Cron", "XXE"]
 draft = false
 title = "RedPanda HTB Walkthrough"
 author = "bloodstiller"

