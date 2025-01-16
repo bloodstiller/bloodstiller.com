@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "ActiveDirectory", "SSRF", "ScheduledTask", "msi"]
+tags = ["Box", "HTB", "Easy", "Windows", "Active Directory", "SSRF", "ScheduledTask", "msi"]
 draft = false
 title = "Love HTB Walkthrough"
 author = "bloodstiller"

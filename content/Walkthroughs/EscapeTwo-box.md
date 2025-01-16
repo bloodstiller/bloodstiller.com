@@ -1,5 +1,5 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "ActiveDirectory", "Certificate", "CA", "WriteOwner", "MSSQL", "xp_cmdshell", "kerberoasting", "kerberos", "ESC4", "Shadow Credentials"]
+tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Active Directory", "Certificate", "CA", "WriteOwner", "MSSQL", "xp_cmdshell", "kerberoasting", "kerberos", "ESC4", "Shadow Credentials"]
 draft = false
 title = "EscapeTwo HTB Walkthrough"
 author = "bloodstiller"
