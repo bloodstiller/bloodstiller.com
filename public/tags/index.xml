@@ -114,55 +114,6 @@
       <description></description>
     </item>
     <item>
-      <title>Cron</title>
-      <link>http://localhost:1313/tags/cron/</link>
-      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cron/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Java</title>
-      <link>http://localhost:1313/tags/java/</link>
-      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/java/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
-      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Spring</title>
-      <link>http://localhost:1313/tags/spring/</link>
-      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/spring/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SSTI</title>
-      <link>http://localhost:1313/tags/ssti/</link>
-      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ssti/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Web</title>
-      <link>http://localhost:1313/tags/web/</link>
-      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>XXE</title>
-      <link>http://localhost:1313/tags/xxe/</link>
-      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/xxe/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>CVE-2023-26604</title>
       <link>http://localhost:1313/tags/cve-2023-26604/</link>
       <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
@@ -174,6 +125,13 @@
       <link>http://localhost:1313/tags/cve-202327163/</link>
       <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/cve-202327163/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>http://localhost:1313/tags/linux/</link>
+      <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
     <item>
@@ -226,6 +184,13 @@
       <description></description>
     </item>
     <item>
+      <title>Web</title>
+      <link>http://localhost:1313/tags/web/</link>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Persistence</title>
       <link>http://localhost:1313/tags/persistence/</link>
       <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
@@ -237,6 +202,13 @@
       <link>http://localhost:1313/tags/splunk/</link>
       <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/splunk/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SSTI</title>
+      <link>http://localhost:1313/tags/ssti/</link>
+      <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ssti/</guid>
       <description></description>
     </item>
     <item>

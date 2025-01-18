@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <meta name="generator" content="Hugo 0.140.2">
+    <meta name="generator" content="Hugo 0.141.0">
 
     <script src="js/custom.js"></script>
     
@@ -730,16 +730,6 @@
         
             
                 <li class="file">
-                    <a href="http://localhost:1313/redpanda-box/" title="./redpanda-box/">
-                        
-                            RedPanda HTB Walkthrough
-                        
-                    </a>
-                </li>
-            
-        
-            
-                <li class="file">
                     <a href="http://localhost:1313/aboutme/" title="./aboutme/">
                         
                             about me
@@ -959,131 +949,132 @@
 
   
     
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get the directory of the script</span>
-</span></span><span style="display:flex;"><span>SCRIPT_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span> cd <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span> dirname <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>BASH_SOURCE[0]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &amp;&gt; /dev/null <span style="color:#f92672">&amp;&amp;</span> pwd <span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Variables</span>
-</span></span><span style="display:flex;"><span>TODAY_DATE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#34;%Y-%m-%d&#34;</span><span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>VM_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Kali-</span>$TODAY_DATE<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>BASE_QCOW_IMAGE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/run/media/martin/2TB/VMS/Templates/KaliVMTemplate/kali-linux-2024.3.qcow2&#34;</span>
-</span></span><span style="display:flex;"><span>PRODUCTION_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/run/media/martin/2TB/VMS/ProductionMachines&#34;</span>
-</span></span><span style="display:flex;"><span>NEW_VM_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$PRODUCTION_DIR<span style="color:#e6db74">/</span>$VM_NAME<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>NEW_QCOW_IMAGE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$NEW_VM_DIR<span style="color:#e6db74">/kali-linux-2024.3.qcow2&#34;</span>
-</span></span><span style="display:flex;"><span>RAM<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8192&#34;</span>
-</span></span><span style="display:flex;"><span>CORES<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>
-</span></span><span style="display:flex;"><span>SETUP_SCRIPT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$SCRIPT_DIR<span style="color:#e6db74">/kali_setup.sh&#34;</span>
-</span></span><span style="display:flex;"><span>LOG_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$SCRIPT_DIR<span style="color:#e6db74">/</span>$VM_NAME<span style="color:#e6db74">-log.txt&#34;</span>
-</span></span><span style="display:flex;"><span>SHARED_FOLDER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$NEW_VM_DIR<span style="color:#e6db74">/shared&#34;</span>
-</span></span><span style="display:flex;"><span>DROPBOX_FOLDER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/martin/Dropbox&#34;</span>
-</span></span><span style="display:flex;"><span>TEST_MODE<span style="color:#f92672">=</span>false
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Function for logging</span>
-</span></span><span style="display:flex;"><span>log<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;[</span><span style="color:#66d9ef">$(</span>date <span style="color:#e6db74">&#39;+%Y-%m-%d %H:%M:%S&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">] </span>$1<span style="color:#e6db74">&#34;</span> | tee -a <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Function to check file permissions</span>
-</span></span><span style="display:flex;"><span>check_permissions<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -r <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>        log <span style="color:#e6db74">&#34;Error: No read permission for </span>$1<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -w <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>        log <span style="color:#e6db74">&#34;Error: No write permission for </span>$1<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Parse command line arguments</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$#<span style="color:#e6db74">&#34;</span> -gt <span style="color:#ae81ff">0</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> $1 in
-</span></span><span style="display:flex;"><span>        --test<span style="color:#f92672">)</span> TEST_MODE<span style="color:#f92672">=</span>true ;;
-</span></span><span style="display:flex;"><span>        *<span style="color:#f92672">)</span> echo <span style="color:#e6db74">&#34;Unknown parameter passed: </span>$1<span style="color:#e6db74">&#34;</span>; exit <span style="color:#ae81ff">1</span> ;;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">esac</span>
-</span></span><span style="display:flex;"><span>    shift
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Start logging</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;Starting Kali VM launch script&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check permissions for BASE_QCOW_IMAGE</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ! check_permissions <span style="color:#e6db74">&#34;</span>$BASE_QCOW_IMAGE<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;Exiting due to permission error&#34;</span>
-</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if the setup script exists</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -f <span style="color:#e6db74">&#34;</span>$SETUP_SCRIPT<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;Error: Setup script not found at </span>$SETUP_SCRIPT<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create the new directory and shared folder</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> $TEST_MODE; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;[TEST] Would create directories: </span>$NEW_VM_DIR<span style="color:#e6db74"> and </span>$SHARED_FOLDER<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>    mkdir -p <span style="color:#e6db74">&#34;</span>$NEW_VM_DIR<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$SHARED_FOLDER<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;Created directories: </span>$NEW_VM_DIR<span style="color:#e6db74"> and </span>$SHARED_FOLDER<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy the base image to the new directory with progress display</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;Copying base image to new directory...&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> $TEST_MODE; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;[TEST] Would run: rsync -ah --progress </span>$BASE_QCOW_IMAGE<span style="color:#e6db74"> </span>$NEW_QCOW_IMAGE<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>    rsync -ah --progress <span style="color:#e6db74">&#34;</span>$BASE_QCOW_IMAGE<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$NEW_QCOW_IMAGE<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;Finished copying base image&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy the setup script to the shared folder</span>
-</span></span><span style="display:flex;"><span>cp <span style="color:#e6db74">&#34;</span>$SETUP_SCRIPT<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$SHARED_FOLDER<span style="color:#e6db74">/&#34;</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;Copied setup script to shared folder: </span>$SHARED_FOLDER<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Launch the VM using virt-install</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> $TEST_MODE; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;[TEST] Would launch VM with name: </span>$VM_NAME<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;[TEST] VM configuration:&#34;</span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;[TEST]   RAM: </span>$RAM<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;[TEST]   CPUs: </span>$CORES<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;[TEST]   Disk: </span>$NEW_QCOW_IMAGE<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;[TEST]   Shared Folder: </span>$SHARED_FOLDER<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;[TEST]   Dropbox Folder: </span>$DROPBOX_FOLDER<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;Launching VM with name: </span>$VM_NAME<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    sudo virt-install <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --name <span style="color:#e6db74">&#34;</span>$VM_NAME<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --memory $RAM <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --vcpus $CORES <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --disk path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$NEW_QCOW_IMAGE<span style="color:#e6db74">&#34;</span>,format<span style="color:#f92672">=</span>qcow2,bus<span style="color:#f92672">=</span>virtio <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --import <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --os-variant debian12 <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --network network<span style="color:#f92672">=</span>default <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --graphics spice <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --noautoconsole <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>        --filesystem source<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$SHARED_FOLDER<span style="color:#e6db74">&#34;</span>,target<span style="color:#f92672">=</span>host_share,mode<span style="color:#f92672">=</span>mapped
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;VM launched successfully&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;Kali VM launch process completed&#34;</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Kali VM launched with name </span>$VM_NAME<span style="color:#e6db74">.&#34;</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;The setup script has been copied to the shared folder: </span>$SHARED_FOLDER<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;To access the shared folder in the VM:&#34;</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;1. Connect to the VM using virt-manager&#34;</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;2. Open a terminal in the VM&#34;</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;3. Run the following commands:&#34;</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;   sudo mkdir /mnt/host_share&#34;</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;   sudo mount -t 9p -o trans=virtio host_share /mnt/host_share&#34;</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;4. The setup script will be available at /mnt/host_share/kali_setup.sh&#34;</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;5. To run the setup script:&#34;</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;   sudo /mnt/host_share/kali_setup.sh&#34;</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;6. To access your Dropbox folder, use SSHFS or another file sharing method after the VM is running.&#34;</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;7. Remember to mount the 100GB disk to /mnt/100gb&#34;</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Use virt-manager to connect to the VM.&#34;</span>
-</span></span></code></pre></div>
+      <pre><code>#!/bin/bash
+
+# Get the directory of the script
+SCRIPT_DIR=&#34;$( cd &#34;$( dirname &#34;${BASH_SOURCE[0]}&#34; )&#34; &amp;&gt; /dev/null &amp;&amp; pwd )&#34;
+
+# Variables
+TODAY_DATE=$(date &#43;&#34;%Y-%m-%d&#34;)
+VM_NAME=&#34;Kali-$TODAY_DATE&#34;
+BASE_QCOW_IMAGE=&#34;/run/media/martin/2TB/VMS/Templates/KaliVMTemplate/kali-linux-2024.3.qcow2&#34;
+PRODUCTION_DIR=&#34;/run/media/martin/2TB/VMS/ProductionMachines&#34;
+NEW_VM_DIR=&#34;$PRODUCTION_DIR/$VM_NAME&#34;
+NEW_QCOW_IMAGE=&#34;$NEW_VM_DIR/kali-linux-2024.3.qcow2&#34;
+RAM=&#34;8192&#34;
+CORES=6
+SETUP_SCRIPT=&#34;$SCRIPT_DIR/kali_setup.sh&#34;
+LOG_FILE=&#34;$SCRIPT_DIR/$VM_NAME-log.txt&#34;
+SHARED_FOLDER=&#34;$NEW_VM_DIR/shared&#34;
+DROPBOX_FOLDER=&#34;/home/martin/Dropbox&#34;
+TEST_MODE=false
+
+# Function for logging
+log() {
+    echo &#34;[$(date &#39;&#43;%Y-%m-%d %H:%M:%S&#39;)] $1&#34; | tee -a &#34;$LOG_FILE&#34;
+}
+
+# Function to check file permissions
+check_permissions() {
+    if [ ! -r &#34;$1&#34; ]; then
+        log &#34;Error: No read permission for $1&#34;
+        return 1
+    fi
+    if [ ! -w &#34;$1&#34; ]; then
+        log &#34;Error: No write permission for $1&#34;
+        return 1
+    fi
+    return 0
+}
+
+# Parse command line arguments
+while [[ &#34;$#&#34; -gt 0 ]]; do
+    case $1 in
+        --test) TEST_MODE=true ;;
+        *) echo &#34;Unknown parameter passed: $1&#34;; exit 1 ;;
+    esac
+    shift
+done
+
+# Start logging
+log &#34;Starting Kali VM launch script&#34;
+
+# Check permissions for BASE_QCOW_IMAGE
+if ! check_permissions &#34;$BASE_QCOW_IMAGE&#34;; then
+    log &#34;Exiting due to permission error&#34;
+    exit 1
+fi
+
+# Check if the setup script exists
+if [ ! -f &#34;$SETUP_SCRIPT&#34; ]; then
+    log &#34;Error: Setup script not found at $SETUP_SCRIPT&#34;
+    exit 1
+fi
+
+# Create the new directory and shared folder
+if $TEST_MODE; then
+    log &#34;[TEST] Would create directories: $NEW_VM_DIR and $SHARED_FOLDER&#34;
+else
+    mkdir -p &#34;$NEW_VM_DIR&#34; &#34;$SHARED_FOLDER&#34;
+    log &#34;Created directories: $NEW_VM_DIR and $SHARED_FOLDER&#34;
+fi
+
+# Copy the base image to the new directory with progress display
+log &#34;Copying base image to new directory...&#34;
+if $TEST_MODE; then
+    log &#34;[TEST] Would run: rsync -ah --progress $BASE_QCOW_IMAGE $NEW_QCOW_IMAGE&#34;
+else
+    rsync -ah --progress &#34;$BASE_QCOW_IMAGE&#34; &#34;$NEW_QCOW_IMAGE&#34;
+    log &#34;Finished copying base image&#34;
+fi
+
+# Copy the setup script to the shared folder
+cp &#34;$SETUP_SCRIPT&#34; &#34;$SHARED_FOLDER/&#34;
+log &#34;Copied setup script to shared folder: $SHARED_FOLDER&#34;
+
+# Launch the VM using virt-install
+if $TEST_MODE; then
+    log &#34;[TEST] Would launch VM with name: $VM_NAME&#34;
+    log &#34;[TEST] VM configuration:&#34;
+    log &#34;[TEST]   RAM: $RAM&#34;
+    log &#34;[TEST]   CPUs: $CORES&#34;
+    log &#34;[TEST]   Disk: $NEW_QCOW_IMAGE&#34;
+    log &#34;[TEST]   Shared Folder: $SHARED_FOLDER&#34;
+    log &#34;[TEST]   Dropbox Folder: $DROPBOX_FOLDER&#34;
+else
+    log &#34;Launching VM with name: $VM_NAME&#34;
+    sudo virt-install \
+        --name &#34;$VM_NAME&#34; \
+        --memory $RAM \
+        --vcpus $CORES \
+        --disk path=&#34;$NEW_QCOW_IMAGE&#34;,format=qcow2,bus=virtio \
+        --import \
+        --os-variant debian12 \
+        --network network=default \
+        --graphics spice \
+        --noautoconsole \
+        --filesystem source=&#34;$SHARED_FOLDER&#34;,target=host_share,mode=mapped
+
+    log &#34;VM launched successfully&#34;
+fi
+
+log &#34;Kali VM launch process completed&#34;
+echo &#34;Kali VM launched with name $VM_NAME.&#34;
+echo &#34;The setup script has been copied to the shared folder: $SHARED_FOLDER&#34;
+echo &#34;To access the shared folder in the VM:&#34;
+echo &#34;1. Connect to the VM using virt-manager&#34;
+echo &#34;2. Open a terminal in the VM&#34;
+echo &#34;3. Run the following commands:&#34;
+echo &#34;   sudo mkdir /mnt/host_share&#34;
+echo &#34;   sudo mount -t 9p -o trans=virtio host_share /mnt/host_share&#34;
+echo &#34;4. The setup script will be available at /mnt/host_share/kali_setup.sh&#34;
+echo &#34;5. To run the setup script:&#34;
+echo &#34;   sudo /mnt/host_share/kali_setup.sh&#34;
+echo &#34;6. To access your Dropbox folder, use SSHFS or another file sharing method after the VM is running.&#34;
+echo &#34;7. Remember to mount the 100GB disk to /mnt/100gb&#34;
+echo &#34;Use virt-manager to connect to the VM.&#34;
+</code></pre>
+    
   
 
 
@@ -1116,201 +1107,202 @@
 
   
     
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># kali_setup.sh</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set up logging</span>
-</span></span><span style="display:flex;"><span>SCRIPT_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>cd <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>dirname <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>BASH_SOURCE[0]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&amp;&amp;</span> pwd<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>LOG_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/Desktop/kali_setup_log.txt&#34;</span>
-</span></span><span style="display:flex;"><span>DRY_RUN<span style="color:#f92672">=</span>false
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Colors for terminal output</span>
-</span></span><span style="display:flex;"><span>GREEN<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\033[0;32m&#39;</span>
-</span></span><span style="display:flex;"><span>YELLOW<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\033[1;33m&#39;</span>
-</span></span><span style="display:flex;"><span>RED<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\033[0;31m&#39;</span>
-</span></span><span style="display:flex;"><span>NC<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\033[0m&#39;</span> <span style="color:#75715e"># No Color</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Function for logging</span>
-</span></span><span style="display:flex;"><span>log<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    local level<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    local message<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$2<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    local color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> $level in
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;INFO&#34;</span><span style="color:#f92672">)</span> color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$GREEN<span style="color:#e6db74">&#34;</span> ;;
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;WARN&#34;</span><span style="color:#f92672">)</span> color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$YELLOW<span style="color:#e6db74">&#34;</span> ;;
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;ERROR&#34;</span><span style="color:#f92672">)</span> color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RED<span style="color:#e6db74">&#34;</span> ;;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">esac</span>
-</span></span><span style="display:flex;"><span>    echo -e <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>color<span style="color:#e6db74">}</span><span style="color:#e6db74">[</span><span style="color:#66d9ef">$(</span>date <span style="color:#e6db74">&#39;+%Y-%m-%d %H:%M:%S&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">] [</span>$level<span style="color:#e6db74">] </span>$message<span style="color:#e6db74">${</span>NC<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> | tee -a <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Array to store errors</span>
-</span></span><span style="display:flex;"><span>errors<span style="color:#f92672">=()</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Function to execute or simulate command</span>
-</span></span><span style="display:flex;"><span>execute<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$DRY_RUN<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> true <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>        log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;[DRY RUN] Would execute: </span>$*<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;Executing: </span>$*<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>        eval <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>        exit_status<span style="color:#f92672">=</span>$?
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $exit_status -ne <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>            error_msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Command failed with exit status </span>$exit_status<span style="color:#e6db74">: </span>$*<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>            log <span style="color:#e6db74">&#34;ERROR&#34;</span> <span style="color:#e6db74">&#34;</span>$error_msg<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>            errors<span style="color:#f92672">+=(</span><span style="color:#e6db74">&#34;</span>$error_msg<span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Function to execute or simulate command with automatic yes</span>
-</span></span><span style="display:flex;"><span>execute_auto_yes<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$DRY_RUN<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> true <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>        log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;[DRY RUN] Would execute: yes | </span>$*<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;Executing with auto yes: </span>$*<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>        yes | eval <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>        exit_status<span style="color:#f92672">=</span>$?
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $exit_status -ne <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>            error_msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Command failed with exit status </span>$exit_status<span style="color:#e6db74">: yes | </span>$*<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>            log <span style="color:#e6db74">&#34;ERROR&#34;</span> <span style="color:#e6db74">&#34;</span>$error_msg<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>            errors<span style="color:#f92672">+=(</span><span style="color:#e6db74">&#34;</span>$error_msg<span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Parse command line arguments</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$#<span style="color:#e6db74">&#34;</span> -gt <span style="color:#ae81ff">0</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> $1 in
-</span></span><span style="display:flex;"><span>    --dry-run<span style="color:#f92672">)</span> DRY_RUN<span style="color:#f92672">=</span>true ;;
-</span></span><span style="display:flex;"><span>    *<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;Unknown parameter passed: </span>$1<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>        exit <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>        ;;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">esac</span>
-</span></span><span style="display:flex;"><span>    shift
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;Starting Kali setup script&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update the system</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== System Update ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute sudo apt update
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install packages</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Package Installation ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute sudo apt install -y <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    emacs <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    eza <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    alacritty <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    git <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    bat <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    seclists
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#Install docker</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Docker-ce Installation ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute echo <span style="color:#e6db74">&#34;deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable&#34;</span> |
-</span></span><span style="display:flex;"><span>    sudo tee /etc/apt/sources.list.d/docker.list
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#import gpg</span>
-</span></span><span style="display:flex;"><span>execute curl -fsSL https://download.docker.com/linux/debian/gpg |
-</span></span><span style="display:flex;"><span>    sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-</span></span><span style="display:flex;"><span>execute sudo apt update
-</span></span><span style="display:flex;"><span>execute sudo apt install -y docker-ce docker-ce-cli containerd.io
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install Starship</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Installing Starship ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute_auto_yes curl -sS https://starship.rs/install.sh | sh
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install oh-my-zsh</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Installing oh-my-zsh ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute_auto_yes sh -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install zsh plugins</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Installing zsh plugins ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-</span></span><span style="display:flex;"><span>execute git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-</span></span><span style="display:flex;"><span>execute git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
-</span></span><span style="display:flex;"><span>execute git clone --depth <span style="color:#ae81ff">1</span> -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.oh-my-zsh/plugins/zsh-autocomplete
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install tmuxinator</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Installing tmuxinator ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute sudo gem install tmuxinator
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install doom emacs</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Installing Doom Emacs ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute git clone --depth <span style="color:#ae81ff">1</span> https://github.com/doomemacs/doomemacs ~/.emacs.d
-</span></span><span style="display:flex;"><span>execute_auto_yes ~/.emacs.d/bin/doom install
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clone dotfiles repo</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Cloning dotfiles repository ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute git clone https://github.com/bloodstiller/kaliconfigs.git ~/.dotfiles
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Setup dotfiles</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Setting up dotfiles ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute mkdir -p ~/.doom.d
-</span></span><span style="display:flex;"><span>execute rm -rf ~/.zshrc ~/.doom.d/* ~/.config/starship.toml ~/.config/alacritty.yml
-</span></span><span style="display:flex;"><span>execute ln -s ~/.dotfiles/Zsh/.zshrc ~/.zshrc
-</span></span><span style="display:flex;"><span>execute ln -s ~/.dotfiles/Doom/config.el ~/.doom.d/config.el
-</span></span><span style="display:flex;"><span>execute ln -s ~/.dotfiles/Doom/init.el ~/.doom.d/init.el
-</span></span><span style="display:flex;"><span>execute ln -s ~/.dotfiles/Doom/packages.el ~/.doom.d/packages.el
-</span></span><span style="display:flex;"><span>execute ln -s ~/.dotfiles/Doom/README.org ~/.doom.d/README.org
-</span></span><span style="display:flex;"><span>execute ln -s ~/.dotfiles/Starship/starship.toml ~/.config/starship.toml
-</span></span><span style="display:flex;"><span>execute ln -s ~/.dotfiles/Alacritty ~/.config/Alacritty
-</span></span><span style="display:flex;"><span>execute ln -s ~/.dotfiles/Tmux/.tmux.conf ~/.tmux.conf
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Installing Docker Enable docker</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Enabling Docker ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute sudo systemctl enable docker --now
-</span></span><span style="display:flex;"><span>execute sudo usermod -aG docker $USER
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Build doom packages</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Building Doom Emacs packages ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute ~/.emacs.d/bin/doom sync
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Setup mount points and directories</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Setting up mount points and directories ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute sudo mkdir -p /mnt/100gb
-</span></span><span style="display:flex;"><span>execute mkdir -p ~/Dropbox
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mount shared folders &amp; drive</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Mounting shared folders and drives ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute sudo mount -t ext4 UUID<span style="color:#f92672">=</span>89edac1a-7171-4421-87a6-696050f30325 /mnt/100gb
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update fstab</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Updating fstab ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute echo <span style="color:#e6db74">&#34;host_share /home/kali/host_share 9p trans=virtio,_netdev 0 0&#34;</span> | sudo tee -a /etc/fstab
-</span></span><span style="display:flex;"><span>execute echo <span style="color:#e6db74">&#34;UUID=89edac1a-7171-4421-87a6-696050f30325	/mnt/100gb	ext4	defaults	0	2&#34;</span> | sudo tee -a /etc/fstab
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install Dropbox</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Installing Dropbox ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute wget https://www.dropbox.com/download?dl<span style="color:#f92672">=</span>packages/ubuntu/dropbox_2024.04.17_amd64.deb -O $HOME/Desktop/dropbox_2024.04.17_amd64.deb
-</span></span><span style="display:flex;"><span>execute sudo dpkg -i $HOME/Desktop/dropbox_2024.04.17_amd64.deb
-</span></span><span style="display:flex;"><span>execute sudo apt --fix-broken install -y
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Symlink Dropbox and Wordlists</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Setting up Dropbox and Wordlists symlinks ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute sudo ln -s /mnt/100gb/Dropbox/Dropbox $HOME/Dropbox
-</span></span><span style="display:flex;"><span>execute sudo ln -s /usr/share/wordlists ~/wordlists
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clean up</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Cleaning up ===&#34;</span>
-</span></span><span style="display:flex;"><span>execute sudo apt autoremove -y
-</span></span><span style="display:flex;"><span>execute sudo apt clean
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;=== Setup Finished ===&#34;</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;Setup complete!&#34;</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;Finish setup of Dropbox in GUI&#34;</span>
-</span></span><span style="display:flex;"><span>log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;Remember to logout &amp; back in for docker user to be enabled&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">${#</span>errors[@]<span style="color:#e6db74">}</span> -ne <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;WARN&#34;</span> <span style="color:#e6db74">&#34;The following errors occurred during setup:&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> error in <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>errors[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>        log <span style="color:#e6db74">&#34;WARN&#34;</span> <span style="color:#e6db74">&#34;  - </span>$error<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">done</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>    log <span style="color:#e6db74">&#34;INFO&#34;</span> <span style="color:#e6db74">&#34;Setup completed successfully with no errors.&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span></code></pre></div>
+      <pre><code>#!/bin/bash
+
+# kali_setup.sh
+
+# Set up logging
+SCRIPT_DIR=&#34;$(cd &#34;$(dirname &#34;${BASH_SOURCE[0]}&#34;)&#34; &amp;&amp; pwd)&#34;
+LOG_FILE=&#34;$HOME/Desktop/kali_setup_log.txt&#34;
+DRY_RUN=false
+
+# Colors for terminal output
+GREEN=&#39;\033[0;32m&#39;
+YELLOW=&#39;\033[1;33m&#39;
+RED=&#39;\033[0;31m&#39;
+NC=&#39;\033[0m&#39; # No Color
+
+# Function for logging
+log() {
+    local level=&#34;$1&#34;
+    local message=&#34;$2&#34;
+    local color=&#34;&#34;
+    case $level in
+    &#34;INFO&#34;) color=&#34;$GREEN&#34; ;;
+    &#34;WARN&#34;) color=&#34;$YELLOW&#34; ;;
+    &#34;ERROR&#34;) color=&#34;$RED&#34; ;;
+    esac
+    echo -e &#34;${color}[$(date &#39;&#43;%Y-%m-%d %H:%M:%S&#39;)] [$level] $message${NC}&#34; | tee -a &#34;$LOG_FILE&#34;
+}
+
+# Array to store errors
+errors=()
+
+# Function to execute or simulate command
+execute() {
+    if [ &#34;$DRY_RUN&#34; = true ]; then
+        log &#34;INFO&#34; &#34;[DRY RUN] Would execute: $*&#34;
+    else
+        log &#34;INFO&#34; &#34;Executing: $*&#34;
+        eval &#34;$@&#34;
+        exit_status=$?
+        if [ $exit_status -ne 0 ]; then
+            error_msg=&#34;Command failed with exit status $exit_status: $*&#34;
+            log &#34;ERROR&#34; &#34;$error_msg&#34;
+            errors&#43;=(&#34;$error_msg&#34;)
+        fi
+    fi
+}
+
+# Function to execute or simulate command with automatic yes
+execute_auto_yes() {
+    if [ &#34;$DRY_RUN&#34; = true ]; then
+        log &#34;INFO&#34; &#34;[DRY RUN] Would execute: yes | $*&#34;
+    else
+        log &#34;INFO&#34; &#34;Executing with auto yes: $*&#34;
+        yes | eval &#34;$@&#34;
+        exit_status=$?
+        if [ $exit_status -ne 0 ]; then
+            error_msg=&#34;Command failed with exit status $exit_status: yes | $*&#34;
+            log &#34;ERROR&#34; &#34;$error_msg&#34;
+            errors&#43;=(&#34;$error_msg&#34;)
+        fi
+    fi
+}
+
+# Parse command line arguments
+while [[ &#34;$#&#34; -gt 0 ]]; do
+    case $1 in
+    --dry-run) DRY_RUN=true ;;
+    *)
+        echo &#34;Unknown parameter passed: $1&#34;
+        exit 1
+        ;;
+    esac
+    shift
+done
+
+log &#34;INFO&#34; &#34;Starting Kali setup script&#34;
+
+# Update the system
+log &#34;INFO&#34; &#34;=== System Update ===&#34;
+execute sudo apt update
+
+# Install packages
+log &#34;INFO&#34; &#34;=== Package Installation ===&#34;
+execute sudo apt install -y \
+    emacs \
+    eza \
+    alacritty \
+    git \
+    bat \
+    seclists
+
+#Install docker
+log &#34;INFO&#34; &#34;=== Docker-ce Installation ===&#34;
+execute echo &#34;deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable&#34; |
+    sudo tee /etc/apt/sources.list.d/docker.list
+#import gpg
+execute curl -fsSL https://download.docker.com/linux/debian/gpg |
+    sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+execute sudo apt update
+execute sudo apt install -y docker-ce docker-ce-cli containerd.io
+
+# Install Starship
+log &#34;INFO&#34; &#34;=== Installing Starship ===&#34;
+execute_auto_yes curl -sS https://starship.rs/install.sh | sh
+
+# Install oh-my-zsh
+log &#34;INFO&#34; &#34;=== Installing oh-my-zsh ===&#34;
+execute_auto_yes sh -c &#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&#34;
+
+# Install zsh plugins
+log &#34;INFO&#34; &#34;=== Installing zsh plugins ===&#34;
+execute git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+execute git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+execute git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
+execute git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.oh-my-zsh/plugins/zsh-autocomplete
+
+# Install tmuxinator
+log &#34;INFO&#34; &#34;=== Installing tmuxinator ===&#34;
+execute sudo gem install tmuxinator
+
+# Install doom emacs
+log &#34;INFO&#34; &#34;=== Installing Doom Emacs ===&#34;
+execute git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
+execute_auto_yes ~/.emacs.d/bin/doom install
+
+# Clone dotfiles repo
+log &#34;INFO&#34; &#34;=== Cloning dotfiles repository ===&#34;
+execute git clone https://github.com/bloodstiller/kaliconfigs.git ~/.dotfiles
+
+# Setup dotfiles
+log &#34;INFO&#34; &#34;=== Setting up dotfiles ===&#34;
+execute mkdir -p ~/.doom.d
+execute rm -rf ~/.zshrc ~/.doom.d/* ~/.config/starship.toml ~/.config/alacritty.yml
+execute ln -s ~/.dotfiles/Zsh/.zshrc ~/.zshrc
+execute ln -s ~/.dotfiles/Doom/config.el ~/.doom.d/config.el
+execute ln -s ~/.dotfiles/Doom/init.el ~/.doom.d/init.el
+execute ln -s ~/.dotfiles/Doom/packages.el ~/.doom.d/packages.el
+execute ln -s ~/.dotfiles/Doom/README.org ~/.doom.d/README.org
+execute ln -s ~/.dotfiles/Starship/starship.toml ~/.config/starship.toml
+execute ln -s ~/.dotfiles/Alacritty ~/.config/Alacritty
+execute ln -s ~/.dotfiles/Tmux/.tmux.conf ~/.tmux.conf
+
+# Installing Docker Enable docker
+log &#34;INFO&#34; &#34;=== Enabling Docker ===&#34;
+execute sudo systemctl enable docker --now
+execute sudo usermod -aG docker $USER
+
+# Build doom packages
+log &#34;INFO&#34; &#34;=== Building Doom Emacs packages ===&#34;
+execute ~/.emacs.d/bin/doom sync
+
+# Setup mount points and directories
+log &#34;INFO&#34; &#34;=== Setting up mount points and directories ===&#34;
+execute sudo mkdir -p /mnt/100gb
+execute mkdir -p ~/Dropbox
+
+# Mount shared folders &amp; drive
+log &#34;INFO&#34; &#34;=== Mounting shared folders and drives ===&#34;
+execute sudo mount -t ext4 UUID=89edac1a-7171-4421-87a6-696050f30325 /mnt/100gb
+
+# Update fstab
+log &#34;INFO&#34; &#34;=== Updating fstab ===&#34;
+execute echo &#34;host_share /home/kali/host_share 9p trans=virtio,_netdev 0 0&#34; | sudo tee -a /etc/fstab
+execute echo &#34;UUID=89edac1a-7171-4421-87a6-696050f30325	/mnt/100gb	ext4	defaults	0	2&#34; | sudo tee -a /etc/fstab
+
+# Install Dropbox
+log &#34;INFO&#34; &#34;=== Installing Dropbox ===&#34;
+execute wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2024.04.17_amd64.deb -O $HOME/Desktop/dropbox_2024.04.17_amd64.deb
+execute sudo dpkg -i $HOME/Desktop/dropbox_2024.04.17_amd64.deb
+execute sudo apt --fix-broken install -y
+
+# Symlink Dropbox and Wordlists
+log &#34;INFO&#34; &#34;=== Setting up Dropbox and Wordlists symlinks ===&#34;
+execute sudo ln -s /mnt/100gb/Dropbox/Dropbox $HOME/Dropbox
+execute sudo ln -s /usr/share/wordlists ~/wordlists
+
+# Clean up
+log &#34;INFO&#34; &#34;=== Cleaning up ===&#34;
+execute sudo apt autoremove -y
+execute sudo apt clean
+
+log &#34;INFO&#34; &#34;=== Setup Finished ===&#34;
+log &#34;INFO&#34; &#34;Setup complete!&#34;
+log &#34;INFO&#34; &#34;Finish setup of Dropbox in GUI&#34;
+log &#34;INFO&#34; &#34;Remember to logout &amp; back in for docker user to be enabled&#34;
+
+if [ ${#errors[@]} -ne 0 ]; then
+    log &#34;WARN&#34; &#34;The following errors occurred during setup:&#34;
+    for error in &#34;${errors[@]}&#34;; do
+        log &#34;WARN&#34; &#34;  - $error&#34;
+    done
+else
+    log &#34;INFO&#34; &#34;Setup completed successfully with no errors.&#34;
+fi
+</code></pre>
+    
   
 
 

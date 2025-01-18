@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <meta name="generator" content="Hugo 0.140.2">
+    <meta name="generator" content="Hugo 0.141.0">
 
     <script src="js/custom.js"></script>
     
@@ -730,16 +730,6 @@
         
             
                 <li class="file">
-                    <a href="http://localhost:1313/redpanda-box/" title="./redpanda-box/">
-                        
-                            RedPanda HTB Walkthrough
-                        
-                    </a>
-                </li>
-            
-        
-            
-                <li class="file">
                     <a href="http://localhost:1313/aboutme/" title="./aboutme/">
                         
                             about me
@@ -1020,174 +1010,175 @@
 
   
     
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> ldap3 <span style="color:#f92672">import</span> Server, Connection, ALL, SUBTREE
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> ldap3.core.exceptions <span style="color:#f92672">import</span> LDAPException
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> argparse
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> logging
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> getpass
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_valid_ip</span>(ip):
-</span></span><span style="display:flex;"><span>    pattern <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;^(?:[0-9]{1,3}\.)</span><span style="color:#e6db74">{3}</span><span style="color:#e6db74">[0-9]{1,3}$&#34;</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> pattern<span style="color:#f92672">.</span><span style="color:#66d9ef">match</span>(ip) <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Setup logging</span>
-</span></span><span style="display:flex;"><span>logging<span style="color:#f92672">.</span>basicConfig(filename<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ldap_test.log&#39;</span>, level<span style="color:#f92672">=</span>logging<span style="color:#f92672">.</span>INFO)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Command-line argument parsing</span>
-</span></span><span style="display:flex;"><span>parser <span style="color:#f92672">=</span> argparse<span style="color:#f92672">.</span>ArgumentParser(description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;LDAP Anonymous Bind Test&#34;</span>)
-</span></span><span style="display:flex;"><span>parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;dc_ip&#39;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;IP address of the Domain Controller&#34;</span>)
-</span></span><span style="display:flex;"><span>parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-u&#39;</span>, <span style="color:#e6db74">&#39;--user&#39;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Username for authentication&#34;</span>, default<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
-</span></span><span style="display:flex;"><span>parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-p&#39;</span>, <span style="color:#e6db74">&#39;--password&#39;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Password for authentication&#34;</span>, default<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>args <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span>parse_args()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Validate IP address</span>
-</span></span><span style="display:flex;"><span>srver <span style="color:#f92672">=</span> args<span style="color:#f92672">.</span>dc_ip
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> is_valid_ip(srver):
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Invalid IP address format.&#34;</span>)
-</span></span><span style="display:flex;"><span>    logging<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Invalid IP address format: </span><span style="color:#e6db74">{</span>srver<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>    exit(<span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Handle secure password input</span>
-</span></span><span style="display:flex;"><span>user <span style="color:#f92672">=</span> args<span style="color:#f92672">.</span>user
-</span></span><span style="display:flex;"><span>password <span style="color:#f92672">=</span> args<span style="color:#f92672">.</span>password
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> password <span style="color:#f92672">and</span> user:
-</span></span><span style="display:flex;"><span>    password <span style="color:#f92672">=</span> getpass<span style="color:#f92672">.</span>getpass(<span style="color:#e6db74">&#34;Enter password: &#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_domain_from_dc_ip</span>(dc_ip):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">import</span> socket
-</span></span><span style="display:flex;"><span>        domain <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>gethostbyaddr(dc_ip)[<span style="color:#ae81ff">0</span>]
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">.</span>join(domain<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;.&#39;</span>)[<span style="color:#ae81ff">1</span>:])  <span style="color:#75715e"># Remove the hostname part</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">construct_user_string</span>(user, dc_ip):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">in</span> user <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;,&#39;</span> <span style="color:#f92672">in</span> user:  <span style="color:#75715e"># Already in DOMAIN\user or DN format</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> user
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    domain <span style="color:#f92672">=</span> get_domain_from_dc_ip(dc_ip)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> domain:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>domain<span style="color:#e6db74">}</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">{</span>user<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> user  <span style="color:#75715e"># Fallback to just the username if domain can&#39;t be determined</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">attempt_connection</span>(server, use_ssl, user, password):
-</span></span><span style="display:flex;"><span>    protocol <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ldaps&#34;</span> <span style="color:#66d9ef">if</span> use_ssl <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;ldap&#34;</span>
-</span></span><span style="display:flex;"><span>    port <span style="color:#f92672">=</span> <span style="color:#ae81ff">636</span> <span style="color:#66d9ef">if</span> use_ssl <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">389</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>        s <span style="color:#f92672">=</span> Server(server, port<span style="color:#f92672">=</span>port, use_ssl<span style="color:#f92672">=</span>use_ssl, get_info<span style="color:#f92672">=</span>ALL)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> user <span style="color:#f92672">and</span> password:
-</span></span><span style="display:flex;"><span>            user_string <span style="color:#f92672">=</span> construct_user_string(user, server)
-</span></span><span style="display:flex;"><span>            c <span style="color:#f92672">=</span> Connection(s, user<span style="color:#f92672">=</span>user_string, password<span style="color:#f92672">=</span>password, authentication<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;SIMPLE&#39;</span>, auto_bind<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>            c <span style="color:#f92672">=</span> Connection(s, auto_bind<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> s, c, <span style="color:#66d9ef">True</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> LDAPException <span style="color:#66d9ef">as</span> e:
-</span></span><span style="display:flex;"><span>        logging<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error connecting to the server with </span><span style="color:#e6db74">{</span>protocol<span style="color:#e6db74">}</span><span style="color:#e6db74">://</span><span style="color:#e6db74">{</span>server<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">{</span>port<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>, <span style="color:#66d9ef">None</span>, <span style="color:#66d9ef">False</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">perform_ldap_search</span>(connection, base_dn, search_filter, attribute):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>        connection<span style="color:#f92672">.</span>search(search_base<span style="color:#f92672">=</span>base_dn,
-</span></span><span style="display:flex;"><span>                          search_filter<span style="color:#f92672">=</span>search_filter,
-</span></span><span style="display:flex;"><span>                          search_scope<span style="color:#f92672">=</span>SUBTREE,
-</span></span><span style="display:flex;"><span>                          attributes<span style="color:#f92672">=</span>[attribute])
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> [entry[attribute]<span style="color:#f92672">.</span>value <span style="color:#66d9ef">for</span> entry <span style="color:#f92672">in</span> connection<span style="color:#f92672">.</span>entries <span style="color:#66d9ef">if</span> attribute <span style="color:#f92672">in</span> entry]
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> LDAPException <span style="color:#66d9ef">as</span> e:
-</span></span><span style="display:flex;"><span>        logging<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error performing LDAP search: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> []
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">write_results_to_file</span>(results, filename):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(filename, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> f:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> results:
-</span></span><span style="display:flex;"><span>            f<span style="color:#f92672">.</span>write(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>item<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Results written to </span><span style="color:#e6db74">{</span>filename<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">perform_ldap_search_all_attributes</span>(connection, base_dn, search_filter):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>        connection<span style="color:#f92672">.</span>search(search_base<span style="color:#f92672">=</span>base_dn,
-</span></span><span style="display:flex;"><span>                          search_filter<span style="color:#f92672">=</span>search_filter,
-</span></span><span style="display:flex;"><span>                          search_scope<span style="color:#f92672">=</span>SUBTREE,
-</span></span><span style="display:flex;"><span>                          attributes<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;*&#39;</span>])
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> connection<span style="color:#f92672">.</span>entries
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> LDAPException <span style="color:#66d9ef">as</span> e:
-</span></span><span style="display:flex;"><span>        logging<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error performing LDAP search: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> []
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">write_detailed_results_to_file</span>(results, filename):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(filename, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> f:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> entry <span style="color:#f92672">in</span> results:
-</span></span><span style="display:flex;"><span>            f<span style="color:#f92672">.</span>write(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;DN: </span><span style="color:#e6db74">{</span>entry<span style="color:#f92672">.</span>entry_dn<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> attribute <span style="color:#f92672">in</span> entry<span style="color:#f92672">.</span>entry_attributes:
-</span></span><span style="display:flex;"><span>                values <span style="color:#f92672">=</span> entry[attribute]<span style="color:#f92672">.</span>values
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> len(values) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
-</span></span><span style="display:flex;"><span>                    f<span style="color:#f92672">.</span>write(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>attribute<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>values[<span style="color:#ae81ff">0</span>]<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>                    f<span style="color:#f92672">.</span>write(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>attribute<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">for</span> value <span style="color:#f92672">in</span> values:
-</span></span><span style="display:flex;"><span>                        f<span style="color:#f92672">.</span>write(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;  </span><span style="color:#e6db74">{</span>value<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>            f<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Detailed results written to </span><span style="color:#e6db74">{</span>filename<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Attempt to connect with SSL first, then without SSL</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> use_ssl <span style="color:#f92672">in</span> [<span style="color:#66d9ef">True</span>, <span style="color:#66d9ef">False</span>]:
-</span></span><span style="display:flex;"><span>        protocol <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SSL&#34;</span> <span style="color:#66d9ef">if</span> use_ssl <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;non-SSL&#34;</span>
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Attempting to connect to </span><span style="color:#e6db74">{</span>args<span style="color:#f92672">.</span>dc_ip<span style="color:#e6db74">}</span><span style="color:#e6db74"> with </span><span style="color:#e6db74">{</span>protocol<span style="color:#e6db74">}</span><span style="color:#e6db74">...&#34;</span>)
-</span></span><span style="display:flex;"><span>        logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Attempting to connect to </span><span style="color:#e6db74">{</span>args<span style="color:#f92672">.</span>dc_ip<span style="color:#e6db74">}</span><span style="color:#e6db74"> with </span><span style="color:#e6db74">{</span>protocol<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        s, c, checkserver <span style="color:#f92672">=</span> attempt_connection(args<span style="color:#f92672">.</span>dc_ip, use_ssl, user, password)
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> checkserver:
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Connected successfully using </span><span style="color:#e6db74">{</span><span style="color:#e6db74">&#39;authenticated&#39;</span> <span style="color:#66d9ef">if</span> user <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;anonymous&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> bind. Retrieving server information...&#34;</span>)
-</span></span><span style="display:flex;"><span>            logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Connected successfully using </span><span style="color:#e6db74">{</span><span style="color:#e6db74">&#39;authenticated&#39;</span> <span style="color:#66d9ef">if</span> user <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;anonymous&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> bind&#34;</span>)
-</span></span><span style="display:flex;"><span>            print(s<span style="color:#f92672">.</span>info)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Extract domain components from the server&#39;s info</span>
-</span></span><span style="display:flex;"><span>            domain_components <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>info<span style="color:#f92672">.</span>other[<span style="color:#e6db74">&#39;defaultNamingContext&#39;</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;,&#39;</span>)
-</span></span><span style="display:flex;"><span>            base_dn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;,&#39;</span><span style="color:#f92672">.</span>join(dc <span style="color:#66d9ef">for</span> dc <span style="color:#f92672">in</span> domain_components <span style="color:#66d9ef">if</span> dc<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;DC=&#39;</span>))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Search for users (sAMAccountName only)</span>
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Searching for users (sAMAccountName)...&#34;</span>)
-</span></span><span style="display:flex;"><span>            users <span style="color:#f92672">=</span> perform_ldap_search(c, base_dn, <span style="color:#e6db74">&#39;(&amp;(objectclass=user))&#39;</span>, <span style="color:#e6db74">&#39;sAMAccountName&#39;</span>)
-</span></span><span style="display:flex;"><span>            write_results_to_file(users, <span style="color:#e6db74">&#39;usersLdap.txt&#39;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Search for users (all attributes)</span>
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Searching for users (all attributes)...&#34;</span>)
-</span></span><span style="display:flex;"><span>            users_detailed <span style="color:#f92672">=</span> perform_ldap_search_all_attributes(c, base_dn, <span style="color:#e6db74">&#39;(&amp;(objectclass=user))&#39;</span>)
-</span></span><span style="display:flex;"><span>            write_detailed_results_to_file(users_detailed, <span style="color:#e6db74">&#39;usersLdap_detailed.txt&#39;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Search for groups</span>
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Searching for groups...&#34;</span>)
-</span></span><span style="display:flex;"><span>            groups <span style="color:#f92672">=</span> perform_ldap_search(c, base_dn, <span style="color:#e6db74">&#39;(&amp;(objectclass=group))&#39;</span>, <span style="color:#e6db74">&#39;sAMAccountName&#39;</span>)
-</span></span><span style="display:flex;"><span>            write_results_to_file(groups, <span style="color:#e6db74">&#39;groupsLdap.txt&#39;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Search for groups (all attributes)</span>
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Searching for groups (all attributes)...&#34;</span>)
-</span></span><span style="display:flex;"><span>            groups_detailed <span style="color:#f92672">=</span> perform_ldap_search_all_attributes(c, base_dn, <span style="color:#e6db74">&#39;(&amp;(objectclass=group))&#39;</span>)
-</span></span><span style="display:flex;"><span>            write_detailed_results_to_file(groups_detailed, <span style="color:#e6db74">&#39;groupsLdap_detailed.txt&#39;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Failed to connect with </span><span style="color:#e6db74">{</span>protocol<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>)
-</span></span><span style="display:flex;"><span>            logging<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Failed to connect with </span><span style="color:#e6db74">{</span>protocol<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>)
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> checkserver:
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Failed to connect: Server does not allow LDAP bind or invalid credentials.&#34;</span>)
-</span></span><span style="display:flex;"><span>        logging<span style="color:#f92672">.</span>error(<span style="color:#e6db74">&#34;Failed to connect: Server does not allow LDAP bind or invalid credentials.&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
-</span></span><span style="display:flex;"><span>    main()
-</span></span></code></pre></div>
+      <pre><code>#!/usr/bin/env python3
+
+from ldap3 import Server, Connection, ALL, SUBTREE
+from ldap3.core.exceptions import LDAPException
+import re
+import argparse
+import logging
+import getpass
+import sys
+
+def is_valid_ip(ip):
+    pattern = re.compile(r&#34;^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$&#34;)
+    return pattern.match(ip) is not None
+
+# Setup logging
+logging.basicConfig(filename=&#39;ldap_test.log&#39;, level=logging.INFO)
+
+# Command-line argument parsing
+parser = argparse.ArgumentParser(description=&#34;LDAP Anonymous Bind Test&#34;)
+parser.add_argument(&#39;dc_ip&#39;, help=&#34;IP address of the Domain Controller&#34;)
+parser.add_argument(&#39;-u&#39;, &#39;--user&#39;, help=&#34;Username for authentication&#34;, default=&#39;&#39;)
+parser.add_argument(&#39;-p&#39;, &#39;--password&#39;, help=&#34;Password for authentication&#34;, default=&#39;&#39;)
+
+args = parser.parse_args()
+
+# Validate IP address
+srver = args.dc_ip
+if not is_valid_ip(srver):
+    print(&#34;Invalid IP address format.&#34;)
+    logging.error(f&#34;Invalid IP address format: {srver}&#34;)
+    exit(1)
+
+# Handle secure password input
+user = args.user
+password = args.password
+if not password and user:
+    password = getpass.getpass(&#34;Enter password: &#34;)
+
+def get_domain_from_dc_ip(dc_ip):
+    try:
+        import socket
+        domain = socket.gethostbyaddr(dc_ip)[0]
+        return &#39;.&#39;.join(domain.split(&#39;.&#39;)[1:])  # Remove the hostname part
+    except:
+        return None
+
+def construct_user_string(user, dc_ip):
+    if &#39;\\&#39; in user or &#39;,&#39; in user:  # Already in DOMAIN\user or DN format
+        return user
+    
+    domain = get_domain_from_dc_ip(dc_ip)
+    if domain:
+        return f&#34;{domain}\\{user}&#34;
+    else:
+        return user  # Fallback to just the username if domain can&#39;t be determined
+
+def attempt_connection(server, use_ssl, user, password):
+    protocol = &#34;ldaps&#34; if use_ssl else &#34;ldap&#34;
+    port = 636 if use_ssl else 389
+    try:
+        s = Server(server, port=port, use_ssl=use_ssl, get_info=ALL)
+        if user and password:
+            user_string = construct_user_string(user, server)
+            c = Connection(s, user=user_string, password=password, authentication=&#39;SIMPLE&#39;, auto_bind=True)
+        else:
+            c = Connection(s, auto_bind=True)
+        return s, c, True
+    except LDAPException as e:
+        logging.error(f&#34;Error connecting to the server with {protocol}://{server}:{port}: {e}&#34;)
+        return None, None, False
+
+def perform_ldap_search(connection, base_dn, search_filter, attribute):
+    try:
+        connection.search(search_base=base_dn,
+                          search_filter=search_filter,
+                          search_scope=SUBTREE,
+                          attributes=[attribute])
+        return [entry[attribute].value for entry in connection.entries if attribute in entry]
+    except LDAPException as e:
+        logging.error(f&#34;Error performing LDAP search: {e}&#34;)
+        return []
+
+def write_results_to_file(results, filename):
+    with open(filename, &#39;w&#39;) as f:
+        for item in results:
+            f.write(f&#34;{item}\n&#34;)
+    print(f&#34;Results written to {filename}\n&#34;)
+
+def perform_ldap_search_all_attributes(connection, base_dn, search_filter):
+    try:
+        connection.search(search_base=base_dn,
+                          search_filter=search_filter,
+                          search_scope=SUBTREE,
+                          attributes=[&#39;*&#39;])
+        return connection.entries
+    except LDAPException as e:
+        logging.error(f&#34;Error performing LDAP search: {e}&#34;)
+        return []
+
+def write_detailed_results_to_file(results, filename):
+    with open(filename, &#39;w&#39;) as f:
+        for entry in results:
+            f.write(f&#34;DN: {entry.entry_dn}\n&#34;)
+            for attribute in entry.entry_attributes:
+                values = entry[attribute].values
+                if len(values) == 1:
+                    f.write(f&#34;{attribute}: {values[0]}\n&#34;)
+                else:
+                    f.write(f&#34;{attribute}:\n&#34;)
+                    for value in values:
+                        f.write(f&#34;  {value}\n&#34;)
+            f.write(&#34;\n&#34;)
+    print(f&#34;Detailed results written to {filename}&#34;)
+
+def main():
+    # Attempt to connect with SSL first, then without SSL
+    for use_ssl in [True, False]:
+        protocol = &#34;SSL&#34; if use_ssl else &#34;non-SSL&#34;
+        print(f&#34;Attempting to connect to {args.dc_ip} with {protocol}...&#34;)
+        logging.info(f&#34;Attempting to connect to {args.dc_ip} with {protocol}&#34;)
+        
+        s, c, checkserver = attempt_connection(args.dc_ip, use_ssl, user, password)
+        
+        if checkserver:
+            print(f&#34;Connected successfully using {&#39;authenticated&#39; if user else &#39;anonymous&#39;} bind. Retrieving server information...&#34;)
+            logging.info(f&#34;Connected successfully using {&#39;authenticated&#39; if user else &#39;anonymous&#39;} bind&#34;)
+            print(s.info)
+
+            # Extract domain components from the server&#39;s info
+            domain_components = s.info.other[&#39;defaultNamingContext&#39;][0].split(&#39;,&#39;)
+            base_dn = &#39;,&#39;.join(dc for dc in domain_components if dc.startswith(&#39;DC=&#39;))
+
+            # Search for users (sAMAccountName only)
+            print(&#34;Searching for users (sAMAccountName)...&#34;)
+            users = perform_ldap_search(c, base_dn, &#39;(&amp;(objectclass=user))&#39;, &#39;sAMAccountName&#39;)
+            write_results_to_file(users, &#39;usersLdap.txt&#39;)
+
+            # Search for users (all attributes)
+            print(&#34;Searching for users (all attributes)...&#34;)
+            users_detailed = perform_ldap_search_all_attributes(c, base_dn, &#39;(&amp;(objectclass=user))&#39;)
+            write_detailed_results_to_file(users_detailed, &#39;usersLdap_detailed.txt&#39;)
+
+            # Search for groups
+            print(&#34;Searching for groups...&#34;)
+            groups = perform_ldap_search(c, base_dn, &#39;(&amp;(objectclass=group))&#39;, &#39;sAMAccountName&#39;)
+            write_results_to_file(groups, &#39;groupsLdap.txt&#39;)
+
+            # Search for groups (all attributes)
+            print(&#34;Searching for groups (all attributes)...&#34;)
+            groups_detailed = perform_ldap_search_all_attributes(c, base_dn, &#39;(&amp;(objectclass=group))&#39;)
+            write_detailed_results_to_file(groups_detailed, &#39;groupsLdap_detailed.txt&#39;)
+
+
+            break
+
+
+
+        else:
+            print(f&#34;Failed to connect with {protocol}.&#34;)
+            logging.warning(f&#34;Failed to connect with {protocol}.&#34;)
+    
+    if not checkserver:
+        print(&#34;Failed to connect: Server does not allow LDAP bind or invalid credentials.&#34;)
+        logging.error(&#34;Failed to connect: Server does not allow LDAP bind or invalid credentials.&#34;)
+
+if __name__ == &#34;__main__&#34;:
+    main()
+</code></pre>
+    
   
 
 

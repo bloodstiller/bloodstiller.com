@@ -269,7 +269,12 @@ getusrdompwinfo 0x46f
 
 -   **Bruteforce Custom User** `RID's` **with forloop**:
     -   **Command**: 
-        -   `for i in \\((seq 500 1100);do rpcclient -N -U "" [ip] -c "queryuser 0x\\)(printf '%x\n' $i)" | grep "User Name\\|user_rid\\|group_rid" &amp;&amp; echo "";done`
+    ```
+for i in $(seq 500 1100); do 
+    rpcclient -N -U "" [box] -c "queryuser 0x$(printf '%x\n' $i)" | \
+    grep "User Name\|user_rid\|group_rid" && echo ""
+done
+    ```
 
 -   +Note+:
     -   This is used for searching for custom RIDs (see below)
