@@ -1,11 +1,14 @@
-{{ $file := .Get 0 }}
-{{ with resources.GetRemote $file }}
+{{ $url := .Get 0 }}
+{{ with try (resources.GetRemote $url) }}
   {{ with .Err }}
-    {{ errorf "%s" . }}
+    {{ warnf "Failed to fetch code from %s: %s" $url . }}
+    <div class="error-message">Failed to fetch code from GitHub</div>
   {{ else }}
-    {{ $lang := path.Ext $file | strings.TrimPrefix "." }}
-    {{ highlight .Content $lang }}
+    {{ with .Value }}
+      <pre><code>{{ .Content }}</code></pre>
+    {{ else }}
+      {{ warnf "Unable to get remote resource %q" $url }}
+      <div class="error-message">Resource not found</div>
+    {{ end }}
   {{ end }}
-{{ else }}
-  {{ errorf "Unable to get remote resource %q. Error position: %s" $file $.Position }}
 {{ end }}
