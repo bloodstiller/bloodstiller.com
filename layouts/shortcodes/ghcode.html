@@ -1,14 +1,7 @@
 {{ $url := .Get 0 }}
-{{ with try (resources.GetRemote $url) }}
-  {{ with .Err }}
-    {{ warnf "Failed to fetch code from %s: %s" $url . }}
-    <div class="error-message">Failed to fetch code from GitHub</div>
-  {{ else }}
-    {{ with .Value }}
-      <pre><code>{{ .Content }}</code></pre>
-    {{ else }}
-      {{ warnf "Unable to get remote resource %q" $url }}
-      <div class="error-message">Resource not found</div>
-    {{ end }}
-  {{ end }}
+{{ with resources.GetRemote $url }}
+  {{ $lang := path.Ext $url | strings.TrimPrefix "." }}
+  <pre><code class="language-{{ $lang }}">{{ .Content }}</code></pre>
+{{ else }}
+  <div class="error-message">Failed to fetch code from GitHub: {{ $url }}</div>
 {{ end }}
