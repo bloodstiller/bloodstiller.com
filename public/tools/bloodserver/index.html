@@ -1117,169 +1117,169 @@
 
 
   
-  <pre><code class="language-py">import http.server
-import socketserver
-import os
-import logging
-import ssl
-import base64
-import argparse
-from urllib.parse import urlparse
-import random
-import string
-import threading
-import time
-
-# Configure logging to track server activities
-logging.basicConfig(level=logging.INFO, format=&#39;%(asctime)s - %(levelname)s - %(message)s&#39;)
-
-def generate_password(length=8):
-    &#34;&#34;&#34;Generate a random password of specified length&#34;&#34;&#34;
-    characters = string.ascii_letters &#43; string.digits &#43; string.punctuation
-    return &#39;&#39;.join(random.choice(characters) for _ in range(length))
-
-class AuthHandler(http.server.SimpleHTTPRequestHandler):
-    def __init__(self, *args, **kwargs):
-        # Extract username and password from kwargs, or use defaults
-        self.username = kwargs.pop(&#39;username&#39;, &#39;admin&#39;)
-        self.password = kwargs.pop(&#39;password&#39;, generate_password())
-        super().__init__(*args, **kwargs)
-
-    def do_AUTHHEAD(self):
-        &#34;&#34;&#34;Send authentication request header&#34;&#34;&#34;
-        self.send_response(401)
-        self.send_header(&#39;WWW-Authenticate&#39;, &#39;Basic realm=&#34;Test&#34;&#39;)
-        self.send_header(&#39;Content-type&#39;, &#39;text/html&#39;)
-        self.end_headers()
-
-    def do_POST(self):
-        &#34;&#34;&#34;Handle POST requests (file uploads)&#34;&#34;&#34;
-        # Check for authentication
-        auth = self.headers.get(&#39;Authorization&#39;)
-        if auth is None:
-            self.do_AUTHHEAD()
-            self.wfile.write(b&#39;No auth header received&#39;)
-            return
-        elif not self.authenticate(auth):
-            self.do_AUTHHEAD()
-            self.wfile.write(b&#39;Invalid credentials&#39;)
-            return
-
-        try:
-            # Read and process the uploaded file
-            content_length = int(self.headers[&#39;Content-Length&#39;])
-            post_data = self.rfile.read(content_length)
-            
-            parsed_path = urlparse(self.path)
-            path = parsed_path.path.lstrip(&#39;/&#39;)
-            
-            if not path:
-                path = &#39;uploaded_file&#39;  # Default filename if none provided
-            
-            # Ensure the path is safe (prevent directory traversal)
-            path = os.path.basename(path)
-            
-            # Save the uploaded file
-            with open(path, &#39;wb&#39;) as file:
-                file.write(post_data)
-            
-            # Send success response
-            self.send_response(200)
-            self.send_header(&#39;Content-type&#39;, &#39;text/plain&#39;)
-            self.end_headers()
-            success_message = f&#34;File received and saved successfully: {path} ({content_length} bytes)&#34;
-            self.wfile.write(success_message.encode(&#39;utf-8&#39;))
-            
-            # Log the successful upload
-            logging.info(success_message)
-            print(success_message)  # Print to console as well
-        except Exception as e:
-            # Handle and log any errors
-            error_message = f&#34;Error processing request: {str(e)}&#34;
-            logging.error(error_message)
-            print(error_message)  # Print to console as well
-            self.send_error(500, error_message)
-
-    def do_GET(self):
-        &#34;&#34;&#34;Handle GET requests&#34;&#34;&#34;
-        # Check for authentication
-        auth = self.headers.get(&#39;Authorization&#39;)
-        if auth is None:
-            self.do_AUTHHEAD()
-            self.wfile.write(b&#39;No auth header received&#39;)
-        elif self.authenticate(auth):
-            self.send_response(200)
-            self.send_header(&#39;Content-type&#39;, &#39;text/html&#39;)
-            self.end_headers()
-            self.wfile.write(b&#34;Server is running&#34;)
-        else:
-            self.do_AUTHHEAD()
-            self.wfile.write(b&#39;Invalid credentials&#39;)
-
-    def authenticate(self, auth_header):
-        &#34;&#34;&#34;Authenticate the user&#34;&#34;&#34;
-        auth_decoded = base64.b64decode(auth_header.split()[1]).decode(&#39;ascii&#39;)
-        username, password = auth_decoded.split(&#39;:&#39;)
-        return username == self.username and password == self.password
-
-class ThreadedHTTPServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
-    &#34;&#34;&#34;Handle requests in a separate thread.&#34;&#34;&#34;
-
-def run_server(port=9999, use_https=False, username=&#39;admin&#39;, password=None):
-    &#34;&#34;&#34;Run the server with specified configuration&#34;&#34;&#34;
-    global httpd
-    if password is None:
-        password = generate_password()
-        print(f&#34;Generated password: {password}&#34;)
-    
-    print(f&#34;Username: {username}&#34;)
-    print(f&#34;Password: {password}&#34;)
-
-    handler = lambda *args, **kwargs: AuthHandler(*args, username=username, password=password, **kwargs)
-
-    if use_https:
-        # Set up HTTPS server
-        if not os.path.exists(&#39;server.pem&#39;):
-            os.system(&#39;openssl req -new -x509 -keyout server.pem -out server.pem -days 365 -nodes -subj &#34;/CN=localhost&#34;&#39;)
-        
-        httpd = ThreadedHTTPServer((&#34;&#34;, port), handler)
-        context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-        context.load_cert_chain(&#39;server.pem&#39;)
-        httpd.socket = context.wrap_socket(httpd.socket, server_side=True)
-        logging.info(f&#34;Serving HTTPS on port {port}&#34;)
-    else:
-        # Set up HTTP server
-        httpd = ThreadedHTTPServer((&#34;&#34;, port), handler)
-        logging.info(f&#34;Serving HTTP on port {port}&#34;)
-
-    # Start the server in a separate thread
-    server_thread = threading.Thread(target=httpd.serve_forever)
-    server_thread.daemon = True
-    server_thread.start()
-
-    print(&#34;Press &#39;Q&#39; to stop the server.&#34;)
-    while True:
-        if input().strip().lower() == &#39;q&#39;:
-            print(&#34;Stopping the server...&#34;)
-            httpd.shutdown()
-            break
-        time.sleep(0.1)
-
-    httpd.server_close()
-    print(&#34;Server stopped.&#34;)
-
-if __name__ == &#34;__main__&#34;:
-    # Set up command-line argument parsing
-    parser = argparse.ArgumentParser(description=&#34;Simple secure web server&#34;)
-    parser.add_argument(&#39;-p&#39;, &#39;--port&#39;, type=int, default=9999, help=&#34;Port to run the server on (default: 9999)&#34;)
-    parser.add_argument(&#39;--https&#39;, action=&#39;store_true&#39;, help=&#34;Enable HTTPS&#34;)
-    parser.add_argument(&#39;-u&#39;, &#39;--username&#39;, type=str, default=&#39;admin&#39;, help=&#34;Username for authentication&#34;)
-    parser.add_argument(&#39;--password&#39;, type=str, help=&#34;Password for authentication&#34;)
-    args = parser.parse_args()
-
-    # Run the server with provided arguments
-    run_server(port=args.port, use_https=args.https, username=args.username, password=args.password)
-</code></pre>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> http.server
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> socketserver
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> logging
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> ssl
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> base64
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> argparse
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> urllib.parse <span style="color:#f92672">import</span> urlparse
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> string
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> threading
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configure logging to track server activities</span>
+</span></span><span style="display:flex;"><span>logging<span style="color:#f92672">.</span>basicConfig(level<span style="color:#f92672">=</span>logging<span style="color:#f92672">.</span>INFO, format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%(asctime)s</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">%(levelname)s</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_password</span>(length<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Generate a random password of specified length&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    characters <span style="color:#f92672">=</span> string<span style="color:#f92672">.</span>ascii_letters <span style="color:#f92672">+</span> string<span style="color:#f92672">.</span>digits <span style="color:#f92672">+</span> string<span style="color:#f92672">.</span>punctuation
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(random<span style="color:#f92672">.</span>choice(characters) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(length))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AuthHandler</span>(http<span style="color:#f92672">.</span>server<span style="color:#f92672">.</span>SimpleHTTPRequestHandler):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, <span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Extract username and password from kwargs, or use defaults</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>username <span style="color:#f92672">=</span> kwargs<span style="color:#f92672">.</span>pop(<span style="color:#e6db74">&#39;username&#39;</span>, <span style="color:#e6db74">&#39;admin&#39;</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>password <span style="color:#f92672">=</span> kwargs<span style="color:#f92672">.</span>pop(<span style="color:#e6db74">&#39;password&#39;</span>, generate_password())
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>__init__(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_AUTHHEAD</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Send authentication request header&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>send_response(<span style="color:#ae81ff">401</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>send_header(<span style="color:#e6db74">&#39;WWW-Authenticate&#39;</span>, <span style="color:#e6db74">&#39;Basic realm=&#34;Test&#34;&#39;</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>send_header(<span style="color:#e6db74">&#39;Content-type&#39;</span>, <span style="color:#e6db74">&#39;text/html&#39;</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>end_headers()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_POST</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Handle POST requests (file uploads)&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Check for authentication</span>
+</span></span><span style="display:flex;"><span>        auth <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>headers<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;Authorization&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> auth <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>do_AUTHHEAD()
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>wfile<span style="color:#f92672">.</span>write(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;No auth header received&#39;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>authenticate(auth):
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>do_AUTHHEAD()
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>wfile<span style="color:#f92672">.</span>write(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;Invalid credentials&#39;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Read and process the uploaded file</span>
+</span></span><span style="display:flex;"><span>            content_length <span style="color:#f92672">=</span> int(self<span style="color:#f92672">.</span>headers[<span style="color:#e6db74">&#39;Content-Length&#39;</span>])
+</span></span><span style="display:flex;"><span>            post_data <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>rfile<span style="color:#f92672">.</span>read(content_length)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            parsed_path <span style="color:#f92672">=</span> urlparse(self<span style="color:#f92672">.</span>path)
+</span></span><span style="display:flex;"><span>            path <span style="color:#f92672">=</span> parsed_path<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>lstrip(<span style="color:#e6db74">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> path:
+</span></span><span style="display:flex;"><span>                path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;uploaded_file&#39;</span>  <span style="color:#75715e"># Default filename if none provided</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Ensure the path is safe (prevent directory traversal)</span>
+</span></span><span style="display:flex;"><span>            path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>basename(path)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Save the uploaded file</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">with</span> open(path, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>                file<span style="color:#f92672">.</span>write(post_data)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Send success response</span>
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>send_response(<span style="color:#ae81ff">200</span>)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>send_header(<span style="color:#e6db74">&#39;Content-type&#39;</span>, <span style="color:#e6db74">&#39;text/plain&#39;</span>)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>end_headers()
+</span></span><span style="display:flex;"><span>            success_message <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;File received and saved successfully: </span><span style="color:#e6db74">{</span>path<span style="color:#e6db74">}</span><span style="color:#e6db74"> (</span><span style="color:#e6db74">{</span>content_length<span style="color:#e6db74">}</span><span style="color:#e6db74"> bytes)&#34;</span>
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>wfile<span style="color:#f92672">.</span>write(success_message<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>))
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Log the successful upload</span>
+</span></span><span style="display:flex;"><span>            logging<span style="color:#f92672">.</span>info(success_message)
+</span></span><span style="display:flex;"><span>            print(success_message)  <span style="color:#75715e"># Print to console as well</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Handle and log any errors</span>
+</span></span><span style="display:flex;"><span>            error_message <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error processing request: </span><span style="color:#e6db74">{</span>str(e)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            logging<span style="color:#f92672">.</span>error(error_message)
+</span></span><span style="display:flex;"><span>            print(error_message)  <span style="color:#75715e"># Print to console as well</span>
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>send_error(<span style="color:#ae81ff">500</span>, error_message)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_GET</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Handle GET requests&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Check for authentication</span>
+</span></span><span style="display:flex;"><span>        auth <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>headers<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;Authorization&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> auth <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>do_AUTHHEAD()
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>wfile<span style="color:#f92672">.</span>write(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;No auth header received&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> self<span style="color:#f92672">.</span>authenticate(auth):
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>send_response(<span style="color:#ae81ff">200</span>)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>send_header(<span style="color:#e6db74">&#39;Content-type&#39;</span>, <span style="color:#e6db74">&#39;text/html&#39;</span>)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>end_headers()
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>wfile<span style="color:#f92672">.</span>write(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;Server is running&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>do_AUTHHEAD()
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>wfile<span style="color:#f92672">.</span>write(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;Invalid credentials&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">authenticate</span>(self, auth_header):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Authenticate the user&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        auth_decoded <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64decode(auth_header<span style="color:#f92672">.</span>split()[<span style="color:#ae81ff">1</span>])<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;ascii&#39;</span>)
+</span></span><span style="display:flex;"><span>        username, password <span style="color:#f92672">=</span> auth_decoded<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;:&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> username <span style="color:#f92672">==</span> self<span style="color:#f92672">.</span>username <span style="color:#f92672">and</span> password <span style="color:#f92672">==</span> self<span style="color:#f92672">.</span>password
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadedHTTPServer</span>(socketserver<span style="color:#f92672">.</span>ThreadingMixIn, http<span style="color:#f92672">.</span>server<span style="color:#f92672">.</span>HTTPServer):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Handle requests in a separate thread.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run_server</span>(port<span style="color:#f92672">=</span><span style="color:#ae81ff">9999</span>, use_https<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, username<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;admin&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Run the server with specified configuration&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> httpd
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> password <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        password <span style="color:#f92672">=</span> generate_password()
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Generated password: </span><span style="color:#e6db74">{</span>password<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Username: </span><span style="color:#e6db74">{</span>username<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Password: </span><span style="color:#e6db74">{</span>password<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    handler <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> <span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs: AuthHandler(<span style="color:#f92672">*</span>args, username<span style="color:#f92672">=</span>username, password<span style="color:#f92672">=</span>password, <span style="color:#f92672">**</span>kwargs)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> use_https:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Set up HTTPS server</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(<span style="color:#e6db74">&#39;server.pem&#39;</span>):
+</span></span><span style="display:flex;"><span>            os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">&#39;openssl req -new -x509 -keyout server.pem -out server.pem -days 365 -nodes -subj &#34;/CN=localhost&#34;&#39;</span>)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        httpd <span style="color:#f92672">=</span> ThreadedHTTPServer((<span style="color:#e6db74">&#34;&#34;</span>, port), handler)
+</span></span><span style="display:flex;"><span>        context <span style="color:#f92672">=</span> ssl<span style="color:#f92672">.</span>SSLContext(ssl<span style="color:#f92672">.</span>PROTOCOL_TLS_SERVER)
+</span></span><span style="display:flex;"><span>        context<span style="color:#f92672">.</span>load_cert_chain(<span style="color:#e6db74">&#39;server.pem&#39;</span>)
+</span></span><span style="display:flex;"><span>        httpd<span style="color:#f92672">.</span>socket <span style="color:#f92672">=</span> context<span style="color:#f92672">.</span>wrap_socket(httpd<span style="color:#f92672">.</span>socket, server_side<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>        logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Serving HTTPS on port </span><span style="color:#e6db74">{</span>port<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Set up HTTP server</span>
+</span></span><span style="display:flex;"><span>        httpd <span style="color:#f92672">=</span> ThreadedHTTPServer((<span style="color:#e6db74">&#34;&#34;</span>, port), handler)
+</span></span><span style="display:flex;"><span>        logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Serving HTTP on port </span><span style="color:#e6db74">{</span>port<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Start the server in a separate thread</span>
+</span></span><span style="display:flex;"><span>    server_thread <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>httpd<span style="color:#f92672">.</span>serve_forever)
+</span></span><span style="display:flex;"><span>    server_thread<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    server_thread<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Press &#39;Q&#39; to stop the server.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> input()<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>lower() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;q&#39;</span>:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Stopping the server...&#34;</span>)
+</span></span><span style="display:flex;"><span>            httpd<span style="color:#f92672">.</span>shutdown()
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">0.1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    httpd<span style="color:#f92672">.</span>server_close()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Server stopped.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Set up command-line argument parsing</span>
+</span></span><span style="display:flex;"><span>    parser <span style="color:#f92672">=</span> argparse<span style="color:#f92672">.</span>ArgumentParser(description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Simple secure web server&#34;</span>)
+</span></span><span style="display:flex;"><span>    parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-p&#39;</span>, <span style="color:#e6db74">&#39;--port&#39;</span>, type<span style="color:#f92672">=</span>int, default<span style="color:#f92672">=</span><span style="color:#ae81ff">9999</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Port to run the server on (default: 9999)&#34;</span>)
+</span></span><span style="display:flex;"><span>    parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--https&#39;</span>, action<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;store_true&#39;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Enable HTTPS&#34;</span>)
+</span></span><span style="display:flex;"><span>    parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-u&#39;</span>, <span style="color:#e6db74">&#39;--username&#39;</span>, type<span style="color:#f92672">=</span>str, default<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;admin&#39;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Username for authentication&#34;</span>)
+</span></span><span style="display:flex;"><span>    parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--password&#39;</span>, type<span style="color:#f92672">=</span>str, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Password for authentication&#34;</span>)
+</span></span><span style="display:flex;"><span>    args <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span>parse_args()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Run the server with provided arguments</span>
+</span></span><span style="display:flex;"><span>    run_server(port<span style="color:#f92672">=</span>args<span style="color:#f92672">.</span>port, use_https<span style="color:#f92672">=</span>args<span style="color:#f92672">.</span>https, username<span style="color:#f92672">=</span>args<span style="color:#f92672">.</span>username, password<span style="color:#f92672">=</span>args<span style="color:#f92672">.</span>password)
+</span></span></code></pre></div>
 
 
 <h3 id="security-considerations">Security Considerations</h3>

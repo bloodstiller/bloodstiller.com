@@ -1,7 +1,7 @@
 {{ $url := .Get 0 }}
 {{ with resources.GetRemote $url }}
   {{ $lang := path.Ext $url | strings.TrimPrefix "." }}
-  <pre><code class="language-{{ $lang }}">{{ .Content }}</code></pre>
+  {{ highlight .Content $lang }}
 {{ else }}
   <div class="error-message">Failed to fetch code from GitHub: {{ $url }}</div>
 {{ end }}
