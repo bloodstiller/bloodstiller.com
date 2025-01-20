@@ -1,6 +1,6 @@
 +++
 tags = ["Box", "HTB", "Medium", "Windows", "Active Directory", "Kerberos", "Kerberoasting", "DACLS", "ACL", "pwsafe", "Download Cradle", "AS-REPRoasting"]
-draft = false 
+draft = true
 title = "Administrator HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-11-04

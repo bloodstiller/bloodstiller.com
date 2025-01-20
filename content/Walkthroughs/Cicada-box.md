@@ -1,6 +1,6 @@
 +++
 tags = ["Box", "HTB", "Easy", "Windows", "Active Directory", "LDAP", "RPC", "SeBackupPrivilege"]
-draft = false 
+draft = true
 title = "Cicada HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-11-01

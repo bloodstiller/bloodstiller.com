@@ -1,6 +1,6 @@
 +++
 tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "MSSQL", "MYSQL", "CA", "Certificate", "ESC1"]
-draft = false
+draft = true
 title = "Escape HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-10-05
