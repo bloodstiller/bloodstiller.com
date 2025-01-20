@@ -1,6 +1,6 @@
 +++
 tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Active Directory", "Certificate", "CA", "WriteOwner", "MSSQL", "xp_cmdshell", "kerberoasting", "kerberos", "ESC4", "Shadow Credentials"]
-draft = false
+draft = true
 title = "EscapeTwo HTB Walkthrough"
 author = "bloodstiller"
 date = 2025-01-14
