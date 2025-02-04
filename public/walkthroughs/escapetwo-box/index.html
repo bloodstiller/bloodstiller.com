@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <meta name="generator" content="Hugo 0.141.0">
+    <meta name="generator" content="Hugo 0.143.0">
 
     <script src="js/custom.js"></script>
     
@@ -730,6 +730,16 @@
         
             
                 <li class="file">
+                    <a href="http://localhost:1313/automatingqemukalivmansible/" title="./automatingqemukalivmansible/">
+                        
+                            Automating Kali VM Setup with QEMU and Ansible
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
                     <a href="http://localhost:1313/aboutme/" title="./aboutme/">
                         
                             about me
@@ -1148,7 +1158,6 @@
 <ul>
 <li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code></li>
 </ul>
-<!-- raw HTML omitted -->
 
 
 
@@ -1316,7 +1325,6 @@
 </ul>
 </li>
 </ul>
-<!-- raw HTML omitted -->
 <ol>
 <li><!-- raw HTML omitted -->We have the naming context of the domain<!-- raw HTML omitted -->:
 
@@ -1352,7 +1360,6 @@
 </div>
 </li>
 </ol>
-<!-- raw HTML omitted -->
 <ul>
 <li>
 <p>It turns out the anonymous bind is (+NOT+) enabled and we get the below information &amp; our creds do not appear to work for the LDAP.</p>
@@ -1975,8 +1982,7 @@
 <li>
 <p>Luckily <code>.xlsx</code> are just file archives that contain spreadsheets. You can read more about them on <a href="https://fileinfo.com/extension/xlsx">this page</a>, however the key part is this (bolding added by me)</p>
 <blockquote>
-<p>In Excel 2007, XLSX files replaced .XLS files as the standard file for saving spreadsheets in Excel. Unlike XLS files, which store spreadsheet data in a single binary file, <strong>XLSX files are saved in the Open XML format, which stores data as separate files and folders in a compressed Zip package.</strong> The archive includes the [Content_Types].xml file, which describes the spreadsheet, and an .XML file for each worksheet within the spreadsheet.</p>
-</blockquote>
+<p>In Excel 2007, XLSX files replaced .XLS files as the standard file for saving spreadsheets in Excel. Unlike XLS files, which store spreadsheet data in a single binary file, <strong>XLSX files are saved in the Open XML format, which stores data as separate files and folders in a compressed Zip package.</strong> The archive includes the [Content_Types].xml file, which describes the spreadsheet, and an .XML file for each worksheet within the spreadsheet.</p></blockquote>
 <ul>
 <li>This means we can manually extract the archive on our host to view the individual sheets contents.</li>
 </ul>
@@ -2101,7 +2107,6 @@
 <ul>
 <li>I check what shares we have access to as Oscar &amp; can see we have access to the <code>Users</code> share.</li>
 </ul>
-<!-- raw HTML omitted -->
 
 
 
@@ -2380,7 +2385,6 @@
 </ul>
 </li>
 </ul>
-<!-- raw HTML omitted -->
 <ul>
 <li>I go to <a href="https://www.revshells.com/">revshells</a> and use the base64 encoded powershell example.
 <ul>
@@ -2430,7 +2434,6 @@
 </ul>
 </li>
 </ul>
-<!-- raw HTML omitted -->
 <ul>
 <li>
 <p>I download winPEAs onto the host.</p>
@@ -2661,7 +2664,6 @@
 </ul>
 </li>
 </ul>
-<!-- raw HTML omitted -->
 
 
 
@@ -2927,7 +2929,6 @@
 <ul>
 <li>As we are in control of <code>ca_svc</code> let&rsquo;s re-check if we have access to any vulnerable certificates to privesc:</li>
 </ul>
-<!-- raw HTML omitted -->
 
 
 
@@ -2970,8 +2971,7 @@
 <li>
 <p><a href="https://github.com/ly4k/Certipy?tab=readme-ov-file#esc4">https://github.com/ly4k/Certipy?tab=readme-ov-file#esc4</a></p>
 <blockquote>
-<p>ESC4 is when a user has write privileges over a certificate template. This can for instance be abused to overwrite the configuration of the certificate template to make the template vulnerable to ESC1.</p>
-</blockquote>
+<p>ESC4 is when a user has write privileges over a certificate template. This can for instance be abused to overwrite the configuration of the certificate template to make the template vulnerable to ESC1.</p></blockquote>
 <ul>
 <li>So we effectively perform an ESC1 attack by overwriting the template.</li>
 </ul>
@@ -2979,7 +2979,6 @@
 </ul>
 </li>
 </ul>
-<!-- raw HTML omitted -->
 <ol>
 <li>
 <p><strong>Backup original cert</strong>:</p>
@@ -3300,7 +3299,6 @@
 </ul>
 </li>
 </ul>
-<!-- raw HTML omitted -->
 <ul>
 <li>
 <p><strong>Using</strong> <code>impacket-secretsdump</code> <strong>to retrieve the</strong> <code>aeskey</code> <strong>of the</strong> <code>krbtgt</code> <strong>account</strong>:</p>

@@ -2,13 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/active-directory/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/ansible/</loc>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/automatingqemukalivmansible/</loc>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/automation/</loc>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/bloodstiller/</loc>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/dotfiles/</loc>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/kali/</loc>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/qemu/</loc>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/active-directory/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/box/</loc>
@@ -29,9 +53,6 @@
     <loc>http://localhost:1313/walkthroughs/escapetwo-box/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/htb/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
@@ -48,9 +69,6 @@
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/shadow-credentials/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/</loc>
@@ -263,9 +281,6 @@
     <loc>http://localhost:1313/tags/sebackupprivilege/</loc>
     <lastmod>2024-11-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ansible/</loc>
-    <lastmod>2024-10-31T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/walkthroughs/authority-box/</loc>
     <lastmod>2024-10-31T00:00:00+00:00</lastmod>
   </url><url>
@@ -284,16 +299,7 @@
     <loc>http://localhost:1313/tools/automatingqemukalivm/</loc>
     <lastmod>2024-10-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/automation/</loc>
-    <lastmod>2024-10-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/bash/</loc>
-    <lastmod>2024-10-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/kali/</loc>
-    <lastmod>2024-10-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/qemu/</loc>
     <lastmod>2024-10-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cups/</loc>

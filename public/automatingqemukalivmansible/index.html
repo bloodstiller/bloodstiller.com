@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="generator" content="Hugo 0.143.0">
+
+    <script src="js/custom.js"></script>
+    
+
+    
+
+    
+        
+            <meta
+                name="description"
+                content="Bones &amp; All Cyber Security" />
+        
+
+        
+            <meta
+                name="keywords"
+                content="hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory" />
+        
+
+        
+            <meta name="author" content="bloodstiller" />
+        
+
+    
+
+
+    <title>
+        
+            Automating Kali VM Setup with QEMU and Ansible |
+            Hack the planet
+        
+    </title>
+
+    
+
+
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+            
+            <link
+                rel="stylesheet"
+                href="/reset.min_6107201571472815285.3662e40c85350bf0bcf308b7db81c173e4b690b862d3c3cde460de5155550bf055b7ff48cddb1cf5255e55f0355196d8dec1d49434b2457842cc77ebea198f3f.css"
+                integrity="sha512-NmLkDIU1C/C88wi324HBc&#43;S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/01_layout.64370b5236f2e674ebb17408e79404f05d1c6ff7de5628950eb18b15ec63cd07d9697828372ccf6ae36148e595c4ce3a3c9dc4f6239149ec7ddaaf894f59825c.css"
+                integrity="sha512-ZDcLUjby5nTrsXQI55QE8F0cb/feViiVDrGLFexjzQfZaXgoNyzPauNhSOWVxM46PJ3E9iORSex92q&#43;JT1mCXA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/02_style.8484c853cc558c1c2189842f955ad4be9bf66854698f03f140aef3cfc23174c78eb1ab05b915b7877afac7464e5d70d467c87c1fb3fcbe11a75d379de01e0798.css"
+                integrity="sha512-hITIU8xVjBwhiYQvlVrUvpv2aFRpjwPxQK7zz8IxdMeOsasFuRW3h3r6x0ZOXXDUZ8h8H7P8vhGnXTed4B4HmA==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/03_home.6d64455a82e28b01e58f3c37541add9e36fc8ed87562dac91ff06da3f7f11b32ac1cacaa593b2ab2e01acd894659f66c249bd0a261f051038f19a8734c3e1243.css"
+                integrity="sha512-bWRFWoLiiwHljzw3VBrdnjb8jth1YtrJH/Bto/fxGzKsHKyqWTsqsuAazYlGWfZsJJvQomHwUQOPGahzTD4SQw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/04_responsive.065451199c1e1cd4f86ac1c8733e3c77eaf215b4972cefff7e7929a2837f5b2cc0e0a04f99f34d58e082812d6102c8cc9b358d21db784e9c4d5e5a8c79f4bc43.css"
+                integrity="sha512-BlRRGZweHNT4asHIcz48d&#43;ryFbSXLO//fnkpooN/WyzA4KBPmfNNWOCCgS1hAsjMmzWNIdt4TpxNXlqMefS8Qw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/05_markdown.9afaac6b0a75a2cd9086fb9684dfae53bd04b90e034a252e123a9822c3fa6a5c8a3f88211159b1bd0c6918d19ed7bf3e929ff12de51d06fab0eea77e2374f967.css"
+                integrity="sha512-mvqsawp1os2QhvuWhN&#43;uU70EuQ4DSiUuEjqYIsP6alyKP4ghEVmxvQxpGNGe178&#43;kp/xLeUdBvqw7qd&#43;I3T5Zw==" />
+        
+            
+            <link
+                rel="stylesheet"
+                href="/_theme/css/06_image.ee39fc51345f4c74b8c491bde29d5b2053688d0cc6e937f5660e0f5e3665212473f4cb408cd1749317343308aa41ef1baca3ec3f3aff986ab3764c822790008f.css"
+                integrity="sha512-7jn8UTRfTHS4xJG94p1bIFNojQzG6Tf1Zg4PXjZlISRz9MtAjNF0kxc0MwiqQe8brKPsPzr/mGqzdkyCJ5AAjw==" />
+        
+
+    
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            Automating Kali VM Setup with QEMU and Ansible -
+            Hack the planet
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Walkthroughs </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escapetwo-box/" title="./walkthroughs/escapetwo-box/">
+                        
+                            EscapeTwo HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/redpanda-box/" title="./walkthroughs/redpanda-box/">
+                        
+                            RedPanda HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/sau-box/" title="./walkthroughs/sau-box/">
+                        
+                            Sau HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/love-box/" title="./walkthroughs/love-box/">
+                        
+                            Love HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/editorial-box/" title="./walkthroughs/editorial-box/">
+                        
+                            Editorial HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/doctor-box/" title="./walkthroughs/doctor-box/">
+                        
+                            Doctor HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/forest-box/" title="./walkthroughs/forest-box/">
+                        
+                            Forest HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/driver-box/" title="./walkthroughs/driver-box/">
+                        
+                            Driver HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/timelapse-box/" title="./walkthroughs/timelapse-box/">
+                        
+                            Timelapse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/certified-box/" title="./walkthroughs/certified-box/">
+                        
+                            Certified HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/aero-box/" title="./walkthroughs/aero-box/">
+                        
+                            Aero HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/administrator-box/" title="./walkthroughs/administrator-box/">
+                        
+                            Administrator HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/sauna-box/" title="./walkthroughs/sauna-box/">
+                        
+                            Sauna HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/active-box/" title="./walkthroughs/active-box/">
+                        
+                            Active HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cicada-box/" title="./walkthroughs/cicada-box/">
+                        
+                            Cicada HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/authority-box/" title="./walkthroughs/authority-box/">
+                        
+                            Authority HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/evilcups-box/" title="./walkthroughs/evilcups-box/">
+                        
+                            EvilCUPS HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/resolute-box/" title="./walkthroughs/resolute-box/">
+                        
+                            Resolute HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/fuse-box/" title="./walkthroughs/fuse-box/">
+                        
+                            Fuse HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/cascade-box/" title="./walkthroughs/cascade-box/">
+                        
+                            Cascade HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/monteverde-box/" title="./walkthroughs/monteverde-box/">
+                        
+                            Monteverde HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/outdated-box/" title="./walkthroughs/outdated-box/">
+                        
+                            Outdated HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/scrambled-box/" title="./walkthroughs/scrambled-box/">
+                        
+                            Scrambled HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/escape-box/" title="./walkthroughs/escape-box/">
+                        
+                            Escape HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/hospital-box/" title="./walkthroughs/hospital-box/">
+                        
+                            Hospital HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/intelligence-box/" title="./walkthroughs/intelligence-box/">
+                        
+                            Intelligence HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/manager-box/" title="./walkthroughs/manager-box/">
+                        
+                            Manager HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/access-box/" title="./walkthroughs/access-box/">
+                        
+                            Access HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/remote-box/" title="./walkthroughs/remote-box/">
+                        
+                            Remote HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/support-box/" title="./walkthroughs/support-box/">
+                        
+                            Support HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/walkthroughs/return-box/" title="./walkthroughs/return-box/">
+                        
+                            Return HTB Walkthrough
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Articles </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingasreproasting/" title="./articles/understandingasreproasting/">
+                        
+                            Understanding AS-REP Roasting Attacks: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingdownloadcradles/" title="./articles/understandingdownloadcradles/">
+                        
+                            Understanding PowerShell Download Cradles: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understanding2023-28252-clfs/" title="./articles/understanding2023-28252-clfs/">
+                        
+                            Understanding CVE-2023-28252: Deep Dive into the CLFS Privilege Escalation Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingthemebleedcve-2023-38146/" title="./articles/understandingthemebleedcve-2023-38146/">
+                        
+                            Understanding CVE-2023-38146: Deep Dive into the ThemeBleed Vulnerability
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingcupsexploitation/" title="./articles/understandingcupsexploitation/">
+                        
+                            Understanding the CUPS Exploit Chain: A Deep Dive into CVE-2024-4176, CVE-2024-4175, CVE-2024-4177 and CVE-2024-4076
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/understandingnopacexploit/" title="./articles/understandingnopacexploit/">
+                        
+                            Understanding the NoPac Exploit: A Deep Dive into CVE-2021-42278 and CVE-2021-42287
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/seloaddriverprivilegeescalation/" title="./articles/seloaddriverprivilegeescalation/">
+                        
+                            Understanding SeLoadDriverPrivilege Escalation: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/azureadconnectattack/" title="./articles/azureadconnectattack/">
+                        
+                            Understanding Azure AD Connect Exploitation &amp; Privilege Escalation
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/shadowcredentialsattack/" title="./articles/shadowcredentialsattack/">
+                        
+                            Understanding the Shadow Credentials Attack Vector
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/articles/deserializationattacksexplained/" title="./articles/deserializationattacksexplained/">
+                        
+                            Understanding .NET Deserialization Exploits: A Deep Dive
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Tools </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/ldapire/" title="./tools/ldapire/">
+                        
+                            LDAPire: LDAP Enumeration Tool
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/automatingqemukalivm/" title="./tools/automatingqemukalivm/">
+                        
+                            Automating Kali VM Setup with QEMU
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/tools/bloodserver/" title="./tools/bloodserver/">
+                        
+                            BloodServer: A Secure File Transfer Tool for Penetration Testers
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li
+                    
+                        class="dir closed-dir"
+                    >
+                    <span class="dir-text"> Cheatsheets </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/ldap-cheatsheet/" title="./cheatsheets/ldap-cheatsheet/">
+                        
+                            Attacking LDAP: Deep Dive &amp; Cheatsheet
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/" title="./cheatsheets/rpc-cheatsheet/">
+                        
+                            Attacking RPC: Deep Dive &amp; Cheat Sheet
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/automatingqemukalivmansible/" title="./automatingqemukalivmansible/">
+                        
+                            Automating Kali VM Setup with QEMU and Ansible
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="http://localhost:1313/aboutme/" title="./aboutme/">
+                        
+                            about me
+                        
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+
+        <div class="title">
+            <h1 class="title-header">
+                Automating Kali VM Setup with QEMU and Ansible
+            </h1>
+
+            <div class="author-date-readtime">
+                
+
+                    
+                        <div class="author" title="Author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="/author/bloodstiller/"
+                                class="cat-btn">
+                                bloodstiller
+                            </a>
+                        </div>
+                    
+
+                
+
+                
+                    <div class="date" title="Date">
+                        <i class="bi bi-calendar3"></i>
+                        <time
+                            datetime="2025.03.02"
+                            >2025.03.02
+                        </time>
+                    </div>
+                
+
+                
+                    <div
+                        class="readtime"
+                        title="Time to Read">
+                        <i class="bi bi-clock"></i>
+                        9 mins to read
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+
+            
+                <div class="tags">
+                    <i
+                        class="bi bi-tags"
+                        title="Tags"></i>
+                    
+                        <a
+                            href="/tags/kali/"
+                            class="tag-btn">
+                            kali
+                        </a>
+                    
+                        <a
+                            href="/tags/automation/"
+                            class="tag-btn">
+                            automation
+                        </a>
+                    
+                        <a
+                            href="/tags/qemu/"
+                            class="tag-btn">
+                            qemu
+                        </a>
+                    
+                        <a
+                            href="/tags/ansible/"
+                            class="tag-btn">
+                            ansible
+                        </a>
+                    
+                        <a
+                            href="/tags/dotfiles/"
+                            class="tag-btn">
+                            dotfiles
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="breadcumb">
+                    <i class="bi bi-folder"></i>
+                    
+    
+
+
+
+
+<a href="http://localhost:1313/" class="bread-btn">
+    
+        <i class="bi bi-house-fill"></i>
+    
+
+    
+        Home
+    
+</a>
+
+
+
+
+    /
+
+
+
+<a href="http://localhost:1313/automatingqemukalivmansible/" class="bread-btn">
+    
+
+    
+        
+            Automating Kali VM Setup with QEMU and Ansible
+        
+
+    
+</a>
+
+                </div>
+            
+
+            
+        </div>
+
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-need-for-automation">The Need for Automation</a></li>
+    <li><a href="#benefits-and-challenges">Benefits and Challenges</a></li>
+    <li><a href="#prerequisites">Prerequisites</a>
+      <ul>
+        <li><a href="#virtualbox-setup">VirtualBox Setup</a></li>
+        <li><a href="#qemu-kvm-setup--linux-only----my-preferred-setup">QEMU/KVM Setup (Linux only) (My preferred setup)</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-automation-stack">The Automation Stack</a>
+      <ul>
+        <li><a href="#1-dot-vagrant-with-qemu-kvm">1. Vagrant with QEMU/KVM</a></li>
+        <li><a href="#2-dot-ansible-configuration">2. Ansible Configuration</a></li>
+        <li><a href="#3-dot-dotfiles-and-tool-configuration">3. Dotfiles and Tool Configuration</a></li>
+      </ul>
+    </li>
+    <li><a href="#included-tools-and-features">Included Tools &amp; Features</a>
+      <ul>
+        <li><a href="#security-tools">Security Tools</a></li>
+        <li><a href="#development-environment">Development Environment</a></li>
+        <li><a href="#modern-terminal-experience">Modern Terminal Experience</a></li>
+        <li><a href="#command-line-improvements">Command Line Improvements</a></li>
+      </ul>
+    </li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#development-workflow">Development Workflow</a></li>
+    <li><a href="#customization-options">Customization Options</a></li>
+    <li><a href="#documentation-and-resources">Documentation &amp; Resources</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+        
+
+
+        <div class="content">
+            
+                <p>As a cybersecurity enthusiast and productivity junkie, I&rsquo;ve always been fascinated by the power of automation. Recently, I decided to streamline my process of setting up Kali Linux virtual machines using QEMU and Ansible. In this article, I&rsquo;ll walk you through how I&rsquo;ve automated the creation and configuration of Kali VMs, complete with my preferred dotfiles and tools.</p>
+<h2 id="the-need-for-automation">The Need for Automation</h2>
+<p>If you&rsquo;re like me, you probably find yourself creating new Kali VMs frequently for various projects or testing environments. The process of setting up a new VM, updating the system, installing your favorite tools, and configuring your environment can be time-consuming and repetitive. That&rsquo;s where automation comes in handy.
+You can repurpose this setup for other projects, just change the Ansible playbook and dotfiles.</p>
+<h2 id="benefits-and-challenges">Benefits and Challenges</h2>
+<p>This automation setup offers several advantages:</p>
+<ol>
+<li>Consistent environment across all VMs</li>
+<li>Rapid deployment of new instances</li>
+<li>Version-controlled configuration (infrastructure as code)</li>
+<li>Easy sharing and collaboration</li>
+</ol>
+<p>Some challenges I encountered:</p>
+<ul>
+<li>VirtioFS setup complexity</li>
+<li>Ansible role organization</li>
+<li>Package version management</li>
+<li>Dotfiles synchronization</li>
+</ul>
+<p>But the benefits far outweigh the initial setup effort.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Choose your preferred virtualization provider:</p>
+<h3 id="virtualbox-setup">VirtualBox Setup</h3>
+<ul>
+<li>VirtualBox</li>
+<li>Vagrant</li>
+<li>Ansible</li>
+</ul>
+<h3 id="qemu-kvm-setup--linux-only----my-preferred-setup">QEMU/KVM Setup (Linux only) (My preferred setup)</h3>
+<ul>
+<li>QEMU/KVM (≥ 4.2)</li>
+<li>Libvirt (≥ 6.2.0)</li>
+<li>Vagrant</li>
+<li>Ansible</li>
+</ul>
+<p>For QEMU/KVM shared folder support:</p>
+<ul>
+<li>
+<p>Host: Linux kernel ≥ 5.4</p>
+</li>
+<li>
+<p>Guest: Linux kernel ≥ 5.4</p>
+</li>
+<li>
+<p>There is some additional setup required for the <code>vagrant-libvirt</code> plugin so would advise you checkout <a href="https://github.com/bloodstiller/kaliconfigs/blob/main/Vagrant/QEMU/README.md">QEMU/KVM Setup Guide</a></p>
+</li>
+</ul>
+<h2 id="the-automation-stack">The Automation Stack</h2>
+<p>My automation setup consists of three main components:</p>
+<ol>
+<li>Vagrant for VM provisioning</li>
+<li>QEMU/KVM for virtualization</li>
+<li>Ansible for configuration management</li>
+</ol>
+<p>Let&rsquo;s dive into each component.</p>
+<h3 id="1-dot-vagrant-with-qemu-kvm">1. Vagrant with QEMU/KVM</h3>
+<p>I chose QEMU/KVM over VirtualBox for several reasons:</p>
+<ul>
+<li>Better performance on Linux hosts
+<ul>
+<li>Once you have used KVM/QEMU you will never go back to VirtualBox etc.</li>
+</ul>
+</li>
+<li>Native virtualization support</li>
+<li>VirtioFS for efficient file sharing</li>
+</ul>
+<p>The Vagrantfile handles:</p>
+<ul>
+<li>VM resource allocation (RAM, CPU)</li>
+<li>Network configuration</li>
+<li>Shared folder setup with VirtioFS</li>
+<li>Ansible provisioner integration</li>
+</ul>
+<p>Here&rsquo;s the the Vagrantfile:</p>
+
+
+  
+  <pre tabindex="0"><code># -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+
+Vagrant.configure(&#34;2&#34;) do |config|
+  config.vm.box = &#34;kalilinux/rolling&#34;
+  config.vm.hostname = &#34;kali-vm&#34;  # Set hostname inside VM
+  
+  # Disable the default share
+  config.vm.synced_folder &#34;.&#34;, &#34;/vagrant&#34;, disabled: true
+  
+  # Force libvirt provider
+  ENV[&#39;VAGRANT_DEFAULT_PROVIDER&#39;] = &#39;libvirt&#39;
+
+  # QEMU/libvirt specific settings
+  config.vm.provider :libvirt do |libvirt|
+    libvirt.memory = 8192
+    libvirt.cpus = 4
+    libvirt.graphics_type = &#34;spice&#34;
+    libvirt.video_type = &#34;qxl&#34;
+    libvirt.title = &#34;Kali Linux VM&#34;  # Set VM title in libvirt
+    libvirt.description = &#34;Kali Linux VM for Security Testing&#34;  # Optional description
+
+    # Enable shared memory for VirtioFS
+    libvirt.memorybacking :access, :mode =&gt; &#34;shared&#34;
+  end
+
+  # Configure shared folders using VirtioFS
+  config.vm.synced_folder &#34;/home/martin/.config/tmuxinator&#34;, &#34;/home/vagrant/.config/tmuxinator&#34;, 
+    type: &#34;virtiofs&#34;
+  
+  config.vm.synced_folder &#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.02-LinuxTools&#34;, &#34;/home/vagrant/linuxTools&#34;, 
+    type: &#34;virtiofs&#34;
+  
+  config.vm.synced_folder &#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.01-WindowsTools&#34;, &#34;/home/vagrant/windowsTools&#34;, 
+    type: &#34;virtiofs&#34;
+  
+  config.vm.synced_folder &#34;/home/martin/Dropbox/40-49_Career&#34;, &#34;/home/vagrant/Dropbox/40-49_Career&#34;, 
+    type: &#34;virtiofs&#34;
+
+  # Network settings
+  config.vm.network &#34;private_network&#34;, ip: &#34;192.168.57.11&#34;
+  config.ssh.forward_x11 = true
+
+
+  # Provisioning configuration for Ansible
+  config.vm.provision &#34;ansible&#34; do |ansible|
+    ansible.playbook = &#34;../../Ansible/configure-kali.yml&#34;
+  end
+end</code></pre>
+
+
+<h3 id="2-dot-ansible-configuration">2. Ansible Configuration</h3>
+<p>Ansible automates the entire VM setup process. The main playbook handles:</p>
+<ol>
+<li>System updates and package installation</li>
+<li>Development tools setup</li>
+<li>Security tools installation</li>
+<li>Terminal environment configuration (Alacritty, Tmux)</li>
+<li>Editor setup (Doom Emacs)</li>
+<li>Dotfiles deployment</li>
+</ol>
+<p>Here&rsquo;s the main Ansible playbook:</p>
+
+
+  
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Configure Kali Linux</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">all</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>  <span style="color:#75715e"># This is equivalent to using sudo</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">vars</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">user_home</span>: <span style="color:#e6db74">&#34;/home/vagrant&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">docker_gpg_key_url</span>: <span style="color:#e6db74">&#34;https://download.docker.com/linux/debian/gpg&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">docker_repo</span>: <span style="color:#e6db74">&#34;deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">tasks</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Update apt cache</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">apt</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">update_cache</span>: <span style="color:#66d9ef">yes</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">cache_valid_time</span>: <span style="color:#ae81ff">3600</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Download Iosevka Nerd Font (be patient big file!)</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">get_url</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">url</span>: <span style="color:#ae81ff">https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Iosevka.zip</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">dest</span>: <span style="color:#ae81ff">/tmp/Iosevka.zip</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">mode</span>: <span style="color:#e6db74">&#39;0644&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install unzip if not present</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">apt</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">unzip</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Extract Iosevka font</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">unarchive</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">src</span>: <span style="color:#ae81ff">/tmp/Iosevka.zip</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">dest</span>: <span style="color:#e6db74">&#34;/usr/local/share/fonts/&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">remote_src</span>: <span style="color:#66d9ef">yes</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">owner</span>: <span style="color:#ae81ff">vagrant</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">group</span>: <span style="color:#ae81ff">vagrant</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Update font cache</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">command</span>: <span style="color:#ae81ff">fc-cache -fv</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">become_user</span>: <span style="color:#ae81ff">vagrant</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install base packages</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">apt</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">eza</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">alacritty</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">git</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">bat</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">seclists</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">git </span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">emacs</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">ripgrep</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">fd-find</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Create docker GPG directory</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">file</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/etc/apt/keyrings</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">directory</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">mode</span>: <span style="color:#e6db74">&#39;0755&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Check if Docker GPG key exists</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">stat</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/etc/apt/keyrings/docker.gpg</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">docker_gpg</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Add Docker GPG key</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">shell</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        curl -fsSL {{ docker_gpg_key_url }} | gpg --dearmor -o /etc/apt/keyrings/docker.gpg</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">when</span>: <span style="color:#ae81ff">not docker_gpg.stat.exists</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Check if Docker repository exists</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">stat</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/etc/apt/sources.list.d/docker.list</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">docker_repo_file</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Add Docker repository</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">copy</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">content</span>: <span style="color:#e6db74">&#34;{{ docker_repo }}&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">dest</span>: <span style="color:#ae81ff">/etc/apt/sources.list.d/docker.list</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">when</span>: <span style="color:#ae81ff">not docker_repo_file.stat.exists</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Docker packages</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">apt</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">docker-ce</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">docker-ce-cli</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">containerd.io</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">update_cache</span>: <span style="color:#66d9ef">yes</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Download Starship install script</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">get_url</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">url</span>: <span style="color:#ae81ff">https://starship.rs/install.sh</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">dest</span>: <span style="color:#ae81ff">/tmp/starship-install.sh</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">mode</span>: <span style="color:#e6db74">&#39;0755&#39;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">download_script</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Starship</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">shell</span>: <span style="color:#ae81ff">/tmp/starship-install.sh --yes</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">args</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">creates</span>: <span style="color:#ae81ff">/usr/local/bin/starship</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">when</span>: <span style="color:#ae81ff">download_script is success</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">async</span>: <span style="color:#ae81ff">180</span>  <span style="color:#75715e"># 5 minute timeout</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">poll</span>: <span style="color:#ae81ff">5</span>     <span style="color:#75715e"># Check every 5 seconds</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install oh-my-zsh</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">become_user</span>: <span style="color:#ae81ff">vagrant</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">shell</span>: <span style="color:#ae81ff">sh -c &#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&#34; &#34;&#34; --unattended</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">args</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">creates</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.oh-my-zsh&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install zsh plugins</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">become_user</span>: <span style="color:#ae81ff">vagrant</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">git</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">repo</span>: <span style="color:#e6db74">&#34;{{ item.repo }}&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">dest</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.oh-my-zsh/custom/plugins/{{ item.name }}&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">loop</span>:
+</span></span><span style="display:flex;"><span>        - { <span style="color:#f92672">repo: &#39;https://github.com/zsh-users/zsh-autosuggestions&#39;, name</span>: <span style="color:#e6db74">&#39;zsh-autosuggestions&#39;</span> }
+</span></span><span style="display:flex;"><span>        - { <span style="color:#f92672">repo: &#39;https://github.com/zsh-users/zsh-syntax-highlighting.git&#39;, name</span>: <span style="color:#e6db74">&#39;zsh-syntax-highlighting&#39;</span> }
+</span></span><span style="display:flex;"><span>        - { <span style="color:#f92672">repo: &#39;https://github.com/marlonrichert/zsh-autocomplete.git&#39;, name</span>: <span style="color:#e6db74">&#39;zsh-autocomplete&#39;</span> }
+</span></span><span style="display:flex;"><span>        - { <span style="color:#f92672">repo: &#39;https://github.com/zdharma-continuum/fast-syntax-highlighting.git&#39;, name</span>: <span style="color:#e6db74">&#39;fast-syntax-highlighting&#39;</span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install tmuxinator</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">gem</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">tmuxinator</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Clone Statistically Likely Usernames</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">git</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">repo</span>: <span style="color:#ae81ff">https://github.com/insidetrust/statistically-likely-usernames.git</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">dest</span>: <span style="color:#ae81ff">/usr/share/wordlists/statistically-likely-usernames</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Download and install Kerbrute</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">get_url</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">url</span>: <span style="color:#ae81ff">https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">dest</span>: <span style="color:#ae81ff">/usr/local/bin/kerbrute</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">mode</span>: <span style="color:#e6db74">&#39;0755&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install build dependencies for Emacs</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">apt</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">build-essential</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">libgccjit-12-dev</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">libgnutls28-dev</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">libjansson4</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">libjansson-dev</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">libncurses-dev</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">libsqlite3-dev</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">libgif-dev</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">libjpeg-dev</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">libpng-dev</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">libtiff5-dev</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">libxpm-dev</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">libwebp-dev</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">libgtk-3-dev</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">texinfo</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">autoconf</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">automake</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">pkg-config</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">install_recommends</span>: <span style="color:#66d9ef">no</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">pkg_result</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">retries</span>: <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">delay</span>: <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">until</span>: <span style="color:#ae81ff">pkg_result is success</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install tree-sitter separately</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">apt</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">libtree-sitter-dev</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">tree_sitter_result</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">retries</span>: <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">delay</span>: <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">until</span>: <span style="color:#ae81ff">tree_sitter_result is success</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Check if Emacs 29.4 is installed</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">command</span>: <span style="color:#ae81ff">emacs --version</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">register</span>: <span style="color:#ae81ff">emacs_version</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">ignore_errors</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">changed_when</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Clone Emacs repository</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">git</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">repo</span>: <span style="color:#ae81ff">git://git.savannah.gnu.org/emacs.git</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">dest</span>: <span style="color:#ae81ff">/tmp/emacs</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">version</span>: <span style="color:#ae81ff">emacs-29.4</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">when</span>: <span style="color:#e6db74">&#34;emacs_version.rc != 0 or &#39;29.4&#39; not in emacs_version.stdout|default(&#39;&#39;)&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Run autogen</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">shell</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        cd /tmp/emacs
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        ./autogen.sh</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">when</span>: <span style="color:#e6db74">&#34;emacs_version.rc != 0 or &#39;29.4&#39; not in emacs_version.stdout|default(&#39;&#39;)&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Configure Emacs</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">shell</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        cd /tmp/emacs
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        ./configure --with-native-compilation --with-json --with-tree-sitter --with-sqlite3</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">args</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">creates</span>: <span style="color:#ae81ff">/tmp/emacs/Makefile</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">when</span>: <span style="color:#e6db74">&#34;emacs_version.rc != 0 or &#39;29.4&#39; not in emacs_version.stdout|default(&#39;&#39;)&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build Emacs</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">shell</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        cd /tmp/emacs
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        make -j$(nproc)</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">args</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">creates</span>: <span style="color:#ae81ff">/tmp/emacs/src/emacs</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">when</span>: <span style="color:#e6db74">&#34;emacs_version.rc != 0 or &#39;29.4&#39; not in emacs_version.stdout|default(&#39;&#39;)&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">async</span>: <span style="color:#ae81ff">1800</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">poll</span>: <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Emacs</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">shell</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        cd /tmp/emacs
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        make install</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">args</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">creates</span>: <span style="color:#ae81ff">/usr/local/bin/emacs</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">when</span>: <span style="color:#e6db74">&#34;emacs_version.rc != 0 or &#39;29.4&#39; not in emacs_version.stdout|default(&#39;&#39;)&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">async</span>: <span style="color:#ae81ff">900</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">poll</span>: <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install other base packages</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">apt</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">eza</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">alacritty</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">git</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">bat</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">seclists</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">ripgrep</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">fd-find</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">install_recommends</span>: <span style="color:#66d9ef">no</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup dotfiles</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">become_user</span>: <span style="color:#ae81ff">vagrant</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">block</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Clone dotfiles</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">git</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">repo</span>: <span style="color:#ae81ff">https://github.com/bloodstiller/kaliconfigs.git</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">dest</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.dotfiles&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">version</span>: <span style="color:#ae81ff">main </span> <span style="color:#75715e"># Or whatever branch you&#39;re using</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">update</span>: <span style="color:#66d9ef">yes</span> <span style="color:#75715e"># Ensures latest version is cloned</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">clone</span>: <span style="color:#66d9ef">yes</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">force</span>: <span style="color:#66d9ef">yes</span>  <span style="color:#75715e"># This will overwrite local changes</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Create required directories</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">file</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">path</span>: <span style="color:#e6db74">&#34;{{ item }}&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">state</span>: <span style="color:#ae81ff">directory</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">loop</span>:
+</span></span><span style="display:flex;"><span>            - <span style="color:#e6db74">&#34;{{ user_home }}/.doom.d&#34;</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#e6db74">&#34;{{ user_home }}/.config&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Create symlinks</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">file</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">src</span>: <span style="color:#e6db74">&#34;{{ item.src }}&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">dest</span>: <span style="color:#e6db74">&#34;{{ item.dest }}&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">state</span>: <span style="color:#ae81ff">link</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">force</span>: <span style="color:#66d9ef">yes</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">loop</span>:
+</span></span><span style="display:flex;"><span>            - { <span style="color:#f92672">src</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.dotfiles/Zsh/.zshrc&#34;</span><span style="color:#f92672">, dest</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.zshrc&#34;</span> }
+</span></span><span style="display:flex;"><span>            - { <span style="color:#f92672">src</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.dotfiles/Doom/config.el&#34;</span><span style="color:#f92672">, dest</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.doom.d/config.el&#34;</span> }
+</span></span><span style="display:flex;"><span>            - { <span style="color:#f92672">src</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.dotfiles/Doom/init.el&#34;</span><span style="color:#f92672">, dest</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.doom.d/init.el&#34;</span> }
+</span></span><span style="display:flex;"><span>            - { <span style="color:#f92672">src</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.dotfiles/Doom/packages.el&#34;</span><span style="color:#f92672">, dest</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.doom.d/packages.el&#34;</span> }
+</span></span><span style="display:flex;"><span>            - { <span style="color:#f92672">src</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.dotfiles/Doom/README.org&#34;</span><span style="color:#f92672">, dest</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.doom.d/README.org&#34;</span> }
+</span></span><span style="display:flex;"><span>            - { <span style="color:#f92672">src</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.dotfiles/Starship/starship.toml&#34;</span><span style="color:#f92672">, dest</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.config/starship.toml&#34;</span> }
+</span></span><span style="display:flex;"><span>            - { <span style="color:#f92672">src</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.dotfiles/Alacritty&#34;</span><span style="color:#f92672">, dest</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.config/Alacritty&#34;</span> }
+</span></span><span style="display:flex;"><span>            - { <span style="color:#f92672">src</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.dotfiles/Tmux/.tmux.conf&#34;</span><span style="color:#f92672">, dest</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.tmux.conf&#34;</span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Doom Emacs</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">become_user</span>: <span style="color:#ae81ff">vagrant</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">block</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Clone Doom Emacs</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">git</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">repo</span>: <span style="color:#ae81ff">https://github.com/doomemacs/doomemacs</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">dest</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.config/emacs&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">depth</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Doom Emacs</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e"># This is correct and the path is correct!</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">shell</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.config/emacs/bin/doom install --force&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">args</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">creates</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.emacs.d/bin/doom&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">async</span>: <span style="color:#ae81ff">900</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">poll</span>: <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Update Doom recipe repositories</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">shell</span>: <span style="color:#e6db74">&#34;{{ user_home }}/.config/emacs/bin/doom sync -u&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">async</span>: <span style="color:#ae81ff">900</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">poll</span>: <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Enable Docker service</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">systemd</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">docker</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">yes</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">started</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Add user to docker group</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">user</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">vagrant</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">groups</span>: <span style="color:#ae81ff">docker</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">append</span>: <span style="color:#66d9ef">yes</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Clean up</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">apt</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">autoremove</span>: <span style="color:#66d9ef">yes</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">clean</span>: <span style="color:#66d9ef">yes</span>
+</span></span><span style="display:flex;"><span>
+</span></span></code></pre></div>
+
+
+<h3 id="3-dot-dotfiles-and-tool-configuration">3. Dotfiles and Tool Configuration</h3>
+<p>The automation includes configuration for:</p>
+<ul>
+<li>Alacritty terminal emulator</li>
+<li>Tmux with custom keybindings</li>
+<li>Doom Emacs with security-focused packages</li>
+<li>Starship cross-shell prompt</li>
+<li>Zsh with Oh My Zsh</li>
+</ul>
+<p>Each tool has its own configuration module in the repository:</p>
+<ul>
+<li><a href="https://github.com/bloodstiller/kaliconfigs/tree/main/Alacritty">Alacritty Configuration</a></li>
+<li><a href="https://github.com/bloodstiller/kaliconfigs/tree/main/Tmux">Tmux Configuration</a></li>
+<li><a href="https://github.com/bloodstiller/kaliconfigs/tree/main/Doom">Doom Emacs Configuration</a></li>
+<li><a href="https://github.com/bloodstiller/kaliconfigs/tree/main/Starship">Starship Configuration</a></li>
+<li><a href="https://github.com/bloodstiller/kaliconfigs/tree/main/Zsh">Zsh Configuration</a></li>
+</ul>
+<h2 id="included-tools-and-features">Included Tools &amp; Features</h2>
+<p>The automation sets up a comprehensive environment with:</p>
+<h3 id="security-tools">Security Tools</h3>
+<ul>
+<li>SecLists (lots of lists)</li>
+<li>Kerbrute for Kerberos authentication testing</li>
+<li>Statistically Likely Usernames wordlist</li>
+<li>Common pentesting tools (I have my folders for linux &amp; windows tools (I will make a repo for that soon))</li>
+<li>Bloodhound for Active Directory analysis (dockerized)</li>
+</ul>
+<h3 id="development-environment">Development Environment</h3>
+<ul>
+<li>Emacs 29.4 with native compilation</li>
+<li>Doom Emacs configuration
+<ul>
+<li>This is my main editor and I use it for everything but if you prefer another editor you can change the Ansible playbook.</li>
+</ul>
+</li>
+<li>Git version control</li>
+<li>Docker and Docker Compose</li>
+<li>Build tools and development libraries</li>
+</ul>
+<h3 id="modern-terminal-experience">Modern Terminal Experience</h3>
+<ul>
+<li>Alacritty terminal emulator</li>
+<li>Starship cross-shell prompt</li>
+<li>Tmuxinator for session management</li>
+</ul>
+<h3 id="command-line-improvements">Command Line Improvements</h3>
+<ul>
+<li>Eza (modern ls replacement)</li>
+<li>Bat (better cat)</li>
+<li>Ripgrep for searching</li>
+<li>fd-find for file discovery</li>
+<li>Enhanced Zsh configuration:
+<ul>
+<li>zsh-autosuggestions</li>
+<li>zsh-syntax-highlighting</li>
+<li>zsh-autocomplete</li>
+<li>fast-syntax-highlighting</li>
+</ul>
+</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<p>To use this automation:</p>
+<ol>
+<li>
+<p>Clone the repository:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>   git clone https://github.com/bloodstiller/kaliconfigs.git
+</span></span><span style="display:flex;"><span>   cd kaliconfigs</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p>Install prerequisites:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20#%20For%20Debian/Ubuntu%0a%20%20%20sudo%20apt%20install%20qemu-kvm%20libvirt-daemon-system%20libvirt-clients%20vagrant%20ansible%0a%0a%20%20%20#%20For%20Arch%20Linux%0a%20%20%20sudo%20pacman%20-S%20qemu-full%20libvirt%20vagrant%20ansible">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>   <span style="color:#75715e"># For Debian/Ubuntu</span>
+</span></span><span style="display:flex;"><span>   sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients vagrant ansible
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e"># For Arch Linux</span>
+</span></span><span style="display:flex;"><span>   sudo pacman -S qemu-full libvirt vagrant ansible</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p>Start the VM:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20cd%20Vagrant/QEMU%0a%20%20%20vagrant%20up">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>   cd Vagrant/QEMU
+</span></span><span style="display:flex;"><span>   vagrant up</span></span></code></pre></div>
+    
+</div>
+</li>
+</ol>
+<h2 id="development-workflow">Development Workflow</h2>
+<p>For efficient development and testing:</p>
+<ol>
+<li>
+<p>Rerun only Ansible playbooks:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20vagrant%20provision">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>   vagrant provision</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p>Run Ansible directly against the VM:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20vagrant%20ssh-config%20%3e%20vagrant-ssh-config%0a%20%20%20ansible-playbook%20-i%20.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory%20Ansible/configure-kali.yml">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>   vagrant ssh-config &gt; vagrant-ssh-config
+</span></span><span style="display:flex;"><span>   ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory Ansible/configure-kali.yml</span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p>Use snapshots for safe testing:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20vagrant%20snapshot%20save%20baseline%0a%20%20%20vagrant%20snapshot%20restore%20baseline">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>   vagrant snapshot save baseline
+</span></span><span style="display:flex;"><span>   vagrant snapshot restore baseline</span></span></code></pre></div>
+    
+</div>
+</li>
+</ol>
+<h2 id="customization-options">Customization Options</h2>
+<p>The automation is highly customizable:</p>
+<ol>
+<li>
+<p>VM Resources (Vagrantfile):</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>   config<span style="color:#f92672">.</span>vm<span style="color:#f92672">.</span>provider <span style="color:#e6db74">:libvirt</span> <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>libvirt<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>     libvirt<span style="color:#f92672">.</span>memory <span style="color:#f92672">=</span> <span style="color:#ae81ff">8192</span>
+</span></span><span style="display:flex;"><span>     libvirt<span style="color:#f92672">.</span>cpus <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">end</span></span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p>Package Selection (Ansible):</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="#ZgotmplZ">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">​   - name</span>: <span style="color:#ae81ff">Install base packages</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">apt</span>:
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">name</span>:
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">​         - eza</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">​         - alacritty</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">​         - git</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#75715e"># Add your packages here</span></span></span></code></pre></div>
+    
+</div>
+</li>
+<li>
+<p>Shared Folders:</p>
+
+
+
+
+
+
+
+<div class="codeblock">
+    
+        <div class="copy-button-box">
+            <button class="copy-button" state="copy" data="%20%20%20config.vm.synced_folder%20%22/path/to/host%22,%20%22/path/in/guest%22,%0a%20%20%20%20%20type:%20%22virtiofs%22">
+                <i class="bi bi-copy"></i>
+            </button>
+        </div>
+    
+
+    
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>   config<span style="color:#f92672">.</span>vm<span style="color:#f92672">.</span>synced_folder <span style="color:#e6db74">&#34;/path/to/host&#34;</span>, <span style="color:#e6db74">&#34;/path/in/guest&#34;</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">type</span>: <span style="color:#e6db74">&#34;virtiofs&#34;</span></span></span></code></pre></div>
+    
+</div>
+</li>
+</ol>
+<h2 id="documentation-and-resources">Documentation &amp; Resources</h2>
+<p>For detailed setup and configuration instructions, refer to:</p>
+<ul>
+<li><a href="https://github.com/bloodstiller/kaliconfigs/blob/main/README.md">Main Project Documentation</a> - Overview and quick start guide</li>
+<li><a href="https://github.com/bloodstiller/kaliconfigs/blob/main/Ansible/README.md">Ansible Configuration Guide</a> - Detailed playbook customization</li>
+<li><a href="https://github.com/bloodstiller/kaliconfigs/blob/main/Vagrant/QEMU/README.md">QEMU/KVM Setup Guide</a> - QEMU-specific installation and configuration</li>
+<li><a href="https://github.com/bloodstiller/kaliconfigs/tree/main/Alacritty">Alacritty Configuration</a> - Terminal emulator setup</li>
+<li><a href="https://github.com/bloodstiller/kaliconfigs/tree/main/Doom">Doom Emacs Configuration</a> - Editor configuration</li>
+<li><a href="https://github.com/bloodstiller/kaliconfigs/tree/main/Tmux">Tmux Configuration</a> - Terminal multiplexer setup</li>
+<li><a href="https://github.com/bloodstiller/kaliconfigs/tree/main/Starship">Starship Configuration</a> - Shell prompt customization</li>
+<li><a href="https://github.com/bloodstiller/kaliconfigs/tree/main/Zsh">Zsh Configuration</a> - Shell configuration and plugins</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Automating Kali VM setup with QEMU and Ansible has significantly improved my workflow. The combination of Vagrant for VM management, QEMU for virtualization, and Ansible for configuration provides a powerful and flexible automation stack.</p>
+<p>The complete code is available in my <a href="https://github.com/bloodstiller/kaliconfigs">kaliconfigs repository</a>. Feel free to fork it and adapt it to your needs.</p>
+<p>Happy hacking!</p>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+                <li>All Rights Reserved ®.</li>
+            
+
+            
+                <li>Bloodstiller</li>
+            
+
+            
+                
+            
+                
+            
+                
+                    <li>
+                        
+                            <a href="https://github.com/bloodstiller" target="_blank">
+                                <i class="bi-github"></i>
+                            </a>
+                        
+
+                    </li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+                <li>
+                    
+                        Word Count:
+                        1824
+                    
+                </li>
+            
+
+
+            
+                <li>en</li>
+            
+
+            
+
+            
+
+            
+                <li>
+                    
+                        Last modified: &nbsp;
+                        <time>
+                            Feb 03 2025 00:00:00
+                        </time>
+                    
+                </li>
+            
+
+            
+        </ul>
+    </div>
+</footer>
+
+
+        
+        <script src="/js/custom.js"></script>
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/codeblock_copy.c59588ba3a219dafab515508b0bcd2d0592dc9e0e08de20dc1983bfd8cb69d03d37c78eadd81ee7bef724570f9e4286d9ea1c53ca59d3711c0bcad9e9134d0e9.js"
+            integrity="sha512-xZWIujohna&#43;rUVUIsLzS0FktyeDgjeINwZg7/Yy2nQPTfHjq3YHue&#43;9yRXD55ChtnqHFPKWdNxHAvK2ekTTQ6Q=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/custom.e55ae031ca7d8c1e9bde9a72058dd382e3de5ff9b7df41d6d0e4ccb82ff9962e74b4865412dc15db16e5f16012d5cf9e2330b9826a3a36d5a272077f70e1341b.js"
+            integrity="sha512-5VrgMcp9jB6b3ppyBY3TguPeX/m330HW0OTMuC/5li50tIZUEtwV2xbl8WAS1c&#43;eIzC5gmo6NtWicgd/cOE0Gw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/dir_toggle.e6f8c63f3ed9aefa9cedb3be3d5ab67e00bc3cf87a8dd7ef1ed55d642e9a7d80837636a26ae77f967f2aa74a44ae70c4134e25abca587f048c60807ba9e9c82f.js"
+            integrity="sha512-5vjGPz7Zrvqc7bO&#43;PVq2fgC8PPh6jdfvHtVdZC6afYCDdjaiaud/ln8qp0pErnDEE04lq8pYfwSMYIB7qenILw=="></script>
+    
+        
+        <script
+            type="text/javascript"
+            src="/_theme/js/sidebar.01b59c615736643387108a100de70c51d5e98477bdc338244a87d37f7e38286b48683459eade68087f0688f0235e7a48691e633954fa930d41823e9ddf797085.js"
+            integrity="sha512-AbWcYVc2ZDOHEIoQDecMUdXphHe9wzgkSofTf344KGtIaDRZ6t5oCH8GiPAjXnpIaR5jOVT6kw1Bgj6d33lwhQ=="></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+
+
+
+</html>

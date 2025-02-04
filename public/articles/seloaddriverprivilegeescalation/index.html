@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <meta name="generator" content="Hugo 0.141.0">
+    <meta name="generator" content="Hugo 0.143.0">
 
     <script src="js/custom.js"></script>
     
@@ -730,6 +730,16 @@
         
             
                 <li class="file">
+                    <a href="http://localhost:1313/automatingqemukalivmansible/" title="./automatingqemukalivmansible/">
+                        
+                            Automating Kali VM Setup with QEMU and Ansible
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
                     <a href="http://localhost:1313/aboutme/" title="./aboutme/">
                         
                             about me
@@ -1182,7 +1192,6 @@
 </ul>
 <h4 id="compiling-the-eoploaddriver-tool-to-enable-us-to-load-the-capcom-dot-sys-driver">Compiling the EopLoadDriver tool to enable us to load the Capcom.sys driver:</h4>
 <p>The <code>EopLoadDriver</code> tool is a utility designed to leverage the <code>SeLoadDriverPrivilege</code> for loading a driver into the Windows kernel. It interacts with the Windows registry to register the driver and then uses the NtLoadDriver system call to load it. This tool is essential in our exploit chain as it allows us to load the vulnerable <code>Capcom.sys</code> driver, which we&rsquo;ll subsequently exploit to gain SYSTEM privileges. By using <code>EopLoadDriver</code>, we&rsquo;re able to bridge the gap between having the <code>SeLoadDriverPrivilege</code> and actually loading a driver of our choice into the kernel.</p>
-<!-- raw HTML omitted -->
 <ul>
 <li>
 <p>Preparing the <code>EopLoadDriver</code> C++ Project:</p>
@@ -1226,7 +1235,6 @@
 </ul>
 </li>
 </ul>
-<!-- raw HTML omitted -->
 <ul>
 <li>
 <p>Importing the <code>EopLoadDriver</code> code &amp; Compiling:</p>
@@ -1260,7 +1268,6 @@
 </ul>
 <h4 id="compiling-the-exploitcapcom-exploit-c-plus-plus-project">Compiling the ExploitCapcom exploit C++ project</h4>
 <p>The <code>ExploitCapcom</code> tool is the core component of our privilege escalation attack. It&rsquo;s designed to exploit the vulnerability in the <code>Capcom.sys</code> driver that we&rsquo;ve loaded using <code>EopLoadDriver</code>. This tool takes advantage of the driver&rsquo;s ability to disable Supervisor Mode Execution Prevention (SMEP) and execute arbitrary code in kernel mode. By default, ExploitCapcom opens a new command prompt with <code>SYSTEM privileges</code>, but we&rsquo;ll modify it to launch our custom payload instead. This tool effectively completes the privilege escalation chain, leveraging the loaded vulnerable driver to elevate our permissions to the highest level in the Windows operating system.</p>
-<!-- raw HTML omitted -->
 <ul>
 <li>
 <p>Importing the <code>ExploitCapcom C++</code> Project:</p>
@@ -1314,7 +1321,6 @@
 <ul>
 <li>Remember if you are not using the Fuse walkthrough to modify the path to one you have access to.</li>
 </ul>
-<!-- raw HTML omitted -->
 
 
 

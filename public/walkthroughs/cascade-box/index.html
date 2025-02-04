@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <meta name="generator" content="Hugo 0.141.0">
+    <meta name="generator" content="Hugo 0.143.0">
 
     <script src="js/custom.js"></script>
     
@@ -730,6 +730,16 @@
         
             
                 <li class="file">
+                    <a href="http://localhost:1313/automatingqemukalivmansible/" title="./automatingqemukalivmansible/">
+                        
+                            Automating Kali VM Setup with QEMU and Ansible
+                        
+                    </a>
+                </li>
+            
+        
+            
+                <li class="file">
                     <a href="http://localhost:1313/aboutme/" title="./aboutme/">
                         
                             about me
@@ -1028,7 +1038,6 @@
 <ul>
 <li><code>nmap $box -Pn -oA basicScan</code></li>
 </ul>
-<!-- raw HTML omitted -->
 
 
 
@@ -1082,7 +1091,6 @@
 <ul>
 <li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code></li>
 </ul>
-<!-- raw HTML omitted -->
 
 
 
@@ -1450,7 +1458,6 @@
 </ul>
 </li>
 </ul>
-<!-- raw HTML omitted -->
 <ul>
 <li>
 <p>I actually have a handy script to check if anonymous bind is enabled &amp; if it is to dump a large amount of information. You can find it here</p>
@@ -1665,7 +1672,6 @@
 </ul>
 </li>
 </ul>
-<!-- raw HTML omitted -->
 <ul>
 <li><strong>As anonymous bind is enabled we can enumerate all the groups on the domain also</strong>:
 <ul>
@@ -2089,7 +2095,6 @@
 </ul>
 </li>
 </ul>
-<!-- raw HTML omitted -->
 <ul>
 <li>
 <p><strong>Querying the Database</strong></p>
@@ -2240,8 +2245,7 @@
 <li>
 <p>After some quick searching I find <a href="https://www.poweradmin.com/blog/restoring-deleted-objects-from-active-directory-using-ad-recycle-bin/">this article</a> which details how to recover deleted objects in the AD Recycle Bin. It says:</p>
 <blockquote>
-<p>By default, if an object has been deleted, it can be recovered within a 180 days interval. This value is specified in the msDS-DeletedObjectLifetime attribute</p>
-</blockquote>
+<p>By default, if an object has been deleted, it can be recovered within a 180 days interval. This value is specified in the msDS-DeletedObjectLifetime attribute</p></blockquote>
 </li>
 </ul>
 <h3 id="finding-the-administrator-password-in-the-cascadelegacypwd-field-of-a-deleted-object">Finding the Administrator Password in the <code>cascadeLegacyPwd</code> field of a deleted object:</h3>
@@ -2261,7 +2265,6 @@
 </ul>
 </li>
 </ul>
-<!-- raw HTML omitted -->
 <ul>
 <li>
 <p><strong>Looking at the entry we can see that is has the same</strong> <code>cascadeLegacyPwd</code> <strong>field that we found before that contained a base64 encoded password</strong></p>

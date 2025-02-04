@@ -6,8 +6,15 @@
     <description>Recent content in Bloodstiller on Hack Me Daddy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/author/bloodstiller/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating Kali VM Setup with QEMU and Ansible</title>
+      <link>http://localhost:1313/automatingqemukalivmansible/</link>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/automatingqemukalivmansible/</guid>
+      <description>&lt;p&gt;As a cybersecurity enthusiast and productivity junkie, I&amp;rsquo;ve always been fascinated by the power of automation. Recently, I decided to streamline my process of setting up Kali Linux virtual machines using QEMU and Ansible. In this article, I&amp;rsquo;ll walk you through how I&amp;rsquo;ve automated the creation and configuration of Kali VMs, complete with my preferred dotfiles and tools.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-need-for-automation&#34;&gt;The Need for Automation&lt;/h2&gt;&#xA;&lt;p&gt;If you&amp;rsquo;re like me, you probably find yourself creating new Kali VMs frequently for various projects or testing environments. The process of setting up a new VM, updating the system, installing your favorite tools, and configuring your environment can be time-consuming and repetitive. That&amp;rsquo;s where automation comes in handy.&#xA;You can repurpose this setup for other projects, just change the Ansible playbook and dotfiles.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>EscapeTwo HTB Walkthrough</title>
       <link>http://localhost:1313/walkthroughs/escapetwo-box/</link>
