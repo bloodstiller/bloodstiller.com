@@ -1,8 +1,8 @@
 baseURL = 'https://bloodstiller.com/'
 languageCode = 'en-us'
 title = 'Hack Me Daddy'
-#theme = 'hugo-dead-simple'
-theme = 'dark-theme-editor'
+theme = 'hugo-dead-simple'
+#theme = 'dark-theme-editor'
 
 # Minimum support hugo
 [module]

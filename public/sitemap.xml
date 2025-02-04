@@ -8,7 +8,7 @@
     <loc>http://localhost:1313/author/</loc>
     <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/automatingqemukalivmansible/</loc>
+    <loc>http://localhost:1313/tools/automatingqemukalivmansible/</loc>
     <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/automation/</loc>
@@ -30,6 +30,9 @@
     <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/</loc>
     <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/active-directory/</loc>
@@ -173,9 +176,6 @@
     <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2024-11-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/</loc>
-    <lastmod>2024-11-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/tools/</loc>
     <lastmod>2024-11-13T00:00:00+00:00</lastmod>
   </url><url>
@@ -295,12 +295,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/rbcd/</loc>
     <lastmod>2024-10-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tools/automatingqemukalivm/</loc>
-    <lastmod>2024-10-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/bash/</loc>
-    <lastmod>2024-10-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cups/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>

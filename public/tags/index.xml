@@ -37,7 +37,7 @@
       <description></description>
     </item>
     <item>
-      <title>QEMU</title>
+      <title>Qemu</title>
       <link>http://localhost:1313/tags/qemu/</link>
       <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/qemu/</guid>
@@ -489,13 +489,6 @@
       <link>http://localhost:1313/tags/rbcd/</link>
       <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/rbcd/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Bash</title>
-      <link>http://localhost:1313/tags/bash/</link>
-      <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/bash/</guid>
       <description></description>
     </item>
     <item>

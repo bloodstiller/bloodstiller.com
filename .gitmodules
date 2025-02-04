@@ -1,12 +1,9 @@
 [submodule "themes/dark-theme-editor"]
 	path = themes/dark-theme-editor
-	url = https://github.com/JingWangTW/dark-theme-editor.git
+	url = git@github.com-personal:bloodstiller/dark-theme-editor.git
 [submodule "themes/hugo-liftoff"]
 	path = themes/hugo-liftoff
-	url = https://github.com/bloodstiller/hugo-liftoff
-[submodule "themes/hello-friend-ng"]
-	path = themes/hello-friend-ng
-	url = https://github.com/rhazdon/hugo-theme-hello-friend-ng.git
+	url = git@github.com-personal:bloodstiller/hugo-liftoff.git
 [submodule "themes/hugo-dead-simple"]
 	path = themes/hugo-dead-simple
-	url = https://github.com/barklan/hugo-dead-simple.git 
+	url = git@github.com-personal:bloodstiller/hugo-dead-simple.git 
