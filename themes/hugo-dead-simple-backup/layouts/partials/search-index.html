@@ -1,0 +1,14 @@
+<script>
+window.store = {
+    {{ range .Site.Pages }}
+    "{{ .Permalink }}": {
+        "title": "{{ .Title  }}",
+        "tags": [{{ range .Params.Tags }}"{{ . }}",{{ end }}],
+        "content": {{ .Content | plainify }}, // Strip out HTML tags
+        "url": "{{ .Permalink }}"
+    },
+    {{ end }}
+}
+</script>
+<script defer src="{{ relURL "/js/lunr.js" }}"></script>
+<script defer src="{{ relURL "/js/search.js" }}"></script>

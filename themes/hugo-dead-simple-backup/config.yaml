@@ -1,0 +1,54 @@
+baseURL: "https://bloodstiller.com"
+languageCode: en-us
+title: "Your Site Title"
+enableGitInfo: true
+
+# Configure the main menu
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "Walkthroughs"
+      url: "/walkthroughs/"
+      weight: 2
+    - name: "Articles"
+      url: "/articles/"
+      weight: 4
+    - name: "Tools"
+      url: "/tools/"
+      weight: 5
+    - name: "Cheatsheets"
+      url: "/cheatsheets/"
+      weight: 6
+    - name: "About Me"
+      url: "/aboutme/"
+      weight: 7
+    - name: "Tags"
+      url: "/tags/"
+      weight: 8
+
+params:
+  description: "Your site description"
+
+markup:
+  highlight:
+    codeFences: true
+    style: bw
+    lineNumbersInTable: false
+    noClasses: false
+  goldmark:
+    renderer:
+      unsafe: true
+
+outputs:
+  home:
+    - html
+    - rss
+    - json
+  page:
+    - html
+
+module:
+  imports:
+    - path: hugo-dead-simple

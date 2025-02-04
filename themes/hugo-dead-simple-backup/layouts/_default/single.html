@@ -1,0 +1,43 @@
+{{ partial "header.html" . }}
+
+
+{{ if not .Params.notitle }}
+<div id="single-header">
+  <h1>
+    {{ .Title | markdownify }}
+  </h1>
+  <div id="single-meta">
+    {{ if .Params.subtitle }}
+        <p id="subtitle">{{ .Params.subtitle }}</p>
+    {{ end }}
+    {{ if .Params.date }}
+        <span class="datesub">{{ .Date.Format "Jan 2, 2006" }}{{ if .GitInfo }} &nbsp;&nbsp; m. {{
+            .Lastmod.Format "Jan 2, 2006" }}{{ end }}</span>
+    {{ end }} {{ partial "tags.html" .}}
+  </div>
+</div>
+{{ else }}
+<div style="padding-bottom: 1px;"></div>
+{{ end }}
+
+{{ if .Params.toc }}
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  {{ .TableOfContents }}
+</aside>
+{{ end }}
+
+
+<main>{{ .Content }}</main>
+
+{{ if .Params.Next }}
+    <br>
+    <hr>
+    {{ with .PrevInSection }}
+      Next: <a href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ end }}
+{{ end }}
+
+{{ if .Params.math }}
+    {{ partial "math.html" . }}
+{{ end }}
+{{ partial "footer.html" . }}

@@ -1,0 +1,199 @@
+:root {
+  --complimentary: #815205;
+  --text: #f8f8f2;
+  --code: #85e685;
+  --text-dim: #939bab;
+  --link: #4398e5;
+  --link-visited: #7fb8ee;
+  --code-background: #45465a;
+  --code-border: transparent;
+  --code-hl: #5a5a5a;
+  --border-general: #5c5e60;
+  --table-th: #45465a;
+  --table-tr: #282c34;
+  --toc-background: #282c34;
+  --toc-border: #3b3b3b;
+  --tag-background: #45465a;
+  --tag-text: #f8f8f2;
+  --tag-hover-background: #5a5b73;
+  --tag-hover-text: #ffffff;
+}
+
+/* HTML & BODY */
+html {
+  color: var(--text);
+  background-color: #282c34;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #282c34;
+  margin: auto;
+  padding: 0em 1em 2em 1em;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  line-height: 1.54;
+  text-align: justify;
+}
+
+/* Sidebar styling */
+aside.sidebar {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 5px;
+  background-color: #282c34;
+}
+
+/* Sidebar scrollbar styling */
+aside.sidebar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: rgb(95, 94, 94);
+}
+
+aside.sidebar::-webkit-scrollbar-thumb {
+  background: rgb(139, 139, 139);
+  border-radius: 10pt;
+}
+
+/* Firefox scrollbar */
+aside.sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(139, 139, 139) rgb(95, 94, 94);
+}
+
+/* Table of Contents styling */
+#TableOfContents {
+  opacity: 0.8;
+  transition-duration: 1s;
+  background-color: #282c34;
+}
+
+#TableOfContents:hover {
+  opacity: 1;
+}
+
+#TableOfContents a {
+  color: #939bab;
+}
+
+#TableOfContents a:hover {
+  color: #f8f8f2;
+  text-decoration: none;
+}
+
+/* Custom text formatting */
+span.underline-bold {
+  color: #FF3D2B !important;
+  font-size: 0.8rem !important;
+  font-weight: bold !important;
+  text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black !important;
+  display: inline-block !important;
+  padding: 0 2px !important;
+}
+
+span.underline-bold:hover {
+  color: #ff6b5b !important;
+}
+
+/* Media queries */
+@media screen and (min-width: 760px) {
+  body {
+    margin: auto;
+    max-width: 68vw;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  body {
+    margin: auto;
+    max-width: 62vw;
+  }
+  
+  #tableOfContentContainer {
+    position: fixed;
+    left: 20px;
+    top: 46px;
+    max-width: 15vw;
+    width: 15vw;
+    background-color: #282c34;
+  }
+}
+
+/* Add styles for tags */
+.post-tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.post-tag {
+  display: inline-block;
+  background-color: var(--tag-background);
+  color: var(--tag-text);
+  padding: 0.2em 0.6em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.post-tag:hover {
+  background-color: var(--tag-hover-background);
+  color: var(--tag-hover-text);
+  text-decoration: none;
+}
+
+/* Style for tag count */
+.post-tag .tag-count {
+  margin-left: 0.3em;
+  color: var(--text-dim);
+}
+
+/* Ensure visited tags maintain their color */
+.post-tag:visited {
+  color: var(--tag-text);
+}
+
+/* Add these rules after the :root section */
+a {
+  color: #4398e5;  /* Change this to your preferred color */
+  text-decoration: none;
+}
+
+a:visited {
+  color: #7A197A;  /* Change this to your preferred visited link color */
+}
+
+a:hover {
+  color: #7fb8ee;
+  text-decoration: underline;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    .highlight:not(pre *):not(code *) {
+        color: #FF3D2B;
+        font-weight: bold;
+        text-shadow:
+            -1px -1px 0 black,
+            1px -1px 0 black,
+            -1px 1px 0 black,
+            1px 1px 0 black; /* Shadow color and position */
+    }
+}
+
+/* Add specific override for code blocks */
+pre .highlight,
+code .highlight,
+.highlight pre,
+.highlight code {
+    color: inherit;
+    font-weight: inherit;
+    text-shadow: none;
+}
