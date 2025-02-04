@@ -4,6 +4,9 @@ draft = false
 title = "Sauna HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-11-03
+toc = true
+bold = true
+next = true
 +++
 
 -   {{< figure src="/ox-hugo/2024-11-03-155301_.png" >}}

@@ -4,6 +4,9 @@ draft = true
 title = "Cicada HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-11-01
+toc = true
+bold = true
+next = true
 +++
 
 ## Cicada Hack The Box Walkthrough/Writeup: {#cicada-hack-the-box-walkthrough-writeup}

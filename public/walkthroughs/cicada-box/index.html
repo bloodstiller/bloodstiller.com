@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -106,6 +106,62 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#cicada-hack-the-box-walkthrough-writeup">Cicada Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#rpc">RPC:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#enumerating-the-hr-share">Enumerating the HR Share:</a></li>
+        <li><a href="#finding-a-hard-coded-cred-in-notice-from-hr-dot-txt">Finding a hard-coded cred in &ldquo;Notice from HR.txt&rdquo;:</a></li>
+        <li><a href="#using-impacket-lookupsid">Using impacket-lookupsid:</a></li>
+        <li><a href="#password-spraying">Password Spraying:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#enumerating-as-michael-dot-wrightson">Enumerating as michael.wrightson:</a></li>
+        <li><a href="#enumerating-users-using-rpc">Enumerating users using RPC:</a></li>
+        <li><a href="#finding-a-password-in-the-description-field-via-rpc">Finding a password in the description field via RPC:</a></li>
+        <li><a href="#enumerating-as-david-dot-orelius">Enumerating as david.orelius:</a></li>
+        <li><a href="#authenticating-as-emily-dot-oscars">Authenticating as emily.oscars:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#discovering-we-are-part-of-the-backup-operators-group">Discovering we are part of the backup operators group:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a>
+      <ul>
+        <li><a href="#dumping-registry-hives-and-extracting-creds-using-secretsdump">Dumping Registry Hives &amp; extracting creds using secretsdump:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-persistence">5. Persistence:</a>
+      <ul>
+        <li><a href="#dumping-ntds-dot-dit">Dumping NTDS.dit:</a></li>
+        <li><a href="#creating-a-kerberos-golden-ticket">Creating a Kerberos Golden Ticket:</a></li>
+        <li><a href="#golden-ticket-curiosities">Golden Ticket Curiosities:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -983,6 +1039,12 @@
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/authority-box/">Authority HTB Walkthrough</a>
+    
 
 
 

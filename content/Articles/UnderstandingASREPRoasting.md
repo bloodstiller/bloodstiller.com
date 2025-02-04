@@ -4,6 +4,9 @@ draft = false
 title = "Understanding AS-REP Roasting Attacks: A Deep Dive"
 author = "bloodstiller"
 date = 2024-11-15
+toc = true
+bold = true
+next = true
 +++
 
 ## Understanding AS-REP Roasting: {#understanding-as-rep-roasting}

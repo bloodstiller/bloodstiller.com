@@ -4,6 +4,9 @@ draft = false
 title = "Attacking RPC: Deep Dive & Cheat Sheet"
 author = "bloodstiller"
 date = 2024-10-16
+toc = true
+bold = true
+next = true
 +++
 
 ## Introduction {#introduction}

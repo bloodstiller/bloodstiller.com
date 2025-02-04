@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -106,6 +106,69 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hospital-hack-the-box-walkthrough-writeup">Hospital Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#https-443">HTTPS <code>443</code>:</a></li>
+        <li><a href="#http-proxy-8080">HTTP-PROXY <code>8080</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#using-weevley-to-get-a-web-shell">Using Weevley To Get A Web Shell:</a></li>
+        <li><a href="#getting-around-the-timeout-using-weevely-s-build-in-reverse-shell">Getting around the timeout Using Weevely&rsquo;s built in reverse shell:</a></li>
+        <li><a href="#finding-mysql-creds-in-config-dot-php">Finding Mysql Creds in <code>config.php</code>:</a></li>
+        <li><a href="#understanding-the-upload-mechansim">Understanding the Upload Mechansim:</a></li>
+        <li><a href="#trying-to-connect-to-the-mysql-instance">Trying to connect to the mysql instance:</a></li>
+        <li><a href="#discovering-another-user">Discovering another User:</a></li>
+        <li><a href="#discovering-a-tmux-session">Discovering a Tmux Session:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-vm-privilege-escalation">3. VM Privilege Escalation:</a>
+      <ul>
+        <li><a href="#discovering-the-kernel-is-vulnerable-to-exploitation">Discovering the Kernel is vulnerable to exploitation:</a></li>
+        <li><a href="#building-the-and-transferring-the-exploit">Building the &amp; transferring the exploit:</a></li>
+        <li><a href="#using-the-cve-2023-35001-exploit-to-privesc-to-root">Using the CVE-2023-35001 exploit to privesc to root:</a></li>
+        <li><a href="#enumerating-as-root">Enumerating as Root:</a></li>
+        <li><a href="#connecting-to-the-mysql-instance-as-root">Connecting to the mysql instance as root!</a></li>
+        <li><a href="#cracking-the-hashes-admin-hash">Cracking the hashes admin hash:</a></li>
+        <li><a href="#dumping-shadow-hashes">Dumping Shadow Hashes:</a></li>
+        <li><a href="#cracking-dr-williams-hashed-password">Cracking Dr Williams Hashed Password:</a></li>
+        <li><a href="#accessing-dr-williams-email">Accessing Dr Williams Email:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-host-foothold">4. Host Foothold:</a>
+      <ul>
+        <li><a href="#gaining-access-to-the-host-via-malicious-dot-eps-ghostscript-exploit">Gaining Access to the host via Malicious <code>.eps</code> GhostScript Exploit:</a></li>
+        <li><a href="#finding-hard-coded-creds-in-ghostscript-dot-bat-file">Finding Hard-Coded Creds In <code>ghostscript.bat</code> file:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#connecting-via-rdp-to-the-target">Connecting Via RDP to the target:</a></li>
+        <li><a href="#capturing-credentials-from-the-selenium-webdriver">Capturing Credentials from the Selenium WebDriver:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a></li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -1767,6 +1830,12 @@
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/intelligence-box/">Intelligence HTB Walkthrough</a>
+    
 
 
 

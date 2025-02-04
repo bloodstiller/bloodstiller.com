@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -114,6 +114,71 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#outdated-hack-the-box-walkthrough-writeup">Outdated Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#smtp-25">SMTP <code>25</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#logging-into-the-shares-to-find-a-pdf">Logging into the <code>Shares</code> to find a <code>PDF</code>:</a></li>
+        <li><a href="#attempting-to-extract-creator-names-from-the-dot-pdf">Attempting to extract creator names from the <code>.PDF</code>:</a></li>
+        <li><a href="#reading-noc-reminder-dot-pdf-and-discovering-exploits-that-the-environment-is-susceptible-to">Reading <code>NOC_Reminder.pdf</code> and discovering exploits that the environment is susceptible to:</a></li>
+        <li><a href="#investigating-the-cve-list-for-an-attack-path">Investigating the CVE list For an attack path:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#quick-overview-on-follina-exploit">Quick overview on Follina Exploit:</a></li>
+        <li><a href="#testing-if-we-can-make-itsupport-click-an-emailed-link-using-swaks">Testing if we can make <code>itsupport</code> click an emailed link using <code>swaks</code>:</a></li>
+        <li><a href="#trying-to-get-a-reverse-shell-using-the-follina-exploit">Trying to get a reverse shell using the <code>Follina</code> exploit:</a></li>
+        <li><a href="#getting-a-reverse-shell-using-follina-dot-py">Getting a Reverse shell using <code>Follina.py</code>:</a></li>
+        <li><a href="#enumerating-as-the-user-btables">Enumerating as the user <code>btables</code>:</a></li>
+        <li><a href="#using-sharphound-dot-exe-to-enumerate-the-environment-dot">Using <code>SharpHound.exe</code> to enumerate the environment.</a></li>
+        <li><a href="#transferring-the-sharphound-zip-back-to-myself-using-my-custom-python-webserver">Transferring the <code>SharpHound</code> Zip back to myself using my custom python webserver:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-lateral-movement">3. Lateral Movement:</a>
+      <ul>
+        <li><a href="#discovering-btables-has-addkeycredentiallink-privilege-over-sflowers">Discovering <code>btables</code> has <code>AddKeyCredentialLink</code> privilege over <code>sflowers</code>:</a></li>
+        <li><a href="#building-whisker-dot-exe">Building <code>whisker.exe</code>:</a></li>
+        <li><a href="#adding-shadow-credentials-to-sflowers-using-whisker-dot-exe">Adding Shadow Credentials to <code>sflowers</code> using <code>whisker.exe</code> :</a></li>
+        <li><a href="#i-use-the-base64-encoded-certificate-to-request-a-tgt-for-sflowers-using-rubeus">I use the base64 encoded certificate to request a <code>TGT</code> for <code>sflowers</code> using rubeus:</a></li>
+        <li><a href="#enumerating-the-host-as-slfowers">Enumerating the Host as <code>slfowers</code>:</a></li>
+        <li><a href="#seeing-sflowers-has-outbound-object-control-over-the-ca">Seeing <code>sflowers</code> has outbound object control over the <code>CA</code>:</a></li>
+        <li><a href="#discovering-sflowers-is-part-of-the-wsus-administrators-group">Discovering <code>sflowers</code> is part of the wsus administrators group:</a></li>
+        <li><a href="#what-is-wsus--windows-server-update-services">What is <code>WSUS</code> (Windows Server Update Services)?</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-privilege-escalation">4. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#manually-enumerating-the-wsus-service-by-querying-the-registry">Manually Enumerating the <code>WSUS</code> Service by querying the registry:</a></li>
+        <li><a href="#using-sharpwsus-to-push-a-malicious-update">Using <a href="https://github.com/nettitude/SharpWSUS">SharpWSUS</a> to push a malicious update:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-persistence">4. Persistence:</a>
+      <ul>
+        <li><a href="#creating-a-golden-ticket-with-mimikatz-dot-exe">Creating a golden ticket with <code>mimikatz.exe</code>:</a></li>
+        <li><a href="#dumping-ntds-for-fun-for-fun-and-profit">Dumping NTDS for fun for fun and profit:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -1684,6 +1749,12 @@
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/scrambled-box/">Scrambled HTB Walkthrough</a>
+    
 
 
 

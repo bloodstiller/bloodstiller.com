@@ -4,6 +4,9 @@ draft = false
 title = "Monteverde HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-10-14
+toc = true
+bold = true
+next = true
 +++
 
 ## Monteverde Hack The Box Walkthrough/Writeup: {#monteverde-hack-the-box-walkthrough-writeup}

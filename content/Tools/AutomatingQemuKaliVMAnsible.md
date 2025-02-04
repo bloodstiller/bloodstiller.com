@@ -4,6 +4,9 @@ tags = ["kali", "automation", "qemu", "ansible", "dotfiles"]
 draft = false
 author = "bloodstiller"
 date = 2025-02-03
+toc = true
+bold = true
+next = true
 +++
 
 As a cybersecurity enthusiast and productivity junkie, I've always been fascinated by the power of automation. Recently, I decided to streamline my process of setting up Kali Linux virtual machines using QEMU and Ansible. In this article, I'll walk you through how I've automated the creation and configuration of Kali VMs, complete with my preferred dotfiles and tools.

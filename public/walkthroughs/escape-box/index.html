@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -110,6 +110,59 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#escape-hack-the-box-walkthrough-writeup">Escape Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#mssql-1433">MSSQL <code>1433</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#connecting-to-the-mssql-instance-using-impacket-mssqlclient">Connecting to the MSSQL Instance using impacket-mssqlclient:</a></li>
+        <li><a href="#enumerating-the-mssql-instance">Enumerating the MSSQL Instance:</a></li>
+        <li><a href="#capturing-the-mssql-system-admin-hash-using-responder-and-xp-dirtree">Capturing the MSSQL System Admin hash using <a href="https://www.kali.org/tools/responder/">Responder</a> &amp; <code>xp_dirtree</code>:</a></li>
+        <li><a href="#cracking-the-mssql-system-admin-using-hashcat">Cracking the MSSQL System Admin using <a href="https://www.kali.org/tools/hashcat/">Hashcat</a>:</a></li>
+        <li><a href="#enumerating-smb-as-sql-svc-user">Enumerating SMB as <code>sql_svc</code> user:</a></li>
+        <li><a href="#running-bloodhound-dot-py">Running bloodhound.py:</a></li>
+        <li><a href="#connecting-to-the-mssql-as-sql-svc">Connecting to the MSSQL as <code>sql_svc</code>:</a></li>
+        <li><a href="#finding-a-linked-sql-instance">Finding a linked SQL Instance:</a></li>
+        <li><a href="#enumerating-the-host-using-xp-dirtree">Enumerating the Host Using <code>xp_dirtree</code>:</a></li>
+        <li><a href="#downloading-errorlog-dot-bak-and-why-it-s-important-to-re-check-your-tools">Downloading <code>ERRORLOG.BAK</code> &amp; why it&rsquo;s important to re-check your tools:</a></li>
+        <li><a href="#reading-errorlog-dot-bak-and-finding-credentials-for-ryan-dot-cooper">Reading <code>ERRORLOG.BAK</code> &amp; finding credentials for <code>Ryan.Cooper</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#enumerating-the-host-as-ryan-dot-cooper">Enumerating the host as <code>Ryan.Cooper</code>:</a></li>
+        <li><a href="#using-esc1-attack-chain-to-elevate-privileges-to-administrator">Using ESC1 Attack Chain to elevate privileges to Administrator:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a>
+      <ul>
+        <li><a href="#dumping-ntds-dot-dit-database">Dumping <code>NTDS.dit</code> database:</a></li>
+        <li><a href="#loading-dot-ccache-into-the-krb5ccname-variable-to-authenticate">Loading <code>.ccache</code> into the <code>KRB5CCNAME</code> Variable to Authenticate:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -1681,6 +1734,12 @@ There is also a mail to hyperlink to Brandon that reveals his username to be <co
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/hospital-box/">Hospital HTB Walkthrough</a>
+    
 
 
 

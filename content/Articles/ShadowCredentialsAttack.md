@@ -4,6 +4,9 @@ draft = false
 title = "Understanding the Shadow Credentials Attack Vector"
 author = "bloodstiller"
 date = 2024-10-11
+toc = true
+bold = true
+next = true
 +++
 
 ## Understanding the Shadow Credentials Attack Vector: {#understanding-the-shadow-credentials-attack-vector}

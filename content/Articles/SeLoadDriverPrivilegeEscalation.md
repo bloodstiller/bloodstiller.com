@@ -4,6 +4,9 @@ tags = ["Windows", "Active Directory", "SeLoadDriverPrivilege", "Capcom"]
 draft = false
 author = "bloodstiller"
 date = 2024-10-20
+toc = true
+bold = true
+next = true
 +++
 
 ## Introduction: {#introduction}

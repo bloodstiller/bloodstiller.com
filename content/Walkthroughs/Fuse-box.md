@@ -4,6 +4,9 @@ draft = false
 title = "Fuse HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-10-18
+toc = true
+bold = true
+next = true
 +++
 
 ## Fuse Hack The Box Walkthrough/Writeup: {#fuse-hack-the-box-walkthrough-writeup}

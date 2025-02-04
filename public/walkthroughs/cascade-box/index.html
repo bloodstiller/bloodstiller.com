@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -106,6 +106,62 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#cascade-hack-the-box-walkthrough-writeup">Cascade Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#rpc-111">RPC <code>111</code>:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#finding-a-password-in-the-cascadelegacypwd-field">Finding a password in the <code>cascadeLegacyPwd</code> field:</a></li>
+        <li><a href="#enumerating-the-domain-as-r-dot-thompson">Enumerating the domain as <code>r.thompson</code>:</a></li>
+        <li><a href="#finding-that-there-is-a-tempadmin-account-with-the-same-password-as-normal-admin">Finding that there is a <code>TempAdmin</code> account with the same password as normal <code>admin</code>:</a></li>
+        <li><a href="#finding-a-tightvnc-password-in-vnc-install-dot-reg">Finding a <code>TightVNC</code> password in <code>VNC Install.reg</code></a></li>
+        <li><a href="#running-a-bloodhound-collection">Running a bloodhound collection:</a></li>
+        <li><a href="#enumerating-as-s-dot-smith">Enumerating as <code>s.smith</code>:</a></li>
+        <li><a href="#enumerating-and-pillaging-the-audit-share">Enumerating &amp; pillaging the <code>audit$</code> share:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#examining-db-audit-dot-db">Examining <code>DB\Audit.db</code>:</a></li>
+        <li><a href="#finding-a-hardcoded-decryption-key-in-the-cascaudit-dot-exe-binary-using-dnspy">Finding a hardcoded decryption key in the <code>CascAudit.exe</code> binary using <code>DNSpy</code>:</a></li>
+        <li><a href="#extracting-the-arksvc-password-from-cascaudit-dot-exe">Extracting the <code>ArkSvc</code> password from <code>CascAudit.exe</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-ownership">5. Ownership:</a>
+      <ul>
+        <li><a href="#enumerating-as-arksvc">Enumerating as <code>arksvc</code>:</a></li>
+        <li><a href="#finding-the-administrator-password-in-the-cascadelegacypwd-field-of-a-deleted-object">Finding the Administrator Password in the <code>cascadeLegacyPwd</code> field of a deleted object:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-persistence">4. Persistence:</a>
+      <ul>
+        <li><a href="#dumping-ntds-dot-dit">Dumping NTDS.dit:</a></li>
+        <li><a href="#creating-a-golden-ticket">Creating a Golden Ticket:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -1373,6 +1429,12 @@
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/monteverde-box/">Monteverde HTB Walkthrough</a>
+    
 
 
 

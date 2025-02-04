@@ -109,6 +109,80 @@
 
 
 
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#scrambled-hack-the-box-walkthrough-writeup">Scrambled Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#http-80">HTTP <code>80</code>:</a></li>
+        <li><a href="#mssql-1433">MSSQL <code>1433</code>:</a></li>
+        <li><a href="#scramblecorp-order-service-4411">ScrambleCorp Order Service <code>4411</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-authenticated-enumeration">2. Authenticated Enumeration:</a>
+      <ul>
+        <li><a href="#realizing-the-mistake-i-made-when-enumerating">Realizing the mistake I made when enumerating:</a></li>
+        <li><a href="#connecting-to-the-smb-shares-as-ksimpson">Connecting to the <code>SMB</code> shares as <code>ksimpson</code>:</a></li>
+        <li><a href="#finding-a-file-called-network-security-changes-dot-pdf">Finding a file called <code>Network Security Changes.pdf</code>:</a></li>
+        <li><a href="#trying-to-connect-to-mssql-using-impacket-mssql">Trying to Connect to <code>MSSQL</code> using <code>impacket-mssql</code>:</a></li>
+        <li><a href="#kerberoasting-using-kerberos-credentials-to-get-more-kerberos-credentials">Kerberoasting using Kerberos Credentials to Get More Kerberos Credentials:</a></li>
+        <li><a href="#cracking-the-sqlsvc-hashes-with-hashcat">Cracking the <code>sqlsvc</code> hashes with <code>hashcat</code>:</a></li>
+        <li><a href="#trying-to-connect-to-the-mssql-service">Trying to connect to the <code>MSSQL</code> Service:</a></li>
+        <li><a href="#i-ve-got-a-silverticket-maybe-and-x2026">I&rsquo;ve got a <code>SilverTicket</code> maybe…</a></li>
+        <li><a href="#creating-the-silver-ticket-with-impacket-ticketer">Creating the silver ticket with <code>impacket-ticketer</code>:</a></li>
+        <li><a href="#using-the-silver-ticket-to-access-the-sql-instance">Using the silver ticket to access the <code>SQL</code> instance:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-foothold">3. Foothold:</a>
+      <ul>
+        <li><a href="#activating-xp-cmdshell-on-the-host-to-enumerate-the-underlying-host-system">Activating <code>xp_cmdshell</code> on the host to enumerate the underlying host system:</a></li>
+        <li><a href="#getting-a-reverse-shell-as-sqlsvc">Getting a reverse shell as <code>sqlsvc</code>:</a></li>
+        <li><a href="#enumerating-the-database-and-finding-creds-for-miscsvc">Enumerating the Database &amp; Finding Creds for <code>MiscSvc</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-lateral-movement">4. Lateral Movement:</a>
+      <ul>
+        <li><a href="#getting-a-shell-as-miscsvc">Getting a shell as <code>MiscSvc</code>:</a></li>
+        <li><a href="#enumerating-smb-shares-as-miscsvc">Enumerating SMB shares as <code>miscsvc</code></a></li>
+        <li><a href="#using-the-scrambledclient-dot-exe">Using the <code>ScrambledClient.exe</code>:</a></li>
+        <li><a href="#finding-a-login-bypass-by-examining-the-scramblelib-dot-dll-in-dnspy">Finding a login bypass by Examining the <code>ScrambleLib.dll</code> in <code>DNSpy</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-privilege-escalation">5. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#logging-into-scrambledclient-dot-exe-using-scrmdev-creds">Logging into <code>ScrambledClient.exe</code> using <code>scrmdev</code> creds:</a></li>
+        <li><a href="#examining-how-serialized-data-is-sent-via-scrambledclient-dot-exe">Examining how serialized data is sent via <code>ScrambledClient.exe</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-dot-ownership">6. Ownership:</a>
+      <ul>
+        <li><a href="#crafting-a-payload-with-yoserial-dot-net-and-catching-a-system-shell">Crafting a Payload with <code>yoserial.net</code> &amp; catching a system shell:</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-dot-persistence">7. Persistence:</a>
+      <ul>
+        <li><a href="#creating-a-golden-ticket-with-mimikatz">Creating A Golden Ticket with <code>mimikatz</code>:</a></li>
+        <li><a href="#transferring-the-golden-ticket-using-my-custom-python-webserver">Transferring the Golden Ticket Using my custom python webserver:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
+
 
 
 <main><h2 id="scrambled-hack-the-box-walkthrough-writeup">Scrambled Hack The Box Walkthrough/Writeup:</h2>
@@ -1927,6 +2001,12 @@
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/escape-box/">Escape HTB Walkthrough</a>
+    
 
 
 

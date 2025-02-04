@@ -4,6 +4,9 @@ draft = false
 title = "Forest HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-11-15
+toc = true
+bold = true
+next = true
 +++
 
 ## Forest Hack The Box Walkthrough/Writeup: {#forest-hack-the-box-walkthrough-writeup}

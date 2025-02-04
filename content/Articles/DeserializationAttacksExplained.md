@@ -4,6 +4,9 @@ draft = false
 title = "Understanding .NET Deserialization Exploits: A Deep Dive"
 author = "bloodstiller"
 date = 2024-10-10
+toc = true
+bold = true
+next = true
 +++
 
 ## Understanding `.NET` Deserialization Exploits: A Deep Dive: {#understanding-dot-net-deserialization-exploits-a-deep-dive}

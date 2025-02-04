@@ -4,6 +4,9 @@ draft = false
 title = "Driver HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-11-12
+toc = true
+bold = true
+next = true
 +++
 
 ## Driver Hack The Box Walkthrough/Writeup: {#driver-hack-the-box-walkthrough-writeup}

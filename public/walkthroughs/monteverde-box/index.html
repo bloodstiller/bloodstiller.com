@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -112,6 +112,58 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#monteverde-hack-the-box-walkthrough-writeup">Monteverde Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#enumerating-the-domain-sabatchjobs">Enumerating the Domain <code>SABatchJobs</code>:</a></li>
+        <li><a href="#finding-a-hard-coded-password-in-azure-dot-xml">Finding a hard-coded password in <code>azure.xml</code>:</a></li>
+        <li><a href="#discovering-that-mhope-re-uses-passwords">Discovering that <code>mhope</code> re-uses passwords:</a></li>
+        <li><a href="#connecting-to-the-host-as-mhope">Connecting to the host as <code>mhope</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#discovering-mhope-is-part-of-the-azure-admins-group">Discovering <code>mhope</code> is part of the <code>azure admins</code> group:</a></li>
+        <li><a href="#enumerating-the-azure-service">Enumerating the Azure Service:</a></li>
+        <li><a href="#connecting-to-the-sql-instance">Connecting to the <code>SQL</code> Instance:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a>
+      <ul>
+        <li><a href="#modifying-xpn-s-poc-to-work">Modifying XPN&rsquo;s POC to work:</a></li>
+        <li><a href="#running-the-exploit-to-extract-the-administrator-password">Running the Exploit to Extract the Administrator Password:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-persistence">5. Persistence:</a>
+      <ul>
+        <li><a href="#dumping-ntds-dot-dit">Dumping <code>NTDS.dit</code>:</a></li>
+        <li><a href="#creating-a-golden-ticket">Creating a Golden Ticket:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -1017,6 +1069,12 @@ So what are the requirements to complete this exfiltration of credentials? Well 
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/outdated-box/">Outdated HTB Walkthrough</a>
+    
 
 
 

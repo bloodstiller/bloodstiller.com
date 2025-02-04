@@ -4,6 +4,9 @@ draft = false
 title = "Scrambled HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-10-09
+toc = true
+bold = true
+next = true
 +++
 
 ## Scrambled Hack The Box Walkthrough/Writeup: {#scrambled-hack-the-box-walkthrough-writeup}

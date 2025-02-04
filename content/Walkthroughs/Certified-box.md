@@ -4,6 +4,9 @@ draft = false
 title = "Certified HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-11-06
+toc = true
+bold = true
+next = true
 +++
 
 ## Certified Hack The Box Walkthrough/Writeup: {#certified-hack-the-box-walkthrough-writeup}

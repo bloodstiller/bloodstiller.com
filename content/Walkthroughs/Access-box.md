@@ -4,6 +4,9 @@ draft = false
 title = "Access HTB Walkthrough"
 date = 2024-09-12
 author = "bloodstiller"
+toc = true
+bold = true
+next = true
 +++
 
 

@@ -4,6 +4,9 @@ draft = false
 title = "Aero HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-11-05
+toc = true
+bold = true
+next = true
 +++
 
 ## Aero Hack The Box Walkthrough/Writeup: {#aero-hack-the-box-walkthrough-writeup}

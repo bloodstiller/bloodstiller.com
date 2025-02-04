@@ -4,6 +4,9 @@ draft = false
 title = "Support HTB Walkthrough"
 date = 2024-09-06
 author = "bloodstiller"
+toc = true
+bold = true
+next = true
 +++
 
 ## Intelligence Hack The Box Support Walkthrough/Writeup: {#name-of-box-htb-support}

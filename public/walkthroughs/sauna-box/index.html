@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -112,6 +112,65 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#sauna-hack-the-box-walkthrough-writeup">Sauna Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#rpc">RPC:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#cracking-fsmiths-asrep-hash-using-hashcat">Cracking fsmiths asrep hash using hashcat:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#web-80">Web <code>80</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#enumerating-as-fsmith">Enumerating as fsmith:</a></li>
+        <li><a href="#enumerating-users-and-groups-on-the-domain-using-impacket-lookupsid">Enumerating Users &amp; Groups on the domain using impacket-lookupsid:</a></li>
+        <li><a href="#using-smbclient">Using smbclient to enumerate shares:</a></li>
+        <li><a href="#kerberoasting-hsmith">Kerberoasting hsmith:</a></li>
+        <li><a href="#cracking-hsmith-s-password-with-hashcat">Cracking hsmith&rsquo;s password with hashcat:</a></li>
+        <li><a href="#enumerating-as-hsmith">Enumerating as hsmith:</a></li>
+        <li><a href="#creating-an-lnk-file-on-the-rico-share">Creating an LNK file on the rico share:</a></li>
+        <li><a href="#performing-a-bloodhound-scan">Performing a bloodhound scan:</a></li>
+        <li><a href="#enumerating-description-fields-using-rpcclient">Enumerating description fields using rpcclient:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#privilege-escalation-route-1-PrintNightmare">Privilege escalation Route 1 PrintNightmare:</a></li>
+        <li><a href="#privilege-escalation-route-2-svc-loanmgr">Privilege escalation Route 2 svc_loanmgr:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a>
+      <ul>
+        <li><a href="#privilege-escalation-route-1-PrintNightmare">Privilege escalation Route 1 PrintNightmare:</a></li>
+        <li><a href="#privilege-escalation-route-2-svc-loanmgr">Privilege escalation Route 2 svc_loanmgr:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-persistence">5. Persistence:</a>
+      <ul>
+        <li><a href="#dumping-ntds-dot-dit-dc-sync-attack">Dumping NTDS.dit/DC-SYNC attack:</a></li>
+        <li><a href="#creating-a-kerberos-golden-ticket">Creating a Kerberos Golden Ticket:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -1237,6 +1296,12 @@
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/active-box/">Active HTB Walkthrough</a>
+    
 
 
 

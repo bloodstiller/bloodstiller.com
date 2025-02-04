@@ -4,6 +4,9 @@ draft = false
 title = "Doctor HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-12-21
+toc = true
+bold = true
+next = true
 +++
 
 ## Doctor Hack The Box Walkthrough/Writeup: {#doctor-hack-the-box-walkthrough-writeup}

@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -114,6 +114,75 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#administrator-hack-the-box-walkthrough-writeup">Administrator Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#assumed-breach-box">Assumed Breach Box:</a></li>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#rpc">RPC:</a></li>
+        <li><a href="#ftp-21">FTP <code>21</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-lateral-movement">2. Lateral Movement:</a>
+      <ul>
+        <li><a href="#running-a-bloodhound-collection">Running a BloodHound Collection:</a></li>
+        <li><a href="#discovering-an-attack-chain-for-lateral-movement-in-bloodhound">Discovering an attack chain for lateral movement in bloodhound:</a></li>
+        <li><a href="#performing-a-targeted-kerberoasting-attack-on-michael">Performing a targeted kerberoasting attack on Michael:</a></li>
+        <li><a href="#attempting-to-crack-michael-s-password-with-hashcat">Attempting to crack Michael&rsquo;s password with hashcat:</a></li>
+        <li><a href="#attempting-to-add-michael-directly-to-the-share-operators-group">Attempting to add Michael Directly to the Share Operators group:</a></li>
+        <li><a href="#changing-michaels-password">Changing Michaels Password:</a></li>
+        <li><a href="#enumerating-as-michael">Enumerating as Michael:</a></li>
+        <li><a href="#changing-benjamins-password">Changing Benjamins Password:</a></li>
+        <li><a href="#accessing-ftp-as-benjamin">Accessing FTP as Benjamin:</a></li>
+        <li><a href="#cracking-the-pwsafe-file-with-john">Cracking the pwsafe File with John:</a></li>
+        <li><a href="#retrieving-passwords-from-the-pswafe-file">Retrieving passwords from the pswafe file:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#accessing-the-host-as-emily">Accessing the host as emily:</a></li>
+        <li><a href="#discovering-emily-has-genericwrite-privileges-over-ethan-in-bloodhound">Discovering Emily has GenericWrite privileges over Ethan in bloodhound:</a></li>
+        <li><a href="#performing-a-targeted-kerberoasting-attack-on-ethan">Performing a targeted kerberoasting attack on Ethan:</a></li>
+        <li><a href="#cracking-the-ethan-s-kerberos-hash-with-hashcat">Cracking the Ethan&rsquo;s Kerberos hash with hashcat:</a></li>
+        <li><a href="#performing-a-dcsync-attack-with-impacket-secretsdump">Performing a DCSync Attack with impacket-secretsdump:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-persistence">4. Persistence:</a>
+      <ul>
+        <li><a href="#trying-to-create-a-kerberos-golden-ticket">Trying to create a Kerberos Golden Ticket:</a></li>
+        <li><a href="#using-a-download-cradle-to-load-invoke-mimikatz-into-memory">Using a download Cradle to load invoke-mimikatz into memory:</a></li>
+        <li><a href="#using-invoke-mimikatz-to-perform-a-targeted-dc-sync-attack-to-extract-the-krbtgt-aes-hash">Using invoke-mimikatz to perform a targeted DC-Sync attack to extract the KRBTGT AES hash:</a></li>
+        <li><a href="#creating-our-golden-ticket-using-impacket-ticketer">Creating our golden-ticket using impacket-ticketer:</a></li>
+        <li><a href="#connecting-via-psexec-with-our-golden-ticket">Connecting via PSEXEC with our golden-ticket:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-beyond-root">5. Beyond Root:</a>
+      <ul>
+        <li><a href="#using-ad-powershell-module-to-set-dont-req-preauth-flag-on-ethan-s-account">Using AD PowerShell Module to set <code>DONT_REQ_PREAUTH</code> flag on Ethan&rsquo;s account:</a></li>
+        <li><a href="#using-powerview-to-set-dont-req-preauth-flag-on-ethan-s-account">Using PowerView to set <code>DONT_REQ_PREAUTH</code> flag on Ethan&rsquo;s account:</a></li>
+        <li><a href="#as-rep-roasting-ethan-using-impacket-getnpusers">AS-REP roasting Ethan using Impacket-GetNPUsers:</a></li>
+        <li><a href="#cracking-ethans-as-rep-hash-using-hashcat">Cracking Ethans AS-REP Hash Using Hashcat:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -1310,6 +1379,12 @@
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/sauna-box/">Sauna HTB Walkthrough</a>
+    
 
 
 

@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -110,6 +110,44 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#driver-hack-the-box-walkthrough-writeup">Driver Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#rpc">RPC:</a></li>
+        <li><a href="#web-80">Web <code>80</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#using-an-scf-file-to-get-a-users-ntlm-hash">Using an SCF File to get a users NTLM hash:</a></li>
+        <li><a href="#cracking-tony-s-hash-with-hashcat">Cracking Tony&rsquo;s hash with hashcat:</a></li>
+        <li><a href="#enumerating-users-with-rpc">Enumerating Users with RPC:</a></li>
+        <li><a href="#enumerating-as-tony">Enumerating as Tony:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#discovering-the-host-is-vulnerable-to-printnightmare-cve-2021-1675">Discovering the host is vulnerable to PrintNightmare CVE-2021-1675:</a></li>
+        <li><a href="#adding-an-admin-user-using-printnightmare-cve-2021-1675">Adding an Admin User using PrintNightmare CVE-2021-1675:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -715,6 +753,12 @@
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/timelapse-box/">Timelapse HTB Walkthrough</a>
+    
 
 
 

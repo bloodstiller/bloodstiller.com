@@ -4,6 +4,9 @@ draft = false
 title = "Sau HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-12-26
+toc = true
+bold = true
+next = true
 +++
 
 ## Sau Hack The Box Walkthrough/Writeup: {#sau-hack-the-box-walkthrough-writeup}

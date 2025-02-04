@@ -4,6 +4,9 @@ draft = false
 title = "Outdated HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-10-13
+toc = true
+bold = true
+next = true
 +++
 
 ## Outdated Hack The Box Walkthrough/Writeup: {#outdated-hack-the-box-walkthrough-writeup}

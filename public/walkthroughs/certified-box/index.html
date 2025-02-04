@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -122,6 +122,62 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#certified-hack-the-box-walkthrough-writeup">Certified Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#assumed-breach-box">Assumed Breach Box:</a></li>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#enumerating-as-judith">Enumerating as Judith:</a></li>
+        <li><a href="#discovering-our-user-has-genericwrite-privs-over-management-svc">Discovering our user has GenericWrite privs over MANAGEMENT_SVC:</a></li>
+        <li><a href="#planning-our-attack-path">Planning our attack path:</a></li>
+        <li><a href="#making-judith-owner-of-the-management-group-and-then-adding-her-as-a-user">Making Judith owner of the Management group &amp; then adding her as a user:</a></li>
+        <li><a href="#performing-the-shadow-credentials-attack-against-management-svc">Performing the shadow credentials attack against &ldquo;MANAGEMENT_SVC&rdquo;:</a></li>
+        <li><a href="#logging-in-as-management-svc">Logging in as MANAGEMENT_SVC:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-lateral-movement">3. Lateral Movement:</a>
+      <ul>
+        <li><a href="#discovering-that-management-svc-has-genericall-over-ca-operator">Discovering that MANAGEMENT_SVC has GenericAll over CA_OPERATOR:</a></li>
+        <li><a href="#performing-the-shadow-credentials-attack-against-ca-operator">Performing the shadow credentials attack against &ldquo;CA_OPERATOR&rdquo;</a></li>
+        <li><a href="#requesting-a-tgt-ca-operator-for-with-pkinittools-getgtgkinit">Requesting a TGT for CA_OPERATOR with PKINITtools getgtgkinit:</a></li>
+        <li><a href="#requesting-the-ca-operator-user-hash-with-pkinittools-getnthash">Requesting the CA_OPERATOR user hash with PKINITtools getnthash:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-privilege-escalation">4. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#discovering-that-we-can-perform-the-esc9-exploit-chain-ca-vulnerability-as-ca-operator">Discovering that we can perform the ESC9 exploit chain CA vulnerability as CA_OPERATOR:</a></li>
+        <li><a href="#esc9-privilege-escalation">ESC9 Privilege Escalation:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-persistence">5. Persistence:</a>
+      <ul>
+        <li><a href="#dumping-ntds-dot-dit-dc-sync-attack">Dumping NTDS.dit/DC-SYNC attack:</a></li>
+        <li><a href="#creating-a-kerberos-golden-ticket">Creating a Kerberos Golden Ticket:</a></li>
+        <li><a href="#using-a-base64-encoded-powershell-reverse-shell-and-download-cradle-to-connect-back-to-our-attack-host-every-1-minute">Using a base64 encoded PowerShell reverse shell and download cradle to connect back to our attack host every 1 minute:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -1387,6 +1443,12 @@
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/aero-box/">Aero HTB Walkthrough</a>
+    
 
 
 

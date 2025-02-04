@@ -4,6 +4,9 @@ draft = false
 title = "Understanding Azure AD Connect Exploitation & Privilege Escalation"
 author = "bloodstiller"
 date = 2024-10-14
+toc = true
+bold = true
+next = true
 +++
 
 ## Used-For: Connecting on-premises AD instances with Azure cloud instances {#used-for-connecting-on-premises-ad-instances-with-azure-cloud-instances}

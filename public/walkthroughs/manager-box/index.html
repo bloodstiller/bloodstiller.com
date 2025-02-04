@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -112,6 +112,54 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#name-of-box-manager">Hack The Box Manager Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#web-80">Web <code>80</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#making-a-list-and-x2026-dot-checking-it-once">Making a list….checking it once?:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#credentialed-smb-enumeration">Credentialed SMB Enumeration:</a></li>
+        <li><a href="#credentials-mssql-enumeration">Credentials MSSQL Enumeration:</a></li>
+        <li><a href="#finding-hard-coded-credentials">Finding Hard-coded Credentials:</a></li>
+        <li><a href="#getting-access-to-the-system-as-raven">Getting access to the system as Raven:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#privesc-enumeration">Privesc Enumeration:</a></li>
+        <li><a href="#ca-abuse-to-privesc">CA Abuse to Privesc:</a></li>
+        <li><a href="#attack-deep-dive-e-dot-g-dot-exploiting-upns-in-esc7-attacks-a-hacker-s-guide">Attack Deep-Dive e.g. Exploiting UPNs in ESC7 Attacks: A Hacker&rsquo;s Guide:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a></li>
+    <li><a href="#5-dot-persistence">5. Persistence:</a>
+      <ul>
+        <li><a href="#process-of-failed-golden-ticket-attack">Process of failed Golden Ticket Attack:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -1229,6 +1277,12 @@ The ESC7 attack path all revolves around a misconfigured certificate template.</
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/access-box/">Access HTB Walkthrough</a>
+    
 
 
 

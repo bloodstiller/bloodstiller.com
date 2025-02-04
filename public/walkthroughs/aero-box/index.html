@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -110,6 +110,49 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#aero-hack-the-box-walkthrough-writeup">Aero Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#web-80">Web <code>80</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#building-the-themebleed-cve-2023-38146-reverse-shell-dll">Building the ThemeBleed CVE-2023-38146 Reverse Shell DLL:</a></li>
+        <li><a href="#running-the-themebleed-exploit-to-get-a-reverse-shell">Running the ThemeBleed Exploit to get a reverse shell:</a></li>
+        <li><a href="#enumerating-as-sam-dot-emerson">Enumerating as sam.emerson:</a></li>
+        <li><a href="#exfiltrating-the-cve-2023-28252-summary-dot-pdf-using-base64-encoding">Exfiltrating the CVE-2023-28252_Summary.pdf using base64 encoding:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#researching-cve-2023-28252--clfs--vulnerability">Researching CVE-2023-28252 (CLFS) Vulnerability:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-persistence">4. Persistence:</a>
+      <ul>
+        <li><a href="#trying-to-dump-creds-with-mimikatz">Trying to dump creds with mimikatz:</a></li>
+        <li><a href="#using-invoke-mimikatz-dot-ps1-with-a-download-cradle-to-dump-hashes">Using invoke-mimikatz.ps1 with a download cradle to dump hashes:</a></li>
+        <li><a href="#creating-a-new-user-who-is-part-of-the-administrators-group">Creating a new user who is part of the administrators group:</a></li>
+        <li><a href="#living-off-the-land-persistence">Living off the land persistence:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -1050,6 +1093,12 @@
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/administrator-box/">Administrator HTB Walkthrough</a>
+    
 
 
 

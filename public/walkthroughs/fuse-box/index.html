@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -108,6 +108,68 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#fuse-hack-the-box-walkthrough-writeup">Fuse Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#rpc">RPC:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#http-80">HTTP <code>80</code>:</a></li>
+        <li><a href="#finding-a-password-in-the-printer-logs">Finding a password in the Printer Logs:</a></li>
+        <li><a href="#changing-the-expired-password">Changing the expired password:</a></li>
+        <li><a href="#preparing-commands-to-access-smb">Preparing commands to access SMB:</a></li>
+        <li><a href="#downloading-the-entire-print-share">Downloading the entire <code>print$</code> share:</a></li>
+        <li><a href="#trying-to-dump-user-information-via-ldapsearch">Trying to dump user information via <code>ldapsearch</code>:</a></li>
+        <li><a href="#enumerating-using-rpcclient">Enumerating using <code>rpcclient</code>:</a></li>
+        <li><a href="#finding-a-hard-coded-clear-text-credential-a-printer-description">Finding a hard-coded clear text credential a printer description:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#enumerating-as-svc-print">Enumerating as <code>svc-print</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#finding-out-we-have-the-seloaddriverprivilege-privilege">Finding out we have the <code>SeLoadDriverPrivilege</code> privilege:</a></li>
+        <li><a href="#checking-the-system-is-vulnerable-to-the-exploit">Checking the system is vulnerable to the exploit:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a>
+      <ul>
+        <li><a href="#capcom-dot-sys-driver-vulnerability-arbitrary-code-execution-with-system-privileges"><code>Capcom.sys</code> Driver Vulnerability: Arbitrary Code Execution with <code>SYSTEM</code> Privileges</a></li>
+        <li><a href="#download-a-copy-of-the-official-capcom-dot-sys-driver">Download A Copy of the official <code>Capcom.sys</code> Driver:</a></li>
+        <li><a href="#compiling-the-eoploaddriver-tool-to-enable-us-to-load-the-capcom-dot-sys-driver">Compiling the <code>EopLoadDriver</code> tool to enable us to load the <code>Capcom.sys</code> driver:</a></li>
+        <li><a href="#compiling-the-exploitcapcom-exploit-c-plus-plus-project">Compiling the <code>ExploitCapcom</code> exploit <code>C++</code> project:</a></li>
+        <li><a href="#modifying-exploitcapcom-exploit-to-enable-a-reverse-shell">Modifying <code>ExploitCapcom</code> exploit to enable a reverse shell:</a></li>
+        <li><a href="#generating-our-reverse-shell-payload-using-msfvenom">Generating our reverse-shell payload using <code>msfvenom</code>:</a></li>
+        <li><a href="#run-the-exploit-chain-on-the-victim">Run the exploit chain on the victim:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-persistence">5. Persistence:</a>
+      <ul>
+        <li><a href="#creating-a-golden-ticket-with-mimikatz">Creating a Golden Ticket with <code>mimikatz</code>:</a></li>
+        <li><a href="#full-dcsync-attack-using-netexec-and-golden-ticket">Full DCSync attack using <code>netexec</code> and Golden Ticket:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -1365,6 +1427,12 @@
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/cascade-box/">Cascade HTB Walkthrough</a>
+    
 
 
 

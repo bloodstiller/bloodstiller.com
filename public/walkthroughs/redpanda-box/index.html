@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -86,6 +86,54 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#redpanda-hack-the-box-walkthrough-writeup">RedPanda Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I Use Variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ssh-22">SSH <code>22</code>:</a></li>
+        <li><a href="#http-proxy-8080">HTTP-Proxy <code>8080</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#getting-rce-on-the-host-via-ssti">Getting RCE On The Host VIA SSTI:</a></li>
+        <li><a href="#getting-a-reverse-shell-via-ssti">Getting A Reverse Shell VIA SSTI:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-enumerating-as-woodenk">3. Enumerating As woodenk:</a>
+      <ul>
+        <li><a href="#enumerating-as-woodenk">Enumerating As woodenk:</a></li>
+        <li><a href="#finding-hard-coded-credentials">Finding Hard Coded Credentials:</a></li>
+        <li><a href="#accessing-the-host-via-ssh">Accessing The Host Via SSH:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-privilege-escalation">4. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#manual-privilege-escalation-checks">Manual Privilege Escalation Checks:</a></li>
+        <li><a href="#checking-running-processes-with-pspy-and-finding-a-cron-job-running-as-root">Checking Running Processes With <a href="https://github.com/DominicBreuker/pspy">pspy</a> &amp; Finding A Cron Job Running As Root:</a></li>
+        <li><a href="#reading-the-source-code-of-app-dot-java">Reading The Source Code Of <code>app.java</code>:</a></li>
+        <li><a href="#code-break-down">Code Break-Down:</a></li>
+        <li><a href="#why-the-code-is-vulnerable">Why The Code Is Vulnerable:</a></li>
+        <li><a href="#xxe-primer-what-is-xml-external-entity-processing">XXE Primer: What is XML External Entity Processing?</a></li>
+        <li><a href="#exploitation">Exploitation:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-persistence">5. Persistence:</a></li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -1494,6 +1542,12 @@
 <p>– Get in touch bloodstiller at bloodstiller dot com</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/sau-box/">Sau HTB Walkthrough</a>
+    
 
 
 

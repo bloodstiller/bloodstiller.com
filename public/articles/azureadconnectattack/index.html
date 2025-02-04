@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -102,6 +102,46 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#used-for-connecting-on-premises-ad-instances-with-azure-cloud-instances">Used-For: Connecting on-premises AD instances with Azure cloud instances</a></li>
+    <li><a href="#overview">Overview:</a>
+      <ul>
+        <li><a href="#pass-through-authentication--pta">Pass-through Authentication (PTA):</a></li>
+        <li><a href="#federated-authentication--adfs">Federated Authentication (ADFS):</a></li>
+        <li><a href="#password-hash-synchronization--phs">Password Hash Synchronization (PHS):</a></li>
+        <li><a href="#password-hash-synchronization--phs--method">Password Hash Synchronization (PHS) Method:</a></li>
+        <li><a href="#installation-configurations">Installation Configurations:</a></li>
+        <li><a href="#the-vulnerability-context">The Vulnerability Context</a></li>
+        <li><a href="#technical-deep-dive">Technical Deep Dive</a></li>
+      </ul>
+    </li>
+    <li><a href="#enumerating-azure-ad-connect">Enumerating Azure AD Connect:</a>
+      <ul>
+        <li><a href="#1-dot-confirm-azure-ad-connect-installation">1. Confirm Azure AD Connect Installation:</a></li>
+        <li><a href="#2-dot-identify-azure-ad-connect-accounts">2. Identify Azure AD Connect Accounts:</a></li>
+        <li><a href="#3-dot-determine-database-configuration">3. Determine Database Configuration:</a></li>
+        <li><a href="#4-dot-localdb-enumeration--if-applicable">4. <code>LocalDB</code> Enumeration (if applicable):</a></li>
+        <li><a href="#5-dot-sql-server-enumeration--for-custom-installations">5. SQL Server Enumeration (for custom installations):</a></li>
+        <li><a href="#6-dot-determine-synchronization-method--gui-only">6. Determine Synchronization Method (GUI only):</a></li>
+        <li><a href="#7-dot-check-for-required-permissions">7. Check for Required Permissions</a></li>
+        <li><a href="#8-dot-check-if-we-can-interact-with-the-database--sql-custom-installation">8. Check if we can interact with the database (SQL Custom installation):</a></li>
+      </ul>
+    </li>
+    <li><a href="#88955c">+Attacking Azure AD Connect+</a>
+      <ul>
+        <li><a href="#exploitating-azure-ad-connect-using-powershell">Exploitating Azure AD Connect Using PowerShell:</a></li>
+        <li><a href="#exploiting-ad-connect-using-adconnectdump--20241014084307-adconnectdump-dot-md">Exploiting AD Connect Using <a href="https://github.com/dirkjanm/adconnectdump?tab=readme-ov-file">adconnectdump</a>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#example-of-this-attack">Example of this attack:</a></li>
+    <li><a href="#mitigation-strategies">Mitigation Strategies</a></li>
+    <li><a href="#detection">Detection</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -684,6 +724,12 @@
 <p>By understanding this process, security teams can better protect their Azure AD Connect deployments and detect potential exploitation attempts.</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/articles/shadowcredentialsattack/">Understanding the Shadow Credentials Attack Vector</a>
+    
 
 
 

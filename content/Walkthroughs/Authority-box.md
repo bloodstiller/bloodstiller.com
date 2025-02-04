@@ -4,6 +4,9 @@ draft = false
 title = "Authority HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-10-31
+toc = true
+bold = true
+next = true
 +++
 
 ## Authority Hack The Box Walkthrough/Writeup: {#authority-hack-the-box-walkthrough-writeup}

@@ -3,6 +3,9 @@ draft = false
 title = "RedPanda HTB Walkthrough"
 author = "bloodstiller"
 date = 2025-01-12
+toc = true
+bold = true
+next = true
 +++
 
 ## RedPanda Hack The Box Walkthrough/Writeup: {#redpanda-hack-the-box-walkthrough-writeup}

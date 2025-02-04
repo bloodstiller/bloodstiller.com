@@ -4,6 +4,9 @@ tags = ["Active Directory", "Windows", "Server", "Python", "Tools" ]
 title = "BloodServer: A Secure File Transfer Tool for Penetration Testers"
 author = "bloodstiller"
 date = 2024-10-17
+toc = true
+bold = true
+next = true
 +++
 
 ## BloodServer: A Secure File Transfer Tool for Penetration Testers {#bloodserver-a-secure-file-transfer-tool-for-penetration-testers}

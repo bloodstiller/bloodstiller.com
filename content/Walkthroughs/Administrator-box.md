@@ -4,6 +4,9 @@ draft = true
 title = "Administrator HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-11-04
+toc = true
+bold = true
+next = true
 +++
 
 ## Administrator Hack The Box Walkthrough/Writeup: {#administrator-hack-the-box-walkthrough-writeup}

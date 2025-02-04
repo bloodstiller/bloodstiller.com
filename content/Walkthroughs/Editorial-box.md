@@ -4,6 +4,9 @@ draft = false
 title = "Editorial HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-12-22
+toc = true
+bold = true
+next = true
 +++
 
 ## Editorial Hack The Box Walkthrough/Writeup: {#editorial-hack-the-box-walkthrough-writeup}

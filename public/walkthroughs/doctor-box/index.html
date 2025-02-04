@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -106,6 +106,49 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#doctor-hack-the-box-walkthrough-writeup">Doctor Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#splunk-8089">Splunk: <code>8089</code>:</a></li>
+        <li><a href="#web-80">Web <code>80</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#getting-a-reverse-shell-via-ssti">Getting a reverse shell via SSTI:</a></li>
+        <li><a href="#discovering-our-user-is-part-of-the-adm-group">Discovering Our User is part of the adm group:</a></li>
+        <li><a href="#finding-a-clear-text-password-in-var-log-apache2-logs">Finding a clear text password in <code>/var/log/apache2</code> logs</a></li>
+        <li><a href="#enumerating-as-shaun">Enumerating as shaun:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#logging-into-splunk-universal-forwarder-as-shaun">Logging into splunk Universal Forwarder as shaun:</a></li>
+        <li><a href="#getting-root-using-splunkwhisperer2-to-exploit-the-universal-forwarder">Getting root using SplunkWhisperer2 to exploit the Universal Forwarder:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-persistence">4. Persistence:</a>
+      <ul>
+        <li><a href="#persistence-method-1-creating-a-cron-job-reverse-shell">Persistence Method 1: Creating a cron job reverse shell:</a></li>
+        <li><a href="#persistence-method-2-adding-an-ssh-key">Persistence Method 2: Adding an SSH key:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -888,6 +931,12 @@
 <p>– Get in touch bloodstiller at bloodstiller dot com</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/forest-box/">Forest HTB Walkthrough</a>
+    
 
 
 

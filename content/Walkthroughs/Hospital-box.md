@@ -4,6 +4,9 @@ draft = false
 title = "Hospital HTB Walkthrough"
 date = 2024-10-03
 author = "bloodstiller"
+toc = true
+bold = true
+next = true
 +++
 
 ## Hospital Hack The Box Walkthrough/Writeup: {#hospital-hack-the-box-walkthrough-writeup}

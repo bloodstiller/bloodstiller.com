@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -108,6 +108,53 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#editorial-hack-the-box-walkthrough-writeup">Editorial Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#web-80">Web <code>80</code>:</a></li>
+        <li><a href="#fuzzing-for-ssrf-with-ffuf">Fuzzing for SSRF with ffuf:</a></li>
+        <li><a href="#abusing-ssrf-to-access-internal-api-endpoints">Abusing SSRF To Access Internal API Endpoints:</a></li>
+        <li><a href="#retrieving-default-credentials-from-the-authors-api-endpoint">Retrieving default credentials from the &ldquo;authors&rdquo; API endpoint:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#accessing-the-host-by-ssh-as-dev">Accessing the host by SSH as dev:</a></li>
+        <li><a href="#enumerating-the-host-as-dev">Enumerating the host as dev:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-lateral-movement">3. Lateral Movement:</a>
+      <ul>
+        <li><a href="#enumerating-as-prod">Enumerating as prod:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-privilege-escalation">4. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#using-cve-2022-24439-gitpython-vulnerability-to-get-a-root-shell-dot">Using CVE-2022-24439 GitPython Vulnerability to get a root shell.</a></li>
+        <li><a href="#why-do-we-need-the-sign-after-bash">Why do we need the <code>%</code> sign after bash:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-persistence">5. Persistence:</a>
+      <ul>
+        <li><a href="#creating-a-high-privileged-service-account-for-persistence">Creating a high privileged &ldquo;service&rdquo; account for persistence:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -845,6 +892,12 @@ For the most part the script is very simple, it takes a supplied git repo as an 
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/doctor-box/">Doctor HTB Walkthrough</a>
+    
 
 
 

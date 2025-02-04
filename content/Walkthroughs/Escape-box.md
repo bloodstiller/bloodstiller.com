@@ -4,6 +4,9 @@ draft = true
 title = "Escape HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-10-05
+toc = true
+bold = true
+next = true
 +++
 
 ## Escape Hack The Box Walkthrough/Writeup: {#escape-hack-the-box-walkthrough-writeup}

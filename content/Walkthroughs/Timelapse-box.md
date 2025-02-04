@@ -4,6 +4,9 @@ draft = false
 title = "Timelapse HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-11-11
+toc = true
+bold = true
+next = true
 +++
 
 ## Timelapse Hack The Box Walkthrough/Writeup: {#timelapse-hack-the-box-walkthrough-writeup}

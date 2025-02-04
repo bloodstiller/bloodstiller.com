@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -116,6 +116,62 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#authority-hack-the-box-walkthrough-writeup">Authority Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">kerberos <code>88</code>:</a></li>
+        <li><a href="#http-80">HTTP <code>80</code>:</a></li>
+        <li><a href="#https-alt-8443">HTTPS-ALT <code>8443</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#enumerating-the-development-share">Enumerating the development share:</a></li>
+        <li><a href="#finding-hard-coded-creds-and-hashes-ansible-files">Finding Hard-Coded Creds &amp; Hashes Ansible files:</a></li>
+        <li><a href="#cracking-ansible-vault-hashes-using-ansible2john-and-john-the-ripper">Cracking Ansible Vault Hashes Using Ansible2John &amp; John The Ripper:</a></li>
+        <li><a href="#logging-into-pwm">Logging into PWM:</a></li>
+        <li><a href="#stealing-ldap-credentials-via-pwm">Stealing LDAP Credentials VIA PWM:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#re-running-ldapire-now-that-we-have-creds-to-enumerate-users-and-groups">Re-running ldapire now that we have creds to enumerate users and groups:</a></li>
+        <li><a href="#connecting-via-evil-winrm-as-svc-ldap">Connecting via evil-winrm as <code>svc_ldap</code>:</a></li>
+        <li><a href="#doing-a-bloodhound-capture-using-sharphound">Doing a bloodhound capture using SharpHound:</a></li>
+        <li><a href="#reading-the-bloodhound-results">Reading the bloodhound results:</a></li>
+        <li><a href="#enumerating-the-certificate-authority-with-certipy-ad--ca">Enumerating the Certificate Authority with certipy-ad (CA):</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#enumerating-machineaccountquota-using-netexec">Enumerating MachineAccountQuota using netexec:</a></li>
+        <li><a href="#creating-a-computer-with-impacket-addcomputer">Creating a computer with impacket-addcomputer:</a></li>
+        <li><a href="#using-certipy-ad-and-esc1-attack-chain-to-elevate-privileges-to-administrator">Using certipy-ad &amp; ESC1 Attack Chain to elevate privileges to Administrator:</a></li>
+        <li><a href="#using-addcomputer-dot-py-to-start-the-attack-chain-again">Using addcomputer.py to start the attack chain again:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a>
+      <ul>
+        <li><a href="#understanding-the-kdc-err-padata-type-nosupp-error">Understanding the <code>KDC_ERR_PADATA_TYPE_NOSUPP</code> error:</a></li>
+        <li><a href="#using-passthecert-and-certipy-to-get-our-ticket">Using PassTheCert &amp; certipy to get our ticket:</a></li>
+        <li><a href="#why-did-this-work">Why did this work?</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -1578,6 +1634,12 @@
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/evilcups-box/">EvilCUPS HTB Walkthrough</a>
+    
 
 
 

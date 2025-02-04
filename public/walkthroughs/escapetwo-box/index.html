@@ -121,6 +121,62 @@
 
 
 
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#escapetwo-hack-the-box-walkthrough-writeup">EscapeTwo Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#assumed-breach-box">Assumed Breach Box:</a></li>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#performing-a-bloodhound-collection">Performing a Bloodhound Collection:</a></li>
+        <li><a href="#bloodhound-findings">Bloodhound Findings:</a></li>
+        <li><a href="#enumerating-the-ca-using-certipy-ad">Enumerating The CA Using Certipy-ad:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#enumerating-as-oscar">Enumerating As Oscar:</a></li>
+        <li><a href="#mssql-1433">MSSQL <code>1433</code>:</a></li>
+        <li><a href="#using-rce-via-xp-cmdshell-to-get-a-reverse-shell">Using RCE VIA <code>xp_cmdshell</code> To Get A Reverse Shell:</a></li>
+        <li><a href="#enumerating-as-sql-svc">Enumerating As <code>sql_svc</code>:</a></li>
+        <li><a href="#discovering-password-re-use-for-ryan-and-sql-svc">Discovering Password Re-use for <code>ryan</code> &amp; <code>sql_svc</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-lateral-movement">3. Lateral Movement:</a>
+      <ul>
+        <li><a href="#connecting-as-ryan">Connecting As Ryan:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-privilege-escalation">4. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#taking-control-of-ca-svc">Taking Control of <code>ca_svc</code>:</a></li>
+        <li><a href="#re-running-certipy-as-ca-svc">Re-running Certipy As <code>ca_svc</code>:</a></li>
+        <li><a href="#performing-esc4-certificate-attack-to-get-an-admin-certificate">Performing ESC4 Certificate Attack To Get An Admin Certificate:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-persistence">5. Persistence:</a>
+      <ul>
+        <li><a href="#dumping-ntds-dot-dit-dcsync-attack">Dumping NTDS.dit/DCSync attack:</a></li>
+        <li><a href="#creating-a-kerberos-golden-ticket">Creating a Kerberos Golden Ticket:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
+
 
 
 <main><h2 id="escapetwo-hack-the-box-walkthrough-writeup">EscapeTwo Hack The Box Walkthrough/Writeup:</h2>
@@ -1526,6 +1582,12 @@
 <p>– Get in touch bloodstiller at bloodstiller dot com</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/redpanda-box/">RedPanda HTB Walkthrough</a>
+    
 
 
 

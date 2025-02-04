@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -108,6 +108,52 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#name-of-box-htb-support">Intelligence Hack The Box Support Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#standard-nmap-scan-to-get-a-lay-of-the-land">Standard Nmap Scan to get a lay of the land:</a></li>
+        <li><a href="#in-depth-scan-complete">In Depth Scan Complete:</a></li>
+        <li><a href="#checking-for-ldap-anonymous-bind">Checking For LDAP Anonymous bind:</a></li>
+        <li><a href="#smb-enumeration">SMB Enumeration:</a></li>
+        <li><a href="#userinfo-dot-exe-binary-enumeration"><code>UserInfo.exe</code> Binary Enumeration:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#enumerating-the-domain-using-ldap">Enumerating the Domain using LDAP:</a></li>
+        <li><a href="#finding-passwords-in-user-fields">Finding Passwords in User Fields:</a></li>
+        <li><a href="#connecting-with-evil-winrm">Connecting with Evil-WinRM:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-priv-esc">3. Priv-Esc:</a>
+      <ul>
+        <li><a href="#enumerating-the-domain-with-bloodhound">Enumerating the domain with bloodhound:</a></li>
+        <li><a href="#genericall-privileges-on-the-domain-controller-dot"><code>GenericAll</code> privileges on the domain controller.</a></li>
+        <li><a href="#the-attack-kerberos-resource-based-constrained-delegation-computer-object-takeover">The attack, Kerberos Resource-based Constrained Delegation - Computer Object Takeover:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a>
+      <ul>
+        <li><a href="#performing-the-attack">Performing the Attack:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-pillaging-persistence">5. Pillaging/Persistence:</a></li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+        <li><a href="#thoughts">Thoughts:</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -1784,6 +1830,12 @@
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/return-box/">Return HTB Walkthrough</a>
+    
 
 
 

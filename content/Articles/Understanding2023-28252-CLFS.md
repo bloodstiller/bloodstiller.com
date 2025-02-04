@@ -4,6 +4,9 @@ draft = false
 title = "Understanding CVE-2023-28252: Deep Dive into the CLFS Privilege Escalation Vulnerability"
 author = "bloodstiller"
 date = 2024-11-05
+toc = true
+bold = true
+next = true
 +++
 
 ## Understanding CVE-2023-28252: A Deep Dive into CLFS Privilege Escalation {#understanding-cve-2023-28252-a-deep-dive-into-clfs-privilege-escalation}

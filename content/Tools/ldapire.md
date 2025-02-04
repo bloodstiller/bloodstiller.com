@@ -4,6 +4,9 @@ tags = ["Active Directory", "Windows", "LDAP", "Python", "Tools" ]
 title = "LDAPire: LDAP Enumeration Tool"
 author = "bloodstiller"
 date = 2024-11-13
+toc = true
+bold = true
+next = true
 +++
 
 - Originally posted on 2024-10-17 updated on 2024-11-13

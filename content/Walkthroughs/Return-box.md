@@ -4,6 +4,9 @@ author = "bloodstiller"
 tags = ["Box", "HTB", "Easy", "Windows", "LDAP"]
 date = 2024-09-01
 draft = false
+toc = true
+bold = true
+next = true
 +++
 
 

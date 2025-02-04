@@ -4,6 +4,9 @@ draft = false
 title = "Intelligence HTB Walkthrough"
 date = 2024-09-29
 author = "bloodstiller"
+toc = true
+bold = true
+next = true
 +++
 
 ## Hack The Box Intelligence Walkthrough/Writeup: {#name-of-box-intelligence}

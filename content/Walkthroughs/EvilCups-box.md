@@ -4,6 +4,9 @@ draft = false
 title = "EvilCUPS HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-10-22
+toc = true
+bold = true
+next = true
 +++
 
 ## EvilCUPS Hack The Box Walkthrough/Writeup: {#evilcups-hack-the-box-walkthrough-writeup}

@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -106,6 +106,63 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#name-of-box-intelligence">Hack The Box Intelligence Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#http-80">HTTP <code>80</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#credential-stuffing-with-netexec">Credential Stuffing with netexec:</a></li>
+        <li><a href="#credentialed-smb-enumeration">Credentialed SMB Enumeration:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-lateral-movement-and-privilege-escalation">3. Lateral Movement &amp; Privilege Escalation:</a>
+      <ul>
+        <li><a href="#adding-a-malicious-dns-entry-using-dnstool-dot-py">Adding a Malicious DNS Entry using <code>dnstool.py</code>:</a></li>
+        <li><a href="#cracking-teds-hash-using-hashcat">Cracking Teds Hash using Hashcat:</a></li>
+        <li><a href="#running-bloodhound-as-ted-graves">Running Bloodhound as Ted Graves:</a></li>
+        <li><a href="#using-gmsadumper-dot-py-to-dump-the-gmsa-password">Using <code>gMSADumper.py</code> to dump the <code>gMSA</code> Password:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-ownership">4. Ownership:</a>
+      <ul>
+        <li><a href="#1-dot-clock-synchronization-to-ensure-kerberos-tickets-are-valid">1. Clock Synchronization To Ensure Kerberos Tickets Are Valid:</a></li>
+        <li><a href="#2-dot-kerberos-constrained-delegation--kcd--attack">2. Kerberos Constrained Delegation (KCD) Attack:</a></li>
+        <li><a href="#3-dot-load-the-dot-ccache-into-memory-with-the-krb5ccname-variable">3. Load the <code>.ccache</code> into memory with the <code>KRB5CCNAME</code> variable:</a></li>
+        <li><a href="#4-dot-getting-a-shell-using-impacket-psexec">4. Getting a shell using impacket-psexec:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-dot-ownership">5. Ownership:</a>
+      <ul>
+        <li><a href="#dumping-ntds-using-netexec-and-our-kerberos-credentials">Dumping NTDS using netexec and our kerberos credentials:</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-dot-persistence">6. Persistence:</a>
+      <ul>
+        <li><a href="#creating-a-windows-scheduled-task-to-enable-a-backdoor-dot">Creating a windows scheduled task to enable a backdoor.</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -1207,6 +1264,12 @@ There are two primary methods of remotely modifying an ADIDNS zone. The first in
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/manager-box/">Manager HTB Walkthrough</a>
+    
 
 
 

@@ -4,6 +4,9 @@ draft = false
 title = "Resolute HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-10-21
+toc = true
+bold = true
+next = true
 +++
 
 ## Resolute Hack The Box Walkthrough/Writeup: {#resolute-hack-the-box-walkthrough-writeup}

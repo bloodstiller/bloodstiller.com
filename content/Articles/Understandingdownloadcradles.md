@@ -4,6 +4,9 @@ draft = false
 title = "Understanding PowerShell Download Cradles: A Deep Dive"
 author = "bloodstiller"
 date = 2024-11-11
+toc = true
+bold = true
+next = true
 +++
 
 ## Introduction {#introduction}

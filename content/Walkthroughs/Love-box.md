@@ -4,6 +4,9 @@ draft = false
 title = "Love HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-12-24
+toc = true
+bold = true
+next = true
 +++
 
 ## Love Hack The Box Walkthrough/Writeup: {#love-hack-the-box-walkthrough-writeup}

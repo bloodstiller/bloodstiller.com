@@ -4,6 +4,9 @@ draft = false
 author = "bloodstiller"
 date = 2024-09-09
 title = "Remote HTB Walkthrough"
+toc = true
+bold = true
+next = true
 +++
 
 ## Hack The Box Remote Walkthrough/Writeup: {#name-of-box-remote}

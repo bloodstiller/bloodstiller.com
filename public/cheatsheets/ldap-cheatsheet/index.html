@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -100,6 +100,75 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ldap-overview">LDAP Overview:</a></li>
+    <li><a href="#ldap-requests-and-responses--how-a-session-works">LDAP Requests &amp; Responses (how a session works):</a></li>
+    <li><a href="#ldap-ad-authentication">LDAP AD Authentication:</a></li>
+    <li><a href="#openldap">OpenLDAP:</a></li>
+    <li><a href="#ldap-signing">LDAP signing:</a></li>
+    <li><a href="#ldap-bind-request">LDAP Bind Request:</a></li>
+    <li><a href="#ldap-anonymous-bind">LDAP Anonymous Bind:</a></li>
+    <li><a href="#ldap-filters">LDAP Filters:</a>
+      <ul>
+        <li><a href="#ldap-filter-operands">LDAP Filter Operands:</a></li>
+        <li><a href="#ldap-logical-operators">LDAP Logical Operators:</a></li>
+        <li><a href="#ldap-filter-item-types">LDAP Filter Item Types:</a></li>
+        <li><a href="#ldap-filter-escaped-characters">LDAP Filter Escaped Characters:</a></li>
+      </ul>
+    </li>
+    <li><a href="#object-identifiers-oid-s">Object Identifiers OID&rsquo;s:</a>
+      <ul>
+        <li><a href="#overview">Overview:</a></li>
+        <li><a href="#structure">Structure:</a></li>
+        <li><a href="#usage-example">Usage Example:</a></li>
+        <li><a href="#additional-resources">Additional Resources:</a></li>
+        <li><a href="#ldap-filter-using-object-identifiers">LDAP Filter Using <a href="https://en.wikipedia.org/wiki/Object_identifier">Object Identifiers</a>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#ldap-query-queries">LDAP Query/Queries:</a></li>
+    <li><a href="#ldap-search-terms">+LDAP Search Terms+ </a>
+      <ul>
+        <li><a href="#list-domain-functionality-level">List <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels">Domain Functionality Level</a>:</a></li>
+        <li><a href="#list-user-information">List User Information:</a></li>
+        <li><a href="#list-user-emails">List User Emails:</a></li>
+        <li><a href="#list-group-information">List Group Information:</a></li>
+        <li><a href="#list-computers">List Computers:</a></li>
+        <li><a href="#list-ou-information">List OU information:</a></li>
+        <li><a href="#list-account-information">List Account Information:</a></li>
+        <li><a href="#linux-system-support">Linux System Support:</a></li>
+      </ul>
+    </li>
+    <li><a href="#searchbase-and-searchscope-parameters">SearchBase and SearchScope Parameters:</a>
+      <ul>
+        <li><a href="#the-searchbase-parameter">The SearchBase parameter:</a></li>
+        <li><a href="#the-searchscope-parameter">The SearchScope parameter:</a></li>
+      </ul>
+    </li>
+    <li><a href="#84265d">+Enumerating LDAP+</a>
+      <ul>
+        <li><a href="#ldapire-custom-ldap-enumeration-tool">LDAPire: Custom LDAP Enumeration Tool</a></li>
+        <li><a href="#establishing-naming-context-with-nmap">Establishing Naming context with <code>NMAP</code>:</a></li>
+        <li><a href="#enumerating-ldap-using-ldapsearch">Enumerating LDAP using <code>ldapsearch</code>:</a></li>
+        <li><a href="#enumerating-ldap-using-windapsearch">Enumerating LDAP using <code>windapsearch</code>:</a></li>
+        <li><a href="#scripts-for-querying-ldap">Scripts for Querying <code>LDAP</code>:</a></li>
+      </ul>
+    </li>
+    <li><a href="#1d1373">+Attacking LDAP+</a>
+      <ul>
+        <li><a href="#ldap-credential-stealing">LDAP Credential Stealing:</a></li>
+        <li><a href="#password-spraying-and-bruteforcing-ldap">Password Spraying &amp; Bruteforcing LDAP:</a></li>
+        <li><a href="#ldap-injection">LDAP Injection:</a></li>
+      </ul>
+    </li>
+    <li><a href="#troubleshooting-ldap">Troubleshooting LDAP</a></li>
+    <li><a href="#ldap-security-best-practices">LDAP Security Best Practices</a></li>
+    <li><a href="#ldap-boxes-on-htb">LDAP Boxes on HTB:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -2081,6 +2150,12 @@
 </ul>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/cheatsheets/rpc-cheatsheet/">Attacking RPC: Deep Dive &amp; Cheat Sheet</a>
+    
 
 
 

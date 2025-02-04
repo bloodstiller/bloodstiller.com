@@ -3,6 +3,9 @@ title = "about me"
 author = "bloodstiller"
 date = 2024-09-02
 draft = false
+toc = true
+bold = true
+next = true
 +++
 
 ## Hack the Planet

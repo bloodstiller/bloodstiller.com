@@ -4,6 +4,9 @@ draft = false
 title = "Cascade HTB Walkthrough"
 author = "bloodstiller"
 date = 2024-10-16
+toc = true
+bold = true
+next = true
 +++
 
 ## Cascade Hack The Box Walkthrough/Writeup: {#cascade-hack-the-box-walkthrough-writeup}

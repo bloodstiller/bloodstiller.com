@@ -4,6 +4,9 @@ draft = false
 title = "Manager HTB Walkthrough"
 date = 2024-09-22
 author = "bloodstiller"
+toc = true
+bold = true
+next = true
 +++
 
 ## Hack The Box Manager Walkthrough/Writeup: {#name-of-box-manager}

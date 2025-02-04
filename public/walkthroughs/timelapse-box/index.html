@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.81ff31757ea13a74f5ea15e34767b5fcfe5695f9211935bd0a7ef54b3dc22251.css" media="all">
   </head>
 
   <body>
@@ -108,6 +108,58 @@
 </div>
 
 
+
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#timelapse-hack-the-box-walkthrough-writeup">Timelapse Hack The Box Walkthrough/Writeup:</a></li>
+    <li><a href="#how-i-use-variables-and-wordlists">How I use variables &amp; Wordlists:</a></li>
+    <li><a href="#1-dot-enumeration">1. Enumeration:</a>
+      <ul>
+        <li><a href="#nmap">NMAP:</a></li>
+        <li><a href="#ldap-389">LDAP <code>389</code>:</a></li>
+        <li><a href="#dns-53">DNS <code>53</code>:</a></li>
+        <li><a href="#kerberos-88">Kerberos <code>88</code>:</a></li>
+        <li><a href="#smb-445">SMB <code>445</code>:</a></li>
+        <li><a href="#using-smbclient-to-enumerate-shares">Using smbclient to enumerate shares:</a></li>
+        <li><a href="#finding-laps-related-documentation-on-in-the-helpdesk-share">Finding LAPS related documentation on in the HelpDesk share:</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dot-foothold">2. Foothold:</a>
+      <ul>
+        <li><a href="#finding-a-backup-in-the-dev-share">Finding a backup in the Dev share:</a></li>
+        <li><a href="#cracking-the-encrypted-zip-file-using-zip2john-and-john">Cracking the encrypted zip file using zip2john &amp; john:</a></li>
+        <li><a href="#attempting-to-extract-the-private-keys-from-the-dot-pfx">Attempting to extract the private keys from the <code>.pfx</code>:</a></li>
+        <li><a href="#cracking-the-dot-pfx-using-pfx2john-and-john">Cracking the <code>.pfx</code> using pfx2john &amp; john:</a></li>
+        <li><a href="#extracting-the-private-key-and-certificate-with-openssl-from-a-dot-pfx">Extracting the private key &amp; certificate with openssl from a <code>.pfx</code>:</a></li>
+        <li><a href="#connecting-with-evil-winrm-to-the-host-using-certificates">Connecting with evil-winrm to the host using certificates:</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dot-privilege-escalation">3. Privilege Escalation:</a>
+      <ul>
+        <li><a href="#general-enumeration">General Enumeration:</a></li>
+        <li><a href="#checking-powershell-history">Checking PowerShell history:</a></li>
+        <li><a href="#finding-clear-text-credentials-in-the-powershell-history-file">Finding clear text credentials in the PowerShell history file:</a></li>
+        <li><a href="#performing-a-bloodhound-collection">Performing a bloodhound collection:</a></li>
+        <li><a href="#finding-out-svc-deploy-has-readlapspassword-privileges-over-the-dc">Finding out svc_deploy has ReadLAPSPassword privileges over the DC:</a></li>
+        <li><a href="#retrieving-dc01-laps-password-with-powerview-via-download-cradle">Retrieving DC01 LAPS Password with PowerView via download cradle:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-dot-persistence">4. Persistence:</a>
+      <ul>
+        <li><a href="#dumping-ntds-dot-dit-dc-sync-attack">Dumping NTDS.dit/DC-SYNC attack:</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned:</a>
+      <ul>
+        <li><a href="#what-did-i-learn">What did I learn?</a></li>
+        <li><a href="#what-silly-mistakes-did-i-make">What silly mistakes did I make?</a></li>
+      </ul>
+    </li>
+    <li><a href="#sign-off">Sign off:</a></li>
+  </ul>
+</nav>
+</aside>
 
 
 
@@ -1060,6 +1112,12 @@
 <p>– Get in touch bloodstiller at proton dot me</p>
 </main>
 
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/walkthroughs/certified-box/">Certified HTB Walkthrough</a>
+    
 
 
 
