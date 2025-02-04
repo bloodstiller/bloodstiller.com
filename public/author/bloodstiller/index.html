@@ -44,7 +44,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.2bf7fcb5eaeb912a1fa3337e1d59e4c3b7e30c548687c3d27e775bd12168093c.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.3da815a3d56398617ed5b62d9f70d24b750422f7cef2bd402107e5610a8ed956.css" media="all">
   </head>
 
   <body>
@@ -877,9 +877,9 @@
   setTimeout(scrollHandler, 100);
 </script>
 
+
 <script defer>
   function addCopyButtonToCodeBlocks() {
-    
     const codeBlocks = document.querySelectorAll('code[class^="language-"]');
 
     codeBlocks.forEach((codeBlock) => {
@@ -887,9 +887,7 @@
       copyButton.classList.add("copy-code-button");
       copyButton.innerHTML = "copy";
 
-      
       copyButton.addEventListener("click", () => {
-        
         const elements = codeBlock.querySelectorAll(".cl");
         let codeToCopy = "";
         elements.forEach((element) => {
@@ -897,14 +895,12 @@
         });
         navigator.clipboard.writeText(codeToCopy);
 
-        
         copyButton.innerHTML = "copied!";
         setTimeout(() => {
           copyButton.innerHTML = "copy";
         }, 1500);
       });
 
-      
       codeBlock.parentNode.before(copyButton);
     });
   }
@@ -941,7 +937,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     Array.from(document.body.childNodes).forEach(replaceSymbolsWithFormatting);
-    console.log("Text processing complete");
 });
 </script>
 
