@@ -1,9 +1,9 @@
 [submodule "themes/dark-theme-editor"]
 	path = themes/dark-theme-editor
-	url = https://github.com/bloodstiller/dark-theme-editor.git
+	url = git@github.com:bloodstiller/dark-theme-editor.git
 [submodule "themes/hugo-liftoff"]
 	path = themes/hugo-liftoff
 	url = https://github.com/bloodstiller/hugo-liftoff
 [submodule "themes/hugo-dead-simple"]
 	path = themes/hugo-dead-simple
-	url = https://github.com/bloodstiller/hugo-dead-simple
+	url = git@github.com:bloodstiller/hugo-dead-simple.git
