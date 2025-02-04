@@ -4,3 +4,6 @@
 [submodule "themes/hugo-liftoff"]
 	path = themes/hugo-liftoff
 	url = https://github.com/bloodstiller/hugo-liftoff
+[submodule "themes/hugo-dead-simple"]
+	path = themes/hugo-dead-simple
+	url = https://github.com/bloodstiller/hugo-dead-simple
