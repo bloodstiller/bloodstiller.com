@@ -1,6 +1,6 @@
 +++
 tags = ["nixos", "tailscale", "homelab"]
-title = "Autostart tailscale on NixOS system boot"
+title = "Autostart Tailscale on NixOS system boot & rebuild"
 draft = false
 author = "bloodstiller"
 date = 2025-02-23
@@ -27,7 +27,7 @@ This assumes you already have a Tailscale account and sops setup, if you don't p
 ## Generating The Tailscale Auth Key: {#generating-the-tailscale-auth-key}
 
 -   As we want to automate the process of authenticating of connecting our NixOS host to the Tailscale network we will need to generate an auth key. This will mean we do not have to follow the provided Tailscale links when adding the host to the network or re-authorizing.
-    -   ~~Note~~: Even if you have already added your host to the Tailscale network this process is still the same.
+    -   +Note+: Even if you have already added your host to the Tailscale network this process is still the same.
 
 Login to your account and click "Settings" --&gt; "Personal Settings" --&gt; "Keys" --&gt; "Generate Auth Key"
 
@@ -56,7 +56,7 @@ tailscale_preauth: |
 ```
 
 -   {{< figure src="/ox-hugo/2025-02-22-171514_.png" >}}
--   ~~Note~~: It is also possible to use age for this however I personally use stops as it also allows integration with home-manager.
+-   +Note+: It is also possible to use age for this however I personally use stops as it also allows integration with home-manager.
 
 Edit your `configuration.nix` and add the secret so it's accessible by other services.
 
@@ -69,8 +69,8 @@ Edit your `configuration.nix` and add the secret so it's accessible by other ser
   };
 ```
 
--   ~~Important~~: The part `secrets.tailscale_preauth` has to match name that was placed into the sops `secrets.yaml` as this is the key for the value referenced. So if in your sops secrets file you called it `ts-key` you would write `secrets.ts-key`
--   ~~Note~~:
+-   +Important+: The part `secrets.tailscale_preauth` has to match name that was placed into the sops `secrets.yaml` as this is the key for the value referenced. So if in your sops secrets file you called it `ts-key` you would write `secrets.ts-key`
+-   +Note+:
     -   This has to be done in `configuration.nix` &amp; not home-manager as this is a system wide service that is running and not a user specific service.
 
 
@@ -120,7 +120,7 @@ systemd.services.tailscale-autoconnect = {
 };
 ```
 
--   ~~Important~~:
+-   +Important+:
     -   As stated before if you have called your Tailscale Auth key in your secrets file something other than `tailscale_preauth` you will then have to modify the line below.
         ```nix
             # Pass our tailscale auth key from sops as a Environmental Variable
@@ -150,7 +150,7 @@ Let's break down what each part of this configuration does:
     3.  If already connected (`Running` state), exits without doing anything
     4.  If not connected, authenticates using your stored auth key
     5.  Enables route acceptance with `--accept-routes=true`
-        -   ~~Note~~: I also use some of my nodes as routers within my home network to allow access to other hosts so I also pass the `--accept-routes=true` argument, however if you don't do this you can omit this argument.
+        -   +Note+: I also use some of my nodes as routers within my home network to allow access to other hosts so I also pass the `--accept-routes=true` argument, however if you don't do this you can omit this argument.
 
 
 ## Rebuilding The System: {#rebuilding-the-system}
