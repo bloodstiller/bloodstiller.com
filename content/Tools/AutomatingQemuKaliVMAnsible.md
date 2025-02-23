@@ -63,6 +63,20 @@ For QEMU/KVM shared folder support:
 
 -   There is some additional setup required for the `vagrant-libvirt` plugin so would advise you checkout [QEMU/KVM Setup Guide](https://github.com/bloodstiller/kaliconfigs/blob/main/Vagrant/QEMU/README.md)
 
+#### Unable to resolve dependency `vagrant-libvirt`error:
+- +Update+ 21/02/2025 
+  - I recently ran an update and encountered an issue where it refused to launch new VM's. I received an error similar to the below (it was not exactly the same as I had a crash shortly after).
+`Error message given during initialization: Unable to resolve dependency: user requested 'vagrant-libvirt (= 0.12.2)'`
+after alot of searching I found [this post](https://warlord0blog.wordpress.com/2024/08/21/vagrant-error-after-updates/) I found following the steps resolved the issue.
+``` bash
+vagrant plugin repair
+vagrant plugin expunge --reinstall
+vagrant plugin update
+
+VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1 vagrant plugin install vagrant-libvirt
+
+```
+
 
 ## The Automation Stack {#the-automation-stack}
 
