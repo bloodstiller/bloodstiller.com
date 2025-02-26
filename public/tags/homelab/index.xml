@@ -6,8 +6,15 @@
     <description>Recent content in Homelab on Hack Me Daddy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rebuilding My Homelab In NixOS (Part 1) Creating the NixOS VM</title>
+      <link>http://localhost:1313/homelab/20250220118-nixos-homelab/</link>
+      <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/homelab/20250220118-nixos-homelab/</guid>
+      <description>&lt;h2 id=&#34;the-catalyst&#34;&gt;The Catalyst:&lt;/h2&gt;&#xA;&lt;p&gt;I have stepped away from doing writeups for a little while, purely due to wanting to mix things up and the fact that I was just grinding for a year prior to get my CPTS certification; I actually have a number of writeups for active boxes written just not on the site due to the terms and conditions by HTB. And as I needed something else to spend my time with I created a Proxmox cluster using two nodes (I know I know you need 3 nodes for it actually be a cluster) &amp;amp; also set up a Proxmox backup server. However that took all of an hour to do, honestly, it was one of the easiest setups I have ever done (I will create a writeup for this soon enough.)&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Autostart Tailscale on NixOS system boot &amp; rebuild</title>
       <link>http://localhost:1313/homelab/202050222_tailscalenixos/</link>
