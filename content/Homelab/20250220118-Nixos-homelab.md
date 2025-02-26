@@ -1,6 +1,6 @@
 +++
 draft = false
-tags = ["nixos", "tailscale", "homelab"]
+tags = ["nixos", "homelab"]
 title = "Rebuilding My Homelab In NixOS (Part 1) Creating the NixOS VM"
 author = "bloodstiller"
 date = 2025-02-26
