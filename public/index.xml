@@ -6,8 +6,15 @@
     <description>Recent content on Hack Me Daddy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rebuilding My Homelab In NixOS (Part 3) Mounting A Secondary Drive At Boot</title>
+      <link>http://localhost:1313/homelab/20250280118-nixos-homelab-3/</link>
+      <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/homelab/20250280118-nixos-homelab-3/</guid>
+      <description>&lt;p&gt;This is part 3 of my series demonstrating my rebuild of my homelab in NixOS.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;If you would like to see the initial creation of the VM on Proxmox please see &lt;a href=&#34;https://bloodstiller.com/homelab/20250220118-nixos-homelab/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Part 1&lt;/a&gt;&#xA;.&lt;/li&gt;&#xA;&lt;li&gt;Enabling SSH access on NixOS &lt;a href=&#34;https://bloodstiller.com/homelab/20250220118-nixos-homelab-2/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Part 2&lt;/a&gt;&#xA;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;mounting-a-second-drive-in-nixos&#34;&gt;Mounting A Second Drive In NixOS:&lt;/h2&gt;&#xA;&lt;p&gt;So far we have built our VM, installed NixOS and configured it for SSH authentication. We still have a little more basic configuration to do before we can progress further. We need to mount the secondary drive, luckily this is a quick process and NixOS has a handy tool that helps us make this mount permanent and it doesn&amp;rsquo;t involve manually configuring fstab for change!&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Rebuilding My Homelab In NixOS (Part 1) Creating the NixOS VM</title>
       <link>http://localhost:1313/homelab/20250220118-nixos-homelab/</link>

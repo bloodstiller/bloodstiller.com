@@ -16,6 +16,13 @@
       <description>&lt;h2 id=&#34;the-catalyst&#34;&gt;The Catalyst:&lt;/h2&gt;&#xA;&lt;p&gt;I have stepped away from doing writeups for a little while, purely due to wanting to mix things up and the fact that I was just grinding for a year prior to get my CPTS certification; I actually have a number of writeups for active boxes written just not on the site due to the terms and conditions by HTB. And as I needed something else to spend my time with I created a Proxmox cluster using two nodes (I know I know you need 3 nodes for it actually be a cluster) &amp;amp; also set up a Proxmox backup server. However that took all of an hour to do, honestly, it was one of the easiest setups I have ever done (I will create a writeup for this soon enough.)&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Rebuilding My Homelab In NixOS (Part 2) Enabling SSH Login in NixOS</title>
+      <link>http://localhost:1313/homelab/20250220118-nixos-homelab-2/</link>
+      <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/homelab/20250220118-nixos-homelab-2/</guid>
+      <description>&lt;p&gt;This is part 2 of my series demonstrating my rebuild of my homelab in NixOS. If you would like to see the initial creation of the VM on Proxmox please see &lt;a href=&#34;https://bloodstiller.com/homelab/20250220118-nixos-homelab/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Part 1&lt;/a&gt;&#xA;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;first-login-to-nixos&#34;&gt;First Login to NixOS:&lt;/h2&gt;&#xA;&lt;p&gt;Lets start off where we left off in the last section, and we will login to the NixOS host for the first time.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/ox-hugo/2025-02-26-084309_.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;As we are using Proxmox our first login will be via using the console, use the credentials you provided in the VM creation.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Autostart Tailscale on NixOS system boot &amp; rebuild</title>
       <link>http://localhost:1313/homelab/202050222_tailscalenixos/</link>
       <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
