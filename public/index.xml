@@ -16,13 +16,6 @@
       <description>&lt;p&gt;This is part 3 of my series demonstrating my rebuild of my homelab in NixOS.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;If you would like to see the initial creation of the VM on Proxmox please see &lt;a href=&#34;https://bloodstiller.com/homelab/20250220118-nixos-homelab/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Part 1&lt;/a&gt;&#xA;.&lt;/li&gt;&#xA;&lt;li&gt;Enabling SSH access on NixOS &lt;a href=&#34;https://bloodstiller.com/homelab/20250220118-nixos-homelab-2/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Part 2&lt;/a&gt;&#xA;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;mounting-a-second-drive-in-nixos&#34;&gt;Mounting A Second Drive In NixOS:&lt;/h2&gt;&#xA;&lt;p&gt;So far we have built our VM, installed NixOS and configured it for SSH authentication. We still have a little more basic configuration to do before we can progress further. We need to mount the secondary drive, luckily this is a quick process and NixOS has a handy tool that helps us make this mount permanent and it doesn&amp;rsquo;t involve manually configuring fstab for change!&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Rebuilding My Homelab In NixOS (Part 1) Creating the NixOS VM</title>
-      <link>http://localhost:1313/homelab/20250220118-nixos-homelab/</link>
-      <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/homelab/20250220118-nixos-homelab/</guid>
-      <description>&lt;h2 id=&#34;the-catalyst&#34;&gt;The Catalyst:&lt;/h2&gt;&#xA;&lt;p&gt;I have stepped away from doing writeups for a little while, purely due to wanting to mix things up and the fact that I was just grinding for a year prior to get my CPTS certification; I actually have a number of writeups for active boxes written just not on the site due to the terms and conditions by HTB. And as I needed something else to spend my time with I created a Proxmox cluster using two nodes (I know I know you need 3 nodes for it actually be a cluster) &amp;amp; also set up a Proxmox backup server. However that took all of an hour to do, honestly, it was one of the easiest setups I have ever done (I will create a writeup for this soon enough.)&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Rebuilding My Homelab In NixOS (Part 2) Enabling SSH Login in NixOS</title>
       <link>http://localhost:1313/homelab/20250220118-nixos-homelab-2/</link>
       <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
@@ -35,6 +28,13 @@
       <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/homelab/202050222_tailscalenixos/</guid>
       <description>&lt;p&gt;Are you tired of running &lt;code&gt;sudo tailscale up&lt;/code&gt; every time you login, I know I am. So I thought why spend under two seconds waiting for something to run and using auto complete with ZSH to easily find the command when I can easily create a service that launches Tailscale on boot for me and re-launches on every rebuild of the system.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;This configuration will ensure that&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Tailscale starts automatically with your system.&lt;/li&gt;&#xA;&lt;li&gt;You don&amp;rsquo;t need to manually authenticate each time.&lt;/li&gt;&#xA;&lt;li&gt;Your authentication key is stored securely using &lt;a href=&#34;https://getsops.io/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;sops&lt;/a&gt;&#xA;/&lt;a href=&#34;https://github.com/Mic92/sops-nix?tab=readme-ov-file&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;sops-nix&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;The connection is established only when needed (won&amp;rsquo;t try to reconnect if already connected).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This assumes you already have a Tailscale account and sops setup, if you don&amp;rsquo;t please see guides below.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Rebuilding My Homelab In NixOS (Part 1)</title>
+      <link>http://localhost:1313/homelab/20250220118-nixos-homelab/</link>
+      <pubDate>Thu, 20 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/homelab/20250220118-nixos-homelab/</guid>
+      <description>&lt;h2 id=&#34;the-catalyst&#34;&gt;The Catalyst:&lt;/h2&gt;&#xA;&lt;p&gt;I have stepped away from doing writeups for a little while, purely due to wanting to mix things up and the fact that I was just grinding for a year prior to get my CPTS certification; I actually have a number of writeups for active boxes written just not on the site due to the terms and conditions by HTB. And as I needed something else to spend my time with I created a Proxmox cluster using two nodes (I know I know you need 3 nodes for it actually be a cluster) &amp;amp; also set up a Proxmox backup server. However that took all of an hour to do, honestly, it was one of the easiest setups I have ever done (I will create a writeup for this soon enough.)&lt;/p&gt;</description>
     </item>
     <item>
       <title>Automating Kali VM Setup with QEMU and Ansible</title>

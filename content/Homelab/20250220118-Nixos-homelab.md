@@ -1,12 +1,12 @@
 +++
+title = "Rebuilding My Homelab In NixOS (Part 1)"
 draft = false
-tags = ["nixos", "homelab"]
-title = "Rebuilding My Homelab In NixOS (Part 1) Creating the NixOS VM"
 author = "bloodstiller"
-date = 2025-02-26
-toc = true
-bold = true
-next = true
+tags = ["nixos", "ssh", "homelab"]
+date = 2025-02-20
+toc = "= true"
+bold = "= true"
+next = "= true"
 +++
 
 ## The Catalyst: {#the-catalyst}
@@ -98,13 +98,19 @@ So I did this, created the Ubuntu VM &amp; additional drive in Proxmox, installe
     -   {{< figure src="/ox-hugo/2025-02-21-120121_.png" >}}
     -   Select the NixOS iso.
 
+
+
 -   System:
-    -   {{< figure src="/ox-hugo/2025-02-21-073324_.png" >}}
-    -   I just used the defaults for System as I was not passing through any additional graphics card etc.
+-   As we don't want to use legacy-bios (as we want to use systemd boot we are going to select OVMF (UEFI)) & the machine type will be q35
+    -   {{< figure src="/ox-hugo/2025-03-03-175405_.png" >}}
+
+<!--listend-->
 
 -   Storage:
     -   {{< figure src="/ox-hugo/2025-02-21-121202_.png" >}}
-    -   +Important+: The default storage size for new VM's is 32GB, I would personally recommend upping this, the reason being is that, as mentioned previously, NixOS keeps versions whenever you rebuild the system VM. These versions can be deleted but if you do intend to make frequent changes or test things I would recommend upping the size of storage if you have the means.
+    -   +important+: The default storage size for new VM's is 32GB, I would personally recommend upping this, the reason being is that, as mentioned previously, NixOS keeps versions whenever you rebuild the system VM. These versions can be deleted but if you do intend to make frequent changes or test things I would recommend upping the size of storage if you have the means.
+
+<!--listend-->
 
 -   CPU/Cores:
     -   As we are running fairly lightweight containers &amp; OS I found that 1 Socket &amp; 2 Cores was more than enough.
@@ -120,7 +126,7 @@ So I did this, created the Ubuntu VM &amp; additional drive in Proxmox, installe
     -   I left the Network tab as default however if you want to assign a dedicated NIC etc you can do that here, but my nodes have 1 Ethernet port so is not applicable.
 
 -   At the "Confirm" screen you should have something that looks similar to the below.
-    -   {{< figure src="/ox-hugo/2025-02-21-120234_.png" >}}
+    -   {{< figure src="/ox-hugo/2025-03-03-175517_.png" >}}
     -   +Note+: Ensure you do not have "Start after created" enabled as we want to add an additional drive for our docker data.
 
 
@@ -136,9 +142,68 @@ So I did this, created the Ubuntu VM &amp; additional drive in Proxmox, installe
 -   Now when you look at the Hardware for the VM you should see two SCSI drives.
     -   {{< figure src="/ox-hugo/2025-02-21-115410_.png" >}}
     -   +Note+: Ignore the size of my drives, these are purely for illustrative purposes.
+        -   I also know this can be done at machine creation time however I wanted to split things up to make it simple for everyone.
+
+
+### Change Boot Order: {#change-boot-order}
+
+So we can boot from the installer ISO we need to modify our boot order.
+
+Select your VM &amp; then "Options" &amp; double click "Boot Order"
+
+-   {{< figure src="/ox-hugo/2025-03-03-181607_.png" >}}
+
+Drag the ISO to the top of the boot order &amp; click "OK"
+
+-   {{< figure src="/ox-hugo/2025-03-03-181709_.png" >}}
+
+
+### Disabling Secure Boot So We Can Boot: {#disabling-secure-boot-so-we-can-boot}
+
+For some reason the system will not boot unless we disable secure boot from the UEFI interface to do this, do the following:
+
+Select the VM and click "Console"
+
+-   {{< figure src="/ox-hugo/2025-03-03-180120_.png" >}}
+
+This will open the console window
+
+-   {{< figure src="/ox-hugo/2025-03-03-180145_.png" >}}
+
+Click "Start Now" and as soon as it boots hit "ESCAPE" on your keyboard, this will show the EUFI manager interface:
+
+-   {{< figure src="/ox-hugo/2025-03-03-180243_.png" >}}
+
+Use your keyboard to select "Device Manager" &amp; hit "ENTER"
+
+-   {{< figure src="/ox-hugo/2025-03-03-180334_.png" >}}
+
+On the next page select "Secure Boot Configuration"
+
+-   {{< figure src="/ox-hugo/2025-03-03-180413_.png" >}}
+
+In the next screen, press down on your keyboard until you highlighted the `[X]`
+
+-   {{< figure src="/ox-hugo/2025-03-03-180627_.png" >}}
+
+Press "ENTER" on your keyboard (the below message will display, hit "ENTER again")
+
+-   {{< figure src="/ox-hugo/2025-03-03-180654_.png" >}}
+
+Now back out of this menu and the next by pressing "ESCAPE" twice
+
+Select "Continue"
+
+-   {{< figure src="/ox-hugo/2025-03-03-180904_.png" >}}
+
+Then press "ENTER" again.
+
+-   {{< figure src="/ox-hugo/2025-03-03-180830_.png" >}}
 
 
 ## Installing NixOS: {#installing-nixos}
+
+The VM should auto start, if it does not just follow the below steps.
 
 
 ### Start the VM: {#start-the-vm}
@@ -162,25 +227,38 @@ So I did this, created the Ubuntu VM &amp; additional drive in Proxmox, installe
 -   If you do intend to use "Unfree Software" I would tick the box, however for this setup it's not required.
 
 -   Disks:
-    -   Erase disk &amp; ensure "No Swap" is selected. I would always encourage users to Encrypt the system however this is up-to yourselves.
+    -   Erase disk &amp; ensure "No Swap" is selected.
     -   {{< figure src="/ox-hugo/2025-02-21-122552_.png" >}}
+    -   +Note+: I would always encourage users to Encrypt the system however this is up-to yourselves, if you do encrypt the system if it ever reboots you will need to enter the LUKS password, there are various ways to do this remotely, e.g. using Tailscale &amp; setting up initrd ssh, which I will cover in later tutorials, but if you don't care you can skip this step.
 
 -   Install:
     -   {{< figure src="/ox-hugo/2025-02-21-122717_.png" >}}
 
 -   +Tip+: Click "Toggle Log" as soon as you star the install, the reason being is that the installer appears to stick at 46% percent for a lot of people whereas if you have the log viewable you can actually see it is progressing even though it may appear it is not.
-
     -   {{< figure src="/ox-hugo/2025-02-21-122859_.png" >}}
 
-    <!--listend-->
+-   Once complete restart the host:
+    -   {{< figure src="/ox-hugo/2025-02-21-123707_.png" >}}
 
-    -   Once complete restart the host:
-        -   {{< figure src="/ox-hugo/2025-02-21-123707_.png" >}}
+
+### Change Boot Order...again: {#change-boot-order-dot-dot-dot-again}
+
+You may find it boots to the installer again, if so shutdown the VM using the console.
+
+-   {{< figure src="/ox-hugo/2025-03-03-181822_.png" >}}
+
+Select your VM &amp; then "Options" &amp; double click "Boot Order"
+
+-   {{< figure src="/ox-hugo/2025-03-03-181607_.png" >}}
+
+Un-tick the "Enabled" box on the ISO &amp; click "OK"
+
+-   {{< figure src="/ox-hugo/2025-03-03-181905_.png" >}}
 
 
 ## Login to NixOS: {#login-to-nixos}
 
--   As we are using Proxmox our first login will be using the inbuilt console, use the credentials you provided in the VM creation.
+-   As we are using Proxmox our first login will be via using the console, use the credentials you provided in the VM creation.
 -   {{< figure src="/ox-hugo/2025-02-21-123930_.png" >}}
 
 -   As this is already getting pretty long I will go over the configuration for the VM in my next post.

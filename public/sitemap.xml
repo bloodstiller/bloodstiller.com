@@ -11,28 +11,25 @@
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-02-28T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/homelab/</loc>
+    <lastmod>2025-02-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/homelab/</loc>
+    <lastmod>2025-02-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/nixos/</loc>
     <lastmod>2025-02-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/homelab/20250280118-nixos-homelab-3/</loc>
     <lastmod>2025-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/homelab/</loc>
-    <lastmod>2025-02-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/nixos/</loc>
-    <lastmod>2025-02-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/homelab/20250220118-nixos-homelab/</loc>
-    <lastmod>2025-02-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/homelab/20250220118-nixos-homelab-2/</loc>
-    <lastmod>2025-02-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/ssh/</loc>
-    <lastmod>2025-02-26T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-02-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/homelab/20250220118-nixos-homelab-2/</loc>
     <lastmod>2025-02-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/homelab/202050222_tailscalenixos/</loc>
@@ -40,6 +37,9 @@
   </url><url>
     <loc>http://localhost:1313/tags/tailscale/</loc>
     <lastmod>2025-02-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/homelab/20250220118-nixos-homelab/</loc>
+    <lastmod>2025-02-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/ansible/</loc>
     <lastmod>2025-02-03T00:00:00+00:00</lastmod>
