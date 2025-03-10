@@ -11,6 +11,27 @@
     <loc>http://localhost:1313/author/bloodstiller/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/cheatsheets/</loc>
+    <lastmod>2025-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/containerization/</loc>
+    <lastmod>2025-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/containers/</loc>
+    <lastmod>2025-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/debugging/</loc>
+    <lastmod>2025-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/devops/</loc>
+    <lastmod>2025-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/docker/</loc>
+    <lastmod>2025-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/cheatsheets/troubleshootingdocker-cheatsheet/</loc>
+    <lastmod>2025-03-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/gpu/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
   </url><url>
@@ -38,7 +59,13 @@
     <loc>http://localhost:1313/tags/rocm/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/sre/</loc>
+    <lastmod>2025-03-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/troubleshooting/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/nixos/</loc>
@@ -411,9 +438,6 @@
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cheatsheet/</loc>
-    <lastmod>2024-10-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/cheatsheets/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/csharp/</loc>

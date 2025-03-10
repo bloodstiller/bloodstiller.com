@@ -6,8 +6,15 @@
     <description>Recent content in Cheatsheets on Hack Me Daddy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/cheatsheets/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker Troubleshooting Guide: Comprehensive Solutions for Common Container Issues (2025)</title>
+      <link>http://localhost:1313/cheatsheets/troubleshootingdocker-cheatsheet/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cheatsheets/troubleshootingdocker-cheatsheet/</guid>
+      <description>&lt;p&gt;This is a checklist for troubleshooting Docker issues. It is not a comprehensive guide, it is mainly for my own reference but is useful for other.&lt;/p&gt;&#xA;&lt;h2 id=&#34;docker-troubleshooting-checklist&#34;&gt;Docker Troubleshooting Checklist&lt;/h2&gt;&#xA;&lt;h3 id=&#34;container-issues&#34;&gt;Container Issues&lt;/h3&gt;&#xA;&lt;h4 id=&#34;container-restarting-loop&#34;&gt;Container Restarting Loop&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Check container status and logs&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Check status: &lt;code&gt;docker ps -a&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;View logs: &lt;code&gt;docker logs &amp;lt;container_id&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Follow logs: &lt;code&gt;docker logs -f &amp;lt;container_id&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Last N lines: &lt;code&gt;docker logs --tail=100 &amp;lt;container_id&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Common causes and solutions&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Check if entrypoint/CMD is correct&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Verify environment variables are set properly&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Check for application crashes in logs&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Verify container has enough resources&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Memory: &lt;code&gt;docker stats&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Disk space: &lt;code&gt;df -h&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;container-won-t-start&#34;&gt;Container Won&amp;rsquo;t Start&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Basic checks&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Attacking LDAP: Deep Dive &amp; Cheatsheet</title>
       <link>http://localhost:1313/cheatsheets/ldap-cheatsheet/</link>

@@ -1638,6 +1638,55 @@ window.store = {
         "url": "http:\/\/localhost:1313\/author\/bloodstiller\/"
     },
     
+    "http:\/\/localhost:1313\/cheatsheets\/": {
+        "title": "Cheatsheets",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/cheatsheets\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/containerization\/": {
+        "title": "Containerization",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/containerization\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/containers\/": {
+        "title": "Containers",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/containers\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/debugging\/": {
+        "title": "Debugging",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/debugging\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/devops\/": {
+        "title": "Devops",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/devops\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/docker\/": {
+        "title": "Docker",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/docker\/"
+    },
+    
+    "http:\/\/localhost:1313\/cheatsheets\/troubleshootingdocker-cheatsheet\/": {
+        "title": "Docker Troubleshooting Guide: Comprehensive Solutions for Common Container Issues (2025)",
+        "tags": ["docker","containers","devops","troubleshooting","debugging","containerization","sre",],
+        "content": "This is a checklist for troubleshooting Docker issues. It is not a comprehensive guide, it is mainly for my own reference but is useful for other.\nDocker Troubleshooting Checklist Container Issues Container Restarting Loop Check container status and logs\nCheck status: docker ps -a View logs: docker logs \u0026lt;container_id\u0026gt; Follow logs: docker logs -f \u0026lt;container_id\u0026gt; Last N lines: docker logs --tail=100 \u0026lt;container_id\u0026gt; Common causes and solutions\nCheck if entrypoint/CMD is correct Verify environment variables are set properly Check for application crashes in logs Verify container has enough resources Memory: docker stats Disk space: df -h Container Won\u0026rsquo;t Start Basic checks\nVerify image exists: docker images Check port conflicts: docker ps Check local port usage: netstat -antp | grep -i list Inspect container: docker inspect \u0026lt;container_id\u0026gt; Check container configuration Volume mounts Verify host paths exist: ls -la \u0026lt;host_path\u0026gt; Check permissions: ls -la \u0026lt;host_path\u0026gt; | grep $(whoami) Inspect volume mounts: docker inspect \u0026lt;container_id\u0026gt; | grep -A 10 Mounts List volumes: docker volume ls Port mappings Check container port mappings: docker port \u0026lt;container_id\u0026gt; Verify host port availability: ss -tulpn Review docker-compose ports section Check for port conflicts in other containers Network settings List container networks: docker network ls Check container network mode: docker inspect \u0026lt;container_id\u0026gt; | grep -i network Verify DNS resolution: docker exec \u0026lt;container_id\u0026gt; cat /etc/resolv.conf Check network driver: docker network inspect \u0026lt;network_name\u0026gt; | grep -i driver Test internal connectivity: docker exec \u0026lt;container_id\u0026gt; ping \u0026lt;other_container\u0026gt; Build Issues Image Build Failures Common checks\nVerify Dockerfile syntax Check build context Run with verbose output: docker build --progress=plain . Clear build cache: docker builder prune Network-related\nCheck network connectivity Verify proxy settings if applicable Test registry access Network Issues Connectivity Problems Basic diagnostics\nList networks: docker network ls Inspect network: docker network inspect \u0026lt;network_name\u0026gt; Check DNS resolution inside container: docker exec \u0026lt;container_id\u0026gt; ping \u0026lt;hostname\u0026gt; Port Mapping Issues Verification steps\nCheck port bindings: docker port \u0026lt;container_id\u0026gt; Verify host ports are available: netstat -tulpn Test connectivity: curl localhost:\u0026lt;port\u0026gt; Resource Issues Memory Problems Monitoring and diagnostics\nCheck memory usage: docker stats Review container limits: docker inspect \u0026lt;container_id\u0026gt; | grep -i memory Check system memory: free -h Disk Space Issues Cleanup steps\nRemove unused containers: docker container prune Remove unused images: docker image prune Remove unused volumes: docker volume prune Remove all unused resources: docker system prune Check disk usage: docker system df Logging and Debugging Advanced Logging Commands\nView daemon logs: journalctl -u docker.service Enable debug mode: dockerd -D Check container events: docker events Container Debugging Interactive debugging\nEnter running container: docker exec -it \u0026lt;container_id/name\u0026gt; /bin/sh Inspect processes: docker top \u0026lt;container_id\u0026gt; View container details: docker inspect \u0026lt;container_id\u0026gt; Compose Issues Docker Compose Troubleshooting Common checks\nValidate compose file: docker-compose config Check service dependencies: docker-compose ps Force recreation: docker-compose up --force-recreate Check compose logs: docker-compose logs -f \u0026lt;service_name\u0026gt; Verify environment file: cat .env Permission Issues Common Permission Problems File system permissions\nCheck Docker socket permissions: ls -la /var/run/docker.sock Verify user is in docker group: groups ${USER} Fix ownership issues: chown -R \u0026lt;user\u0026gt;:\u0026lt;group\u0026gt; \u0026lt;path\u0026gt; SELinux contexts: ls -lZ Storage Driver Issues Troubleshooting Steps Driver checks\nCheck current storage driver: docker info | grep \u0026quot;Storage Driver\u0026quot; Verify supported drivers: docker info | grep -A 8 \u0026quot;Storage Driver\u0026quot; Monitor storage driver errors: journalctl -fu docker.service | grep storage Registry Issues Authentication and Access Common problems\nTest registry login: docker login \u0026lt;registry-url\u0026gt; Check credentials file: cat ~/.docker/config.json Verify registry certificates Test registry connectivity: curl -v https://\u0026lt;registry-url\u0026gt;/v2/ Container Health Checks Health Monitoring Health status\nView health status: docker inspect --format='{{.State.Health.Status}}' \u0026lt;container_id\u0026gt; Check health check config: docker inspect --format='{{.Config.Healthcheck}}' \u0026lt;container_id\u0026gt; Monitor health check logs: docker inspect --format='{{range .State.Health.Log}}{{.Output}}{{end}}' \u0026lt;container_id\u0026gt; Performance Issues Container Performance Monitoring tools\nCheck CPU usage: docker stats --format \u0026quot;table {{.Container}}\\t{{.CPUPerc}}\\t{{.MemUsage}}\u0026quot; Monitor I/O operations: docker stats --format \u0026quot;table {{.Container}}\\t{{.BlockIO}}\u0026quot; Check process list: docker top \u0026lt;container_id\u0026gt; aux Resource constraints: docker inspect \u0026lt;container_id\u0026gt; | grep -i -A 10 \u0026quot;hostconfig\u0026quot; Networking Deep Dive Advanced Network Troubleshooting Debug tools\nCheck iptables rules: iptables -L -n Inspect bridge network: ip addr show docker0 Track network packets: tcpdump -i docker0 Check network namespaces: ip netns list Common Gotchas Known Issues Time and Timezone Issues\nTime synchronization between host and containers Check host time: date Check container time: docker exec \u0026lt;container_id\u0026gt; date Verify timezone file mount: docker inspect \u0026lt;container_id\u0026gt; | grep /usr/share/zoneinfo Add timezone environment: -e TZ=UTC File System Issues\nCase sensitivity in volume mounts Linux is case-sensitive, Windows/Mac aren\u0026rsquo;t Check actual file names: ls -la Verify mount points: docker inspect \u0026lt;container_id\u0026gt; | grep -A 10 Mounts Test file access: docker exec \u0026lt;container_id\u0026gt; ls -la /path/to/mount Encoding and Locale Issues\nUTF-8 and character encoding Check container locale: docker exec \u0026lt;container_id\u0026gt; locale Verify file encoding: file -i \u0026lt;filename\u0026gt; Set container locale: -e LANG=C.UTF-8 Check log file encoding: less \u0026lt;logfile\u0026gt; (look for strange characters) Process Management\nZombie process handling Check for zombies: docker top \u0026lt;container_id\u0026gt; | grep -i defunct Verify init process: docker inspect \u0026lt;container_id\u0026gt; | grep -i pid Use init system: --init flag when running container Monitor process states: docker exec \u0026lt;container_id\u0026gt; ps aux Daemon Management\nDocker daemon configuration Check auto-start: systemctl is-enabled docker Verify daemon config: cat /etc/docker/daemon.json Monitor daemon status: systemctl status docker Check startup options: ps aux | grep dockerd Container Communication Inter-Container Networking Basic Connectivity\nCheck if containers are on same network List networks: docker network ls Inspect network: docker network inspect \u0026lt;network_name\u0026gt; List connected containers: docker network inspect \u0026lt;network_name\u0026gt; | grep -A 5 \u0026quot;Containers\u0026quot; DNS Resolution\nVerify DNS resolution between containers Test DNS lookup: docker exec \u0026lt;container_id\u0026gt; nslookup \u0026lt;other_container_name\u0026gt; Check DNS settings: docker exec \u0026lt;container_id\u0026gt; cat /etc/resolv.conf Verify /etc/hosts: docker exec \u0026lt;container_id\u0026gt; cat /etc/hosts Test DNS server: docker exec \u0026lt;container_id\u0026gt; dig \u0026lt;other_container_name\u0026gt; Network Debugging\nTroubleshoot connectivity issues Ping test: docker exec \u0026lt;container_id\u0026gt; ping \u0026lt;other_container_name\u0026gt; TCP connection test: docker exec \u0026lt;container_id\u0026gt; nc -vz \u0026lt;other_container_name\u0026gt; \u0026lt;port\u0026gt; Trace route: docker exec \u0026lt;container_id\u0026gt; traceroute \u0026lt;other_container_name\u0026gt; Check network isolation: docker network inspect \u0026lt;network_name\u0026gt; | grep -i \u0026quot;internal\u0026quot; Common Network Issues\nCheck for common problems Verify container names match DNS entries Ensure ports are exposed between containers Check network driver compatibility Verify no IP conflicts: docker network inspect \u0026lt;network_name\u0026gt; | grep -i \u0026quot;ipv4\u0026quot; Advanced Network Diagnostics\nDeep dive network troubleshooting Capture network traffic: docker exec \u0026lt;container_id\u0026gt; tcpdump -i eth0 Check iptables rules: iptables -L -n -v | grep \u0026lt;container_ip\u0026gt; Verify network policies: docker network inspect \u0026lt;network_name\u0026gt; | grep -i \u0026quot;policy\u0026quot; Monitor network metrics: docker stats --format \u0026quot;table {{.Container}}\\t{{.NetIO}}\u0026quot; Docker Compose Networking\nCompose-specific network issues Check service dependencies: docker-compose ps Verify network definitions in compose file Test service discovery: docker-compose exec \u0026lt;service_name\u0026gt; ping \u0026lt;other_service\u0026gt; Check network aliases: docker-compose exec \u0026lt;service_name\u0026gt; nslookup \u0026lt;service_alias\u0026gt; Emergency Recovery Recovery Steps When everything fails\nBackup container data: docker cp \u0026lt;container_id\u0026gt;:/path/to/data ./backup Save container state: docker commit \u0026lt;container_id\u0026gt; backup-image Export container filesystem: docker export \u0026lt;container_id\u0026gt; \u0026gt; container.tar Restart Docker daemon: systemctl restart docker Check Docker daemon status: systemctl status docker Environment Specific Different OS Considerations Platform specific\nWindows path formats in volume mounts MacOS file sharing settings Linux cgroup configuration Container user mapping issues ", 
+        "url": "http:\/\/localhost:1313\/cheatsheets\/troubleshootingdocker-cheatsheet\/"
+    },
+    
     "http:\/\/localhost:1313\/tags\/gpu\/": {
         "title": "Gpu",
         "tags": [],
@@ -1701,11 +1750,25 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/rocm\/"
     },
     
+    "http:\/\/localhost:1313\/tags\/sre\/": {
+        "title": "Sre",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/sre\/"
+    },
+    
     "http:\/\/localhost:1313\/tags\/": {
         "title": "Tags",
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/troubleshooting\/": {
+        "title": "Troubleshooting",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/troubleshooting\/"
     },
     
     "http:\/\/localhost:1313\/tags\/nixos\/": {
@@ -2574,13 +2637,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/cheatsheet\/"
-    },
-    
-    "http:\/\/localhost:1313\/cheatsheets\/": {
-        "title": "Cheatsheets",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/cheatsheets\/"
     },
     
     "http:\/\/localhost:1313\/tags\/csharp\/": {
