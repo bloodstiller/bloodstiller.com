@@ -1,6 +1,6 @@
 +++
 tags = ["homelab", "ollama", "llm", "amd", "rocm", "gpu", "local-llm"]
-draft = true
+draft = false
 title = "How to Run Local LLMs with Ollama on AMD GPU (Complete Guide)"
 description = "Step-by-step guide for running Ollama LLMs locally using AMD GPU acceleration with ROCm support on Arch Linux. Includes installation, configuration, and troubleshooting tips."
 keywords = "Ollama, AMD GPU, ROCm, local LLM, AI, machine learning, GPU acceleration, open source AI, self-hosted LLM"
