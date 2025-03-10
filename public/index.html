@@ -100,6 +100,23 @@
   <li>
 
     <div style="display: grid; grid-template-columns: 7em auto">
+      <span class="date">Mar 10, 2025</span>
+      
+      <a class="bold-post-in-list" href="/homelab/runningollamalocally/"
+        >How to Run Local LLMs with Ollama on AMD GPU (Complete Guide)</a
+      >
+      
+    </div>
+
+</li>
+
+
+
+  
+
+  <li>
+
+    <div style="display: grid; grid-template-columns: 7em auto">
       <span class="date">Mar 7, 2025</span>
       
       <a class="bold-post-in-list" href="/homelab/20250280118-nixos-homelab-4/"
@@ -1160,6 +1177,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 window.store = {
     
+    "http:\/\/localhost:1313\/tags\/amd\/": {
+        "title": "Amd",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/amd\/"
+    },
+    
     "http:\/\/localhost:1313\/author\/": {
         "title": "Author",
         "tags": [],
@@ -1172,6 +1196,13 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/author\/bloodstiller\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/gpu\/": {
+        "title": "Gpu",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/gpu\/"
     },
     
     "http:\/\/localhost:1313\/": {
@@ -1195,6 +1226,48 @@ window.store = {
         "url": "http:\/\/localhost:1313\/homelab\/"
     },
     
+    "http:\/\/localhost:1313\/homelab\/runningollamalocally\/": {
+        "title": "How to Run Local LLMs with Ollama on AMD GPU (Complete Guide)",
+        "tags": ["homelab","ollama","llm","amd","rocm","gpu","local-llm",],
+        "content": "This is mainly being put here for reference for me. I will writeup nix instructions when I finally migrate my main system to nix, but at the moment this is on arch \u0026amp; I wanted to document the process for myself.\nI am using an AMD gpu so this may differ for you:\nInstall AMD GPU backend packages: sudo pacman -S rocminfo rocm-opencl-sdk rocm-hip-sdk rocm-ml-sdk Install ollama with AMD GPU support. yay -S ollama-rocm Start Ollama: ollama serve Run open-webui via docker: services: open-webui: build: context: . dockerfile: Dockerfile image: ghcr.io/open-webui/open-webui:${WEBUI_DOCKER_TAG-main} container_name: open-webui volumes: - ./open-webui:/app/backend/data network_mode: host environment: - \u0026#39;OLLAMA_BASE_URL=http://127.0.0.1:11434\u0026#39; restart: unless-stopped volumes: open-webui: {} Docker compose up -d Access Open WebUI: http://localhost:8080 Pull A Model Down: System Requirements Minimum 8GB RAM (16GB+ recommended for larger models) GPU with at least 6GB VRAM for running medium-sized models Storage space depending on models (each model can be 3-8GB+) Common Model Commands # List all installed models ollama list # Remove a model ollama rm model-name # Get model information ollama show model-name # Run a model in CLI ollama run model-name Troubleshooting If GPU is not detected, ensure ROCm drivers are properly installed and configured Check logs with journalctl -u ollama Verify Ollama service status with systemctl status ollama Common ports used: 11434 (Ollama API), 8080 (Open WebUI) Additional Resources Official Ollama documentation: https://github.com/ollama/ollama/tree/main/docs Model library: https://ollama.com/search GitHub repository: https://github.com/ollama/ollama Introduction This guide demonstrates how to run Large Language Models (LLMs) locally using Ollama with AMD GPU acceleration. While many guides focus on NVIDIA GPUs, this tutorial specifically covers AMD GPU setup using ROCm on Arch Linux. Running LLMs locally provides better privacy, reduced latency, and no API costs.\nPerformance Optimization AMD GPU-Specific Settings Ensure ROCm is properly detecting your GPU: rocminfo Monitor GPU usage: rocm-smi Check GPU temperature: sensors Model Optimization Use quantized models (e.g., q4_0, q4_1) for better performance Adjust context length based on your VRAM Consider model size vs. performance tradeoffs ", 
+        "url": "http:\/\/localhost:1313\/homelab\/runningollamalocally\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/llm\/": {
+        "title": "Llm",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/llm\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/local-llm\/": {
+        "title": "Local-Llm",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/local-llm\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/ollama\/": {
+        "title": "Ollama",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/ollama\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/rocm\/": {
+        "title": "Rocm",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/rocm\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/": {
+        "title": "Tags",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/"
+    },
+    
     "http:\/\/localhost:1313\/tags\/nixos\/": {
         "title": "Nixos",
         "tags": [],
@@ -1214,13 +1287,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/ssh\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/": {
-        "title": "Tags",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/"
     },
     
     "http:\/\/localhost:1313\/homelab\/20250280118-nixos-homelab-3\/": {
