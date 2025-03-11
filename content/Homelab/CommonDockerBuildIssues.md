@@ -500,7 +500,7 @@ When things go wrong, having the right debugging tools is essential. This sectio
     ```
 
     -   The last option will prepend the build output with timestamps.
-        -   ~~Example Output Below~~
+        -   +Example Output Below+
             ```shell
             martin in ~/Desktop/build  13GiB/31GiB | 445MiB/34GiB on ☁️  (eu-west-2) with /usr/bin/zsh
             🕙 17:55:51 zsh ❯ docker build --no-cache . 2>&1 | while read line; do echo "[$(date '+%Y-%m-%d %H:%M:%S')] $line"; done
