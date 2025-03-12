@@ -1,7 +1,9 @@
 +++
-tags = ["nixos", "tailscale", "homelab"]
-title = "Autostart Tailscale on NixOS system boot & rebuild"
+tags = ["nixos", "tailscale", "homelab", "networking", "vpn", "system", "configuration"]
 draft = false
+title = "Autostart Tailscale on NixOS system boot & rebuild"
+description = "Learn how to configure Tailscale to automatically start on NixOS boot and persist through system rebuilds. This guide covers Tailscale installation, configuration, and integration with NixOS for seamless VPN connectivity."
+keywords = "Tailscale NixOS, auto-start Tailscale, NixOS VPN, Tailscale configuration, NixOS networking, system boot configuration, Tailscale automation, NixOS services, persistent VPN setup, homelab networking"
 author = "bloodstiller"
 date = 2025-02-23
 toc = true

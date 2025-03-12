@@ -1,13 +1,23 @@
 +++
-title = "Rebuilding My Homelab In NixOS (Part 1)"
+tags = ["docker", "nixos", "homelab", "system", "configuration"]
 draft = false
+title = "Rebuilding My Homelab In NixOS (Part 1) Creating the NixOS VM In Proxmox"
+description = "Learn how to create and set up a NixOS virtual machine in Proxmox. This guide walks through the initial installation process, VM configuration, and basic system setup for your homelab environment."
+keywords = "NixOS Proxmox setup, virtual machine creation, NixOS installation, Proxmox VE, homelab setup, NixOS VM configuration, initial system setup, virtualization, Proxmox NixOS, homelab infrastructure"
 author = "bloodstiller"
-tags = ["nixos", "ssh", "homelab"]
 date = 2025-02-20
-toc = "= true"
-bold = "= true"
-next = "= true"
+toc = true
+bold = true
+next = true
 +++
+
+This is part 1 of my series demonstrating my rebuild of my homelab in NixOS.
+
+-   Initial creation of the NixOSVM on Proxmox [Part 1](https://bloodstiller.com/homelab/20250220118-nixos-homelab/). (this part)
+-   Enabling SSH access on NixOS [Part 2](https://bloodstiller.com/homelab/20250220118-nixos-homelab-2/).
+-   Mounting a secondary drive on NixOS [Part 3](https://bloodstiller.com/homelab/20250280118-nixos-homelab-3/).
+-   Decrypting boot early with initrd-ssh [Part 4](https://bloodstiller.com/homelab/20250280118-nixos-homelab-4/).
+-   Installing Docker on NixOS [Part 5](https://bloodstiller.com/homelab/202503120622-nixos-homelab-5/)
 
 ## The Catalyst: {#the-catalyst}
 
