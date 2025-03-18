@@ -92,15 +92,9 @@
   </span>&nbsp; <span>
     <a href="http://localhost:1313/tags/containers/">#containers</a>
   </span>&nbsp; <span>
-    <a href="http://localhost:1313/tags/pentesting/">#pentesting</a>
-  </span>&nbsp; <span>
-    <a href="http://localhost:1313/tags/security/">#security</a>
-  </span>&nbsp; <span>
     <a href="http://localhost:1313/tags/devops/">#devops</a>
   </span>&nbsp; <span>
     <a href="http://localhost:1313/tags/containerization/">#containerization</a>
-  </span>&nbsp; <span>
-    <a href="http://localhost:1313/tags/redteam/">#redteam</a>
   </span>&nbsp;</span>
 
 
@@ -112,14 +106,12 @@
 <aside class="hidden lg:block toc " id="tableOfContentContainer">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#transferring-docker-images-for-security-assessment">Transferring Docker Images for Security Assessment</a>
+    <li><a href="#transferring-docker-images-between-hosts">Transferring Docker Images Between Hosts</a>
       <ul>
         <li><a href="#why-transfer-docker-images-locally">Why Transfer Docker Images Locally?</a></li>
         <li><a href="#basic-transfer-process">Basic Transfer Process</a></li>
-        <li><a href="#additional-forensic-analysis-tips">Additional Forensic Analysis Tips</a></li>
         <li><a href="#alternative-transfer-methods">Alternative Transfer Methods</a></li>
-        <li><a href="#analysis-environment-setup">Analysis Environment Setup</a></li>
-        <li><a href="#best-practices-for-security-testing">Best Practices for Security Testing</a></li>
+        <li><a href="#cleanup-procedures">Cleanup Procedures</a></li>
       </ul>
     </li>
   </ul>
@@ -128,30 +120,21 @@
 
 
 
-<main><h2 id="transferring-docker-images-for-security-assessment">Transferring Docker Images for Security Assessment</h2>
-<p>When working with Docker containers in security testing scenarios, having local access to container images provides significant advantages. Recently I had to test some containers but did not have direct access to the private registry, however I did have access to a host that had the images on them. In order to make testing easier (and with permission) I transferred the images locally so I could test. This guide shows how to securely transfer Docker images between hosts for local analysis and pentesting as well as shows some basic testing.</p>
+<main><h2 id="transferring-docker-images-between-hosts">Transferring Docker Images Between Hosts</h2>
+<p>When working with Docker containers, there are situations where you need to transfer images between different hosts. This might be necessary when you have limited internet connectivity, are working with private registries, or need to move images to an isolated environment. This guide shows how to efficiently transfer Docker images between hosts using SCP and alternative methods.</p>
 <h3 id="why-transfer-docker-images-locally">Why Transfer Docker Images Locally?</h3>
-<p><strong>Offline analysis capabilities*</strong></p>
+<p><strong>Offline capabilities</strong></p>
 <ul>
-<li>Having Docker images available locally means you can perform comprehensive analysis without needing continuous network connectivity. This is especially valuable when working in environments with restricted or unreliable connections, or when you need to conduct extensive testing that would be impractical over a network.</li>
+<li>Having Docker images available locally means you can work without needing continuous network connectivity. This is especially valuable when working in environments with restricted or unreliable connections.</li>
 </ul>
-<p><strong>No dependency on client&rsquo;s infrastructure*</strong></p>
+<p><strong>No dependency on external infrastructure</strong></p>
 <ul>
-<li>Working with local copies eliminates reliance on external infrastructure that may have maintenance windows, performance constraints, or access limitations. You control the testing environment completely, allowing for more thorough and uninterrupted work.</li>
+<li>Working with local copies eliminates reliance on external infrastructure that may have maintenance windows, performance constraints, or access limitations.</li>
 </ul>
-<p><strong>Ability to modify and test images in isolation</strong></p>
+<p><strong>Bandwidth efficiency</strong></p>
 <ul>
-<li>Local images can be modified, rebuilt, and tested without affecting production environments. This isolation is crucial when performing security assessments where modifications might otherwise impact running services or trigger security alerts.</li>
+<li>Transferring images directly between hosts can be more efficient than pulling from registries, especially with large images or when working with limited bandwidth.</li>
 </ul>
-<p><strong>Detailed forensic examination</strong></p>
-<ul>
-<li>Local access facilitates in-depth forensic analysis of container layers, installed packages, configurations, and embedded secrets. You can take your time exploring the image&rsquo;s internal structure without concerns about connection timeouts or access restrictions.</li>
-</ul>
-<p><strong>Vulnerability scanning without network constraints</strong></p>
-<ul>
-<li>When performing vulnerability scans against container images, local access means you aren&rsquo;t subject to rate limiting from registries or API endpoints. This allows for more comprehensive scanning with multiple tools and techniques without hitting quota limitations.</li>
-</ul>
-<p>In the sections that follow, I&rsquo;ll demonstrate the practical techniques for securely transferring Docker images between systems and outline effective methods for conducting security analysis once you have local access.</p>
 <h3 id="basic-transfer-process">Basic Transfer Process</h3>
 <h4 id="1-dot-image-extraction--source-machine">1. Image Extraction (Source Machine)</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List available images first</span>
@@ -163,30 +146,13 @@
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Optional: Calculate checksum for integrity verification</span>
 </span></span><span style="display:flex;"><span>sha256sum target_image.tar &gt; target_image.tar.sha256
 </span></span></code></pre></div><h4 id="2-dot-secure-transfer-using-scp">2. Secure Transfer Using SCP</h4>
-<ul>
-<li>From host with images.</li>
-</ul>
+<p>From host with images:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Transfer both image and checksum</span>
-</span></span><span style="display:flex;"><span>scp target_image.tar* username@pentest-host:/path/to/workspace/
-</span></span></code></pre></div><ul>
-<li>Or from local host:</li>
-</ul>
+</span></span><span style="display:flex;"><span>scp target_image.tar* username@destination-host:/path/to/workspace/
+</span></span></code></pre></div><p>Or from destination host:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Transfer both image and checksum</span>
-</span></span><span style="display:flex;"><span>scp -r username@pentest-host:/path/to/images/ .
-</span></span></code></pre></div><h4 id="3-dot-create-isolated-network-for-testing--pentest-machine">3. Create Isolated network for testing (Pentest Machine):</h4>
-<ul>
-<li>You should create an isolated testing environment for the containers &amp; use network segmentation when running the containers. In the below example I utilize an internal network only, meaning it has no access to the external network.</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create dedicated docker network for testing</span>
-</span></span><span style="display:flex;"><span>docker network create --internal pentest-network
-</span></span></code></pre></div><h4 id="4-dot-loading-for-analysis--pentest-machine">4. Loading for Analysis (Pentest Machine):</h4>
-<ul>
-<li>We need to now load the image locally so it&rsquo;s accessible to us on our local host.
-<ul>
-<li>+Note+: This is not running, just loading, we load it so it&rsquo;s in our local registry, once done we can then run it.</li>
-</ul>
-</li>
-</ul>
+</span></span><span style="display:flex;"><span>scp username@source-host:/path/to/images/target_image.tar* .
+</span></span></code></pre></div><h4 id="3-dot-loading-the-image--destination-machine">3. Loading the Image (Destination Machine)</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Verify checksum first</span>
 </span></span><span style="display:flex;"><span>sha256sum -c target_image.tar.sha256
 </span></span><span style="display:flex;"><span>
@@ -195,131 +161,15 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify image loaded correctly</span>
 </span></span><span style="display:flex;"><span>docker images
-</span></span></code></pre></div><h4 id="5-dot-run-the-image">5. Run the image:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Run container in isolated network</span>
-</span></span><span style="display:flex;"><span>docker run --network pentest-network --name test-container target_image:tag
+</span></span></code></pre></div><h4 id="4-dot-run-the-image">4. Run the image</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Basic run command</span>
+</span></span><span style="display:flex;"><span>docker run --name test-container target_image:tag
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run container in isolated network</span>
-</span></span><span style="display:flex;"><span>docker run --platform linux/arm64 --network pentest-network --name test-container target_image:tag
-</span></span></code></pre></div><h3 id="additional-forensic-analysis-tips">Additional Forensic Analysis Tips</h3>
-<ul>
-<li>Extract filesystem the layers for detailed examination</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Extract image layers</span>
-</span></span><span style="display:flex;"><span>mkdir image-analysis
-</span></span><span style="display:flex;"><span>cd image-analysis
-</span></span><span style="display:flex;"><span>docker save image_name:tag | tar -xv
-</span></span></code></pre></div><p>This command sequence allows you to dig deep into the internals of a Docker image by extracting all its layers for forensic analysis. Here&rsquo;s what&rsquo;s happening:</p>
-<ol>
-<li>First, <code>docker save</code> exports the entire image as a tar archive</li>
-<li>The pipe (<code>|</code>) feeds this directly into <code>tar -xv</code> which extracts all layers</li>
-<li>Each layer contains a full filesystem snapshot at that build stage</li>
-</ol>
-<p>After extraction, you&rsquo;ll find a <code>/blobs</code> directory which is where Docker stores the actual content of each layer. Inside <code>/blobs/sha256/</code>, you&rsquo;ll find directories named with SHA256 hashes - each one represents a layer of your container image. These blobs contain:</p>
-<ul>
-<li>The actual filesystem changes for each layer</li>
-<li>Binary and text files added during image building</li>
-<li>Modified configuration files</li>
-<li>Application code and dependencies</li>
-<li>System libraries and executables</li>
-</ul>
-<p>Think of blobs as a git-like system where each blob represents a point-in-time snapshot of the filesystem changes. This structure is particularly useful for:</p>
-<ul>
-<li>Finding files that were supposed to be deleted but persist in earlier layers</li>
-<li>Tracking how files change between layers</li>
-<li>Identifying when sensitive data was added or modified</li>
-<li>Discovering unintended artifacts from the build process</li>
-</ul>
-<p><strong>Pro Tip</strong>: You can use the <code>manifest.json</code> file in the extracted contents to map between the layer IDs and their corresponding blob directories.</p>
-<h4 id="accessing-blob-contents">Accessing Blob Contents:</h4>
-<p>Each blob in <code>/blobs/sha256/</code> is actually a tar archive that can be extracted. Here&rsquo;s how to access and analyze them:</p>
-<ol>
-<li>
-<p><strong>Option 1 extract the contents of the blob/layer to a folder</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Navigate to the blob directory</span>
-</span></span><span style="display:flex;"><span>cd blobs/sha256/
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Make directory to extract blobs to:</span>
-</span></span><span style="display:flex;"><span>mkdir layer_contents
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract a specific layer (blob)</span>
-</span></span><span style="display:flex;"><span>tar xf &lt;blob-hash&gt; -C ./layer_contents
-</span></span></code></pre></div><ul>
-<li><figure><img src="/ox-hugo/2025-03-11-121204_.png">
-</figure>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Or extract and analyze in one go using tar&rsquo;s streaming capability</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Or extract and analyze in one go using tar&#39;s streaming capability</span>
-</span></span><span style="display:flex;"><span>tar tvf &lt;blob-hash&gt; | grep -i <span style="color:#e6db74">&#34;interesting_file&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># For compressed layers (common in newer images), use</span>
-</span></span><span style="display:flex;"><span>tar xzf &lt;blob-hash&gt; -C ./layer_contents
-</span></span></code></pre></div><ul>
-<li><figure><img src="/ox-hugo/2025-03-11-120957_.png">
-</figure>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Searching within blobs</strong>:</p>
-</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List all files in a blob</span>
-</span></span><span style="display:flex;"><span>tar tvf &lt;blob-hash&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search for specific file types</span>
-</span></span><span style="display:flex;"><span>tar tvf &lt;blob-hash&gt; | grep <span style="color:#e6db74">&#34;\.conf</span>$<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract and search specific files</span>
-</span></span><span style="display:flex;"><span>tar xf &lt;blob-hash&gt; layer/etc/passwd --to-stdout | grep -ie <span style="color:#e6db74">&#34;root&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># For searching through all files in the layer:</span>
-</span></span><span style="display:flex;"><span>tar xf &lt;blob-hash&gt; --to-stdout | strings | grep -ie <span style="color:#e6db74">&#34;password\|user\|cred&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Alternative method - extract first, then search</span>
-</span></span><span style="display:flex;"><span>mkdir temp_layer <span style="color:#f92672">&amp;&amp;</span> tar xf &lt;blob-hash&gt; -C temp_layer
-</span></span><span style="display:flex;"><span>grep -r <span style="color:#e6db74">&#34;password&#34;</span> temp_layer/
-</span></span><span style="display:flex;"><span>rm -rf temp_layer  <span style="color:#75715e"># Clean up after analysis</span>
-</span></span></code></pre></div><ul>
-<li><figure><img src="/ox-hugo/2025-03-11-120834_.png">
-</figure>
-</li>
-</ul>
-<p><strong>Pro Tips:</strong></p>
-<ul>
-<li>For binary files, always extract first, then analyze</li>
-<li>The <code>--to-stdout</code> option is more reliable than <code>-O</code> for text extraction</li>
-<li>+Important+: Use <code>strings</code> command selectively as it might miss encoded/compressed data</li>
-</ul>
-<h4 id="check-for-sensitive-information-in-docker-image-history">Check for sensitive information in docker image history:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output to screen</span>
-</span></span><span style="display:flex;"><span>docker history --no-trunc image_name:tag
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Export to text file for easier ananlysis later:</span>
-</span></span><span style="display:flex;"><span>docker history --no-trunc image_name:tag &gt;&gt; imageHistory.txt
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use grep etc to search for strings</span>
-</span></span><span style="display:flex;"><span>docker history --no-trunc image_name:tag | grep -ie <span style="color:#e6db74">&#34;pass|user|cred&#34;</span>
-</span></span></code></pre></div><p>The <code>docker history</code> command is a powerful tool for security analysts and pentesters. When used with the <code>--no-trunc</code> flag, it displays the complete, untruncated history of how an image was built, including every command that was used to create each layer. This can reveal sensitive information like:</p>
-<ul>
-<li>Environment variables containing API keys or credentials</li>
-<li>Installation commands that might expose version numbers of vulnerable packages</li>
-<li>Temporary files or credentials that were supposed to be cleaned up but remain in earlier layers</li>
-<li>URLs to internal repositories or build servers</li>
-<li>Usernames and working directories that could reveal internal naming conventions</li>
-</ul>
-<p>For example, you might find something like this in the history:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>RUN curl -u admin:SuperSecret123 http://internal-repo.company.local/setup.sh | bash
-</span></span></code></pre></div><p>+Note+: Even if the credentials were removed in a later layer, they&rsquo;re still visible in the image history. This is why proper secrets management and multi-stage builds are crucial for container security.</p>
-<h3 id="alternative-transfer-methods">Alternative Transfer Methods</h3>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For different architectures (e.g., ARM64)</span>
+</span></span><span style="display:flex;"><span>docker run --platform linux/arm64 --name test-container target_image:tag
+</span></span></code></pre></div><h3 id="alternative-transfer-methods">Alternative Transfer Methods</h3>
 <h4 id="secure-registry-transfer">Secure Registry Transfer</h4>
-<ul>
-<li>Useful for multiple images or repeated transfers</li>
-</ul>
+<p>Useful for multiple images or repeated transfers:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Setup temporary private registry with TLS</span>
 </span></span><span style="display:flex;"><span>docker run -d <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --name private-registry <span style="color:#ae81ff">\
@@ -329,72 +179,21 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -p 5000:5000 <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  registry:2
 </span></span></code></pre></div><h4 id="container-export-method">Container Export Method</h4>
-<ul>
-<li>Captures runtime changes for dynamic analysis</li>
-</ul>
+<p>Useful when you need to capture the state of a running container:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Run container and make changes</span>
 </span></span><span style="display:flex;"><span>docker run -it --name test-container image_name:tag /bin/bash
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Export the modified container</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Export the container</span>
 </span></span><span style="display:flex;"><span>docker export test-container &gt; container-snapshot.tar
-</span></span></code></pre></div><h3 id="analysis-environment-setup">Analysis Environment Setup</h3>
-<h4 id="basic-container-analysis">Basic Container Analysis</h4>
-<ul>
-<li>This means tools can be mounted within the container.</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Run with security analysis tools mounted</span>
-</span></span><span style="display:flex;"><span>docker run -it <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --name analysis-container <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -v /path/to/tools:/tools <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --cap-add<span style="color:#f92672">=</span>SYS_PTRACE <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  target_image:tag
-</span></span></code></pre></div><h4 id="common-analysis-options">Common Analysis Options</h4>
-<table>
-  <thead>
-      <tr>
-          <th>Option</th>
-          <th>Purpose</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>&ndash;cap-add=SYS_PTRACE</td>
-          <td>Enable debugging capabilities</td>
-      </tr>
-      <tr>
-          <td>&ndash;security-opt seccomp=unconfined</td>
-          <td>Disable security profiles for testing</td>
-      </tr>
-      <tr>
-          <td>-v $(pwd)/results:/results</td>
-          <td>Mount directory for findings</td>
-      </tr>
-      <tr>
-          <td>&ndash;network none</td>
-          <td>Complete network isolation</td>
-      </tr>
-  </tbody>
-</table>
-<h3 id="best-practices-for-security-testing">Best Practices for Security Testing</h3>
-<h4 id="documentation">Documentation</h4>
-<ul>
-<li>Record all modifications and findings</li>
-<li>Document original image state</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Example documentation script</span>
-</span></span><span style="display:flex;"><span>docker inspect image_name:tag &gt; original_image_info.json
-</span></span><span style="display:flex;"><span>docker history image_name:tag &gt; image_history.txt
-</span></span></code></pre></div><h4 id="cleanup-procedures">Cleanup Procedures</h4>
-<ul>
-<li>Remove sensitive data after analysis</li>
-<li>Clean up test environments</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Cleanup script</span>
-</span></span><span style="display:flex;"><span>docker rm -f <span style="color:#66d9ef">$(</span>docker ps -aq<span style="color:#66d9ef">)</span>  <span style="color:#75715e"># Remove all containers</span>
-</span></span><span style="display:flex;"><span>docker rmi -f target_image:tag  <span style="color:#75715e"># Remove test image</span>
-</span></span><span style="display:flex;"><span>docker network rm pentest-network  <span style="color:#75715e"># Remove test network</span>
-</span></span><span style="display:flex;"><span>shred -u target_image.tar     <span style="color:#75715e"># Securely delete image file</span>
-</span></span></code></pre></div></main>
+</span></span></code></pre></div><h3 id="cleanup-procedures">Cleanup Procedures</h3>
+<p>After successfully transferring and verifying your images, it&rsquo;s good practice to clean up:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove containers</span>
+</span></span><span style="display:flex;"><span>docker rm -f test-container
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove temporary files</span>
+</span></span><span style="display:flex;"><span>rm target_image.tar*
+</span></span></code></pre></div><p>This method of transferring Docker images provides a reliable way to move containers between hosts while maintaining image integrity. Remember to always verify checksums after transfer and clean up temporary files to maintain system hygiene.</p>
+</main>
 
 
     <br>
@@ -685,6 +484,13 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/devops\/"
     },
     
+    "http:\/\/localhost:1313\/cheatsheets\/dockerimagesecurityanalysis\/": {
+        "title": "Docker Image Security Analysis and Testing",
+        "tags": ["docker","containers","pentesting","security","devops","containerization","redteam",],
+        "content": "Docker Image Security Analysis and Testing When performing security assessments of Docker containers, having local access to container images provides significant advantages. This guide focuses on the security analysis and testing aspects of Docker containers, showing you how to perform thorough security assessments of container images.\nWhy Perform Local Security Analysis? Comprehensive security testing\nLocal access enables thorough security testing without network constraints or external dependencies. This is crucial when performing detailed vulnerability assessments or penetration testing of container images. Forensic analysis capabilities\nHaving the container image locally allows for in-depth forensic analysis of container layers, installed packages, configurations, and potential embedded secrets. Isolated testing environment\nLocal testing environments allow you to modify and test images without affecting production systems, crucial for security assessments where modifications might trigger security alerts. Detailed vulnerability scanning\nLocal access means you can perform comprehensive vulnerability scanning without being subject to rate limiting from registries or API endpoints. Setting Up a Secure Testing Environment 1. Create Isolated Network # Create dedicated docker network for testing docker network create --internal pentest-network This creates an internal network that has no external access, providing isolation for your testing environment.\n2. Basic Container Analysis Setup # Run with security analysis tools mounted docker run -it \\ --name analysis-container \\ --network pentest-network \\ -v /path/to/tools:/tools \\ --cap-add=SYS_PTRACE \\ target_image:tag 3. Common Analysis Options Option Purpose \u0026ndash;cap-add=SYS_PTRACE Enable debugging capabilities \u0026ndash;security-opt seccomp=unconfined Disable security profiles for testing -v $(pwd)/results:/results Mount directory for findings \u0026ndash;network none Complete network isolation Forensic Analysis Techniques Layer Analysis Extract filesystem layers for detailed examination:\n# Extract image layers mkdir image-analysis cd image-analysis docker save image_name:tag | tar -xv This command sequence allows you to dig deep into the internals of a Docker image. Here\u0026rsquo;s what\u0026rsquo;s happening:\nFirst, docker save exports the entire image as a tar archive The pipe (|) feeds this directly into tar -xv which extracts all layers Each layer contains a full filesystem snapshot at that build stage After extraction, you\u0026rsquo;ll find a /blobs directory which contains:\nFilesystem changes for each layer Binary and text files added during image building Modified configuration files Application code and dependencies System libraries and executables Analyzing Layer Contents Each blob in /blobs/sha256/ is a tar archive that can be analyzed:\n# Navigate to the blob directory cd blobs/sha256/ # Extract contents of a specific layer mkdir layer_contents tar xf \u0026lt;blob-hash\u0026gt; -C ./layer_contents # Search for specific file types tar tvf \u0026lt;blob-hash\u0026gt; | grep \u0026#34;\\.conf$\u0026#34; # Search for sensitive information tar xf \u0026lt;blob-hash\u0026gt; --to-stdout | strings | grep -ie \u0026#34;password\\|user\\|cred\u0026#34; # Extract and analyze specific files tar xf \u0026lt;blob-hash\u0026gt; layer/etc/passwd --to-stdout | grep -ie \u0026#34;root\u0026#34; Pro Tips:\nFor binary files, always extract first, then analyze The --to-stdout option is more reliable than -O for text extraction Use strings command selectively as it might miss encoded/compressed data Security Assessment Techniques 1. Image History Analysis The docker history command is a powerful tool for security analysis:\n# Get complete build history docker history --no-trunc image_name:tag # Export for later analysis docker history --no-trunc image_name:tag \u0026gt; imageHistory.txt # Search for sensitive information docker history --no-trunc image_name:tag | grep -ie \u0026#34;pass\\|user\\|cred\u0026#34; This can reveal sensitive information such as:\nEnvironment variables containing credentials Installation commands with version numbers Temporary files or credentials in earlier layers Internal URLs and repository information Usernames and working directories For example, you might find exposed credentials in the history:\nRUN curl -u admin:SuperSecret123 http://internal-repo.company.local/setup.sh | bash 2. Configuration Analysis # Export container configuration docker inspect image_name:tag \u0026gt; container_config.json # Check for sensitive mounts or environment variables jq \u0026#39;.Config.Env, .HostConfig.Binds\u0026#39; container_config.json 3. Package and Dependency Analysis # List installed packages docker run --rm image_name:tag dpkg -l # For Debian-based docker run --rm image_name:tag rpm -qa # For RPM-based # Check for known vulnerabilities docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image_name:tag Documentation and Reporting Maintain detailed documentation of your findings:\n# Document original image state docker inspect image_name:tag \u0026gt; original_image_info.json docker history image_name:tag \u0026gt; image_history.txt # Document running processes and open ports docker top container_name docker port container_name Cleanup Procedures Always clean up after security testing:\n# Remove all test containers docker rm -f $(docker ps -aq) # Remove test images docker rmi -f target_image:tag # Remove test network docker network rm pentest-network # Securely delete sensitive files shred -u target_image.tar rm -rf image-analysis/ Best Practices Always work in isolated environments Document all findings and modifications Use proper version control for modified images Implement proper secret management Follow the principle of least privilege Clean up thoroughly after testing ", 
+        "url": "http:\/\/localhost:1313\/cheatsheets\/dockerimagesecurityanalysis\/"
+    },
+    
     "http:\/\/localhost:1313\/cheatsheets\/howtoemulatedifferentarchitecturesindocker\/": {
         "title": "How to Emulate Different Architectures in Docker",
         "tags": ["docker","containers","pentesting","security","devops","containerization","redteam",],
@@ -722,8 +528,8 @@ window.store = {
     
     "http:\/\/localhost:1313\/cheatsheets\/transferringdockerimagesviascp\/": {
         "title": "Transferring Docker Images via SCP",
-        "tags": ["docker","containers","pentesting","security","devops","containerization","redteam",],
-        "content": "Transferring Docker Images for Security Assessment When working with Docker containers in security testing scenarios, having local access to container images provides significant advantages. Recently I had to test some containers but did not have direct access to the private registry, however I did have access to a host that had the images on them. In order to make testing easier (and with permission) I transferred the images locally so I could test. This guide shows how to securely transfer Docker images between hosts for local analysis and pentesting as well as shows some basic testing.\nWhy Transfer Docker Images Locally? Offline analysis capabilities*\nHaving Docker images available locally means you can perform comprehensive analysis without needing continuous network connectivity. This is especially valuable when working in environments with restricted or unreliable connections, or when you need to conduct extensive testing that would be impractical over a network. No dependency on client\u0026rsquo;s infrastructure*\nWorking with local copies eliminates reliance on external infrastructure that may have maintenance windows, performance constraints, or access limitations. You control the testing environment completely, allowing for more thorough and uninterrupted work. Ability to modify and test images in isolation\nLocal images can be modified, rebuilt, and tested without affecting production environments. This isolation is crucial when performing security assessments where modifications might otherwise impact running services or trigger security alerts. Detailed forensic examination\nLocal access facilitates in-depth forensic analysis of container layers, installed packages, configurations, and embedded secrets. You can take your time exploring the image\u0026rsquo;s internal structure without concerns about connection timeouts or access restrictions. Vulnerability scanning without network constraints\nWhen performing vulnerability scans against container images, local access means you aren\u0026rsquo;t subject to rate limiting from registries or API endpoints. This allows for more comprehensive scanning with multiple tools and techniques without hitting quota limitations. In the sections that follow, I\u0026rsquo;ll demonstrate the practical techniques for securely transferring Docker images between systems and outline effective methods for conducting security analysis once you have local access.\nBasic Transfer Process 1. Image Extraction (Source Machine) # List available images first docker images # Save the target image docker save -o target_image.tar image_name:tag # Optional: Calculate checksum for integrity verification sha256sum target_image.tar \u0026gt; target_image.tar.sha256 2. Secure Transfer Using SCP From host with images. # Transfer both image and checksum scp target_image.tar* username@pentest-host:/path/to/workspace/ Or from local host: # Transfer both image and checksum scp -r username@pentest-host:/path/to/images/ . 3. Create Isolated network for testing (Pentest Machine): You should create an isolated testing environment for the containers \u0026amp; use network segmentation when running the containers. In the below example I utilize an internal network only, meaning it has no access to the external network. # Create dedicated docker network for testing docker network create --internal pentest-network 4. Loading for Analysis (Pentest Machine): We need to now load the image locally so it\u0026rsquo;s accessible to us on our local host. +Note+: This is not running, just loading, we load it so it\u0026rsquo;s in our local registry, once done we can then run it. # Verify checksum first sha256sum -c target_image.tar.sha256 # Load the image docker load -i target_image.tar # Verify image loaded correctly docker images 5. Run the image: # Run container in isolated network docker run --network pentest-network --name test-container target_image:tag # Run container in isolated network docker run --platform linux/arm64 --network pentest-network --name test-container target_image:tag Additional Forensic Analysis Tips Extract filesystem the layers for detailed examination # Extract image layers mkdir image-analysis cd image-analysis docker save image_name:tag | tar -xv This command sequence allows you to dig deep into the internals of a Docker image by extracting all its layers for forensic analysis. Here\u0026rsquo;s what\u0026rsquo;s happening:\nFirst, docker save exports the entire image as a tar archive The pipe (|) feeds this directly into tar -xv which extracts all layers Each layer contains a full filesystem snapshot at that build stage After extraction, you\u0026rsquo;ll find a /blobs directory which is where Docker stores the actual content of each layer. Inside /blobs/sha256/, you\u0026rsquo;ll find directories named with SHA256 hashes - each one represents a layer of your container image. These blobs contain:\nThe actual filesystem changes for each layer Binary and text files added during image building Modified configuration files Application code and dependencies System libraries and executables Think of blobs as a git-like system where each blob represents a point-in-time snapshot of the filesystem changes. This structure is particularly useful for:\nFinding files that were supposed to be deleted but persist in earlier layers Tracking how files change between layers Identifying when sensitive data was added or modified Discovering unintended artifacts from the build process Pro Tip: You can use the manifest.json file in the extracted contents to map between the layer IDs and their corresponding blob directories.\nAccessing Blob Contents: Each blob in /blobs/sha256/ is actually a tar archive that can be extracted. Here\u0026rsquo;s how to access and analyze them:\nOption 1 extract the contents of the blob/layer to a folder:\n# Navigate to the blob directory cd blobs/sha256/ # Make directory to extract blobs to: mkdir layer_contents # Extract a specific layer (blob) tar xf \u0026lt;blob-hash\u0026gt; -C ./layer_contents Or extract and analyze in one go using tar\u0026rsquo;s streaming capability:\n# Or extract and analyze in one go using tar\u0026#39;s streaming capability tar tvf \u0026lt;blob-hash\u0026gt; | grep -i \u0026#34;interesting_file\u0026#34; # For compressed layers (common in newer images), use tar xzf \u0026lt;blob-hash\u0026gt; -C ./layer_contents Searching within blobs:\n# List all files in a blob tar tvf \u0026lt;blob-hash\u0026gt; # Search for specific file types tar tvf \u0026lt;blob-hash\u0026gt; | grep \u0026#34;\\.conf$\u0026#34; # Extract and search specific files tar xf \u0026lt;blob-hash\u0026gt; layer/etc/passwd --to-stdout | grep -ie \u0026#34;root\u0026#34; # For searching through all files in the layer: tar xf \u0026lt;blob-hash\u0026gt; --to-stdout | strings | grep -ie \u0026#34;password\\|user\\|cred\u0026#34; # Alternative method - extract first, then search mkdir temp_layer \u0026amp;\u0026amp; tar xf \u0026lt;blob-hash\u0026gt; -C temp_layer grep -r \u0026#34;password\u0026#34; temp_layer/ rm -rf temp_layer # Clean up after analysis Pro Tips:\nFor binary files, always extract first, then analyze The --to-stdout option is more reliable than -O for text extraction +Important+: Use strings command selectively as it might miss encoded/compressed data Check for sensitive information in docker image history: # Output to screen docker history --no-trunc image_name:tag # Export to text file for easier ananlysis later: docker history --no-trunc image_name:tag \u0026gt;\u0026gt; imageHistory.txt # Use grep etc to search for strings docker history --no-trunc image_name:tag | grep -ie \u0026#34;pass|user|cred\u0026#34; The docker history command is a powerful tool for security analysts and pentesters. When used with the --no-trunc flag, it displays the complete, untruncated history of how an image was built, including every command that was used to create each layer. This can reveal sensitive information like:\nEnvironment variables containing API keys or credentials Installation commands that might expose version numbers of vulnerable packages Temporary files or credentials that were supposed to be cleaned up but remain in earlier layers URLs to internal repositories or build servers Usernames and working directories that could reveal internal naming conventions For example, you might find something like this in the history:\nRUN curl -u admin:SuperSecret123 http://internal-repo.company.local/setup.sh | bash +Note+: Even if the credentials were removed in a later layer, they\u0026rsquo;re still visible in the image history. This is why proper secrets management and multi-stage builds are crucial for container security.\nAlternative Transfer Methods Secure Registry Transfer Useful for multiple images or repeated transfers # Setup temporary private registry with TLS docker run -d \\ --name private-registry \\ -v \u0026#34;$(pwd)\u0026#34;/certs:/certs \\ -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \\ -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \\ -p 5000:5000 \\ registry:2 Container Export Method Captures runtime changes for dynamic analysis # Run container and make changes docker run -it --name test-container image_name:tag /bin/bash # Export the modified container docker export test-container \u0026gt; container-snapshot.tar Analysis Environment Setup Basic Container Analysis This means tools can be mounted within the container. # Run with security analysis tools mounted docker run -it \\ --name analysis-container \\ -v /path/to/tools:/tools \\ --cap-add=SYS_PTRACE \\ target_image:tag Common Analysis Options Option Purpose \u0026ndash;cap-add=SYS_PTRACE Enable debugging capabilities \u0026ndash;security-opt seccomp=unconfined Disable security profiles for testing -v $(pwd)/results:/results Mount directory for findings \u0026ndash;network none Complete network isolation Best Practices for Security Testing Documentation Record all modifications and findings Document original image state # Example documentation script docker inspect image_name:tag \u0026gt; original_image_info.json docker history image_name:tag \u0026gt; image_history.txt Cleanup Procedures Remove sensitive data after analysis Clean up test environments # Cleanup script docker rm -f $(docker ps -aq) # Remove all containers docker rmi -f target_image:tag # Remove test image docker network rm pentest-network # Remove test network shred -u target_image.tar # Securely delete image file ", 
+        "tags": ["docker","containers","devops","containerization",],
+        "content": "Transferring Docker Images Between Hosts When working with Docker containers, there are situations where you need to transfer images between different hosts. This might be necessary when you have limited internet connectivity, are working with private registries, or need to move images to an isolated environment. This guide shows how to efficiently transfer Docker images between hosts using SCP and alternative methods.\nWhy Transfer Docker Images Locally? Offline capabilities\nHaving Docker images available locally means you can work without needing continuous network connectivity. This is especially valuable when working in environments with restricted or unreliable connections. No dependency on external infrastructure\nWorking with local copies eliminates reliance on external infrastructure that may have maintenance windows, performance constraints, or access limitations. Bandwidth efficiency\nTransferring images directly between hosts can be more efficient than pulling from registries, especially with large images or when working with limited bandwidth. Basic Transfer Process 1. Image Extraction (Source Machine) # List available images first docker images # Save the target image docker save -o target_image.tar image_name:tag # Optional: Calculate checksum for integrity verification sha256sum target_image.tar \u0026gt; target_image.tar.sha256 2. Secure Transfer Using SCP From host with images:\n# Transfer both image and checksum scp target_image.tar* username@destination-host:/path/to/workspace/ Or from destination host:\n# Transfer both image and checksum scp username@source-host:/path/to/images/target_image.tar* . 3. Loading the Image (Destination Machine) # Verify checksum first sha256sum -c target_image.tar.sha256 # Load the image docker load -i target_image.tar # Verify image loaded correctly docker images 4. Run the image # Basic run command docker run --name test-container target_image:tag # For different architectures (e.g., ARM64) docker run --platform linux/arm64 --name test-container target_image:tag Alternative Transfer Methods Secure Registry Transfer Useful for multiple images or repeated transfers:\n# Setup temporary private registry with TLS docker run -d \\ --name private-registry \\ -v \u0026#34;$(pwd)\u0026#34;/certs:/certs \\ -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \\ -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \\ -p 5000:5000 \\ registry:2 Container Export Method Useful when you need to capture the state of a running container:\n# Run container and make changes docker run -it --name test-container image_name:tag /bin/bash # Export the container docker export test-container \u0026gt; container-snapshot.tar Cleanup Procedures After successfully transferring and verifying your images, it\u0026rsquo;s good practice to clean up:\n# Remove containers docker rm -f test-container # Remove temporary files rm target_image.tar* This method of transferring Docker images provides a reliable way to move containers between hosts while maintaining image integrity. Remember to always verify checksums after transfer and clean up temporary files to maintain system hygiene.\n", 
         "url": "http:\/\/localhost:1313\/cheatsheets\/transferringdockerimagesviascp\/"
     },
     

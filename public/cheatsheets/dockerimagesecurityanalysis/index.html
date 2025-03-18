@@ -18,11 +18,10 @@
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1b" />
 
-    <meta name="description" content="SSRF">
+    <meta name="description" content="Docker Image Security Analysis and Testing">
 
-    <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/ssrf/index.xml" title="Hack Me Daddy" />
     
-        <title>SSRF | Hack Me Daddy</title>
+        <title>Docker Image Security Analysis and Testing | Hack Me Daddy</title>
     
 
     
@@ -75,61 +74,239 @@
         
 
 
-<h1>SSRF</h1>
-<ul class="post-list">
+
+
+<div id="single-header">
+  <h1>
+    Docker Image Security Analysis and Testing
+  </h1>
+  <div id="single-meta">
     
-
-    <li>
-
-    <div style="display: grid; grid-template-columns: 7em auto">
-      <span class="date">Dec 26, 2024</span>
-      
-      <a class="bold-post-in-list" href="/walkthroughs/sau-box/"
-        >Sau HTB Walkthrough</a
-      >
-      
-    </div>
-
-</li>
-
-
-
     
-
-    <li>
-
-    <div style="display: grid; grid-template-columns: 7em auto">
-      <span class="date">Dec 24, 2024</span>
+        <span class="datesub">Mar 11, 2025</span>
       
-      <a class="bold-post-in-list" href="/walkthroughs/love-box/"
-        >Love HTB Walkthrough</a
-      >
-      
-    </div>
+<span id="tags">
+  &nbsp;&nbsp;
+   <span>
+    <a href="http://localhost:1313/tags/docker/">#docker</a>
+  </span>&nbsp; <span>
+    <a href="http://localhost:1313/tags/containers/">#containers</a>
+  </span>&nbsp; <span>
+    <a href="http://localhost:1313/tags/pentesting/">#pentesting</a>
+  </span>&nbsp; <span>
+    <a href="http://localhost:1313/tags/security/">#security</a>
+  </span>&nbsp; <span>
+    <a href="http://localhost:1313/tags/devops/">#devops</a>
+  </span>&nbsp; <span>
+    <a href="http://localhost:1313/tags/containerization/">#containerization</a>
+  </span>&nbsp; <span>
+    <a href="http://localhost:1313/tags/redteam/">#redteam</a>
+  </span>&nbsp;</span>
 
-</li>
 
-
-
-    
-
-    <li>
-
-    <div style="display: grid; grid-template-columns: 7em auto">
-      <span class="date">Dec 22, 2024</span>
-      
-      <a class="bold-post-in-list" href="/walkthroughs/editorial-box/"
-        >Editorial HTB Walkthrough</a
-      >
-      
-    </div>
-
-</li>
+  </div>
+</div>
 
 
 
-    
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#docker-image-security-analysis-and-testing">Docker Image Security Analysis and Testing</a>
+      <ul>
+        <li><a href="#why-perform-local-security-analysis">Why Perform Local Security Analysis?</a></li>
+        <li><a href="#setting-up-a-secure-testing-environment">Setting Up a Secure Testing Environment</a></li>
+        <li><a href="#forensic-analysis-techniques">Forensic Analysis Techniques</a></li>
+        <li><a href="#security-assessment-techniques">Security Assessment Techniques</a></li>
+        <li><a href="#documentation-and-reporting">Documentation and Reporting</a></li>
+        <li><a href="#cleanup-procedures">Cleanup Procedures</a></li>
+        <li><a href="#best-practices">Best Practices</a></li>
+      </ul>
+    </li>
   </ul>
+</nav>
+</aside>
+
+
+
+<main><h2 id="docker-image-security-analysis-and-testing">Docker Image Security Analysis and Testing</h2>
+<p>When performing security assessments of Docker containers, having local access to container images provides significant advantages. This guide focuses on the security analysis and testing aspects of Docker containers, showing you how to perform thorough security assessments of container images.</p>
+<h3 id="why-perform-local-security-analysis">Why Perform Local Security Analysis?</h3>
+<p><strong>Comprehensive security testing</strong></p>
+<ul>
+<li>Local access enables thorough security testing without network constraints or external dependencies. This is crucial when performing detailed vulnerability assessments or penetration testing of container images.</li>
+</ul>
+<p><strong>Forensic analysis capabilities</strong></p>
+<ul>
+<li>Having the container image locally allows for in-depth forensic analysis of container layers, installed packages, configurations, and potential embedded secrets.</li>
+</ul>
+<p><strong>Isolated testing environment</strong></p>
+<ul>
+<li>Local testing environments allow you to modify and test images without affecting production systems, crucial for security assessments where modifications might trigger security alerts.</li>
+</ul>
+<p><strong>Detailed vulnerability scanning</strong></p>
+<ul>
+<li>Local access means you can perform comprehensive vulnerability scanning without being subject to rate limiting from registries or API endpoints.</li>
+</ul>
+<h3 id="setting-up-a-secure-testing-environment">Setting Up a Secure Testing Environment</h3>
+<h4 id="1-dot-create-isolated-network">1. Create Isolated Network</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create dedicated docker network for testing</span>
+</span></span><span style="display:flex;"><span>docker network create --internal pentest-network
+</span></span></code></pre></div><p>This creates an internal network that has no external access, providing isolation for your testing environment.</p>
+<h4 id="2-dot-basic-container-analysis-setup">2. Basic Container Analysis Setup</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Run with security analysis tools mounted</span>
+</span></span><span style="display:flex;"><span>docker run -it <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --name analysis-container <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --network pentest-network <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -v /path/to/tools:/tools <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --cap-add<span style="color:#f92672">=</span>SYS_PTRACE <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  target_image:tag
+</span></span></code></pre></div><h4 id="3-dot-common-analysis-options">3. Common Analysis Options</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;cap-add=SYS_PTRACE</td>
+          <td>Enable debugging capabilities</td>
+      </tr>
+      <tr>
+          <td>&ndash;security-opt seccomp=unconfined</td>
+          <td>Disable security profiles for testing</td>
+      </tr>
+      <tr>
+          <td>-v $(pwd)/results:/results</td>
+          <td>Mount directory for findings</td>
+      </tr>
+      <tr>
+          <td>&ndash;network none</td>
+          <td>Complete network isolation</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="forensic-analysis-techniques">Forensic Analysis Techniques</h3>
+<h4 id="layer-analysis">Layer Analysis</h4>
+<p>Extract filesystem layers for detailed examination:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Extract image layers</span>
+</span></span><span style="display:flex;"><span>mkdir image-analysis
+</span></span><span style="display:flex;"><span>cd image-analysis
+</span></span><span style="display:flex;"><span>docker save image_name:tag | tar -xv
+</span></span></code></pre></div><p>This command sequence allows you to dig deep into the internals of a Docker image. Here&rsquo;s what&rsquo;s happening:</p>
+<ol>
+<li>First, <code>docker save</code> exports the entire image as a tar archive</li>
+<li>The pipe (<code>|</code>) feeds this directly into <code>tar -xv</code> which extracts all layers</li>
+<li>Each layer contains a full filesystem snapshot at that build stage</li>
+</ol>
+<p>After extraction, you&rsquo;ll find a <code>/blobs</code> directory which contains:</p>
+<ul>
+<li>Filesystem changes for each layer</li>
+<li>Binary and text files added during image building</li>
+<li>Modified configuration files</li>
+<li>Application code and dependencies</li>
+<li>System libraries and executables</li>
+</ul>
+<h4 id="analyzing-layer-contents">Analyzing Layer Contents</h4>
+<p>Each blob in <code>/blobs/sha256/</code> is a tar archive that can be analyzed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Navigate to the blob directory</span>
+</span></span><span style="display:flex;"><span>cd blobs/sha256/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract contents of a specific layer</span>
+</span></span><span style="display:flex;"><span>mkdir layer_contents
+</span></span><span style="display:flex;"><span>tar xf &lt;blob-hash&gt; -C ./layer_contents
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search for specific file types</span>
+</span></span><span style="display:flex;"><span>tar tvf &lt;blob-hash&gt; | grep <span style="color:#e6db74">&#34;\.conf</span>$<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search for sensitive information</span>
+</span></span><span style="display:flex;"><span>tar xf &lt;blob-hash&gt; --to-stdout | strings | grep -ie <span style="color:#e6db74">&#34;password\|user\|cred&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract and analyze specific files</span>
+</span></span><span style="display:flex;"><span>tar xf &lt;blob-hash&gt; layer/etc/passwd --to-stdout | grep -ie <span style="color:#e6db74">&#34;root&#34;</span>
+</span></span></code></pre></div><p><strong>Pro Tips:</strong></p>
+<ul>
+<li>For binary files, always extract first, then analyze</li>
+<li>The <code>--to-stdout</code> option is more reliable than <code>-O</code> for text extraction</li>
+<li>Use <code>strings</code> command selectively as it might miss encoded/compressed data</li>
+</ul>
+<h3 id="security-assessment-techniques">Security Assessment Techniques</h3>
+<h4 id="1-dot-image-history-analysis">1. Image History Analysis</h4>
+<p>The <code>docker history</code> command is a powerful tool for security analysis:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get complete build history</span>
+</span></span><span style="display:flex;"><span>docker history --no-trunc image_name:tag
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Export for later analysis</span>
+</span></span><span style="display:flex;"><span>docker history --no-trunc image_name:tag &gt; imageHistory.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search for sensitive information</span>
+</span></span><span style="display:flex;"><span>docker history --no-trunc image_name:tag | grep -ie <span style="color:#e6db74">&#34;pass\|user\|cred&#34;</span>
+</span></span></code></pre></div><p>This can reveal sensitive information such as:</p>
+<ul>
+<li>Environment variables containing credentials</li>
+<li>Installation commands with version numbers</li>
+<li>Temporary files or credentials in earlier layers</li>
+<li>Internal URLs and repository information</li>
+<li>Usernames and working directories</li>
+</ul>
+<p>For example, you might find exposed credentials in the history:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>RUN curl -u admin:SuperSecret123 http://internal-repo.company.local/setup.sh | bash
+</span></span></code></pre></div><h4 id="2-dot-configuration-analysis">2. Configuration Analysis</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Export container configuration</span>
+</span></span><span style="display:flex;"><span>docker inspect image_name:tag &gt; container_config.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check for sensitive mounts or environment variables</span>
+</span></span><span style="display:flex;"><span>jq <span style="color:#e6db74">&#39;.Config.Env, .HostConfig.Binds&#39;</span> container_config.json
+</span></span></code></pre></div><h4 id="3-dot-package-and-dependency-analysis">3. Package and Dependency Analysis</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List installed packages</span>
+</span></span><span style="display:flex;"><span>docker run --rm image_name:tag dpkg -l  <span style="color:#75715e"># For Debian-based</span>
+</span></span><span style="display:flex;"><span>docker run --rm image_name:tag rpm -qa  <span style="color:#75715e"># For RPM-based</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check for known vulnerabilities</span>
+</span></span><span style="display:flex;"><span>docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image_name:tag
+</span></span></code></pre></div><h3 id="documentation-and-reporting">Documentation and Reporting</h3>
+<p>Maintain detailed documentation of your findings:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Document original image state</span>
+</span></span><span style="display:flex;"><span>docker inspect image_name:tag &gt; original_image_info.json
+</span></span><span style="display:flex;"><span>docker history image_name:tag &gt; image_history.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Document running processes and open ports</span>
+</span></span><span style="display:flex;"><span>docker top container_name
+</span></span><span style="display:flex;"><span>docker port container_name
+</span></span></code></pre></div><h3 id="cleanup-procedures">Cleanup Procedures</h3>
+<p>Always clean up after security testing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Remove all test containers</span>
+</span></span><span style="display:flex;"><span>docker rm -f <span style="color:#66d9ef">$(</span>docker ps -aq<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove test images</span>
+</span></span><span style="display:flex;"><span>docker rmi -f target_image:tag
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove test network</span>
+</span></span><span style="display:flex;"><span>docker network rm pentest-network
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Securely delete sensitive files</span>
+</span></span><span style="display:flex;"><span>shred -u target_image.tar
+</span></span><span style="display:flex;"><span>rm -rf image-analysis/
+</span></span></code></pre></div><h3 id="best-practices">Best Practices</h3>
+<ol>
+<li>Always work in isolated environments</li>
+<li>Document all findings and modifications</li>
+<li>Use proper version control for modified images</li>
+<li>Implement proper secret management</li>
+<li>Follow the principle of least privilege</li>
+<li>Clean up thoroughly after testing</li>
+</ol>
+</main>
+
+
+    <br>
+    <hr>
+    
+      Next: <a href="http://localhost:1313/cheatsheets/howtoemulatedifferentarchitecturesindocker/">How to Emulate Different Architectures in Docker</a>
+    
+
 
 
 <br>
