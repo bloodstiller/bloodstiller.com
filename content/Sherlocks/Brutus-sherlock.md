@@ -13,7 +13,7 @@ next = true
 
 ## Brutus Hack The Box Sherlock Challenge Writeup: {#brutus-hack-the-box-sherlock-challenge-writeup}
 
--   <https://app.hackthebox.com/challenges/%3Csherlock%3E>
+-   <https://app.hackthebox.com/sherlocks/Brutus>
 
 
 ## Challenge Information: {#challenge-information}
