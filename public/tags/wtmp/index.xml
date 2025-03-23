@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wtmp on Hack Me Daddy</title>
+    <link>http://localhost:1313/tags/wtmp/</link>
+    <description>Recent content in Wtmp on Hack Me Daddy</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/wtmp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Brutus HTB Sherlock Challenge</title>
+      <link>http://localhost:1313/sherlocks/brutus-sherlock/</link>
+      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sherlocks/brutus-sherlock/</guid>
+      <description>&lt;h2 id=&#34;brutus-hack-the-box-sherlock-challenge-writeup&#34;&gt;Brutus Hack The Box Sherlock Challenge Writeup:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://app.hackthebox.com/challenges/%3Csherlock%3E&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;https://app.hackthebox.com/challenges/%3Csherlock%3E&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;challenge-information&#34;&gt;Challenge Information:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Difficulty&lt;/strong&gt;: Very-Easy&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Description&lt;/strong&gt;:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;In this very easy Sherlock, you will familiarize yourself with Unix &lt;code&gt;auth.log&lt;/code&gt; and &lt;code&gt;wtmp&lt;/code&gt; logs.&lt;/li&gt;&#xA;&lt;li&gt;We&amp;rsquo;ll explore a scenario where a Confluence server was brute-forced via its SSH service.&#xA;&lt;ul&gt;&#xA;&lt;li&gt;After gaining access to the server, the attacker performed additional activities, which we can track using &lt;code&gt;auth.log&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Although &lt;code&gt;auth.log&lt;/code&gt; is primarily used for brute-force analysis, we will delve into the full potential of this artifact in our investigation, including aspects of privilege escalation, persistence, and even some visibility into command execution.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;challenge-files&#34;&gt;Challenge Files:&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Files Provided&lt;/strong&gt;:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;auth.log&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;wtmp&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In this writeup, we&amp;rsquo;ll investigate a security incident on a Confluence server that was compromised through its SSH service. We&amp;rsquo;ll analyze two critical log files - &lt;code&gt;auth.log&lt;/code&gt; and &lt;code&gt;wtmp&lt;/code&gt; - to reconstruct the attack timeline and understand the attacker&amp;rsquo;s actions.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

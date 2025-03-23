@@ -2,22 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/auth.log/</loc>
+    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/author/</loc>
-    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/bloodstiller/</loc>
-    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sherlocks/brutus-sherlock/</loc>
+    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/defensive/</loc>
+    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/forensics/</loc>
+    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/linux/</loc>
+    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sherlock/</loc>
+    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sherlocks/</loc>
+    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/utmp/</loc>
+    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/wtmp/</loc>
+    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/cheatsheets/</loc>
     <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cli/</loc>
-    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/cheatsheets/networkmanagercli/</loc>
@@ -30,9 +57,6 @@
     <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/sysadmin/</loc>
-    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/tools/</loc>
