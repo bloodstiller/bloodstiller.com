@@ -2,13 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/auth.log/</loc>
-    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/author/</loc>
-    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/bloodstiller/</loc>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/box/</loc>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cve-2023-32315/</loc>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cve-2023-33733/</loc>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/htb/</loc>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/java/</loc>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/jsp/</loc>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/medium/</loc>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/openfire/</loc>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/reportlab/</loc>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/solarlab-box/</loc>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/</loc>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/windows/</loc>
+    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/auth.log/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/sherlocks/brutus-sherlock/</loc>
@@ -20,9 +65,6 @@
     <loc>http://localhost:1313/tags/forensics/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
@@ -30,9 +72,6 @@
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/sherlocks/</loc>
-    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/utmp/</loc>
@@ -194,9 +233,6 @@
     <loc>http://localhost:1313/tags/active-directory/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/box/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/ca/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
@@ -212,9 +248,6 @@
     <loc>http://localhost:1313/walkthroughs/escapetwo-box/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/htb/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/kerberoasting/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
@@ -228,12 +261,6 @@
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/shadow-credentials/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/windows/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/writeowner/</loc>
@@ -326,9 +353,6 @@
     <loc>http://localhost:1313/tools/ldapire/</loc>
     <lastmod>2024-11-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
-    <lastmod>2024-11-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/cfs/</loc>
     <lastmod>2024-11-12T00:00:00+00:00</lastmod>
   </url><url>
@@ -372,9 +396,6 @@
     <lastmod>2024-11-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/esc9/</loc>
-    <lastmod>2024-11-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/medium/</loc>
     <lastmod>2024-11-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/msds-keycredentiallink/</loc>
