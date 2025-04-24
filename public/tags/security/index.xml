@@ -29,5 +29,12 @@
       <guid>http://localhost:1313/cheatsheets/howtoemulatedifferentarchitecturesindocker/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;When conducting security assessments or penetration tests involving containers, you&amp;rsquo;ll often encounter images built for different CPU architectures. For example, you might need to analyze an ARM64 container on your x86_64 laptop, or test an old x86 container on modern ARM-based hardware. This guide covers various methods to handle cross-architecture container analysis.&lt;/p&gt;&#xA;&lt;h2 id=&#34;understanding-architecture-emulation-in-docker&#34;&gt;Understanding Architecture Emulation in Docker&lt;/h2&gt;&#xA;&lt;p&gt;Docker uses QEMU under the hood to enable cross-architecture support. QEMU is a generic machine emulator and virtualizer that allows running binaries built for one CPU architecture on a different one.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Understanding PowerShell Download Cradles: A Deep Dive</title>
+      <link>http://localhost:1313/articles/understandingdownloadcradles/</link>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/articles/understandingdownloadcradles/</guid>
+      <description>&lt;h2 id=&#34;updates&#34;&gt;Updates:&lt;/h2&gt;&#xA;&lt;p&gt;Article originally published on 11-11-2024&lt;/p&gt;&#xA;&lt;p&gt;Updated with additional information on 24-04-2025&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;PowerShell has revolutionized system administration and automation. One of its powerful yet often misunderstood features is the PowerShell download cradle. This article explores what download cradles are, their uses, and best practices for implementation.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-a-powershell-download-cradle&#34;&gt;What is a PowerShell Download Cradle?&lt;/h2&gt;&#xA;&lt;p&gt;A PowerShell download cradle is a technique that enables downloading and executing code directly in memory without writing to disk. This approach can help bypass security mechanisms.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
