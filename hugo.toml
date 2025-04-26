@@ -3,7 +3,9 @@ languageCode = 'en-us'
 title = 'Bloodstiller: Ethical Hacking & Active Directory Security Blog'
 theme = 'hugo-dead-simple'
 #theme = 'dark-theme-editor'
+googleAnalytics = "G-DG2950K4YJ"
 
+    
 # Minimum support hugo
 [module]
     [module.hugoVersion]
@@ -218,6 +220,3 @@ theme = 'hugo-dead-simple'
 [build]
   hugo_version = "0.141.0"
 
-[services]
-  [services.googleAnalytics]
-    id = 'G-G-DG2950K4YJ'  # Replace this with your actual GA4 measurement ID
