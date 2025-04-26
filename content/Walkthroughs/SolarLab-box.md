@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "Python", "openfire", "ReportLab", "CVE-2023-33733", "CVE-2023-32315", "java", "jsp"]
+title = "SolarLab HTB Walkthrough: OpenFire Exploitation and Python ReportLab"
 draft = false
-title = "SolarLab HTB Walkthrough"
+tags = ["Windows", "HTB", "Hack The Box", "Python", "OpenFire", "ReportLab", "CVE-2023-33733", "CVE-2023-32315", "Java", "JSP", "Privilege Escalation", "Windows Security", "Vulnerability Assessment"]
+keywords = ["Hack The Box SolarLab", "OpenFire exploitation", "ReportLab vulnerability", "CVE-2023-33733 exploitation", "CVE-2023-32315 walkthrough", "Windows privilege escalation", "OpenFire plugin exploitation", "Python security vulnerabilities", "JSP reverse shell", "Windows penetration testing"]
+description = "A comprehensive walkthrough of the SolarLab machine from Hack The Box, covering OpenFire exploitation, Python ReportLab vulnerabilities, and privilege escalation techniques. Learn about CVE-2023-33733, CVE-2023-32315, and advanced Windows security assessment methods."
 author = "bloodstiller"
 date = 2025-04-22
 toc = true
 bold = true
 next = true
+lastmod = 2025-04-22
 +++
 
 ## SolarLab Hack The Box Walkthrough/Writeup: {#solarlab-hack-the-box-walkthrough-writeup}
@@ -355,10 +358,9 @@ I Perform some directory busting to see if there are any interesting directories
 
     -   There is nothing of note.
     -   **Some notes on my flags**:
-        -   `--threads 20 --scan-limit 2` I limit the threads &amp; scan limit as otherwise it effectively DDOS’ the site.
+        -   `--threads 20 --scan-limit 2` I limit the threads &amp; scan limit as otherwise it effectively DDOS' the site.
         -   `-q` As I run tmux for most sessions, this quiet flag removes the progress bar and is advised when using tmux etc.
-        -   `-r` Follows redirects.
-        -   `-o $domain-FeroxScan.txt` sometimes there can be ALOT of output so this makes it more manageable to go through later.
+        -   `-r` Follows redirects.        -   `-o $domain-FeroxScan.txt` sometimes there can be ALOT of output so this makes it more manageable to go through later.
 
 
 ##### On <http://report.solarlab.htb:6791/> {#on-http-report-dot-solarlab-dot-htb-6791}
@@ -774,7 +776,7 @@ That means, from any function, you can access everything in the global scope, in
 
 -  Why is that dangerous?
 
-    Let’s say we’re inside a sandboxed `eval()` environment where built-ins like `open`, `os.system`, etc., are removed.
+    Let's say we're inside a sandboxed `eval()` environment where built-ins like `open`, `os.system`, etc., are removed.
 
     But if you can do:
 
@@ -1627,7 +1629,7 @@ Again an exception will be thrown but we have our reverse shell.
 -   {{< figure src="/ox-hugo/2025-04-21-110211_.png" >}}
 
 
-## 3. Privilege Escalation: {#3-dot-privilege-escalation}
+## 4. Privilege Escalation: {#4-dot-privilege-escalation}
 
 
 ### Privesc as openfire: {#privesc-as-openfire}
@@ -1985,7 +1987,7 @@ Lets get our root flag:
 -   {{< figure src="/ox-hugo/2025-04-21-162548_.png" >}}
 
 
-## 4. Persistence: {#4-dot-persistence}
+## 5. Persistence: {#4-dot-persistence}
 
 
 ### Dumping SAM Hashes: {#dumping-sam-hashes}
@@ -2162,5 +2164,6 @@ Until next time, hack the planet!
 &#x2013; Bloodstiller
 
 &#x2013; Get in touch bloodstiller at bloodstiller dot com
+
 
 

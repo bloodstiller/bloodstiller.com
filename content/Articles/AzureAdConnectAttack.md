@@ -1,7 +1,9 @@
 +++
-tags = ["Windows", "Active Directory", "Azure AD Connect", "Azure", "SQL", "MSSQL"]
-draft = false
 title = "Understanding Azure AD Connect Exploitation & Privilege Escalation"
+draft = false
+tags = ["Windows", "Active Directory", "Azure AD Connect", "Azure", "SQL", "MSSQL"]
+keywords = ["Azure AD Connect exploitation", "Active Directory synchronization", "Password Hash Synchronization", "MSOL account exploitation", "Azure AD Connect security", "LocalDB enumeration", "SQL Server exploitation", "Azure AD Connect configuration", "DCSync attack", "Azure AD Connect mitigation"]
+description = "A comprehensive guide to understanding and exploiting Azure AD Connect, covering the architecture, enumeration techniques, and exploitation methods. Learn about Password Hash Synchronization, MSOL account privileges, and how to extract credentials from Azure AD Connect configurations."
 author = "bloodstiller"
 date = 2024-10-14
 toc = true

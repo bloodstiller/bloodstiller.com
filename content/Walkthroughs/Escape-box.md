@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "MSSQL", "MYSQL", "CA", "Certificate", "ESC1"]
-draft = true
-title = "Escape HTB Walkthrough"
+title = "Escape HTB Walkthrough: Certificate Template Abuse and MSSQL Exploitation"
+draft = false
+tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "Certificate Authority", "ESC1", "MSSQL", "LDAP", "Privilege Escalation", "Certificate Template"]
+keywords = ["Hack The Box Escape", "ESC1 certificate exploitation", "MSSQL enumeration", "Active Directory certificate services", "Windows privilege escalation", "LDAP enumeration", "Certificate template abuse", "Windows security", "MSSQL hash capture", "Domain Controller exploitation"]
+description = "A detailed walkthrough of the Escape machine from Hack The Box, demonstrating certificate template abuse through ESC1 exploitation, MSSQL enumeration techniques, and Active Directory certificate services attacks for domain privilege escalation."
 author = "bloodstiller"
 date = 2024-10-05
 toc = true
 bold = true
 next = true
+lastmod = 2024-10-05
 +++
 
 ## Escape Hack The Box Walkthrough/Writeup: {#escape-hack-the-box-walkthrough-writeup}
@@ -229,7 +232,7 @@ next = true
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|
@@ -357,7 +360,7 @@ If you are not aware, it is sometimes possible to extract valid domain usernames
         -   `-csv`: Outputs the data in CSV format.
             -   This is the most important part for the rest of the command to work:
                 -   The `CSV` format provides a structured way to output the metadata in rows and columns. When extracting metadata from multiple PDFs, each PDF's metadata is presented as a row, and each field (like "`Creator`") is a column. This makes it easier to process the data programmatically.
-                -   **Simplicity**: When using tools like `cut`, it’s easier to extract specific fields by referring to column numbers (e.g., `-f2` for the second column), which is straightforward with `CSV` formatting.
+                -   **Simplicity**: When using tools like `cut`, it's easier to extract specific fields by referring to column numbers (e.g., `-f2` for the second column), which is straightforward with `CSV` formatting.
         -   `*pdf`: Targets all PDF files in the current directory.
     2.  `| cut -d, -f2`
         -   `|`: Pipes the output from the previous command into the next.

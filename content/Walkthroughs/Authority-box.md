@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "CA", "Certificate", "Ansible", "RBCD", "MachineAccountQuota", "PKINIT", "RBCD", "ESC1"]
+title = "Authority HTB Walkthrough: Certificate Abuse, PKINIT, and RBCD Attacks"
 draft = false
-title = "Authority HTB Walkthrough"
+tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "Certificate Authority", "PKINIT", "RBCD", "ESC1", "Ansible", "PWM", "MachineAccountQuota", "LDAP", "Privilege Escalation", "PassTheCert", "Schannel"]
+keywords = ["Hack The Box Authority", "Certificate Authority exploitation", "PKINIT authentication bypass", "RBCD attack tutorial", "ESC1 vulnerability", "Ansible vault cracking", "PWM configuration exploitation", "MachineAccountQuota abuse", "Active Directory certificate attacks", "PassTheCert tutorial"]
+description = "A comprehensive walkthrough of the Authority machine from Hack The Box, demonstrating advanced certificate-based attacks including ESC1 exploitation, PKINIT authentication bypass, and RBCD attacks. Learn about Active Directory certificate services, Ansible vault cracking, and machine account quota abuse."
 author = "bloodstiller"
 date = 2024-10-31
 toc = true
 bold = true
 next = true
+lastmod = 2024-10-31
 +++
 
 ## Authority Hack The Box Walkthrough/Writeup: {#authority-hack-the-box-walkthrough-writeup}
@@ -293,7 +296,7 @@ next = true
             -   <https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels>
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
             -   In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|

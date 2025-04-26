@@ -1,9 +1,9 @@
 +++
 title = "Understanding PowerShell Download Cradles: A Deep Dive"
-description = "A comprehensive guide to PowerShell download cradles, including secure implementation, real-world examples, and security considerations. Learn about essential cmdlets, advanced techniques, and best practices for memory-based code execution."
 draft = false
 tags = ["Windows", "Active Directory", "PowerShell", "DownloadCradle", "Download Cradle", "Security", "System Administration", "Windows Security", "PowerShell Scripting"]
-keywords = ["PowerShell download cradle", "memory execution PowerShell", "secure download cradle", "PowerShell WebClient", "PowerShell security", "Invoke-WebRequest", "PowerShell COM objects", "PowerShell scripting techniques"]
+keywords = ["PowerShell download cradle", "memory execution PowerShell", "secure download cradle", "PowerShell WebClient", "PowerShell security", "Invoke-WebRequest", "PowerShell COM objects", "PowerShell scripting techniques", "PowerShell memory execution", "PowerShell security bypass"]
+description = "A comprehensive guide to PowerShell download cradles, including secure implementation, real-world examples, and security considerations. Learn about essential cmdlets, advanced techniques, and best practices for memory-based code execution."
 author = "bloodstiller"
 date = 2025-04-24
 toc = true
@@ -12,10 +12,12 @@ next = true
 lastmod = 2025-04-24
 +++
 
-## Updates: 
-Article originally published on 11-11-2024 
+## Updates: {#updates}
 
-Updated with additional information on 24-04-2025 
+Article originally published on 11-11-2024
+
+Updated with additional information on 24-04-2025
+
 
 ## Introduction {#introduction}
 
@@ -270,6 +272,14 @@ Get-WinEvent -LogName Application | Where-Object {$_.ProviderName -eq "SecureDow
     cat cradle | iconv -t UTF-16LE | base64 -w 0; echo
     ```
 
+    -   Breakdown:
+        -   `cat cradle`: Reads the contents of the file (which is the PowerShell command).
+        -   `iconv -t UTF-16LE`: Converts the plain text into UTF-16 Little Endian encoding.
+            -   PowerShell's `-EncodedCommand` parameter expects the input to be in UTF-16LE format because that's how Windows internally represents strings.
+        -   `base64 -w 0`: Base64-encodes the UTF-16LE data.
+        -   `-w 0` ensures the output is all on one line (no line breaks), which is required for PowerShell to interpret it correctly.
+        -   `echo`: Just adds a newline at the end so you don't get a messy prompt afterward.
+    -   +Note+: I would always base64 encode cradles as often special characters such as parenthesis etc will need escaping to function correctly.
     -   {{< figure src="/ox-hugo/2025-04-24-084524_.png" >}}
 
 3.  Prepare our shell, I like to use [nishang](https://github.com/samratashok/nishang) however you can use <http://revshells.com> etc.

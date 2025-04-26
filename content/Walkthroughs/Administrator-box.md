@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "Active Directory", "Kerberos", "Kerberoasting", "DACLS", "ACL", "pwsafe", "Download Cradle", "AS-REPRoasting"]
+title = "Administrator HTB Walkthrough: DACLs, ACL Abuse, and AS-REPRoasting"
 draft = false
-title = "Administrator HTB Walkthrough"
+tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "DACL", "ACL", "AS-REPRoasting", "Privilege Escalation", "Password Safe", "Download Cradle", "Windows Security", "PowerShell", "Lateral Movement"]
+keywords = ["Hack The Box Administrator", "DACL exploitation tutorial", "ACL abuse techniques", "AS-REPRoasting walkthrough", "Active Directory privilege escalation", "Password Safe exploitation", "Windows DACL security", "PowerShell download cradles", "Active Directory security assessment", "Windows lateral movement"]
+description = "A comprehensive walkthrough of the Administrator machine from Hack The Box, covering DACL exploitation, ACL abuse techniques, and AS-REPRoasting attacks. Learn about Active Directory security mechanisms, privilege escalation through Password Safe, and advanced lateral movement using PowerShell download cradles."
 author = "bloodstiller"
 date = 2025-04-22
 toc = true
 bold = true
 next = true
+lastmod = 2025-04-22
 +++
 
 ## Administrator Hack The Box Walkthrough/Writeup: {#administrator-hack-the-box-walkthrough-writeup}
@@ -43,8 +46,8 @@ next = true
 -   This box scenario assumes that the Active Directory (AD) environment has already been breached and that we have access to valid credentials.
 -   This approach reflects a more realistic model, given that direct breaches of AD environments from external footholds are increasingly rare today.
 -   +Note+:
-    -   Even with assumed credentials, I’ll still conduct my standard enumeration process as if I don’t have them.
-        -   This ensures I don’t overlook any findings just because access is available.
+    -   Even with assumed credentials, I'll still conduct my standard enumeration process as if I don't have them.
+        -   This ensures I don't overlook any findings just because access is available.
         -   Comprehensive documentation of all discoveries remains essential.
 
 
@@ -226,7 +229,7 @@ next = true
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|
@@ -272,7 +275,7 @@ next = true
 
 #### Syncing Clocks for Kerberos Exploitation: {#syncing-clocks-for-kerberos-exploitation}
 
--   Since Kerberos is enabled on this host, it's best practice to sync our clock with the host’s. This helps avoid issues from clock misalignment, which can cause false negatives in Kerberos exploitation attempts.
+-   Since Kerberos is enabled on this host, it's best practice to sync our clock with the host's. This helps avoid issues from clock misalignment, which can cause false negatives in Kerberos exploitation attempts.
     -   `sudo ntpdate -s $domain`
     -   +Note+: I am doing this now as we have the DNS name etc.
 
@@ -419,7 +422,7 @@ next = true
 
 ### Changing Michaels Password: {#changing-michaels-password}
 
--   Our options at the start were to perform a targeted kerberoasting attack, which we performed but could not extract the hash. The other option is a shadow credentials attack however we cannot perform this as there is no CA &amp; so now we move onto changing Michaels password. Changing a user’s password is typically a last resort in an engagement, as it can disrupt the user's work and may fall outside the approved scope. This is why I left this until last
+-   Our options at the start were to perform a targeted kerberoasting attack, which we performed but could not extract the hash. The other option is a shadow credentials attack however we cannot perform this as there is no CA &amp; so now we move onto changing Michaels password. Changing a user's password is typically a last resort in an engagement, as it can disrupt the user's work and may fall outside the approved scope. This is why I left this until last
 
 -   **Lets set the our new password**
     -   `newPass=bl00dst1ll3r!`
@@ -660,14 +663,14 @@ next = true
 #### Why create a golden ticket? {#why-create-a-golden-ticket}
 
 -   "But bloodstiller why are you making a golden ticket if you have the admin hash?" Glad you asked:
-    -   Creating a Golden Ticket during an engagement is a reliable way to maintain access over the long haul. Here’s why:
+    -   Creating a Golden Ticket during an engagement is a reliable way to maintain access over the long haul. Here's why:
     -   `KRBTGT` **Hash Dependence**:
-        -   Golden Tickets are generated using the `KRBTGT` account hash from the target’s domain controller.
+        -   Golden Tickets are generated using the `KRBTGT` account hash from the target's domain controller.
         -   Unlike user account passwords, `KRBTGT` hashes are rarely rotated (and in many organizations, they are never changed), so the Golden Ticket remains valid indefinitely.
     -   `KRBTGT` **Hash—The Key to It All (for upto 10 years)**:
         -   A Golden Ticket can allow you to maintain access to a system for up to 10 years (yeah, you read that right the default lifespan of a golden ticket is 10 years) without needing additional credentials.
         -   This makes it a reliable backdoor, especially if re-access is needed long after initial entry.
-        -   **Think about it**: even if they reset every user’s password (including the administrator etc) your Golden Ticket is still valid because it’s tied to the `KRBTGT` account, not individual users.
+        -   **Think about it**: even if they reset every user's password (including the administrator etc) your Golden Ticket is still valid because it's tied to the `KRBTGT` account, not individual users.
 
 
 ## 5. Beyond Root: {#5-dot-beyond-root}

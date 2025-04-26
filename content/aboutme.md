@@ -1,8 +1,11 @@
 +++
-title = "about me"
+title = "About Bloodstiller: Ethical Hacker & Active Directory Security Specialist"
+draft = false
+tags = ["About", "Ethical Hacking", "Active Directory", "Security", "Blog"]
+keywords = ["Ethical hacking", "Active Directory security", "Hack The Box walkthroughs", "Cybersecurity blog", "AD security specialist", "Penetration testing", "Security education", "CTF solutions", "Security tutorials", "Enterprise security"]
+description = "Meet Bloodstiller, an ethical hacker specializing in Active Directory security. This blog provides detailed Hack The Box walkthroughs, practical security tutorials, and real-world insights into enterprise security and penetration testing."
 author = "bloodstiller"
 date = 2024-09-02
-draft = false
 toc = true
 bold = true
 next = true
@@ -13,7 +16,7 @@ next = true
 
 Can you hear me? Is this thing on?
 
-I’m Bloodstiller, an ethical hacker with a passion for security and privacy. My focus is on **Active Directory (AD) security**, working to protect enterprise networks and identity management systems.
+I'm Bloodstiller, an ethical hacker with a passion for security and privacy. My focus is on **Active Directory (AD) security**, working to protect enterprise networks and identity management systems.
 
 I'm always exploring new techniques and keeping up with the latest threats. This blog serves as a way for me to share insights, tips, and experiences from my journey in hacking.
 
@@ -27,9 +30,9 @@ Currently, my primary focus is providing **Hack The Box walkthroughs**. These de
 - **Understand the concepts myself.**
 
 ### Realistic Troubleshooting, Bones And All:
-My walkthroughs include all the troubleshooting steps I go through when things don’t go as planned. Many walkthroughs jump from point A to point B effortlessly, but the reality is often much messier—especially for beginners. I leave it all in, **bones and all**, to show the real process, and help set realistic expectations for those entering the industry or tackling CTFs.
+My walkthroughs include all the troubleshooting steps I go through when things don't go as planned. Many walkthroughs jump from point A to point B effortlessly, but the reality is often much messier—especially for beginners. I leave it all in, **bones and all**, to show the real process, and help set realistic expectations for those entering the industry or tackling CTFs.
 
-Unfortunately, I’m just & I mean just, smart enough to know I’m dumb.
+Unfortunately, I'm just & I mean just, smart enough to know I'm dumb.
 
 ## Get in contact: {#sign-off}
 

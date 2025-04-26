@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "Active Directory", "NoPac", "CVE-2021-42278", "CVE-2021-42287", "Download Cradle"]
+title = "Resolute HTB Walkthrough: Active Directory, NoPac, and DCSync Exploitation"
 draft = false
-title = "Resolute HTB Walkthrough"
+tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "Active Directory", "NoPac", "CVE-2021-42278", "CVE-2021-42287", "Download Cradle"]
+keywords = ["Hack The Box Resolute", "Active Directory exploitation", "NoPac vulnerability", "Windows privilege escalation", "LDAP enumeration", "Windows security assessment", "Active Directory penetration testing", "CVE-2021-42278", "CVE-2021-42287", "DCSync attack"]
+description = "A comprehensive walkthrough of the Resolute machine from Hack The Box, covering Active Directory enumeration, NoPac vulnerability exploitation, and Windows privilege escalation techniques. Learn about service account exploitation, DCSync attacks, and advanced Windows penetration testing methods."
 author = "bloodstiller"
 date = 2024-10-21
 toc = true
 bold = true
 next = true
+lastmod = 2024-10-21
 +++
 
 ## Resolute Hack The Box Walkthrough/Writeup: {#resolute-hack-the-box-walkthrough-writeup}
@@ -220,7 +223,7 @@ next = true
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|
@@ -431,7 +434,7 @@ next = true
     -   `$Env:PATH`
     -   {{< figure src="/ox-hugo/2024-10-20-155942_.png" >}}
 
--   **The path is standard for a Windows environment**: Here’s a breakdown:
+-   **The path is standard for a Windows environment**: Here's a breakdown:
     -   `C:\Windows\system32`: Primary system directory containing essential system files and executables.
     -   `C:\Windows`: The root directory for the Windows OS.
     -   `C:\Windows\System32\Wbem`: Contains files and tools for Windows Management Instrumentation (WMI).

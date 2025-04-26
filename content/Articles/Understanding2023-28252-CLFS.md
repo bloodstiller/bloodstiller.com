@@ -1,7 +1,9 @@
 +++
-tags = ["Windows", "Active Directory", "CVE-2023-28252", "CLFS"]
-draft = false
 title = "Understanding CVE-2023-28252: Deep Dive into the CLFS Privilege Escalation Vulnerability"
+draft = false
+tags = ["Windows", "Active Directory", "CVE-2023-28252", "CLFS"]
+keywords = ["CLFS vulnerability", "Windows privilege escalation", "CVE-2023-28252 exploitation", "Common Log File System", "Windows kernel exploitation", "SYSTEM privilege escalation", "Windows security", "CLFS driver vulnerability", "Windows kernel driver", "Privilege escalation techniques"]
+description = "A comprehensive guide to understanding and exploiting the CVE-2023-28252 vulnerability in Windows Common Log File System (CLFS). Learn about CLFS architecture, vulnerability details, and how to perform privilege escalation attacks using this critical Windows kernel vulnerability."
 author = "bloodstiller"
 date = 2024-11-05
 toc = true

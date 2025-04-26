@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Easy", "Active Directory", "Windows", "SeImpersonatePrivilege", "Umbraco", "CSharp"]
+title = "Remote HTB Walkthrough: Active Directory, Umbraco, and SeImpersonatePrivilege Exploitation"
 draft = false
+tags = ["Box", "HTB", "Easy", "Active Directory", "Windows", "SeImpersonatePrivilege", "Umbraco", "CSharp"]
+keywords = ["Hack The Box Remote", "Active Directory exploitation", "Umbraco CMS exploitation", "Windows privilege escalation", "SeImpersonatePrivilege abuse", "Windows security assessment", "Active Directory penetration testing", "Umbraco security", "CSharp exploitation"]
+description = "A comprehensive walkthrough of the Remote machine from Hack The Box, covering Active Directory enumeration, Umbraco CMS exploitation, and Windows privilege escalation techniques. Learn about service account exploitation, SeImpersonatePrivilege abuse, and advanced Windows penetration testing methods."
 author = "bloodstiller"
 date = 2024-09-09
-title = "Remote HTB Walkthrough"
 toc = true
 bold = true
 next = true
+lastmod = 2024-09-09
 +++
 
 ## Hack The Box Remote Walkthrough/Writeup: {#name-of-box-remote}
@@ -436,7 +439,7 @@ So as we have a connection we want to create a payload that we can trigger back 
 ##### Example of Impersonate Privilege Working: {#example-of-impersonate-privilege-working}
 
 -   **How Impersonation Works**:
-    -   The client connects to the service using their credentials (via Windows Authentication).
+    -   The client connects to the service using their credentials (via Windows Auth).
     -   The service, upon needing to access other resources (like file shares), uses the client's identity instead of its own.
     -   This is possible because the service account is given a special privilege called "Impersonate a client after authentication".
 

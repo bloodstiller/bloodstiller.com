@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "CSharp", "RBCD", "kerberos", "MachineAccountQuota"]
+title = "Support HTB Walkthrough: Active Directory, RBCD, and MachineAccountQuota Exploitation"
 draft = false
-title = "Support HTB Walkthrough"
-date = 2024-09-06
+tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "CSharp", "RBCD", "kerberos", "MachineAccountQuota"]
+keywords = ["Hack The Box Support", "Active Directory exploitation", "Resource Based Constrained Delegation", "Windows privilege escalation", "LDAP enumeration", "Windows security assessment", "Active Directory penetration testing", "CSharp exploitation", "Kerberos authentication"]
+description = "A comprehensive walkthrough of the Support machine from Hack The Box, covering Active Directory enumeration, Resource Based Constrained Delegation (RBCD), and MachineAccountQuota exploitation techniques. Learn about service account exploitation, CSharp exploitation, and advanced Windows penetration testing methods."
 author = "bloodstiller"
+date = 2024-09-06
 toc = true
 bold = true
 next = true
+lastmod = 2024-09-06
 +++
 
 ## Intelligence Hack The Box Support Walkthrough/Writeup: {#name-of-box-htb-support}
@@ -48,7 +51,7 @@ next = true
             -   Performs service version detection to determine what service and version is running on each open port.
 
         -   `-sC`:
-            -   Runs a set of default scripts from Nmap’s script engine (NSE) that perform various checks like vulnerability detection, information gathering, etc.
+            -   Runs a set of default scripts from Nmap's script engine (NSE) that perform various checks like vulnerability detection, information gathering, etc.
 
         -   `-O`:
             -   Attempts to determine the operating system of the target machine.

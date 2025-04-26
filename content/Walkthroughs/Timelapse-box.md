@@ -1,7 +1,9 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Active Directory", "LAPS", "pfx", "john"]
+title = "Timelapse HTB Walkthrough: Active Directory, LAPS, and Certificate-Based Authentication"
 draft = false
-title = "Timelapse HTB Walkthrough"
+tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Active Directory", "LAPS", "pfx", "john"]
+keywords = ["Hack The Box Timelapse", "Active Directory exploitation", "LAPS password retrieval", "Certificate-based authentication", "Windows privilege escalation", "LDAP enumeration", "PFX certificate cracking", "Windows security assessment", "Active Directory penetration testing", "Local Administrator Password Solution"]
+description = "A comprehensive walkthrough of the Timelapse machine from Hack The Box, covering Active Directory enumeration, LAPS password retrieval, certificate-based authentication, and privilege escalation techniques. Learn about PFX certificate extraction, LAPS exploitation, and advanced Windows penetration testing methods."
 author = "bloodstiller"
 date = 2024-11-11
 toc = true
@@ -201,7 +203,7 @@ next = true
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|
@@ -245,7 +247,7 @@ next = true
 
 #### Syncing Clocks for Kerberos Exploitation: {#syncing-clocks-for-kerberos-exploitation}
 
--   Since Kerberos is enabled on this host, it's best practice to sync our clock with the host’s. This helps avoid issues from clock misalignment, which can cause false negatives in Kerberos exploitation attempts.
+-   Since Kerberos is enabled on this host, it's best practice to sync our clock with the host's. This helps avoid issues from clock misalignment, which can cause false negatives in Kerberos exploitation attempts.
     -   `sudo ntpdate -s $domain`
     -   +Note+: I am doing this now as we have the DNS name etc.
 

@@ -1,11 +1,15 @@
 +++
+title = "RedPanda HTB Walkthrough: Spring Boot, SSTI, and Privilege Escalation"
 draft = false
-title = "RedPanda HTB Walkthrough"
+tags = ["Box", "HTB", "Medium", "Linux", "Spring Boot", "SSTI", "Java", "Template Injection", "Privilege Escalation", "Web Exploitation"]
+keywords = ["Hack The Box RedPanda", "Spring Boot exploitation", "Server-Side Template Injection", "Java web application security", "Linux privilege escalation", "Web application penetration testing", "Template injection attacks", "Spring Boot security assessment"]
+description = "A comprehensive walkthrough of the RedPanda machine from Hack The Box, covering Spring Boot application exploitation, Server-Side Template Injection (SSTI), and Linux privilege escalation techniques. Learn about web application security, template injection attacks, and advanced Linux penetration testing methods."
 author = "bloodstiller"
 date = 2025-01-12
 toc = true
 bold = true
 next = true
+lastmod = 2025-01-12
 +++
 
 ## RedPanda Hack The Box Walkthrough/Writeup: {#redpanda-hack-the-box-walkthrough-writeup}

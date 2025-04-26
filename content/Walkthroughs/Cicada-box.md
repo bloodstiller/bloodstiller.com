@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "Active Directory", "LDAP", "RPC", "SeBackupPrivilege"]
+title = "Cicada HTB Walkthrough: Active Directory Enumeration and SeBackupPrivilege Exploitation"
 draft = false
-title = "Cicada HTB Walkthrough"
+tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "LDAP", "RPC", "SeBackupPrivilege", "Registry Hive Dumping", "Kerberos", "Golden Ticket", "Privilege Escalation"]
+keywords = ["Hack The Box Cicada", "Active Directory enumeration", "SeBackupPrivilege exploitation", "Registry hive dumping", "Golden Ticket creation", "Windows privilege escalation", "LDAP enumeration", "RPC enumeration", "Kerberos exploitation", "Windows security"]
+description = "A comprehensive walkthrough of the Cicada machine from Hack The Box, demonstrating Active Directory enumeration techniques, exploitation of SeBackupPrivilege for registry hive dumping, and persistence through Golden Ticket creation."
 author = "bloodstiller"
 date = 2024-11-01
 toc = true
 bold = true
 next = true
+lastmod = 2024-11-01
 +++
 
 ## Cicada Hack The Box Walkthrough/Writeup: {#cicada-hack-the-box-walkthrough-writeup}
@@ -210,7 +213,7 @@ next = true
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|

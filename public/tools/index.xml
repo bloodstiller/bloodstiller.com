@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tools on Hack Me Daddy</title>
+    <title>Tools on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
     <link>http://localhost:1313/tools/</link>
-    <description>Recent content in Tools on Hack Me Daddy</description>
+    <description>Recent content in Tools on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 03 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Automating Kali VM Setup with QEMU and Ansible</title>
+      <title>Automating Kali Linux VM Setup: A Comprehensive Guide to QEMU and Ansible Integration</title>
       <link>http://localhost:1313/tools/automatingqemukalivmansible/</link>
       <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tools/automatingqemukalivmansible/</guid>
       <description>&lt;p&gt;As a cybersecurity enthusiast and productivity junkie, I&amp;rsquo;ve always been fascinated by the power of automation. Recently, I decided to streamline my process of setting up Kali Linux virtual machines using QEMU and Ansible. In this article, I&amp;rsquo;ll walk you through how I&amp;rsquo;ve automated the creation and configuration of Kali VMs, complete with my preferred dotfiles and tools.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-need-for-automation&#34;&gt;The Need for Automation&lt;/h2&gt;&#xA;&lt;p&gt;If you&amp;rsquo;re like me, you probably find yourself creating new Kali VMs frequently for various projects or testing environments. The process of setting up a new VM, updating the system, installing your favorite tools, and configuring your environment can be time-consuming and repetitive. That&amp;rsquo;s where automation comes in handy.&#xA;You can repurpose this setup for other projects, just change the Ansible playbook and dotfiles.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>LDAPire: LDAP Enumeration Tool</title>
+      <title>LDAPire: Advanced Active Directory Enumeration Tool</title>
       <link>http://localhost:1313/tools/ldapire/</link>
       <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tools/ldapire/</guid>
       <description>&lt;ul&gt;&#xA;&lt;li&gt;Originally posted on 2024-10-17 updated on 2024-11-13&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;introducing-ldapire-a-tool-for-active-directory-reconnaissance&#34;&gt;Introducing LDAPire: A Tool for Active Directory Reconnaissance&lt;/h2&gt;&#xA;&lt;p&gt;As penetration testers and security professionals, we often find ourselves needing to quickly assess and enumerate Active Directory environments. Today, I&amp;rsquo;m excited to share a tool I&amp;rsquo;ve developed that streamlines this process: LDAPire - the LDAP Checker and Enumerator.&lt;/p&gt;&#xA;&lt;p&gt;You can find the full source code and installation instructions for LDAPire on my GitHub repository: &lt;a href=&#34;https://github.com/bloodstiller/ldapire&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;LDAPire on GitHub&lt;/a&gt;&#xA;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>BloodServer: A Secure File Transfer Tool for Penetration Testers</title>
+      <title>BloodServer: A Secure File Transfer Tool for Penetration Testing</title>
       <link>http://localhost:1313/tools/bloodserver/</link>
       <pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tools/bloodserver/</guid>

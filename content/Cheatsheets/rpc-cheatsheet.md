@@ -1,7 +1,9 @@
 +++
-tags = ["Pentesting", "RPC", "CheatSheet"]
-draft = false
 title = "Attacking RPC: Deep Dive & Cheat Sheet"
+draft = false
+tags = ["Pentesting", "RPC", "CheatSheet"]
+keywords = ["RPC enumeration", "Remote Procedure Call exploitation", "RPC client attacks", "RPC security", "RPC authentication", "RPC over HTTP", "RPC port scanning", "RPC vulnerability assessment", "RPC protocol analysis", "RPC attack techniques"]
+description = "A comprehensive guide to RPC enumeration, exploitation, and security. Learn about RPC client attacks, port scanning, authentication methods, and best practices for securing RPC implementations in enterprise environments."
 author = "bloodstiller"
 date = 2024-10-16
 toc = true
@@ -316,7 +318,7 @@ done
     -   **Purpose of the Command**:
         -   Search for Custom User RIDs:
             -   Since the well-known accounts usually stop around 500, we are searching through RIDs in the 500 to 1100 range, which is where custom-created users or groups are likely to have RIDs.
-            -   This method can be useful in penetration testing or during enumeration to discover non-default user accounts that have been created on the system, particularly when we don’t have a complete list of users.
+            -   This method can be useful in penetration testing or during enumeration to discover non-default user accounts that have been created on the system, particularly when we don't have a complete list of users.
 
 <!--list-separator-->
 

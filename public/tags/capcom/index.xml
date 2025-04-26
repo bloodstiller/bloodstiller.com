@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Capcom on Hack Me Daddy</title>
+    <title>Capcom on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
     <link>http://localhost:1313/tags/capcom/</link>
-    <description>Recent content in Capcom on Hack Me Daddy</description>
+    <description>Recent content in Capcom on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate>
@@ -16,7 +16,7 @@
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction:&lt;/h2&gt;&#xA;&lt;p&gt;Among the various techniques employed by attackers, one particularly insidious method involves the exploitation of &lt;code&gt;SeLoadDriverPrivilege&lt;/code&gt;. This Windows privilege, often overlooked, can serve as a powerful tool in the hands of malicious actors, enabling them to &lt;strong&gt;elevate their permissions&lt;/strong&gt; and potentially &lt;strong&gt;gain complete control over a system&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Key Points&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;SeLoadDriverPrivilege&lt;/code&gt; is a Windows privilege that can be exploited for privilege escalation&lt;/li&gt;&#xA;&lt;li&gt;It&amp;rsquo;s often overlooked but can grant attackers significant control over a system&lt;/li&gt;&#xA;&lt;li&gt;Understanding this vulnerability is crucial for system administrators and security professionals&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s dive into the world of &lt;code&gt;SeLoadDriverPrivilege&lt;/code&gt; and explore how this seemingly innocuous privilege can become a significant security risk.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Fuse HTB Walkthrough</title>
+      <title>Fuse HTB Walkthrough: Active Directory, SeLoadDriverPrivilege, and Capcom Exploitation</title>
       <link>http://localhost:1313/walkthroughs/fuse-box/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/walkthroughs/fuse-box/</guid>

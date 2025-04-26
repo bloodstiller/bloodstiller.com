@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Easy", "Linux", "CVE-2023–27163", "CVE-2023-26604", "SSRF", "systemctl"]
+title = "Sau HTB Walkthrough: SSRF, CVE-2023-27163, and CVE-2023-26604 Exploitation"
 draft = false
-title = "Sau HTB Walkthrough"
+tags = ["Box", "HTB", "Easy", "Linux", "CVE-2023–27163", "CVE-2023-26604", "SSRF", "systemctl"]
+keywords = ["Hack The Box Sau", "SSRF exploitation", "CVE-2023-27163", "CVE-2023-26604", "Linux privilege escalation", "systemctl vulnerability", "Web application security", "Linux security assessment", "SSRF attacks", "systemd exploitation"]
+description = "A comprehensive walkthrough of the Sau machine from Hack The Box, covering SSRF exploitation, CVE-2023-27163 and CVE-2023-26604 vulnerabilities, and Linux privilege escalation techniques. Learn about web application security, systemctl exploitation, and advanced Linux penetration testing methods."
 author = "bloodstiller"
 date = 2024-12-26
 toc = true
 bold = true
 next = true
+lastmod = 2024-12-26
 +++
 
 ## Sau Hack The Box Walkthrough/Writeup: {#sau-hack-the-box-walkthrough-writeup}

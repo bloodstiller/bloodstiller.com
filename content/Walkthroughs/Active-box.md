@@ -1,9 +1,15 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Kerberoasting", "Kerberos", "cpassword", "Active Directory"]
+title = "Active HTB Walkthrough: GPP, Kerberoasting, and Golden Ticket Attacks"
 draft = false
-title = "Active HTB Walkthrough"
+tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "LDAP", "Kerberoasting", "Kerberos", "GPP", "cpassword", "Golden Ticket", "Domain Controller", "Windows Server 2008", "Privilege Escalation", "DC Sync", "NTDS.dit"]
+keywords = ["Hack The Box Active", "Group Policy Preferences exploitation", "cpassword decryption", "Kerberoasting tutorial", "Golden Ticket attack walkthrough", "Active Directory penetration testing", "DC Sync attack guide", "Windows Server 2008 security", "NTDS.dit extraction", "Domain Controller exploitation"]
+description = "A comprehensive walkthrough of the Active machine from Hack The Box, demonstrating Group Policy Preferences (GPP) exploitation, Kerberoasting attacks, and advanced persistence techniques including Golden Ticket creation and DC Sync attacks. Learn about Active Directory security mechanisms and Windows Server vulnerabilities."
 author = "bloodstiller"
 date = 2024-11-02
+toc = true
+bold = true
+next = true
+lastmod = 2024-11-02
 +++
 
 ## Active Hack The Box Walkthrough/Writeup: {#active-hack-the-box-walkthrough-writeup}
@@ -208,7 +214,7 @@ date = 2024-11-02
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 4 which means that this server has to be running Windows Server 2008 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|

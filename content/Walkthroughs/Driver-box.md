@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Responder", "CFS", "PrintNightmare", "CVE-2021-1675", "Download Cradle"]
+title = "Driver HTB Walkthrough: SCF File Exploitation and PrintNightmare Privilege Escalation"
 draft = false
-title = "Driver HTB Walkthrough"
+tags = ["Windows", "HTB", "Hack The Box", "SCF File", "PrintNightmare", "CVE-2021-1675", "Privilege Escalation", "NTLM Hash Capture", "Windows Security", "Printer Exploitation"]
+keywords = ["Hack The Box Driver", "SCF file exploitation", "PrintNightmare vulnerability", "Windows privilege escalation", "NTLM hash capturing", "CVE-2021-1675 exploitation", "Windows printer spooler", "Windows security", "Responder NTLM capture", "Windows credential theft"]
+description = "A detailed walkthrough of the Driver machine from Hack The Box, demonstrating SCF file exploitation for NTLM hash capture and privilege escalation through the PrintNightmare vulnerability (CVE-2021-1675)."
 author = "bloodstiller"
 date = 2024-11-12
 toc = true
 bold = true
 next = true
+lastmod = 2024-11-12
 +++
 
 ## Driver Hack The Box Walkthrough/Writeup: {#driver-hack-the-box-walkthrough-writeup}
@@ -237,7 +240,7 @@ As this host allows uploads it may be possible to upload a malicious `.scf` file
 -   **Format:** Plain text file with commands in a specific format, commonly referencing icon locations.
 
 -   **Common Fields:**
-    -   `[Shell]` – Header indicating it’s an SCF file.
+    -   `[Shell]` – Header indicating it's an SCF file.
     -   `Command` – Specifies the command or action to take, like opening Windows Explorer.
     -   `IconFile` – Points to an icon resource (e.g., file path or UNC path).
 
@@ -320,7 +323,7 @@ As this host allows uploads it may be possible to upload a malicious `.scf` file
     -   `netexec smb $box -u $user -p $pass -M printnightmare`
     -   {{< figure src="/ox-hugo/2024-11-11-133623_.png" >}}
     -   It is, lets attack.
-    -   +Note+: I have a priv-esc checklist that I run through when I am working on machines and checking for `PrintNightmare` is one of these checks (I didn't just magically stumble upon the idea). However now we have a viable path forward.
+    -   +Note+: I have a priv-esc checklist that I run through when I am working on machines and checking for `PrintNightmare` is one of these checks (I didn't just magically stumbled upon the idea). However now we have a viable path forward.
 
 
 ### Adding an Admin User using PrintNightmare CVE-2021-1675: {#adding-an-admin-user-using-printnightmare-cve-2021-1675}

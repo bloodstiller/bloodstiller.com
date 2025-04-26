@@ -1,7 +1,9 @@
 +++
-title = "Automating Kali VM Setup with QEMU and Ansible"
-tags = ["kali", "automation", "qemu", "ansible", "dotfiles"]
+title = "Automating Kali Linux VM Setup: A Comprehensive Guide to QEMU and Ansible Integration"
 draft = false
+tags = ["kali", "automation", "qemu", "ansible", "dotfiles"]
+keywords = ["Kali Linux automation", "QEMU VM setup", "Ansible configuration", "Kali VM provisioning", "VirtioFS integration", "Kali development environment", "Kali security tools", "Kali dotfiles", "Kali VM management", "Kali automation workflow"]
+description = "A comprehensive guide to automating Kali Linux virtual machine setup using QEMU and Ansible. Learn how to create a consistent, reproducible environment with automated tool installation, dotfiles configuration, and development environment setup."
 author = "bloodstiller"
 date = 2025-02-03
 toc = true

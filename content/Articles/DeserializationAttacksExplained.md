@@ -1,7 +1,9 @@
 +++
-tags = [".NET", "Deserialization", "Serialization"]
-draft = false
 title = "Understanding .NET Deserialization Exploits: A Deep Dive"
+draft = false
+tags = [".NET", "Deserialization", "Serialization"]
+keywords = [".NET deserialization attacks", "BinaryFormatter exploitation", "ysoserial.net", "Remote Code Execution", "Object deserialization", ".NET security", "Serialization vulnerabilities", "BinaryFormatter security", "Deserialization prevention", "Object injection attacks"]
+description = "A comprehensive guide to understanding .NET deserialization exploits, covering the mechanics of serialization attacks, BinaryFormatter vulnerabilities, and ysoserial.net payload generation. Learn about the risks of unsafe deserialization and how to prevent these attacks in your applications."
 author = "bloodstiller"
 date = 2024-10-10
 toc = true
@@ -21,7 +23,7 @@ In this post, we'll walk through the underlying mechanics, focusing on an exampl
 
 #### Serialization: {#serialization}
 
--   **Serialization is the process of turning objects from a program into a format that’s easy to send (over the network) or save**. Formats such as `XML` and `JSON` are commonly used for this purpose because they are human-readable compared to binary formats. Once serialized, these objects can be sent over the network or saved for later use.
+-   **Serialization is the process of turning objects from a program into a format that's easy to send (over the network) or save**. Formats such as `XML` and `JSON` are commonly used for this purpose because they are human-readable compared to binary formats. Once serialized, these objects can be sent over the network or saved for later use.
 
 
 #### Deserialization: {#deserialization}
@@ -128,7 +130,7 @@ The calculator launches on the server, demonstrating arbitrary code execution. I
 
 ### How Does The Deserialization Attack Work? {#how-does-the-deserialization-attack-work}
 
-When deserializing data, the application should ideally be constrained to deserialize into a predefined set of safe classes. However, in vulnerable systems, this restriction doesn’t exist. Deserialization libraries like `JSON.NET` will attempt to deserialize any class that the attacker specifies.
+When deserializing data, the application should ideally be constrained to deserialize into a predefined set of safe classes. However, in vulnerable systems, this restriction doesn't exist. Deserialization libraries like `JSON.NET` will attempt to deserialize any class that the attacker specifies.
 
 This is where tools like [ysoserial.net](https://github.com/pwntester/ysoserial.net) come in. They allow attackers to craft payloads that exploit known vulnerable classes and object types within `.NET`. The tool generates serialized objects designed to trigger behaviors (like executing commands) when they are deserialized.
 

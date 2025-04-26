@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "GhostScript", "Selenium", "RoundCube"]
+title = "Hospital HTB Walkthrough: GhostScript, Selenium, and RoundCube Exploitation"
 draft = false
-title = "Hospital HTB Walkthrough"
-date = 2024-10-03
+tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "GhostScript", "Selenium", "RoundCube"]
+keywords = ["Hack The Box Hospital", "GhostScript exploitation", "Selenium automation", "RoundCube webmail", "Windows privilege escalation", "LDAP enumeration", "Web application security", "Windows security assessment", "Active Directory penetration testing", "Web exploitation"]
+description = "A comprehensive walkthrough of the Hospital machine from Hack The Box, covering GhostScript exploitation, Selenium automation, RoundCube webmail vulnerabilities, and privilege escalation techniques. Learn about web application security, automation exploitation, and advanced Windows penetration testing methods."
 author = "bloodstiller"
+date = 2024-10-03
 toc = true
 bold = true
 next = true
+lastmod = 2024-10-03
 +++
 
 ## Hospital Hack The Box Walkthrough/Writeup: {#hospital-hack-the-box-walkthrough-writeup}
@@ -250,7 +253,7 @@ next = true
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|
@@ -487,7 +490,7 @@ http://10.129.229.189:8080/vendor/animate/
 #### Enumerating the PHP Server Some More: {#enumerating-the-php-server-some-more}
 
 -   **So what do we know?**
-    -   In situations like this, it's good to go over what we do know to be true about the host &amp; service:
+    -   In situations like this, it's good to go over what we do know about the host &amp; service:
         -   We know we can upload a file.
         -   We know there is a file uploads folder, where we (believe these files are stored)
         -   We know we can upload files with the `.phar` extension.

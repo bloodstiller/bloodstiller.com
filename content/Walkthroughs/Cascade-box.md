@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Active Directory", "Windows", "LDAP", "RPC", "SQL", "CSharp"]
+title = "Cascade HTB Walkthrough: AD Recycle Bin, VNC, and Ansible Vault Exploitation"
 draft = false
-title = "Cascade HTB Walkthrough"
+tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "AD Recycle Bin", "VNC", "Ansible", "LDAP", "RPC", "SQL", "CSharp", "SQLite", "Password Recovery", "Privilege Escalation", "Golden Ticket"]
+keywords = ["Hack The Box Cascade", "AD Recycle Bin exploitation", "VNC password decryption", "Ansible vault cracking", "SQLite database analysis", "Windows RPC enumeration", "LDAP anonymous bind", "CSharp binary analysis", "Active Directory password recovery", "Golden Ticket persistence"]
+description = "A comprehensive walkthrough of the Cascade machine from Hack The Box, demonstrating advanced Active Directory enumeration techniques, password recovery from various sources including VNC registry entries and Ansible vaults, and leveraging the AD Recycle Bin for privilege escalation."
 author = "bloodstiller"
 date = 2024-10-16
 toc = true
 bold = true
 next = true
+lastmod = 2024-10-16
 +++
 
 ## Cascade Hack The Box Walkthrough/Writeup: {#cascade-hack-the-box-walkthrough-writeup}
@@ -343,7 +346,7 @@ As RPC is running on the host we can attempt to enumerate using it.
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 4 which means that this server has to be running Windows Server 2008 R2 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|
@@ -687,7 +690,7 @@ As RPC is running on the host we can attempt to enumerate using it.
 ### Finding the Administrator Password in the `cascadeLegacyPwd` field of a deleted object: {#finding-the-administrator-password-in-the-cascadelegacypwd-field-of-a-deleted-object}
 
 -   **I list the objects in the recycling bin**:
-    -   `Get-ADObject -filter ‘isdeleted -eq $true -and name -ne “Deleted Objects”‘ -includeDeletedObjects -property *`
+    -   `Get-ADObject -filter 'isdeleted -eq $true -and name -ne "Deleted Objects"' -includeDeletedObjects -property *`
 
 -   **I immediately find the deleted** `temp-admin` **account**:
     -   {{< figure src="/ox-hugo/2024-10-16-065635_.png" >}}

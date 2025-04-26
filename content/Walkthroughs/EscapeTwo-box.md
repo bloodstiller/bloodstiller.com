@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Active Directory", "Certificate", "CA", "WriteOwner", "MSSQL", "xp_cmdshell", "kerberoasting", "kerberos", "ESC4", "Shadow Credentials"]
-draft = true
-title = "EscapeTwo HTB Walkthrough"
+title = "EscapeTwo HTB Walkthrough: ESC4 Certificate Abuse and Shadow Credentials Attack"
+draft = false
+tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "Certificate Authority", "ESC4", "MSSQL", "Shadow Credentials", "Privilege Escalation", "WriteOwner", "xp_cmdshell", "Kerberoasting"]
+keywords = ["Hack The Box EscapeTwo", "ESC4 certificate exploitation", "Shadow Credentials attack", "Active Directory certificate services", "Windows privilege escalation", "MSSQL xp_cmdshell", "Certificate template abuse", "WriteOwner privilege abuse", "Kerberos exploitation", "Windows security"]
+description = "A comprehensive walkthrough of the EscapeTwo machine from Hack The Box, showcasing ESC4 certificate template exploitation, Shadow Credentials attacks, and MSSQL privilege escalation through xp_cmdshell, demonstrating advanced Active Directory certificate services vulnerabilities."
 author = "bloodstiller"
 date = 2025-01-14
 toc = true
 bold = true
 next = true
+lastmod = 2025-01-14
 +++
 
 ## EscapeTwo Hack The Box Walkthrough/Writeup: {#escapetwo-hack-the-box-walkthrough-writeup}

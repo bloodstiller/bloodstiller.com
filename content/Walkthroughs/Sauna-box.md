@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Kerberos", "Active Directory", "Kerberoasting", "ASREPRoasting", "PrintNightmare", "CVE-2021-1675"]
+title = "Sauna HTB Walkthrough: Active Directory, Kerberoasting, and PrintNightmare Exploitation"
 draft = false
-title = "Sauna HTB Walkthrough"
+tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Kerberos", "Active Directory", "Kerberoasting", "ASREPRoasting", "PrintNightmare", "CVE-2021-1675"]
+keywords = ["Hack The Box Sauna", "Active Directory exploitation", "Kerberoasting attack", "ASREPRoasting", "Windows privilege escalation", "PrintNightmare vulnerability", "Windows security assessment", "Active Directory penetration testing", "CVE-2021-1675", "Kerberos authentication"]
+description = "A comprehensive walkthrough of the Sauna machine from Hack The Box, covering Active Directory enumeration, Kerberoasting, and PrintNightmare exploitation techniques. Learn about service account exploitation, Kerberos attacks, and advanced Windows penetration testing methods."
 author = "bloodstiller"
 date = 2024-11-03
 toc = true
 bold = true
 next = true
+lastmod = 2024-11-03
 +++
 
 -   {{< figure src="/ox-hugo/2024-11-03-155301_.png" >}}
@@ -201,7 +204,7 @@ next = true
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|
@@ -250,7 +253,7 @@ next = true
 
 #### Syncing Clocks for Kerberos Exploitation: {#syncing-clocks-for-kerberos-exploitation}
 
--   Since Kerberos is enabled on this host, it's best practice to sync our clock with the host’s. This helps avoid issues from clock misalignment, which can cause false negatives in Kerberos exploitation attempts.
+-   Since Kerberos is enabled on this host, it's best practice to sync our clock with the host's. This helps avoid issues from clock misalignment, which can cause false negatives in Kerberos exploitation attempts.
     -   `sudo ntpdate -s $domain`
     -   +Note+: I am doing this now as we have the DNS name etc.
 
@@ -353,7 +356,7 @@ next = true
     -   **Looking at the request and response in** `burpsuite` **we see the following**:
         -   {{< figure src="/ox-hugo/2024-11-03-090057_.png" >}}
         -   We can see this was originally sent as a `POST` request, but the page only allows the following HTTP methods: `GET, HEAD, OPTIONS`, and `TRACE`.
-        -   Let’s re-send our request using one of these allowed methods to observe the response.
+        -   Let's re-send our request using one of these allowed methods to observe the response.
 
 
 #### Verb Tampering Enumeration: {#verb-tampering-enumeration}
@@ -539,7 +542,7 @@ As we have credentials we can perform kerberoasting:
 
 -   `netexec smb $box -u $user -p $pass -M printnightmare`
 -   {{< figure src="/ox-hugo/2024-11-03-155445_.png" >}}
--   +Note+: I have a priv-esc checklist that I run through when I am working on machines and checking for `PrintNightmare` is one of these checks (I didn't just magically stumble upon the idea). However now we have a viable path forward.
+-   +Note+: I have a priv-esc checklist that I run through when I am working on machines and checking for `PrintNightmare` is one of these checks (I didn't just magically stumbled upon the idea). However now we have a viable path forward.
 
 
 ### Privilege escalation Route 2 svc_loanmgr: {#privilege-escalation-route-2-svc-loanmgr}
@@ -699,14 +702,14 @@ As we have credentials we can perform kerberoasting:
 #### Why create a golden ticket? {#why-create-a-golden-ticket}
 
 -   "But bloodstiller why are you making a golden ticket if you have the admin hash?" Glad you asked:
-    -   Creating a Golden Ticket during an engagement is a reliable way to maintain access over the long haul. Here’s why:
+    -   Creating a Golden Ticket during an engagement is a reliable way to maintain access over the long haul. Here's why:
     -   `KRBTGT` **Hash Dependence**:
-        -   Golden Tickets are generated using the `KRBTGT` account hash from the target’s domain controller.
+        -   Golden Tickets are generated using the `KRBTGT` account hash from the target's domain controller.
         -   Unlike user account passwords, `KRBTGT` hashes are rarely rotated (and in many organizations, they are never changed), so the Golden Ticket remains valid indefinitely.
     -   `KRBTGT` **Hash—The Key to It All (for upto 10 years)**:
         -   A Golden Ticket can allow you to maintain access to a system for up to 10 years (yeah, you read that right the default lifespan of a golden ticket is 10 years) without needing additional credentials.
         -   This makes it a reliable backdoor, especially if re-access is needed long after initial entry.
-        -   **Think about it**: even if they reset every user’s password (including the administrator etc) your Golden Ticket is still valid because it’s tied to the `KRBTGT` account, not individual users.
+        -   **Think about it**: even if they reset every user's password (including the administrator etc) your Golden Ticket is still valid because it's tied to the `KRBTGT` account, not individual users.
 
 
 ## Lessons Learned: {#lessons-learned}

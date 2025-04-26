@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Easy", "Linux", "Web", "API", "git", "CVE-2022-24439", "SSRF"]
+title = "Editorial HTB Walkthrough: SSRF, Git History Analysis, and GitPython RCE"
 draft = false
-title = "Editorial HTB Walkthrough"
+tags = ["Linux", "HTB", "Hack The Box", "SSRF", "Git", "CVE-2022-24439", "API Security", "Privilege Escalation", "GitPython", "Web Security"]
+keywords = ["Hack The Box Editorial", "Server Side Request Forgery", "Git history analysis", "GitPython RCE exploitation", "CVE-2022-24439", "Linux privilege escalation", "API endpoint enumeration", "Web application security", "Git repository analysis", "Linux security"]
+description = "A comprehensive walkthrough of the Editorial machine from Hack The Box, showcasing Server Side Request Forgery (SSRF) exploitation, sensitive data exposure through Git history analysis, and privilege escalation via GitPython RCE (CVE-2022-24439)."
 author = "bloodstiller"
 date = 2024-12-22
 toc = true
 bold = true
 next = true
+lastmod = 2024-12-22
 +++
 
 ## Editorial Hack The Box Walkthrough/Writeup: {#editorial-hack-the-box-walkthrough-writeup}

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>.NET on Hack Me Daddy</title>
+    <title>.NET on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
     <link>http://localhost:1313/tags/.net/</link>
-    <description>Recent content in .NET on Hack Me Daddy</description>
+    <description>Recent content in .NET on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Oct 2024 00:00:00 +0000</lastBuildDate>
@@ -16,7 +16,7 @@
       <description>&lt;h2 id=&#34;understanding-dot-net-deserialization-exploits-a-deep-dive&#34;&gt;Understanding &lt;code&gt;.NET&lt;/code&gt; Deserialization Exploits: A Deep Dive:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;.NET&lt;/code&gt; deserialization exploits have become a common technique; providing a pathway to remote code execution (RCE) on vulnerable systems. Tools like &lt;a href=&#34;https://github.com/pwntester/ysoserial.net&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;ysoserial.net&lt;/a&gt;&#xA; can generate malicious payloads, allowing attackers to exploit deserialization flaws in .NET applications. But how does this attack vector actually work, and why does it succeed?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;In this post, we&amp;rsquo;ll walk through the underlying mechanics, focusing on an example using &lt;code&gt;BinaryFormatter&lt;/code&gt; with a simple &lt;code&gt;Student&lt;/code&gt; class. We&amp;rsquo;ll see how a seemingly innocuous application can be vulnerable to severe attacks.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Scrambled HTB Walkthrough</title>
+      <title>Scrambled HTB Walkthrough: Active Directory, MSSQL, and .NET Deserialization Exploitation</title>
       <link>http://localhost:1313/walkthroughs/scrambled-box/</link>
       <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/walkthroughs/scrambled-box/</guid>

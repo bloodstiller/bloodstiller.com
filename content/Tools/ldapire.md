@@ -1,7 +1,9 @@
 +++
+title = "LDAPire: Advanced Active Directory Enumeration Tool"
 draft = false
-tags = ["Active Directory", "Windows", "LDAP", "Python", "Tools" ]
-title = "LDAPire: LDAP Enumeration Tool"
+tags = ["Active Directory", "Windows", "LDAP", "Python", "Tools"]
+keywords = ["Active Directory enumeration", "LDAP reconnaissance", "AD user enumeration", "Service account detection", "LDAP authentication", "AD group enumeration", "LDAP security", "AD object analysis", "LDAP binary attributes", "AD penetration testing"]
+description = "A comprehensive guide to LDAPire, a powerful Python-based tool for Active Directory enumeration and reconnaissance. Learn how to perform detailed AD enumeration, detect service accounts, and analyze LDAP attributes for security assessments."
 author = "bloodstiller"
 date = 2024-11-13
 toc = true

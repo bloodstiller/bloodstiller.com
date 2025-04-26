@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "Active Directory", "Azure AD Connect", "Azure", "SQL", "MSSQL", "Download Cradle"]
+title = "Monteverde HTB Walkthrough: Azure AD Connect, SQL Server, and Credential Extraction"
 draft = false
-title = "Monteverde HTB Walkthrough"
+tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "Active Directory", "Azure AD Connect", "Azure", "SQL", "MSSQL", "Download Cradle"]
+keywords = ["Hack The Box Monteverde", "Azure AD Connect exploitation", "SQL Server attack", "Credential extraction", "Windows privilege escalation", "LDAP enumeration", "Azure AD exploitation", "Windows security assessment", "Active Directory penetration testing", "SQL exploitation"]
+description = "A comprehensive walkthrough of the Monteverde machine from Hack The Box, covering Azure AD Connect exploitation, SQL Server attacks, credential extraction, and privilege escalation techniques. Learn about Azure AD integration, SQL Server exploitation, and advanced Windows penetration testing methods."
 author = "bloodstiller"
 date = 2024-10-14
 toc = true
 bold = true
 next = true
+lastmod = 2024-10-14
 +++
 
 ## Monteverde Hack The Box Walkthrough/Writeup: {#monteverde-hack-the-box-walkthrough-writeup}
@@ -185,7 +188,7 @@ next = true
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|
@@ -388,7 +391,7 @@ next = true
 -   **From reading the article, we can see that** `LocalDB` **should be running on a default installation**:
     -   It says:
 
-        > Now by default when deploying the connector a new database is created on the host using SQL Server’s LOCALDB. To view information on the running instance, we can use the installed SqlLocalDB.exe tool:
+        > Now by default when deploying the connector a new database is created on the host using SQL Server's LOCALDB. To view information on the running instance, we can use the installed SqlLocalDB.exe tool:
         >    &lt;SNIP&gt;
         > So what are the requirements to complete this exfiltration of credentials? Well we will need to have access to the LocalDB (if configured to use this DB)
 
@@ -402,9 +405,9 @@ next = true
 
 -  Key Features of `LocalDB`:
 
-    -   **Developer-focused**: It’s intended for development and local testing purposes, providing a simple and fast setup for SQL Server database instances.
+    -   **Developer-focused**: It's intended for development and local testing purposes, providing a simple and fast setup for SQL Server database instances.
     -   **On-demand**: LocalDB runs on-demand, meaning it starts up when an application tries to connect and shuts down when not in use, minimizing resource usage.
-    -   **User-level instance**: LocalDB runs under the user’s context, without requiring admin privileges to manage or install.
+    -   **User-level instance**: LocalDB runs under the user's context, without requiring admin privileges to manage or install.
     -   **No configuration needed**: Unlike a full SQL Server instance, LocalDB doesn't require setup or configuration—it's essentially plug-and-play.
     -   **SQL Server API compatibility**: LocalDB supports the same T-SQL commands and APIs as the full version of SQL Server, so code written against LocalDB will work with any edition of SQL Server.
 

@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Manager", "Windows", "LDAP", "kerberos", "SMB", "MSSQL", "Certificate", "CA", "ESC7"]
+title = "Manager HTB Walkthrough: Active Directory, Certificate Authority, and ESC7 Exploitation"
 draft = false
-title = "Manager HTB Walkthrough"
-date = 2024-09-22
+tags = ["Box", "HTB", "Manager", "Windows", "LDAP", "kerberos", "SMB", "MSSQL", "Certificate", "CA", "ESC7"]
+keywords = ["Hack The Box Manager", "Active Directory exploitation", "Certificate Authority attack", "ESC7 vulnerability", "Windows privilege escalation", "LDAP enumeration", "MSSQL exploitation", "Windows security assessment", "Active Directory penetration testing", "CA exploitation"]
+description = "A comprehensive walkthrough of the Manager machine from Hack The Box, covering Active Directory enumeration, Certificate Authority exploitation, ESC7 vulnerability, and privilege escalation techniques. Learn about service account exploitation, CA manipulation, and advanced Windows penetration testing methods."
 author = "bloodstiller"
+date = 2024-09-22
 toc = true
 bold = true
 next = true
+lastmod = 2024-09-22
 +++
 
 ## Hack The Box Manager Walkthrough/Writeup: {#name-of-box-manager}
@@ -165,7 +168,7 @@ next = true
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|
@@ -293,13 +296,13 @@ I check if we have access to more smb shares with the creds &amp; we do:
                 -   `Users` (&#x2026;.really?)
 
     -   **What is xp_dirtree?**
-        -   `xp_dirtree` is a built-in SQL Server stored procedure that lets us list the contents of a directory—whether that’s subfolders, files, or both—without leaving the comfort of SQL. We tell it which folder to start with, how deep to go, and whether we want to see files in addition to folders.
+        -   `xp_dirtree` is a built-in SQL Server stored procedure that lets us list the contents of a directory—whether that's subfolders, files, or both—without leaving the comfort of SQL. We tell it which folder to start with, how deep to go, and whether we want to see files in addition to folders.
             -   **Breaking down the command**:
                 ```sql
                       EXEC xp_dirtree 'C:\', 1, 1;
                 ```
 
-                -   `C:`: This is the starting point—the directory we want to look into. In this case, we’re starting at the root of the C: drive.
+                -   `C:`: This is the starting point—the directory we want to look into. In this case, we're starting at the root of the C: drive.
                 -   `1` (depth): This tells `xp_dirtree` to only look in the top-level folder, without diving into subdirectories. We can increase this number if we want to see deeper levels. E.G. `2` etc.
                 -   `1` (file flag): This tells SQL Server to include both files and directories in the result. If you set this to 0, it will only list directories.
 

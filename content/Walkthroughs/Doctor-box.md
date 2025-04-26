@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Easy", "Linux", "SSTI", "Splunk", "Persistence", "Web"]
+title = "Doctor HTB Walkthrough: SSTI, Log Analysis, and Splunk Universal Forwarder Exploitation"
 draft = false
-title = "Doctor HTB Walkthrough"
+tags = ["Linux", "HTB", "Hack The Box", "SSTI", "Splunk", "Web Security", "Template Injection", "Log Analysis", "Privilege Escalation", "Persistence"]
+keywords = ["Hack The Box Doctor", "Server Side Template Injection", "Splunk Universal Forwarder exploitation", "Linux log analysis", "Web application security", "Jinja2 template injection", "Linux privilege escalation", "Apache log analysis", "Persistence techniques", "Linux security"]
+description = "A detailed walkthrough of the Doctor machine from Hack The Box, showcasing Server Side Template Injection (SSTI) exploitation, privilege escalation through log analysis, and achieving root access via Splunk Universal Forwarder vulnerabilities."
 author = "bloodstiller"
 date = 2024-12-21
 toc = true
 bold = true
 next = true
+lastmod = 2024-12-21
 +++
 
 ## Doctor Hack The Box Walkthrough/Writeup: {#doctor-hack-the-box-walkthrough-writeup}
@@ -298,7 +301,7 @@ The payload:
         -   This traversal is necessary to gain access to internal classes that may expose sensitive or powerful functionality.
         -   The goal is to locate a class that allows interaction with Python's built-in capabilities, particularly those capable of importing modules or executing commands.
         -   Without this enumeration, we wouldn't be able to dynamically discover and exploit useful subclasses like `warnings.WarningMessage`.
-    -   **Simple Terms**: It’s like looking through a list of all possible tools in Python to find one that can break the system.
+    -   **Simple Terms**: It's like looking through a list of all possible tools in Python to find one that can break the system.
 
 2.  **Finding a Specific Subclass**:
     -   `for x in ().__class__.__base__.__subclasses__()`: Iterates through all subclasses of `object`.
@@ -306,9 +309,9 @@ The payload:
         -   Example match: `<class 'warnings.WarningMessage'>`.
     -   **Why**:
         -   Not all subclasses are useful for exploitation. The filter specifically targets classes that are likely to provide the `_module` attribute or similar access to the `__builtins__` dictionary.
-        -   `warnings.WarningMessage` is chosen because it provides a pathway to Python’s built-in functions through its `_module` attribute.
+        -   `warnings.WarningMessage` is chosen because it provides a pathway to Python's built-in functions through its `_module` attribute.
         -   We use this class as a pivot to access the dangerous `__builtins__['__import__']` method, which allows importing any module dynamically.
-        -   **Simple Terms**: It’s like picking a specific tool from the list (a warning-related tool) because it opens the door to other powerful tools hidden inside Python.
+        -   **Simple Terms**: It's like picking a specific tool from the list (a warning-related tool) because it opens the door to other powerful tools hidden inside Python.
 
 3.  **Accessing Built-in Functions**:
     -   `x()._module`: Accesses the module of the identified subclass.

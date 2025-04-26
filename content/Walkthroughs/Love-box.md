@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "Active Directory", "SSRF", "ScheduledTask", "msi"]
+title = "Love HTB Walkthrough: SSRF, File Upload, and AlwaysInstallElevated Exploitation"
 draft = false
-title = "Love HTB Walkthrough"
+tags = ["Box", "HTB", "Easy", "Windows", "Active Directory", "SSRF", "ScheduledTask", "msi"]
+keywords = ["Hack The Box Love", "SSRF exploitation", "File upload vulnerability", "AlwaysInstallElevated", "Windows privilege escalation", "Web application security", "MSI package exploitation", "Windows security assessment", "Active Directory penetration testing", "Web exploitation"]
+description = "A comprehensive walkthrough of the Love machine from Hack The Box, covering SSRF exploitation, file upload vulnerabilities, AlwaysInstallElevated privilege escalation, and advanced Windows penetration testing methods. Learn about web application security, MSI package exploitation, and Windows privilege escalation techniques."
 author = "bloodstiller"
 date = 2024-12-24
 toc = true
 bold = true
 next = true
+lastmod = 2024-12-24
 +++
 
 ## Love Hack The Box Walkthrough/Writeup: {#love-hack-the-box-walkthrough-writeup}
@@ -603,8 +606,8 @@ ffuf -w ~/Wordlists/45.06-CustomWordlists/Ports.txt -u $'http://staging.love.htb
 
     -   {{< figure src="/ox-hugo/2024-12-24-123652_.png" >}}
     -   The error occurs because the FileSystem provider in PowerShell does not support passing credentials directly when accessing files using commands like `cat` (alias for `Get-Content`). Instead I need to modify the command:
-        -   Commands like `Get-Content` or `cat` directly interact with the file system in **the current user’s context**. The FileSystem provider **does not support credentials for local file access**.
-        -   Simply specifying `-Credential` without creating a new session (or drive mapping) has no effect for these commands because local file access relies **on the caller’s current security context**.
+        -   Commands like `Get-Content` or `cat` directly interact with the file system in **the current user's context**. The FileSystem provider **does not support credentials for local file access**.
+        -   Simply specifying `-Credential` without creating a new session (or drive mapping) has no effect for these commands because local file access relies **on the caller's current security context**.
 
 -   **I can however read it another way by running a subscript as that user**:
     ```powershell

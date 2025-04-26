@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Active Directory", "DACL", "GenericWrite", "GenericAll", "Kerberos", "ASREPRoasting", "mimikatz", "Download Cradle"]
+title = "Forest HTB Walkthrough: Active Directory, ASREPRoasting, and DCSync Exploitation"
 draft = false
-title = "Forest HTB Walkthrough"
+tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Active Directory", "DACL", "GenericWrite", "GenericAll", "Kerberos", "ASREPRoasting", "mimikatz", "Download Cradle"]
+keywords = ["Hack The Box Forest", "Active Directory exploitation", "ASREPRoasting tutorial", "DCSync attack", "Windows privilege escalation", "LDAP enumeration", "Kerberos authentication", "Windows security assessment", "Active Directory penetration testing", "DACL exploitation"]
+description = "A comprehensive walkthrough of the Forest machine from Hack The Box, covering Active Directory enumeration, ASREPRoasting, DCSync exploitation, and privilege escalation techniques. Learn about service account exploitation, DACL manipulation, and advanced Windows penetration testing methods."
 author = "bloodstiller"
 date = 2024-11-15
 toc = true
 bold = true
 next = true
+lastmod = 2024-11-15
 +++
 
 ## Forest Hack The Box Walkthrough/Writeup: {#forest-hack-the-box-walkthrough-writeup}
@@ -274,7 +277,7 @@ next = true
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|
@@ -388,7 +391,7 @@ It will also check for any service accounts and write them to a file:
 
 #### Syncing Clocks for Kerberos Exploitation: {#syncing-clocks-for-kerberos-exploitation}
 
--   Since Kerberos is enabled on this host, it's best practice to sync our clock with the host’s. This helps avoid issues from clock misalignment, which can cause false negatives in Kerberos exploitation attempts.
+-   Since Kerberos is enabled on this host, it's best practice to sync our clock with the host's. This helps avoid issues from clock misalignment, which can cause false negatives in Kerberos exploitation attempts.
     -   `sudo ntpdate -s $domain`
     -   +Note+: I am doing this now as we have the DNS name etc.
 
@@ -726,14 +729,14 @@ We already have the KRBTGT hash via secretsdump however I wanted to show an alte
 #### Why create a golden ticket? {#why-create-a-golden-ticket}
 
 -   "But bloodstiller why are you making a golden ticket if you have the admin hash?" Glad you asked:
-    -   Creating a Golden Ticket during an engagement is a reliable way to maintain access over the long haul. Here’s why:
+    -   Creating a Golden Ticket during an engagement is a reliable way to maintain access over the long haul. Here's why:
     -   `KRBTGT` **Hash Dependence**:
-        -   Golden Tickets are generated using the `KRBTGT` account hash from the target’s domain controller.
+        -   Golden Tickets are generated using the `KRBTGT` account hash from the target's domain controller.
         -   Unlike user account passwords, `KRBTGT` hashes are rarely rotated (and in many organizations, they are never changed), so the Golden Ticket remains valid indefinitely.
     -   `KRBTGT` **Hash—The Key to It All (for upto 10 years)**:
         -   A Golden Ticket can allow you to maintain access to a system for up to 10 years (yeah, you read that right the default lifespan of a golden ticket is 10 years) without needing additional credentials.
         -   This makes it a reliable backdoor, especially if re-access is needed long after initial entry.
-        -   **Think about it**: even if they reset every user’s password (including the administrator etc) your Golden Ticket is still valid because it’s tied to the `KRBTGT` account, not individual users.
+        -   **Think about it**: even if they reset every user's password (including the administrator etc) your Golden Ticket is still valid because it's tied to the `KRBTGT` account, not individual users.
 
 
 ## Lessons Learned: {#lessons-learned}

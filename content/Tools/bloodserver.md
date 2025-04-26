@@ -1,7 +1,9 @@
 +++
+title = "BloodServer: A Secure File Transfer Tool for Penetration Testing"
 draft = false
-tags = ["Active Directory", "Windows", "Server", "Python", "Tools" ]
-title = "BloodServer: A Secure File Transfer Tool for Penetration Testers"
+tags = ["Active Directory", "Windows", "Server", "Python", "Tools"]
+keywords = ["Secure file transfer", "Penetration testing tools", "Python server", "HTTPS file transfer", "Basic authentication", "File upload server", "Pentesting utilities", "Secure data transfer", "Python web server", "Penetration testing workflow"]
+description = "A comprehensive guide to BloodServer, a lightweight Python-based secure file transfer tool designed for penetration testers. Learn how to set up and use this tool for secure file transfers during security assessments, including HTTPS support, authentication, and client-side integration."
 author = "bloodstiller"
 date = 2024-10-17
 toc = true

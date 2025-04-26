@@ -1,6 +1,6 @@
 baseURL = 'https://bloodstiller.com/'
 languageCode = 'en-us'
-title = 'Hack Me Daddy'
+title = 'Bloodstiller: Ethical Hacking & Active Directory Security Blog'
 theme = 'hugo-dead-simple'
 #theme = 'dark-theme-editor'
 
@@ -141,19 +141,19 @@ theme = 'hugo-dead-simple'
         author = "Bloodstiller"
 
         # Website description for RSS and SEO. Theme will generate a <meta> tag for this item
-        description = "Bones & All Cyber Security"
+        description = "Expert insights into ethical hacking, Active Directory security, and penetration testing. Detailed Hack The Box walkthroughs and practical security tutorials for cybersecurity professionals."
 
         # Website keywords. Theme will generate a <meta> tag for this item.
-        keywords = "hacking, AD, hack the box, HTB, security, pentesting, cybersecurity, pentester, active-directory"
+        keywords = "ethical hacking, Active Directory security, penetration testing, Hack The Box walkthroughs, cybersecurity blog, AD security, pentesting tutorials, security education, CTF solutions, enterprise security"
 
     # Parameters applied in the homepage only
     [params.homePage]
         # Long Descripition shown in home page "Start Block". Is is recommended to have the paragraph shorter than 100 words.
-        siteLongDescription = "Hack The Box Walkthroughs: Ethical Hacking, Active Directory Security, and Troubleshooting Bones and All"
+        siteLongDescription = "Expert insights into ethical hacking and Active Directory security. Detailed Hack The Box walkthroughs, practical security tutorials, and real-world penetration testing guides for cybersecurity professionals."
 
         # If you don't like the title of "siteLongDescription" be "Start" (default),
         # you may change the value of this item to "Description" or something you like.
-        siteLongDescriptionTitle = "Hello"
+        siteLongDescriptionTitle = "Welcome to Bloodstiller's Security Blog"
 
         # Param to decide whether to show the most recent blog posts or not. (Default: true)
         showRecentPostsBlock = true

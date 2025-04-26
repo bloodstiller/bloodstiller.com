@@ -1,12 +1,15 @@
 +++
-title = "Return HTB Walkthrough"
-author = "bloodstiller"
-tags = ["Box", "HTB", "Easy", "Windows", "LDAP"]
-date = 2024-09-01
+title = "Return HTB Walkthrough: Active Directory, LDAP, and SeBackupPrivilege Exploitation"
 draft = false
+tags = ["Box", "HTB", "Easy", "Windows", "LDAP"]
+keywords = ["Hack The Box Return", "Active Directory exploitation", "LDAP enumeration", "Windows privilege escalation", "SeBackupPrivilege abuse", "Windows security assessment", "Active Directory penetration testing", "LDAP security", "Windows service exploitation"]
+description = "A comprehensive walkthrough of the Return machine from Hack The Box, covering Active Directory enumeration, LDAP exploitation, and Windows privilege escalation techniques. Learn about service account exploitation, SeBackupPrivilege abuse, and advanced Windows penetration testing methods."
+author = "bloodstiller"
+date = 2024-09-01
 toc = true
 bold = true
 next = true
+lastmod = 2024-09-01
 +++
 
 
@@ -160,7 +163,7 @@ next = true
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|

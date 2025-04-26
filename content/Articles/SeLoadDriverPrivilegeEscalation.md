@@ -1,7 +1,9 @@
 +++
 title = "Understanding SeLoadDriverPrivilege Escalation: A Deep Dive"
-tags = ["Windows", "Active Directory", "SeLoadDriverPrivilege", "Capcom"]
 draft = false
+tags = ["Windows", "Active Directory", "SeLoadDriverPrivilege", "Capcom"]
+keywords = ["Windows privilege escalation", "SeLoadDriverPrivilege exploitation", "Capcom.sys vulnerability", "Kernel-mode driver exploitation", "Windows security", "Driver loading attacks", "SYSTEM privilege escalation", "Windows kernel exploitation", "Driver block rules", "Windows privilege management"]
+description = "A comprehensive guide to understanding and exploiting SeLoadDriverPrivilege in Windows systems, covering the mechanics of driver loading attacks, Capcom.sys vulnerability exploitation, and privilege escalation techniques. Learn about kernel-mode driver exploitation and how to prevent these attacks in your environment."
 author = "bloodstiller"
 date = 2024-10-20
 toc = true

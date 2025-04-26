@@ -1,7 +1,9 @@
 +++
-tags = ["Windows", "Active Directory", "ASREPRoasting", "Kerberos"]
-draft = false
 title = "Understanding AS-REP Roasting Attacks: A Deep Dive"
+draft = false
+tags = ["Windows", "Active Directory", "ASREPRoasting", "Kerberos"]
+keywords = ["AS-REP Roasting", "Kerberos authentication", "Active Directory exploitation", "Pre-authentication bypass", "Kerberos security", "Active Directory attacks", "AS-REP ticket extraction", "Kerberos enumeration", "Active Directory security", "Kerberos authentication bypass"]
+description = "A comprehensive guide to understanding and exploiting AS-REP Roasting attacks in Active Directory environments. Learn about Kerberos pre-authentication bypass, AS-REP ticket extraction, and how to use tools like Impacket and Rubeus for advanced Active Directory attacks."
 author = "bloodstiller"
 date = 2024-11-15
 toc = true

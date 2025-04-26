@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Medium", "Windows", "LDAP", "Active Directory", "Shadow Credentials", "Kerberos", "CA", "Whisker", "MsDS-KeyCredentialLink", "CERTIFICATE", "DACLS", "ACL", "Download Cradle", "ESC9"]
-draft = false 
-title = "Certified HTB Walkthrough"
+title = "Certified HTB Walkthrough: Shadow Credentials, ESC9, and Certificate Abuse"
+draft = false
+tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "Certificate Authority", "Shadow Credentials", "ESC9", "PKINIT", "RBCD", "MsDS-KeyCredentialLink", "DACL", "ACL", "Privilege Escalation", "Download Cradle", "Persistence"]
+keywords = ["Hack The Box Certified", "Shadow Credentials attack", "ESC9 exploitation", "Certificate Authority abuse", "PKINIT authentication bypass", "Active Directory certificate attacks", "RBCD attack tutorial", "DACL modification", "Windows persistence techniques", "PowerShell download cradles"]
+description = "A detailed walkthrough of the Certified machine from Hack The Box, showcasing advanced Active Directory certificate exploitation techniques including Shadow Credentials attacks, ESC9 vulnerability exploitation, and certificate-based privilege escalation methods. Learn about PKINIT authentication, RBCD attacks, and establishing persistence through PowerShell download cradles."
 author = "bloodstiller"
 date = 2024-11-06
 toc = true
 bold = true
 next = true
+lastmod = 2024-11-06
 +++
 
 ## Certified Hack The Box Walkthrough/Writeup: {#certified-hack-the-box-walkthrough-writeup}
@@ -41,8 +44,8 @@ next = true
 - This box scenario assumes that the Active Directory (AD) environment has already been breached and that we have access to valid credentials.
 - This approach reflects a more realistic model, given that direct breaches of AD environments from external footholds are increasingly rare today.
 - +Note+:
-  - Even with assumed credentials, I’ll still conduct my standard enumeration process as if I don’t have them.
-    - This ensures I don’t overlook any findings just because access is available.
+  - Even with assumed credentials, I'll still conduct my standard enumeration process as if I don't have them.
+    - This ensures I don't overlook any findings just because access is available.
     - Comprehensive documentation of all discoveries remains essential.
 
 
@@ -217,7 +220,7 @@ next = true
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|
@@ -265,7 +268,7 @@ serverName:
 
 #### Syncing Clocks for Kerberos Exploitation: {#syncing-clocks-for-kerberos-exploitation}
 
--   Since Kerberos is enabled on this host, it's best practice to sync our clock with the host’s. This helps avoid issues from clock misalignment, which can cause false negatives in Kerberos exploitation attempts.
+-   Since Kerberos is enabled on this host, it's best practice to sync our clock with the host's. This helps avoid issues from clock misalignment, which can cause false negatives in Kerberos exploitation attempts.
     -   `sudo ntpdate -s $domain`
     -   +Note+: I am doing this now as we have the DNS name etc.
 
@@ -624,7 +627,7 @@ serverName:
     -   `certipy-ad account update -username management_svc@$domain -hashes :$svcHash -user ca_operator -upn Administrator`
         -   {{< figure src="/ox-hugo/2024-11-06-131853_.png" >}}
     -   +Note+:
-        -   We're omitting the domain for `ca_operator` to make actions appear as if they’re performed by `Administrator`.
+        -   We're omitting the domain for `ca_operator` to make actions appear as if they're performed by `Administrator`.
         -   This reassigns the identity so that future actions will appear as if `ca_operator` is the `Administrator`.
 
 

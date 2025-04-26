@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Medium", "LINUX", "CVE-2024-4176", "CVE-2024-4175", "CVE-2024-4177", "CVE-2024-4076", "CUPS"]
+title = "EvilCUPS HTB Walkthrough: CUPS Exploitation and Print Queue Analysis"
 draft = false
-title = "EvilCUPS HTB Walkthrough"
+tags = ["Linux", "HTB", "Hack The Box", "CUPS", "IPP", "CVE-2024-4176", "CVE-2024-4175", "CVE-2024-4177", "CVE-2024-4076", "Printer Security", "Privilege Escalation"]
+keywords = ["Hack The Box EvilCUPS", "CUPS exploitation", "Internet Printing Protocol", "Print queue analysis", "CUPS vulnerabilities", "PPD file exploitation", "Linux privilege escalation", "Printer security assessment", "CUPS CVE-2024-4176", "Print server security"]
+description = "A comprehensive walkthrough of the EvilCUPS machine from Hack The Box, demonstrating exploitation of recent CUPS vulnerabilities (CVE-2024-4176, CVE-2024-4175), print queue analysis, and privilege escalation through cached print jobs."
 author = "bloodstiller"
 date = 2024-10-22
 toc = true
 bold = true
 next = true
+lastmod = 2024-10-22
 +++
 
 ## EvilCUPS Hack The Box Walkthrough/Writeup: {#evilcups-hack-the-box-walkthrough-writeup}
@@ -195,7 +198,7 @@ next = true
     -   **PostScript Printers**:
         -   Primarily used for configuring PostScript printers, but they can also be used by CUPS to manage non-PostScript printers by mapping specific print features.
     -   **Driver Customization**:
-        -   Often included with printer drivers or downloaded from the printer manufacturer’s website, ensuring that all printer features are available to the user.
+        -   Often included with printer drivers or downloaded from the printer manufacturer's website, ensuring that all printer features are available to the user.
 
 -   **Security and Maintenance**:
     -   **Misconfiguration Issues**:

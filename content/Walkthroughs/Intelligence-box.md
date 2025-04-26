@@ -1,12 +1,15 @@
 +++
-tags = ["Box", "HTB", "Medium", "Active Directory", "Windows", "Kerberos", "KCD", "DNS"]
+title = "Intelligence HTB Walkthrough: Active Directory, DNS, and Kerberos Constrained Delegation"
 draft = false
-title = "Intelligence HTB Walkthrough"
-date = 2024-09-29
+tags = ["Box", "HTB", "Medium", "Active Directory", "Windows", "Kerberos", "KCD", "DNS"]
+keywords = ["Hack The Box Intelligence", "Active Directory exploitation", "DNS enumeration", "Kerberos Constrained Delegation", "Windows privilege escalation", "LDAP enumeration", "DNS spoofing", "Windows security assessment", "Active Directory penetration testing", "KCD attack"]
+description = "A comprehensive walkthrough of the Intelligence machine from Hack The Box, covering Active Directory enumeration, DNS spoofing, Kerberos Constrained Delegation exploitation, and privilege escalation techniques. Learn about service account exploitation, DNS manipulation, and advanced Windows penetration testing methods."
 author = "bloodstiller"
+date = 2024-09-29
 toc = true
 bold = true
 next = true
+lastmod = 2024-09-29
 +++
 
 ## Hack The Box Intelligence Walkthrough/Writeup: {#name-of-box-intelligence}
@@ -203,7 +206,7 @@ next = true
             -   Knowing the function level is useful as if want to target the DC's and servers, we can know by looking at the function level what the minimum level of OS would be.
 
             -   In this case we can see it is level 7 which means that this server has to be running Windows Server 2016 or newer.
-            -   Here’s a list of functional level numbers and their corresponding Windows Server operating systems:
+            -   Here's a list of functional level numbers and their corresponding Windows Server operating systems:
 
                 | Functional Level Number | Corresponding OS            |
                 |-------------------------|-----------------------------|
@@ -379,7 +382,7 @@ for d in days:
     -   `-csv`: Outputs the data in CSV format.
         -   This is the most important part for the rest of the command to work:
             -   The `CSV` format provides a structured way to output the metadata in rows and columns. When extracting metadata from multiple PDFs, each PDF's metadata is presented as a row, and each field (like "`Creator`") is a column. This makes it easier to process the data programmatically.
-            -   **Simplicity**: When using tools like `cut`, it’s easier to extract specific fields by referring to column numbers (e.g., `-f2` for the second column), which is straightforward with `CSV` formatting.
+            -   **Simplicity**: When using tools like `cut`, it's easier to extract specific fields by referring to column numbers (e.g., `-f2` for the second column), which is straightforward with `CSV` formatting.
     -   `*pdf`: Targets all PDF files in the current directory.
 2.  `| cut -d, -f2`
     -   `|`: Pipes the output from the previous command into the next.
@@ -464,7 +467,7 @@ for d in days:
         -   Whereas Kevin Robertson (creator of [PowerMad](https://github.com/Kevin-Robertson/Powermad) &amp; [Inveigh](https://github.com/Kevin-Robertson/Inveigh/tree/dev)) states:
 
             > Modifying ADIDNS Zones
-            > There are two primary methods of remotely modifying an ADIDNS zone. The first involves using the RPC based management tools. These tools generally require a DNS administrator or above so I won’t bother describing their capabilities. The second method is DNS dynamic updates. Dynamic updates is a DNS specific protocol designed for modifying DNS zones. Within the AD world, dynamic updates is primarily leveraged by machine accounts to add and update their own DNS records.
+            > There are two primary methods of remotely modifying an ADIDNS zone. The first involves using the RPC based management tools. These tools generally require a DNS administrator or above so I won't bother describing their capabilities. The second method is DNS dynamic updates. Dynamic updates is a DNS specific protocol designed for modifying DNS zones. Within the AD world, dynamic updates is primarily leveraged by machine accounts to add and update their own DNS records.
 
             -   Source: <https://www.netspi.com/blog/technical-blog/network-penetration-testing/exploiting-adidns/>
 

@@ -1,7 +1,9 @@
 +++
-draft = false
-tags = ["Active Directory", "Windows", "LDAP","CheatSheet", "Pentesting"]
 title = "Attacking LDAP: Deep Dive & Cheatsheet"
+draft = false
+tags = ["Active Directory", "Windows", "LDAP", "CheatSheet", "Pentesting"]
+keywords = ["LDAP enumeration", "Active Directory exploitation", "LDAP injection", "LDAP authentication", "LDAP filters", "LDAP search queries", "LDAP security", "LDAP troubleshooting", "LDAP best practices", "LDAP attack techniques"]
+description = "A comprehensive guide to LDAP enumeration, exploitation, and security. Learn about LDAP filters, search queries, injection attacks, and best practices for securing LDAP implementations in enterprise environments."
 author = "bloodstiller"
 date = 2024-10-16
 toc = true
@@ -533,7 +535,6 @@ ldapsearch -x -b "dc=sugarape,dc=local" -H ldap://10.129.95.210 '(&(objectCatego
 Get-ADObject -LDAPFilter '(&(objectCategory=person))' or '(objectClass=user)'
 
 # Examples Using LDAPFilter
-Get-ADObject -LDAPFilter '(&(objectCategory=person))'
 Get-ADObject -LDAPFilter '(&(objectCategory=person))' | select name | Measure-Object
 ```
 -   The last option selects just the name and the pipes it into measure object which gives us the total number of users on the domain:
@@ -673,31 +674,6 @@ ldapsearch -x -b "dc=domain,dc=com" -H ldap://10.129.95.210 '(&(objectClass=grou
 # Example Using LDAPFilter
 Get-ADObject -LDAPFilter '(&(objectClass=group)(member=CN=John Doe,CN=Users,DC=domain,DC=com)'
 ```
--   +Note+: Can't seem to get to work just yet
-
-#### List Members of a Specific Group:
-- Linux:
-```bash
-#LDAP Query
-(&(objectCategory=Person)(sAMAccountName=*)(memberOf=CN=<GroupName>,OU=Groups,DC=[DCNAME],DC=[DCNAME]))
-
-# Example Using LDAPSearch
-ldapsearch -H ldap://monteverde.MEGABANK.LOCAL -x -b "DC=MEGABANK,DC=LOCAL" -s sub "(&(objectCategory=Person)(sAMAccountName=*)(memberOf=CN=Helpdesk,OU=Groups,DC=MEGABANK,DC=LOCAL))"
-```
-- Windows:
-```powershell
-#LDAP Query
-(&(objectCategory=Person)(sAMAccountName=*)(memberOf=CN=<GroupName>,OU=Groups,DC=[DCNAME],DC=[DCNAME]))
-
-# Example Using LDAPFilter
-Get-ADObject -LDAPFilter "(&(objectCategory=Person)(sAMAccountName=*)(memberOf=CN=Helpdesk,OU=Groups,DC=MEGABANK,DC=LOCAL))"
-```
-
- -   +Notes+:
-        -   Signifies no-one is in this group:
-            -   {{< figure src="/ox-hugo/2024-07-12-094154_.png" >}}
-        -   Users are part of this group.
-            -   {{< figure src="/ox-hugo/2024-07-12-094227_.png" >}}
 
 
 ### List Computers: {#list-computers}
