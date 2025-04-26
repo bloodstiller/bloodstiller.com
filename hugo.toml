@@ -217,3 +217,7 @@ theme = 'hugo-dead-simple'
 
 [build]
   hugo_version = "0.141.0"
+
+[services]
+  [services.googleAnalytics]
+    id = 'G-G-DG2950K4YJ'  # Replace this with your actual GA4 measurement ID
