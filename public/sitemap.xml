@@ -11,10 +11,16 @@
     <loc>http://localhost:1313/author/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/walkthroughs/bastion-box/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/author/bloodstiller/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/box/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/dcom/</loc>
@@ -23,7 +29,16 @@
     <loc>http://localhost:1313/tags/download-cradle/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/easy/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/guest-access/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/hack-the-box/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hashcat/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/htb/</loc>
@@ -50,13 +65,37 @@
     <loc>http://localhost:1313/tags/mmc20/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/mremoteng/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/openfire/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/password-recovery/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/privilege-escalation/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/rpc/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sam/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/smb/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ssh/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/vhd/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/vhd-mounting/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/</loc>
@@ -323,9 +362,6 @@
     <loc>http://localhost:1313/tags/xp_cmdshell/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/box/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/medium/</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
   </url><url>
@@ -348,9 +384,6 @@
     <lastmod>2024-12-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cve-202327163/</loc>
-    <lastmod>2024-12-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/easy/</loc>
     <lastmod>2024-12-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/sau-box/</loc>
@@ -533,9 +566,6 @@
     <loc>http://localhost:1313/tags/registry-hive-dumping/</loc>
     <lastmod>2024-11-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/rpc/</loc>
-    <lastmod>2024-11-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/sebackupprivilege/</loc>
     <lastmod>2024-11-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -635,9 +665,6 @@
     <loc>http://localhost:1313/tags/csharp/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/password-recovery/</loc>
-    <lastmod>2024-10-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/sql/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
@@ -732,9 +759,6 @@
     <lastmod>2024-09-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/manager-box/</loc>
-    <lastmod>2024-09-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/smb/</loc>
     <lastmod>2024-09-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/access-box/</loc>
