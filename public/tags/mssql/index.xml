@@ -6,15 +6,8 @@
     <description>Recent content in MSSQL on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/mssql/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>EscapeTwo HTB Walkthrough: ESC4 Certificate Abuse and Shadow Credentials Attack</title>
-      <link>http://localhost:1313/walkthroughs/escapetwo-box/</link>
-      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/walkthroughs/escapetwo-box/</guid>
-      <description>&lt;h2 id=&#34;escapetwo-hack-the-box-walkthrough-writeup&#34;&gt;EscapeTwo Hack The Box Walkthrough/Writeup:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://app.hackthebox.com/machines/EscapeTwo&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;https://app.hackthebox.com/machines/EscapeTwo&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;how-i-use-variables-and-wordlists&#34;&gt;How I use variables &amp;amp; Wordlists:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Variables&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;In my commands you are going to see me use &lt;code&gt;$box&lt;/code&gt;, &lt;code&gt;$user&lt;/code&gt;, &lt;code&gt;$hash&lt;/code&gt;, &lt;code&gt;$domain&lt;/code&gt;, &lt;code&gt;$pass&lt;/code&gt; often.&#xA;&lt;ul&gt;&#xA;&lt;li&gt;I find the easiest way to eliminate type-os &amp;amp; to streamline my process it is easier to store important information in variables &amp;amp; aliases.&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;$box&lt;/code&gt; = The IP of the box&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;$pass&lt;/code&gt; = Passwords I have access to.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;$user&lt;/code&gt; = current user I am enumerating with.&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Depending on where I am in the process this can change if I move laterally.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;$domain&lt;/code&gt; = the domain name e.g. &lt;code&gt;sugarape.local&lt;/code&gt; or &lt;code&gt;contoso.local&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;$machine&lt;/code&gt; = the machine name e.g. &lt;code&gt;DC01&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Why am I telling you this? People of all different levels read these writeups/walktrhoughs and I want to make it as easy as possible for people to follow along and take in valuable information.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Wordlists&lt;/strong&gt;:&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Monteverde HTB Walkthrough: Azure AD Connect, SQL Server, and Credential Extraction</title>
       <link>http://localhost:1313/walkthroughs/monteverde-box/</link>
