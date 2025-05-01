@@ -1,7 +1,7 @@
 +++
 title = "Brutus HTB Sherlock Challenge: Analyzing SSH Brute Force Attack Through Linux Logs"
 draft = false
-tags = ["wtmp", "linux", "utmp", "sherlock", "auth.log", "defensive", "forensics"]
+tags = ["wtmp", "linux", "utmp", "sherlock", "auth.log", "defensive", "forensics", "DFIR"]
 keywords = ["Linux forensics", "SSH brute force analysis", "auth.log investigation", "wtmp log analysis", "Linux security logs", "SSH attack investigation", "Linux authentication logs", "SSH brute force detection", "Linux system compromise", "SSH security forensics"]
 description = "A detailed forensic analysis of a compromised Confluence server through SSH brute-force attack. Learn how to analyze wtmp and auth.log files to reconstruct attack timelines, identify system compromises, and understand attacker persistence techniques."
 author = "bloodstiller"
