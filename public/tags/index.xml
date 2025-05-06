@@ -6,8 +6,85 @@
     <description>Recent content in Tags on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1102</title>
+      <link>http://localhost:1313/tags/1102/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/1102/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>1149</title>
+      <link>http://localhost:1313/tags/1149/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/1149/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DFIR</title>
+      <link>http://localhost:1313/tags/dfir/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dfir/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>EVTX</title>
+      <link>http://localhost:1313/tags/evtx/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/evtx/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>EvtxECmd</title>
+      <link>http://localhost:1313/tags/evtxecmd/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/evtxecmd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Forensics</title>
+      <link>http://localhost:1313/tags/forensics/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/forensics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sherlock</title>
+      <link>http://localhost:1313/tags/sherlock/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sherlock/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SmartScreen</title>
+      <link>http://localhost:1313/tags/smartscreen/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/smartscreen/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TimelineExplorer</title>
+      <link>http://localhost:1313/tags/timelineexplorer/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/timelineexplorer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>http://localhost:1313/tags/windows/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/windows/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WindowsLogs</title>
+      <link>http://localhost:1313/tags/windowslogs/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/windowslogs/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Box</title>
       <link>http://localhost:1313/tags/box/</link>
@@ -104,13 +181,6 @@
       <link>http://localhost:1313/tags/vhd-mounting/</link>
       <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/vhd-mounting/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
     <item>
@@ -324,31 +394,10 @@
       <description></description>
     </item>
     <item>
-      <title>DFIR</title>
-      <link>http://localhost:1313/tags/dfir/</link>
-      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dfir/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Forensics</title>
-      <link>http://localhost:1313/tags/forensics/</link>
-      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/forensics/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Linux</title>
       <link>http://localhost:1313/tags/linux/</link>
       <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sherlock</title>
-      <link>http://localhost:1313/tags/sherlock/</link>
-      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sherlock/</guid>
       <description></description>
     </item>
     <item>
@@ -590,6 +639,55 @@
       <description></description>
     </item>
     <item>
+      <title>Certificate Authority</title>
+      <link>http://localhost:1313/tags/certificate-authority/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/certificate-authority/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ESC4</title>
+      <link>http://localhost:1313/tags/esc4/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/esc4/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kerberoasting</title>
+      <link>http://localhost:1313/tags/kerberoasting/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/kerberoasting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MSSQL</title>
+      <link>http://localhost:1313/tags/mssql/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mssql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Shadow Credentials</title>
+      <link>http://localhost:1313/tags/shadow-credentials/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/shadow-credentials/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WriteOwner</title>
+      <link>http://localhost:1313/tags/writeowner/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/writeowner/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Xp_cmdshell</title>
+      <link>http://localhost:1313/tags/xp_cmdshell/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/xp_cmdshell/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Medium</title>
       <link>http://localhost:1313/tags/medium/</link>
       <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
@@ -807,13 +905,6 @@
       <description></description>
     </item>
     <item>
-      <title>Certificate Authority</title>
-      <link>http://localhost:1313/tags/certificate-authority/</link>
-      <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/certificate-authority/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>ESC9</title>
       <link>http://localhost:1313/tags/esc9/</link>
       <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
@@ -839,13 +930,6 @@
       <link>http://localhost:1313/tags/rbcd/</link>
       <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/rbcd/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Shadow Credentials</title>
-      <link>http://localhost:1313/tags/shadow-credentials/</link>
-      <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/shadow-credentials/</guid>
       <description></description>
     </item>
     <item>
@@ -902,13 +986,6 @@
       <link>http://localhost:1313/tags/windows-11/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/windows-11/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Kerberoasting</title>
-      <link>http://localhost:1313/tags/kerberoasting/</link>
-      <pubDate>Sun, 03 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kerberoasting/</guid>
       <description></description>
     </item>
     <item>
@@ -1154,13 +1231,6 @@
       <link>http://localhost:1313/tags/azure-ad-connect/</link>
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/azure-ad-connect/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MSSQL</title>
-      <link>http://localhost:1313/tags/mssql/</link>
-      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mssql/</guid>
       <description></description>
     </item>
     <item>
