@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Optimization on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
+    <link>http://localhost:1313/tags/optimization/</link>
+    <description>Recent content in Optimization on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/optimization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Common Docker Build Issues: A Comprehensive Troubleshooting Guide</title>
+      <link>http://localhost:1313/cheatsheets/commondockerbuildissues/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cheatsheets/commondockerbuildissues/</guid>
+      <description>&lt;h2 id=&#34;troubleshooting-common-docker-build-issues-a-comprehensive-guide&#34;&gt;Troubleshooting Common Docker Build Issues: A Comprehensive Guide&lt;/h2&gt;&#xA;&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;&#xA;&lt;p&gt;Docker has revolutionized how we package and deploy applications, but the build process can sometimes be challenging, with obtuse errors and lots of troubleshooting, I&amp;rsquo;m looking at you GO dependencies. This guide will help you identify, understand, and resolve common Docker build issues.&lt;/p&gt;&#xA;&lt;h3 id=&#34;common-docker-build-issues-and-solutions&#34;&gt;Common Docker Build Issues and Solutions&lt;/h3&gt;&#xA;&lt;h4 id=&#34;1-dot-base-image-issues&#34;&gt;1. Base Image Issues&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Problem: Unavailable or Incorrect Base Images&lt;/p&gt;&#xA;&lt;p&gt;When building a Docker image, you need to start with a base image (specified by the FROM instruction). Sometimes the build fails because the base image doesn&amp;rsquo;t exist, can&amp;rsquo;t be found, or you&amp;rsquo;ve made a typo in the image name. This is like trying to build a house on a foundation that isn&amp;rsquo;t there - it&amp;rsquo;s impossible to proceed without a valid base image.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

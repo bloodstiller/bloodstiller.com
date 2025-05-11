@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ScheduledTask on Hack Me Daddy</title>
+    <title>ScheduledTask on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
     <link>http://localhost:1313/tags/scheduledtask/</link>
-    <description>Recent content in ScheduledTask on Hack Me Daddy</description>
+    <description>Recent content in ScheduledTask on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 24 Dec 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/scheduledtask/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Love HTB Walkthrough</title>
+      <title>Love HTB Walkthrough: SSRF, File Upload, and AlwaysInstallElevated Exploitation</title>
       <link>http://localhost:1313/walkthroughs/love-box/</link>
       <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/walkthroughs/love-box/</guid>

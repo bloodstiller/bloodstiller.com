@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
+    <link>http://localhost:1313/tags/security/</link>
+    <description>Recent content in Security on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding PowerShell Download Cradles: A Deep Dive</title>
+      <link>http://localhost:1313/articles/understandingdownloadcradles/</link>
+      <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/articles/understandingdownloadcradles/</guid>
+      <description>&lt;h2 id=&#34;updates&#34;&gt;Updates:&lt;/h2&gt;&#xA;&lt;p&gt;Article originally published on 11-11-2024&lt;/p&gt;&#xA;&lt;p&gt;Updated with additional information on 24-04-2025&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;PowerShell has revolutionized system administration and automation. One of its powerful yet often misunderstood features is the PowerShell download cradle. This article explores what download cradles are, their uses, and best practices for implementation.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-a-powershell-download-cradle&#34;&gt;What is a PowerShell Download Cradle?&lt;/h2&gt;&#xA;&lt;p&gt;A PowerShell download cradle is a technique that enables downloading and executing code directly in memory without writing to disk. This approach can help bypass security mechanisms.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Common Docker Build Issues: A Comprehensive Troubleshooting Guide</title>
+      <link>http://localhost:1313/cheatsheets/commondockerbuildissues/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cheatsheets/commondockerbuildissues/</guid>
+      <description>&lt;h2 id=&#34;troubleshooting-common-docker-build-issues-a-comprehensive-guide&#34;&gt;Troubleshooting Common Docker Build Issues: A Comprehensive Guide&lt;/h2&gt;&#xA;&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;&#xA;&lt;p&gt;Docker has revolutionized how we package and deploy applications, but the build process can sometimes be challenging, with obtuse errors and lots of troubleshooting, I&amp;rsquo;m looking at you GO dependencies. This guide will help you identify, understand, and resolve common Docker build issues.&lt;/p&gt;&#xA;&lt;h3 id=&#34;common-docker-build-issues-and-solutions&#34;&gt;Common Docker Build Issues and Solutions&lt;/h3&gt;&#xA;&lt;h4 id=&#34;1-dot-base-image-issues&#34;&gt;1. Base Image Issues&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Problem: Unavailable or Incorrect Base Images&lt;/p&gt;&#xA;&lt;p&gt;When building a Docker image, you need to start with a base image (specified by the FROM instruction). Sometimes the build fails because the base image doesn&amp;rsquo;t exist, can&amp;rsquo;t be found, or you&amp;rsquo;ve made a typo in the image name. This is like trying to build a house on a foundation that isn&amp;rsquo;t there - it&amp;rsquo;s impossible to proceed without a valid base image.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Docker Image Security Analysis and Testing</title>
+      <link>http://localhost:1313/cheatsheets/dockerimagesecurityanalysis/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cheatsheets/dockerimagesecurityanalysis/</guid>
+      <description>&lt;h2 id=&#34;docker-image-security-analysis-and-testing&#34;&gt;Docker Image Security Analysis and Testing&lt;/h2&gt;&#xA;&lt;p&gt;When performing security assessments of Docker containers, having local access to container images provides significant advantages. This guide focuses on the security analysis and testing aspects of Docker containers, showing you how to perform thorough security assessments of container images.&lt;/p&gt;&#xA;&lt;h3 id=&#34;why-perform-local-security-analysis&#34;&gt;Why Perform Local Security Analysis?&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Comprehensive security testing&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Local access enables thorough security testing without network constraints or external dependencies. This is crucial when performing detailed vulnerability assessments or penetration testing of container images.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Forensic analysis capabilities&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Emulate Different Architectures in Docker</title>
+      <link>http://localhost:1313/cheatsheets/howtoemulatedifferentarchitecturesindocker/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cheatsheets/howtoemulatedifferentarchitecturesindocker/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;When conducting security assessments or penetration tests involving containers, you&amp;rsquo;ll often encounter images built for different CPU architectures. For example, you might need to analyze an ARM64 container on your x86_64 laptop, or test an old x86 container on modern ARM-based hardware. This guide covers various methods to handle cross-architecture container analysis.&lt;/p&gt;&#xA;&lt;h2 id=&#34;understanding-architecture-emulation-in-docker&#34;&gt;Understanding Architecture Emulation in Docker&lt;/h2&gt;&#xA;&lt;p&gt;Docker uses QEMU under the hood to enable cross-architecture support. QEMU is a generic machine emulator and virtualizer that allows running binaries built for one CPU architecture on a different one.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About Bloodstiller: Ethical Hacker &amp; Active Directory Security Specialist</title>
+      <link>http://localhost:1313/aboutme/</link>
+      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/aboutme/</guid>
+      <description>&lt;h2 id=&#34;hack-the-planet&#34;&gt;Hack the Planet&lt;/h2&gt;&#xA;&lt;p&gt;Can you hear me? Is this thing on?&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m Bloodstiller, an ethical hacker with a passion for security and privacy. My focus is on &lt;strong&gt;Active Directory (AD) security&lt;/strong&gt;, working to protect enterprise networks and identity management systems.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m always exploring new techniques and keeping up with the latest threats. This blog serves as a way for me to share insights, tips, and experiences from my journey in hacking.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
