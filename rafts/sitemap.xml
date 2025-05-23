@@ -3,21 +3,66 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/author/</loc>
-    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/bloodstiller/</loc>
-    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/box/</loc>
-    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2024-40028/</loc>
-    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/cap/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/cap-box/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cap-setuid/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/capabilities/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/easy/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ftp/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/gunicorn/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/htb/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/idor/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/linux/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pcap/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/wireshark/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/wsgi/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cve-2024-40028/</loc>
     <lastmod>2025-05-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/ghost/</loc>
@@ -29,13 +74,7 @@
     <loc>http://localhost:1313/tags/git-dumper/</loc>
     <lastmod>2025-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/htb/</loc>
-    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/walkthroughs/linkvortex-box/</loc>
-    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2025-05-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/privilege-escalation/</loc>
@@ -47,13 +86,7 @@
     <loc>http://localhost:1313/tags/subdomain/</loc>
     <lastmod>2025-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/toctou/</loc>
-    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/</loc>
     <lastmod>2025-05-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cve-2025-29927/</loc>
@@ -243,9 +276,6 @@
     <lastmod>2025-04-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/password-safe/</loc>
-    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2025-04-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/reportlab/</loc>
@@ -828,9 +858,6 @@
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/database-security/</loc>
-    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/ftp/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/lnk-files/</loc>
