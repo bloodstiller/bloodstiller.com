@@ -9,7 +9,7 @@
     <lastBuildDate>Fri, 23 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/wsgi/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Cap HTB Walkthrough</title>
+      <title>Cap HTB Walkthrough: PCAP Analysis, Linux Capabilities, and Linux Privilege Escalation</title>
       <link>http://localhost:1313/walkthroughs/cap-box/</link>
       <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/walkthroughs/cap-box/</guid>
