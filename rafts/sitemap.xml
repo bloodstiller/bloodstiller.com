@@ -2,17 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/active-directory/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/apache-struts2/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/bloodstiller/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cve-2024-53677/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/dockerfile/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/file-upload/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hack-the-box/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/htb/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/java/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/linux/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/magic-bytes/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/maven/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/medium/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/mime-type/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ognl/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/strutted-box/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tcpdump/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tomcat/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/web-exploitation/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/active-directory/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/certificate-authority/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
@@ -23,29 +83,14 @@
     <loc>http://localhost:1313/walkthroughs/escapetwo-box/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hack-the-box/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/htb/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/kerberoasting/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/mssql/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/shadow-credentials/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/windows/</loc>
     <lastmod>2025-05-06T00:00:00+00:00</lastmod>
@@ -81,9 +126,6 @@
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/idor/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/network-analysis/</loc>
@@ -237,9 +279,6 @@
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/jabber/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/java/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/jsp/</loc>
@@ -476,9 +515,6 @@
     <loc>http://localhost:1313/tools/</loc>
     <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/medium/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/walkthroughs/redpanda-box/</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
   </url><url>
@@ -489,9 +525,6 @@
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/template-injection/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/web-exploitation/</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cve-2023-26604/</loc>
