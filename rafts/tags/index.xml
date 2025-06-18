@@ -6,8 +6,141 @@
     <description>Recent content in Tags on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Active Directory</title>
+      <link>http://localhost:1313/tags/active-directory/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/active-directory/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Alternative Data Streams</title>
+      <link>http://localhost:1313/tags/alternative-data-streams/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/alternative-data-streams/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Db2</title>
+      <link>http://localhost:1313/tags/db2/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/db2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hack the Box</title>
+      <link>http://localhost:1313/tags/hack-the-box/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/hack-the-box/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HTB</title>
+      <link>http://localhost:1313/tags/htb/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/htb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ibm-Db2</title>
+      <link>http://localhost:1313/tags/ibm-db2/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ibm-db2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jenkins</title>
+      <link>http://localhost:1313/tags/jenkins/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jenkins RCE</title>
+      <link>http://localhost:1313/tags/jenkins-rce/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/jenkins-rce/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>John</title>
+      <link>http://localhost:1313/tags/john/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/john/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kdbx</title>
+      <link>http://localhost:1313/tags/kdbx/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/kdbx/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Keepass2john</title>
+      <link>http://localhost:1313/tags/keepass2john/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/keepass2john/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Medium</title>
+      <link>http://localhost:1313/tags/medium/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/medium/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Password Cracking</title>
+      <link>http://localhost:1313/tags/password-cracking/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/password-cracking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Persistence</title>
+      <link>http://localhost:1313/tags/persistence/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/persistence/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Powershell</title>
+      <link>http://localhost:1313/tags/powershell/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/powershell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Privilege Escalation</title>
+      <link>http://localhost:1313/tags/privilege-escalation/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/privilege-escalation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SMB</title>
+      <link>http://localhost:1313/tags/smb/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/smb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>War</title>
+      <link>http://localhost:1313/tags/war/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/war/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>http://localhost:1313/tags/windows/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/windows/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Apache Struts2</title>
       <link>http://localhost:1313/tags/apache-struts2/</link>
@@ -34,20 +167,6 @@
       <link>http://localhost:1313/tags/file-upload/</link>
       <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/file-upload/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Hack the Box</title>
-      <link>http://localhost:1313/tags/hack-the-box/</link>
-      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/hack-the-box/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>HTB</title>
-      <link>http://localhost:1313/tags/htb/</link>
-      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/htb/</guid>
       <description></description>
     </item>
     <item>
@@ -79,13 +198,6 @@
       <description></description>
     </item>
     <item>
-      <title>Medium</title>
-      <link>http://localhost:1313/tags/medium/</link>
-      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/medium/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>MIME Type</title>
       <link>http://localhost:1313/tags/mime-type/</link>
       <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
@@ -97,13 +209,6 @@
       <link>http://localhost:1313/tags/ognl/</link>
       <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/ognl/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Privilege Escalation</title>
-      <link>http://localhost:1313/tags/privilege-escalation/</link>
-      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/privilege-escalation/</guid>
       <description></description>
     </item>
     <item>
@@ -125,13 +230,6 @@
       <link>http://localhost:1313/tags/web-exploitation/</link>
       <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/web-exploitation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Active Directory</title>
-      <link>http://localhost:1313/tags/active-directory/</link>
-      <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/active-directory/</guid>
       <description></description>
     </item>
     <item>
@@ -163,17 +261,17 @@
       <description></description>
     </item>
     <item>
+      <title>PKINIT</title>
+      <link>http://localhost:1313/tags/pkinit/</link>
+      <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/pkinit/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Shadow Credentials</title>
       <link>http://localhost:1313/tags/shadow-credentials/</link>
       <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/shadow-credentials/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
-      <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
     <item>
@@ -506,13 +604,6 @@
       <description></description>
     </item>
     <item>
-      <title>SMB</title>
-      <link>http://localhost:1313/tags/smb/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/smb/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>SSH</title>
       <link>http://localhost:1313/tags/ssh/</link>
       <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
@@ -615,13 +706,6 @@
       <link>http://localhost:1313/tags/downloadcradle/</link>
       <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/downloadcradle/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>PowerShell</title>
-      <link>http://localhost:1313/tags/powershell/</link>
-      <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/powershell/</guid>
       <description></description>
     </item>
     <item>
@@ -1045,13 +1129,6 @@
       <description></description>
     </item>
     <item>
-      <title>Persistence</title>
-      <link>http://localhost:1313/tags/persistence/</link>
-      <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/persistence/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Splunk</title>
       <link>http://localhost:1313/tags/splunk/</link>
       <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
@@ -1122,13 +1199,6 @@
       <description></description>
     </item>
     <item>
-      <title>John</title>
-      <link>http://localhost:1313/tags/john/</link>
-      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/john/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>LAPS</title>
       <link>http://localhost:1313/tags/laps/</link>
       <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
@@ -1154,13 +1224,6 @@
       <link>http://localhost:1313/tags/msds-keycredentiallink/</link>
       <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/msds-keycredentiallink/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>PKINIT</title>
-      <link>http://localhost:1313/tags/pkinit/</link>
-      <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/pkinit/</guid>
       <description></description>
     </item>
     <item>
@@ -1500,6 +1563,34 @@
       <description></description>
     </item>
     <item>
+      <title>Cert</title>
+      <link>http://localhost:1313/tags/cert/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cert/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Certificate</title>
+      <link>http://localhost:1313/tags/certificate/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/certificate/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pem</title>
+      <link>http://localhost:1313/tags/pem/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/pem/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pywhisker</title>
+      <link>http://localhost:1313/tags/pywhisker/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/pywhisker/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>.NET</title>
       <link>http://localhost:1313/tags/.net/</link>
       <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
@@ -1567,13 +1658,6 @@
       <link>http://localhost:1313/tags/ca/</link>
       <pubDate>Sun, 22 Sep 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/ca/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Certificate</title>
-      <link>http://localhost:1313/tags/certificate/</link>
-      <pubDate>Sun, 22 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/certificate/</guid>
       <description></description>
     </item>
     <item>

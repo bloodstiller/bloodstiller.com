@@ -6,8 +6,15 @@
     <description>Recent content in Certificate on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/certificate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding the Shadow Credentials Attack Vector</title>
+      <link>http://localhost:1313/articles/shadowcredentialsattack/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/articles/shadowcredentialsattack/</guid>
+      <description>&lt;h2 id=&#34;understanding-the-shadow-credentials-attack-vector&#34;&gt;Understanding the Shadow Credentials Attack Vector:&lt;/h2&gt;&#xA;&lt;p&gt;The Shadow Credentials attack is an advanced technique that exploits Active Directory&amp;rsquo;s certificate-based authentication mechanism to compromise user accounts without changing their passwords. This attack leverages the &lt;code&gt;msDS-KeyCredentialLink&lt;/code&gt; attribute to add a malicious certificate, allowing an attacker to impersonate the target user stealthily.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;To put it simply&lt;/strong&gt;: If we have the &lt;code&gt;WriteProperty&lt;/code&gt; privilege (specifically for the &lt;code&gt;msDS-KeyCredentialLink&lt;/code&gt; attribute) over a user or computer object, we can set Shadow Credentials for that object and authenticate as them. You read that right, we can add a certificate-based credential to a user or computer and then authenticate as them. We can also request a Kerberos ticket and use it for pass-the-ticket attacks if needed.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Manager HTB Walkthrough: Active Directory, Certificate Authority, and ESC7 Exploitation</title>
       <link>http://localhost:1313/walkthroughs/manager-box/</link>
