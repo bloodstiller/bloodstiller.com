@@ -2,19 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/articles/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/author/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/author/bloodstiller/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/calculator/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/articles/understandingcvssscoring/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cvss/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/cvss-calculator/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/linux/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/security/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sherlock/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tools/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/utmp/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/vulnerability-assessment/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/wtmp/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/active-directory/</loc>
     <lastmod>2025-06-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/alternative-data-streams/</loc>
-    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/author/</loc>
-    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/author/bloodstiller/</loc>
-    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
     <lastmod>2025-06-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/db2/</loc>
@@ -65,9 +107,6 @@
     <loc>http://localhost:1313/tags/smb/</loc>
     <lastmod>2025-06-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/walkthroughs/</loc>
     <lastmod>2025-06-18T00:00:00+00:00</lastmod>
   </url><url>
@@ -90,9 +129,6 @@
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/java/</loc>
-    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/magic-bytes/</loc>
@@ -239,9 +275,6 @@
     <loc>http://localhost:1313/tags/redis-injection/</loc>
     <lastmod>2025-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sherlock/</loc>
-    <lastmod>2025-05-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/sherlocks/</loc>
     <lastmod>2025-05-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -344,16 +377,10 @@
     <loc>http://localhost:1313/tags/xmpp/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/</loc>
-    <lastmod>2025-04-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/downloadcradle/</loc>
     <lastmod>2025-04-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/powershell-scripting/</loc>
-    <lastmod>2025-04-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/security/</loc>
     <lastmod>2025-04-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/system-administration/</loc>
@@ -389,9 +416,6 @@
     <loc>http://localhost:1313/walkthroughs/solarlab-box/</loc>
     <lastmod>2025-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/vulnerability-assessment/</loc>
-    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/auth.log/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
@@ -399,12 +423,6 @@
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/defensive/</loc>
-    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/utmp/</loc>
-    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/wtmp/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/cheatsheets/</loc>
@@ -423,9 +441,6 @@
     <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/sysadmin/</loc>
-    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/tools/</loc>
     <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/configuration/</loc>
@@ -549,9 +564,6 @@
     <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/qemu/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tools/</loc>
     <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/redpanda-box/</loc>

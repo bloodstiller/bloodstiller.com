@@ -1,0 +1,14 @@
+{{- $src := .Get "src" -}}
+{{- $width := .Get "width" | default "100%" -}}
+{{- $height := .Get "height" | default "400px" -}}
+{{- $frameborder := .Get "frameborder" | default "0" -}}
+{{- $style := .Get "style" | default "border: 1px solid #ddd; border-radius: 8px;" -}}
+
+<iframe 
+  src="{{ $src }}" 
+  width="{{ $width }}" 
+  height="{{ $height }}" 
+  frameborder="{{ $frameborder }}" 
+  style="{{ $style }}"
+  allowfullscreen>
+</iframe> 

@@ -6,8 +6,15 @@
     <description>Recent content in Linux on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Common Vulnerability Scoring System (CVSS) - Complete Guide</title>
+      <link>http://localhost:1313/articles/understandingcvssscoring/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/articles/understandingcvssscoring/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction:&lt;/h2&gt;&#xA;&lt;p&gt;The Common Vulnerability Scoring System (CVSS) is an industry standard for assessing and communicating the severity of security vulnerabilities. This guide serves as both a comprehensive reference for security professionals and a practical tool for penetration testers.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-cvss&#34;&gt;What is CVSS?&lt;/h3&gt;&#xA;&lt;p&gt;CVSS provides a standardized way to score vulnerabilities on a scale of 0.0 to 10.0, where 10.0 represents the most severe vulnerabilities. The system is maintained by the Forum of Incident Response and Security Teams (FIRST) and is widely adopted across the cybersecurity industry.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Strutted HTB Walkthrough: Apache Struts2 CVE-2024-53677 File Upload Exploitation</title>
       <link>http://localhost:1313/walkthroughs/strutted-box/</link>

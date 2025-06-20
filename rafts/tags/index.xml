@@ -6,8 +6,71 @@
     <description>Recent content in Tags on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Calculator</title>
+      <link>http://localhost:1313/tags/calculator/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/calculator/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVSS</title>
+      <link>http://localhost:1313/tags/cvss/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cvss/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>http://localhost:1313/tags/linux/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>http://localhost:1313/tags/security/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sherlock</title>
+      <link>http://localhost:1313/tags/sherlock/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sherlock/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tools</title>
+      <link>http://localhost:1313/tags/tools/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Utmp</title>
+      <link>http://localhost:1313/tags/utmp/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/utmp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vulnerability Assessment</title>
+      <link>http://localhost:1313/tags/vulnerability-assessment/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/vulnerability-assessment/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wtmp</title>
+      <link>http://localhost:1313/tags/wtmp/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/wtmp/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Active Directory</title>
       <link>http://localhost:1313/tags/active-directory/</link>
@@ -174,13 +237,6 @@
       <link>http://localhost:1313/tags/java/</link>
       <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/java/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
-      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
     <item>
@@ -485,13 +541,6 @@
       <description></description>
     </item>
     <item>
-      <title>Sherlock</title>
-      <link>http://localhost:1313/tags/sherlock/</link>
-      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sherlock/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>SSRF</title>
       <link>http://localhost:1313/tags/ssrf/</link>
       <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
@@ -716,13 +765,6 @@
       <description></description>
     </item>
     <item>
-      <title>Security</title>
-      <link>http://localhost:1313/tags/security/</link>
-      <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/security/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>System Administration</title>
       <link>http://localhost:1313/tags/system-administration/</link>
       <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate>
@@ -779,13 +821,6 @@
       <description></description>
     </item>
     <item>
-      <title>Vulnerability Assessment</title>
-      <link>http://localhost:1313/tags/vulnerability-assessment/</link>
-      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/vulnerability-assessment/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Auth.log</title>
       <link>http://localhost:1313/tags/auth.log/</link>
       <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
@@ -797,20 +832,6 @@
       <link>http://localhost:1313/tags/defensive/</link>
       <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/defensive/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Utmp</title>
-      <link>http://localhost:1313/tags/utmp/</link>
-      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/utmp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Wtmp</title>
-      <link>http://localhost:1313/tags/wtmp/</link>
-      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/wtmp/</guid>
       <description></description>
     </item>
     <item>
@@ -839,13 +860,6 @@
       <link>http://localhost:1313/tags/sysadmin/</link>
       <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/sysadmin/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tools</title>
-      <link>http://localhost:1313/tags/tools/</link>
-      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tools/</guid>
       <description></description>
     </item>
     <item>

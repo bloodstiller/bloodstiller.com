@@ -917,18 +917,11 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 window.store = {
     
-    "http:\/\/localhost:1313\/tags\/active-directory\/": {
-        "title": "Active Directory",
+    "http:\/\/localhost:1313\/articles\/": {
+        "title": "Articles",
         "tags": [],
         "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/active-directory\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/alternative-data-streams\/": {
-        "title": "Alternative Data Streams",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/alternative-data-streams\/"
+        "url": "http:\/\/localhost:1313\/articles\/"
     },
     
     "http:\/\/localhost:1313\/author\/": {
@@ -950,6 +943,111 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/calculator\/": {
+        "title": "Calculator",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/calculator\/"
+    },
+    
+    "http:\/\/localhost:1313\/articles\/understandingcvssscoring\/": {
+        "title": "Common Vulnerability Scoring System (CVSS) - Complete Guide",
+        "tags": ["wtmp","linux","utmp","sherlock",],
+        "content": "Introduction: The Common Vulnerability Scoring System (CVSS) is an industry standard for assessing and communicating the severity of security vulnerabilities. This guide serves as both a comprehensive reference for security professionals and a practical tool for penetration testers.\nWhat is CVSS? CVSS provides a standardized way to score vulnerabilities on a scale of 0.0 to 10.0, where 10.0 represents the most severe vulnerabilities. The system is maintained by the Forum of Incident Response and Security Teams (FIRST) and is widely adopted across the cybersecurity industry.\nAs penetration testers we typically use CVSS scorings to justify our findings and apply an appropriate score to them.\nCVSS Version Information This guide covers CVSS v3.1, the current standard. CVSS v2 is deprecated but may still be encountered in legacy systems \u0026amp; v4 is still not widely adopted as of yet.\nCVSS Score Ranges: CVSS scores will fall into 1 of 5 scoring categories.\nCritical (9.0-10.0): Vulnerabilities that can lead to complete system compromise. High (7.0-8.9): Vulnerabilities that can lead to significant data loss or system access. Medium (4.0-6.9): Vulnerabilities that can lead to limited data loss or system access. Low (0.1-3.9): Vulnerabilities that have minimal impact or are considered informational. None (0.0): No impact CVSS Scoring Tools: There are multiple tools out there that can be used generate CVSS scores, below are just a few examples.\nI have generated one myself which is available below, and also at https://bloodstiller.com/tools/cvss-calculator/ {{\u0026lt; iframe src=\u0026quot;/cvss-calculator.html\u0026quot; width=\u0026ldquo;100%\u0026rdquo; height=\u0026ldquo;900px\u0026rdquo; frameborder=\u0026ldquo;0\u0026rdquo; style=\u0026ldquo;border: 1px solid #ddd; border-radius: 8px;\u0026rdquo; \u0026gt;}}\nOfficial Tools:\nNIST Official Calculator: https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator FIRST CVSS Calculator: https://www.first.org/cvss/calculator/3.1 Third-Party Tools:\nVisual JS Calculator: (recommended by Tiberius): https://cvss.js.org/ Qualys CVSS Calculator: https://www.qualys.com/research/security-advisories/cvss/ This is more of a suite of tools that can be used and incurrs a charge. Quick Reference Cheat Sheet: Base Score Metrics Quick Reference: Sometimes when scoring the different metrics can overwhelming so here is a simple quick reference.\nMetric Values Description Attack Vector Network, Adjacent, Local, Physical Where the attacker needs to be Attack Complexity Low, High How difficult the attack is to execute Privileges Required None, Low, High What access the attacker needs User Interaction None, Required Whether user action is needed Scope Changed, Unchanged Whether other systems are affected Confidentiality None, Low, High Impact on data confidentiality Integrity None, Low, High Impact on data integrity Availability None, Low, High Impact on system availability Metrics Explained: Base Score Metrics: This is the only metric we have to fill out to get a score as penetration testers. The Base Score represents the intrinsic characteristics of a vulnerability that are constant over time and across user environments.\nExploitability Metrics: Attack Vector (AV) [0/4]: This is where in space \u0026amp; relation to the target the attacker needs to be to perform the attack.\nNetwork = Internet, the attacker is on a network.\nExample: SQL injection via web application accessible from the internet Adjacent Network = The attacker is on an adjacent network to the target such as a subnet\nExample: Attack from guest WiFi network against corporate network Local = The attacker is on the same network as the target.\nExample: ARP spoofing on the same LAN Physical = The attackers is physically present at the machine or requires physical access.\nExample: USB drop attack, direct console access Attack Complexity [0/2]: This is used to gauge the complexity of the attack.\nLow = Easy to execute, can be repeated with consistent success\nExample: Simple SQL injection with predictable results High = Complex, may not work consistently, requires specific conditions\nExample: Race condition that requires precise timing Privileges Required [0/3]: These are the privileges required before the attack, e.g. what privileges the attacker needs to perform the attack.\nNone = No access needed.\nExample: Anonymous web user Low = Normal user account.\nExample: Authenticated web user High = Admin/root account.\nExample: Administrator or root access Note: This can be complex. If the attack is against a webhost with a registration page to create an account, this would not be classed as \u0026ldquo;low\u0026rdquo; but instead \u0026ldquo;none\u0026rdquo; as the attacker had no privileges and then was able to generate privileges to perform the attack.\nUser Interaction [0/2]: Whether the victim has to be an active participant in the attack.\nNone = No user involvement required\nExample: Server-side vulnerability that doesn\u0026rsquo;t require user action Required = User must be involved\nExample: A user must click a malicious link, opening a file Scope [0/2]: Does this affect another application other than the one being attacked?\nChanged = Affects more than the targeted application.\nExample: Stored XSS that steals cookies from admin panel on a different system to the one that is being attacked. Unchanged = Only affects the targeted application.\nExample: SQL injection that only affects the vulnerable database Note: This sometimes requires educated guesswork when making a score as often as testers we will have no direct insight into if the attack on HOST A effects HOST B.\nImpact Metrics: These represent the CIA triad and score the impact of the vulnerability on them.\nConfidentiality Impact [0/3]: None = No impact on data confidentiality Example: Denial of service vulnerability Low = Limited impact on data confidentiality Example: Access to some non-sensitive data High = Complete loss of confidentiality Example: Access to all data, including sensitive information Integrity Impact [0/3]: None = No impact on data integrity Example: Information disclosure vulnerability Low = Limited impact on data integrity Example: Modification of some data High = Complete loss of integrity Example: Complete data corruption or unauthorized modifications Availability Impact [0/3]: None = No impact on system availability Example: Information disclosure vulnerability Low = Limited impact on system availability Example: Reduced performance or intermittent outages High = Complete loss of availability Example: Complete system crash or denial of service Temporal Score Metrics: These metrics reflect how vulnerability severity changes over time. They can be added later if needed but are not required for basic scoring.\nExploit Code Maturity [0/4]: This indicates whether exploit code exists for this vulnerability:\nUnproven = No proof that exploit exists Proof of Concept = Proof of concept code exists but not functional Functional = Functional exploit exists (GitHub, etc.) High = Automated exploit exists (Metasploit, automated scripts) Remediation Level [0/4]: Has the vendor fixed it and in what way:\nOfficial Fix = Official fix released by vendor Temporary Fix = Manual remediation advised, no official fix Workaround = Manual configuration changes required Unavailable = No fix or workaround exists Report Confidence [0/3]: Not commonly used in penetration testing:\nUnknown = No real proof of existence and impact Reasonable = Evidence exists but not vendor-confirmed Confirmed = Vendor has confirmed the vulnerability exists Environmental Score Metrics: As penetration testers, we typically don\u0026rsquo;t modify Environmental Score Metrics as we don\u0026rsquo;t have complete knowledge of the environment. These are usually adjusted by the organization receiving the assessment.\nThe Environmental metrics mirror the Base Score Metrics, allowing organizations to adjust scores based on their specific environment. For example:\nA tester might score something as \u0026ldquo;Adjacent Network\u0026rdquo; but the organization knows the affected system is segregated on its own subnet A tester might give a high Confidentiality score for SQL injection, but the organization knows the database only contains test data What is a CVSS Vector String? A CVSS vector string is a compact, standardized text representation of all the metrics used to calculate a CVSS score. It looks like this.\nCVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H Each part after the version number (CVSS:3.1) defines a specific metric, such as how the vulnerability is accessed (AV:N = network), or how much user interaction is required (UI:N = none).\nThe vector string is \u0026ldquo;formula\u0026rdquo; behind the score, as it records the exact combination of conditions and impacts that led to a given score.\nReversible and Consistent: One of the key features of CVSS vectors is that they are reversible and consistent. This means that if someone plugs the exact same vector into a CVSS calculator, they will always get the same score and severity. This ensures repeatability and transparency when sharing or comparing vulnerability assessments.\nA good way to think about this is like a hashing algorithm. If you take the string \u0026ldquo;hello world\u0026rdquo; and run it through a SHA-256 hash function, you\u0026rsquo;ll always get the same result, and so will everyone else, anywhere in the world. Similarly, a CVSS vector string is a standard representation that, when used, always produces the same score, regardless of who calculates it.\nNote: Unlike hashes, CVSS vectors are also readable and can be \u0026ldquo;reversed\u0026rdquo; to see the exact conditions that produced the score.)\nMany different vector strings can exist, each describing different combinations of metrics \u0026amp; these will naturally produce different scores and severities.\nFor example, a vulnerability requiring local access and user interaction will score lower than one exploitable remotely with no user interaction, even if they both affect the same system.\nSo while a vector string will always map to one unique score, there are countless valid vectors, each representing different scenarios.\nSome Examples Of CVSS Vector Strings: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H = Critical (10.0) - Remote code execution CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H = High (8.8) - XSS requiring user interaction CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L = Medium (5.5) - Local privilege escalation\nPractical Examples: Example 1: SQL Injection Vulnerability: Scenario: A web application has a SQL injection vulnerability in the login form that allows an attacker to bypass authentication and access the admin panel.\nScoring:\nAttack Vector: Network (accessible via internet) Attack Complexity: Low (standard SQL injection techniques) Privileges Required: None (no authentication needed) User Interaction: None (server-side vulnerability) Scope: Unchanged (only affects this application) Confidentiality: High (access to all data) Integrity: High (can modify data) Availability: None (doesn\u0026rsquo;t affect system availability) CVSS Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N Score: 9.1 (Critical)\nExample 2: Stored XSS Vulnerability: Scenario: A comment system allows users to post HTML that gets stored and displayed to other users, potentially stealing their session cookies.\nScoring:\nAttack Vector: Network (accessible via internet) Attack Complexity: Low (standard XSS techniques) Privileges Required: Low (authenticated user account) User Interaction: Required (victim must view the page) Scope: Changed (affects other users\u0026rsquo; sessions) Confidentiality: High (session hijacking) Integrity: None (no data modification) Availability: None (no system impact) CVSS Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:N/A:N Score: 7.4 (High)\nCommon Pitfalls \u0026amp; How to Avoid Them: 1. Confusing Attack Vector with Attack Complexity: Mistake: Thinking a complex attack means it\u0026rsquo;s \u0026ldquo;Local\u0026rdquo; or \u0026ldquo;Physical\u0026rdquo; Reality: Attack Vector is about location, Attack Complexity is about difficulty 2. Over-scoring Privileges Required: Mistake: Rating as \u0026ldquo;Low\u0026rdquo; when attacker can create account. Reality: If no initial access is needed, it\u0026rsquo;s \u0026ldquo;None\u0026rdquo;. If anyone can sign up for an account it\u0026rsquo;s classed as \u0026ldquo;None\u0026rdquo; 3. Misunderstanding Scope: Mistake: Always marking as \u0026ldquo;Changed\u0026rdquo; for web applications. Reality: Only \u0026ldquo;Changed\u0026rdquo; if it affects systems beyond the target. 4. Inconsistent Impact Scoring: Mistake: Marking all impacts as \u0026ldquo;High\u0026rdquo; for critical vulnerabilities. Reality: Each CIA component should be scored independently. 5. Ignoring User Interaction: Mistake: Forgetting to consider if user action is required. Reality: This significantly affects the final score. Step-by-Step Walkthrough Walkthrough: Scoring a Buffer Overflow Vulnerability Let\u0026rsquo;s score a buffer overflow vulnerability in a network service:\nAttack Vector: Network (accessible over network) Attack Complexity: Low (standard buffer overflow techniques) Privileges Required: None (no authentication needed) User Interaction: None (no user action required) Scope: Unchanged (only affects this service) Confidentiality: High (can read arbitrary memory) Integrity: High (can modify arbitrary memory) Availability: High (can crash the service) Result: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H = 10.0 (Critical)\nWalkthrough: Scoring a Local Privilege Escalation Let\u0026rsquo;s score a local privilege escalation vulnerability:\nAttack Vector: Local (requires local access) Attack Complexity: Low (simple exploit) Privileges Required: Low (normal user account) User Interaction: None (no additional user action) Scope: Unchanged (only affects this system) Confidentiality: High (access to all data) Integrity: High (can modify any data) Availability: High (can control the system) Result: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H = 7.8 (High)\nTroubleshooting External Resources Official Documentation: FIRST CVSS v3.1 Specification: https://www.first.org/cvss/specification-document NIST National Vulnerability Database: https://nvd.nist.gov/ CVSS v3.1 User Guide: https://www.first.org/cvss/user-guide Learning Resources: OWASP Risk Rating Methodology: https://owasp.org/www-community/OWASP_Risk_Rating_Methodology MITRE CVE Database: https://cve.org/ Tib3rius has released a great video on CVSS scoring:\n{{\u0026lt; youtube AlYtTB2aJPE \u0026gt;}}\nTools and Calculators NIST CVSS Calculator: https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator FIRST CVSS Calculator: https://www.first.org/cvss/calculator/3.1 Visual CVSS Calculator: https://cvss.js.org/ My CVSS Calculator: https://bloodstiller.com/tools/cvss-calculator/ ", 
+        "url": "http:\/\/localhost:1313\/articles\/understandingcvssscoring\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/cvss\/": {
+        "title": "CVSS",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/cvss\/"
+    },
+    
+    "http:\/\/localhost:1313\/tools\/cvss-calculator\/": {
+        "title": "CVSS v3.1 Calculator: Interactive Base Score Calculator",
+        "tags": ["CVSS","Security","Vulnerability Assessment","Tools","Calculator",],
+        "content": "CVSS v3.1 Base Score Calculator The Common Vulnerability Scoring System (CVSS) is an industry standard for assessing the severity of security vulnerabilities. This interactive calculator helps security professionals, penetration testers, and researchers quickly calculate CVSS v3.1 base scores and generate proper vector strings.\nWhy make this? I wanted something that was easy to use and always with me. This generator is a simple flat html file, which means even without internet access I can run it locally in my browser and generate scores if need be.\nLimitations\nThis calculator only covers Base Metrics (not Temporal or Environmental, however you only need Base Metrics to caclulate a score) so it is targeted at pentesters. CVSS scores are not a substitute for professional judgment, you need to always consider organizational context and business impact Understanding CVSS v3.1 CVSS v3.1 consists of three metric groups:\nBase Metrics - Intrinsic characteristics of a vulnerability Temporal Metrics - Characteristics that change over time Environmental Metrics - Characteristics specific to an organization\u0026rsquo;s environment This calculator focuses on the Base Metrics, primarily as these are the only required metrics required to generate a CVSS score.\nAttack Vector (AV) Network (N): Vulnerability exploitable over network Adjacent (A): Requires access to adjacent network Local (L): Requires local access to the system Physical (P): Requires physical access to the system Attack Complexity (AC) Low (L): No special conditions required High (H): Requires specific conditions beyond attacker\u0026rsquo;s control Privileges Required (PR) None (N): No privileges required Low (L): Basic user privileges required High (H): Administrative privileges required User Interaction (UI) None (N): No user interaction required Required (R): User interaction required Scope (S) Unchanged (U): Vulnerable component is the same as the impacted component Changed (C): Vulnerable component is different from the impacted component Impact Metrics Confidentiality (C): Impact on information disclosure Integrity (I): Impact on data modification Availability (A): Impact on system availability Each impact metric can be: High (H): Complete loss of confidentiality/integrity/availability Low (L): Some loss of confidentiality/integrity/availability None (N): No impact Severity Ratings CVSS scores are categorized into severity levels:\n0.0: None 0.1 - 3.9: Low 4.0 - 6.9: Medium 7.0 - 8.9: High 9.0 - 10.0: Critical CVSS Vector String The calculator generates a CVSS vector string in the format:\nCVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H This standardized format allows for easy sharing and comparison of vulnerability assessments across different tools and platforms.\nUsage Examples Example 1: Remote Code Execution Vulnerability Attack Vector: Network Attack Complexity: Low Privileges Required: None User Interaction: None Scope: Unchanged Confidentiality: High Integrity: High Availability: High Result: Score 10.0 (Critical)\nExample 2: Information Disclosure Vulnerability Attack Vector: Network Attack Complexity: Low Privileges Required: None User Interaction: None Scope: Unchanged Confidentiality: High Integrity: None Availability: None Result: Score 7.5 (High)\nAdditional Resources Official CVSS v3.1 Specification CVSS Calculator (FIRST) NIST National Vulnerability Database Sign-off This CVSS v3.1 calculator provides a quick and accurate way to assess vulnerability severity. Remember that CVSS scores are just one tool in your security assessment toolkit. Always consider the broader context and business impact when making security decisions.\nBloodstiller\n", 
+        "url": "http:\/\/localhost:1313\/tools\/cvss-calculator\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/linux\/": {
+        "title": "Linux",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/linux\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/security\/": {
+        "title": "Security",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/security\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/sherlock\/": {
+        "title": "Sherlock",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/sherlock\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/": {
+        "title": "Tags",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/tools\/": {
+        "title": "Tools",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/tools\/"
+    },
+    
+    "http:\/\/localhost:1313\/tools\/": {
+        "title": "Tools",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tools\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/utmp\/": {
+        "title": "Utmp",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/utmp\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/vulnerability-assessment\/": {
+        "title": "Vulnerability Assessment",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/vulnerability-assessment\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/wtmp\/": {
+        "title": "Wtmp",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/wtmp\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/active-directory\/": {
+        "title": "Active Directory",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/active-directory\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/alternative-data-streams\/": {
+        "title": "Alternative Data Streams",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/alternative-data-streams\/"
     },
     
     "http:\/\/localhost:1313\/tags\/db2\/": {
@@ -1064,13 +1162,6 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/smb\/"
     },
     
-    "http:\/\/localhost:1313\/tags\/": {
-        "title": "Tags",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/"
-    },
-    
     "http:\/\/localhost:1313\/walkthroughs\/": {
         "title": "Walkthroughs",
         "tags": [],
@@ -1125,13 +1216,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/java\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/linux\/": {
-        "title": "Linux",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/linux\/"
     },
     
     "http:\/\/localhost:1313\/tags\/magic-bytes\/": {
@@ -1470,13 +1554,6 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/redis-injection\/"
     },
     
-    "http:\/\/localhost:1313\/tags\/sherlock\/": {
-        "title": "Sherlock",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/sherlock\/"
-    },
-    
     "http:\/\/localhost:1313\/sherlocks\/": {
         "title": "Sherlocks",
         "tags": [],
@@ -1715,13 +1792,6 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/xmpp\/"
     },
     
-    "http:\/\/localhost:1313\/articles\/": {
-        "title": "Articles",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/articles\/"
-    },
-    
     "http:\/\/localhost:1313\/tags\/downloadcradle\/": {
         "title": "DownloadCradle",
         "tags": [],
@@ -1734,13 +1804,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/powershell-scripting\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/security\/": {
-        "title": "Security",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/security\/"
     },
     
     "http:\/\/localhost:1313\/tags\/system-administration\/": {
@@ -1820,13 +1883,6 @@ window.store = {
         "url": "http:\/\/localhost:1313\/walkthroughs\/solarlab-box\/"
     },
     
-    "http:\/\/localhost:1313\/tags\/vulnerability-assessment\/": {
-        "title": "Vulnerability Assessment",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/vulnerability-assessment\/"
-    },
-    
     "http:\/\/localhost:1313\/tags\/auth.log\/": {
         "title": "Auth.log",
         "tags": [],
@@ -1846,20 +1902,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/defensive\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/utmp\/": {
-        "title": "Utmp",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/utmp\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/wtmp\/": {
-        "title": "Wtmp",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/wtmp\/"
     },
     
     "http:\/\/localhost:1313\/cheatsheets\/": {
@@ -1902,13 +1944,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/sysadmin\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/tools\/": {
-        "title": "Tools",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/tools\/"
     },
     
     "http:\/\/localhost:1313\/tags\/configuration\/": {
@@ -2196,13 +2231,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/qemu\/"
-    },
-    
-    "http:\/\/localhost:1313\/tools\/": {
-        "title": "Tools",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tools\/"
     },
     
     "http:\/\/localhost:1313\/walkthroughs\/redpanda-box\/": {
