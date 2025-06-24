@@ -6,13 +6,104 @@
     <description>Recent content in Tags on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Calculator</title>
-      <link>http://localhost:1313/tags/calculator/</link>
-      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/calculator/</guid>
+      <title>Cache-Control</title>
+      <link>http://localhost:1313/tags/cache-control/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cache-control/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Content Security Policy</title>
+      <link>http://localhost:1313/tags/content-security-policy/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/content-security-policy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CSP</title>
+      <link>http://localhost:1313/tags/csp/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/csp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HSTS</title>
+      <link>http://localhost:1313/tags/hsts/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/hsts/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HTTP Headers</title>
+      <link>http://localhost:1313/tags/http-headers/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/http-headers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OWASP</title>
+      <link>http://localhost:1313/tags/owasp/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/owasp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Permissions-Policy</title>
+      <link>http://localhost:1313/tags/permissions-policy/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/permissions-policy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Referrer-Policy</title>
+      <link>http://localhost:1313/tags/referrer-policy/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/referrer-policy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security Best Practices</title>
+      <link>http://localhost:1313/tags/security-best-practices/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/security-best-practices/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security Headers</title>
+      <link>http://localhost:1313/tags/security-headers/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/security-headers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Application Security</title>
+      <link>http://localhost:1313/tags/web-application-security/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web-application-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Security</title>
+      <link>http://localhost:1313/tags/web-security/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>X-Content-Type-Options</title>
+      <link>http://localhost:1313/tags/x-content-type-options/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/x-content-type-options/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>X-Frame-Options</title>
+      <link>http://localhost:1313/tags/x-frame-options/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/x-frame-options/</guid>
       <description></description>
     </item>
     <item>
@@ -23,10 +114,38 @@
       <description></description>
     </item>
     <item>
-      <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
+      <title>Cybersecurity</title>
+      <link>http://localhost:1313/tags/cybersecurity/</link>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>http://localhost:1313/tags/cybersecurity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FIRST</title>
+      <link>http://localhost:1313/tags/first/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/first/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NIST</title>
+      <link>http://localhost:1313/tags/nist/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/nist/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Penetration Testing</title>
+      <link>http://localhost:1313/tags/penetration-testing/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/penetration-testing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Risk Assessment</title>
+      <link>http://localhost:1313/tags/risk-assessment/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/risk-assessment/</guid>
       <description></description>
     </item>
     <item>
@@ -37,10 +156,17 @@
       <description></description>
     </item>
     <item>
-      <title>Sherlock</title>
-      <link>http://localhost:1313/tags/sherlock/</link>
+      <title>Security Metrics</title>
+      <link>http://localhost:1313/tags/security-metrics/</link>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sherlock/</guid>
+      <guid>http://localhost:1313/tags/security-metrics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security Scoring</title>
+      <link>http://localhost:1313/tags/security-scoring/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/security-scoring/</guid>
       <description></description>
     </item>
     <item>
@@ -51,24 +177,10 @@
       <description></description>
     </item>
     <item>
-      <title>Utmp</title>
-      <link>http://localhost:1313/tags/utmp/</link>
-      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/utmp/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Vulnerability Assessment</title>
       <link>http://localhost:1313/tags/vulnerability-assessment/</link>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/vulnerability-assessment/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Wtmp</title>
-      <link>http://localhost:1313/tags/wtmp/</link>
-      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/wtmp/</guid>
       <description></description>
     </item>
     <item>
@@ -237,6 +349,13 @@
       <link>http://localhost:1313/tags/java/</link>
       <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>http://localhost:1313/tags/linux/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
     <item>
@@ -541,6 +660,13 @@
       <description></description>
     </item>
     <item>
+      <title>Sherlock</title>
+      <link>http://localhost:1313/tags/sherlock/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sherlock/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>SSRF</title>
       <link>http://localhost:1313/tags/ssrf/</link>
       <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
@@ -835,6 +961,20 @@
       <description></description>
     </item>
     <item>
+      <title>Utmp</title>
+      <link>http://localhost:1313/tags/utmp/</link>
+      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/utmp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wtmp</title>
+      <link>http://localhost:1313/tags/wtmp/</link>
+      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/wtmp/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Cli</title>
       <link>http://localhost:1313/tags/cli/</link>
       <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
@@ -1126,13 +1266,6 @@
       <link>http://localhost:1313/tags/gitpython/</link>
       <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/gitpython/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Web Security</title>
-      <link>http://localhost:1313/tags/web-security/</link>
-      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web-security/</guid>
       <description></description>
     </item>
     <item>

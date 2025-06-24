@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Application Security on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
+    <link>http://localhost:1313/tags/web-application-security/</link>
+    <description>Recent content in Web Application Security on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/web-application-security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding OWASP Secure Headers: HTTP Security Headers &amp; Best Practices</title>
+      <link>http://localhost:1313/articles/secureheaders/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/articles/secureheaders/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction:&lt;/h2&gt;&#xA;&lt;p&gt;The OWASP Secure Headers Project (OSHP) is a comprehensive initiative that provides guidance on implementing HTTP security headers to enhance web application security. These headers act as a crucial layer of defense, helping to prevent common web vulnerabilities and protect users from various attack vectors.&lt;/p&gt;&#xA;&lt;p&gt;As penetration testers/security professionals, understanding and implementing these headers is often an essential part of remediation guidance as well as an integral part of securing our own applications and systems.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -3,19 +3,64 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/articles/</loc>
-    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/</loc>
-    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/bloodstiller/</loc>
-    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/calculator/</loc>
-    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/cache-control/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/content-security-policy/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/csp/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hsts/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/http-headers/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/owasp/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/permissions-policy/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/referrer-policy/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/security-best-practices/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/security-headers/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/articles/secureheaders/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/web-application-security/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/web-security/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/x-content-type-options/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/x-frame-options/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/articles/understandingcvssscoring/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
@@ -26,16 +71,28 @@
     <loc>http://localhost:1313/tools/cvss-calculator/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
+    <loc>http://localhost:1313/tags/cybersecurity/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/first/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/nist/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/penetration-testing/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/risk-assessment/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/security/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sherlock/</loc>
+    <loc>http://localhost:1313/tags/security-metrics/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/tags/security-scoring/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/tools/</loc>
@@ -44,13 +101,7 @@
     <loc>http://localhost:1313/tools/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/utmp/</loc>
-    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/vulnerability-assessment/</loc>
-    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/wtmp/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/active-directory/</loc>
@@ -129,6 +180,9 @@
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/java/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/magic-bytes/</loc>
@@ -273,6 +327,9 @@
     <lastmod>2025-05-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/redis-injection/</loc>
+    <lastmod>2025-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sherlock/</loc>
     <lastmod>2025-05-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/sherlocks/</loc>
@@ -423,6 +480,12 @@
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/defensive/</loc>
+    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/utmp/</loc>
+    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/wtmp/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/cheatsheets/</loc>
@@ -609,9 +672,6 @@
     <lastmod>2024-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/gitpython/</loc>
-    <lastmod>2024-12-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/web-security/</loc>
     <lastmod>2024-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/doctor-box/</loc>
