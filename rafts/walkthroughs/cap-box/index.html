@@ -43,7 +43,7 @@
     </style>
 
     
-    <link rel="stylesheet" type="text/css" href="/style.min.2fb9b64d3e848701db02d9d24dd051fddafda23705a67ff18e675ae345f2c05b.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/style.min.8a5a6f2d9c01f3b461ad5dc8590d4db8e14847cac8a1b270814e1d243932edfc.css" media="all">
   </head>
 
   <body>
@@ -806,6 +806,27 @@ window.store = {
         "url": "http:\/\/localhost:1313\/"
     },
     
+    "http:\/\/localhost:1313\/articles\/26062025-nixos-running-unstable-on-stable\/": {
+        "title": "Mixing Unstable Packages on Stable NixOS with Flakes",
+        "tags": ["NixOS","[, Flakes]","[, Package Management]","[, Home Manager]","[, NixOS Configuration]","[, Unstable Packages]",],
+        "content": "Prerequisites: Before diving into this guide, you should have a basic understanding of:\nNixOS Configuration: How to edit configuration.nix and understand basic NixOS concepts Nix Flakes: Familiarity with flake structure, inputs, and outputs Package Management: Understanding the difference betyouen stable and unstable channels in NixOS Home Manager: Basic knowledge of Home Manager configuration (for the advanced setup section) If you\u0026rsquo;re new to these concepts, I recommend checking out the Nix Flakes Wiki and NixOS Wiki first.\nKey Terms Explained: Before you dive in, let me explain some terms you\u0026rsquo;ll encounter:\nFlakes: Nix\u0026rsquo;s new way of managing dependencies and configurations. Think of them as a standardized way to package Nix code. Inputs: The dependencies your flake needs (like different versions of nixpkgs). @inputs notation: A way to capture all inputs into a single variable for easier passing around. specialArgs: A mechanism to pass additional arguments to your NixOS configuration. legacyPackages: The traditional way to access packages in nixpkgs (as opposed to the neyour flake-based approach). ${pkgs.system}: Dynamically gets your system architecture (like \u0026ldquo;x86_64-linux\u0026rdquo; or \u0026ldquo;aarch64-darwin\u0026rdquo;). Why I Needed an Unstable Package on Stable NixOS: Recently I switched from using the unstable channel of NixOS, as you guessed, I started having instability issues. I yount back to nixos-25.05 (stable) for a smoother experience, but immediately noticed some regressions in apps I rely on, like the Nextcloud desktop client.\nStable NixOS is great for reliability, but sometimes you need just one or two packages from the bleeding edge. I didn\u0026rsquo;t want to switch my entire system back to unstable, I just wanted one neyour package.\nSo I asked on the NixOS Discord, and someone kindly explained exactly what to do.\nIf you haven\u0026rsquo;t already, capture all your inputs with the @ notation like outputs = { self, nixpkgs, …}@inputs:, add specialArgs = { inherit inputs; }; to your nixosSystem call, and then add inputs to the argument list at the top of configuration.nix. Then you can install the package via environment.systemPackages = [ inputs.unstable_input_name.legacyPackages.${pkgs.system}.package_name ]; replace unstable_input_name and package_name, of course. There\u0026rsquo;s absolutely no reason all packages have to be in pkgs\nBreaking Down the Discord Advice: Let me break down each part of that advice step by step, as it can be overwhelming at first:\nStep 1: \u0026ldquo;capture all your inputs with the @ notation\u0026rdquo;\nThis means modifying your flake structure to group all inputs together:\noutputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs: The @inputs part captures all your inputs into a single variable, making them easier to pass around.\nStep 2: \u0026ldquo;add specialArgs = { inherit inputs; }; to your nixosSystem call\u0026rdquo;\nThis passes the inputs to your NixOS configuration:\nnixpkgs.lib.nixosSystem { specialArgs = { inherit inputs; }; ... } Step 3: \u0026ldquo;add inputs to the argument list at the top of configuration.nix\u0026rdquo;\nYour configuration file needs to accept the inputs parameter:\n{ config, pkgs, inputs, ... }: Step 4: \u0026ldquo;install the package via environment.systemPackages = [ inputs.unstable_input_name.legacyPackages.${pkgs.system}.package_name ]\u0026rdquo;\nNow you can install unstable packages directly:\nenvironment.systemPackages = [ (inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.nextcloud-client) ]; Bonus: \u0026ldquo;There\u0026rsquo;s absolutely no reason all packages have to be in pkgs\u0026rdquo;\nThis reminds you that pkgs usually refers to your main nixpkgs input (stable), but you can use packages from any flake input, like nixpkgs-unstable.\nIn Simple Terms\nHere\u0026rsquo;s what this really means:\nYou tell Nix where to find the unstable packages, by passing inputs from the flake file into the system config. Then you make sure that info is shared with the rest of our config files, like configuration.nix or home.nix. Once that\u0026rsquo;s done, you can mix and match: keep most packages from stable, but cherry-pick a few from unstable when needed. It\u0026rsquo;s like plugging in an extra toolbox and making sure every part of your setup knows it\u0026rsquo;s there.\nMinimal Setup: Flake + configuration.nix This assumes you are using a Flake as well as just a standard configuration.nix file.\nMinimal Setup Flow Diagram: Here is what you are going to do, you are going to take the inputs from the flake.nix and pass them to the configuration.nix so you can use packages like nixpkgs-unstable inside your system config.\n┌──────────────────────────────┐ │ flake.nix │ │ │ │ inputs = { │ │ nixpkgs, │ │ nixpkgs-unstable, ←────┐ │ │ ... │ │ └────────────┬─────────────┘ │ │ │ specialArgs = { inherit inputs; } │ ▼ ┌──────────────────────────────────┐ │ configuration.nix │ │ │ │ { config, pkgs, inputs, ... } │ │ │ │ Use: │ │ inputs.nixpkgs-unstable │ │ .legacyPackages.${pkgs.system} │ └──────────────────────────────────┘ Add Unstable To Our flake.nix Inputs: First you need to add the unstable channel to your inputs like below.\n{ description = \u0026#34;NixOS config with unstable access\u0026#34;; inputs = { nixpkgs.url = \u0026#34;github:NixOS/nixpkgs/nixos-25.05\u0026#34;; # Stable nixpkgs-unstable.url = \u0026#34;github:NixOS/nixpkgs/nixos-unstable\u0026#34;; # Unstable }; ### rest of file Add specialArgs To Our Outputs: You also need to add the specialArgs to your outputs so you can pass the inputs to configuration.nix.\noutputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs: { nixosConfigurations.myhost = nixpkgs.lib.nixosSystem { system = \u0026#34;x86_64-linux\u0026#34;; specialArgs = { inherit inputs; }; # Pass inputs (like nixpkgs-unstable) to configuration.nix modules = [ ./configuration.nix ]; }; }; } Add Inputs To Our configuration.nix: Now in your configuration.nix file you need to ensure you place the inputs argument at the top.\n{ config, pkgs, inputs, ... }: Then you can easily call unstable packages using this syntax.\n(inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.packageName) Install Unstable Packages: So if you wanted to install the unstable neovim package, your configuration would look like this.\n{ config, pkgs, inputs, ... }: { environment.systemPackages = with pkgs; [ firefox (inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.neovim) #other packages... ]; } My Full Setup (Home Manager + Modular Packages) I use a separate packages.nix to keep things clean and modular. This is then imported into my home.nix which is then further called in my configuration.nix\nDiagram: As my setup is a tad more complex and modularized, here is a diagram.\n┌──────────────────────────────┐ │ flake.nix │ │ │ │ inputs = { ... │ │ nixpkgs, │ │ nixpkgs-unstable, ←────┐ │ │ ... │ │ └────────────┬─────────────┘ │ │ │ specialArgs = { inherit inputs; } │ ▼ ┌──────────────────────────────┐ │ configuration.nix │ │ │ │ { config, pkgs, inputs, ... }│ │ │ │ Use inputs.nixpkgs-unstable │ └────────────┬─────────────────┘ │ Passes to home.nix ▼ ┌──────────────────────────────┐ │ home.nix │ │ │ │ import packages.nix │ │ { inherit pkgs inputs; } │ └────────────┬─────────────────┘ │ Passes to packages.nix ▼ ┌────────────────────────────────┐ │ packages.nix │ │ │ │ Use: │ │ inputs.nixpkgs-unstable │ │ .legacyPackages.${pkgs.system} │ └────────────────────────────────┘ Pass inputs from packages.nix to home.nix: To pass through the inputs from packages.nix to my home.nix file I add the below argument.\nspecialArgs = { inherit inputs; }; Now for context, here is a snippet from my home.nix you can see I also pass through cursor the editor I use sometimes and pkgs this is due to how I have my setup configured.\n{ config, pkgs, inputs, ... }: let cursor = pkgs.callPackage ../cursor/cursor.nix { }; in { imports = [ ./modules/base.nix (import ../packages/packages.nix { inherit pkgs cursor inputs; }) ]; home.stateVersion = \u0026#34;25.05\u0026#34;; } Install Unstable Version Of nextcloud-client In packages.nix: Then to install the nextcloud-client package from unstable I place this in my packages.nix.\n{ pkgs, cursor, inputs, ... }: { home.packages = with pkgs; [ #SNIPPET # Blogging hugo # Nextcloud using unstable as better # #nextcloud-client (inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.nextcloud-client) # video vlc ffmpeg #SNIPPET ]; } Tips \u0026amp; Resources: Tips:\nAlways pass inputs explicitly when importing files that use it Use legacyPackages.${pkgs.system} to avoid flake evaluation issues This pattern works for both system and Home Manager packages Keeps your base system stable but lets you pull in just what you need Resources:\nNix Flakes - Wiki Home Manager - GitHub My dotfiles (GitHub) ", 
+        "url": "http:\/\/localhost:1313\/articles\/26062025-nixos-running-unstable-on-stable\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/nixos\/": {
+        "title": "Nixos",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/nixos\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/": {
+        "title": "Tags",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/"
+    },
+    
     "http:\/\/localhost:1313\/tags\/cache-control\/": {
         "title": "Cache-Control",
         "tags": [],
@@ -874,13 +895,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/security-headers\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/": {
-        "title": "Tags",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/"
     },
     
     "http:\/\/localhost:1313\/articles\/secureheaders\/": {
@@ -1980,13 +1994,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/homelab\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/nixos\/": {
-        "title": "Nixos",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/nixos\/"
     },
     
     "http:\/\/localhost:1313\/homelab\/202503120622-nixos-homelab-5\/": {
