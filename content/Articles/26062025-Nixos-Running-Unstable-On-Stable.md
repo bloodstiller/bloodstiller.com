@@ -17,7 +17,7 @@ Before diving into this guide, you should have a basic understanding of:
 
 -   **NixOS Configuration**: How to edit `configuration.nix` and understand basic NixOS concepts
 -   **Nix Flakes**: Familiarity with flake structure, inputs, and outputs
--   **Package Management**: Understanding the difference betyouen stable and unstable channels in NixOS
+-   **Package Management**: Understanding the difference between stable and unstable channels in NixOS
 -   **Home Manager**: Basic knowledge of Home Manager configuration (for the advanced setup section)
 
 If you're new to these concepts, I recommend checking out the [Nix Flakes Wiki](https://nixos.wiki/wiki/Flakes) and [NixOS Wiki](https://nixos.wiki/wiki/NixOS) first.
@@ -31,15 +31,15 @@ Before you dive in, let me explain some terms you'll encounter:
 -   **Inputs**: The dependencies your flake needs (like different versions of nixpkgs).
 -   **@inputs notation**: A way to capture all inputs into a single variable for easier passing around.
 -   **specialArgs**: A mechanism to pass additional arguments to your NixOS configuration.
--   **legacyPackages**: The traditional way to access packages in nixpkgs (as opposed to the neyour flake-based approach).
--   **${pkgs.system}**: Dynamically gets your system architecture (like "x86_64-linux" or "aarch64-darwin").
+-   **legacyPackages**: A flake output that gives you access to the full `nixpkgs` package set, just like before flakes existed. It's used when you need things like `python3Package` or helper functions that don’t fit into the newer, flatter `packages.${system}` format.
+-   **${pkgs.system}**: Returns the system architecture (like `"x86_64-linux"` or `"aarch64-darwin"`) that `pkgs` was instantiated with. Unlike `builtins.currentSystem`, it doesn’t detect the system at runtime, it just reflects the value passed when setting up the flake.
 
 
 ## Why I Needed an Unstable Package on Stable NixOS: {#why-i-needed-an-unstable-package-on-stable-nixos}
 
-Recently I switched from using the unstable channel of NixOS, as you guessed, I started having instability issues. I yount back to `nixos-25.05` (stable) for a smoother experience, but immediately noticed some regressions in apps I rely on, like the Nextcloud desktop client.
+Recently I switched from using the unstable channel of NixOS, as you guessed, I started having instability issues. I switched, back to `nixos-25.05` (stable) for a smoother experience, but immediately noticed some regressions in apps I rely on, like the Nextcloud desktop client.
 
-Stable NixOS is great for reliability, but sometimes you need just one or two packages from the bleeding edge. I didn't want to switch my entire system back to unstable, I just wanted one neyour package.
+Stable NixOS is great for reliability, but sometimes you need just one or two packages from the bleeding edge. I didn't want to switch my entire system back to unstable, I just wanted one newer package.
 
 So I asked on the NixOS Discord, and someone kindly explained exactly what to do.
 
