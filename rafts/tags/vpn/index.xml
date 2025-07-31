@@ -13,7 +13,7 @@
       <link>http://localhost:1313/homelab/202050222_tailscalenixos/</link>
       <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/homelab/202050222_tailscalenixos/</guid>
-      <description>&lt;p&gt;This was originally posted on 2025-02-23 however I have since added the mullvad integration into this so have updated the guide to reflect this.&#xA;+Note+: You do not need the mullvad integration for this to work, I have highlighted the arguments to add if you are going to use mullvad.&lt;/p&gt;&#xA;&lt;p&gt;Are you tired of running &lt;code&gt;sudo tailscale up&lt;/code&gt; every time you login, I know I am. So I thought why spend under two seconds waiting for something to run and using auto complete with ZSH to easily find the command when I can easily create a service that launches Tailscale on boot for me and re-launches on every rebuild of the system.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This was originally posted on 2025-02-23 however I have since added the mullvad integration into this so have updated the guide to reflect this.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;+Note+: You do not need the mullvad integration for this to work, I have highlighted the arguments to add if you are going to use mullvad.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Are you tired of running &lt;code&gt;sudo tailscale up&lt;/code&gt; every time you login, I know I am. So I thought why spend under two seconds waiting for something to run and using auto complete with ZSH to easily find the command when I can easily create a service that launches Tailscale on boot for me and re-launches on every rebuild of the system.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

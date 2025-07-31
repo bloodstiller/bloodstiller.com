@@ -1084,7 +1084,5 @@
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
-  </url><url>
-    <loc>http://localhost:1313/posts/20230504121151-snmp/</loc>
   </url>
 </urlset>
