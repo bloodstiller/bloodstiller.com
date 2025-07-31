@@ -6,13 +6,90 @@
     <description>Recent content in Tags on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 31 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuration</title>
+      <link>http://localhost:1313/tags/configuration/</link>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/configuration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Homelab</title>
+      <link>http://localhost:1313/tags/homelab/</link>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/homelab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Networking</title>
+      <link>http://localhost:1313/tags/networking/</link>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/networking/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Nixos</title>
       <link>http://localhost:1313/tags/nixos/</link>
-      <pubDate>Thu, 26 Jun 2025 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/nixos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>System</title>
+      <link>http://localhost:1313/tags/system/</link>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/system/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tailscale</title>
+      <link>http://localhost:1313/tags/tailscale/</link>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/tailscale/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vpn</title>
+      <link>http://localhost:1313/tags/vpn/</link>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/vpn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Flakes</title>
+      <link>http://localhost:1313/tags/flakes/</link>
+      <pubDate>Thu, 26 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/flakes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Home Manager</title>
+      <link>http://localhost:1313/tags/home-manager/</link>
+      <pubDate>Thu, 26 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/home-manager/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NixOS Configuration</title>
+      <link>http://localhost:1313/tags/nixos-configuration/</link>
+      <pubDate>Thu, 26 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/nixos-configuration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Package Management</title>
+      <link>http://localhost:1313/tags/package-management/</link>
+      <pubDate>Thu, 26 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/package-management/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Unstable Packages</title>
+      <link>http://localhost:1313/tags/unstable-packages/</link>
+      <pubDate>Thu, 26 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/unstable-packages/</guid>
       <description></description>
     </item>
     <item>
@@ -989,13 +1066,6 @@
       <description></description>
     </item>
     <item>
-      <title>Networking</title>
-      <link>http://localhost:1313/tags/networking/</link>
-      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/networking/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Reference</title>
       <link>http://localhost:1313/tags/reference/</link>
       <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
@@ -1010,31 +1080,10 @@
       <description></description>
     </item>
     <item>
-      <title>Configuration</title>
-      <link>http://localhost:1313/tags/configuration/</link>
-      <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/configuration/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Docker</title>
       <link>http://localhost:1313/tags/docker/</link>
       <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/docker/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Homelab</title>
-      <link>http://localhost:1313/tags/homelab/</link>
-      <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/homelab/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>System</title>
-      <link>http://localhost:1313/tags/system/</link>
-      <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/system/</guid>
       <description></description>
     </item>
     <item>
@@ -1140,20 +1189,6 @@
       <link>http://localhost:1313/tags/sre/</link>
       <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/sre/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tailscale</title>
-      <link>http://localhost:1313/tags/tailscale/</link>
-      <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tailscale/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Vpn</title>
-      <link>http://localhost:1313/tags/vpn/</link>
-      <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/vpn/</guid>
       <description></description>
     </item>
     <item>

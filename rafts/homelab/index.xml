@@ -6,8 +6,15 @@
     <description>Recent content in Homelabs on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 31 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Autostart Tailscale on NixOS system boot &amp; rebuild with mullvad integration</title>
+      <link>http://localhost:1313/homelab/202050222_tailscalenixos/</link>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/homelab/202050222_tailscalenixos/</guid>
+      <description>&lt;p&gt;This was originally posted on 2025-02-23 however I have since added the mullvad integration into this so have updated the guide to reflect this.&#xA;+Note+: You do not need the mullvad integration for this to work, I have highlighted the arguments to add if you are going to use mullvad.&lt;/p&gt;&#xA;&lt;p&gt;Are you tired of running &lt;code&gt;sudo tailscale up&lt;/code&gt; every time you login, I know I am. So I thought why spend under two seconds waiting for something to run and using auto complete with ZSH to easily find the command when I can easily create a service that launches Tailscale on boot for me and re-launches on every rebuild of the system.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Rebuilding My Homelab In NixOS (Part 5) Installing Docker &amp; other tools on NixOS</title>
       <link>http://localhost:1313/homelab/202503120622-nixos-homelab-5/</link>
@@ -42,13 +49,6 @@
       <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/homelab/20250220118-nixos-homelab-2/</guid>
       <description>&lt;p&gt;This is part 2 of my series demonstrating my rebuild of my homelab in NixOS.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Initial creation of the NixOSVM on Proxmox &lt;a href=&#34;https://bloodstiller.com/homelab/20250220118-nixos-homelab/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Part 1&lt;/a&gt;&#xA;.&lt;/li&gt;&#xA;&lt;li&gt;Enabling SSH access on NixOS &lt;a href=&#34;https://bloodstiller.com/homelab/20250220118-nixos-homelab-2/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Part 2&lt;/a&gt;&#xA;. (This Part)&lt;/li&gt;&#xA;&lt;li&gt;Mounting a secondary drive on NixOS &lt;a href=&#34;https://bloodstiller.com/homelab/20250280118-nixos-homelab-3/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Part 3&lt;/a&gt;&#xA;.&lt;/li&gt;&#xA;&lt;li&gt;Decrypting boot early with initrd-ssh &lt;a href=&#34;https://bloodstiller.com/homelab/20250280118-nixos-homelab-4/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Part 4&lt;/a&gt;&#xA;.&lt;/li&gt;&#xA;&lt;li&gt;Installing Docker on NixOS &lt;a href=&#34;https://bloodstiller.com/homelab/202503120622-nixos-homelab-5/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Part 5&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;first-login-to-nixos&#34;&gt;First Login to NixOS:&lt;/h2&gt;&#xA;&lt;p&gt;Lets start off where we left off in the last section, and we will login to the NixOS host for the first time.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Autostart Tailscale on NixOS system boot &amp; rebuild</title>
-      <link>http://localhost:1313/homelab/202050222_tailscalenixos/</link>
-      <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/homelab/202050222_tailscalenixos/</guid>
-      <description>&lt;p&gt;Are you tired of running &lt;code&gt;sudo tailscale up&lt;/code&gt; every time you login, I know I am. So I thought why spend under two seconds waiting for something to run and using auto complete with ZSH to easily find the command when I can easily create a service that launches Tailscale on boot for me and re-launches on every rebuild of the system.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;This configuration will ensure that&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Tailscale starts automatically with your system.&lt;/li&gt;&#xA;&lt;li&gt;You don&amp;rsquo;t need to manually authenticate each time.&lt;/li&gt;&#xA;&lt;li&gt;Your authentication key is stored securely using &lt;a href=&#34;https://getsops.io/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;sops&lt;/a&gt;&#xA;/&lt;a href=&#34;https://github.com/Mic92/sops-nix?tab=readme-ov-file&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;sops-nix&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;The connection is established only when needed (won&amp;rsquo;t try to reconnect if already connected).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This assumes you already have a Tailscale account and sops setup, if you don&amp;rsquo;t please see guides below.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rebuilding My Homelab In NixOS (Part 1) Creating the NixOS VM In Proxmox</title>

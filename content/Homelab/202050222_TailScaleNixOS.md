@@ -1,48 +1,51 @@
 +++
 tags = ["nixos", "tailscale", "homelab", "networking", "vpn", "system", "configuration"]
 draft = false
-title = "Autostart Tailscale on NixOS system boot & rebuild"
-description = "Learn how to configure Tailscale to automatically start on NixOS boot and persist through system rebuilds. This guide covers Tailscale installation, configuration, and integration with NixOS for seamless VPN connectivity."
-keywords = "Tailscale NixOS, auto-start Tailscale, NixOS VPN, Tailscale configuration, NixOS networking, system boot configuration, Tailscale automation, NixOS services, persistent VPN setup, homelab networking"
+title = "Autostart Tailscale on NixOS system boot & rebuild with mullvad integration"
+description = "Learn how to configure Tailscale to automatically start on NixOS boot and persist through system rebuilds. This guide covers Tailscale installation, configuration, using mullvad exit nodes and integration with NixOS for seamless VPN connectivity."
+keywords = "Tailscale NixOS, auto-start Tailscale, NixOS VPN, mullvad, privacy, Tailscale configuration, NixOS networking, system boot configuration, Tailscale automation, NixOS services, persistent VPN setup, homelab networking"
 author = "bloodstiller"
-date = 2025-02-23
+date = 2025-07-31
 toc = true
 bold = true
 next = true
 +++
 
+This was originally posted on 2025-02-23 however I have since added the mullvad integration into this so have updated the guide to reflect this.
+
+- +Note+: You do not need the mullvad integration for this to work, I have highlighted the arguments to add if you are going to use mullvad.
+
 Are you tired of running `sudo tailscale up` every time you login, I know I am. So I thought why spend under two seconds waiting for something to run and using auto complete with ZSH to easily find the command when I can easily create a service that launches Tailscale on boot for me and re-launches on every rebuild of the system.
 
 **This configuration will ensure that**:
 
--   Tailscale starts automatically with your system.
--   You don't need to manually authenticate each time.
--   Your authentication key is stored securely using [sops](https://getsops.io/)/[sops-nix](https://github.com/Mic92/sops-nix?tab=readme-ov-file)
--   The connection is established only when needed (won't try to reconnect if already connected).
+- Tailscale starts automatically with your system.
+- You don't need to manually authenticate each time.
+- Your authentication key is stored securely using [sops](https://getsops.io/)/[sops-nix](https://github.com/Mic92/sops-nix?tab=readme-ov-file)
+- The connection is established only when needed (won't try to reconnect if already connected).
+- All non lan traffic is routed over mullvad.
 
-This assumes you already have a Tailscale account and sops setup, if you don't please see guides below.
+This assumes you already have a Tailscale account with the mullvad extension and sops setup, if you don't please see guides below.
 
--   [Tailscale quick start guide](https://tailscale.com/kb/1017/install)
--   [Install sops-nix](https://github.com/Mic92/sops-nix?tab=readme-ov-file)
-
+- [Tailscale quick start guide](https://tailscale.com/kb/1017/install)
+- [Install sops-nix](https://github.com/Mic92/sops-nix?tab=readme-ov-file)
 
 ## Generating The Tailscale Auth Key: {#generating-the-tailscale-auth-key}
 
--   As we want to automate the process of authenticating of connecting our NixOS host to the Tailscale network we will need to generate an auth key. This will mean we do not have to follow the provided Tailscale links when adding the host to the network or re-authorizing.
-    -   +Note+: Even if you have already added your host to the Tailscale network this process is still the same.
+- As we want to automate the process of authenticating of connecting our NixOS host to the Tailscale network we will need to generate an auth key. This will mean we do not have to follow the provided Tailscale links when adding the host to the network or re-authorizing.
+  - +Note+: Even if you have already added your host to the Tailscale network this process is still the same.
 
 Login to your account and click "Settings" --&gt; "Personal Settings" --&gt; "Keys" --&gt; "Generate Auth Key"
 
--   {{< figure src="/ox-hugo/2025-02-22-162839_.png" >}}
+- {{< figure src="/ox-hugo/2025-02-22-162839_.png" >}}
 
 Key settings, give your key a memorable name and also set it for the amount of time you want it to be valid for, I have set it for the max 90 days have added a reminder to my todo list to regenerate one in 85 days.
 
--   {{< figure src="/ox-hugo/2025-02-23-075334_.png" >}}
+- {{< figure src="/ox-hugo/2025-02-23-075334_.png" >}}
 
 You should now have a Tailscale auth key.
 
--   {{< figure src="/ox-hugo/2025-02-22-162726_.png" >}}
-
+- {{< figure src="/ox-hugo/2025-02-22-162726_.png" >}}
 
 ## Adding Tailscale Auth Key To Sops: {#adding-tailscale-auth-key-to-sops}
 
@@ -57,8 +60,8 @@ tailscale_preauth: |
     TAILSCALE_AUTH_KEY=tskey-auth-xxxxx-xxxxxxxxxxxxx
 ```
 
--   {{< figure src="/ox-hugo/2025-02-22-171514_.png" >}}
--   +Note+: It is also possible to use age for this however I personally use stops as it also allows integration with home-manager.
+- {{< figure src="/ox-hugo/2025-02-22-171514_.png" >}}
+- +Note+: It is also possible to use age for this however I personally use stops as it also allows integration with home-manager.
 
 Edit your `configuration.nix` and add the secret so it's accessible by other services.
 
@@ -71,24 +74,44 @@ Edit your `configuration.nix` and add the secret so it's accessible by other ser
   };
 ```
 
--   +Important+: The part `secrets.tailscale_preauth` has to match name that was placed into the sops `secrets.yaml` as this is the key for the value referenced. So if in your sops secrets file you called it `ts-key` you would write `secrets.ts-key`
--   +Note+:
-    -   This has to be done in `configuration.nix` &amp; not home-manager as this is a system wide service that is running and not a user specific service.
+- +Important+: The part `secrets.tailscale_preauth` has to match name that was placed into the sops `secrets.yaml` as this is the key for the value referenced. So if in your sops secrets file you called it `ts-key` you would write `secrets.ts-key`
+- +Note+:
+  - This has to be done in `configuration.nix` &amp; not home-manager as this is a system wide service that is running and not a user specific service.
 
+## Choosing a mullvad exit node for tailscale.
+
+If you are planning on using mullvad please ensure you add the service (it's chargeable) by following the tailscale [documentation here](https://tailscale.com/kb/1258/mullvad-exit-nodes#enable-mullvad-exit-nodes).
+
+You will also need to select an exit node. You can do this by running one of the following commands.
+
+```bash
+# Get list of exit nodes
+tailscale exit-node list
+# Get a list of exit nodes by country
+tailscale exit-node list --filter=[country name]
+#Example
+tailscale exit-node list --filter=USA
+# You can also get tailscale to suggest an exit node
+tailscale exit-node suggest
+```
+
+Now that you have an exit node, take a note of it.
 
 ## Creating The Tailscale Service: {#creating-the-tailscale-service}
 
--   Edit your NixOS `configuration.nix` and add the below service.
+- Edit your NixOS `configuration.nix` and add the below service.
 
 <!--listend-->
 
 ```nix
-
 # Add tailscale to your system packages
 environment.systemPackages = [ pkgs.tailscale ];
 
 # Enable the tailscale service
 services.tailscale.enable = true;
+
+#Required for resolution when using mullvad.
+services.tailscale.useRoutingFeatures = "client";
 
 # Create a oneshot to autoconnect on rebuild/switch
 systemd.services.tailscale-autoconnect = {
@@ -117,51 +140,68 @@ systemd.services.tailscale-autoconnect = {
     fi
 
     # otherwise authenticate with tailscale using the key from secrets
-    ${tailscale}/bin/tailscale up -authkey "$TAILSCALE_AUTH_KEY" --accept-routes=true
+
+    # Not using mullvad exit node:
+    ${tailscale}/bin/tailscale up -authkey "$TAILSCALE_AUTH_KEY" --accept-routes=true --reset
+
+    # Using mullvad exit node:
+    # ${tailscale}/bin/tailscale up -authkey "$TAILSCALE_AUTH_KEY" --exit-node-allow-lan-access --exit-node=gb-mnc-wg-201.mullvad.ts.net --accept-routes=true --reset --acccept-dns=true`
   '';
 };
 ```
 
--   +Important+:
-    -   As stated before if you have called your Tailscale Auth key in your secrets file something other than `tailscale_preauth` you will then have to modify the line below.
-        ```nix
-            # Pass our tailscale auth key from sops as a Environmental Variable
-            EnvironmentFile = config.sops.secrets.tailscale_preauth.path;
-        ```
-
+- +Important+:
+  - As stated before if you have called your Tailscale Auth key in your secrets file something other than `tailscale_preauth` you will then have to modify the line below.
+    ```nix
+        # Pass our tailscale auth key from sops as a Environmental Variable
+        EnvironmentFile = config.sops.secrets.tailscale_preauth.path;
+    ```
 
 ### Breaking Down The Configuration: {#breaking-down-the-configuration}
 
 Let's break down what each part of this configuration does:
 
 1.  **System Package and Service Setup**:
-    -   `environment.systemPackages = [ pkgs.tailscale ]` adds the Tailscale package to your system
-    -   `services.tailscale.enable = true` enables the Tailscale daemon service
+
+    - `environment.systemPackages = [ pkgs.tailscale ]` adds the Tailscale package to your system
+    - `services.tailscale.enable = true` enables the Tailscale daemon service
+    - `services.tailscale.useRoutingFeatures = "client";` The article in the [NixOS Wiki about tailscale](https://nixos.wiki/wiki/TailscaleWiki) explains this better
+      > If you are using features like subnet routers or exit nodes you will also need to set services.tailscale.useRoutingFeatures to "server", "client" or "both" depending on the role of your machine.
+    - As we are a client in this situation we will set it as `client`.
 
 2.  **Automatic Connection Service**:
     The `systemd.services.tailscale-autoconnect` section creates a systemd service that:
-    -   Runs once during system startup (`Type = "oneshot"`)
-    -   Starts after networking and the Tailscale daemon are ready
-    -   Loads your authentication key from the sops-encrypted file
-        -   `${tailscale}/bin/tailscale up -authkey "$TAILSCALE_AUTH_KEY" --accept-routes=true`
+
+    - Runs once during system startup (`Type = "oneshot"`)
+    - Starts after networking and the Tailscale daemon are ready
+    - Loads your authentication key from the sops-encrypted file
+      - `${tailscale}/bin/tailscale up -authkey "$TAILSCALE_AUTH_KEY" --accept-routes=true`
 
 3.  **Connection Script Logic**:
     The script section:
-    1.  Waits 2 seconds for the Tailscale daemon to fully start
-    2.  Checks if you're already connected to Tailscale by querying its status
-    3.  If already connected (`Running` state), exits without doing anything
-    4.  If not connected, authenticates using your stored auth key
-    5.  Enables route acceptance with `--accept-routes=true`
-        -   +Note+: I also use some of my nodes as routers within my home network to allow access to other hosts so I also pass the `--accept-routes=true` argument, however if you don't do this you can omit this argument.
-
+    1.  Waits 2 seconds for the Tailscale daemon to fully start `sleep 2`
+    2.  Checks if you're already connected to Tailscale by querying its status.
+        - `status="$(${tailscale}/bin/tailscale status -json | ${jq}/bin/jq -r .BackendState)"`
+    3.  If already connected (`Running` state), exits without doing anything.
+        - `if [ $status = "Running" ]; then # if so, then do nothing`
+    4.  If not connected, authenticates using your stored auth key and passing the relevant arguments.
+        - **If you are not using mullvad use this one!**
+        - `tailscale up -authkey "$TAILSCALE_AUTH_KEY" --accept-routes=true --reset`
+          - +Note+: I also use some of my nodes as routers within my home network to allow access to other hosts so I also pass the `--accept-routes=true` argument, however if you don't do this you can omit this argument.
+        - **If you are using mullvad use this one!**
+          - `tailscale up -authkey "$TAILSCALE_AUTH_KEY" --exit-node-allow-lan-access --exit-node=gb-mnc-wg-201.mullvad.ts.net --accept-routes=true --reset --acccept-dns=true`
+        - +Note+: Ensure you add the exit node you have chosen.
 
 ## Rebuilding The System: {#rebuilding-the-system}
 
 That's it now run either:
 
--   `sudo nixos-rebuild switch flake [location/of/flake]`
--   `sudo nixos-rebuild switch`
+- `sudo nixos-rebuild switch flake [location/of/flake]`
+- `sudo nixos-rebuild switch`
 
 Check Tailscale is running &amp; connected
 
--   {{< figure src="/ox-hugo/2025-02-23-080936_.png" >}}
+- {{< figure src="/ox-hugo/2025-02-23-080936_.png" >}}
+
+- +Note+: If you have already had this service running a you will need to actually run a manual tailscale command too:
+  - `sudo tailscale up --accept-dns=true --accept-routes --exit-node=gb-mnc-wg-201.mullvad.ts.net --exit-node-allow-lan-access --reset`
