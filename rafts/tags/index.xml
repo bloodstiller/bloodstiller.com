@@ -6,8 +6,113 @@
     <description>Recent content in Tags on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 31 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Box</title>
+      <link>http://localhost:1313/tags/box/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/box/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Command</title>
+      <link>http://localhost:1313/tags/command/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/command/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GroupConcat</title>
+      <link>http://localhost:1313/tags/groupconcat/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/groupconcat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Header</title>
+      <link>http://localhost:1313/tags/header/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/header/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Headers</title>
+      <link>http://localhost:1313/tags/headers/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/headers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HTB</title>
+      <link>http://localhost:1313/tags/htb/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/htb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HTTP</title>
+      <link>http://localhost:1313/tags/http/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/http/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Injection</title>
+      <link>http://localhost:1313/tags/injection/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/injection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>http://localhost:1313/tags/linux/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Medium</title>
+      <link>http://localhost:1313/tags/medium/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/medium/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MySQL</title>
+      <link>http://localhost:1313/tags/mysql/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mysql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PHP</title>
+      <link>http://localhost:1313/tags/php/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/php/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQL</title>
+      <link>http://localhost:1313/tags/sql/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>UNION</title>
+      <link>http://localhost:1313/tags/union/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/union/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web</title>
+      <link>http://localhost:1313/tags/web/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Configuration</title>
       <link>http://localhost:1313/tags/configuration/</link>
@@ -296,13 +401,6 @@
       <description></description>
     </item>
     <item>
-      <title>HTB</title>
-      <link>http://localhost:1313/tags/htb/</link>
-      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/htb/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Ibm-Db2</title>
       <link>http://localhost:1313/tags/ibm-db2/</link>
       <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
@@ -342,13 +440,6 @@
       <link>http://localhost:1313/tags/keepass2john/</link>
       <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/keepass2john/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Medium</title>
-      <link>http://localhost:1313/tags/medium/</link>
-      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/medium/</guid>
       <description></description>
     </item>
     <item>
@@ -433,13 +524,6 @@
       <link>http://localhost:1313/tags/java/</link>
       <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/java/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
-      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
     <item>
@@ -545,13 +629,6 @@
       <link>http://localhost:1313/tags/xp_cmdshell/</link>
       <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/xp_cmdshell/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Box</title>
-      <link>http://localhost:1313/tags/box/</link>
-      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/box/</guid>
       <description></description>
     </item>
     <item>
@@ -1679,13 +1756,6 @@
       <link>http://localhost:1313/tags/csharp/</link>
       <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/csharp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SQL</title>
-      <link>http://localhost:1313/tags/sql/</link>
-      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sql/</guid>
       <description></description>
     </item>
     <item>

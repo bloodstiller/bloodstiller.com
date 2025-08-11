@@ -3,15 +3,69 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/author/</loc>
-    <lastmod>2025-07-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/homelab/202050222_tailscalenixos/</loc>
-    <lastmod>2025-07-31T00:00:00+00:00</lastmod>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/bloodstiller/</loc>
-    <lastmod>2025-07-31T00:00:00+00:00</lastmod>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/box/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/command/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/groupconcat/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/header/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/headers/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/htb/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/http/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/injection/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/linux/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/medium/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/mysql/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/php/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sql/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/union/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/union-box/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/web/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/homelab/202050222_tailscalenixos/</loc>
     <lastmod>2025-07-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/configuration/</loc>
@@ -30,9 +84,6 @@
     <lastmod>2025-07-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/system/</loc>
-    <lastmod>2025-07-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-07-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/tailscale/</loc>
@@ -161,9 +212,6 @@
     <loc>http://localhost:1313/tags/hack-the-box/</loc>
     <lastmod>2025-06-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/htb/</loc>
-    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/ibm-db2/</loc>
     <lastmod>2025-06-18T00:00:00+00:00</lastmod>
   </url><url>
@@ -185,9 +233,6 @@
     <loc>http://localhost:1313/tags/keepass2john/</loc>
     <lastmod>2025-06-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/medium/</loc>
-    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/password-cracking/</loc>
     <lastmod>2025-06-18T00:00:00+00:00</lastmod>
   </url><url>
@@ -201,9 +246,6 @@
     <lastmod>2025-06-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/smb/</loc>
-    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/</loc>
     <lastmod>2025-06-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/war/</loc>
@@ -225,9 +267,6 @@
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/java/</loc>
-    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/magic-bytes/</loc>
@@ -280,9 +319,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/xp_cmdshell/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/box/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cap/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
@@ -926,9 +962,6 @@
     <loc>http://localhost:1313/tags/csharp/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sql/</loc>
-    <lastmod>2024-10-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/sqlite/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
@@ -1079,10 +1112,6 @@
     <loc>http://localhost:1313/walkthroughs/return-box/</loc>
     <lastmod>2024-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/20240403073323-credentialed_enumeration_in_ad/</loc>
-  </url><url>
     <loc>http://localhost:1313/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
   </url>
 </urlset>
