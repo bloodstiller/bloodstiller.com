@@ -9,17 +9,24 @@
     <lastBuildDate>Thu, 11 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Box</title>
-      <link>http://localhost:1313/tags/box/</link>
+      <title>Command Injection</title>
+      <link>http://localhost:1313/tags/command-injection/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/box/</guid>
+      <guid>http://localhost:1313/tags/command-injection/</guid>
       <description></description>
     </item>
     <item>
-      <title>Command</title>
-      <link>http://localhost:1313/tags/command/</link>
+      <title>CTF</title>
+      <link>http://localhost:1313/tags/ctf/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/command/</guid>
+      <guid>http://localhost:1313/tags/ctf/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fuzzing</title>
+      <link>http://localhost:1313/tags/fuzzing/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/fuzzing/</guid>
       <description></description>
     </item>
     <item>
@@ -30,17 +37,17 @@
       <description></description>
     </item>
     <item>
-      <title>Header</title>
-      <link>http://localhost:1313/tags/header/</link>
+      <title>Hack the Box</title>
+      <link>http://localhost:1313/tags/hack-the-box/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/header/</guid>
+      <guid>http://localhost:1313/tags/hack-the-box/</guid>
       <description></description>
     </item>
     <item>
-      <title>Headers</title>
-      <link>http://localhost:1313/tags/headers/</link>
+      <title>Header Injection</title>
+      <link>http://localhost:1313/tags/header-injection/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/headers/</guid>
+      <guid>http://localhost:1313/tags/header-injection/</guid>
       <description></description>
     </item>
     <item>
@@ -48,20 +55,6 @@
       <link>http://localhost:1313/tags/htb/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/htb/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>HTTP</title>
-      <link>http://localhost:1313/tags/http/</link>
-      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/http/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Injection</title>
-      <link>http://localhost:1313/tags/injection/</link>
-      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/injection/</guid>
       <description></description>
     </item>
     <item>
@@ -86,6 +79,13 @@
       <description></description>
     </item>
     <item>
+      <title>Nginx</title>
+      <link>http://localhost:1313/tags/nginx/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/nginx/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>PHP</title>
       <link>http://localhost:1313/tags/php/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
@@ -93,10 +93,17 @@
       <description></description>
     </item>
     <item>
-      <title>SQL</title>
-      <link>http://localhost:1313/tags/sql/</link>
+      <title>Privilege Escalation</title>
+      <link>http://localhost:1313/tags/privilege-escalation/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sql/</guid>
+      <guid>http://localhost:1313/tags/privilege-escalation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQL Injection</title>
+      <link>http://localhost:1313/tags/sql-injection/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sql-injection/</guid>
       <description></description>
     </item>
     <item>
@@ -107,10 +114,10 @@
       <description></description>
     </item>
     <item>
-      <title>Web</title>
-      <link>http://localhost:1313/tags/web/</link>
+      <title>Web Security</title>
+      <link>http://localhost:1313/tags/web-security/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web/</guid>
+      <guid>http://localhost:1313/tags/web-security/</guid>
       <description></description>
     </item>
     <item>
@@ -275,13 +282,6 @@
       <description></description>
     </item>
     <item>
-      <title>Web Security</title>
-      <link>http://localhost:1313/tags/web-security/</link>
-      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web-security/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>X-Content-Type-Options</title>
       <link>http://localhost:1313/tags/x-content-type-options/</link>
       <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
@@ -394,13 +394,6 @@
       <description></description>
     </item>
     <item>
-      <title>Hack the Box</title>
-      <link>http://localhost:1313/tags/hack-the-box/</link>
-      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/hack-the-box/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Ibm-Db2</title>
       <link>http://localhost:1313/tags/ibm-db2/</link>
       <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
@@ -461,13 +454,6 @@
       <link>http://localhost:1313/tags/powershell/</link>
       <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/powershell/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Privilege Escalation</title>
-      <link>http://localhost:1313/tags/privilege-escalation/</link>
-      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/privilege-escalation/</guid>
       <description></description>
     </item>
     <item>
@@ -629,6 +615,13 @@
       <link>http://localhost:1313/tags/xp_cmdshell/</link>
       <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/xp_cmdshell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Box</title>
+      <link>http://localhost:1313/tags/box/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/box/</guid>
       <description></description>
     </item>
     <item>
@@ -1304,6 +1297,55 @@
       <description></description>
     </item>
     <item>
+      <title>API</title>
+      <link>http://localhost:1313/tags/api/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2023-49147</title>
+      <link>http://localhost:1313/tags/cve-2023-49147/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cve-2023-49147/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gitea</title>
+      <link>http://localhost:1313/tags/gitea/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/gitea/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mimikatz</title>
+      <link>http://localhost:1313/tags/mimikatz/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mimikatz/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Msi</title>
+      <link>http://localhost:1313/tags/msi/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/msi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PDF24</title>
+      <link>http://localhost:1313/tags/pdf24/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/pdf24/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SetOpLock</title>
+      <link>http://localhost:1313/tags/setoplock/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/setoplock/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Spring Boot</title>
       <link>http://localhost:1313/tags/spring-boot/</link>
       <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
@@ -1343,13 +1385,6 @@
       <link>http://localhost:1313/tags/systemctl/</link>
       <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/systemctl/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Msi</title>
-      <link>http://localhost:1313/tags/msi/</link>
-      <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/msi/</guid>
       <description></description>
     </item>
     <item>
@@ -1413,13 +1448,6 @@
       <link>http://localhost:1313/tags/kerberos/</link>
       <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/kerberos/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Mimikatz</title>
-      <link>http://localhost:1313/tags/mimikatz/</link>
-      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mimikatz/</guid>
       <description></description>
     </item>
     <item>
@@ -1756,6 +1784,13 @@
       <link>http://localhost:1313/tags/csharp/</link>
       <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/csharp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQL</title>
+      <link>http://localhost:1313/tags/sql/</link>
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sql/</guid>
       <description></description>
     </item>
     <item>
