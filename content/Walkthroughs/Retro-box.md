@@ -714,7 +714,6 @@ netexec smb $box -u 'BANKING$' -p 'banking' --shares
 ```
 
 As we can see we get the error `STATUS_NOLOGON_WORKSTATION_TRUST`
-[[![](/ox-hugo/2025-09-16-125817_.png)]\*\* Side Quest: What Is A `STATUS_NOLOGON_WORKSTATION_TRUST` Error?
 
 Referring back to the TrustedSec article, we’re told the below.
 
