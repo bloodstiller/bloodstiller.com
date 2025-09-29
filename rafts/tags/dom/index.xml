@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DOM on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
+    <link>http://localhost:1313/tags/dom/</link>
+    <description>Recent content in DOM on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/dom/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DOM XSS Lab 2: Exploiting document.write with location.search in Select Elements</title>
+      <link>http://localhost:1313/portswigger/dom_xss_lab_2/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/dom_xss_lab_2/</guid>
+      <description>&lt;h2 id=&#34;lab-2-dom-xss-in-document-dot-write-sink-using-source-location-dot-search-inside-a-select-element&#34;&gt;Lab 2: DOM XSS in &lt;code&gt;document.write&lt;/code&gt; sink using source &lt;code&gt;location.search&lt;/code&gt; inside a &lt;code&gt;&amp;lt;select&amp;gt;&lt;/code&gt; element:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a DOM-based cross-site scripting vulnerability in the stock checker. It uses the JavaScript &lt;code&gt;document.write&lt;/code&gt; function, which writes raw HTML into the page. The function is called with data from &lt;code&gt;location.search&lt;/code&gt; (the URL query string), which you control. The data is inserted inside a &lt;code&gt;&amp;lt;select&amp;gt;&lt;/code&gt; element.&lt;/p&gt;&#xA;&lt;p&gt;To solve this lab, perform a cross-site scripting attack that breaks out of the &lt;code&gt;&amp;lt;select&amp;gt;&lt;/code&gt; element and calls &lt;code&gt;alert&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

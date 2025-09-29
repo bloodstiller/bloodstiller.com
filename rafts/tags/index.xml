@@ -6,48 +6,139 @@
     <description>Recent content in Tags on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2k</title>
-      <link>http://localhost:1313/tags/2k/</link>
-      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/2k/</guid>
+      <title>Bug-Bounty</title>
+      <link>http://localhost:1313/tags/bug-bounty/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bug-bounty/</guid>
       <description></description>
     </item>
     <item>
-      <title>ActiveDirectory</title>
-      <link>http://localhost:1313/tags/activedirectory/</link>
-      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/activedirectory/</guid>
+      <title>Client-Side</title>
+      <link>http://localhost:1313/tags/client-side/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/client-side/</guid>
       <description></description>
     </item>
     <item>
-      <title>Box</title>
-      <link>http://localhost:1313/tags/box/</link>
-      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/box/</guid>
+      <title>Document.write</title>
+      <link>http://localhost:1313/tags/document.write/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/document.write/</guid>
       <description></description>
     </item>
     <item>
-      <title>Certificate-Authority</title>
-      <link>http://localhost:1313/tags/certificate-authority/</link>
-      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/certificate-authority/</guid>
+      <title>DOM</title>
+      <link>http://localhost:1313/tags/dom/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dom/</guid>
       <description></description>
     </item>
     <item>
-      <title>Certificate-Template</title>
+      <title>DOM-Based</title>
+      <link>http://localhost:1313/tags/dom-based/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dom-based/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Injection</title>
+      <link>http://localhost:1313/tags/injection/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/injection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JavaScript</title>
+      <link>http://localhost:1313/tags/javascript/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Location.search</title>
+      <link>http://localhost:1313/tags/location.search/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/location.search/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OWASP</title>
+      <link>http://localhost:1313/tags/owasp/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/owasp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security-Research</title>
+      <link>http://localhost:1313/tags/security-research/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/security-research/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Exploitation</title>
+      <link>http://localhost:1313/tags/web-exploitation/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web-exploitation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WebSecurity</title>
+      <link>http://localhost:1313/tags/websecurity/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/websecurity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>XSS</title>
+      <link>http://localhost:1313/tags/xss/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/xss/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Active Directory</title>
+      <link>http://localhost:1313/tags/active-directory/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/active-directory/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AS-REP Roasting</title>
+      <link>http://localhost:1313/tags/as-rep-roasting/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/as-rep-roasting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>BloodHound</title>
+      <link>http://localhost:1313/tags/bloodhound/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bloodhound/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Certificate Template</title>
       <link>http://localhost:1313/tags/certificate-template/</link>
       <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/certificate-template/</guid>
       <description></description>
     </item>
     <item>
-      <title>Easy</title>
-      <link>http://localhost:1313/tags/easy/</link>
+      <title>Certipy</title>
+      <link>http://localhost:1313/tags/certipy/</link>
       <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/easy/</guid>
+      <guid>http://localhost:1313/tags/certipy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Domain Controller</title>
+      <link>http://localhost:1313/tags/domain-controller/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/domain-controller/</guid>
       <description></description>
     </item>
     <item>
@@ -58,10 +149,38 @@
       <description></description>
     </item>
     <item>
+      <title>Hack the Box</title>
+      <link>http://localhost:1313/tags/hack-the-box/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/hack-the-box/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>HTB</title>
       <link>http://localhost:1313/tags/htb/</link>
       <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/htb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Impacket</title>
+      <link>http://localhost:1313/tags/impacket/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/impacket/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kerberos</title>
+      <link>http://localhost:1313/tags/kerberos/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/kerberos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kerbrute</title>
+      <link>http://localhost:1313/tags/kerbrute/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/kerbrute/</guid>
       <description></description>
     </item>
     <item>
@@ -72,24 +191,24 @@
       <description></description>
     </item>
     <item>
-      <title>Pre-Windows-2000-Computers</title>
-      <link>http://localhost:1313/tags/pre-windows-2000-computers/</link>
+      <title>Machine Account</title>
+      <link>http://localhost:1313/tags/machine-account/</link>
       <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/pre-windows-2000-computers/</guid>
+      <guid>http://localhost:1313/tags/machine-account/</guid>
       <description></description>
     </item>
     <item>
-      <title>RID</title>
-      <link>http://localhost:1313/tags/rid/</link>
+      <title>Pre-Windows 2000</title>
+      <link>http://localhost:1313/tags/pre-windows-2000/</link>
       <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/rid/</guid>
+      <guid>http://localhost:1313/tags/pre-windows-2000/</guid>
       <description></description>
     </item>
     <item>
-      <title>RPC</title>
-      <link>http://localhost:1313/tags/rpc/</link>
+      <title>Privilege Escalation</title>
+      <link>http://localhost:1313/tags/privilege-escalation/</link>
       <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/rpc/</guid>
+      <guid>http://localhost:1313/tags/privilege-escalation/</guid>
       <description></description>
     </item>
     <item>
@@ -149,6 +268,13 @@
       <description></description>
     </item>
     <item>
+      <title>Easy</title>
+      <link>http://localhost:1313/tags/easy/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/easy/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Git History</title>
       <link>http://localhost:1313/tags/git-history/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
@@ -160,13 +286,6 @@
       <link>http://localhost:1313/tags/gitea/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/gitea/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Hack the Box</title>
-      <link>http://localhost:1313/tags/hack-the-box/</link>
-      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/hack-the-box/</guid>
       <description></description>
     </item>
     <item>
@@ -286,13 +405,6 @@
       <link>http://localhost:1313/tags/php/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/php/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Privilege Escalation</title>
-      <link>http://localhost:1313/tags/privilege-escalation/</link>
-      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/privilege-escalation/</guid>
       <description></description>
     </item>
     <item>
@@ -436,13 +548,6 @@
       <description></description>
     </item>
     <item>
-      <title>OWASP</title>
-      <link>http://localhost:1313/tags/owasp/</link>
-      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/owasp/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Permissions-Policy</title>
       <link>http://localhost:1313/tags/permissions-policy/</link>
       <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
@@ -566,13 +671,6 @@
       <link>http://localhost:1313/tags/vulnerability-assessment/</link>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/vulnerability-assessment/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Active Directory</title>
-      <link>http://localhost:1313/tags/active-directory/</link>
-      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/active-directory/</guid>
       <description></description>
     </item>
     <item>
@@ -737,10 +835,10 @@
       <description></description>
     </item>
     <item>
-      <title>Web Exploitation</title>
-      <link>http://localhost:1313/tags/web-exploitation/</link>
-      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web-exploitation/</guid>
+      <title>Certificate Authority</title>
+      <link>http://localhost:1313/tags/certificate-authority/</link>
+      <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/certificate-authority/</guid>
       <description></description>
     </item>
     <item>
@@ -790,6 +888,13 @@
       <link>http://localhost:1313/tags/xp_cmdshell/</link>
       <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/xp_cmdshell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Box</title>
+      <link>http://localhost:1313/tags/box/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/box/</guid>
       <description></description>
     </item>
     <item>
@@ -1070,6 +1175,13 @@
       <link>http://localhost:1313/tags/password-recovery/</link>
       <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/password-recovery/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RPC</title>
+      <link>http://localhost:1313/tags/rpc/</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/rpc/</guid>
       <description></description>
     </item>
     <item>
@@ -1528,13 +1640,6 @@
       <description></description>
     </item>
     <item>
-      <title>Kerberos</title>
-      <link>http://localhost:1313/tags/kerberos/</link>
-      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kerberos/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>CVE-2021-1675</title>
       <link>http://localhost:1313/tags/cve-2021-1675/</link>
       <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
@@ -1672,13 +1777,6 @@
       <link>http://localhost:1313/tags/dc-sync/</link>
       <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/dc-sync/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Domain Controller</title>
-      <link>http://localhost:1313/tags/domain-controller/</link>
-      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/domain-controller/</guid>
       <description></description>
     </item>
     <item>
