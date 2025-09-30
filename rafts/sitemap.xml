@@ -3,13 +3,46 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/author/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
+    <lastmod>2025-09-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/bloodstiller/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
+    <lastmod>2025-09-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
+    <lastmod>2025-09-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/dom/</loc>
+    <lastmod>2025-09-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/portswigger/dom_xss_lab_3/</loc>
+    <lastmod>2025-09-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/javascript/</loc>
+    <lastmod>2025-09-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/owasp/</loc>
+    <lastmod>2025-09-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/portswigger/</loc>
+    <lastmod>2025-09-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/portswigger/</loc>
+    <lastmod>2025-09-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/security-research/</loc>
+    <lastmod>2025-09-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-09-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/web-exploitation/</loc>
+    <lastmod>2025-09-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/websecurity/</loc>
+    <lastmod>2025-09-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/xss/</loc>
+    <lastmod>2025-09-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/bug-bounty/</loc>
     <lastmod>2025-09-29T00:00:00+00:00</lastmod>
@@ -18,9 +51,6 @@
     <lastmod>2025-09-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/document.write/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/dom/</loc>
     <lastmod>2025-09-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/portswigger/dom_xss_lab_2/</loc>
@@ -32,31 +62,7 @@
     <loc>http://localhost:1313/tags/injection/</loc>
     <lastmod>2025-09-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/javascript/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/location.search/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/owasp/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/portswigger/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/security-research/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/web-exploitation/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/websecurity/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/xss/</loc>
     <lastmod>2025-09-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/active-directory/</loc>

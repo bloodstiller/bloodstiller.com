@@ -60,7 +60,7 @@ We should now locate where this parameter is processed in the page’s JavaScrip
 
 The form posts to `/product/stock` and includes a hidden `productId=1`.
 
-~~Note~~: This `productId` is unrelated to the store names; it’s just the product identifier.
++Note+: This `productId` is unrelated to the store names; it’s just the product identifier.
 
 The rest of the logic is inside the `<script>` block.
 

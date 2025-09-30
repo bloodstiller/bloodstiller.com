@@ -6,8 +6,64 @@
     <description>Recent content in Tags on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DOM</title>
+      <link>http://localhost:1313/tags/dom/</link>
+      <pubDate>Tue, 30 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JavaScript</title>
+      <link>http://localhost:1313/tags/javascript/</link>
+      <pubDate>Tue, 30 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OWASP</title>
+      <link>http://localhost:1313/tags/owasp/</link>
+      <pubDate>Tue, 30 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/owasp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PortSwigger</title>
+      <link>http://localhost:1313/tags/portswigger/</link>
+      <pubDate>Tue, 30 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/portswigger/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security-Research</title>
+      <link>http://localhost:1313/tags/security-research/</link>
+      <pubDate>Tue, 30 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/security-research/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Exploitation</title>
+      <link>http://localhost:1313/tags/web-exploitation/</link>
+      <pubDate>Tue, 30 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web-exploitation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WebSecurity</title>
+      <link>http://localhost:1313/tags/websecurity/</link>
+      <pubDate>Tue, 30 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/websecurity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>XSS</title>
+      <link>http://localhost:1313/tags/xss/</link>
+      <pubDate>Tue, 30 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/xss/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Bug-Bounty</title>
       <link>http://localhost:1313/tags/bug-bounty/</link>
@@ -30,13 +86,6 @@
       <description></description>
     </item>
     <item>
-      <title>DOM</title>
-      <link>http://localhost:1313/tags/dom/</link>
-      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dom/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>DOM-Based</title>
       <link>http://localhost:1313/tags/dom-based/</link>
       <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
@@ -51,52 +100,10 @@
       <description></description>
     </item>
     <item>
-      <title>JavaScript</title>
-      <link>http://localhost:1313/tags/javascript/</link>
-      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/javascript/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Location.search</title>
       <link>http://localhost:1313/tags/location.search/</link>
       <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/location.search/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>OWASP</title>
-      <link>http://localhost:1313/tags/owasp/</link>
-      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/owasp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Security-Research</title>
-      <link>http://localhost:1313/tags/security-research/</link>
-      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/security-research/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Web Exploitation</title>
-      <link>http://localhost:1313/tags/web-exploitation/</link>
-      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web-exploitation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>WebSecurity</title>
-      <link>http://localhost:1313/tags/websecurity/</link>
-      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/websecurity/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>XSS</title>
-      <link>http://localhost:1313/tags/xss/</link>
-      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/xss/</guid>
       <description></description>
     </item>
     <item>

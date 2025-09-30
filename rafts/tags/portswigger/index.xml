@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PortSwigger on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
+    <link>http://localhost:1313/tags/portswigger/</link>
+    <description>Recent content in PortSwigger on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/portswigger/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DOM XSS Lab 3: Exploiting innerHTML with location.search in the Search Message</title>
+      <link>http://localhost:1313/portswigger/dom_xss_lab_3/</link>
+      <pubDate>Tue, 30 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/dom_xss_lab_3/</guid>
+      <description>&lt;h2 id=&#34;lab-3-dom-xss-in-innerhtml-sink-using-source-location-dot-search&#34;&gt;Lab 3: DOM XSS in &lt;code&gt;innerHTML&lt;/code&gt; sink using source &lt;code&gt;location.search&lt;/code&gt;&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a DOM-based cross-site scripting vulnerability in the blog search. It takes data from &lt;code&gt;location.search&lt;/code&gt; and writes it into the page via &lt;code&gt;innerHTML&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;To solve the lab, perform a cross-site scripting attack that calls &lt;code&gt;alert&lt;/code&gt;.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;Pre-amble, before the link to the lab. There is this text below, which tells essentially what we need to do and what will or won&amp;rsquo;t work.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
