@@ -6,8 +6,15 @@
     <description>Recent content on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DOM XSS Lab 4: jQuery anchor href sink with location.search source</title>
+      <link>http://localhost:1313/portswigger/dom_xss_lab_4/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/dom_xss_lab_4/</guid>
+      <description>&lt;h2 id=&#34;lab-4-dom-xss-in-jquery-anchor-href-attribute-sink-using-location-dot-search-source&#34;&gt;Lab 4: DOM XSS in jQuery anchor &lt;code&gt;href&lt;/code&gt; attribute sink using &lt;code&gt;location.search&lt;/code&gt; source:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a DOM-based cross-site scripting vulnerability in the submit feedback page. It uses the jQuery library&amp;rsquo;s &lt;code&gt;$&lt;/code&gt; selector function to find an anchor element, and changes its &lt;code&gt;href&lt;/code&gt; attribute using data from &lt;code&gt;location.search&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;To solve this lab, make the &amp;ldquo;back&amp;rdquo; link alert &lt;code&gt;document.cookie&lt;/code&gt;.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;h4 id=&#34;mapping-the-comments-section&#34;&gt;Mapping The Comments Section:&lt;/h4&gt;&#xA;&lt;p&gt;Looking at a post we can see we can add comments &amp;amp; leave our name, email &amp;amp; website.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-09-30-153613.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>DOM XSS Lab 3: Exploiting innerHTML with location.search in the Search Message</title>
       <link>http://localhost:1313/portswigger/dom_xss_lab_3/</link>
