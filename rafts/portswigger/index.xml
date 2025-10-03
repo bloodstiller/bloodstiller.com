@@ -6,8 +6,15 @@
     <description>Recent content in Portswiggers on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/portswigger/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DOM XSS Lab 5: jQuery :contains() selector sink with location.hash source</title>
+      <link>http://localhost:1313/portswigger/dom_xss_lab_5/</link>
+      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/dom_xss_lab_5/</guid>
+      <description>&lt;h2 id=&#34;lab-5-dom-xss-in-jquery-selector-sink-using-a-hashchange-event&#34;&gt;Lab 5: DOM XSS in jQuery selector sink using a hashchange event:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a DOM-based cross-site scripting vulnerability on the home page. It uses jQuery&amp;rsquo;s &lt;code&gt;$()&lt;/code&gt; selector function to auto-scroll to a given post, whose title is passed via the &lt;code&gt;location.hash&lt;/code&gt; property.&lt;/p&gt;&#xA;&lt;p&gt;To solve the lab, deliver an exploit to the victim that calls the &lt;code&gt;print()&lt;/code&gt; function in their browser.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;Navigating to the page we can see it&amp;rsquo;s a blog that has various posts.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-10-03-100826.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>DOM XSS Lab 4: jQuery anchor href sink with location.search source</title>
       <link>http://localhost:1313/portswigger/dom_xss_lab_4/</link>

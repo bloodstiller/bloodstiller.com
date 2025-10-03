@@ -128,7 +128,7 @@ Because `innerHTML` is used with untrusted (unsanitized) input, we can inject an
 1.  Use an element that can fire handlers when it fails, in this case we will use `<img ... onerror=...>`.
 2.  Now we force an error by specifying a fake `src` image so that the error triggers: `<img src=1 onerror=`
 3.  Now we specify an alert should be triggered in the event of an error `alert(1)`.
-4.  Final Payload ):
+4.  **Final Payload** :
     -   `<img src=1 onerror=alert(1)>`
 
 Place it in the URL parameter (URL-encode if needed, in this case it is not needed):
