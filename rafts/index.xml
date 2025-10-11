@@ -6,8 +6,22 @@
     <description>Recent content on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLM APIs Lab 1: Guardrails &amp; Consent Checks for Tool-Calling Models</title>
+      <link>http://localhost:1313/portswigger/llm_apis_lab_1/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/llm_apis_lab_1/</guid>
+      <description>&lt;h2 id=&#34;lab-1-exploiting-llm-apis-with-excessive-agency&#34;&gt;Lab 1: Exploiting LLM APIs with excessive agency:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;To solve the lab, use the LLM to delete the user carlos.&#xA;Required knowledge&lt;/p&gt;&#xA;&lt;p&gt;To solve this lab, you&amp;rsquo;ll need to know:&lt;/p&gt;&#xA;&lt;p&gt;How LLM APIs work.&#xA;How to map LLM API attack surface.&lt;/p&gt;&#xA;&lt;p&gt;For more information, see our Web LLM attacks Academy topic.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;We can see there is a live function chat function on the page:&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-10-09-110109.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Clicking it allows us to interact with a chat bot using the live chat function:&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-10-09-110210.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LLM APIs Lab 2: OS Command Injection via Tool-Calling API</title>
+      <link>http://localhost:1313/portswigger/llm_apis_lab_2/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/llm_apis_lab_2/</guid>
+      <description>&lt;h2 id=&#34;lab-2-exploiting-vulnerabilities-in-llm-apis&#34;&gt;Lab 2: Exploiting vulnerabilities in LLM APIs:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains an OS command injection vulnerability that can be exploited via its APIs. You can call these APIs via the LLM. To solve the lab, delete the morale.txt file from Carlos&amp;rsquo; home directory.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;Much like lab 1 we are presented a web store which has access to an Email Client we can use as well as a Live Chat function where we can access the LLM.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-10-10_15-23.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>RetroTwo HTB Walkthrough: Pre-Win2000 Machine Accounts, subkeys &amp; malicious DLLS (Windows AD, LDAP &amp; SAMR) Privilege Escalation</title>
       <link>http://localhost:1313/walkthroughs/retrotwo-box/</link>

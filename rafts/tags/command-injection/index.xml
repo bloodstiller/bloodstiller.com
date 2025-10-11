@@ -6,8 +6,15 @@
     <description>Recent content in Command Injection on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/command-injection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLM APIs Lab 2: OS Command Injection via Tool-Calling API</title>
+      <link>http://localhost:1313/portswigger/llm_apis_lab_2/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/llm_apis_lab_2/</guid>
+      <description>&lt;h2 id=&#34;lab-2-exploiting-vulnerabilities-in-llm-apis&#34;&gt;Lab 2: Exploiting vulnerabilities in LLM APIs:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains an OS command injection vulnerability that can be exploited via its APIs. You can call these APIs via the LLM. To solve the lab, delete the morale.txt file from Carlos&amp;rsquo; home directory.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;Much like lab 1 we are presented a web store which has access to an Email Client we can use as well as a Live Chat function where we can access the LLM.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-10-10_15-23.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Union HTB Walkthrough: SQLi, Header Injection, and Privilege Escalation</title>
       <link>http://localhost:1313/walkthroughs/union-box/</link>

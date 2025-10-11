@@ -2,37 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/2k/</loc>
-    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/abuse-prevention/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/accdb/</loc>
-    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/access/</loc>
-    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/activedirectory/</loc>
-    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/api/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/</loc>
-    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/bloodstiller/</loc>
-    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/command-injection/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/function-calling/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/llm/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/portswigger/llm_apis_lab_1/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/portswigger/llm_apis_lab_2/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/portswigger/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/security-research/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tool-calling/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/websecurity/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/active-directory/</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/box/</loc>
+    <loc>http://localhost:1313/tags/bloodhound/</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/easy/</loc>
+    <loc>http://localhost:1313/tags/domain-controller/</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/genericwrite/</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hives/</loc>
+    <loc>http://localhost:1313/tags/hack-the-box/</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/htb/</loc>
@@ -47,19 +74,22 @@
     <loc>http://localhost:1313/tags/ldaps/</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/microsoft/</loc>
+    <loc>http://localhost:1313/tags/machine-account/</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/office2john/</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pre-windows-2000-computers/</loc>
+    <loc>http://localhost:1313/tags/pentesting/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pre-windows-2000/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/retrotwo-box/</loc>
-    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/rid/</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/rpc/</loc>
@@ -69,18 +99,6 @@
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/smb/</loc>
-    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/subkeys/</loc>
-    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/unicodepwd/</loc>
-    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/useraccountcontrol/</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/</loc>
@@ -113,19 +131,10 @@
     <loc>http://localhost:1313/tags/portswigger/</loc>
     <lastmod>2025-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/portswigger/</loc>
-    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/security-research/</loc>
-    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/selector-injection/</loc>
     <lastmod>2025-10-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/web-exploitation/</loc>
-    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/websecurity/</loc>
     <lastmod>2025-10-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/xss/</loc>
@@ -158,13 +167,7 @@
     <loc>http://localhost:1313/tags/location.search/</loc>
     <lastmod>2025-09-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/active-directory/</loc>
-    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/as-rep-roasting/</loc>
-    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/bloodhound/</loc>
     <lastmod>2025-09-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/certificate-template/</loc>
@@ -173,13 +176,7 @@
     <loc>http://localhost:1313/tags/certipy/</loc>
     <lastmod>2025-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/domain-controller/</loc>
-    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/esc1/</loc>
-    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/hack-the-box/</loc>
     <lastmod>2025-09-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/impacket/</loc>
@@ -191,20 +188,11 @@
     <loc>http://localhost:1313/tags/kerbrute/</loc>
     <lastmod>2025-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/machine-account/</loc>
-    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/pre-windows-2000/</loc>
-    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
-    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/walkthroughs/retro-box/</loc>
     <lastmod>2025-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/api/</loc>
-    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/useraccountcontrol/</loc>
+    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/aspx-webshell/</loc>
     <lastmod>2025-09-10T00:00:00+00:00</lastmod>
@@ -216,6 +204,9 @@
     <lastmod>2025-09-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cve-2023-49147/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/easy/</loc>
     <lastmod>2025-09-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/git-history/</loc>
@@ -247,9 +238,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/setoplock/</loc>
     <lastmod>2025-09-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/command-injection/</loc>
-    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/ctf/</loc>
     <lastmod>2025-09-11T00:00:00+00:00</lastmod>
@@ -517,6 +505,9 @@
   </url><url>
     <loc>http://localhost:1313/tags/xp_cmdshell/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/box/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cap/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
@@ -797,9 +788,6 @@
     <loc>http://localhost:1313/tags/optimization/</loc>
     <lastmod>2025-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pentesting/</loc>
-    <lastmod>2025-03-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/redteam/</loc>
     <lastmod>2025-03-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -819,9 +807,6 @@
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/homelab/homelab-runningollamalocally/</loc>
-    <lastmod>2025-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/llm/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/local-llm/</loc>

@@ -6,8 +6,64 @@
     <description>Recent content in Tags on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Abuse-Prevention</title>
+      <link>http://localhost:1313/tags/abuse-prevention/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/abuse-prevention/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>API</title>
+      <link>http://localhost:1313/tags/api/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Command Injection</title>
+      <link>http://localhost:1313/tags/command-injection/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/command-injection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Function-Calling</title>
+      <link>http://localhost:1313/tags/function-calling/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/function-calling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM</title>
+      <link>http://localhost:1313/tags/llm/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security-Research</title>
+      <link>http://localhost:1313/tags/security-research/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/security-research/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tool-Calling</title>
+      <link>http://localhost:1313/tags/tool-calling/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/tool-calling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WebSecurity</title>
+      <link>http://localhost:1313/tags/websecurity/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/websecurity/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Active Directory</title>
       <link>http://localhost:1313/tags/active-directory/</link>
@@ -184,13 +240,6 @@
       <description></description>
     </item>
     <item>
-      <title>Security-Research</title>
-      <link>http://localhost:1313/tags/security-research/</link>
-      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/security-research/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Selector-Injection</title>
       <link>http://localhost:1313/tags/selector-injection/</link>
       <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
@@ -202,13 +251,6 @@
       <link>http://localhost:1313/tags/web-exploitation/</link>
       <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/web-exploitation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>WebSecurity</title>
-      <link>http://localhost:1313/tags/websecurity/</link>
-      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/websecurity/</guid>
       <description></description>
     </item>
     <item>
@@ -317,13 +359,6 @@
       <description></description>
     </item>
     <item>
-      <title>API</title>
-      <link>http://localhost:1313/tags/api/</link>
-      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/api/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>ASPX Webshell</title>
       <link>http://localhost:1313/tags/aspx-webshell/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
@@ -419,13 +454,6 @@
       <link>http://localhost:1313/tags/setoplock/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/setoplock/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Command Injection</title>
-      <link>http://localhost:1313/tags/command-injection/</link>
-      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/command-injection/</guid>
       <description></description>
     </item>
     <item>
@@ -1535,13 +1563,6 @@
       <description></description>
     </item>
     <item>
-      <title>Llm</title>
-      <link>http://localhost:1313/tags/llm/</link>
-      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/llm/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Local-Llm</title>
       <link>http://localhost:1313/tags/local-llm/</link>
       <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
@@ -2260,83 +2281,6 @@
       <link>http://localhost:1313/tags/ethical-hacking/</link>
       <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/ethical-hacking/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>2k</title>
-      <link>http://localhost:1313/tags/2k/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/2k/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Accdb</title>
-      <link>http://localhost:1313/tags/accdb/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/accdb/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Access</title>
-      <link>http://localhost:1313/tags/access/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/access/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ActiveDirectory</title>
-      <link>http://localhost:1313/tags/activedirectory/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/activedirectory/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Hives</title>
-      <link>http://localhost:1313/tags/hives/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/hives/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MachineAccount</title>
-      <link>http://localhost:1313/tags/machineaccount/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/machineaccount/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Microsoft</title>
-      <link>http://localhost:1313/tags/microsoft/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/microsoft/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Pre-Windows-2000-Computers</title>
-      <link>http://localhost:1313/tags/pre-windows-2000-computers/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/pre-windows-2000-computers/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>RID</title>
-      <link>http://localhost:1313/tags/rid/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/rid/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Subkeys</title>
-      <link>http://localhost:1313/tags/subkeys/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/subkeys/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>UnicodePwd</title>
-      <link>http://localhost:1313/tags/unicodepwd/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/unicodepwd/</guid>
       <description></description>
     </item>
   </channel>
