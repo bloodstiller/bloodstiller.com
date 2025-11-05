@@ -2,7 +2,7 @@
 title = "Authentication Vulnerabilities: Lab 3 : Username enumeration via response timing"
 date = 2025-11-05
 lastmod = 2025-11-05
-draft = true
+draft = false
 author = "bloodstiller"
 description = "PortSwigger authentication lab write-up exploring how timing differences in login responses can be exploited as a side channel to enumerate valid usernames."
 tags = [

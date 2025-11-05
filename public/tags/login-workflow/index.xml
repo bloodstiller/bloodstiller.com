@@ -9,7 +9,7 @@
     <lastBuildDate>Wed, 05 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/login-workflow/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
+      <title>Authentication Vulnerabilities: Lab 1: Username enumeration via different responses</title>
       <link>http://localhost:1313/portswigger/auth_vulns_lab_1/</link>
       <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/portswigger/auth_vulns_lab_1/</guid>

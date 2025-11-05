@@ -9,25 +9,25 @@
     <lastBuildDate>Wed, 05 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/username-enumeration/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
+      <title>Authentication Vulnerabilities: Lab 1: Username enumeration via different responses</title>
       <link>http://localhost:1313/portswigger/auth_vulns_lab_1/</link>
       <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/portswigger/auth_vulns_lab_1/</guid>
       <description>&lt;h2 id=&#34;lab-1-username-enumeration-via-different-responses&#34;&gt;Lab 1: Username enumeration via different responses:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is vulnerable to username enumeration and password brute-force attacks. It has an account with a predictable username and password, which can be found in the following wordlists:&lt;/p&gt;&#xA;&lt;p&gt;Candidate usernames&#xA;Candidate passwords&lt;/p&gt;&#xA;&lt;p&gt;To solve the lab, enumerate a valid username, brute-force this user&amp;rsquo;s password, then access their account page.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;There is not much in the way of recon for this as we know it&amp;rsquo;s a brute force attack so we can just locate the login page that is under &amp;ldquo;My account&amp;rdquo;&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-10-16_16-39.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Authentication Vulnerabilities: Lab 3 : Username enumeration via response timing</title>
-      <link>http://localhost:1313/portswigger/auth_vulns_lab_3/</link>
-      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/portswigger/auth_vulns_lab_3/</guid>
-      <description>&lt;h2 id=&#34;lab-3-username-enumeration-via-response-timing&#34;&gt;Lab 3 : Username enumeration via response timing:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is vulnerable to username enumeration using its response times. To solve the lab, enumerate a valid username, brute-force this user&amp;rsquo;s password, then access their account page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Again we are provided a username and password list.&lt;/p&gt;&#xA;&lt;p&gt;Due to this being a timing issue we can look at response times when we fuzz.&#xA;&lt;del&gt;Note&lt;/del&gt;: I started this lab a while ago and then went on holiday (vacation), this means that the screenshots and source addresses may seem a bit all over the place, just focus on the theory I provide and it will work.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Authentication Vulnerabilities: Lab 2: Username enumeration via subtly different responses:</title>
+      <title>Authentication Vulnerabilities: Lab 2: Username enumeration via subtly different responses</title>
       <link>http://localhost:1313/portswigger/auth_vulns_lab_2/</link>
-      <pubDate>Thu, 02 Oct 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/portswigger/auth_vulns_lab_2/</guid>
       <description>&lt;h2 id=&#34;lab-2-username-enumeration-via-subtly-different-responses&#34;&gt;Lab 2: Username enumeration via subtly different responses:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is subtly vulnerable to username enumeration and password brute-force attacks. It has an account with a predictable username and password, which can be found in the following wordlists:&lt;/p&gt;&#xA;&lt;p&gt;Candidate usernames&#xA;Candidate passwords&lt;/p&gt;&#xA;&lt;p&gt;To solve the lab, enumerate a valid username, brute-force this user&amp;rsquo;s password, then access their account page.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;There is not much in the way of recon for this as we know it&amp;rsquo;s a brute force attack so we can just locate the login page that is under &amp;ldquo;My account&amp;rdquo;&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-10-16_16-39.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication Vulnerabilities: Lab 3 : Username enumeration via response timing</title>
+      <link>http://localhost:1313/portswigger/auth_vulns_lab_3/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/auth_vulns_lab_3/</guid>
+      <description>&lt;h2 id=&#34;lab-3-username-enumeration-via-response-timing&#34;&gt;Lab 3 : Username enumeration via response timing:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is vulnerable to username enumeration using its response times. To solve the lab, enumerate a valid username, brute-force this user&amp;rsquo;s password, then access their account page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Again we are provided a username and password list.&lt;/p&gt;&#xA;&lt;p&gt;Due to this being a timing issue we can look at response times when we fuzz.&#xA;+Note+: I started this lab a while ago and then went on holiday (vacation), this means that the screenshots and source addresses may seem a bit all over the place, just focus on the theory I provide and it will work.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

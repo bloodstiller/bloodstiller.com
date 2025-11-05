@@ -6,12 +6,12 @@
     <description>Recent content in Subtle-Response-Differences on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/subtle-response-differences/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Authentication Vulnerabilities: Lab 2: Username enumeration via subtly different responses:</title>
+      <title>Authentication Vulnerabilities: Lab 2: Username enumeration via subtly different responses</title>
       <link>http://localhost:1313/portswigger/auth_vulns_lab_2/</link>
-      <pubDate>Thu, 02 Oct 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/portswigger/auth_vulns_lab_2/</guid>
       <description>&lt;h2 id=&#34;lab-2-username-enumeration-via-subtly-different-responses&#34;&gt;Lab 2: Username enumeration via subtly different responses:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is subtly vulnerable to username enumeration and password brute-force attacks. It has an account with a predictable username and password, which can be found in the following wordlists:&lt;/p&gt;&#xA;&lt;p&gt;Candidate usernames&#xA;Candidate passwords&lt;/p&gt;&#xA;&lt;p&gt;To solve the lab, enumerate a valid username, brute-force this user&amp;rsquo;s password, then access their account page.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;There is not much in the way of recon for this as we know it&amp;rsquo;s a brute force attack so we can just locate the login page that is under &amp;ldquo;My account&amp;rdquo;&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-10-16_16-39.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
     </item>

@@ -6,14 +6,14 @@
     <description>Recent content in Timing-Attack on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/timing-attack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Authentication Vulnerabilities: Lab 3 : Username enumeration via response timing</title>
       <link>http://localhost:1313/portswigger/auth_vulns_lab_3/</link>
-      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/portswigger/auth_vulns_lab_3/</guid>
-      <description>&lt;h2 id=&#34;lab-3-username-enumeration-via-response-timing&#34;&gt;Lab 3 : Username enumeration via response timing:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is vulnerable to username enumeration using its response times. To solve the lab, enumerate a valid username, brute-force this user&amp;rsquo;s password, then access their account page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Again we are provided a username and password list.&lt;/p&gt;&#xA;&lt;p&gt;Due to this being a timing issue we can look at response times when we fuzz.&#xA;&lt;del&gt;Note&lt;/del&gt;: I started this lab a while ago and then went on holiday (vacation), this means that the screenshots and source addresses may seem a bit all over the place, just focus on the theory I provide and it will work.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;lab-3-username-enumeration-via-response-timing&#34;&gt;Lab 3 : Username enumeration via response timing:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is vulnerable to username enumeration using its response times. To solve the lab, enumerate a valid username, brute-force this user&amp;rsquo;s password, then access their account page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Again we are provided a username and password list.&lt;/p&gt;&#xA;&lt;p&gt;Due to this being a timing issue we can look at response times when we fuzz.&#xA;+Note+: I started this lab a while ago and then went on holiday (vacation), this means that the screenshots and source addresses may seem a bit all over the place, just focus on the theory I provide and it will work.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

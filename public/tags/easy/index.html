@@ -463,18 +463,32 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 window.store = {
     
-    "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_1\/": {
-        "title": "",
-        "tags": ["WebSecurity","PortSwigger","web-exploitation","security-research","authentication","login","username-enumeration","error-messages","login-workflow","portswigger-labs","ctf-writeup",],
-        "content": "Lab 1: Username enumeration via different responses: This lab is vulnerable to username enumeration and password brute-force attacks. It has an account with a predictable username and password, which can be found in the following wordlists:\nCandidate usernames Candidate passwords\nTo solve the lab, enumerate a valid username, brute-force this user\u0026rsquo;s password, then access their account page.\nInitial Reconnaissance/Discovery: There is not much in the way of recon for this as we know it\u0026rsquo;s a brute force attack so we can just locate the login page that is under \u0026ldquo;My account\u0026rdquo; We will use burp for this and proxy everything through it. +Note+: I am using burp-pro but this works just as well with community.\nInformation Disclosure Via Response: We will enter some creds we know are fake and will not work so we can get a baseline response. As we can see it says \u0026ldquo;Invalid Username\u0026rdquo; this is a bad response as it tells us the application checks if the username valid, this means we can use the responses generated to enumerate a valid username from the list we have been provided as it should in theory elicit a different response. Bruteforcing A Valid Username: We will take our request and send it to intruder \u0026amp; set our injection point as the \u0026ldquo;username\u0026rdquo;. We will also paste the provided username list to be used as payloads. Filtering the response via length we can see we get a valid hit for the username \u0026ldquo;analyzer\u0026rdquo; as it has a difference response of \u0026ldquo;Incorrect password\u0026rdquo; Bruteforcing A Valid Password: Now we have our username we can repeat the process but this time setting out injection point as the password field and our username as \u0026ldquo;analyzer\u0026rdquo; As we can see we get a valid hit for the password \u0026ldquo;tigger\u0026rdquo; as we get a 302 redirect response. Let\u0026rsquo;s validate the credentials by logging in. Lab solved: Why This Is Vulnerable: The main issue is that we were able to elicit a different response based on whether we entered a valid username or password. To partially remediate this there should be a generic response that is presented in either case such as \u0026ldquo;Invalid username or password\u0026rdquo; by doing this it\u0026rsquo;s far harder to enumerate a valid username. Obviously other measures should also be in place.\n", 
-        "url": "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_1\/"
-    },
-    
     "http:\/\/localhost:1313\/tags\/authentication\/": {
         "title": "Authentication",
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/authentication\/"
+    },
+    
+    "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_1\/": {
+        "title": "Authentication Vulnerabilities: Lab 1: Username enumeration via different responses",
+        "tags": ["WebSecurity","PortSwigger","web-exploitation","security-research","authentication","login","username-enumeration","error-messages","login-workflow","portswigger-labs","ctf-writeup",],
+        "content": "Lab 1: Username enumeration via different responses: This lab is vulnerable to username enumeration and password brute-force attacks. It has an account with a predictable username and password, which can be found in the following wordlists:\nCandidate usernames Candidate passwords\nTo solve the lab, enumerate a valid username, brute-force this user\u0026rsquo;s password, then access their account page.\nInitial Reconnaissance/Discovery: There is not much in the way of recon for this as we know it\u0026rsquo;s a brute force attack so we can just locate the login page that is under \u0026ldquo;My account\u0026rdquo; We will use burp for this and proxy everything through it. +Note+: I am using burp-pro but this works just as well with community.\nInformation Disclosure Via Response: We will enter some creds we know are fake and will not work so we can get a baseline response. As we can see it says \u0026ldquo;Invalid Username\u0026rdquo; this is a bad response as it tells us the application checks if the username valid, this means we can use the responses generated to enumerate a valid username from the list we have been provided as it should in theory elicit a different response. Bruteforcing A Valid Username: We will take our request and send it to intruder \u0026amp; set our injection point as the \u0026ldquo;username\u0026rdquo;. We will also paste the provided username list to be used as payloads. Filtering the response via length we can see we get a valid hit for the username \u0026ldquo;analyzer\u0026rdquo; as it has a difference response of \u0026ldquo;Incorrect password\u0026rdquo; Bruteforcing A Valid Password: Now we have our username we can repeat the process but this time setting out injection point as the password field and our username as \u0026ldquo;analyzer\u0026rdquo; As we can see we get a valid hit for the password \u0026ldquo;tigger\u0026rdquo; as we get a 302 redirect response. Let\u0026rsquo;s validate the credentials by logging in. Lab solved: Why This Is Vulnerable: The main issue is that we were able to elicit a different response based on whether we entered a valid username or password. To partially remediate this there should be a generic response that is presented in either case such as \u0026ldquo;Invalid username or password\u0026rdquo; by doing this it\u0026rsquo;s far harder to enumerate a valid username. Obviously other measures should also be in place.\n", 
+        "url": "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_1\/"
+    },
+    
+    "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_2\/": {
+        "title": "Authentication Vulnerabilities: Lab 2: Username enumeration via subtly different responses",
+        "tags": ["WebSecurity","PortSwigger","web-exploitation","security-research","authentication","login","username-enumeration","subtle-response-differences","visual-diffs","html-diffs","portswigger-labs","ctf-writeup",],
+        "content": "Lab 2: Username enumeration via subtly different responses: This lab is subtly vulnerable to username enumeration and password brute-force attacks. It has an account with a predictable username and password, which can be found in the following wordlists:\nCandidate usernames Candidate passwords\nTo solve the lab, enumerate a valid username, brute-force this user\u0026rsquo;s password, then access their account page.\nInitial Reconnaissance/Discovery: There is not much in the way of recon for this as we know it\u0026rsquo;s a brute force attack so we can just locate the login page that is under \u0026ldquo;My account\u0026rdquo; We will use burp for this and proxy everything through it. +Note+: I am using burp-pro but this works just as well with community.\nWe will enter some creds we know are fake and will not work so we can get a baseline response. We get the response \u0026ldquo;Invalid username or password.\u0026rdquo; which is a good response as it does not reveal if the username or password is incorrect it is instead a standardized response. We will take our request and send it to intruder. We can paste in our payload list and start the attack: Negative Search To Filter Results \u0026amp; Find The Correct Username: Now to make ourlives easier and filter the results we can perform a negative search on the response string. We need to ensure the response string is copied from the page (+don\u0026rsquo;t type it out+) copy and paste it. Trust me I have had things slip through the net as I have misstyped something before, always copy and paste. And that leaves us with 1 response. The difference is that this response is missing a full stop. . this means that the application does have conditional responses. This is a big no no as it means we now know that the user activestat is valid so we can start bruteforcing.\nBruteforcing For The Password: This time we change our payload position and put in our password list. Again we can do a negative match but this time use the string without the full stop. This leaves again with a single response which is a 302 redirect (which will no doubt be redirecting to another page). Let\u0026rsquo;s try logging in with the creds activestat:amanda It works as expected \u0026amp; we have solved the lab. ", 
+        "url": "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_2\/"
+    },
+    
+    "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_3\/": {
+        "title": "Authentication Vulnerabilities: Lab 3 : Username enumeration via response timing",
+        "tags": ["WebSecurity","PortSwigger","web-exploitation","security-research","authentication","login","username-enumeration","timing-attack","response-timing","side-channel","portswigger-labs","ctf-writeup",],
+        "content": "Lab 3 : Username enumeration via response timing: This lab is vulnerable to username enumeration using its response times. To solve the lab, enumerate a valid username, brute-force this user\u0026rsquo;s password, then access their account page.\nYour credentials: wiener:peter\nAgain we are provided a username and password list.\nDue to this being a timing issue we can look at response times when we fuzz. +Note+: I started this lab a while ago and then went on holiday (vacation), this means that the screenshots and source addresses may seem a bit all over the place, just focus on the theory I provide and it will work.\nInitial Reconnaissance/Discovery: First let\u0026rsquo;s login with our credentials and grab the request in burp and send it to intruder. Now we set our injection point and paste in our list. Discovering BruteForce Restrictions: Whilst reviewing the results we can see that some form of bruteforce mitigation is in place. Reviewing Headers For Bruteforce Mitigation: Looking at the headers there is nothing that is sending our IP to the host. This is usually done via the X-Forwarded-For http header.\nYou can read more about the header here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Forwarded-For We can try and add our IP to the request as a parameter using the X-Forwarded-For header \u0026amp; if it works this means we could, in theory, supply a list of random IP\u0026rsquo;s that should make the server think the requests are coming from different source addresses and therefore bypass the IP bruteforce restrictions.\nPOC: Adding the X-Forwarded-For header to bypass IP-Restrictions: Using repeater we can send a POST (login) request and append the X-Forwarded-For header to the bottom of the request and supply a random IP 192.168.2.1. Looking at the response we can see we get a 302 (redirect) which is the correct response as it should now redirect to the \u0026ldquo;My Account\u0026rdquo; page, which means this works. Using X-Forwarded-For header to bruteforce the application: Now that we know this works if we had back to intruder we can start our attack.\nWe can then set our attack to be a \u0026ldquo;Pitchfork attack\u0026rdquo; and in the X-Forwarded-For position add a list of IP\u0026rsquo;s. You can easily get a list of IP\u0026rsquo;s from seclists or just generate the list yourself.\nNow when we check the final entry we can see that we have bypassed the bruteforce restrictions. Reviewing Response Times for discrepencies To view response times we can click the three dots in burpsuite and select the response time from the menu. Looking at the responses we can see there are discrepencies between received and response values.\nFor ease I have highlighted all entries with a discrepency and then filtered for them.\nWe can see the one with the biggest discrepancy is the user vagrant however when I run the test again I get a different result. This inconsistency between results happens every time I run the attack which means there is something else we are missing.\nRe-assessing What We Know: With challenges like this it\u0026rsquo;s always good to re-asses what we have done \u0026amp; what we know so we can move forward.\nWhat we know:\nWe know we have the correct user \u0026amp; password lists as they are provided by the lab \u0026amp; we know we are looking for a difference in response timing (as that\u0026rsquo;s what\u0026rsquo;s the lab is called). We have 3 fields we can tamper with: username, password \u0026amp; IP. What we have done:\nSo far we have already supplied an additional header to bypass IP bruteforcing restrictions. We need to find the correct username first. Knowing and have done these things this only leaves the password field as something we can tamper with. We can also re-read the section materials and see the following:\nResponse times: If most of the requests were handled with a similar response time, any that deviate from this suggest that something different was happening behind the scenes. This is another indication that the guessed username might be correct. For example, a website might only check whether the password is correct if the username is valid. This extra step might cause a slight increase in the response time. This may be subtle, but an attacker can make this delay more obvious by entering an excessively long password that the website takes noticeably longer to handle.\nUsing this logic let\u0026rsquo;s see what happens if we provide a long string to the password field and if this elicits a, repeatable, different response timing.\nDiscovering A Valid Username VIA Response Timings: Supplying A Long Password To The Password Paramater To Elicit A Response: For generating random strings we can use: https://www.gigacalculator.com/randomizers/random-alphanumeric-generator.php I set the character length at 255 as this is at the upper limit for most applications which often have a password character limit of between 64 \u0026amp; 256. Starting the attack again we get a more promising result for the username \u0026ldquo;app\u0026rdquo; this time the response time is close to the same time as our known user \u0026ldquo;wiener\u0026rdquo;. Let\u0026rsquo;s validate the results by running the attack again. As we can see we get the same results so we can work on the assumption that the username of \u0026ldquo;app\u0026rdquo; is also valid.\nBruteforcing The Password: Now we know the username we can bruteforce the password. To do this we set our injection point as the password field and set our username as \u0026ldquo;app\u0026rdquo;. We also still want to ensure we are providing the IP address via the X-Forwarded-For header. +Note+: You may need to remove some already used IP addresses from your list to carry on.\nWe get a hit for the password qwertyuiop as we have a 302 response! Let\u0026rsquo;s validate this by logging in. And the lab is solved. ", 
+        "url": "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_3\/"
     },
     
     "http:\/\/localhost:1313\/author\/": {
@@ -512,6 +526,13 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/error-messages\/"
     },
     
+    "http:\/\/localhost:1313\/tags\/html-diffs\/": {
+        "title": "Html-Diffs",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/html-diffs\/"
+    },
+    
     "http:\/\/localhost:1313\/tags\/login\/": {
         "title": "Login",
         "tags": [],
@@ -547,11 +568,32 @@ window.store = {
         "url": "http:\/\/localhost:1313\/portswigger\/"
     },
     
+    "http:\/\/localhost:1313\/tags\/response-timing\/": {
+        "title": "Response-Timing",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/response-timing\/"
+    },
+    
     "http:\/\/localhost:1313\/tags\/security-research\/": {
         "title": "Security-Research",
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/security-research\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/side-channel\/": {
+        "title": "Side-Channel",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/side-channel\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/subtle-response-differences\/": {
+        "title": "Subtle-Response-Differences",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/subtle-response-differences\/"
     },
     
     "http:\/\/localhost:1313\/tags\/": {
@@ -561,11 +603,25 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/"
     },
     
+    "http:\/\/localhost:1313\/tags\/timing-attack\/": {
+        "title": "Timing-Attack",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/timing-attack\/"
+    },
+    
     "http:\/\/localhost:1313\/tags\/username-enumeration\/": {
         "title": "Username-Enumeration",
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/username-enumeration\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/visual-diffs\/": {
+        "title": "Visual-Diffs",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/visual-diffs\/"
     },
     
     "http:\/\/localhost:1313\/tags\/web-exploitation\/": {
@@ -799,13 +855,6 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/windows\/"
     },
     
-    "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_3\/": {
-        "title": "Authentication Vulnerabilities: Lab 3 : Username enumeration via response timing",
-        "tags": ["WebSecurity","PortSwigger","web-exploitation","security-research","authentication","login","username-enumeration","timing-attack","response-timing","side-channel","portswigger-labs","ctf-writeup",],
-        "content": "Lab 3 : Username enumeration via response timing: This lab is vulnerable to username enumeration using its response times. To solve the lab, enumerate a valid username, brute-force this user\u0026rsquo;s password, then access their account page.\nYour credentials: wiener:peter\nAgain we are provided a username and password list.\nDue to this being a timing issue we can look at response times when we fuzz. Note: I started this lab a while ago and then went on holiday (vacation), this means that the screenshots and source addresses may seem a bit all over the place, just focus on the theory I provide and it will work.\nInitial Reconnaissance/Discovery: First let\u0026rsquo;s login with our credentials and grab the request in burp and send it to intruder. Now we set our injection point and paste in our list. Discovering BruteForce Restrictions: Whilst reviewing the results we can see that some form of bruteforce mitigation is in place. Reviewing Headers For Bruteforce Mitigation: Looking at the headers there is nothing that is sending our IP to the host. This is usually done via the X-Forwarded-For http header.\nYou can read more about the header here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Forwarded-For We can try and add our IP to the request as a parameter using the X-Forwarded-For header \u0026amp; if it works this means we could, in theory, supply a list of random IP\u0026rsquo;s that should make the server think the requests are coming from different source addresses and therefore bypass the IP bruteforce restrictions.\nPOC: Adding the X-Forwarded-For header to bypass IP-Restrictions: Using repeater we can send a POST (login) request and append the X-Forwarded-For header to the bottom of the request and supply a random IP 192.168.2.1. Looking at the response we can see we get a 302 (redirect) which is the correct response as it should now redirect to the \u0026ldquo;My Account\u0026rdquo; page, which means this works. Using X-Forwarded-For header to bruteforce the application: Now that we know this works if we had back to intruder we can start our attack.\nWe can then set our attack to be a \u0026ldquo;Pitchfork attack\u0026rdquo; and in the X-Forwarded-For position add a list of IP\u0026rsquo;s. You can easily get a list of IP\u0026rsquo;s from seclists or just generate the list yourself.\nNow when we check the final entry we can see that we have bypassed the bruteforce restrictions. Reviewing Response Times for discrepencies To view response times we can click the three dots in burpsuite and select the response time from the menu. Looking at the responses we can see there are discrepencies between received and response values.\nFor ease I have highlighted all entries with a discrepency and then filtered for them.\nWe can see the one with the biggest discrepancy is the user vagrant however when I run the test again I get a different result. This inconsistency between results happens every time I run the attack which means there is something else we are missing.\nRe-assessing What We Know: With challenges like this it\u0026rsquo;s always good to re-asses what we have done \u0026amp; what we know so we can move forward.\nWhat we know:\nWe know we have the correct user \u0026amp; password lists as they are provided by the lab \u0026amp; we know we are looking for a difference in response timing (as that\u0026rsquo;s what\u0026rsquo;s the lab is called). We have 3 fields we can tamper with: username, password \u0026amp; IP. What we have done:\nSo far we have already supplied an additional header to bypass IP bruteforcing restrictions. We need to find the correct username first. Knowing and have done these things this only leaves the password field as something we can tamper with. We can also re-read the section materials and see the following:\nResponse times: If most of the requests were handled with a similar response time, any that deviate from this suggest that something different was happening behind the scenes. This is another indication that the guessed username might be correct. For example, a website might only check whether the password is correct if the username is valid. This extra step might cause a slight increase in the response time. This may be subtle, but an attacker can make this delay more obvious by entering an excessively long password that the website takes noticeably longer to handle.\nUsing this logic let\u0026rsquo;s see what happens if we provide a long string to the password field and if this elicits a, repeatable, different response timing.\nDiscovering A Valid Username VIA Response Timings: Supplying A Long Password To The Password Paramater To Elicit A Response: For generating random strings we can use: https://www.gigacalculator.com/randomizers/random-alphanumeric-generator.php I set the character length at 255 as this is at the upper limit for most applications which often have a password character limit of between 64 \u0026amp; 256. Starting the attack again we get a more promising result for the username \u0026ldquo;app\u0026rdquo; this time the response time is close to the same time as our known user \u0026ldquo;wiener\u0026rdquo;. Let\u0026rsquo;s validate the results by running the attack again. As we can see we get the same results so we can work on the assumption that the username of \u0026ldquo;app\u0026rdquo; is also valid.\nBruteforcing The Password: Now we know the username we can bruteforce the password. To do this we set our injection point as the password field and set our username as \u0026ldquo;app\u0026rdquo;. We also still want to ensure we are providing the IP address via the X-Forwarded-For header. Note: You may need to remove some already used IP addresses from your list to carry on.\nWe get a hit for the password qwertyuiop as we have a 302 response! Let\u0026rsquo;s validate this by logging in. And the lab is solved. ", 
-        "url": "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_3\/"
-    },
-    
     "http:\/\/localhost:1313\/tags\/dom\/": {
         "title": "DOM",
         "tags": [],
@@ -855,13 +904,6 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/owasp\/"
     },
     
-    "http:\/\/localhost:1313\/tags\/response-timing\/": {
-        "title": "Response-Timing",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/response-timing\/"
-    },
-    
     "http:\/\/localhost:1313\/tags\/selector-injection\/": {
         "title": "Selector-Injection",
         "tags": [],
@@ -869,53 +911,11 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/selector-injection\/"
     },
     
-    "http:\/\/localhost:1313\/tags\/side-channel\/": {
-        "title": "Side-Channel",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/side-channel\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/timing-attack\/": {
-        "title": "Timing-Attack",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/timing-attack\/"
-    },
-    
     "http:\/\/localhost:1313\/tags\/xss\/": {
         "title": "XSS",
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/xss\/"
-    },
-    
-    "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_2\/": {
-        "title": "Authentication Vulnerabilities: Lab 2: Username enumeration via subtly different responses:",
-        "tags": ["WebSecurity","PortSwigger","web-exploitation","security-research","authentication","login","username-enumeration","subtle-response-differences","visual-diffs","html-diffs","portswigger-labs","ctf-writeup",],
-        "content": "Lab 2: Username enumeration via subtly different responses: This lab is subtly vulnerable to username enumeration and password brute-force attacks. It has an account with a predictable username and password, which can be found in the following wordlists:\nCandidate usernames Candidate passwords\nTo solve the lab, enumerate a valid username, brute-force this user\u0026rsquo;s password, then access their account page.\nInitial Reconnaissance/Discovery: There is not much in the way of recon for this as we know it\u0026rsquo;s a brute force attack so we can just locate the login page that is under \u0026ldquo;My account\u0026rdquo; We will use burp for this and proxy everything through it. Note: I am using burp-pro but this works just as well with community.\nWe will enter some creds we know are fake and will not work so we can get a baseline response. We get the response \u0026ldquo;Invalid username or password.\u0026rdquo; which is a good response as it does not reveal if the username or password is incorrect it is instead a standardized response. We will take our request and send it to intruder. We can paste in our payload list and start the attack: Negative Search To Filter Results \u0026amp; Find The Correct Username: Now to make ourlives easier and filter the results we can perform a negative search on the response string. We need to ensure the response string is copied from the page (don\u0026rsquo;t type it out) copy and paste it. Trust me I have had things slip through the net as I have misstyped something before, always copy and paste. And that leaves us with 1 response. The difference is that this response is missing a full stop. . this means that the application does have conditional responses. This is a big no no as it means we now know that the user activestat is valid so we can start bruteforcing.\nBruteforcing For The Password: This time we change our payload position and put in our password list. Again we can do a negative match but this time use the string without the full stop. This leaves again with a single response which is a 302 redirect (which will no doubt be redirecting to another page). Let\u0026rsquo;s try logging in with the creds activestat:amanda It works as expected. Analyzing the Source Code/Behavior: [DESCRIBE_WHAT_CODE_OR_BEHAVIOR_YOU_FOUND] [[ ]] [PASTE_RELEVANT_CODE_HERE] [SUBSECTION_1]: [CODE_SNIPPET] [EXPLANATION_OF_CODE]\n[SUBSECTION_2]: [CODE_SNIPPET] [EXPLANATION_OF_CODE]\n[SUBSECTION_3]: [CODE_SNIPPET] [EXPLANATION_OF_CODE]\nExploitation PoC/Testing: [DESCRIBE_YOUR_PROOF_OF_CONCEPT_APPROACH]\nResult: [[ ]]\n[DESCRIBE_RESULTS]\nExploitation: [ATTACK_DESCRIPTION] [DESCRIBE_THE_ATTACK_STEPS]\nSteps:\n[STEP_1] [STEP_2] [STEP_3] Combined payload: [PAYLOAD] [ADDITIONAL_ENCODING_OR_MODIFICATIONS] [FINAL_PAYLOAD] Final PoC:\n[PARAMETER]=[FINAL_PAYLOAD] Result: [[ ]] [[ ]]\n[DESCRIBE_WHAT_HAPPENED]\n[SHOW_RESULTING_CODE_OR_OUTPUT] Why This Is Vulnerable: Primary Issue: [DESCRIBE_ROOT_CAUSE]\nHow To Fix: [DESCRIBE_REMEDIATION_STEPS]\n[OPTIONAL_QUOTE_FROM_DOCUMENTATION]\n[QUOTE_CONTENT]\n[VULNERABILITY_TYPE] Cheat Sheet (This Lab) Source (untrusted): [SOURCE_DESCRIPTION] Extract: [HOW_DATA_IS_EXTRACTED] Sink (dangerous): [WHERE_DATA_ENDS_UP] Taint flow: [SOURCE] --[PROCESSING]--\u0026gt; [VARIABLE] --[SINK]--\u0026gt; [RESULT] Quick sanity check: [SIMPLE_TEST_PAYLOAD] PoC payload: [WORKING_EXPLOIT_PAYLOAD] URL-encoded (if needed): [ENCODED_PAYLOAD] What makes it vulnerable: - [VULNERABILITY_EXPLANATION] One-line fixes (pick any that applies): - [FIX_OPTION_1] - [FIX_OPTION_2] - [FIX_OPTION_3] Additional Notes: [ANY_ADDITIONAL_OBSERVATIONS] [ALTERNATIVE_APPROACHES] [RELATED_VULNERABILITIES] References: [[https://portswigger.net/web-security/%5BTOPIC%5D ]] [[https://[relevant_documentation_url] ]] ", 
-        "url": "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_2\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/html-diffs\/": {
-        "title": "Html-Diffs",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/html-diffs\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/subtle-response-differences\/": {
-        "title": "Subtle-Response-Differences",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/subtle-response-differences\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/visual-diffs\/": {
-        "title": "Visual-Diffs",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/visual-diffs\/"
     },
     
     "http:\/\/localhost:1313\/portswigger\/dom_xss_lab_4\/": {
