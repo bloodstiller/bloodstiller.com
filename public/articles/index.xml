@@ -6,8 +6,29 @@
     <description>Recent content in Articles on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mixing Unstable Packages on Stable NixOS with Flakes</title>
+      <link>http://localhost:1313/articles/26062025-nixos-running-unstable-on-stable/</link>
+      <pubDate>Thu, 26 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/articles/26062025-nixos-running-unstable-on-stable/</guid>
+      <description>&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites:&lt;/h2&gt;&#xA;&lt;p&gt;Before diving into this guide, you should have a basic understanding of:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;NixOS Configuration&lt;/strong&gt;: How to edit &lt;code&gt;configuration.nix&lt;/code&gt; and understand basic NixOS concepts&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Nix Flakes&lt;/strong&gt;: Familiarity with flake structure, inputs, and outputs&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Package Management&lt;/strong&gt;: Understanding the difference between stable and unstable channels in NixOS&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Home Manager&lt;/strong&gt;: Basic knowledge of Home Manager configuration (for the advanced setup section)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;If you&amp;rsquo;re new to these concepts, I recommend checking out the &lt;a href=&#34;https://nixos.wiki/wiki/Flakes&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Nix Flakes Wiki&lt;/a&gt;&#xA; and &lt;a href=&#34;https://nixos.wiki/wiki/NixOS&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;NixOS Wiki&lt;/a&gt;&#xA; first.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding OWASP Secure Headers: HTTP Security Headers &amp; Best Practices</title>
+      <link>http://localhost:1313/articles/secureheaders/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/articles/secureheaders/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction:&lt;/h2&gt;&#xA;&lt;p&gt;The OWASP Secure Headers Project (OSHP) is a comprehensive initiative that provides guidance on implementing HTTP security headers to enhance web application security. These headers act as a crucial layer of defense, helping to prevent common web vulnerabilities and protect users from various attack vectors.&lt;/p&gt;&#xA;&lt;p&gt;As penetration testers/security professionals, understanding and implementing these headers is often an essential part of remediation guidance as well as an integral part of securing our own applications and systems.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Common Vulnerability Scoring System (CVSS) - Complete Guide for Security Professionals</title>
+      <link>http://localhost:1313/articles/understandingcvssscoring/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/articles/understandingcvssscoring/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction:&lt;/h2&gt;&#xA;&lt;p&gt;The Common Vulnerability Scoring System (CVSS) is an industry standard for assessing and communicating the severity of security vulnerabilities. This guide serves as both a comprehensive reference for security professionals and a practical tool for penetration testers.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-cvss&#34;&gt;What is CVSS?&lt;/h3&gt;&#xA;&lt;p&gt;CVSS provides a standardized way to score vulnerabilities on a scale of 0.0 to 10.0, where 10.0 represents the most severe vulnerabilities. The system is maintained by the Forum of Incident Response and Security Teams (FIRST) and is widely adopted across the cybersecurity industry.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Understanding PowerShell Download Cradles: A Deep Dive</title>
       <link>http://localhost:1313/articles/understandingdownloadcradles/</link>
@@ -69,7 +90,7 @@
       <link>http://localhost:1313/articles/shadowcredentialsattack/</link>
       <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/articles/shadowcredentialsattack/</guid>
-      <description>&lt;h2 id=&#34;understanding-the-shadow-credentials-attack-vector&#34;&gt;Understanding the Shadow Credentials Attack Vector:&lt;/h2&gt;&#xA;&lt;p&gt;The Shadow Credentials attack is an advanced technique that exploits Active Directory&amp;rsquo;s certificate-based authentication mechanism to compromise user accounts without changing their passwords. This attack leverages the &lt;code&gt;msDS-KeyCredentialLink&lt;/code&gt; attribute to add a malicious certificate, allowing an attacker to impersonate the target user stealthily.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;To put it simply&lt;/strong&gt;: If we have the &lt;code&gt;WriteProperty&lt;/code&gt; privilege (specifically for the &lt;code&gt;msDS-KeyCredentialLink&lt;/code&gt; attribute) over a user or computer object, we can set Shadow Credentials for that object and authenticate as them. You read that right, we can add a certificate-based credential to a user or computer and then authenticate as them. We can also request a &lt;code&gt;Kerberos&lt;/code&gt; ticket and use it for pass-the-ticket attacks if needed.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;understanding-the-shadow-credentials-attack-vector&#34;&gt;Understanding the Shadow Credentials Attack Vector:&lt;/h2&gt;&#xA;&lt;p&gt;The Shadow Credentials attack is an advanced technique that exploits Active Directory&amp;rsquo;s certificate-based authentication mechanism to compromise user accounts without changing their passwords. This attack leverages the &lt;code&gt;msDS-KeyCredentialLink&lt;/code&gt; attribute to add a malicious certificate, allowing an attacker to impersonate the target user stealthily.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;To put it simply&lt;/strong&gt;: If we have the &lt;code&gt;WriteProperty&lt;/code&gt; privilege (specifically for the &lt;code&gt;msDS-KeyCredentialLink&lt;/code&gt; attribute) over a user or computer object, we can set Shadow Credentials for that object and authenticate as them. You read that right, we can add a certificate-based credential to a user or computer and then authenticate as them. We can also request a Kerberos ticket and use it for pass-the-ticket attacks if needed.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Understanding .NET Deserialization Exploits: A Deep Dive</title>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security Metrics on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
+    <link>http://localhost:1313/tags/security-metrics/</link>
+    <description>Recent content in Security Metrics on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/security-metrics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Common Vulnerability Scoring System (CVSS) - Complete Guide for Security Professionals</title>
+      <link>http://localhost:1313/articles/understandingcvssscoring/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/articles/understandingcvssscoring/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction:&lt;/h2&gt;&#xA;&lt;p&gt;The Common Vulnerability Scoring System (CVSS) is an industry standard for assessing and communicating the severity of security vulnerabilities. This guide serves as both a comprehensive reference for security professionals and a practical tool for penetration testers.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-cvss&#34;&gt;What is CVSS?&lt;/h3&gt;&#xA;&lt;p&gt;CVSS provides a standardized way to score vulnerabilities on a scale of 0.0 to 10.0, where 10.0 represents the most severe vulnerabilities. The system is maintained by the Forum of Incident Response and Security Teams (FIRST) and is widely adopted across the cybersecurity industry.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CVSS v3.1 Calculator: Interactive Base Score Calculator for Security Professionals</title>
+      <link>http://localhost:1313/tools/cvss-calculator/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tools/cvss-calculator/</guid>
+      <description>&lt;h2 id=&#34;cvss-v31-base-score-calculator&#34;&gt;Simple CVSS v3.1 Base Score Calculator&lt;/h2&gt;&#xA;&lt;p&gt;The Common Vulnerability Scoring System (CVSS) is an industry standard for assessing the severity of security vulnerabilities. This interactive calculator helps security professionals, penetration testers, and researchers quickly calculate CVSS v3.1 base scores and generate proper vector strings.&lt;/p&gt;&#xA;&lt;p&gt;Why make this? I wanted something that was easy to use and always with me. This generator is a simple flat html file, which means even without internet access I can run it locally in my browser and generate scores if need be.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

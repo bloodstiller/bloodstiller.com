@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unstable Packages on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
+    <link>http://localhost:1313/tags/unstable-packages/</link>
+    <description>Recent content in Unstable Packages on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/unstable-packages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mixing Unstable Packages on Stable NixOS with Flakes</title>
+      <link>http://localhost:1313/articles/26062025-nixos-running-unstable-on-stable/</link>
+      <pubDate>Thu, 26 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/articles/26062025-nixos-running-unstable-on-stable/</guid>
+      <description>&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites:&lt;/h2&gt;&#xA;&lt;p&gt;Before diving into this guide, you should have a basic understanding of:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;NixOS Configuration&lt;/strong&gt;: How to edit &lt;code&gt;configuration.nix&lt;/code&gt; and understand basic NixOS concepts&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Nix Flakes&lt;/strong&gt;: Familiarity with flake structure, inputs, and outputs&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Package Management&lt;/strong&gt;: Understanding the difference between stable and unstable channels in NixOS&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Home Manager&lt;/strong&gt;: Basic knowledge of Home Manager configuration (for the advanced setup section)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;If you&amp;rsquo;re new to these concepts, I recommend checking out the &lt;a href=&#34;https://nixos.wiki/wiki/Flakes&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;Nix Flakes Wiki&lt;/a&gt;&#xA; and &lt;a href=&#34;https://nixos.wiki/wiki/NixOS&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;NixOS Wiki&lt;/a&gt;&#xA; first.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

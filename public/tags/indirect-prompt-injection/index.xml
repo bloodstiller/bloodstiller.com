@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Indirect-Prompt-Injection on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
+    <link>http://localhost:1313/tags/indirect-prompt-injection/</link>
+    <description>Recent content in Indirect-Prompt-Injection on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/indirect-prompt-injection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLM APIs Lab 3: Indirect Prompt Injection</title>
+      <link>http://localhost:1313/portswigger/llm_apis_lab_3/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/llm_apis_lab_3/</guid>
+      <description>&lt;h2 id=&#34;lab-3-indirect-prompt-injection&#34;&gt;Lab 3: Indirect Prompt Injection:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is vulnerable to indirect prompt injection. The user carlos frequently uses the live chat to ask about the Lightweight &amp;ldquo;l33t&amp;rdquo; Leather Jacket product. To solve the lab, delete carlos.&#xA;Required knowledge&lt;/p&gt;&#xA;&lt;p&gt;To solve this lab, you need to know:&lt;/p&gt;&#xA;&lt;p&gt;How LLM APIs work.&#xA;How to map LLM API attack surface.&#xA;How to execute indirect prompt injection attacks.&lt;/p&gt;&#xA;&lt;p&gt;For more information, see our Web LLM attacks Academy topic.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

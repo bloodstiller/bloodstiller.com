@@ -6,8 +6,15 @@
     <description>Recent content in Sherlocks on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/sherlocks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NeuroSync-D HTB Sherlock Challenge: Investigating Next.js Middleware Bypass and Redis Injection</title>
+      <link>http://localhost:1313/sherlocks/neurosync-d-sherlock/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sherlocks/neurosync-d-sherlock/</guid>
+      <description>&lt;h2 id=&#34;neurosync-d-hack-the-box-sherlock-challenge-writeup&#34;&gt;NeuroSync-D Hack The Box Sherlock Challenge Writeup:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://app.hackthebox.com/sherlocks/NeuroSync-D&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer nofollow&#34;&gt;https://app.hackthebox.com/sherlocks/NeuroSync-D&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;challenge-information&#34;&gt;Challenge Information:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Difficulty&lt;/strong&gt;: Easy&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt;: DFIR&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Scenario&lt;/strong&gt;: NeuroSync™ is a leading suite of products focusing on developing cutting edge medical BCI devices, designed by the Korosaki Coorporaton. Recently, an APT group targeted them and was able to infiltrate their infrastructure and is now moving laterally to compromise more systems. It appears that they have even managed to hijack a large number of online devices by exploiting an N-day vulnerability. Your task is to find out how they were able to compromise the infrastructure and understand how to secure it.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;side-quest-what-s-an-n-day&#34;&gt;Side Quest: What&amp;rsquo;s an N-Day?&lt;/h3&gt;&#xA;&lt;p&gt;An N-day is a vulnerability that is already publicly known however a patch may not be available or the user has not been able to patch the flaw just yet. This is common as rolling out updates to large organizations and networks can be a slow process.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>SmartyPants HTB Sherlock Challenge: Analyzing Windows RDP Compromise Through Event Logs and SmartScreen</title>
       <link>http://localhost:1313/sherlocks/smartypants-sherlock/</link>
