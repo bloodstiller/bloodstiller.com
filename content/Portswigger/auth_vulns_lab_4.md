@@ -17,7 +17,8 @@ tags = [
   "response-timing",
   "side-channel",
   "portswigger-labs",
-  "ctf-writeup"
+  "ctf-writeup",
+  "python"
 ]
 keywords = [
   "authentication vulnerabilities",
