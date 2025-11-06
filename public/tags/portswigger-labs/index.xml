@@ -6,8 +6,15 @@
     <description>Recent content in Portswigger-Labs on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/portswigger-labs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Authentication Vulnerabilities: Lab 4: Broken brute-force protection, IP block</title>
+      <link>http://localhost:1313/portswigger/auth_vulns_lab_4/</link>
+      <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/auth_vulns_lab_4/</guid>
+      <description>&lt;h2 id=&#34;lab-4-broken-brute-force-protection-ip-block&#34;&gt;Lab 4: Broken brute-force protection, IP block:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is vulnerable due to a logic flaw in its password brute-force protection. To solve the lab, brute-force the victim&amp;rsquo;s password, then log in and access their account page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&#xA;Victim&amp;rsquo;s username: carlos&#xA;Candidate passwords&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;As usual we are given a simple web application which has a &amp;ldquo;My account&amp;rdquo; section for us to login.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-11-05_10-06.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;We will login with our own credentials so we can take a look at the requests.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-11-05_10-11.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Authentication Vulnerabilities: Lab 1: Username enumeration via different responses</title>
       <link>http://localhost:1313/portswigger/auth_vulns_lab_1/</link>
