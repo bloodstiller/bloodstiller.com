@@ -206,7 +206,7 @@ For all you nerds out there let's break this down.
 
 -  Variable Declaration:
 
-    We declare an array of proxies to pass to our requests as well as the unique url for our lab's login page as this is where we will be sending requests.
+    We declare an array of proxies to pass to our requests to as well as the unique url for our lab's login page as this is where we will be sending requests.
 
     Cookies: We need to grab the cookie values from a valid request and change the name to be "carlos" as opposed to "wiener"
     ![](/ox-hugo/2025-11-07_05-39.png)
