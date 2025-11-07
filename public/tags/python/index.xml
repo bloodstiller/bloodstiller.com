@@ -6,8 +6,15 @@
     <description>Recent content in Python on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Authentication Vulnerabilities: Lab 7: 2FA broken logic:</title>
+      <link>http://localhost:1313/portswigger/auth_vulns_lab_7/</link>
+      <pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/auth_vulns_lab_7/</guid>
+      <description>&lt;h2 id=&#34;lab-7-2fa-broken-logic&#34;&gt;Lab 7: 2FA broken logic:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab&amp;rsquo;s two-factor authentication is vulnerable due to its flawed logic. To solve the lab, access Carlos&amp;rsquo;s account page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&#xA;Victim&amp;rsquo;s username: carlos&lt;/p&gt;&#xA;&lt;p&gt;You also have access to the email server to receive your 2FA verification code.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;We have a standard login page as usual and access to an email server to receive our 2FA codes for our user.&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s login to view the process.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Authentication Vulnerabilities: Lab 4: Broken brute-force protection, IP block</title>
       <link>http://localhost:1313/portswigger/auth_vulns_lab_4/</link>

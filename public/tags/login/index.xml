@@ -6,8 +6,15 @@
     <description>Recent content in Login on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/login/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Authentication Vulnerabilities: Lab 7: 2FA broken logic:</title>
+      <link>http://localhost:1313/portswigger/auth_vulns_lab_7/</link>
+      <pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/auth_vulns_lab_7/</guid>
+      <description>&lt;h2 id=&#34;lab-7-2fa-broken-logic&#34;&gt;Lab 7: 2FA broken logic:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab&amp;rsquo;s two-factor authentication is vulnerable due to its flawed logic. To solve the lab, access Carlos&amp;rsquo;s account page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&#xA;Victim&amp;rsquo;s username: carlos&lt;/p&gt;&#xA;&lt;p&gt;You also have access to the email server to receive your 2FA verification code.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;We have a standard login page as usual and access to an email server to receive our 2FA codes for our user.&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s login to view the process.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Authentication Vulnerabilities: Lab 4: Broken brute-force protection, IP block</title>
       <link>http://localhost:1313/portswigger/auth_vulns_lab_4/</link>
@@ -21,6 +28,13 @@
       <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/portswigger/auth_vulns_lab_5/</guid>
       <description>&lt;h2 id=&#34;lab-5-username-enumeration-via-account-lock&#34;&gt;Lab 5: Username enumeration via account lock:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is vulnerable to username enumeration. It uses account locking, but this contains a logic flaw. To solve the lab, enumerate a valid username, brute-force this user&amp;rsquo;s password, then access their account page.&lt;/p&gt;&#xA;&lt;p&gt;Candidate usernames&#xA;Candidate passwords&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;As usual we have access to a web page which has a &amp;ldquo;My account&amp;rdquo; section.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-11-06_06-35.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s enter some creds we know won&amp;rsquo;t work to see the response.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-11-06_06-36.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication Vulnerabilities: Lab 6: 2FA simple bypass</title>
+      <link>http://localhost:1313/portswigger/auth_vulns_lab_6/</link>
+      <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/auth_vulns_lab_6/</guid>
+      <description>&lt;h2 id=&#34;lab-6-2fa-simple-bypass&#34;&gt;Lab 6: 2FA simple bypass:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab&amp;rsquo;s two-factor authentication can be bypassed. You have already obtained a valid username and password, but do not have access to the user&amp;rsquo;s 2FA verification code. To solve the lab, access Carlos&amp;rsquo;s account page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&#xA;Victim&amp;rsquo;s credentials carlos:montoya&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;Looking at the application we have access to a simple web app with a login page as well as an email client.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-11-06_10-19.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Authentication Vulnerabilities: Lab 1: Username enumeration via different responses</title>
