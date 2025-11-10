@@ -30,6 +30,13 @@
       <description></description>
     </item>
     <item>
+      <title>Cookie</title>
+      <link>http://localhost:1313/tags/cookie/</link>
+      <pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cookie/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Cracking</title>
       <link>http://localhost:1313/tags/cracking/</link>
       <pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate>
@@ -132,6 +139,13 @@
       <link>http://localhost:1313/tags/websecurity/</link>
       <pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/websecurity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>XSS</title>
+      <link>http://localhost:1313/tags/xss/</link>
+      <pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/xss/</guid>
       <description></description>
     </item>
     <item>
@@ -405,13 +419,6 @@
       <link>http://localhost:1313/tags/selector-injection/</link>
       <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/selector-injection/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>XSS</title>
-      <link>http://localhost:1313/tags/xss/</link>
-      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/xss/</guid>
       <description></description>
     </item>
     <item>

