@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Password-Reset-Poisoning on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
+    <link>http://localhost:1313/tags/password-reset-poisoning/</link>
+    <description>Recent content in Password-Reset-Poisoning on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/password-reset-poisoning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Authentication Vulnerabilities: Lab 10: Password reset broken logic</title>
+      <link>http://localhost:1313/portswigger/auth_vulns_lab_10/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/auth_vulns_lab_10/</guid>
+      <description>&lt;h2 id=&#34;lab-10-password-reset-broken-logic&#34;&gt;Lab 10: Password reset broken logic:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab&amp;rsquo;s password reset functionality is vulnerable. To solve the lab, reset Carlos&amp;rsquo;s password then log in and access his &amp;ldquo;My account&amp;rdquo; page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&#xA;Victim&amp;rsquo;s username: carlos&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;We have access to a web application with a &amp;ldquo;My account&amp;rdquo; section as well as an email client.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-11-10_07-13.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;&#xA;&lt;/p&gt;&#xA;&lt;h3 id=&#34;examining-the-password-reset-process&#34;&gt;Examining The Password Reset Process:&lt;/h3&gt;&#xA;&lt;p&gt;As we know the password reset process is vulnerable, let&amp;rsquo;s go through this process to see how it work &amp;amp; look for where we can exploit it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication Vulnerabilities: Lab 11: Password reset poisoning via middleware</title>
+      <link>http://localhost:1313/portswigger/auth_vulns_lab_11/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/auth_vulns_lab_11/</guid>
+      <description>&lt;h2 id=&#34;lab-11-password-reset-poisoning-via-middleware&#34;&gt;Lab 11: Password reset poisoning via middleware:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is vulnerable to password reset poisoning. The user carlos will carelessly click on any links in emails that he receives. To solve the lab, log in to Carlos&amp;rsquo;s account. You can log in to your own account using the following credentials: wiener:peter. Any emails sent to this account can be read via the email client on the exploit server.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;As usual we have access to a basic web application which has a &amp;ldquo;My account&amp;rdquo; section.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-11-10_07-57.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

