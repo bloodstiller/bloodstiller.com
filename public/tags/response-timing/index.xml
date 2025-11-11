@@ -6,8 +6,15 @@
     <description>Recent content in Response-Timing on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/response-timing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Authentication Vulnerabilities: Lab 12: Password brute-force via password change</title>
+      <link>http://localhost:1313/portswigger/auth_vulns_lab_12/</link>
+      <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/auth_vulns_lab_12/</guid>
+      <description>&lt;h2 id=&#34;lab-12-password-brute-force-via-password-change&#34;&gt;Lab 12: Password brute-force via password change:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab&amp;rsquo;s password change functionality makes it vulnerable to brute-force attacks. To solve the lab, use the list of candidate passwords to brute-force Carlos&amp;rsquo;s account and access his &amp;ldquo;My account&amp;rdquo; page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&#xA;Victim&amp;rsquo;s username: carlos&#xA;Candidate passwords&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;We have access to a simple web-application that allows us to login.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-11-11_05-50.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Once logged in we can also change our password &amp;amp; email.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-11-11_05-51.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Authentication Vulnerabilities: Lab 10: Password reset broken logic</title>
       <link>http://localhost:1313/portswigger/auth_vulns_lab_10/</link>
