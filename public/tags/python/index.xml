@@ -6,8 +6,15 @@
     <description>Recent content in Python on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQLi Vulnerabilities: Lab 3: SQL injection UNION attack, determining the number of columns returned by the query:</title>
+      <link>http://localhost:1313/portswigger/sqli_lab_3/</link>
+      <pubDate>Wed, 12 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/sqli_lab_3/</guid>
+      <description>&lt;h2 id=&#34;lab-3-sql-injection-union-attack-determining-the-number-of-columns-returned-by-the-query&#34;&gt;Lab 3: SQL injection UNION attack, determining the number of columns returned by the query:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a SQL injection vulnerability in the product category filter. The results from the query are returned in the application&amp;rsquo;s response, so you can use a UNION attack to retrieve data from other tables. The first step of such an attack is to determine the number of columns that are being returned by the query. You will then use this technique in subsequent labs to construct the full attack.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Authentication Vulnerabilities: Lab 12: Password brute-force via password change</title>
       <link>http://localhost:1313/portswigger/auth_vulns_lab_12/</link>

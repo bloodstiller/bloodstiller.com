@@ -2,22 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/author/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/author/bloodstiller/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ctf-writeup/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/injection/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/portswigger/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/portswigger-labs/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/portswigger/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/security-research/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sql/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sqli/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/portswigger/sqli_lab_1/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/portswigger/sqli_lab_2/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/portswigger/sqli_lab_3/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/union/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/web-exploitation/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/websecurity/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/authentication/</loc>
     <lastmod>2025-11-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/portswigger/auth_vulns_lab_12/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/author/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/author/bloodstiller/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/ctf-writeup/</loc>
     <lastmod>2025-11-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/host-header-injection/</loc>
@@ -26,34 +71,10 @@
     <loc>http://localhost:1313/tags/login/</loc>
     <lastmod>2025-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/portswigger/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/portswigger-labs/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/portswigger/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/response-timing/</loc>
     <lastmod>2025-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/security-research/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/username-enumeration/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/web-exploitation/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/websecurity/</loc>
     <lastmod>2025-11-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/xss/</loc>
@@ -275,9 +296,6 @@
     <loc>http://localhost:1313/tags/dom-based/</loc>
     <lastmod>2025-09-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/injection/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/location.search/</loc>
     <lastmod>2025-09-29T00:00:00+00:00</lastmod>
   </url><url>
@@ -381,9 +399,6 @@
     <lastmod>2025-09-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/sql-injection/</loc>
-    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/union/</loc>
     <lastmod>2025-09-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/walkthroughs/union-box/</loc>
@@ -1251,9 +1266,6 @@
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/csharp/</loc>
-    <lastmod>2024-10-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/sql/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/sqlite/</loc>
