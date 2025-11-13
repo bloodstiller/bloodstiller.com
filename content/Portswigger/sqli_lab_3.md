@@ -1,5 +1,5 @@
 +++
-title = "SQLi Vulnerabilities: Lab 3: SQL injection UNION attack, determining the number of columns returned by the query:"
+title = "SQLi Vulnerabilities: Lab 3: SQL injection UNION attack, determining the number of columns returned by the query"
 date = 2025-11-12
 lastmod = 2025-11-12
 draft = false

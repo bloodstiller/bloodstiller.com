@@ -6,10 +6,17 @@
     <description>Recent content in Python on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>SQLi Vulnerabilities: Lab 3: SQL injection UNION attack, determining the number of columns returned by the query:</title>
+      <title>SQLi Vulnerabilities: Lab 4: SQL injection UNION attack, finding a column containing text</title>
+      <link>http://localhost:1313/portswigger/sqli_lab_4/</link>
+      <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/sqli_lab_4/</guid>
+      <description>&lt;h2 id=&#34;lab-4-sql-injection-union-attack-finding-a-column-containing-text&#34;&gt;Lab 4: SQL injection UNION attack, finding a column containing text:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a SQL injection vulnerability in the product category filter. The results from the query are returned in the application&amp;rsquo;s response, so you can use a UNION attack to retrieve data from other tables. To construct such an attack, you first need to determine the number of columns returned by the query. You can do this using a technique you learned in a previous lab. The next step is to identify a column that is compatible with string data.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SQLi Vulnerabilities: Lab 3: SQL injection UNION attack, determining the number of columns returned by the query</title>
       <link>http://localhost:1313/portswigger/sqli_lab_3/</link>
       <pubDate>Wed, 12 Nov 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/portswigger/sqli_lab_3/</guid>

@@ -6,8 +6,15 @@
     <description>Recent content in SQL on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQLi Vulnerabilities: Lab 4: SQL injection UNION attack, finding a column containing text</title>
+      <link>http://localhost:1313/portswigger/sqli_lab_4/</link>
+      <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/sqli_lab_4/</guid>
+      <description>&lt;h2 id=&#34;lab-4-sql-injection-union-attack-finding-a-column-containing-text&#34;&gt;Lab 4: SQL injection UNION attack, finding a column containing text:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a SQL injection vulnerability in the product category filter. The results from the query are returned in the application&amp;rsquo;s response, so you can use a UNION attack to retrieve data from other tables. To construct such an attack, you first need to determine the number of columns returned by the query. You can do this using a technique you learned in a previous lab. The next step is to identify a column that is compatible with string data.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>SQLi Vulnerabilities: Lab 1: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data</title>
       <link>http://localhost:1313/portswigger/sqli_lab_1/</link>
@@ -23,7 +30,7 @@
       <description>&lt;h2 id=&#34;lab-2-sql-injection-vulnerability-allowing-login-bypass&#34;&gt;Lab 2: SQL injection vulnerability allowing login bypass:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a SQL injection vulnerability in the login function.&lt;/p&gt;&#xA;&lt;p&gt;To solve the lab, perform a SQL injection attack that logs in to the application as the administrator user.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;When we access the application we can see there is a &amp;ldquo;My account&amp;rdquo; page. If we click it we can see we can login.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-11-12_05-15.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s enter some fake credentials to view the login process.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ox-hugo/2025-11-12_05-15_1.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>SQLi Vulnerabilities: Lab 3: SQL injection UNION attack, determining the number of columns returned by the query:</title>
+      <title>SQLi Vulnerabilities: Lab 3: SQL injection UNION attack, determining the number of columns returned by the query</title>
       <link>http://localhost:1313/portswigger/sqli_lab_3/</link>
       <pubDate>Wed, 12 Nov 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/portswigger/sqli_lab_3/</guid>
