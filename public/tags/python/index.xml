@@ -16,6 +16,13 @@
       <description>&lt;h2 id=&#34;lab-4-sql-injection-union-attack-finding-a-column-containing-text&#34;&gt;Lab 4: SQL injection UNION attack, finding a column containing text:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a SQL injection vulnerability in the product category filter. The results from the query are returned in the application&amp;rsquo;s response, so you can use a UNION attack to retrieve data from other tables. To construct such an attack, you first need to determine the number of columns returned by the query. You can do this using a technique you learned in a previous lab. The next step is to identify a column that is compatible with string data.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>SQLi Vulnerabilities: Lab 5: SQL injection UNION attack, retrieving data from other tables</title>
+      <link>http://localhost:1313/portswigger/sqli_lab_5/</link>
+      <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/sqli_lab_5/</guid>
+      <description>&lt;h2 id=&#34;lab-5-sql-injection-union-attack-retrieving-data-from-other-tables&#34;&gt;Lab 5: SQL injection UNION attack, retrieving data from other tables:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a SQL injection vulnerability in the product category filter. The results from the query are returned in the application&amp;rsquo;s response, so you can use a UNION attack to retrieve data from other tables. To construct such an attack, you need to combine some of the techniques you learned in previous labs.&lt;/p&gt;&#xA;&lt;p&gt;The database contains a different table called users, with columns called username and password.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>SQLi Vulnerabilities: Lab 3: SQL injection UNION attack, determining the number of columns returned by the query</title>
       <link>http://localhost:1313/portswigger/sqli_lab_3/</link>
       <pubDate>Wed, 12 Nov 2025 00:00:00 +0000</pubDate>
