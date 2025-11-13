@@ -23,6 +23,13 @@
       <description>&lt;h2 id=&#34;lab-5-sql-injection-union-attack-retrieving-data-from-other-tables&#34;&gt;Lab 5: SQL injection UNION attack, retrieving data from other tables:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a SQL injection vulnerability in the product category filter. The results from the query are returned in the application&amp;rsquo;s response, so you can use a UNION attack to retrieve data from other tables. To construct such an attack, you need to combine some of the techniques you learned in previous labs.&lt;/p&gt;&#xA;&lt;p&gt;The database contains a different table called users, with columns called username and password.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>SQLi Vulnerabilities: Lab 6: SQL injection UNION attack, retrieving multiple values in a single column</title>
+      <link>http://localhost:1313/portswigger/slqi_lab_6/</link>
+      <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/slqi_lab_6/</guid>
+      <description>&lt;h2 id=&#34;lab-6-sql-injection-union-attack-retrieving-multiple-values-in-a-single-column&#34;&gt;Lab 6: SQL injection UNION attack, retrieving multiple values in a single column:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a SQL injection vulnerability in the product category filter. The results from the query are returned in the application&amp;rsquo;s response so you can use a UNION attack to retrieve data from other tables.&lt;/p&gt;&#xA;&lt;p&gt;The database contains a different table called users, with columns called username and password.&lt;/p&gt;&#xA;&lt;p&gt;To solve the lab, perform a SQL injection UNION attack that retrieves all usernames and passwords, and use the information to log in as the administrator user.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>SQLi Vulnerabilities: Lab 1: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data</title>
       <link>http://localhost:1313/portswigger/sqli_lab_1/</link>
       <pubDate>Wed, 12 Nov 2025 00:00:00 +0000</pubDate>
