@@ -44,7 +44,7 @@ We are given access to a simple web application which allows us to filter catego
 {{< figure src="/ox-hugo/2025-11-14_11-20.png" >}}
 
 We already know the "category" parameter is vulnerable based on the previous lab however let's re-verify this.
-~~Note~~: We can also see the string it wants us to display, this is useful as we can already infer it's not running MSSQL but instead MySQL as the host is ubuntu &amp; we can use this partial string to help with our python scripting later.
++Note+: We can also see the string it wants us to display, this is useful as we can already infer it's not running MSSQL but instead MySQL as the host is ubuntu &amp; we can use this partial string to help with our python scripting later.
 
 
 ### Establishing SQLi: {#establishing-sqli}
@@ -79,7 +79,7 @@ SELECT * FROM products WHERE category = 'Pets''' AND [rest of query]
 
 ### UNION SELECT Requirements: {#union-select-requirements}
 
-As the lab wants us to display data we will need a way to output that data and the simplest way to retrieve data would be using a `UNION SELECT` query so we can display the query string in amongst the legitimate data that is being displayed. However in order for us to do this we need to ensure that the two requirements for this attack are met:
+As the lab wants us to display data we will need a way to output that data and the simplest way to retrieve data would be using a `UNION SELECT` query. This will allow us to display the output of our query's amongst the legitimate data. However in order for us to do this we need to ensure that the two requirements for this attack are met: 
 
 1.  **The queries must return the same amount of columns**:
     This means that if the original query that is searching the database returns 5 columns our `UNION` query must also return 5 columns.
@@ -105,7 +105,7 @@ If we return back to repeater we can enter the payload.
 
 {{< figure src="/ox-hugo/2025-11-14_11-26.png" >}}
 
-We then select the payload &amp; press `CTRL+U` to URL encode it, however this won't work. The reason being is that this is database is running MySQL and MySQL comments ~~require~~ a space after the comment symbol. So we need to add an additional space so by using a `+` symbol or we can just use the `#` symbol instead.
+We then select the payload &amp; press `CTRL+U` to URL encode it, however this won't work. The reason being is that this is database is running MySQL and MySQL comments +require+ a space after the comment symbol. So we need to add an additional space so by using a `+` symbol or we can just use the `#` symbol instead.
 ![](/ox-hugo/2025-11-14_12-09.png)
 
 If we send this payload we get a `500` response meaning the number of columns is not correct, so add another `NULL` so our payload and repeat the process.
@@ -170,7 +170,7 @@ os.environ['REQUESTS_CA_BUNDLE'] = "certificate.pem"
 -  Proxies &amp; URL:
 
     We declare an array of proxies to proxy our requests through as well as the unique url &amp; category endpoint.
-    ~~Note~~: The category and URL vary from instance to instance.
+    +Note+: The category and URL vary from instance to instance.
 
     ```python
     proxies = {"http": "http://127.0.0.1:8080", "https": "http://127.0.0.1:8080"}
@@ -187,7 +187,7 @@ os.environ['REQUESTS_CA_BUNDLE'] = "certificate.pem"
     union="' UNION SELECT "
     comma=","
     nullPayload="NULL"
-    comment="--"
+    comment="-- "
     additionalNull=comma+nullPayload
     payload=union+nullPayload
     counter=2
@@ -258,7 +258,6 @@ import requests
 import os
 import urllib.parse
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
-from bs4 import BeautifulSoup
 proxy = 'http://127.0.0.1:8080'
 os.environ['HTTP_PROXY'] = proxy
 os.environ['HTTPS_PROXY'] = proxy

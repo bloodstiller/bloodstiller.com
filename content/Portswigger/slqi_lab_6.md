@@ -4,7 +4,7 @@ date = 2025-11-13
 lastmod = 2025-11-13
 draft = false
 author = "bloodstiller"
-description = "PortSwigger sqli lab write-up UNION Attack exfiltrate data in a single column using python and burpsuite" 
+description = "PortSwigger sqli lab write-up using a UNION Attack to exfiltrate data in a single column using python and burpsuite" 
 tags = [
   "WebSecurity",
   "PortSwigger",
