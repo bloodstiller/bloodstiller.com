@@ -6,8 +6,15 @@
     <description>Recent content on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQLi Vulnerabilities: Lab 7: SQL injection attack, querying the database type and version on MySQL and Microsoft</title>
+      <link>http://localhost:1313/portswigger/sqli_lab_7/</link>
+      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/sqli_lab_7/</guid>
+      <description>&lt;h2 id=&#34;lab-7-sql-injection-attack-querying-the-database-type-and-version-on-mysql-and-microsoft&#34;&gt;Lab 7: SQL injection attack, querying the database type and version on MySQL and Microsoft:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a SQL injection vulnerability in the product category filter. You can use a UNION attack to retrieve the results from an injected query.&lt;/p&gt;&#xA;&lt;p&gt;To solve the lab, display the database version string.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;We are given access to a simple web application which allows us to filter categories of products using the filters on the page, there is also a &amp;ldquo;Home&amp;rdquo; button.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>SQLi Vulnerabilities: Lab 4: SQL injection UNION attack, finding a column containing text</title>
       <link>http://localhost:1313/portswigger/sqli_lab_4/</link>

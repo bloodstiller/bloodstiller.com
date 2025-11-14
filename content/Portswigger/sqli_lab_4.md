@@ -97,7 +97,7 @@ As the lab wants us to display the data using a `UNION SELECT` query we also nee
 
 #### Using Burp: {#using-burp}
 
-In order for us to display data we need to establish how many columns are in the existing database we easily do this in burp.
+In order for us to display data we need to establish how many columns are in the existing database. 
 
 If we return back to repeater we can enter the payload
 

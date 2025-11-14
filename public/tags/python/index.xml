@@ -30,6 +30,13 @@
       <description>&lt;h2 id=&#34;lab-6-sql-injection-union-attack-retrieving-multiple-values-in-a-single-column&#34;&gt;Lab 6: SQL injection UNION attack, retrieving multiple values in a single column:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a SQL injection vulnerability in the product category filter. The results from the query are returned in the application&amp;rsquo;s response so you can use a UNION attack to retrieve data from other tables.&lt;/p&gt;&#xA;&lt;p&gt;The database contains a different table called users, with columns called username and password.&lt;/p&gt;&#xA;&lt;p&gt;To solve the lab, perform a SQL injection UNION attack that retrieves all usernames and passwords, and use the information to log in as the administrator user.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>SQLi Vulnerabilities: Lab 7: SQL injection attack, querying the database type and version on MySQL and Microsoft</title>
+      <link>http://localhost:1313/portswigger/sqli_lab_7/</link>
+      <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/sqli_lab_7/</guid>
+      <description>&lt;h2 id=&#34;lab-7-sql-injection-attack-querying-the-database-type-and-version-on-mysql-and-microsoft&#34;&gt;Lab 7: SQL injection attack, querying the database type and version on MySQL and Microsoft:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a SQL injection vulnerability in the product category filter. You can use a UNION attack to retrieve the results from an injected query.&lt;/p&gt;&#xA;&lt;p&gt;To solve the lab, display the database version string.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;We are given access to a simple web application which allows us to filter categories of products using the filters on the page, there is also a &amp;ldquo;Home&amp;rdquo; button.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>SQLi Vulnerabilities: Lab 3: SQL injection UNION attack, determining the number of columns returned by the query</title>
       <link>http://localhost:1313/portswigger/sqli_lab_3/</link>
       <pubDate>Wed, 12 Nov 2025 00:00:00 +0000</pubDate>
