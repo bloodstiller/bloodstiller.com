@@ -6,62 +6,90 @@
     <description>Recent content in Tags on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blind</title>
+      <link>http://localhost:1313/tags/blind/</link>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/blind/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Conditional</title>
+      <link>http://localhost:1313/tags/conditional/</link>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/conditional/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Ctf-Writeup</title>
       <link>http://localhost:1313/tags/ctf-writeup/</link>
-      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/ctf-writeup/</guid>
       <description></description>
     </item>
     <item>
       <title>Injection</title>
       <link>http://localhost:1313/tags/injection/</link>
-      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/injection/</guid>
       <description></description>
     </item>
     <item>
       <title>PortSwigger</title>
       <link>http://localhost:1313/tags/portswigger/</link>
-      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/portswigger/</guid>
       <description></description>
     </item>
     <item>
       <title>Portswigger-Labs</title>
       <link>http://localhost:1313/tags/portswigger-labs/</link>
-      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/portswigger-labs/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
       <link>http://localhost:1313/tags/python/</link>
-      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Security-Research</title>
       <link>http://localhost:1313/tags/security-research/</link>
-      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/security-research/</guid>
       <description></description>
     </item>
     <item>
       <title>SQL</title>
       <link>http://localhost:1313/tags/sql/</link>
-      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/sql/</guid>
       <description></description>
     </item>
     <item>
       <title>Sqli</title>
       <link>http://localhost:1313/tags/sqli/</link>
-      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/sqli/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Exploitation</title>
+      <link>http://localhost:1313/tags/web-exploitation/</link>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web-exploitation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WebSecurity</title>
+      <link>http://localhost:1313/tags/websecurity/</link>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/websecurity/</guid>
       <description></description>
     </item>
     <item>
@@ -69,20 +97,6 @@
       <link>http://localhost:1313/tags/union/</link>
       <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/union/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Web Exploitation</title>
-      <link>http://localhost:1313/tags/web-exploitation/</link>
-      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web-exploitation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>WebSecurity</title>
-      <link>http://localhost:1313/tags/websecurity/</link>
-      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/websecurity/</guid>
       <description></description>
     </item>
     <item>

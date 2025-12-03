@@ -59,7 +59,7 @@ If we then add an additional single quote so it reads `test''` we get a `200` OK
 
 ### Inferring The SQL Query Being Run: {#inferring-the-sql-query-being-run}
 
-We can infer that the query being run on the database is something like:
+Looking at the way the page we returns information can infer the query being run is similar to the below. 
 
 ```sql
 SELECT * FROM users WHERE username = 'test' AND password = 'test'

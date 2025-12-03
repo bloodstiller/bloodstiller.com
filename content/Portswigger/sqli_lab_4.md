@@ -60,7 +60,7 @@ If then add a single another quote we can see that the page returns a `200` OK r
 
 ### Inferring The SQL Query Being Run: {#inferring-the-sql-query-being-run}
 
-Looking at the way the page we can infer the query being run is similar to the below.
+Looking at the way the page we returns information can infer the query being run is similar to the below. 
 
 ```sql
 SELECT * FROM products WHERE category = 'Pets' AND [rest of query]

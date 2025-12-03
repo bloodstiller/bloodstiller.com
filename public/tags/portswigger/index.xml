@@ -6,8 +6,15 @@
     <description>Recent content in PortSwigger on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/portswigger/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQLi Vulnerabilities: Lab 9: Blind SQL injection with conditional responses</title>
+      <link>http://localhost:1313/portswigger/sqli_lab_9/</link>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/sqli_lab_9/</guid>
+      <description>&lt;h2 id=&#34;lab-9-blind-sql-injection-with-conditional-responses&#34;&gt;Lab 9: Blind SQL injection with conditional responses:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a blind SQL injection vulnerability. The application uses a tracking cookie for analytics, and performs a SQL query containing the value of the submitted cookie.&lt;/p&gt;&#xA;&lt;p&gt;The results of the SQL query are not returned, and no error messages are displayed. But the application includes a &lt;code&gt;Welcome back&lt;/code&gt; message in the page if the query returns any rows.&lt;/p&gt;&#xA;&lt;p&gt;The database contains a different table called &lt;code&gt;users&lt;/code&gt;, with columns called &lt;code&gt;username&lt;/code&gt; and &lt;code&gt;password&lt;/code&gt;. You need to exploit the blind SQL injection vulnerability to find out the password of the &lt;code&gt;administrator&lt;/code&gt; user.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>SQLi Vulnerabilities: Lab 7: SQL injection attack, querying the database type and version on MySQL and Microsoft</title>
       <link>http://localhost:1313/portswigger/sqli_lab_7/</link>
