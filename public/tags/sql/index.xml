@@ -6,8 +6,15 @@
     <description>Recent content in SQL on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQLi Vulnerabilities: Lab 11: Visible error-based SQL injection</title>
+      <link>http://localhost:1313/portswigger/sqli_lab_11/</link>
+      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/sqli_lab_11/</guid>
+      <description>&lt;h2 id=&#34;lab-11-visible-error-based-sql-injection&#34;&gt;Lab 11: Visible error-based SQL injection:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a SQL injection vulnerability. The application uses a tracking cookie for analytics, and performs a SQL query containing the value of the submitted cookie. The results of the SQL query are not returned.&lt;/p&gt;&#xA;&lt;p&gt;The database contains a different table called &lt;code&gt;users&lt;/code&gt;, with columns called &lt;code&gt;username&lt;/code&gt; and &lt;code&gt;password&lt;/code&gt;. To solve the lab, find a way to leak the password for the &lt;code&gt;administrator&lt;/code&gt; user, then log in to their account.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>SQLi Vulnerabilities: Lab 10: Blind SQL injection with conditional errors</title>
       <link>http://localhost:1313/portswigger/sqli_lab_10/</link>
