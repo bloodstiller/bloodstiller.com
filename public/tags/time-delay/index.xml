@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Time-Delay on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
+    <link>http://localhost:1313/tags/time-delay/</link>
+    <description>Recent content in Time-Delay on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/time-delay/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQLi Vulnerabilities: Lab 12: Blind SQL injection with time delays and information retrieval</title>
+      <link>http://localhost:1313/portswigger/sqli_lab_12/</link>
+      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/sqli_lab_12/</guid>
+      <description>&lt;h2 id=&#34;lab-12-blind-sql-injection-with-time-delays-and-information-retrieval&#34;&gt;Lab 12: Blind SQL injection with time delays and information retrieval:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a blind SQL injection vulnerability. The application uses a tracking cookie for analytics, and performs a SQL query containing the value of the submitted cookie.&lt;/p&gt;&#xA;&lt;p&gt;The results of the SQL query are not returned, and the application does not respond any differently based on whether the query returns any rows or causes an error. However, since the query is executed synchronously, it is possible to trigger conditional time delays to infer information.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

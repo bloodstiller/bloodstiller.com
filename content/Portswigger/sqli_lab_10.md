@@ -439,7 +439,6 @@ request=requests.get(url, proxies=proxies, verify=False, timeout=3, cookies={
 -   Add the `passwordChar` value to our empty list `revealedPass`
 -   We will print the string `"Password char position {substringPosition} == {passwordChar}."`
 -   We will then print the current contents of the `revealedPass` string.
--   +Note+: I had to use the `.lower()` method for this to work.
 
 <!--listend-->
 
