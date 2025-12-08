@@ -9,6 +9,13 @@
     <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Blind</title>
+      <link>http://localhost:1313/tags/blind/</link>
+      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/blind/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Ctf-Writeup</title>
       <link>http://localhost:1313/tags/ctf-writeup/</link>
       <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
@@ -27,6 +34,13 @@
       <link>http://localhost:1313/tags/injection/</link>
       <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/injection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Out-of-Band</title>
+      <link>http://localhost:1313/tags/out-of-band/</link>
+      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/out-of-band/</guid>
       <description></description>
     </item>
     <item>
@@ -90,13 +104,6 @@
       <link>http://localhost:1313/tags/websecurity/</link>
       <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/websecurity/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Blind</title>
-      <link>http://localhost:1313/tags/blind/</link>
-      <pubDate>Thu, 04 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/blind/</guid>
       <description></description>
     </item>
     <item>

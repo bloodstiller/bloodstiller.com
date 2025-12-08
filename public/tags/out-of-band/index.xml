@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Out-of-Band on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
+    <link>http://localhost:1313/tags/out-of-band/</link>
+    <description>Recent content in Out-of-Band on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/out-of-band/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQLi Vulnerabilities: Lab 13: Blind SQL injection with out-of-band interaction</title>
+      <link>http://localhost:1313/portswigger/sqli_lab_13/</link>
+      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/sqli_lab_13/</guid>
+      <description>&lt;h2 id=&#34;lab-13-blind-sql-injection-with-out-of-band-interaction&#34;&gt;Lab 13: Blind SQL injection with out-of-band interaction:&lt;/h2&gt;&#xA;&lt;p&gt;+Note+: This lab requires burp collaborator to complete which is only available with burpsuite professional, you can easily sign up for a burpsuite professional trial but for some reason they do not accept gmail accounts so use something else.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a blind SQL injection vulnerability. The application uses a tracking cookie for analytics, and performs a SQL query containing the value of the submitted cookie.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
