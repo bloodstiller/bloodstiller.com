@@ -1,7 +1,7 @@
 +++
 title = "Union HTB Walkthrough: SQLi, Header Injection, and Privilege Escalation"
 draft = false
-tags = ["Linux", "HTB", "Hack The Box", "medium", "MySQL", "SQL Injection", "UNION", "GroupConcat", "Header Injection", "Privilege Escalation", "Command Injection", "PHP", "Web Security", "Fuzzing", "Nginx", "CTF"]
+tags = ["Linux", "HTB", "Hack The Box", "medium", "MySQL", "Sqli", "SQL", "UNION", "GroupConcat", "Header Injection", "Privilege Escalation", "Command Injection", "PHP", "Web Security", "Fuzzing", "Nginx", "CTF"]
 keywords = ["Hack The Box Union", "HTB SQLi walkthrough", "MySQL GROUP_CONCAT exploitation", "header injection privilege escalation", "command injection via HTTP headers", "nginx PHP security", "ffuf fuzzing SQLi", "information_schema MySQL", "sudo privilege escalation", "root access via sudo misconfig"]
 description = "A detailed walkthrough of the Union machine from Hack The Box, covering SQL UNION injection, MySQL enumeration, and header-based command injection for privilege escalation. Learn how to extract sensitive data, fuzz for hidden files, and exploit insecure sudo permissions to gain root access."
 author = "bloodstiller"

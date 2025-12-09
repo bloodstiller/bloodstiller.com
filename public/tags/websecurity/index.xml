@@ -6,8 +6,22 @@
     <description>Recent content in WebSecurity on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/websecurity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQLi Vulnerabilities: Lab 14: Blind SQL injection with out-of-band data exfiltration</title>
+      <link>http://localhost:1313/portswigger/sqli_lab_14/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/sqli_lab_14/</guid>
+      <description>&lt;h2 id=&#34;lab-14-blind-sql-injection-with-out-of-band-data-exfiltration&#34;&gt;Lab 14: Blind SQL injection with out-of-band data exfiltration:&lt;/h2&gt;&#xA;&lt;p&gt;+Note+:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;This lab requires burp collaborator to complete which is only available with burpsuite professional, you can easily sign up for a burpsuite professional trial but for some reason they do not accept gmail accounts so use something else.&lt;/li&gt;&#xA;&lt;li&gt;This also just sometimes doesn&amp;rsquo;t work so you need to retry the same payload.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a blind SQL injection vulnerability. The application uses a tracking cookie for analytics, and performs a SQL query containing the value of the submitted cookie.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SQLi Vulnerabilities: Lab 13: Blind SQL injection with out-of-band interaction</title>
+      <link>http://localhost:1313/portswigger/sqli_lab_13/</link>
+      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/sqli_lab_13/</guid>
+      <description>&lt;h2 id=&#34;lab-13-blind-sql-injection-with-out-of-band-interaction&#34;&gt;Lab 13: Blind SQL injection with out-of-band interaction:&lt;/h2&gt;&#xA;&lt;p&gt;+Note+:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;This lab requires burp collaborator to complete which is only available with burpsuite professional, you can easily sign up for a burpsuite professional trial but for some reason they do not accept gmail accounts so use something else.&lt;/li&gt;&#xA;&lt;li&gt;This also just sometimes doesn&amp;rsquo;t work so you need to retry the same payload.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a blind SQL injection vulnerability. The application uses a tracking cookie for analytics, and performs a SQL query containing the value of the submitted cookie.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>SQLi Vulnerabilities: Lab 11: Visible error-based SQL injection</title>
       <link>http://localhost:1313/portswigger/sqli_lab_11/</link>
@@ -21,13 +35,6 @@
       <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/portswigger/sqli_lab_12/</guid>
       <description>&lt;h2 id=&#34;lab-12-blind-sql-injection-with-time-delays-and-information-retrieval&#34;&gt;Lab 12: Blind SQL injection with time delays and information retrieval:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a blind SQL injection vulnerability. The application uses a tracking cookie for analytics, and performs a SQL query containing the value of the submitted cookie.&lt;/p&gt;&#xA;&lt;p&gt;The results of the SQL query are not returned, and the application does not respond any differently based on whether the query returns any rows or causes an error. However, since the query is executed synchronously, it is possible to trigger conditional time delays to infer information.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>SQLi Vulnerabilities: Lab 13: Blind SQL injection with out-of-band interaction</title>
-      <link>http://localhost:1313/portswigger/sqli_lab_13/</link>
-      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/portswigger/sqli_lab_13/</guid>
-      <description>&lt;h2 id=&#34;lab-13-blind-sql-injection-with-out-of-band-interaction&#34;&gt;Lab 13: Blind SQL injection with out-of-band interaction:&lt;/h2&gt;&#xA;&lt;p&gt;+Note+: This lab requires burp collaborator to complete which is only available with burpsuite professional, you can easily sign up for a burpsuite professional trial but for some reason they do not accept gmail accounts so use something else.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a blind SQL injection vulnerability. The application uses a tracking cookie for analytics, and performs a SQL query containing the value of the submitted cookie.&lt;/p&gt;</description>
     </item>
     <item>
       <title>SQLi Vulnerabilities: Lab 10: Blind SQL injection with conditional errors</title>
