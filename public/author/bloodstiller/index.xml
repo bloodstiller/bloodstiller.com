@@ -16,6 +16,13 @@
       <description>&lt;h2 id=&#34;lab-14-blind-sql-injection-with-out-of-band-data-exfiltration&#34;&gt;Lab 14: Blind SQL injection with out-of-band data exfiltration:&lt;/h2&gt;&#xA;&lt;p&gt;+Note+:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;This lab requires burp collaborator to complete which is only available with burpsuite professional, you can easily sign up for a burpsuite professional trial but for some reason they do not accept gmail accounts so use something else.&lt;/li&gt;&#xA;&lt;li&gt;This also just sometimes doesn&amp;rsquo;t work so you need to retry the same payload.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a blind SQL injection vulnerability. The application uses a tracking cookie for analytics, and performs a SQL query containing the value of the submitted cookie.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>SQLi Vulnerabilities: SQL injection with filter bypass via XML encoding</title>
+      <link>http://localhost:1313/portswigger/sqli_lab_15/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/sqli_lab_15/</guid>
+      <description>&lt;h2 id=&#34;lab-15-sql-injection-with-filter-bypass-via-xml-encoding&#34;&gt;Lab 15: SQL injection with filter bypass via XML encoding:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a SQL injection vulnerability in its stock check feature. The results from the query are returned in the application&amp;rsquo;s response, so you can use a UNION attack to retrieve data from other tables.&lt;/p&gt;&#xA;&lt;p&gt;The database contains a users table, which contains the usernames and passwords of registered users. To solve the lab, perform a SQL injection attack to retrieve the admin user&amp;rsquo;s credentials, then log in to their account.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>SQLi Vulnerabilities: Lab 13: Blind SQL injection with out-of-band interaction</title>
       <link>http://localhost:1313/portswigger/sqli_lab_13/</link>
       <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>

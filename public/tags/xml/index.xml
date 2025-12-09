@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xml on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
+    <link>http://localhost:1313/tags/xml/</link>
+    <description>Recent content in Xml on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/xml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQLi Vulnerabilities: SQL injection with filter bypass via XML encoding</title>
+      <link>http://localhost:1313/portswigger/sqli_lab_15/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portswigger/sqli_lab_15/</guid>
+      <description>&lt;h2 id=&#34;lab-15-sql-injection-with-filter-bypass-via-xml-encoding&#34;&gt;Lab 15: SQL injection with filter bypass via XML encoding:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab contains a SQL injection vulnerability in its stock check feature. The results from the query are returned in the application&amp;rsquo;s response, so you can use a UNION attack to retrieve data from other tables.&lt;/p&gt;&#xA;&lt;p&gt;The database contains a users table, which contains the usernames and passwords of registered users. To solve the lab, perform a SQL injection attack to retrieve the admin user&amp;rsquo;s credentials, then log in to their account.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
