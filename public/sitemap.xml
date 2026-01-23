@@ -2,49 +2,253 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//uildDrafts:1313/tags/abuse-prevention/</loc>
-    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/api/</loc>
-    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>//uildDrafts:1313/author/</loc>
-    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/blind/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/author/bloodstiller/</loc>
-    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/</loc>
-    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//uildDrafts:1313/tags/command-injection/</loc>
-    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+    <loc>//uildDrafts:1313/tags/ctf-writeup/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/injection/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/out-of-band/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/portswigger/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/portswigger-labs/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/security-research/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/sql/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/sqli/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/sqli_lab_14/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/sqli_lab_15/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/waf/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/web-exploitation/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/websecurity/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/xml/</loc>
+    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/sqli_lab_13/</loc>
+    <lastmod>2025-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/errors/</loc>
+    <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/python/</loc>
+    <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/sqli_lab_11/</loc>
+    <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/sqli_lab_12/</loc>
+    <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/time-delay/</loc>
+    <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/conditional/</loc>
+    <lastmod>2025-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/sqli_lab_10/</loc>
+    <lastmod>2025-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/sqli_lab_9/</loc>
+    <lastmod>2025-12-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/sqli_lab_7/</loc>
+    <lastmod>2025-11-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/sqli_lab_8/</loc>
+    <lastmod>2025-11-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/union/</loc>
+    <lastmod>2025-11-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/sqli_lab_4/</loc>
+    <lastmod>2025-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/sqli_lab_5/</loc>
+    <lastmod>2025-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/slqi_lab_6/</loc>
+    <lastmod>2025-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/sqli_lab_1/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/sqli_lab_2/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/sqli_lab_3/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/authentication/</loc>
+    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/auth_vulns_lab_12/</loc>
+    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/host-header-injection/</loc>
+    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/login/</loc>
+    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/response-timing/</loc>
+    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/username-enumeration/</loc>
+    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/xss/</loc>
+    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/auth_vulns_lab_10/</loc>
+    <lastmod>2025-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/auth_vulns_lab_11/</loc>
+    <lastmod>2025-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/auth_vulns_lab_9/</loc>
+    <lastmod>2025-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/cookie/</loc>
+    <lastmod>2025-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/cracking/</loc>
+    <lastmod>2025-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/hashcat/</loc>
+    <lastmod>2025-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/john/</loc>
+    <lastmod>2025-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/md5/</loc>
+    <lastmod>2025-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/password-reset-poisoning/</loc>
+    <lastmod>2025-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/2fa/</loc>
+    <lastmod>2025-11-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/2fa-bypass/</loc>
+    <lastmod>2025-11-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/auth_vulns_lab_7/</loc>
+    <lastmod>2025-11-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/auth_vulns_lab_8/</loc>
+    <lastmod>2025-11-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/mfa/</loc>
+    <lastmod>2025-11-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/auth_vulns_lab_4/</loc>
+    <lastmod>2025-11-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/auth_vulns_lab_5/</loc>
+    <lastmod>2025-11-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/auth_vulns_lab_6/</loc>
+    <lastmod>2025-11-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/side-channel/</loc>
+    <lastmod>2025-11-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/timing-attack/</loc>
+    <lastmod>2025-11-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/auth_vulns_lab_1/</loc>
+    <lastmod>2025-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/auth_vulns_lab_2/</loc>
+    <lastmod>2025-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/auth_vulns_lab_3/</loc>
+    <lastmod>2025-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/error-messages/</loc>
+    <lastmod>2025-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/html-diffs/</loc>
+    <lastmod>2025-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/login-workflow/</loc>
+    <lastmod>2025-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/subtle-response-differences/</loc>
+    <lastmod>2025-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/visual-diffs/</loc>
+    <lastmod>2025-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/abuse-prevention/</loc>
+    <lastmod>2025-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/api/</loc>
+    <lastmod>2025-10-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/tags/function-calling/</loc>
-    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+    <lastmod>2025-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/indirect-prompt-injection/</loc>
+    <lastmod>2025-10-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/tags/llm/</loc>
+    <lastmod>2025-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/llm_apis_lab_3/</loc>
+    <lastmod>2025-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/prompt/</loc>
+    <lastmod>2025-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/tool-calling/</loc>
+    <lastmod>2025-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/command-injection/</loc>
     <lastmod>2025-10-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/portswigger/llm_apis_lab_1/</loc>
     <lastmod>2025-10-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/portswigger/llm_apis_lab_2/</loc>
-    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/portswigger/</loc>
-    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/security-research/</loc>
-    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/</loc>
-    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/tool-calling/</loc>
-    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/websecurity/</loc>
     <lastmod>2025-10-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/tags/active-directory/</loc>
@@ -63,9 +267,6 @@
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/tags/htb/</loc>
-    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/john/</loc>
     <lastmod>2025-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/tags/ldap/</loc>
@@ -128,16 +329,7 @@
     <loc>//uildDrafts:1313/tags/owasp/</loc>
     <lastmod>2025-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//uildDrafts:1313/tags/portswigger/</loc>
-    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>//uildDrafts:1313/tags/selector-injection/</loc>
-    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/web-exploitation/</loc>
-    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/xss/</loc>
     <lastmod>2025-10-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/portswigger/dom_xss_lab_4/</loc>
@@ -159,9 +351,6 @@
     <lastmod>2025-09-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/tags/dom-based/</loc>
-    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/injection/</loc>
     <lastmod>2025-09-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/tags/location.search/</loc>
@@ -251,6 +440,9 @@
     <loc>//uildDrafts:1313/tags/setoplock/</loc>
     <lastmod>2025-09-10T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>//uildDrafts:1313/tags/ctf/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>//uildDrafts:1313/tags/fuzzing/</loc>
     <lastmod>2025-09-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -273,12 +465,6 @@
     <lastmod>2025-09-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/tags/php/</loc>
-    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/sql-injection/</loc>
-    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/union/</loc>
     <lastmod>2025-09-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/walkthroughs/union-box/</loc>
@@ -542,9 +728,6 @@
     <loc>//uildDrafts:1313/tags/pcap/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//uildDrafts:1313/tags/python/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>//uildDrafts:1313/tags/wireshark/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
@@ -645,9 +828,6 @@
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/tags/guest-access/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/hashcat/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/tags/password-recovery/</loc>
@@ -968,9 +1148,6 @@
     <loc>//uildDrafts:1313/tags/registry-backdoor/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//uildDrafts:1313/tags/scheduled-tasks/</loc>
-    <lastmod>2024-11-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>//uildDrafts:1313/tags/themebleed/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
@@ -1107,9 +1284,6 @@
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/tags/csharp/</loc>
-    <lastmod>2024-10-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/sql/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/tags/sqlite/</loc>

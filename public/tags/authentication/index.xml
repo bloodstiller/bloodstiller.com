@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authentication on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
+    <link>//uildDrafts:1313/tags/authentication/</link>
+    <description>Recent content in Authentication on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//uildDrafts:1313/tags/authentication/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Authentication Vulnerabilities: Lab 12: Password brute-force via password change</title>
+      <link>//uildDrafts:1313/portswigger/auth_vulns_lab_12/</link>
+      <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/portswigger/auth_vulns_lab_12/</guid>
+      <description>&lt;h2 id=&#34;lab-12-password-brute-force-via-password-change&#34;&gt;Lab 12: Password brute-force via password change:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab&amp;rsquo;s password change functionality makes it vulnerable to brute-force attacks. To solve the lab, use the list of candidate passwords to brute-force Carlos&amp;rsquo;s account and access his &amp;ldquo;My account&amp;rdquo; page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&#xA;Victim&amp;rsquo;s username: carlos&#xA;Candidate passwords&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;We have access to a simple web-application that allows us to login.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;//uildDrafts:1313/ox-hugo/2025-11-11_05-50.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Once logged in we can also change our password &amp;amp; email.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;//uildDrafts:1313/ox-hugo/2025-11-11_05-51.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication Vulnerabilities: Lab 10: Password reset broken logic</title>
+      <link>//uildDrafts:1313/portswigger/auth_vulns_lab_10/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/portswigger/auth_vulns_lab_10/</guid>
+      <description>&lt;h2 id=&#34;lab-10-password-reset-broken-logic&#34;&gt;Lab 10: Password reset broken logic:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab&amp;rsquo;s password reset functionality is vulnerable. To solve the lab, reset Carlos&amp;rsquo;s password then log in and access his &amp;ldquo;My account&amp;rdquo; page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&#xA;Victim&amp;rsquo;s username: carlos&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;We have access to a web application with a &amp;ldquo;My account&amp;rdquo; section as well as an email client.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;//uildDrafts:1313/ox-hugo/2025-11-10_07-13.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;&#xA;&lt;/p&gt;&#xA;&lt;h3 id=&#34;examining-the-password-reset-process&#34;&gt;Examining The Password Reset Process:&lt;/h3&gt;&#xA;&lt;p&gt;As we know the password reset process is vulnerable, let&amp;rsquo;s go through this process to see how it work &amp;amp; look for where we can exploit it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication Vulnerabilities: Lab 11: Password reset poisoning via middleware</title>
+      <link>//uildDrafts:1313/portswigger/auth_vulns_lab_11/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/portswigger/auth_vulns_lab_11/</guid>
+      <description>&lt;h2 id=&#34;lab-11-password-reset-poisoning-via-middleware&#34;&gt;Lab 11: Password reset poisoning via middleware:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is vulnerable to password reset poisoning. The user carlos will carelessly click on any links in emails that he receives. To solve the lab, log in to Carlos&amp;rsquo;s account. You can log in to your own account using the following credentials: wiener:peter. Any emails sent to this account can be read via the email client on the exploit server.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;As usual we have access to a basic web application which has a &amp;ldquo;My account&amp;rdquo; section.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;//uildDrafts:1313/ox-hugo/2025-11-10_07-57.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication Vulnerabilities: Lab 9: Offline password cracking after stealing user session cookie via xss</title>
+      <link>//uildDrafts:1313/portswigger/auth_vulns_lab_9/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/portswigger/auth_vulns_lab_9/</guid>
+      <description>&lt;h2 id=&#34;lab-9-offline-password-cracking&#34;&gt;Lab 9: Offline password cracking:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab stores the user&amp;rsquo;s password hash in a cookie. The lab also contains an XSS vulnerability in the comment functionality. To solve the lab, obtain Carlos&amp;rsquo;s stay-logged-in cookie and use it to crack his password. Then, log in as carlos and delete his account from the &amp;ldquo;My account&amp;rdquo; page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&#xA;Victim&amp;rsquo;s username: carlos&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;As usual we have a simple web application and a &amp;ldquo;My account&amp;rdquo; page &amp;amp; access to the exploit server which we will send the stolen cookie too.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;//uildDrafts:1313/ox-hugo/2025-11-10_04-49.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication Vulnerabilities: Lab 7: 2FA broken logic</title>
+      <link>//uildDrafts:1313/portswigger/auth_vulns_lab_7/</link>
+      <pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/portswigger/auth_vulns_lab_7/</guid>
+      <description>&lt;h2 id=&#34;lab-7-2fa-broken-logic&#34;&gt;Lab 7: 2FA broken logic:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab&amp;rsquo;s two-factor authentication is vulnerable due to its flawed logic. To solve the lab, access Carlos&amp;rsquo;s account page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&#xA;Victim&amp;rsquo;s username: carlos&lt;/p&gt;&#xA;&lt;p&gt;You also have access to the email server to receive your 2FA verification code.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;We have a standard login page as usual and access to an email server to receive our 2FA codes for our user.&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s login to view the process.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication Vulnerabilities: Lab 8: Brute-forcing a stay-logged-in cookie</title>
+      <link>//uildDrafts:1313/portswigger/auth_vulns_lab_8/</link>
+      <pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/portswigger/auth_vulns_lab_8/</guid>
+      <description>&lt;h2 id=&#34;lab-8-brute-forcing-a-stay-logged-in-cookie&#34;&gt;Lab 8: Brute-forcing a stay-logged-in cookie:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab allows users to stay logged in even after they close their browser session. The cookie used to provide this functionality is vulnerable to brute-forcing.&lt;/p&gt;&#xA;&lt;p&gt;To solve the lab, brute-force Carlos&amp;rsquo;s cookie to gain access to his My account page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&#xA;Victim&amp;rsquo;s username: carlos&#xA;Candidate passwords&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;If navigate to the &amp;ldquo;My account&amp;rdquo; page we can see we can login and provided the option to &amp;ldquo;Stay logged in&amp;rdquo;.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;//uildDrafts:1313/ox-hugo/2025-11-07_07-00.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication Vulnerabilities: Lab 4: Broken brute-force protection, IP block</title>
+      <link>//uildDrafts:1313/portswigger/auth_vulns_lab_4/</link>
+      <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/portswigger/auth_vulns_lab_4/</guid>
+      <description>&lt;h2 id=&#34;lab-4-broken-brute-force-protection-ip-block&#34;&gt;Lab 4: Broken brute-force protection, IP block:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is vulnerable due to a logic flaw in its password brute-force protection. To solve the lab, brute-force the victim&amp;rsquo;s password, then log in and access their account page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&#xA;Victim&amp;rsquo;s username: carlos&#xA;Candidate passwords&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;As usual we are given a simple web application which has a &amp;ldquo;My account&amp;rdquo; section for us to login.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;//uildDrafts:1313/ox-hugo/2025-11-05_10-06.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;We will login with our own credentials so we can take a look at the requests.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;//uildDrafts:1313/ox-hugo/2025-11-05_10-11.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication Vulnerabilities: Lab 5: Username enumeration via account lock</title>
+      <link>//uildDrafts:1313/portswigger/auth_vulns_lab_5/</link>
+      <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/portswigger/auth_vulns_lab_5/</guid>
+      <description>&lt;h2 id=&#34;lab-5-username-enumeration-via-account-lock&#34;&gt;Lab 5: Username enumeration via account lock:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is vulnerable to username enumeration. It uses account locking, but this contains a logic flaw. To solve the lab, enumerate a valid username, brute-force this user&amp;rsquo;s password, then access their account page.&lt;/p&gt;&#xA;&lt;p&gt;Candidate usernames&#xA;Candidate passwords&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;As usual we have access to a web page which has a &amp;ldquo;My account&amp;rdquo; section.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;//uildDrafts:1313/ox-hugo/2025-11-06_06-35.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s enter some creds we know won&amp;rsquo;t work to see the response.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;//uildDrafts:1313/ox-hugo/2025-11-06_06-36.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication Vulnerabilities: Lab 6: 2FA simple bypass</title>
+      <link>//uildDrafts:1313/portswigger/auth_vulns_lab_6/</link>
+      <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/portswigger/auth_vulns_lab_6/</guid>
+      <description>&lt;h2 id=&#34;lab-6-2fa-simple-bypass&#34;&gt;Lab 6: 2FA simple bypass:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab&amp;rsquo;s two-factor authentication can be bypassed. You have already obtained a valid username and password, but do not have access to the user&amp;rsquo;s 2FA verification code. To solve the lab, access Carlos&amp;rsquo;s account page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&#xA;Victim&amp;rsquo;s credentials carlos:montoya&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;Looking at the application we have access to a simple web app with a login page as well as an email client.&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;//uildDrafts:1313/ox-hugo/2025-11-06_10-19.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication Vulnerabilities: Lab 1: Username enumeration via different responses</title>
+      <link>//uildDrafts:1313/portswigger/auth_vulns_lab_1/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/portswigger/auth_vulns_lab_1/</guid>
+      <description>&lt;h2 id=&#34;lab-1-username-enumeration-via-different-responses&#34;&gt;Lab 1: Username enumeration via different responses:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is vulnerable to username enumeration and password brute-force attacks. It has an account with a predictable username and password, which can be found in the following wordlists:&lt;/p&gt;&#xA;&lt;p&gt;Candidate usernames&#xA;Candidate passwords&lt;/p&gt;&#xA;&lt;p&gt;To solve the lab, enumerate a valid username, brute-force this user&amp;rsquo;s password, then access their account page.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;There is not much in the way of recon for this as we know it&amp;rsquo;s a brute force attack so we can just locate the login page that is under &amp;ldquo;My account&amp;rdquo;&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;//uildDrafts:1313/ox-hugo/2025-10-16_16-39.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication Vulnerabilities: Lab 2: Username enumeration via subtly different responses</title>
+      <link>//uildDrafts:1313/portswigger/auth_vulns_lab_2/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/portswigger/auth_vulns_lab_2/</guid>
+      <description>&lt;h2 id=&#34;lab-2-username-enumeration-via-subtly-different-responses&#34;&gt;Lab 2: Username enumeration via subtly different responses:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is subtly vulnerable to username enumeration and password brute-force attacks. It has an account with a predictable username and password, which can be found in the following wordlists:&lt;/p&gt;&#xA;&lt;p&gt;Candidate usernames&#xA;Candidate passwords&lt;/p&gt;&#xA;&lt;p&gt;To solve the lab, enumerate a valid username, brute-force this user&amp;rsquo;s password, then access their account page.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;initial-reconnaissance-discovery&#34;&gt;Initial Reconnaissance/Discovery:&lt;/h3&gt;&#xA;&lt;p&gt;There is not much in the way of recon for this as we know it&amp;rsquo;s a brute force attack so we can just locate the login page that is under &amp;ldquo;My account&amp;rdquo;&#xA;&lt;p class=&#34;imgp&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;//uildDrafts:1313/ox-hugo/2025-10-16_16-39.png&#34; alt=&#34;&#34;  /&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication Vulnerabilities: Lab 3 : Username enumeration via response timing</title>
+      <link>//uildDrafts:1313/portswigger/auth_vulns_lab_3/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/portswigger/auth_vulns_lab_3/</guid>
+      <description>&lt;h2 id=&#34;lab-3-username-enumeration-via-response-timing&#34;&gt;Lab 3 : Username enumeration via response timing:&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This lab is vulnerable to username enumeration using its response times. To solve the lab, enumerate a valid username, brute-force this user&amp;rsquo;s password, then access their account page.&lt;/p&gt;&#xA;&lt;p&gt;Your credentials: wiener:peter&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Again we are provided a username and password list.&lt;/p&gt;&#xA;&lt;p&gt;Due to this being a timing issue we can look at response times when we fuzz.&#xA;+Note+: I started this lab a while ago and then went on holiday (vacation), this means that the screenshots and source addresses may seem a bit all over the place, just focus on the theory I provide and it will work.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

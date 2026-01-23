@@ -6,62 +6,342 @@
     <description>Recent content in Tags on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="//uildDrafts:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blind</title>
+      <link>//uildDrafts:1313/tags/blind/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/blind/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ctf-Writeup</title>
+      <link>//uildDrafts:1313/tags/ctf-writeup/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ctf-writeup/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Injection</title>
+      <link>//uildDrafts:1313/tags/injection/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/injection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Out-of-Band</title>
+      <link>//uildDrafts:1313/tags/out-of-band/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/out-of-band/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PortSwigger</title>
+      <link>//uildDrafts:1313/tags/portswigger/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/portswigger/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Portswigger-Labs</title>
+      <link>//uildDrafts:1313/tags/portswigger-labs/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/portswigger-labs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security-Research</title>
+      <link>//uildDrafts:1313/tags/security-research/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/security-research/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQL</title>
+      <link>//uildDrafts:1313/tags/sql/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/sql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sqli</title>
+      <link>//uildDrafts:1313/tags/sqli/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/sqli/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Waf</title>
+      <link>//uildDrafts:1313/tags/waf/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/waf/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web-Exploitation</title>
+      <link>//uildDrafts:1313/tags/web-exploitation/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/web-exploitation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WebSecurity</title>
+      <link>//uildDrafts:1313/tags/websecurity/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/websecurity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Xml</title>
+      <link>//uildDrafts:1313/tags/xml/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/xml/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Errors</title>
+      <link>//uildDrafts:1313/tags/errors/</link>
+      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/errors/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>//uildDrafts:1313/tags/python/</link>
+      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Time-Delay</title>
+      <link>//uildDrafts:1313/tags/time-delay/</link>
+      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/time-delay/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Conditional</title>
+      <link>//uildDrafts:1313/tags/conditional/</link>
+      <pubDate>Thu, 04 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/conditional/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>UNION</title>
+      <link>//uildDrafts:1313/tags/union/</link>
+      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/union/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Authentication</title>
+      <link>//uildDrafts:1313/tags/authentication/</link>
+      <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/authentication/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Host-Header-Injection</title>
+      <link>//uildDrafts:1313/tags/host-header-injection/</link>
+      <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/host-header-injection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Login</title>
+      <link>//uildDrafts:1313/tags/login/</link>
+      <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/login/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Response-Timing</title>
+      <link>//uildDrafts:1313/tags/response-timing/</link>
+      <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/response-timing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Username-Enumeration</title>
+      <link>//uildDrafts:1313/tags/username-enumeration/</link>
+      <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/username-enumeration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Xss</title>
+      <link>//uildDrafts:1313/tags/xss/</link>
+      <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/xss/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cookie</title>
+      <link>//uildDrafts:1313/tags/cookie/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cookie/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cracking</title>
+      <link>//uildDrafts:1313/tags/cracking/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cracking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hashcat</title>
+      <link>//uildDrafts:1313/tags/hashcat/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/hashcat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>John</title>
+      <link>//uildDrafts:1313/tags/john/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/john/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Md5</title>
+      <link>//uildDrafts:1313/tags/md5/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/md5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Password-Reset-Poisoning</title>
+      <link>//uildDrafts:1313/tags/password-reset-poisoning/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/password-reset-poisoning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>2FA</title>
+      <link>//uildDrafts:1313/tags/2fa/</link>
+      <pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/2fa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>2FA-Bypass</title>
+      <link>//uildDrafts:1313/tags/2fa-bypass/</link>
+      <pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/2fa-bypass/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MFA</title>
+      <link>//uildDrafts:1313/tags/mfa/</link>
+      <pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/mfa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Side-Channel</title>
+      <link>//uildDrafts:1313/tags/side-channel/</link>
+      <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/side-channel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Timing-Attack</title>
+      <link>//uildDrafts:1313/tags/timing-attack/</link>
+      <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/timing-attack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Error-Messages</title>
+      <link>//uildDrafts:1313/tags/error-messages/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/error-messages/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Html-Diffs</title>
+      <link>//uildDrafts:1313/tags/html-diffs/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/html-diffs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Login-Workflow</title>
+      <link>//uildDrafts:1313/tags/login-workflow/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/login-workflow/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Subtle-Response-Differences</title>
+      <link>//uildDrafts:1313/tags/subtle-response-differences/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/subtle-response-differences/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Visual-Diffs</title>
+      <link>//uildDrafts:1313/tags/visual-diffs/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/visual-diffs/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Abuse-Prevention</title>
       <link>//uildDrafts:1313/tags/abuse-prevention/</link>
-      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/abuse-prevention/</guid>
       <description></description>
     </item>
     <item>
       <title>API</title>
       <link>//uildDrafts:1313/tags/api/</link>
-      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/api/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Command-Injection</title>
-      <link>//uildDrafts:1313/tags/command-injection/</link>
-      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/command-injection/</guid>
       <description></description>
     </item>
     <item>
       <title>Function-Calling</title>
       <link>//uildDrafts:1313/tags/function-calling/</link>
-      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/function-calling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Indirect-Prompt-Injection</title>
+      <link>//uildDrafts:1313/tags/indirect-prompt-injection/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/indirect-prompt-injection/</guid>
       <description></description>
     </item>
     <item>
       <title>Llm</title>
       <link>//uildDrafts:1313/tags/llm/</link>
-      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/llm/</guid>
       <description></description>
     </item>
     <item>
-      <title>Security-Research</title>
-      <link>//uildDrafts:1313/tags/security-research/</link>
-      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/security-research/</guid>
+      <title>Prompt</title>
+      <link>//uildDrafts:1313/tags/prompt/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/prompt/</guid>
       <description></description>
     </item>
     <item>
       <title>Tool-Calling</title>
       <link>//uildDrafts:1313/tags/tool-calling/</link>
-      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/tool-calling/</guid>
       <description></description>
     </item>
     <item>
-      <title>WebSecurity</title>
-      <link>//uildDrafts:1313/tags/websecurity/</link>
+      <title>Command Injection</title>
+      <link>//uildDrafts:1313/tags/command-injection/</link>
       <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/websecurity/</guid>
+      <guid>//uildDrafts:1313/tags/command-injection/</guid>
       <description></description>
     </item>
     <item>
@@ -104,13 +384,6 @@
       <link>//uildDrafts:1313/tags/htb/</link>
       <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/htb/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>John</title>
-      <link>//uildDrafts:1313/tags/john/</link>
-      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/john/</guid>
       <description></description>
     </item>
     <item>
@@ -233,31 +506,10 @@
       <description></description>
     </item>
     <item>
-      <title>PortSwigger</title>
-      <link>//uildDrafts:1313/tags/portswigger/</link>
-      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/portswigger/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Selector-Injection</title>
       <link>//uildDrafts:1313/tags/selector-injection/</link>
       <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/selector-injection/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Web-Exploitation</title>
-      <link>//uildDrafts:1313/tags/web-exploitation/</link>
-      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/web-exploitation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>XSS</title>
-      <link>//uildDrafts:1313/tags/xss/</link>
-      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/xss/</guid>
       <description></description>
     </item>
     <item>
@@ -286,13 +538,6 @@
       <link>//uildDrafts:1313/tags/dom-based/</link>
       <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/dom-based/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Injection</title>
-      <link>//uildDrafts:1313/tags/injection/</link>
-      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/injection/</guid>
       <description></description>
     </item>
     <item>
@@ -485,6 +730,13 @@
       <description></description>
     </item>
     <item>
+      <title>CTF</title>
+      <link>//uildDrafts:1313/tags/ctf/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ctf/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Fuzzing</title>
       <link>//uildDrafts:1313/tags/fuzzing/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
@@ -541,20 +793,6 @@
       <description></description>
     </item>
     <item>
-      <title>SQL Injection</title>
-      <link>//uildDrafts:1313/tags/sql-injection/</link>
-      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/sql-injection/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>UNION</title>
-      <link>//uildDrafts:1313/tags/union/</link>
-      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/union/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Web Security</title>
       <link>//uildDrafts:1313/tags/web-security/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
@@ -583,7 +821,7 @@
       <description></description>
     </item>
     <item>
-      <title>NixOS</title>
+      <title>Nixos</title>
       <link>//uildDrafts:1313/tags/nixos/</link>
       <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/nixos/</guid>
@@ -1038,7 +1276,7 @@
       <description></description>
     </item>
     <item>
-      <title>Ftp</title>
+      <title>FTP</title>
       <link>//uildDrafts:1313/tags/ftp/</link>
       <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/ftp/</guid>
@@ -1070,13 +1308,6 @@
       <link>//uildDrafts:1313/tags/pcap/</link>
       <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/pcap/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>//uildDrafts:1313/tags/python/</link>
-      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
@@ -1280,13 +1511,6 @@
       <link>//uildDrafts:1313/tags/guest-access/</link>
       <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/guest-access/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Hashcat</title>
-      <link>//uildDrafts:1313/tags/hashcat/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/hashcat/</guid>
       <description></description>
     </item>
     <item>
@@ -2025,13 +2249,6 @@
       <description></description>
     </item>
     <item>
-      <title>SQL</title>
-      <link>//uildDrafts:1313/tags/sql/</link>
-      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/sql/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>SQLite</title>
       <link>//uildDrafts:1313/tags/sqlite/</link>
       <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
@@ -2246,13 +2463,6 @@
       <link>//uildDrafts:1313/tags/ethical-hacking/</link>
       <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/ethical-hacking/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Scheduled Tasks</title>
-      <link>//uildDrafts:1313/tags/scheduled-tasks/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/scheduled-tasks/</guid>
       <description></description>
     </item>
   </channel>

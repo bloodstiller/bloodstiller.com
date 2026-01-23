@@ -16,7 +16,7 @@ next = true
 
 Can you hear me? Is this thing on?
 
-I'm Bloodstiller, an ethical hacker with a passion for security and privacy. My focus is on **Active Directory (AD) security**, working to protect enterprise networks and identity management systems.
+I'm Bloodstiller, a penetration tester/security researcher with a passion for security and privacy. My focus is on **Active Directory (AD) security**, working to protect enterprise networks. I have also started to enjoy doing web application work as of late. 
 
 I'm always exploring new techniques and keeping up with the latest threats. This blog serves as a way for me to share insights, tips, and experiences from my journey in hacking.
 
