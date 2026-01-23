@@ -1,7 +1,7 @@
 +++
 title = "Authority HTB Walkthrough: Certificate Abuse, PKINIT, and RBCD Attacks"
 draft = false
-tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "Certificate Authority", "PKINIT", "RBCD", "ESC1", "Ansible", "PWM", "MachineAccountQuota", "LDAP", "Privilege Escalation", "PassTheCert", "Schannel"]
+tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "certificate", "AD/CS", "CA", "certipy", "Certificate Authority", "Certificate Template", "PKINIT", "RBCD", "ESC1", "Ansible", "PWM", "MachineAccountQuota", "LDAP", "Privilege Escalation", "PassTheCert", "Schannel"]
 keywords = ["Hack The Box Authority", "Certificate Authority exploitation", "PKINIT authentication bypass", "RBCD attack tutorial", "ESC1 vulnerability", "Ansible vault cracking", "PWM configuration exploitation", "MachineAccountQuota abuse", "Active Directory certificate attacks", "PassTheCert tutorial"]
 description = "A comprehensive walkthrough of the Authority machine from Hack The Box, demonstrating advanced certificate-based attacks including ESC1 exploitation, PKINIT authentication bypass, and RBCD attacks. Learn about Active Directory certificate services, Ansible vault cracking, and machine account quota abuse."
 author = "bloodstiller"

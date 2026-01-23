@@ -1,7 +1,7 @@
 +++
 title = "Understanding the Shadow Credentials Attack Vector"
 draft = false
-tags = ["Windows", "LDAP", "msDS-KeyCredentialLink", "Shadow Credentials", "Active Directory", "Rubeus", "Whisker", "pywhisker", "cert", "certificate", "pem", "PKINIT", "Certificate Authority"]
+tags = ["Windows", "LDAP", "msDS-KeyCredentialLink", "Shadow Credentials", "Active Directory", "Rubeus", "Whisker", "pywhisker", "certificate", "pem", "PKINIT", "Certificate Authority", "CA", "AD/CS"]
 keywords = ["Shadow Credentials attack", "Active Directory exploitation", "Certificate-based authentication", "msDS-KeyCredentialLink exploitation", "Kerberos authentication", "Active Directory security", "Whisker tool", "Rubeus exploitation", "Key Trust Account Mapping", "Active Directory privilege escalation"]
 description = "A comprehensive guide to understanding and exploiting the Shadow Credentials attack vector in Active Directory environments. Learn about certificate-based authentication exploitation, msDS-KeyCredentialLink manipulation, and how to use tools like Whisker and Rubeus for advanced Active Directory attacks."
 author = "bloodstiller"

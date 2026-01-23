@@ -1,7 +1,7 @@
 +++
 title = "Retro HTB Walkthrough: Pre-Win2000 Machine Accounts, LDAP Bitmasks & ESC1 Cert Abuse"
 draft = false
-tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "Domain Controller", "LDAP", "Kerberos", "SMB", "BloodHound", "Certipy", "ESC1", "Certificate Template", "UserAccountControl", "Pre-Windows 2000", "Machine Account", "Impacket", "AS-REP Roasting", "Kerbrute", "Privilege Escalation"]
+tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "Domain Controller", "LDAP", "Kerberos", "SMB", "BloodHound", "ESC1", "certificate", "AD/CS", "CA", "certipy", "Certificate Authority", "Certificate Template", "UserAccountControl", "Pre-Windows 2000", "Machine Account", "Impacket", "AS-REP Roasting", "Kerbrute", "Privilege Escalation"]
 keywords = ["HTB Retro walkthrough", "pre-Windows 2000 computer account default password", "UserAccountControl 4096 32 4128 bitmask", "STATUS_NOLOGON_WORKSTATION_TRUST_ACCOUNT", "ESC1 certificate abuse with Certipy", "request certificate with UPN administrator", "Impacket getTGT BANKING$", "pass-the-certificate attack", "BloodHound enumeration", "LDAP anonymous bind checks", "SMB guest share trainees password"]
 description = "A comprehensive walkthrough of the Retro machine from Hack The Box: enumerate a domain controller over LDAP Kerberos SMB, identify a pre-Windows 2000 machine account via UserAccountControl bitmasks, validate lever TGT workflow, and escalate using an ESC1-vulnerable certificate template in Certipy to impersonate Administrator."
 author = "bloodstiller"

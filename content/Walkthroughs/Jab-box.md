@@ -1,7 +1,7 @@
 +++
 title = "Jab HTB Walkthrough: XMPP, DCOM, and OpenFire Exploitation"
 draft = false
-tags = ["Windows", "Active Directory", "HTB", "Hack The Box", "LDAP", "XMPP", "Jabber", "DCOM", "MMC20", "ASREPRoasting", "OpenFire", "Download Cradle", "Java", "JSP", "Privilege Escalation", "Lateral Movement", "Windows Security"]
+tags = ["Windows", "Active Directory", "HTB", "Hack The Box", "LDAP", "XMPP", "Jabber", "DCOM", "MMC20", "AS-REP Roasting", "OpenFire", "Download Cradle", "Java", "JSP", "Privilege Escalation", "Lateral Movement", "Windows Security"]
 keywords = ["Hack The Box Jab", "OpenFire exploitation", "XMPP enumeration", "DCOM exploitation", "ASREPRoasting tutorial", "Windows privilege escalation", "OpenFire plugin exploitation", "Active Directory penetration testing", "Windows security assessment", "LDAP enumeration techniques"]
 description = "A comprehensive walkthrough of the Jab machine from Hack The Box, covering XMPP enumeration, DCOM exploitation, OpenFire vulnerabilities, and privilege escalation techniques. Learn about Active Directory security, service account exploitation, and advanced Windows penetration testing methods."
 author = "bloodstiller"

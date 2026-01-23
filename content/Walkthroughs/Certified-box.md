@@ -1,7 +1,7 @@
 +++
 title = "Certified HTB Walkthrough: Shadow Credentials, ESC9, and Certificate Abuse"
 draft = false
-tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "Certificate Authority", "Shadow Credentials", "ESC9", "PKINIT", "RBCD", "MsDS-KeyCredentialLink", "DACL", "ACL", "Privilege Escalation", "Download Cradle", "Persistence"]
+tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "certificate", "AD/CS", "CA", "certipy", "Certificate Authority", "Certificate Template", "Shadow Credentials", "ESC9", "PKINIT", "RBCD", "MsDS-KeyCredentialLink", "DACL", "ACL", "Privilege Escalation", "Download Cradle", "Persistence"]
 keywords = ["Hack The Box Certified", "Shadow Credentials attack", "ESC9 exploitation", "Certificate Authority abuse", "PKINIT authentication bypass", "Active Directory certificate attacks", "RBCD attack tutorial", "DACL modification", "Windows persistence techniques", "PowerShell download cradles"]
 description = "A detailed walkthrough of the Certified machine from Hack The Box, showcasing advanced Active Directory certificate exploitation techniques including Shadow Credentials attacks, ESC9 vulnerability exploitation, and certificate-based privilege escalation methods. Learn about PKINIT authentication, RBCD attacks, and establishing persistence through PowerShell download cradles."
 author = "bloodstiller"

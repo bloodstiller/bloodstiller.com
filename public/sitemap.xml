@@ -2,843 +2,1254 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/1102/</loc>
+    <loc>//uildDrafts:1313/tags/abuse-prevention/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/api/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/author/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/author/bloodstiller/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/command-injection/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/function-calling/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/llm/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/llm_apis_lab_1/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/llm_apis_lab_2/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/security-research/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/tool-calling/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/websecurity/</loc>
+    <lastmod>2025-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/active-directory/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/bloodhound/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/domain-controller/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/genericwrite/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/hack-the-box/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/htb/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/john/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/ldap/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/ldaps/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/machine-account/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/office2john/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/pentesting/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/pre-windows-2000/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/privilege-escalation/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/walkthroughs/retrotwo-box/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/rpc/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/samr/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/smb/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/walkthroughs/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/windows/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/dom/</loc>
+    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/dom_xss_lab_5/</loc>
+    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/hashchange/</loc>
+    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/javascript/</loc>
+    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/jquery/</loc>
+    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/location.hash/</loc>
+    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/owasp/</loc>
+    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/portswigger/</loc>
+    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/selector-injection/</loc>
+    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/web-exploitation/</loc>
+    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/xss/</loc>
+    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/dom_xss_lab_4/</loc>
+    <lastmod>2025-10-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/dom_xss_lab_3/</loc>
+    <lastmod>2025-09-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/bug-bounty/</loc>
+    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/client-side/</loc>
+    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/document.write/</loc>
+    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/portswigger/dom_xss_lab_2/</loc>
+    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/dom-based/</loc>
+    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/injection/</loc>
+    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/location.search/</loc>
+    <lastmod>2025-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/ad/cs/</loc>
+    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/as-rep-roasting/</loc>
+    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/ca/</loc>
+    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/certificate/</loc>
+    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/certificate-authority/</loc>
+    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/certificate-template/</loc>
+    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/certipy/</loc>
+    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/esc1/</loc>
+    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/impacket/</loc>
+    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/kerberos/</loc>
+    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/kerbrute/</loc>
+    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/walkthroughs/retro-box/</loc>
+    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/useraccountcontrol/</loc>
+    <lastmod>2025-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/aspx-webshell/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/ci/cd/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/credentials/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/cve-2023-49147/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/easy/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/git-history/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/gitea/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/walkthroughs/lock-box/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/mimikatz/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/mremoteng/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/msi/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/pdf24/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/reverse-shell/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/sam/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/setoplock/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/fuzzing/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/groupconcat/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/header-injection/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/linux/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/medium/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/mysql/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/nginx/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/php/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/sql-injection/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/union/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/walkthroughs/union-box/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/web-security/</loc>
+    <lastmod>2025-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/homelab/202050222_tailscalenixos/</loc>
+    <lastmod>2025-07-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/configuration/</loc>
+    <lastmod>2025-07-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/homelab/</loc>
+    <lastmod>2025-07-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/homelab/</loc>
+    <lastmod>2025-07-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/networking/</loc>
+    <lastmod>2025-07-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/nixos/</loc>
+    <lastmod>2025-07-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/system/</loc>
+    <lastmod>2025-07-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/tailscale/</loc>
+    <lastmod>2025-07-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/vpn/</loc>
+    <lastmod>2025-07-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/articles/</loc>
+    <lastmod>2025-06-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/flakes/</loc>
+    <lastmod>2025-06-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/home-manager/</loc>
+    <lastmod>2025-06-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/articles/26062025-nixos-running-unstable-on-stable/</loc>
+    <lastmod>2025-06-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/nixos-configuration/</loc>
+    <lastmod>2025-06-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/package-management/</loc>
+    <lastmod>2025-06-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/unstable-packages/</loc>
+    <lastmod>2025-06-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/cache-control/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/content-security-policy/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/csp/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/hsts/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/http-headers/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/permissions-policy/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/referrer-policy/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/security-best-practices/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/security-headers/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/articles/secureheaders/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/web-application-security/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/x-content-type-options/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/x-frame-options/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/articles/understandingcvssscoring/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/cvss/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tools/cvss-calculator/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/cybersecurity/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/first/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/nist/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/penetration-testing/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/risk-assessment/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/security/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/security-metrics/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/security-scoring/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/tools/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tools/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/vulnerability-assessment/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/alternative-data-streams/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/db2/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/ibm-db2/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/walkthroughs/jeeves-box/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/jenkins/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/jenkins-rce/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/kdbx/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/keepass2john/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/password-cracking/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/persistence/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/powershell/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/war/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/apache-struts2/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/cve-2024-53677/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/dockerfile/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/file-upload/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/java/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/magic-bytes/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/maven/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/mime-type/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/ognl/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/walkthroughs/strutted-box/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/tcpdump/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/tomcat/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/esc4/</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/walkthroughs/escapetwo-box/</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/kerberoasting/</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/mssql/</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/pkinit/</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/shadow-credentials/</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/writeowner/</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/xp_cmdshell/</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/box/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/cap/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/walkthroughs/cap-box/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/cap-setuid/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/capabilities/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/ftp/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/gunicorn/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/idor/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/network-analysis/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/pcap/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/python/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/wireshark/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/wsgi/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/cve-2024-40028/</loc>
+    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/ghost/</loc>
+    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/git/</loc>
+    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/git-dumper/</loc>
+    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/walkthroughs/linkvortex-box/</loc>
+    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/race-condition/</loc>
+    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/subdomain/</loc>
+    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/toctou/</loc>
+    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/cve-2025-29927/</loc>
+    <lastmod>2025-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/dfir/</loc>
+    <lastmod>2025-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/forensics/</loc>
+    <lastmod>2025-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/lfi/</loc>
+    <lastmod>2025-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/sherlocks/neurosync-d-sherlock/</loc>
+    <lastmod>2025-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/nextjs/</loc>
+    <lastmod>2025-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/react/</loc>
+    <lastmod>2025-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/redis/</loc>
+    <lastmod>2025-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/redis-injection/</loc>
+    <lastmod>2025-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/sherlock/</loc>
+    <lastmod>2025-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/sherlocks/</loc>
+    <lastmod>2025-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/ssrf/</loc>
+    <lastmod>2025-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/1102/</loc>
     <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/1149/</loc>
+    <loc>//uildDrafts:1313/tags/1149/</loc>
     <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/author/</loc>
+    <loc>//uildDrafts:1313/tags/evtx/</loc>
     <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/author/bloodstiller/</loc>
+    <loc>//uildDrafts:1313/tags/evtxecmd/</loc>
     <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>//uildDrafts:1313/tags/logs/</loc>
     <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dfir/</loc>
+    <loc>//uildDrafts:1313/tags/rdp/</loc>
     <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/evtx/</loc>
+    <loc>//uildDrafts:1313/tags/smartscreen/</loc>
     <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/evtxecmd/</loc>
+    <loc>//uildDrafts:1313/sherlocks/smartypants-sherlock/</loc>
     <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/forensics/</loc>
+    <loc>//uildDrafts:1313/tags/timeline-explorer/</loc>
     <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sherlock/</loc>
+    <loc>//uildDrafts:1313/tags/windows-logs/</loc>
     <lastmod>2025-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sherlocks/</loc>
-    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/smartscreen/</loc>
-    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/sherlocks/smartypants-sherlock/</loc>
-    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/timelineexplorer/</loc>
-    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/windows/</loc>
-    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/windowslogs/</loc>
-    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/bastion-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/bastion-box/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/box/</loc>
+    <loc>//uildDrafts:1313/tags/guest-access/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/easy/</loc>
+    <loc>//uildDrafts:1313/tags/hashcat/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/guest-access/</loc>
+    <loc>//uildDrafts:1313/tags/password-recovery/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hashcat/</loc>
+    <loc>//uildDrafts:1313/tags/ssh/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/htb/</loc>
+    <loc>//uildDrafts:1313/tags/vhd/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/mremoteng/</loc>
+    <loc>//uildDrafts:1313/tags/vhd-mounting/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/password-recovery/</loc>
+    <loc>//uildDrafts:1313/tags/dcom/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
+    <loc>//uildDrafts:1313/tags/download-cradle/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/rpc/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/jab-box/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sam/</loc>
+    <loc>//uildDrafts:1313/tags/jabber/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/smb/</loc>
+    <loc>//uildDrafts:1313/tags/jsp/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ssh/</loc>
+    <loc>//uildDrafts:1313/tags/lateral-movement/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/vhd/</loc>
+    <loc>//uildDrafts:1313/tags/mmc20/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/vhd-mounting/</loc>
+    <loc>//uildDrafts:1313/tags/openfire/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/</loc>
+    <loc>//uildDrafts:1313/tags/windows-security/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/active-directory/</loc>
+    <loc>//uildDrafts:1313/tags/xmpp/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/asreproasting/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/dcom/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/download-cradle/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/hack-the-box/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/jab-box/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/jabber/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/java/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/jsp/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/lateral-movement/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/ldap/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/mmc20/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/openfire/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/windows-security/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/xmpp/</loc>
-    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/articles/</loc>
+    <loc>//uildDrafts:1313/tags/powershell-scripting/</loc>
     <lastmod>2025-04-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/downloadcradle/</loc>
+    <loc>//uildDrafts:1313/tags/system-administration/</loc>
     <lastmod>2025-04-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/powershell/</loc>
+    <loc>//uildDrafts:1313/articles/understandingdownloadcradles/</loc>
     <lastmod>2025-04-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/powershell-scripting/</loc>
-    <lastmod>2025-04-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/security/</loc>
-    <lastmod>2025-04-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/system-administration/</loc>
-    <lastmod>2025-04-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/articles/understandingdownloadcradles/</loc>
-    <lastmod>2025-04-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/acl/</loc>
+    <loc>//uildDrafts:1313/tags/acl/</loc>
     <lastmod>2025-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/administrator-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/administrator-box/</loc>
     <lastmod>2025-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/as-reproasting/</loc>
+    <loc>//uildDrafts:1313/tags/cve-2023-32315/</loc>
     <lastmod>2025-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2023-32315/</loc>
+    <loc>//uildDrafts:1313/tags/cve-2023-33733/</loc>
     <lastmod>2025-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2023-33733/</loc>
+    <loc>//uildDrafts:1313/tags/dacl/</loc>
     <lastmod>2025-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dacl/</loc>
+    <loc>//uildDrafts:1313/tags/password-safe/</loc>
     <lastmod>2025-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/password-safe/</loc>
+    <loc>//uildDrafts:1313/tags/reportlab/</loc>
     <lastmod>2025-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/solarlab-box/</loc>
     <lastmod>2025-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/reportlab/</loc>
-    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/solarlab-box/</loc>
-    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/vulnerability-assessment/</loc>
-    <lastmod>2025-04-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/auth.log/</loc>
+    <loc>//uildDrafts:1313/tags/auth.log/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sherlocks/brutus-sherlock/</loc>
+    <loc>//uildDrafts:1313/sherlocks/brutus-sherlock/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/defensive/</loc>
+    <loc>//uildDrafts:1313/tags/defensive/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
+    <loc>//uildDrafts:1313/tags/utmp/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/utmp/</loc>
+    <loc>//uildDrafts:1313/tags/wtmp/</loc>
     <lastmod>2025-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/wtmp/</loc>
-    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/cheatsheets/</loc>
+    <loc>//uildDrafts:1313/cheatsheets/</loc>
     <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cli/</loc>
+    <loc>//uildDrafts:1313/tags/cli/</loc>
     <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheatsheets/networkmanagercli/</loc>
+    <loc>//uildDrafts:1313/cheatsheets/networkmanagercli/</loc>
     <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/networking/</loc>
+    <loc>//uildDrafts:1313/tags/reference/</loc>
     <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/reference/</loc>
+    <loc>//uildDrafts:1313/tags/sysadmin/</loc>
     <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sysadmin/</loc>
-    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/tools/</loc>
-    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/configuration/</loc>
+    <loc>//uildDrafts:1313/tags/docker/</loc>
     <lastmod>2025-03-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/docker/</loc>
+    <loc>//uildDrafts:1313/homelab/202503120622-nixos-homelab-5/</loc>
     <lastmod>2025-03-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/homelab/</loc>
-    <lastmod>2025-03-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/homelab/</loc>
-    <lastmod>2025-03-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/nixos/</loc>
-    <lastmod>2025-03-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/homelab/202503120622-nixos-homelab-5/</loc>
-    <lastmod>2025-03-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/system/</loc>
-    <lastmod>2025-03-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/cheatsheets/commondockerbuildissues/</loc>
+    <loc>//uildDrafts:1313/cheatsheets/commondockerbuildissues/</loc>
     <lastmod>2025-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/containerization/</loc>
+    <loc>//uildDrafts:1313/tags/containerization/</loc>
     <lastmod>2025-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/containers/</loc>
+    <loc>//uildDrafts:1313/tags/containers/</loc>
     <lastmod>2025-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/debugging/</loc>
+    <loc>//uildDrafts:1313/tags/debugging/</loc>
     <lastmod>2025-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/devops/</loc>
+    <loc>//uildDrafts:1313/tags/devops/</loc>
     <lastmod>2025-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheatsheets/dockerimagesecurityanalysis/</loc>
+    <loc>//uildDrafts:1313/cheatsheets/dockerimagesecurityanalysis/</loc>
     <lastmod>2025-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheatsheets/howtoemulatedifferentarchitecturesindocker/</loc>
+    <loc>//uildDrafts:1313/cheatsheets/howtoemulatedifferentarchitecturesindocker/</loc>
     <lastmod>2025-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/optimization/</loc>
+    <loc>//uildDrafts:1313/tags/optimization/</loc>
     <lastmod>2025-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pentesting/</loc>
+    <loc>//uildDrafts:1313/tags/redteam/</loc>
     <lastmod>2025-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/redteam/</loc>
+    <loc>//uildDrafts:1313/cheatsheets/transferringdockerimagesviascp/</loc>
     <lastmod>2025-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheatsheets/transferringdockerimagesviascp/</loc>
+    <loc>//uildDrafts:1313/tags/troubleshooting/</loc>
     <lastmod>2025-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/troubleshooting/</loc>
-    <lastmod>2025-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/amd/</loc>
+    <loc>//uildDrafts:1313/tags/amd/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheatsheets/troubleshootingdockerchecklist/</loc>
+    <loc>//uildDrafts:1313/cheatsheets/troubleshootingdockerchecklist/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/gpu/</loc>
+    <loc>//uildDrafts:1313/tags/gpu/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/homelab/homelab-runningollamalocally/</loc>
+    <loc>//uildDrafts:1313/homelab/homelab-runningollamalocally/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/llm/</loc>
+    <loc>//uildDrafts:1313/tags/local-llm/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/local-llm/</loc>
+    <loc>//uildDrafts:1313/tags/ollama/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ollama/</loc>
+    <loc>//uildDrafts:1313/tags/rocm/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/rocm/</loc>
+    <loc>//uildDrafts:1313/tags/sre/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sre/</loc>
-    <lastmod>2025-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/homelab/20250280118-nixos-homelab-4/</loc>
+    <loc>//uildDrafts:1313/homelab/20250280118-nixos-homelab-4/</loc>
     <lastmod>2025-03-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/homelab/20250280118-nixos-homelab-3/</loc>
+    <loc>//uildDrafts:1313/homelab/20250280118-nixos-homelab-3/</loc>
     <lastmod>2025-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/homelab/20250220118-nixos-homelab-2/</loc>
+    <loc>//uildDrafts:1313/homelab/20250220118-nixos-homelab-2/</loc>
     <lastmod>2025-02-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/homelab/202050222_tailscalenixos/</loc>
-    <lastmod>2025-02-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/tailscale/</loc>
-    <lastmod>2025-02-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/vpn/</loc>
-    <lastmod>2025-02-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/homelab/20250220118-nixos-homelab/</loc>
+    <loc>//uildDrafts:1313/homelab/20250220118-nixos-homelab/</loc>
     <lastmod>2025-02-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ansible/</loc>
+    <loc>//uildDrafts:1313/tags/ansible/</loc>
     <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/automatingqemukalivmansible/</loc>
+    <loc>//uildDrafts:1313/tools/automatingqemukalivmansible/</loc>
     <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/automation/</loc>
+    <loc>//uildDrafts:1313/tags/automation/</loc>
     <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dotfiles/</loc>
+    <loc>//uildDrafts:1313/tags/dotfiles/</loc>
     <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/kali/</loc>
+    <loc>//uildDrafts:1313/tags/kali/</loc>
     <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/qemu/</loc>
+    <loc>//uildDrafts:1313/tags/qemu/</loc>
     <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/certificate-authority/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/esc4/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/escapetwo-box/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/kerberoasting/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/mssql/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/shadow-credentials/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/writeowner/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/xp_cmdshell/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/medium/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/redpanda-box/</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/redpanda-box/</loc>
+    <loc>//uildDrafts:1313/tags/spring-boot/</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/spring-boot/</loc>
+    <loc>//uildDrafts:1313/tags/ssti/</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ssti/</loc>
+    <loc>//uildDrafts:1313/tags/template-injection/</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/template-injection/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/web-exploitation/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/cve-2023-26604/</loc>
+    <loc>//uildDrafts:1313/tags/cve-2023-26604/</loc>
     <lastmod>2024-12-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-202327163/</loc>
+    <loc>//uildDrafts:1313/tags/cve-202327163/</loc>
     <lastmod>2024-12-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/sau-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/sau-box/</loc>
     <lastmod>2024-12-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ssrf/</loc>
+    <loc>//uildDrafts:1313/tags/systemctl/</loc>
     <lastmod>2024-12-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/systemctl/</loc>
-    <lastmod>2024-12-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/love-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/love-box/</loc>
     <lastmod>2024-12-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/msi/</loc>
+    <loc>//uildDrafts:1313/tags/scheduledtask/</loc>
     <lastmod>2024-12-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/scheduledtask/</loc>
-    <lastmod>2024-12-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/api-security/</loc>
+    <loc>//uildDrafts:1313/tags/api-security/</loc>
     <lastmod>2024-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2022-24439/</loc>
+    <loc>//uildDrafts:1313/tags/cve-2022-24439/</loc>
     <lastmod>2024-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/editorial-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/editorial-box/</loc>
     <lastmod>2024-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/git/</loc>
+    <loc>//uildDrafts:1313/tags/gitpython/</loc>
     <lastmod>2024-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/gitpython/</loc>
-    <lastmod>2024-12-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/web-security/</loc>
-    <lastmod>2024-12-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/doctor-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/doctor-box/</loc>
     <lastmod>2024-12-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/log-analysis/</loc>
+    <loc>//uildDrafts:1313/tags/log-analysis/</loc>
     <lastmod>2024-12-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/persistence/</loc>
+    <loc>//uildDrafts:1313/tags/splunk/</loc>
     <lastmod>2024-12-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/splunk/</loc>
-    <lastmod>2024-12-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/forest-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/forest-box/</loc>
     <lastmod>2024-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/genericall/</loc>
+    <loc>//uildDrafts:1313/tags/genericall/</loc>
     <lastmod>2024-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/genericwrite/</loc>
+    <loc>//uildDrafts:1313/articles/understandingasreproasting/</loc>
     <lastmod>2024-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/kerberos/</loc>
-    <lastmod>2024-11-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/mimikatz/</loc>
-    <lastmod>2024-11-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/articles/understandingasreproasting/</loc>
-    <lastmod>2024-11-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tools/ldapire/</loc>
+    <loc>//uildDrafts:1313/tools/ldapire/</loc>
     <lastmod>2024-11-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2021-1675/</loc>
+    <loc>//uildDrafts:1313/tags/cve-2021-1675/</loc>
     <lastmod>2024-11-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/driver-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/driver-box/</loc>
     <lastmod>2024-11-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ntlm-hash-capture/</loc>
+    <loc>//uildDrafts:1313/tags/ntlm-hash-capture/</loc>
     <lastmod>2024-11-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/printer-exploitation/</loc>
+    <loc>//uildDrafts:1313/tags/printer-exploitation/</loc>
     <lastmod>2024-11-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/printnightmare/</loc>
+    <loc>//uildDrafts:1313/tags/printnightmare/</loc>
     <lastmod>2024-11-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/scf-file/</loc>
+    <loc>//uildDrafts:1313/tags/scf-file/</loc>
     <lastmod>2024-11-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/john/</loc>
+    <loc>//uildDrafts:1313/tags/laps/</loc>
     <lastmod>2024-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/laps/</loc>
+    <loc>//uildDrafts:1313/tags/pfx/</loc>
     <lastmod>2024-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pfx/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/timelapse-box/</loc>
     <lastmod>2024-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/timelapse-box/</loc>
-    <lastmod>2024-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/certified-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/certified-box/</loc>
     <lastmod>2024-11-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/esc9/</loc>
+    <loc>//uildDrafts:1313/tags/esc9/</loc>
     <lastmod>2024-11-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/msds-keycredentiallink/</loc>
+    <loc>//uildDrafts:1313/tags/msds-keycredentiallink/</loc>
     <lastmod>2024-11-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pkinit/</loc>
+    <loc>//uildDrafts:1313/tags/rbcd/</loc>
     <lastmod>2024-11-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/rbcd/</loc>
-    <lastmod>2024-11-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/aero-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/aero-box/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/clfs/</loc>
+    <loc>//uildDrafts:1313/tags/clfs/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2023-28252/</loc>
+    <loc>//uildDrafts:1313/tags/cve-2023-28252/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2023-38146/</loc>
+    <loc>//uildDrafts:1313/tags/cve-2023-38146/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/iis/</loc>
+    <loc>//uildDrafts:1313/tags/iis/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/registry-backdoor/</loc>
+    <loc>//uildDrafts:1313/tags/registry-backdoor/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/scheduled-tasks/</loc>
+    <loc>//uildDrafts:1313/tags/scheduled-tasks/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/themebleed/</loc>
+    <loc>//uildDrafts:1313/tags/themebleed/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/understanding2023-28252-clfs/</loc>
+    <loc>//uildDrafts:1313/articles/understanding2023-28252-clfs/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/understandingthemebleedcve-2023-38146/</loc>
+    <loc>//uildDrafts:1313/articles/understandingthemebleedcve-2023-38146/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/windows-11/</loc>
+    <loc>//uildDrafts:1313/tags/windows-11/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/sauna-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/sauna-box/</loc>
     <lastmod>2024-11-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/active-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/active-box/</loc>
     <lastmod>2024-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cpassword/</loc>
+    <loc>//uildDrafts:1313/tags/cpassword/</loc>
     <lastmod>2024-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dc-sync/</loc>
+    <loc>//uildDrafts:1313/tags/dc-sync/</loc>
     <lastmod>2024-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/domain-controller/</loc>
+    <loc>//uildDrafts:1313/tags/golden-ticket/</loc>
     <lastmod>2024-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/golden-ticket/</loc>
+    <loc>//uildDrafts:1313/tags/gpp/</loc>
     <lastmod>2024-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/gpp/</loc>
+    <loc>//uildDrafts:1313/tags/ntds.dit/</loc>
     <lastmod>2024-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ntds.dit/</loc>
+    <loc>//uildDrafts:1313/tags/windows-server-2008/</loc>
     <lastmod>2024-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/windows-server-2008/</loc>
-    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/cicada-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/cicada-box/</loc>
     <lastmod>2024-11-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/registry-hive-dumping/</loc>
+    <loc>//uildDrafts:1313/tags/registry-hive-dumping/</loc>
     <lastmod>2024-11-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sebackupprivilege/</loc>
+    <loc>//uildDrafts:1313/tags/sebackupprivilege/</loc>
     <lastmod>2024-11-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/authority-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/authority-box/</loc>
     <lastmod>2024-10-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/esc1/</loc>
+    <loc>//uildDrafts:1313/tags/machineaccountquota/</loc>
     <lastmod>2024-10-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/machineaccountquota/</loc>
+    <loc>//uildDrafts:1313/tags/passthecert/</loc>
     <lastmod>2024-10-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/passthecert/</loc>
+    <loc>//uildDrafts:1313/tags/pwm/</loc>
     <lastmod>2024-10-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pwm/</loc>
+    <loc>//uildDrafts:1313/tags/schannel/</loc>
     <lastmod>2024-10-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/schannel/</loc>
-    <lastmod>2024-10-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/cups/</loc>
+    <loc>//uildDrafts:1313/tags/cups/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2024-4076/</loc>
+    <loc>//uildDrafts:1313/tags/cve-2024-4076/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2024-4175/</loc>
+    <loc>//uildDrafts:1313/tags/cve-2024-4175/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2024-4176/</loc>
+    <loc>//uildDrafts:1313/tags/cve-2024-4176/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2024-4177/</loc>
+    <loc>//uildDrafts:1313/tags/cve-2024-4177/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/evilcups-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/evilcups-box/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ipp/</loc>
+    <loc>//uildDrafts:1313/tags/ipp/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/printer-security/</loc>
+    <loc>//uildDrafts:1313/tags/printer-security/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/understandingcupsexploitation/</loc>
+    <loc>//uildDrafts:1313/articles/understandingcupsexploitation/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2021-42278/</loc>
+    <loc>//uildDrafts:1313/tags/cve-2021-42278/</loc>
     <lastmod>2024-10-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2021-42287/</loc>
+    <loc>//uildDrafts:1313/tags/cve-2021-42287/</loc>
     <lastmod>2024-10-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/nopac/</loc>
+    <loc>//uildDrafts:1313/tags/nopac/</loc>
     <lastmod>2024-10-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/resolute-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/resolute-box/</loc>
     <lastmod>2024-10-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/understandingnopacexploit/</loc>
+    <loc>//uildDrafts:1313/articles/understandingnopacexploit/</loc>
     <lastmod>2024-10-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/capcom/</loc>
+    <loc>//uildDrafts:1313/tags/capcom/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/seloaddriverprivilege/</loc>
+    <loc>//uildDrafts:1313/tags/seloaddriverprivilege/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/seloaddriverprivilegeescalation/</loc>
+    <loc>//uildDrafts:1313/articles/seloaddriverprivilegeescalation/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/fuse-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/fuse-box/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/bloodserver/</loc>
+    <loc>//uildDrafts:1313/tools/bloodserver/</loc>
     <lastmod>2024-10-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/server/</loc>
+    <loc>//uildDrafts:1313/tags/server/</loc>
     <lastmod>2024-10-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ad-recycle-bin/</loc>
+    <loc>//uildDrafts:1313/tags/ad-recycle-bin/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheatsheets/ldap-cheatsheet/</loc>
+    <loc>//uildDrafts:1313/cheatsheets/ldap-cheatsheet/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheatsheets/rpc-cheatsheet/</loc>
+    <loc>//uildDrafts:1313/cheatsheets/rpc-cheatsheet/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/cascade-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/cascade-box/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cheatsheet/</loc>
+    <loc>//uildDrafts:1313/tags/cheatsheet/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/csharp/</loc>
+    <loc>//uildDrafts:1313/tags/csharp/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sql/</loc>
+    <loc>//uildDrafts:1313/tags/sql/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sqlite/</loc>
+    <loc>//uildDrafts:1313/tags/sqlite/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/vnc/</loc>
+    <loc>//uildDrafts:1313/tags/vnc/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/azure/</loc>
+    <loc>//uildDrafts:1313/tags/azure/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/azure-ad-connect/</loc>
+    <loc>//uildDrafts:1313/tags/azure-ad-connect/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/monteverde-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/monteverde-box/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/azureadconnectattack/</loc>
+    <loc>//uildDrafts:1313/articles/azureadconnectattack/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/follina/</loc>
+    <loc>//uildDrafts:1313/tags/follina/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/outdated-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/outdated-box/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/rubeus/</loc>
+    <loc>//uildDrafts:1313/tags/rubeus/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/whisker/</loc>
+    <loc>//uildDrafts:1313/tags/whisker/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/wsus/</loc>
+    <loc>//uildDrafts:1313/tags/wsus/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/shadowcredentialsattack/</loc>
+    <loc>//uildDrafts:1313/tags/pem/</loc>
     <lastmod>2024-10-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/.net/</loc>
+    <loc>//uildDrafts:1313/tags/pywhisker/</loc>
+    <lastmod>2024-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/articles/shadowcredentialsattack/</loc>
+    <lastmod>2024-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/.net/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/deserialization/</loc>
+    <loc>//uildDrafts:1313/tags/deserialization/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/serialization/</loc>
+    <loc>//uildDrafts:1313/tags/serialization/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/deserializationattacksexplained/</loc>
+    <loc>//uildDrafts:1313/articles/deserializationattacksexplained/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/scrambled-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/scrambled-box/</loc>
     <lastmod>2024-10-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/certificate-template/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/escape-box/</loc>
     <lastmod>2024-10-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/escape-box/</loc>
-    <lastmod>2024-10-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/ghostscript/</loc>
+    <loc>//uildDrafts:1313/tags/ghostscript/</loc>
     <lastmod>2024-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/hospital-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/hospital-box/</loc>
     <lastmod>2024-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/roundcube/</loc>
+    <loc>//uildDrafts:1313/tags/roundcube/</loc>
     <lastmod>2024-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/selenium/</loc>
+    <loc>//uildDrafts:1313/tags/selenium/</loc>
     <lastmod>2024-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dns/</loc>
+    <loc>//uildDrafts:1313/tags/dns/</loc>
     <lastmod>2024-09-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/intelligence-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/intelligence-box/</loc>
     <lastmod>2024-09-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/kcd/</loc>
+    <loc>//uildDrafts:1313/tags/kcd/</loc>
     <lastmod>2024-09-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ca/</loc>
+    <loc>//uildDrafts:1313/tags/esc7/</loc>
     <lastmod>2024-09-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/certificate/</loc>
+    <loc>//uildDrafts:1313/tags/manager/</loc>
     <lastmod>2024-09-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/esc7/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/manager-box/</loc>
     <lastmod>2024-09-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/manager/</loc>
-    <lastmod>2024-09-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/manager-box/</loc>
-    <lastmod>2024-09-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/access-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/access-box/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/database-security/</loc>
+    <loc>//uildDrafts:1313/tags/database-security/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ftp/</loc>
+    <loc>//uildDrafts:1313/tags/lnk-files/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/lnk-files/</loc>
+    <loc>//uildDrafts:1313/tags/microsoft-access/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/microsoft-access/</loc>
+    <loc>//uildDrafts:1313/tags/pst-files/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pst-files/</loc>
+    <loc>//uildDrafts:1313/tags/stored-credentials/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/stored-credentials/</loc>
+    <loc>//uildDrafts:1313/tags/telnet/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/telnet/</loc>
-    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/remote-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/remote-box/</loc>
     <lastmod>2024-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/seimpersonateprivilege/</loc>
+    <loc>//uildDrafts:1313/tags/seimpersonateprivilege/</loc>
     <lastmod>2024-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/umbraco/</loc>
+    <loc>//uildDrafts:1313/tags/umbraco/</loc>
     <lastmod>2024-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/support-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/support-box/</loc>
     <lastmod>2024-09-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/about/</loc>
+    <loc>//uildDrafts:1313/tags/about/</loc>
     <lastmod>2024-09-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/aboutme/</loc>
+    <loc>//uildDrafts:1313/aboutme/</loc>
     <lastmod>2024-09-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/blog/</loc>
+    <loc>//uildDrafts:1313/tags/blog/</loc>
     <lastmod>2024-09-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ethical-hacking/</loc>
+    <loc>//uildDrafts:1313/tags/ethical-hacking/</loc>
     <lastmod>2024-09-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/walkthroughs/return-box/</loc>
+    <loc>//uildDrafts:1313/walkthroughs/return-box/</loc>
     <lastmod>2024-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>//uildDrafts:1313/categories/</loc>
   </url>
 </urlset>

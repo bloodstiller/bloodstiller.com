@@ -1,7 +1,7 @@
 +++
 title = "Escape HTB Walkthrough: Certificate Template Abuse and MSSQL Exploitation"
 draft = false
-tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "Certificate Authority", "ESC1", "MSSQL", "LDAP", "Privilege Escalation", "Certificate Template"]
+tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "ESC1", "MSSQL", "LDAP", "Privilege Escalation", "certificate", "AD/CS", "CA", "certipy", "Certificate Authority", "Certificate Template"]
 keywords = ["Hack The Box Escape", "ESC1 certificate exploitation", "MSSQL enumeration", "Active Directory certificate services", "Windows privilege escalation", "LDAP enumeration", "Certificate template abuse", "Windows security", "MSSQL hash capture", "Domain Controller exploitation"]
 description = "A detailed walkthrough of the Escape machine from Hack The Box, demonstrating certificate template abuse through ESC1 exploitation, MSSQL enumeration techniques, and Active Directory certificate services attacks for domain privilege escalation."
 author = "bloodstiller"

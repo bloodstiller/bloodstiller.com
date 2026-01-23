@@ -1,7 +1,7 @@
 +++
 title = "Sauna HTB Walkthrough: Active Directory, Kerberoasting, and PrintNightmare Exploitation"
 draft = false
-tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Kerberos", "Active Directory", "Kerberoasting", "ASREPRoasting", "PrintNightmare", "CVE-2021-1675"]
+tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Kerberos", "Active Directory", "Kerberoasting", "AS-REP Roasting", "PrintNightmare", "CVE-2021-1675"]
 keywords = ["Hack The Box Sauna", "Active Directory exploitation", "Kerberoasting attack", "ASREPRoasting", "Windows privilege escalation", "PrintNightmare vulnerability", "Windows security assessment", "Active Directory penetration testing", "CVE-2021-1675", "Kerberos authentication"]
 description = "A comprehensive walkthrough of the Sauna machine from Hack The Box, covering Active Directory enumeration, Kerberoasting, and PrintNightmare exploitation techniques. Learn about service account exploitation, Kerberos attacks, and advanced Windows penetration testing methods."
 author = "bloodstiller"

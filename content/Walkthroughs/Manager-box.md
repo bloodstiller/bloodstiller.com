@@ -1,7 +1,7 @@
 +++
 title = "Manager HTB Walkthrough: Active Directory, Certificate Authority, and ESC7 Exploitation"
 draft = false
-tags = ["Box", "HTB", "Manager", "Windows", "LDAP", "kerberos", "SMB", "MSSQL", "Certificate", "CA", "ESC7"]
+tags = ["Box", "HTB", "Manager", "Windows", "LDAP", "kerberos", "SMB", "MSSQL", "certificate", "AD/CS", "CA", "certipy", "Certificate Authority", "Certificate Template", "ESC7"]
 keywords = ["Hack The Box Manager", "Active Directory exploitation", "Certificate Authority attack", "ESC7 vulnerability", "Windows privilege escalation", "LDAP enumeration", "MSSQL exploitation", "Windows security assessment", "Active Directory penetration testing", "CA exploitation"]
 description = "A comprehensive walkthrough of the Manager machine from Hack The Box, covering Active Directory enumeration, Certificate Authority exploitation, ESC7 vulnerability, and privilege escalation techniques. Learn about service account exploitation, CA manipulation, and advanced Windows penetration testing methods."
 author = "bloodstiller"

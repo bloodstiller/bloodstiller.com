@@ -1,7 +1,7 @@
 +++
 title = "Forest HTB Walkthrough: Active Directory, ASREPRoasting, and DCSync Exploitation"
 draft = false
-tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Active Directory", "DACL", "GenericWrite", "GenericAll", "Kerberos", "ASREPRoasting", "mimikatz", "Download Cradle"]
+tags = ["Box", "HTB", "Easy", "Windows", "LDAP", "Active Directory", "DACL", "GenericWrite", "GenericAll", "Kerberos", "AS-REP Roasting", "mimikatz", "Download Cradle"]
 keywords = ["Hack The Box Forest", "Active Directory exploitation", "ASREPRoasting tutorial", "DCSync attack", "Windows privilege escalation", "LDAP enumeration", "Kerberos authentication", "Windows security assessment", "Active Directory penetration testing", "DACL exploitation"]
 description = "A comprehensive walkthrough of the Forest machine from Hack The Box, covering Active Directory enumeration, ASREPRoasting, DCSync exploitation, and privilege escalation techniques. Learn about service account exploitation, DACL manipulation, and advanced Windows penetration testing methods."
 author = "bloodstiller"

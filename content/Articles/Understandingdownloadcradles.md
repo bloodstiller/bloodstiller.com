@@ -1,7 +1,7 @@
 +++
 title = "Understanding PowerShell Download Cradles: A Deep Dive"
 draft = false
-tags = ["Windows", "Active Directory", "PowerShell", "DownloadCradle", "Download Cradle", "Security", "System Administration", "Windows Security", "PowerShell Scripting"]
+tags = ["Windows", "Active Directory", "PowerShell", "Download Cradle", "Security", "System Administration", "Windows Security", "PowerShell Scripting"]
 keywords = ["PowerShell download cradle", "memory execution PowerShell", "secure download cradle", "PowerShell WebClient", "PowerShell security", "Invoke-WebRequest", "PowerShell COM objects", "PowerShell scripting techniques", "PowerShell memory execution", "PowerShell security bypass"]
 description = "A comprehensive guide to PowerShell download cradles, including secure implementation, real-world examples, and security considerations. Learn about essential cmdlets, advanced techniques, and best practices for memory-based code execution."
 author = "bloodstiller"

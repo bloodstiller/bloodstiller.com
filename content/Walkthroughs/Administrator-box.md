@@ -1,7 +1,7 @@
 +++
 title = "Administrator HTB Walkthrough: DACLs, ACL Abuse, and AS-REPRoasting"
 draft = false
-tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "DACL", "ACL", "AS-REPRoasting", "Privilege Escalation", "Password Safe", "Download Cradle", "Windows Security", "PowerShell", "Lateral Movement"]
+tags = ["Windows", "HTB", "Hack The Box", "Active Directory", "DACL", "ACL", "AS-REP Roasting", "Privilege Escalation", "Password Safe", "Download Cradle", "Windows Security", "PowerShell", "Lateral Movement"]
 keywords = ["Hack The Box Administrator", "DACL exploitation tutorial", "ACL abuse techniques", "AS-REPRoasting walkthrough", "Active Directory privilege escalation", "Password Safe exploitation", "Windows DACL security", "PowerShell download cradles", "Active Directory security assessment", "Windows lateral movement"]
 description = "A comprehensive walkthrough of the Administrator machine from Hack The Box, covering DACL exploitation, ACL abuse techniques, and AS-REPRoasting attacks. Learn about Active Directory security mechanisms, privilege escalation through Password Safe, and advanced lateral movement using PowerShell download cradles."
 author = "bloodstiller"

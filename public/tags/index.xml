@@ -2,1438 +2,2257 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>//uildDrafts:1313/tags/</link>
     <description>Recent content in Tags on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//uildDrafts:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>1102</title>
-      <link>http://localhost:1313/tags/1102/</link>
-      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/1102/</guid>
+      <title>Abuse-Prevention</title>
+      <link>//uildDrafts:1313/tags/abuse-prevention/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/abuse-prevention/</guid>
       <description></description>
     </item>
     <item>
-      <title>1149</title>
-      <link>http://localhost:1313/tags/1149/</link>
-      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/1149/</guid>
+      <title>API</title>
+      <link>//uildDrafts:1313/tags/api/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/api/</guid>
       <description></description>
     </item>
     <item>
-      <title>DFIR</title>
-      <link>http://localhost:1313/tags/dfir/</link>
-      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dfir/</guid>
+      <title>Command-Injection</title>
+      <link>//uildDrafts:1313/tags/command-injection/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/command-injection/</guid>
       <description></description>
     </item>
     <item>
-      <title>EVTX</title>
-      <link>http://localhost:1313/tags/evtx/</link>
-      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/evtx/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>EvtxECmd</title>
-      <link>http://localhost:1313/tags/evtxecmd/</link>
-      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/evtxecmd/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Forensics</title>
-      <link>http://localhost:1313/tags/forensics/</link>
-      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/forensics/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sherlock</title>
-      <link>http://localhost:1313/tags/sherlock/</link>
-      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sherlock/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SmartScreen</title>
-      <link>http://localhost:1313/tags/smartscreen/</link>
-      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/smartscreen/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>TimelineExplorer</title>
-      <link>http://localhost:1313/tags/timelineexplorer/</link>
-      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/timelineexplorer/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
-      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/windows/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>WindowsLogs</title>
-      <link>http://localhost:1313/tags/windowslogs/</link>
-      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/windowslogs/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Box</title>
-      <link>http://localhost:1313/tags/box/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/box/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Easy</title>
-      <link>http://localhost:1313/tags/easy/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/easy/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Guest Access</title>
-      <link>http://localhost:1313/tags/guest-access/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/guest-access/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Hashcat</title>
-      <link>http://localhost:1313/tags/hashcat/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/hashcat/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>HTB</title>
-      <link>http://localhost:1313/tags/htb/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/htb/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MRemoteNG</title>
-      <link>http://localhost:1313/tags/mremoteng/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mremoteng/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Password Recovery</title>
-      <link>http://localhost:1313/tags/password-recovery/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/password-recovery/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Privilege Escalation</title>
-      <link>http://localhost:1313/tags/privilege-escalation/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/privilege-escalation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>RPC</title>
-      <link>http://localhost:1313/tags/rpc/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/rpc/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SAM</title>
-      <link>http://localhost:1313/tags/sam/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sam/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SMB</title>
-      <link>http://localhost:1313/tags/smb/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/smb/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SSH</title>
-      <link>http://localhost:1313/tags/ssh/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ssh/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Vhd</title>
-      <link>http://localhost:1313/tags/vhd/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/vhd/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>VHD Mounting</title>
-      <link>http://localhost:1313/tags/vhd-mounting/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/vhd-mounting/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Active Directory</title>
-      <link>http://localhost:1313/tags/active-directory/</link>
-      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/active-directory/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ASREPRoasting</title>
-      <link>http://localhost:1313/tags/asreproasting/</link>
-      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/asreproasting/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>DCOM</title>
-      <link>http://localhost:1313/tags/dcom/</link>
-      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dcom/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Download Cradle</title>
-      <link>http://localhost:1313/tags/download-cradle/</link>
-      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/download-cradle/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Hack the Box</title>
-      <link>http://localhost:1313/tags/hack-the-box/</link>
-      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/hack-the-box/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Jabber</title>
-      <link>http://localhost:1313/tags/jabber/</link>
-      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/jabber/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Java</title>
-      <link>http://localhost:1313/tags/java/</link>
-      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/java/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>JSP</title>
-      <link>http://localhost:1313/tags/jsp/</link>
-      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/jsp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Lateral Movement</title>
-      <link>http://localhost:1313/tags/lateral-movement/</link>
-      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/lateral-movement/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>LDAP</title>
-      <link>http://localhost:1313/tags/ldap/</link>
-      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ldap/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MMC20</title>
-      <link>http://localhost:1313/tags/mmc20/</link>
-      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mmc20/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>OpenFire</title>
-      <link>http://localhost:1313/tags/openfire/</link>
-      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/openfire/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Windows Security</title>
-      <link>http://localhost:1313/tags/windows-security/</link>
-      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/windows-security/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>XMPP</title>
-      <link>http://localhost:1313/tags/xmpp/</link>
-      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/xmpp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>DownloadCradle</title>
-      <link>http://localhost:1313/tags/downloadcradle/</link>
-      <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/downloadcradle/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>PowerShell</title>
-      <link>http://localhost:1313/tags/powershell/</link>
-      <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/powershell/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>PowerShell Scripting</title>
-      <link>http://localhost:1313/tags/powershell-scripting/</link>
-      <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/powershell-scripting/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Security</title>
-      <link>http://localhost:1313/tags/security/</link>
-      <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/security/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>System Administration</title>
-      <link>http://localhost:1313/tags/system-administration/</link>
-      <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/system-administration/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ACL</title>
-      <link>http://localhost:1313/tags/acl/</link>
-      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/acl/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>AS-REPRoasting</title>
-      <link>http://localhost:1313/tags/as-reproasting/</link>
-      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/as-reproasting/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CVE-2023-32315</title>
-      <link>http://localhost:1313/tags/cve-2023-32315/</link>
-      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cve-2023-32315/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CVE-2023-33733</title>
-      <link>http://localhost:1313/tags/cve-2023-33733/</link>
-      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cve-2023-33733/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>DACL</title>
-      <link>http://localhost:1313/tags/dacl/</link>
-      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dacl/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Password Safe</title>
-      <link>http://localhost:1313/tags/password-safe/</link>
-      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/password-safe/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
-      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/python/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ReportLab</title>
-      <link>http://localhost:1313/tags/reportlab/</link>
-      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/reportlab/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Vulnerability Assessment</title>
-      <link>http://localhost:1313/tags/vulnerability-assessment/</link>
-      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/vulnerability-assessment/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Auth.log</title>
-      <link>http://localhost:1313/tags/auth.log/</link>
-      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/auth.log/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Defensive</title>
-      <link>http://localhost:1313/tags/defensive/</link>
-      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/defensive/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
-      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Utmp</title>
-      <link>http://localhost:1313/tags/utmp/</link>
-      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/utmp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Wtmp</title>
-      <link>http://localhost:1313/tags/wtmp/</link>
-      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/wtmp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cli</title>
-      <link>http://localhost:1313/tags/cli/</link>
-      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cli/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Networking</title>
-      <link>http://localhost:1313/tags/networking/</link>
-      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/networking/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Reference</title>
-      <link>http://localhost:1313/tags/reference/</link>
-      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/reference/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sysadmin</title>
-      <link>http://localhost:1313/tags/sysadmin/</link>
-      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sysadmin/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tools</title>
-      <link>http://localhost:1313/tags/tools/</link>
-      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tools/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Configuration</title>
-      <link>http://localhost:1313/tags/configuration/</link>
-      <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/configuration/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Docker</title>
-      <link>http://localhost:1313/tags/docker/</link>
-      <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/docker/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Homelab</title>
-      <link>http://localhost:1313/tags/homelab/</link>
-      <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/homelab/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Nixos</title>
-      <link>http://localhost:1313/tags/nixos/</link>
-      <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/nixos/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>System</title>
-      <link>http://localhost:1313/tags/system/</link>
-      <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/system/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Containerization</title>
-      <link>http://localhost:1313/tags/containerization/</link>
-      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/containerization/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Containers</title>
-      <link>http://localhost:1313/tags/containers/</link>
-      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/containers/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Debugging</title>
-      <link>http://localhost:1313/tags/debugging/</link>
-      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/debugging/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Devops</title>
-      <link>http://localhost:1313/tags/devops/</link>
-      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/devops/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Optimization</title>
-      <link>http://localhost:1313/tags/optimization/</link>
-      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/optimization/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Pentesting</title>
-      <link>http://localhost:1313/tags/pentesting/</link>
-      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/pentesting/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Redteam</title>
-      <link>http://localhost:1313/tags/redteam/</link>
-      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/redteam/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Troubleshooting</title>
-      <link>http://localhost:1313/tags/troubleshooting/</link>
-      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/troubleshooting/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Amd</title>
-      <link>http://localhost:1313/tags/amd/</link>
-      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/amd/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Gpu</title>
-      <link>http://localhost:1313/tags/gpu/</link>
-      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/gpu/</guid>
+      <title>Function-Calling</title>
+      <link>//uildDrafts:1313/tags/function-calling/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/function-calling/</guid>
       <description></description>
     </item>
     <item>
       <title>Llm</title>
-      <link>http://localhost:1313/tags/llm/</link>
-      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/llm/</guid>
+      <link>//uildDrafts:1313/tags/llm/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/llm/</guid>
       <description></description>
     </item>
     <item>
-      <title>Local-Llm</title>
-      <link>http://localhost:1313/tags/local-llm/</link>
-      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/local-llm/</guid>
+      <title>Security-Research</title>
+      <link>//uildDrafts:1313/tags/security-research/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/security-research/</guid>
       <description></description>
     </item>
     <item>
-      <title>Ollama</title>
-      <link>http://localhost:1313/tags/ollama/</link>
-      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ollama/</guid>
+      <title>Tool-Calling</title>
+      <link>//uildDrafts:1313/tags/tool-calling/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/tool-calling/</guid>
       <description></description>
     </item>
     <item>
-      <title>Rocm</title>
-      <link>http://localhost:1313/tags/rocm/</link>
-      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/rocm/</guid>
+      <title>WebSecurity</title>
+      <link>//uildDrafts:1313/tags/websecurity/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/websecurity/</guid>
       <description></description>
     </item>
     <item>
-      <title>Sre</title>
-      <link>http://localhost:1313/tags/sre/</link>
-      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sre/</guid>
+      <title>Active Directory</title>
+      <link>//uildDrafts:1313/tags/active-directory/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/active-directory/</guid>
       <description></description>
     </item>
     <item>
-      <title>Tailscale</title>
-      <link>http://localhost:1313/tags/tailscale/</link>
-      <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tailscale/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Vpn</title>
-      <link>http://localhost:1313/tags/vpn/</link>
-      <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/vpn/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ansible</title>
-      <link>http://localhost:1313/tags/ansible/</link>
-      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ansible/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Automation</title>
-      <link>http://localhost:1313/tags/automation/</link>
-      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/automation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Dotfiles</title>
-      <link>http://localhost:1313/tags/dotfiles/</link>
-      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dotfiles/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Kali</title>
-      <link>http://localhost:1313/tags/kali/</link>
-      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kali/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Qemu</title>
-      <link>http://localhost:1313/tags/qemu/</link>
-      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/qemu/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Certificate Authority</title>
-      <link>http://localhost:1313/tags/certificate-authority/</link>
-      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/certificate-authority/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ESC4</title>
-      <link>http://localhost:1313/tags/esc4/</link>
-      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/esc4/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Kerberoasting</title>
-      <link>http://localhost:1313/tags/kerberoasting/</link>
-      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kerberoasting/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MSSQL</title>
-      <link>http://localhost:1313/tags/mssql/</link>
-      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mssql/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Shadow Credentials</title>
-      <link>http://localhost:1313/tags/shadow-credentials/</link>
-      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/shadow-credentials/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>WriteOwner</title>
-      <link>http://localhost:1313/tags/writeowner/</link>
-      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/writeowner/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Xp_cmdshell</title>
-      <link>http://localhost:1313/tags/xp_cmdshell/</link>
-      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/xp_cmdshell/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Medium</title>
-      <link>http://localhost:1313/tags/medium/</link>
-      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/medium/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Spring Boot</title>
-      <link>http://localhost:1313/tags/spring-boot/</link>
-      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/spring-boot/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SSTI</title>
-      <link>http://localhost:1313/tags/ssti/</link>
-      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ssti/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Template Injection</title>
-      <link>http://localhost:1313/tags/template-injection/</link>
-      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/template-injection/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Web Exploitation</title>
-      <link>http://localhost:1313/tags/web-exploitation/</link>
-      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web-exploitation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CVE-2023-26604</title>
-      <link>http://localhost:1313/tags/cve-2023-26604/</link>
-      <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cve-2023-26604/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CVE-2023–27163</title>
-      <link>http://localhost:1313/tags/cve-202327163/</link>
-      <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cve-202327163/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SSRF</title>
-      <link>http://localhost:1313/tags/ssrf/</link>
-      <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ssrf/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Systemctl</title>
-      <link>http://localhost:1313/tags/systemctl/</link>
-      <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/systemctl/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Msi</title>
-      <link>http://localhost:1313/tags/msi/</link>
-      <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/msi/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ScheduledTask</title>
-      <link>http://localhost:1313/tags/scheduledtask/</link>
-      <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/scheduledtask/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>API Security</title>
-      <link>http://localhost:1313/tags/api-security/</link>
-      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/api-security/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CVE-2022-24439</title>
-      <link>http://localhost:1313/tags/cve-2022-24439/</link>
-      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cve-2022-24439/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Git</title>
-      <link>http://localhost:1313/tags/git/</link>
-      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/git/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>GitPython</title>
-      <link>http://localhost:1313/tags/gitpython/</link>
-      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/gitpython/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Web Security</title>
-      <link>http://localhost:1313/tags/web-security/</link>
-      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web-security/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Log Analysis</title>
-      <link>http://localhost:1313/tags/log-analysis/</link>
-      <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/log-analysis/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Persistence</title>
-      <link>http://localhost:1313/tags/persistence/</link>
-      <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/persistence/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Splunk</title>
-      <link>http://localhost:1313/tags/splunk/</link>
-      <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/splunk/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>GenericAll</title>
-      <link>http://localhost:1313/tags/genericall/</link>
-      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/genericall/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>GenericWrite</title>
-      <link>http://localhost:1313/tags/genericwrite/</link>
-      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/genericwrite/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Kerberos</title>
-      <link>http://localhost:1313/tags/kerberos/</link>
-      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kerberos/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Mimikatz</title>
-      <link>http://localhost:1313/tags/mimikatz/</link>
-      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mimikatz/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CVE-2021-1675</title>
-      <link>http://localhost:1313/tags/cve-2021-1675/</link>
-      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cve-2021-1675/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>NTLM Hash Capture</title>
-      <link>http://localhost:1313/tags/ntlm-hash-capture/</link>
-      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ntlm-hash-capture/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Printer Exploitation</title>
-      <link>http://localhost:1313/tags/printer-exploitation/</link>
-      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/printer-exploitation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>PrintNightmare</title>
-      <link>http://localhost:1313/tags/printnightmare/</link>
-      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/printnightmare/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SCF File</title>
-      <link>http://localhost:1313/tags/scf-file/</link>
-      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/scf-file/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>John</title>
-      <link>http://localhost:1313/tags/john/</link>
-      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/john/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>LAPS</title>
-      <link>http://localhost:1313/tags/laps/</link>
-      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/laps/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Pfx</title>
-      <link>http://localhost:1313/tags/pfx/</link>
-      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/pfx/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ESC9</title>
-      <link>http://localhost:1313/tags/esc9/</link>
-      <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/esc9/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MsDS-KeyCredentialLink</title>
-      <link>http://localhost:1313/tags/msds-keycredentiallink/</link>
-      <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/msds-keycredentiallink/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>PKINIT</title>
-      <link>http://localhost:1313/tags/pkinit/</link>
-      <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/pkinit/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>RBCD</title>
-      <link>http://localhost:1313/tags/rbcd/</link>
-      <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/rbcd/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CLFS</title>
-      <link>http://localhost:1313/tags/clfs/</link>
-      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/clfs/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CVE-2023-28252</title>
-      <link>http://localhost:1313/tags/cve-2023-28252/</link>
-      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cve-2023-28252/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CVE-2023-38146</title>
-      <link>http://localhost:1313/tags/cve-2023-38146/</link>
-      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cve-2023-38146/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>IIS</title>
-      <link>http://localhost:1313/tags/iis/</link>
-      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/iis/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Registry Backdoor</title>
-      <link>http://localhost:1313/tags/registry-backdoor/</link>
-      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/registry-backdoor/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Scheduled Tasks</title>
-      <link>http://localhost:1313/tags/scheduled-tasks/</link>
-      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/scheduled-tasks/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ThemeBleed</title>
-      <link>http://localhost:1313/tags/themebleed/</link>
-      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/themebleed/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Windows 11</title>
-      <link>http://localhost:1313/tags/windows-11/</link>
-      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/windows-11/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cpassword</title>
-      <link>http://localhost:1313/tags/cpassword/</link>
-      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cpassword/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>DC Sync</title>
-      <link>http://localhost:1313/tags/dc-sync/</link>
-      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dc-sync/</guid>
+      <title>BloodHound</title>
+      <link>//uildDrafts:1313/tags/bloodhound/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/bloodhound/</guid>
       <description></description>
     </item>
     <item>
       <title>Domain Controller</title>
-      <link>http://localhost:1313/tags/domain-controller/</link>
-      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/domain-controller/</guid>
+      <link>//uildDrafts:1313/tags/domain-controller/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/domain-controller/</guid>
       <description></description>
     </item>
     <item>
-      <title>Golden Ticket</title>
-      <link>http://localhost:1313/tags/golden-ticket/</link>
-      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/golden-ticket/</guid>
+      <title>GenericWrite</title>
+      <link>//uildDrafts:1313/tags/genericwrite/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/genericwrite/</guid>
       <description></description>
     </item>
     <item>
-      <title>GPP</title>
-      <link>http://localhost:1313/tags/gpp/</link>
-      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/gpp/</guid>
+      <title>Hack the Box</title>
+      <link>//uildDrafts:1313/tags/hack-the-box/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/hack-the-box/</guid>
       <description></description>
     </item>
     <item>
-      <title>NTDS.dit</title>
-      <link>http://localhost:1313/tags/ntds.dit/</link>
-      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ntds.dit/</guid>
+      <title>HTB</title>
+      <link>//uildDrafts:1313/tags/htb/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/htb/</guid>
       <description></description>
     </item>
     <item>
-      <title>Windows Server 2008</title>
-      <link>http://localhost:1313/tags/windows-server-2008/</link>
-      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/windows-server-2008/</guid>
+      <title>John</title>
+      <link>//uildDrafts:1313/tags/john/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/john/</guid>
       <description></description>
     </item>
     <item>
-      <title>Registry Hive Dumping</title>
-      <link>http://localhost:1313/tags/registry-hive-dumping/</link>
-      <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/registry-hive-dumping/</guid>
+      <title>LDAP</title>
+      <link>//uildDrafts:1313/tags/ldap/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ldap/</guid>
       <description></description>
     </item>
     <item>
-      <title>SeBackupPrivilege</title>
-      <link>http://localhost:1313/tags/sebackupprivilege/</link>
-      <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sebackupprivilege/</guid>
+      <title>LDAPS</title>
+      <link>//uildDrafts:1313/tags/ldaps/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ldaps/</guid>
       <description></description>
     </item>
     <item>
-      <title>ESC1</title>
-      <link>http://localhost:1313/tags/esc1/</link>
-      <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/esc1/</guid>
+      <title>Machine Account</title>
+      <link>//uildDrafts:1313/tags/machine-account/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/machine-account/</guid>
       <description></description>
     </item>
     <item>
-      <title>MachineAccountQuota</title>
-      <link>http://localhost:1313/tags/machineaccountquota/</link>
-      <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/machineaccountquota/</guid>
+      <title>Office2john</title>
+      <link>//uildDrafts:1313/tags/office2john/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/office2john/</guid>
       <description></description>
     </item>
     <item>
-      <title>PassTheCert</title>
-      <link>http://localhost:1313/tags/passthecert/</link>
-      <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/passthecert/</guid>
+      <title>Pentesting</title>
+      <link>//uildDrafts:1313/tags/pentesting/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/pentesting/</guid>
       <description></description>
     </item>
     <item>
-      <title>PWM</title>
-      <link>http://localhost:1313/tags/pwm/</link>
-      <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/pwm/</guid>
+      <title>Pre-Windows 2000</title>
+      <link>//uildDrafts:1313/tags/pre-windows-2000/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/pre-windows-2000/</guid>
       <description></description>
     </item>
     <item>
-      <title>Schannel</title>
-      <link>http://localhost:1313/tags/schannel/</link>
-      <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/schannel/</guid>
+      <title>Privilege Escalation</title>
+      <link>//uildDrafts:1313/tags/privilege-escalation/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/privilege-escalation/</guid>
       <description></description>
     </item>
     <item>
-      <title>CUPS</title>
-      <link>http://localhost:1313/tags/cups/</link>
-      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cups/</guid>
+      <title>RPC</title>
+      <link>//uildDrafts:1313/tags/rpc/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/rpc/</guid>
       <description></description>
     </item>
     <item>
-      <title>CVE-2024-4076</title>
-      <link>http://localhost:1313/tags/cve-2024-4076/</link>
-      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cve-2024-4076/</guid>
+      <title>SAMR</title>
+      <link>//uildDrafts:1313/tags/samr/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/samr/</guid>
       <description></description>
     </item>
     <item>
-      <title>CVE-2024-4175</title>
-      <link>http://localhost:1313/tags/cve-2024-4175/</link>
-      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cve-2024-4175/</guid>
+      <title>SMB</title>
+      <link>//uildDrafts:1313/tags/smb/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/smb/</guid>
       <description></description>
     </item>
     <item>
-      <title>CVE-2024-4176</title>
-      <link>http://localhost:1313/tags/cve-2024-4176/</link>
-      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cve-2024-4176/</guid>
+      <title>Windows</title>
+      <link>//uildDrafts:1313/tags/windows/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/windows/</guid>
       <description></description>
     </item>
     <item>
-      <title>CVE-2024-4177</title>
-      <link>http://localhost:1313/tags/cve-2024-4177/</link>
-      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cve-2024-4177/</guid>
+      <title>DOM</title>
+      <link>//uildDrafts:1313/tags/dom/</link>
+      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/dom/</guid>
       <description></description>
     </item>
     <item>
-      <title>IPP</title>
-      <link>http://localhost:1313/tags/ipp/</link>
-      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ipp/</guid>
+      <title>Hashchange</title>
+      <link>//uildDrafts:1313/tags/hashchange/</link>
+      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/hashchange/</guid>
       <description></description>
     </item>
     <item>
-      <title>Printer Security</title>
-      <link>http://localhost:1313/tags/printer-security/</link>
-      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/printer-security/</guid>
+      <title>JavaScript</title>
+      <link>//uildDrafts:1313/tags/javascript/</link>
+      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
-      <title>CVE-2021-42278</title>
-      <link>http://localhost:1313/tags/cve-2021-42278/</link>
-      <pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cve-2021-42278/</guid>
+      <title>JQuery</title>
+      <link>//uildDrafts:1313/tags/jquery/</link>
+      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/jquery/</guid>
       <description></description>
     </item>
     <item>
-      <title>CVE-2021-42287</title>
-      <link>http://localhost:1313/tags/cve-2021-42287/</link>
-      <pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cve-2021-42287/</guid>
+      <title>Location.hash</title>
+      <link>//uildDrafts:1313/tags/location.hash/</link>
+      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/location.hash/</guid>
       <description></description>
     </item>
     <item>
-      <title>NoPac</title>
-      <link>http://localhost:1313/tags/nopac/</link>
-      <pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/nopac/</guid>
+      <title>OWASP</title>
+      <link>//uildDrafts:1313/tags/owasp/</link>
+      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/owasp/</guid>
       <description></description>
     </item>
     <item>
-      <title>Capcom</title>
-      <link>http://localhost:1313/tags/capcom/</link>
-      <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/capcom/</guid>
+      <title>PortSwigger</title>
+      <link>//uildDrafts:1313/tags/portswigger/</link>
+      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/portswigger/</guid>
       <description></description>
     </item>
     <item>
-      <title>SeLoadDriverPrivilege</title>
-      <link>http://localhost:1313/tags/seloaddriverprivilege/</link>
-      <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/seloaddriverprivilege/</guid>
+      <title>Selector-Injection</title>
+      <link>//uildDrafts:1313/tags/selector-injection/</link>
+      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/selector-injection/</guid>
       <description></description>
     </item>
     <item>
-      <title>Server</title>
-      <link>http://localhost:1313/tags/server/</link>
-      <pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/server/</guid>
+      <title>Web-Exploitation</title>
+      <link>//uildDrafts:1313/tags/web-exploitation/</link>
+      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/web-exploitation/</guid>
       <description></description>
     </item>
     <item>
-      <title>AD Recycle Bin</title>
-      <link>http://localhost:1313/tags/ad-recycle-bin/</link>
-      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ad-recycle-bin/</guid>
+      <title>XSS</title>
+      <link>//uildDrafts:1313/tags/xss/</link>
+      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/xss/</guid>
       <description></description>
     </item>
     <item>
-      <title>CheatSheet</title>
-      <link>http://localhost:1313/tags/cheatsheet/</link>
-      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cheatsheet/</guid>
+      <title>Bug-Bounty</title>
+      <link>//uildDrafts:1313/tags/bug-bounty/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/bug-bounty/</guid>
       <description></description>
     </item>
     <item>
-      <title>CSharp</title>
-      <link>http://localhost:1313/tags/csharp/</link>
-      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/csharp/</guid>
+      <title>Client-Side</title>
+      <link>//uildDrafts:1313/tags/client-side/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/client-side/</guid>
       <description></description>
     </item>
     <item>
-      <title>SQL</title>
-      <link>http://localhost:1313/tags/sql/</link>
-      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sql/</guid>
+      <title>Document.write</title>
+      <link>//uildDrafts:1313/tags/document.write/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/document.write/</guid>
       <description></description>
     </item>
     <item>
-      <title>SQLite</title>
-      <link>http://localhost:1313/tags/sqlite/</link>
-      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sqlite/</guid>
+      <title>DOM-Based</title>
+      <link>//uildDrafts:1313/tags/dom-based/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/dom-based/</guid>
       <description></description>
     </item>
     <item>
-      <title>VNC</title>
-      <link>http://localhost:1313/tags/vnc/</link>
-      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/vnc/</guid>
+      <title>Injection</title>
+      <link>//uildDrafts:1313/tags/injection/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/injection/</guid>
       <description></description>
     </item>
     <item>
-      <title>Azure</title>
-      <link>http://localhost:1313/tags/azure/</link>
-      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/azure/</guid>
+      <title>Location.search</title>
+      <link>//uildDrafts:1313/tags/location.search/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/location.search/</guid>
       <description></description>
     </item>
     <item>
-      <title>Azure AD Connect</title>
-      <link>http://localhost:1313/tags/azure-ad-connect/</link>
-      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/azure-ad-connect/</guid>
+      <title>AD/CS</title>
+      <link>//uildDrafts:1313/tags/ad/cs/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ad/cs/</guid>
       <description></description>
     </item>
     <item>
-      <title>Follina</title>
-      <link>http://localhost:1313/tags/follina/</link>
-      <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/follina/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Rubeus</title>
-      <link>http://localhost:1313/tags/rubeus/</link>
-      <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/rubeus/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Whisker</title>
-      <link>http://localhost:1313/tags/whisker/</link>
-      <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/whisker/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>WSUS</title>
-      <link>http://localhost:1313/tags/wsus/</link>
-      <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/wsus/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>.NET</title>
-      <link>http://localhost:1313/tags/.net/</link>
-      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/.net/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Deserialization</title>
-      <link>http://localhost:1313/tags/deserialization/</link>
-      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/deserialization/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Serialization</title>
-      <link>http://localhost:1313/tags/serialization/</link>
-      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/serialization/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Certificate Template</title>
-      <link>http://localhost:1313/tags/certificate-template/</link>
-      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/certificate-template/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>GhostScript</title>
-      <link>http://localhost:1313/tags/ghostscript/</link>
-      <pubDate>Thu, 03 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ghostscript/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>RoundCube</title>
-      <link>http://localhost:1313/tags/roundcube/</link>
-      <pubDate>Thu, 03 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/roundcube/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Selenium</title>
-      <link>http://localhost:1313/tags/selenium/</link>
-      <pubDate>Thu, 03 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/selenium/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>DNS</title>
-      <link>http://localhost:1313/tags/dns/</link>
-      <pubDate>Sun, 29 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dns/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>KCD</title>
-      <link>http://localhost:1313/tags/kcd/</link>
-      <pubDate>Sun, 29 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kcd/</guid>
+      <title>AS-REP Roasting</title>
+      <link>//uildDrafts:1313/tags/as-rep-roasting/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/as-rep-roasting/</guid>
       <description></description>
     </item>
     <item>
       <title>CA</title>
-      <link>http://localhost:1313/tags/ca/</link>
-      <pubDate>Sun, 22 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ca/</guid>
+      <link>//uildDrafts:1313/tags/ca/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ca/</guid>
       <description></description>
     </item>
     <item>
       <title>Certificate</title>
-      <link>http://localhost:1313/tags/certificate/</link>
-      <pubDate>Sun, 22 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/certificate/</guid>
+      <link>//uildDrafts:1313/tags/certificate/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/certificate/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Certificate Authority</title>
+      <link>//uildDrafts:1313/tags/certificate-authority/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/certificate-authority/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Certificate Template</title>
+      <link>//uildDrafts:1313/tags/certificate-template/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/certificate-template/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Certipy</title>
+      <link>//uildDrafts:1313/tags/certipy/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/certipy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ESC1</title>
+      <link>//uildDrafts:1313/tags/esc1/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/esc1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Impacket</title>
+      <link>//uildDrafts:1313/tags/impacket/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/impacket/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kerberos</title>
+      <link>//uildDrafts:1313/tags/kerberos/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/kerberos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kerbrute</title>
+      <link>//uildDrafts:1313/tags/kerbrute/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/kerbrute/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>UserAccountControl</title>
+      <link>//uildDrafts:1313/tags/useraccountcontrol/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/useraccountcontrol/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ASPX Webshell</title>
+      <link>//uildDrafts:1313/tags/aspx-webshell/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/aspx-webshell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CI/CD</title>
+      <link>//uildDrafts:1313/tags/ci/cd/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ci/cd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Credentials</title>
+      <link>//uildDrafts:1313/tags/credentials/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/credentials/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2023-49147</title>
+      <link>//uildDrafts:1313/tags/cve-2023-49147/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2023-49147/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Easy</title>
+      <link>//uildDrafts:1313/tags/easy/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/easy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git History</title>
+      <link>//uildDrafts:1313/tags/git-history/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/git-history/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gitea</title>
+      <link>//uildDrafts:1313/tags/gitea/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/gitea/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mimikatz</title>
+      <link>//uildDrafts:1313/tags/mimikatz/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/mimikatz/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MRemoteNG</title>
+      <link>//uildDrafts:1313/tags/mremoteng/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/mremoteng/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MSI</title>
+      <link>//uildDrafts:1313/tags/msi/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/msi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PDF24</title>
+      <link>//uildDrafts:1313/tags/pdf24/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/pdf24/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reverse Shell</title>
+      <link>//uildDrafts:1313/tags/reverse-shell/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/reverse-shell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SAM</title>
+      <link>//uildDrafts:1313/tags/sam/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/sam/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SetOpLock</title>
+      <link>//uildDrafts:1313/tags/setoplock/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/setoplock/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fuzzing</title>
+      <link>//uildDrafts:1313/tags/fuzzing/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/fuzzing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GroupConcat</title>
+      <link>//uildDrafts:1313/tags/groupconcat/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/groupconcat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Header Injection</title>
+      <link>//uildDrafts:1313/tags/header-injection/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/header-injection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>//uildDrafts:1313/tags/linux/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Medium</title>
+      <link>//uildDrafts:1313/tags/medium/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/medium/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MySQL</title>
+      <link>//uildDrafts:1313/tags/mysql/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/mysql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nginx</title>
+      <link>//uildDrafts:1313/tags/nginx/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/nginx/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PHP</title>
+      <link>//uildDrafts:1313/tags/php/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/php/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQL Injection</title>
+      <link>//uildDrafts:1313/tags/sql-injection/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/sql-injection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>UNION</title>
+      <link>//uildDrafts:1313/tags/union/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/union/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Security</title>
+      <link>//uildDrafts:1313/tags/web-security/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/web-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Configuration</title>
+      <link>//uildDrafts:1313/tags/configuration/</link>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/configuration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Homelab</title>
+      <link>//uildDrafts:1313/tags/homelab/</link>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/homelab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Networking</title>
+      <link>//uildDrafts:1313/tags/networking/</link>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/networking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NixOS</title>
+      <link>//uildDrafts:1313/tags/nixos/</link>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/nixos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>System</title>
+      <link>//uildDrafts:1313/tags/system/</link>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/system/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tailscale</title>
+      <link>//uildDrafts:1313/tags/tailscale/</link>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/tailscale/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vpn</title>
+      <link>//uildDrafts:1313/tags/vpn/</link>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/vpn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Flakes</title>
+      <link>//uildDrafts:1313/tags/flakes/</link>
+      <pubDate>Thu, 26 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/flakes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Home Manager</title>
+      <link>//uildDrafts:1313/tags/home-manager/</link>
+      <pubDate>Thu, 26 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/home-manager/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NixOS Configuration</title>
+      <link>//uildDrafts:1313/tags/nixos-configuration/</link>
+      <pubDate>Thu, 26 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/nixos-configuration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Package Management</title>
+      <link>//uildDrafts:1313/tags/package-management/</link>
+      <pubDate>Thu, 26 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/package-management/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Unstable Packages</title>
+      <link>//uildDrafts:1313/tags/unstable-packages/</link>
+      <pubDate>Thu, 26 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/unstable-packages/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cache-Control</title>
+      <link>//uildDrafts:1313/tags/cache-control/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cache-control/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Content Security Policy</title>
+      <link>//uildDrafts:1313/tags/content-security-policy/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/content-security-policy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CSP</title>
+      <link>//uildDrafts:1313/tags/csp/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/csp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HSTS</title>
+      <link>//uildDrafts:1313/tags/hsts/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/hsts/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HTTP Headers</title>
+      <link>//uildDrafts:1313/tags/http-headers/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/http-headers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Permissions-Policy</title>
+      <link>//uildDrafts:1313/tags/permissions-policy/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/permissions-policy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Referrer-Policy</title>
+      <link>//uildDrafts:1313/tags/referrer-policy/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/referrer-policy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security Best Practices</title>
+      <link>//uildDrafts:1313/tags/security-best-practices/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/security-best-practices/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security Headers</title>
+      <link>//uildDrafts:1313/tags/security-headers/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/security-headers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Application Security</title>
+      <link>//uildDrafts:1313/tags/web-application-security/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/web-application-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>X-Content-Type-Options</title>
+      <link>//uildDrafts:1313/tags/x-content-type-options/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/x-content-type-options/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>X-Frame-Options</title>
+      <link>//uildDrafts:1313/tags/x-frame-options/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/x-frame-options/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVSS</title>
+      <link>//uildDrafts:1313/tags/cvss/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cvss/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cybersecurity</title>
+      <link>//uildDrafts:1313/tags/cybersecurity/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cybersecurity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FIRST</title>
+      <link>//uildDrafts:1313/tags/first/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/first/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NIST</title>
+      <link>//uildDrafts:1313/tags/nist/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/nist/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Penetration Testing</title>
+      <link>//uildDrafts:1313/tags/penetration-testing/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/penetration-testing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Risk Assessment</title>
+      <link>//uildDrafts:1313/tags/risk-assessment/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/risk-assessment/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>//uildDrafts:1313/tags/security/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security Metrics</title>
+      <link>//uildDrafts:1313/tags/security-metrics/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/security-metrics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security Scoring</title>
+      <link>//uildDrafts:1313/tags/security-scoring/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/security-scoring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tools</title>
+      <link>//uildDrafts:1313/tags/tools/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vulnerability Assessment</title>
+      <link>//uildDrafts:1313/tags/vulnerability-assessment/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/vulnerability-assessment/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Alternative Data Streams</title>
+      <link>//uildDrafts:1313/tags/alternative-data-streams/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/alternative-data-streams/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Db2</title>
+      <link>//uildDrafts:1313/tags/db2/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/db2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ibm-Db2</title>
+      <link>//uildDrafts:1313/tags/ibm-db2/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ibm-db2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jenkins</title>
+      <link>//uildDrafts:1313/tags/jenkins/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jenkins RCE</title>
+      <link>//uildDrafts:1313/tags/jenkins-rce/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/jenkins-rce/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kdbx</title>
+      <link>//uildDrafts:1313/tags/kdbx/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/kdbx/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Keepass2john</title>
+      <link>//uildDrafts:1313/tags/keepass2john/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/keepass2john/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Password Cracking</title>
+      <link>//uildDrafts:1313/tags/password-cracking/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/password-cracking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Persistence</title>
+      <link>//uildDrafts:1313/tags/persistence/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/persistence/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Powershell</title>
+      <link>//uildDrafts:1313/tags/powershell/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/powershell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>War</title>
+      <link>//uildDrafts:1313/tags/war/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/war/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Apache Struts2</title>
+      <link>//uildDrafts:1313/tags/apache-struts2/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/apache-struts2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2024-53677</title>
+      <link>//uildDrafts:1313/tags/cve-2024-53677/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2024-53677/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dockerfile</title>
+      <link>//uildDrafts:1313/tags/dockerfile/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/dockerfile/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>File Upload</title>
+      <link>//uildDrafts:1313/tags/file-upload/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/file-upload/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>//uildDrafts:1313/tags/java/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Magic Bytes</title>
+      <link>//uildDrafts:1313/tags/magic-bytes/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/magic-bytes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Maven</title>
+      <link>//uildDrafts:1313/tags/maven/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/maven/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MIME Type</title>
+      <link>//uildDrafts:1313/tags/mime-type/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/mime-type/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OGNL</title>
+      <link>//uildDrafts:1313/tags/ognl/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ognl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tcpdump</title>
+      <link>//uildDrafts:1313/tags/tcpdump/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/tcpdump/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tomcat</title>
+      <link>//uildDrafts:1313/tags/tomcat/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/tomcat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ESC4</title>
+      <link>//uildDrafts:1313/tags/esc4/</link>
+      <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/esc4/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kerberoasting</title>
+      <link>//uildDrafts:1313/tags/kerberoasting/</link>
+      <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/kerberoasting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MSSQL</title>
+      <link>//uildDrafts:1313/tags/mssql/</link>
+      <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/mssql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PKINIT</title>
+      <link>//uildDrafts:1313/tags/pkinit/</link>
+      <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/pkinit/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Shadow Credentials</title>
+      <link>//uildDrafts:1313/tags/shadow-credentials/</link>
+      <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/shadow-credentials/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WriteOwner</title>
+      <link>//uildDrafts:1313/tags/writeowner/</link>
+      <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/writeowner/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Xp_cmdshell</title>
+      <link>//uildDrafts:1313/tags/xp_cmdshell/</link>
+      <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/xp_cmdshell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Box</title>
+      <link>//uildDrafts:1313/tags/box/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/box/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cap</title>
+      <link>//uildDrafts:1313/tags/cap/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cap/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cap-Setuid</title>
+      <link>//uildDrafts:1313/tags/cap-setuid/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cap-setuid/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Capabilities</title>
+      <link>//uildDrafts:1313/tags/capabilities/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/capabilities/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ftp</title>
+      <link>//uildDrafts:1313/tags/ftp/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ftp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gunicorn</title>
+      <link>//uildDrafts:1313/tags/gunicorn/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/gunicorn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IDOR</title>
+      <link>//uildDrafts:1313/tags/idor/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/idor/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Network Analysis</title>
+      <link>//uildDrafts:1313/tags/network-analysis/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/network-analysis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pcap</title>
+      <link>//uildDrafts:1313/tags/pcap/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/pcap/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>//uildDrafts:1313/tags/python/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wireshark</title>
+      <link>//uildDrafts:1313/tags/wireshark/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/wireshark/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WSGI</title>
+      <link>//uildDrafts:1313/tags/wsgi/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/wsgi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2024-40028</title>
+      <link>//uildDrafts:1313/tags/cve-2024-40028/</link>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2024-40028/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ghost</title>
+      <link>//uildDrafts:1313/tags/ghost/</link>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ghost/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>//uildDrafts:1313/tags/git/</link>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git-Dumper</title>
+      <link>//uildDrafts:1313/tags/git-dumper/</link>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/git-dumper/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Race Condition</title>
+      <link>//uildDrafts:1313/tags/race-condition/</link>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/race-condition/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Subdomain</title>
+      <link>//uildDrafts:1313/tags/subdomain/</link>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/subdomain/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TOCTOU</title>
+      <link>//uildDrafts:1313/tags/toctou/</link>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/toctou/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2025-29927</title>
+      <link>//uildDrafts:1313/tags/cve-2025-29927/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2025-29927/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DFIR</title>
+      <link>//uildDrafts:1313/tags/dfir/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/dfir/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Forensics</title>
+      <link>//uildDrafts:1313/tags/forensics/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/forensics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lfi</title>
+      <link>//uildDrafts:1313/tags/lfi/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/lfi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nextjs</title>
+      <link>//uildDrafts:1313/tags/nextjs/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/nextjs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>React</title>
+      <link>//uildDrafts:1313/tags/react/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/react/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redis</title>
+      <link>//uildDrafts:1313/tags/redis/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/redis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redis Injection</title>
+      <link>//uildDrafts:1313/tags/redis-injection/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/redis-injection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sherlock</title>
+      <link>//uildDrafts:1313/tags/sherlock/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/sherlock/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ssrf</title>
+      <link>//uildDrafts:1313/tags/ssrf/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ssrf/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>1102</title>
+      <link>//uildDrafts:1313/tags/1102/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/1102/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>1149</title>
+      <link>//uildDrafts:1313/tags/1149/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/1149/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>EVTX</title>
+      <link>//uildDrafts:1313/tags/evtx/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/evtx/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>EvtxECmd</title>
+      <link>//uildDrafts:1313/tags/evtxecmd/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/evtxecmd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Logs</title>
+      <link>//uildDrafts:1313/tags/logs/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/logs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RDP</title>
+      <link>//uildDrafts:1313/tags/rdp/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/rdp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SmartScreen</title>
+      <link>//uildDrafts:1313/tags/smartscreen/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/smartscreen/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Timeline Explorer</title>
+      <link>//uildDrafts:1313/tags/timeline-explorer/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/timeline-explorer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows Logs</title>
+      <link>//uildDrafts:1313/tags/windows-logs/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/windows-logs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Guest Access</title>
+      <link>//uildDrafts:1313/tags/guest-access/</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/guest-access/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hashcat</title>
+      <link>//uildDrafts:1313/tags/hashcat/</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/hashcat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Password Recovery</title>
+      <link>//uildDrafts:1313/tags/password-recovery/</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/password-recovery/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SSH</title>
+      <link>//uildDrafts:1313/tags/ssh/</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ssh/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vhd</title>
+      <link>//uildDrafts:1313/tags/vhd/</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/vhd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VHD Mounting</title>
+      <link>//uildDrafts:1313/tags/vhd-mounting/</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/vhd-mounting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DCOM</title>
+      <link>//uildDrafts:1313/tags/dcom/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/dcom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Download Cradle</title>
+      <link>//uildDrafts:1313/tags/download-cradle/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/download-cradle/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jabber</title>
+      <link>//uildDrafts:1313/tags/jabber/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/jabber/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JSP</title>
+      <link>//uildDrafts:1313/tags/jsp/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/jsp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lateral Movement</title>
+      <link>//uildDrafts:1313/tags/lateral-movement/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/lateral-movement/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MMC20</title>
+      <link>//uildDrafts:1313/tags/mmc20/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/mmc20/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenFire</title>
+      <link>//uildDrafts:1313/tags/openfire/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/openfire/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows Security</title>
+      <link>//uildDrafts:1313/tags/windows-security/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/windows-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>XMPP</title>
+      <link>//uildDrafts:1313/tags/xmpp/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/xmpp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PowerShell Scripting</title>
+      <link>//uildDrafts:1313/tags/powershell-scripting/</link>
+      <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/powershell-scripting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>System Administration</title>
+      <link>//uildDrafts:1313/tags/system-administration/</link>
+      <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/system-administration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ACL</title>
+      <link>//uildDrafts:1313/tags/acl/</link>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/acl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2023-32315</title>
+      <link>//uildDrafts:1313/tags/cve-2023-32315/</link>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2023-32315/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2023-33733</title>
+      <link>//uildDrafts:1313/tags/cve-2023-33733/</link>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2023-33733/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DACL</title>
+      <link>//uildDrafts:1313/tags/dacl/</link>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/dacl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Password Safe</title>
+      <link>//uildDrafts:1313/tags/password-safe/</link>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/password-safe/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ReportLab</title>
+      <link>//uildDrafts:1313/tags/reportlab/</link>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/reportlab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Auth.log</title>
+      <link>//uildDrafts:1313/tags/auth.log/</link>
+      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/auth.log/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Defensive</title>
+      <link>//uildDrafts:1313/tags/defensive/</link>
+      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/defensive/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Utmp</title>
+      <link>//uildDrafts:1313/tags/utmp/</link>
+      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/utmp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wtmp</title>
+      <link>//uildDrafts:1313/tags/wtmp/</link>
+      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/wtmp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cli</title>
+      <link>//uildDrafts:1313/tags/cli/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cli/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reference</title>
+      <link>//uildDrafts:1313/tags/reference/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/reference/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sysadmin</title>
+      <link>//uildDrafts:1313/tags/sysadmin/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/sysadmin/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>//uildDrafts:1313/tags/docker/</link>
+      <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Containerization</title>
+      <link>//uildDrafts:1313/tags/containerization/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/containerization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Containers</title>
+      <link>//uildDrafts:1313/tags/containers/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/containers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Debugging</title>
+      <link>//uildDrafts:1313/tags/debugging/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/debugging/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Devops</title>
+      <link>//uildDrafts:1313/tags/devops/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Optimization</title>
+      <link>//uildDrafts:1313/tags/optimization/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/optimization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redteam</title>
+      <link>//uildDrafts:1313/tags/redteam/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/redteam/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Troubleshooting</title>
+      <link>//uildDrafts:1313/tags/troubleshooting/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/troubleshooting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Amd</title>
+      <link>//uildDrafts:1313/tags/amd/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/amd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gpu</title>
+      <link>//uildDrafts:1313/tags/gpu/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/gpu/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Local-Llm</title>
+      <link>//uildDrafts:1313/tags/local-llm/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/local-llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ollama</title>
+      <link>//uildDrafts:1313/tags/ollama/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ollama/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rocm</title>
+      <link>//uildDrafts:1313/tags/rocm/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/rocm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sre</title>
+      <link>//uildDrafts:1313/tags/sre/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/sre/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ansible</title>
+      <link>//uildDrafts:1313/tags/ansible/</link>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ansible/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>//uildDrafts:1313/tags/automation/</link>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dotfiles</title>
+      <link>//uildDrafts:1313/tags/dotfiles/</link>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/dotfiles/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kali</title>
+      <link>//uildDrafts:1313/tags/kali/</link>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/kali/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Qemu</title>
+      <link>//uildDrafts:1313/tags/qemu/</link>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/qemu/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring Boot</title>
+      <link>//uildDrafts:1313/tags/spring-boot/</link>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/spring-boot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SSTI</title>
+      <link>//uildDrafts:1313/tags/ssti/</link>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ssti/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Template Injection</title>
+      <link>//uildDrafts:1313/tags/template-injection/</link>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/template-injection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2023-26604</title>
+      <link>//uildDrafts:1313/tags/cve-2023-26604/</link>
+      <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2023-26604/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2023–27163</title>
+      <link>//uildDrafts:1313/tags/cve-202327163/</link>
+      <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-202327163/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Systemctl</title>
+      <link>//uildDrafts:1313/tags/systemctl/</link>
+      <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/systemctl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ScheduledTask</title>
+      <link>//uildDrafts:1313/tags/scheduledtask/</link>
+      <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/scheduledtask/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>API Security</title>
+      <link>//uildDrafts:1313/tags/api-security/</link>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/api-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2022-24439</title>
+      <link>//uildDrafts:1313/tags/cve-2022-24439/</link>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2022-24439/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GitPython</title>
+      <link>//uildDrafts:1313/tags/gitpython/</link>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/gitpython/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Log Analysis</title>
+      <link>//uildDrafts:1313/tags/log-analysis/</link>
+      <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/log-analysis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Splunk</title>
+      <link>//uildDrafts:1313/tags/splunk/</link>
+      <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/splunk/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GenericAll</title>
+      <link>//uildDrafts:1313/tags/genericall/</link>
+      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/genericall/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2021-1675</title>
+      <link>//uildDrafts:1313/tags/cve-2021-1675/</link>
+      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2021-1675/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NTLM Hash Capture</title>
+      <link>//uildDrafts:1313/tags/ntlm-hash-capture/</link>
+      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ntlm-hash-capture/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Printer Exploitation</title>
+      <link>//uildDrafts:1313/tags/printer-exploitation/</link>
+      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/printer-exploitation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PrintNightmare</title>
+      <link>//uildDrafts:1313/tags/printnightmare/</link>
+      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/printnightmare/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SCF File</title>
+      <link>//uildDrafts:1313/tags/scf-file/</link>
+      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/scf-file/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LAPS</title>
+      <link>//uildDrafts:1313/tags/laps/</link>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/laps/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pfx</title>
+      <link>//uildDrafts:1313/tags/pfx/</link>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/pfx/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ESC9</title>
+      <link>//uildDrafts:1313/tags/esc9/</link>
+      <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/esc9/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MsDS-KeyCredentialLink</title>
+      <link>//uildDrafts:1313/tags/msds-keycredentiallink/</link>
+      <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/msds-keycredentiallink/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RBCD</title>
+      <link>//uildDrafts:1313/tags/rbcd/</link>
+      <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/rbcd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CLFS</title>
+      <link>//uildDrafts:1313/tags/clfs/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/clfs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2023-28252</title>
+      <link>//uildDrafts:1313/tags/cve-2023-28252/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2023-28252/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2023-38146</title>
+      <link>//uildDrafts:1313/tags/cve-2023-38146/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2023-38146/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IIS</title>
+      <link>//uildDrafts:1313/tags/iis/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/iis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Registry Backdoor</title>
+      <link>//uildDrafts:1313/tags/registry-backdoor/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/registry-backdoor/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ThemeBleed</title>
+      <link>//uildDrafts:1313/tags/themebleed/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/themebleed/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows 11</title>
+      <link>//uildDrafts:1313/tags/windows-11/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/windows-11/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cpassword</title>
+      <link>//uildDrafts:1313/tags/cpassword/</link>
+      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cpassword/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DC Sync</title>
+      <link>//uildDrafts:1313/tags/dc-sync/</link>
+      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/dc-sync/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Golden Ticket</title>
+      <link>//uildDrafts:1313/tags/golden-ticket/</link>
+      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/golden-ticket/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GPP</title>
+      <link>//uildDrafts:1313/tags/gpp/</link>
+      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/gpp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NTDS.dit</title>
+      <link>//uildDrafts:1313/tags/ntds.dit/</link>
+      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ntds.dit/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows Server 2008</title>
+      <link>//uildDrafts:1313/tags/windows-server-2008/</link>
+      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/windows-server-2008/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Registry Hive Dumping</title>
+      <link>//uildDrafts:1313/tags/registry-hive-dumping/</link>
+      <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/registry-hive-dumping/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SeBackupPrivilege</title>
+      <link>//uildDrafts:1313/tags/sebackupprivilege/</link>
+      <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/sebackupprivilege/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MachineAccountQuota</title>
+      <link>//uildDrafts:1313/tags/machineaccountquota/</link>
+      <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/machineaccountquota/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PassTheCert</title>
+      <link>//uildDrafts:1313/tags/passthecert/</link>
+      <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/passthecert/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PWM</title>
+      <link>//uildDrafts:1313/tags/pwm/</link>
+      <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/pwm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Schannel</title>
+      <link>//uildDrafts:1313/tags/schannel/</link>
+      <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/schannel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CUPS</title>
+      <link>//uildDrafts:1313/tags/cups/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cups/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2024-4076</title>
+      <link>//uildDrafts:1313/tags/cve-2024-4076/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2024-4076/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2024-4175</title>
+      <link>//uildDrafts:1313/tags/cve-2024-4175/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2024-4175/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2024-4176</title>
+      <link>//uildDrafts:1313/tags/cve-2024-4176/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2024-4176/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2024-4177</title>
+      <link>//uildDrafts:1313/tags/cve-2024-4177/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2024-4177/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IPP</title>
+      <link>//uildDrafts:1313/tags/ipp/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ipp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Printer Security</title>
+      <link>//uildDrafts:1313/tags/printer-security/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/printer-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2021-42278</title>
+      <link>//uildDrafts:1313/tags/cve-2021-42278/</link>
+      <pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2021-42278/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2021-42287</title>
+      <link>//uildDrafts:1313/tags/cve-2021-42287/</link>
+      <pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cve-2021-42287/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NoPac</title>
+      <link>//uildDrafts:1313/tags/nopac/</link>
+      <pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/nopac/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Capcom</title>
+      <link>//uildDrafts:1313/tags/capcom/</link>
+      <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/capcom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SeLoadDriverPrivilege</title>
+      <link>//uildDrafts:1313/tags/seloaddriverprivilege/</link>
+      <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/seloaddriverprivilege/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Server</title>
+      <link>//uildDrafts:1313/tags/server/</link>
+      <pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/server/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AD Recycle Bin</title>
+      <link>//uildDrafts:1313/tags/ad-recycle-bin/</link>
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ad-recycle-bin/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CheatSheet</title>
+      <link>//uildDrafts:1313/tags/cheatsheet/</link>
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/cheatsheet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CSharp</title>
+      <link>//uildDrafts:1313/tags/csharp/</link>
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/csharp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQL</title>
+      <link>//uildDrafts:1313/tags/sql/</link>
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/sql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQLite</title>
+      <link>//uildDrafts:1313/tags/sqlite/</link>
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/sqlite/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VNC</title>
+      <link>//uildDrafts:1313/tags/vnc/</link>
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/vnc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Azure</title>
+      <link>//uildDrafts:1313/tags/azure/</link>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/azure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Azure AD Connect</title>
+      <link>//uildDrafts:1313/tags/azure-ad-connect/</link>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/azure-ad-connect/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Follina</title>
+      <link>//uildDrafts:1313/tags/follina/</link>
+      <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/follina/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rubeus</title>
+      <link>//uildDrafts:1313/tags/rubeus/</link>
+      <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/rubeus/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Whisker</title>
+      <link>//uildDrafts:1313/tags/whisker/</link>
+      <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/whisker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WSUS</title>
+      <link>//uildDrafts:1313/tags/wsus/</link>
+      <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/wsus/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pem</title>
+      <link>//uildDrafts:1313/tags/pem/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/pem/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pywhisker</title>
+      <link>//uildDrafts:1313/tags/pywhisker/</link>
+      <pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/pywhisker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>.NET</title>
+      <link>//uildDrafts:1313/tags/.net/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/.net/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Deserialization</title>
+      <link>//uildDrafts:1313/tags/deserialization/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/deserialization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Serialization</title>
+      <link>//uildDrafts:1313/tags/serialization/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/serialization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GhostScript</title>
+      <link>//uildDrafts:1313/tags/ghostscript/</link>
+      <pubDate>Thu, 03 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ghostscript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RoundCube</title>
+      <link>//uildDrafts:1313/tags/roundcube/</link>
+      <pubDate>Thu, 03 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/roundcube/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Selenium</title>
+      <link>//uildDrafts:1313/tags/selenium/</link>
+      <pubDate>Thu, 03 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/selenium/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DNS</title>
+      <link>//uildDrafts:1313/tags/dns/</link>
+      <pubDate>Sun, 29 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/dns/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>KCD</title>
+      <link>//uildDrafts:1313/tags/kcd/</link>
+      <pubDate>Sun, 29 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/kcd/</guid>
       <description></description>
     </item>
     <item>
       <title>ESC7</title>
-      <link>http://localhost:1313/tags/esc7/</link>
+      <link>//uildDrafts:1313/tags/esc7/</link>
       <pubDate>Sun, 22 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/esc7/</guid>
+      <guid>//uildDrafts:1313/tags/esc7/</guid>
       <description></description>
     </item>
     <item>
       <title>Manager</title>
-      <link>http://localhost:1313/tags/manager/</link>
+      <link>//uildDrafts:1313/tags/manager/</link>
       <pubDate>Sun, 22 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/manager/</guid>
+      <guid>//uildDrafts:1313/tags/manager/</guid>
       <description></description>
     </item>
     <item>
       <title>Database Security</title>
-      <link>http://localhost:1313/tags/database-security/</link>
+      <link>//uildDrafts:1313/tags/database-security/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/database-security/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>FTP</title>
-      <link>http://localhost:1313/tags/ftp/</link>
-      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ftp/</guid>
+      <guid>//uildDrafts:1313/tags/database-security/</guid>
       <description></description>
     </item>
     <item>
       <title>LNK Files</title>
-      <link>http://localhost:1313/tags/lnk-files/</link>
+      <link>//uildDrafts:1313/tags/lnk-files/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/lnk-files/</guid>
+      <guid>//uildDrafts:1313/tags/lnk-files/</guid>
       <description></description>
     </item>
     <item>
       <title>Microsoft Access</title>
-      <link>http://localhost:1313/tags/microsoft-access/</link>
+      <link>//uildDrafts:1313/tags/microsoft-access/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/microsoft-access/</guid>
+      <guid>//uildDrafts:1313/tags/microsoft-access/</guid>
       <description></description>
     </item>
     <item>
       <title>PST Files</title>
-      <link>http://localhost:1313/tags/pst-files/</link>
+      <link>//uildDrafts:1313/tags/pst-files/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/pst-files/</guid>
+      <guid>//uildDrafts:1313/tags/pst-files/</guid>
       <description></description>
     </item>
     <item>
       <title>Stored Credentials</title>
-      <link>http://localhost:1313/tags/stored-credentials/</link>
+      <link>//uildDrafts:1313/tags/stored-credentials/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/stored-credentials/</guid>
+      <guid>//uildDrafts:1313/tags/stored-credentials/</guid>
       <description></description>
     </item>
     <item>
       <title>Telnet</title>
-      <link>http://localhost:1313/tags/telnet/</link>
+      <link>//uildDrafts:1313/tags/telnet/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/telnet/</guid>
+      <guid>//uildDrafts:1313/tags/telnet/</guid>
       <description></description>
     </item>
     <item>
       <title>SeImpersonatePrivilege</title>
-      <link>http://localhost:1313/tags/seimpersonateprivilege/</link>
+      <link>//uildDrafts:1313/tags/seimpersonateprivilege/</link>
       <pubDate>Mon, 09 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/seimpersonateprivilege/</guid>
+      <guid>//uildDrafts:1313/tags/seimpersonateprivilege/</guid>
       <description></description>
     </item>
     <item>
       <title>Umbraco</title>
-      <link>http://localhost:1313/tags/umbraco/</link>
+      <link>//uildDrafts:1313/tags/umbraco/</link>
       <pubDate>Mon, 09 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/umbraco/</guid>
+      <guid>//uildDrafts:1313/tags/umbraco/</guid>
       <description></description>
     </item>
     <item>
       <title>About</title>
-      <link>http://localhost:1313/tags/about/</link>
+      <link>//uildDrafts:1313/tags/about/</link>
       <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/about/</guid>
+      <guid>//uildDrafts:1313/tags/about/</guid>
       <description></description>
     </item>
     <item>
       <title>Blog</title>
-      <link>http://localhost:1313/tags/blog/</link>
+      <link>//uildDrafts:1313/tags/blog/</link>
       <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/blog/</guid>
+      <guid>//uildDrafts:1313/tags/blog/</guid>
       <description></description>
     </item>
     <item>
       <title>Ethical Hacking</title>
-      <link>http://localhost:1313/tags/ethical-hacking/</link>
+      <link>//uildDrafts:1313/tags/ethical-hacking/</link>
       <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ethical-hacking/</guid>
+      <guid>//uildDrafts:1313/tags/ethical-hacking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Scheduled Tasks</title>
+      <link>//uildDrafts:1313/tags/scheduled-tasks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/scheduled-tasks/</guid>
       <description></description>
     </item>
   </channel>

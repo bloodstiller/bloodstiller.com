@@ -1,7 +1,7 @@
 +++
 title = "Aero HTB Walkthrough: ThemeBleed and CLFS Exploitation"
 draft = false
-tags = ["Windows", "HTB", "Hack The Box", "CVE-2023-38146", "ThemeBleed", "CVE-2023-28252", "CLFS", "Windows 11", "Privilege Escalation", "IIS", "Persistence", "Registry Backdoor", "Scheduled Tasks"]
+tags = ["Windows", "HTB", "Hack The Box", "CVE-2023-38146", "ThemeBleed", "CVE-2023-28252", "CLFS", "Windows 11", "Privilege Escalation", "IIS", "Persistence", "Registry Backdoor", "ScheduledTask"]
 keywords = ["Hack The Box Aero", "ThemeBleed exploitation", "CVE-2023-38146 walkthrough", "CLFS vulnerability", "Windows 11 theme exploitation", "CVE-2023-28252 tutorial", "Windows persistence techniques", "Registry backdoor methods", "Scheduled task persistence", "IIS security assessment"]
 description = "A detailed walkthrough of the Aero machine from Hack The Box, demonstrating exploitation of the ThemeBleed vulnerability (CVE-2023-38146) and CLFS (CVE-2023-28252). Learn about Windows 11 security mechanisms, advanced persistence techniques using registry modifications and scheduled tasks."
 author = "bloodstiller"
