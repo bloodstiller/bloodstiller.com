@@ -2,16 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//uildDrafts:1313/author/</loc>
-    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+    <loc>//uildDrafts:1313/tags/ansible/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//uildDrafts:1313/tags/blind/</loc>
-    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+    <loc>//uildDrafts:1313/author/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/automation/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/author/bloodstiller/</loc>
-    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/dotfiles/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/kali/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/qemu/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tools/security-newsroom-plugin/security-newsroom-obsidian-plugin/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tools/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//uildDrafts:1313/tags/blind/</loc>
     <lastmod>2025-12-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/tags/ctf-writeup/</loc>
@@ -45,9 +69,6 @@
     <lastmod>2025-12-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/portswigger/sqli_lab_15/</loc>
-    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/</loc>
     <lastmod>2025-12-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/tags/waf/</loc>
@@ -596,9 +617,6 @@
     <loc>//uildDrafts:1313/tags/tools/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//uildDrafts:1313/tools/</loc>
-    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>//uildDrafts:1313/tags/vulnerability-assessment/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
@@ -1010,22 +1028,7 @@
     <loc>//uildDrafts:1313/homelab/20250220118-nixos-homelab/</loc>
     <lastmod>2025-02-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//uildDrafts:1313/tags/ansible/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>//uildDrafts:1313/tools/automatingqemukalivmansible/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/automation/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/dotfiles/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/kali/</loc>
-    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//uildDrafts:1313/tags/qemu/</loc>
     <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//uildDrafts:1313/walkthroughs/redpanda-box/</loc>

