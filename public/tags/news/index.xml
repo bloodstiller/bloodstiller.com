@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>News on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</title>
+    <link>//uildDrafts:1313/tags/news/</link>
+    <description>Recent content in News on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//uildDrafts:1313/tags/news/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Security Newsroom Obsidian Plugin Release</title>
+      <link>//uildDrafts:1313/tools/security-newsroom-plugin/security-newsroom-obsidian-plugin/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tools/security-newsroom-plugin/security-newsroom-obsidian-plugin/</guid>
+      <description>&lt;h1 id=&#34;security-newsroom-obsidian-plugin-release&#34;&gt;Security Newsroom Obsidian Plugin Release&lt;/h1&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve been quiet for a while. Work has been busy &amp;amp; I have been doing some other projects that I can&amp;rsquo;t get into&amp;hellip;&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve made the switch from my beloved eMacs to obsidian over the last few months and apart from the first week it&amp;rsquo;s been relatively painless. I&amp;rsquo;ve managed to recreate 99% of all eMacs functionality in obsidian (that&amp;rsquo;s functionality I used, not all of eMacs functionality as that would not be possible.)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

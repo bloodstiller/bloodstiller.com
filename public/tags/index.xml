@@ -9,38 +9,38 @@
     <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="//uildDrafts:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Ansible</title>
-      <link>//uildDrafts:1313/tags/ansible/</link>
+      <title>News</title>
+      <link>//uildDrafts:1313/tags/news/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/ansible/</guid>
+      <guid>//uildDrafts:1313/tags/news/</guid>
       <description></description>
     </item>
     <item>
-      <title>Automation</title>
-      <link>//uildDrafts:1313/tags/automation/</link>
+      <title>Obsidian</title>
+      <link>//uildDrafts:1313/tags/obsidian/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/automation/</guid>
+      <guid>//uildDrafts:1313/tags/obsidian/</guid>
       <description></description>
     </item>
     <item>
-      <title>Dotfiles</title>
-      <link>//uildDrafts:1313/tags/dotfiles/</link>
+      <title>Open-Source</title>
+      <link>//uildDrafts:1313/tags/open-source/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/dotfiles/</guid>
+      <guid>//uildDrafts:1313/tags/open-source/</guid>
       <description></description>
     </item>
     <item>
-      <title>Kali</title>
-      <link>//uildDrafts:1313/tags/kali/</link>
+      <title>Security</title>
+      <link>//uildDrafts:1313/tags/security/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/kali/</guid>
+      <guid>//uildDrafts:1313/tags/security/</guid>
       <description></description>
     </item>
     <item>
-      <title>Qemu</title>
-      <link>//uildDrafts:1313/tags/qemu/</link>
+      <title>Workflow</title>
+      <link>//uildDrafts:1313/tags/workflow/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/qemu/</guid>
+      <guid>//uildDrafts:1313/tags/workflow/</guid>
       <description></description>
     </item>
     <item>
@@ -93,7 +93,7 @@
       <description></description>
     </item>
     <item>
-      <title>SQL</title>
+      <title>Sql</title>
       <link>//uildDrafts:1313/tags/sql/</link>
       <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/sql/</guid>
@@ -205,7 +205,7 @@
       <description></description>
     </item>
     <item>
-      <title>Xss</title>
+      <title>XSS</title>
       <link>//uildDrafts:1313/tags/xss/</link>
       <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/xss/</guid>
@@ -352,7 +352,7 @@
       <description></description>
     </item>
     <item>
-      <title>LLM</title>
+      <title>Llm</title>
       <link>//uildDrafts:1313/tags/llm/</link>
       <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/llm/</guid>
@@ -730,7 +730,7 @@
       <description></description>
     </item>
     <item>
-      <title>Msi</title>
+      <title>MSI</title>
       <link>//uildDrafts:1313/tags/msi/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/msi/</guid>
@@ -1045,13 +1045,6 @@
       <description></description>
     </item>
     <item>
-      <title>Security</title>
-      <link>//uildDrafts:1313/tags/security/</link>
-      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>//uildDrafts:1313/tags/security/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Security Metrics</title>
       <link>//uildDrafts:1313/tags/security-metrics/</link>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
@@ -1143,7 +1136,7 @@
       <description></description>
     </item>
     <item>
-      <title>Powershell</title>
+      <title>PowerShell</title>
       <link>//uildDrafts:1313/tags/powershell/</link>
       <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/powershell/</guid>
@@ -1311,7 +1304,7 @@
       <description></description>
     </item>
     <item>
-      <title>FTP</title>
+      <title>Ftp</title>
       <link>//uildDrafts:1313/tags/ftp/</link>
       <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/ftp/</guid>
@@ -1472,7 +1465,7 @@
       <description></description>
     </item>
     <item>
-      <title>SSRF</title>
+      <title>Ssrf</title>
       <link>//uildDrafts:1313/tags/ssrf/</link>
       <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/ssrf/</guid>
@@ -1840,6 +1833,41 @@
       <link>//uildDrafts:1313/tags/sre/</link>
       <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
       <guid>//uildDrafts:1313/tags/sre/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ansible</title>
+      <link>//uildDrafts:1313/tags/ansible/</link>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/ansible/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>//uildDrafts:1313/tags/automation/</link>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dotfiles</title>
+      <link>//uildDrafts:1313/tags/dotfiles/</link>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/dotfiles/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kali</title>
+      <link>//uildDrafts:1313/tags/kali/</link>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/kali/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Qemu</title>
+      <link>//uildDrafts:1313/tags/qemu/</link>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//uildDrafts:1313/tags/qemu/</guid>
       <description></description>
     </item>
     <item>
