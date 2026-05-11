@@ -68,7 +68,7 @@ HTTP, SSH, RPC & NFS.
 
 The low hanging fruit here is NFS and web so let's focus on those whilst our scans continue.
 
->**Note**:
+++Note++:
 >NFS also runs on 111 so RPC is and isn't RPC bind.
 
 #### UDP:
@@ -181,7 +181,7 @@ nuclei -target $box -profile pentest -rl 150 -retries 2 -timeout 7 -stats -me nu
 ```
 ![](</attachments/Pasted image 20260412074110.png>)
 Again we can see that NFS is there as well as some interesting security headers are missing. Let's examine nfs further.
-~~Note~~:
+++Note++:
 >In a real engagement the missing security headers would be a legitimate issue that would be raised but on this box, I don't think we need to pay attention to them.
 ## NFS `2049`
 ```bash
@@ -199,7 +199,7 @@ This is commonly referred to as a **“root escape”**.
 Tools like netexec automatically check for this condition during enumeration. For example:
 
 >![](</attachments/Pasted image 20260410064944.png>)
-```
+```bash
 NFS  <ip>  <port>  <ip>  [*] Supported NFS versions: (3, 4) (root escape: False)
 ```
 
@@ -236,7 +236,7 @@ As we can see it dumps `/etc/shadow` automatically as part of it's root escape c
 ![](</attachments/Pasted image 20260410071826.png>)
 We can also see hashes for two other users "alex" & "ross"
 ![](</attachments/Pasted image 20260410071917.png>)
->[!note]
+++Note++:
 >The findings file does not contain `/etc/shadow` creds just the escapable exports and attempts at discovering "no_root_squash" exports/vulnerability.
 >![](</attachments/Pasted image 20260410071716.png>)
 
@@ -295,14 +295,15 @@ First we will use unshadow to prepare the file for cracking.
 ```bash
 unshadow passwd.md shadow.md >> recoveredHashes.md
 ```
->[!note] We will also remove all other hashes in the file apart from alex, ross & root so it looks like the below
+++Note++:
+>We will also remove all other hashes in the file apart from alex, ross & root so it looks like the below
 ![](</attachments/Pasted image 20260410074006.png>)
 
 Then we can point john at the hashes & whilst this runs we can  enumerate further.
 ```bash
 john recoveredHashes.md --wordlist=~/Wordlists/rockyou.txt
 ```
-~~Note~~:
+++Note++:
 >Future me here, this is a fruitless task do not do it.
 
 ## Enumerating NFS Further:
@@ -314,7 +315,7 @@ netexec nfs $box --ls '/home/ross'
 ```
 As we can see there is no `.ssh` folder here however we may be able to add one, I doubt it though as the permissions look solid, however stranger things have happened so we can try that later as a hail mary.
 ![](</attachments/Pasted image 20260412091848.png>)
-~~Note~~:
+++Note++:
 > There is also something else here I didn't notice first time around. I will get to it further down but it completely slipped by me.
 
 
@@ -338,7 +339,7 @@ On my search I found [this repo](<https://github.com/toneillcodes/brutalkeepass/
 ```bash
 python bfkeepass.py -d Passwords.kdbx -w /usr/share/wordlists/rockyou.txt
 ```
-~~Notes~~:
+++Notes++:
 >I did create a pull request on the original repo but depending on when you read this or if the changes are accepted it may or may not be merged upstream.
 
 >Again, this will lead to nothing so you can avoid.
@@ -360,7 +361,7 @@ Let's create a user called alex with the same UID.
 ```bash
 sudo useradd -u 2017 alex
 ```
-~~Note~~
+++Note++:
 > To clean up after just run
 > `sudo userdel --remove alex`
 
@@ -422,7 +423,8 @@ So what can we do with this information? Well remember earlier when I said there
 ## Side Quest: What's `.Xauthority`?
 The `.Xauthority` file is found is found in the user's home directory by default where it's used to store credentials, cookies that are then used by `xauth` for authentication of X sessions. Once an X session begins the cookies is used to authenticate connections to the display.
 
->[!note] If the system was running wayland as opposed to x this would not work.
+++Note++: 
+>If the system was running wayland as opposed to x this would not work.
 
 So how does this help us? If we can steal the `.Xauthority` file we can view the screen of the logged in user which may show us something interesting.
 
@@ -509,7 +511,7 @@ As we can see it's running.
 
 I start my listener and get a connection back after 1 minute.
 ![](</attachments/Pasted image 20260508150221.png>)
-~~Note~~
+++Note++:
 >This is great as a means to call back out to our attack machine, however an interval of every 1 minute is excessive, it would typically be better to set it at longer intervals to re-connect, also this would be flagged in a second in a actual environment.
 
 
