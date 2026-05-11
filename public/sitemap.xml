@@ -3,78 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/author/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/bloodstiller/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/box/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/cap/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/cap-setuid/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/capabilities/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/easy/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/ftp/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/gunicorn/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/htb/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/idor/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/network-analysis/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/pcap/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/test/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/walkthroughs/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/wireshark/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/wsgi/</loc>
-    <lastmod>2026-05-11T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/hack-the-box/</loc>
+    <lastmod>2026-05-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/htb/</loc>
+    <lastmod>2026-05-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2026-05-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/nfs/</loc>
     <lastmod>2026-05-08T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
+    <lastmod>2026-05-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/walkthroughs/squashed-box/</loc>
+    <lastmod>2026-05-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-05-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/walkthroughs/</loc>
     <lastmod>2026-05-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/xauthority/</loc>
@@ -153,6 +111,9 @@
     <lastmod>2025-12-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/errors/</loc>
+    <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2025-12-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/portswigger/sqli_lab_11/</loc>
@@ -479,6 +440,9 @@
     <loc>http://localhost:1313/tags/cve-2023-49147/</loc>
     <lastmod>2025-09-10T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/easy/</loc>
+    <lastmod>2025-09-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/git-history/</loc>
     <lastmod>2025-09-10T00:00:00+00:00</lastmod>
   </url><url>
@@ -758,7 +722,40 @@
     <loc>http://localhost:1313/tags/xp_cmdshell/</loc>
     <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/box/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cap/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/walkthroughs/cap-box/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cap-setuid/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/capabilities/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ftp/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/gunicorn/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/idor/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/network-analysis/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pcap/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/wireshark/</loc>
+    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/wsgi/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cve-2024-40028/</loc>

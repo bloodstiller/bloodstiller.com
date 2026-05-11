@@ -6,15 +6,8 @@
     <description>Recent content in Gunicorn on Bloodstiller: Ethical Hacking &amp; Active Directory Security Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/gunicorn/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>test</title>
-      <link>http://localhost:1313/walkthroughs/test/</link>
-      <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/walkthroughs/test/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Cap HTB Walkthrough: PCAP Analysis, Linux Capabilities, and Linux Privilege Escalation</title>
       <link>http://localhost:1313/walkthroughs/cap-box/</link>
