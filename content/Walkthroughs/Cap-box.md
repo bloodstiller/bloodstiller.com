@@ -16,7 +16,6 @@ lastmod = 2025-05-23
 
 -   <https://app.hackthebox.com/machines/Cap>
 
-
 ## How I use variables &amp; Wordlists: {#how-i-use-variables-and-wordlists}
 
 -   **Variables**:
